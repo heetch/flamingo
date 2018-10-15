@@ -1,0 +1,28 @@
+{
+  "name": "flamingo",
+  "private": true,
+  "description": "Heetch React Components Library",
+  "version": "0.0.1",
+  "main": "./components/index.js",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3"
+  },
+  "scripts": {
+    "dev": "start-storybook -p 9001 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heetch/flamingo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heetch/flamingo/issues"
+  },
+  "homepage": "https://github.com/heetch/flamingo#readme"
+}
