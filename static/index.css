@@ -28,6 +28,14 @@
 }
 
 :root {
+  --font-size--xs: 0.25rem;
+  --font-size--s: 0.5rem;
+  --font-size--m: 1rem;
+  --font-size--l: 1.5rem;
+  --font-size--xl: 2rem;
+}
+
+:root {
   --space-xs: 0.25rem;
   --space-s: 0.5rem;
   --space-m: 1rem;
