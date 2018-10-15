@@ -1,7 +1,7 @@
 {
-  "name": "flamingo",
+  "name": "heetch-flamingo",
   "private": true,
-  "description": "Heetch React Components Library",
+  "description": "Heetch's React Components Library",
   "version": "0.0.1",
   "main": "./components/index.js",
   "dependencies": {
