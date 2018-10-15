@@ -1,0 +1,2 @@
+# flamingo
+React Components Library
