@@ -1,1 +1,1 @@
-export default () => ":flamingo:"
+export default () => ":flamingo:";
