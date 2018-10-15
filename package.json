@@ -10,10 +10,23 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.4.11",
-    "babel-core": "^6.26.3"
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react-app": "^3.0.4",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
   },
   "scripts": {
-    "dev": "start-storybook -p 9001 -c .storybook"
+    "dev": "start-storybook -p 9001 -c .storybook",
+    "lint": "prettier --write ./src/**/*"
   },
   "repository": {
     "type": "git",
@@ -24,5 +37,16 @@
   "bugs": {
     "url": "https://github.com/heetch/flamingo/issues"
   },
-  "homepage": "https://github.com/heetch/flamingo#readme"
+  "homepage": "https://github.com/heetch/flamingo#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
