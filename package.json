@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9001 -c .storybook",
-    "lint": "prettier --write ./src/**/*"
+    "lint": "prettier --write \"./src/**/*.js\""
   },
   "repository": {
     "type": "git",
