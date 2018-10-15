@@ -31,14 +31,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heetch/flamingo.git"
+    "url": "git+https://github.com/heetch/heetch-flamingo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/heetch/flamingo/issues"
+    "url": "https://github.com/heetch/heetch-flamingo/issues"
   },
-  "homepage": "https://github.com/heetch/flamingo#readme",
+  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
