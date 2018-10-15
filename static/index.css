@@ -28,11 +28,12 @@
 }
 
 :root {
-  --font-size--xs: 0.25rem;
-  --font-size--s: 0.5rem;
+  --font-size--xs: 0.75rem;
+  --font-size--s: 0.875rem;
   --font-size--m: 1rem;
   --font-size--l: 1.5rem;
   --font-size--xl: 2rem;
+  --font-size--xxl: 2.5rem;
 }
 
 :root {
