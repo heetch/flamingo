@@ -1,0 +1,6 @@
+.Flamingo {
+  font-size: var(--font-size--m);
+  color: var(--color-white);
+  background-color: var(--color-rose2);
+  padding: var(--space-m);
+}
