@@ -3,24 +3,82 @@
   padding: var(--space-s) var(--space-l);
   font-size: var(--font-size--s);
   font-weight: bold;
-  color: var(--color-white);
-  background-image: var(--gradient-rr);
-  background-color: var(--color-rose);
-  box-shadow: inset 0 -2px 0 0 var(--color-razzmatazz);
   border: 0;
   border-radius: var(--space-l);
   outline: none;
 }
 
-.Button:hover,
-.Button.is-hovered {
+.Button[disabled],
+.Button.is-disabled {
+  background-color: var(--color-concrete) !important;
+  color: var(--color-chatelle) !important;
+  cursor: not-allowed !important;
+}
+
+/* Primary intent */
+
+.Button.is-primary {
+  background-image: var(--gradient-rr);
+  background-color: var(--color-rose);
+  color: var(--color-white);
+  box-shadow: inset 0 -2px 0 0 var(--color-razzmatazz);
+}
+
+.Button.is-primary:hover,
+.Button.is-primary.is-hover,
+.Button.is-primary:active,
+.Button.is-primary.is-active,
+.Button.is-primary[disabled],
+.Button.is-primary.is-disabled {
   background-image: initial;
   box-shadow: initial;
 }
 
-.Button:active,
-.Button.is-active {
-  background-image: initial;
+.Button.is-primary:active,
+.Button.is-primary.is-active {
   background-color: var(--color-razzmatazz);
+}
+
+/* Secondary intent */
+
+.Button.is-secondary {
+  color: var(--color-rose2);
+  box-shadow: inset 0 0 0 1px var(--color-rose2);
+}
+
+.Button.is-secondary:hover,
+.Button.is-secondary.is-hover,
+.Button.is-secondary:active,
+.Button.is-secondary.is-active,
+.Button.is-secondary[disabled],
+.Button.is-secondary.is-disabled {
   box-shadow: initial;
+}
+
+.Button.is-secondary:hover,
+.Button.is-secondary.is-hover {
+  background-color: var(--color-rose);
+  color: var(--color-white);
+}
+
+.Button.is-secondary:active,
+.Button.is-secondary.is-active {
+  background-color: var(--color-razzmatazz);
+  color: var(--color-white);
+}
+
+/* Tertiary intent */
+
+.Button.is-tertiary {
+  color: var(--color-rose2);
+}
+
+.Button.is-tertiary:hover,
+.Button.is-tertiary.is-hover {
+  background-color: var(--color-concrete);
+}
+
+.Button.is-tertiary:active,
+.Button.is-tertiary.is-active {
+  background-color: var(--color-alto);
 }

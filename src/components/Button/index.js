@@ -7,9 +7,10 @@ import "./index.css";
 
 const intents = Object.values(INTENTS);
 
-const Button = ({ className, intent, ...props }) => (
+const Button = ({ className, disabled, intent, ...props }) => (
   <button
     className={cx("Button", {
+      "is-disabled": disabled,
       [`is-${intent}`]: intent,
       [className]: className,
     })}
@@ -19,11 +20,13 @@ const Button = ({ className, intent, ...props }) => (
 
 Button.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   intent: PropTypes.oneOf(intents),
 };
 
 Button.defaultProps = {
   className: null,
+  disabled: false,
   intent: INTENTS.PRIMARY,
 };
 

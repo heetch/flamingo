@@ -5,13 +5,20 @@ import { INTENTS } from "../../constants/";
 import Button from "./";
 
 const intents = Object.values(INTENTS);
+const states = ["default", "hover", "active", "disabled"];
 
-storiesOf("Button", module)
-  .add("Default", () => <Button>Default button</Button>)
-  .add("With intents", () =>
-    intents.map(intent => (
-      <Button key={intent} intent={intent}>
-        {intent} button
-      </Button>
+storiesOf("Button", module).add("With intents", () =>
+  intents.map(intent =>
+    states.map(state => (
+      <div>
+        <Button
+          key={`${intent}-${state}`}
+          className={`is-${state}`}
+          intent={intent}
+        >
+          {intent} :{state}
+        </Button>
+      </div>
     ))
-  );
+  )
+);
