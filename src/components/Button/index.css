@@ -1,0 +1,26 @@
+.Button {
+  margin: var(--space-s) 0;
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--font-size--s);
+  font-weight: bold;
+  color: var(--color-white);
+  background-image: var(--gradient-rr);
+  background-color: var(--color-rose);
+  box-shadow: inset 0 -2px 0 0 var(--color-razzmatazz);
+  border: 0;
+  border-radius: var(--space-l);
+  outline: none;
+}
+
+.Button:hover,
+.Button.is-hovered {
+  background-image: initial;
+  box-shadow: initial;
+}
+
+.Button:active,
+.Button.is-active {
+  background-image: initial;
+  background-color: var(--color-razzmatazz);
+  box-shadow: initial;
+}
