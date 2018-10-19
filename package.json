@@ -26,6 +26,7 @@
     "prettier": "^1.14.3"
   },
   "scripts": {
+    "build": "build-storybook -c .storybook -o ./build/",
     "dev": "start-storybook -p 9001 -c .storybook",
     "lint": "prettier --write \"./src/**/*.js\""
   },
