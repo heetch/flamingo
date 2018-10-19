@@ -8,6 +8,10 @@
   outline: none;
 }
 
+a > .Button {
+  cursor: pointer;
+}
+
 .Button[disabled],
 .Button.is-disabled {
   background-color: var(--color-concrete) !important;
