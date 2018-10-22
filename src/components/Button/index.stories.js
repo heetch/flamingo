@@ -11,12 +11,8 @@ storiesOf("Button", module)
   .add("With intents", () =>
     intents.map(intent =>
       states.map(state => (
-        <div>
-          <Button
-            key={`${intent}-${state}`}
-            className={`is-${state}`}
-            intent={intent}
-          >
+        <div key={`${intent}-${state}`}>
+          <Button className={`is-${state}`} intent={intent}>
             {intent} :{state}
           </Button>
         </div>
