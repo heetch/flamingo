@@ -1,0 +1,30 @@
+.Heading {
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-xs);
+  font-weight: 800;
+  color: var(--color-tolopea);
+}
+
+.Heading--h1 {
+  font-size: var(--font-size--xxl);
+}
+
+.Heading--h2 {
+  font-size: var(--font-size--xl);
+}
+
+.Heading--h3 {
+  font-size: var(--font-size--l);
+}
+
+.Heading--h4 {
+  font-size: var(--font-size--m);
+}
+
+.Heading--h5 {
+  font-size: var(--font-size--s);
+}
+
+.Heading--h6 {
+  font-size: var(--font-size--xs);
+}
