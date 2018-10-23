@@ -1,0 +1,32 @@
+.Input {
+  --border-color: var(--color-alto);
+  --border-size: 1px;
+  --size: 12.5rem;
+
+  width: var(--size);
+  margin: var(--space-xs);
+  padding: var(--space-xs) var(--space-m);
+  border: 0;
+  border-radius: 1.25rem;
+  color: var(--color-smoky);
+  box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
+  outline: none;
+}
+
+.Input:hover,
+.Input.is-hover {
+  --border-color: var(--color-smoky);
+}
+
+.Input:active,
+.Input.is-active {
+  --border-color: var(--color-smoky);
+  --border-size: 2px;
+}
+
+.Input:disabled,
+.Input.is-disabled {
+  --border-color: var(--color-alto);
+  background-color: var(--color-concrete);
+  cursor: not-allowed;
+}
