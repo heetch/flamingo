@@ -1,1 +1,1 @@
-export { default as Flaming } from "./Flamingo/";
+export { default as Button } from "./Button";

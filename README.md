@@ -20,7 +20,6 @@ We assume that you're using `normalize.css` in your project.
 <br />
 If not, please run `yarn add normalize.css -d` or `npm i normalize.css -d` and add it into your project.
 
-
 ## Add a new component
 
 ### Naming
@@ -32,10 +31,13 @@ e.g. `component/Button`
 ### Props
 
 Every component must:
-- accept a custom `className`
-- pass down every remaining props
+
+- Accept a custom `className`
+- Default `className` must be `undefined` (not `null`). Otherwise this props will be displayed in the React Developer Tools.
+- Pass down every remaining props
 
 Example:
+
 ```js
 const Button = ({ className, ...props }) => (
   <button
@@ -45,4 +47,8 @@ const Button = ({ className, ...props }) => (
     {...props}
   />
 );
+
+Button.defaultProps = {
+  className: undefined,
+};
 ```
