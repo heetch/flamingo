@@ -25,7 +25,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  className: null,
+  className: undefined,
   disabled: false,
   intent: INTENTS.PRIMARY,
 };
