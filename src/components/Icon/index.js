@@ -2,35 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { ICONS } from "../../constants";
+import { ICON_SIZES, ICONS } from "../../constants";
 import "./index.css";
 
 const icons = Object.keys(ICONS);
+const sizes = Object.values(ICON_SIZES);
 
-const Icon = ({ className, children, icon, width, height, ...props }) => (
-  <span
-    className={cx("Icon", {
+const Icon = ({ className, icon, size, ...props }) => (
+  <i
+    className={cx("Icon", `Icon--${size}`, {
       [className]: className,
     })}
     {...props}
   >
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
-      {ICONS[icon]}
-    </svg>
-  </span>
+    {ICONS[icon]}
+  </i>
 );
 
 Icon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(icons).isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
+  size: PropTypes.oneOf(sizes),
 };
 
 Icon.defaultProps = {
   className: undefined,
-  width: 20,
-  height: 20,
+  size: ICON_SIZES.M,
 };
 
 export default Icon;

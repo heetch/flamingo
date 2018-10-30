@@ -9,6 +9,13 @@ export const HEADING_LEVELS = {
   h6: "h6",
 };
 
+export const ICON_SIZES = {
+  S: "s",
+  M: "m",
+  L: "l",
+  XL: "xl",
+};
+
 export { ICONS };
 
 export const INTENTS = {
