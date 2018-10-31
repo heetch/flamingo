@@ -21,4 +21,6 @@ stories.add("Custom size", () =>
   sizes.map(size => <Icon key={`Icon--${size}`} icon={icons[0]} size={size} />)
 );
 
-icons.map(icon => stories.add(icon, () => <Icon icon={icon} />));
+icons.map(icon =>
+  stories.add(icon, () => <Icon icon={icon} size={ICON_SIZES.XL} />)
+);
