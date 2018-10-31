@@ -37,6 +37,13 @@
 }
 
 :root {
+  --icon--s: 1rem; /* 16px */
+  --icon--m: 1.5rem; /* 24px */
+  --icon--l: 2rem; /* 32px */
+  --icon--xl: 4rem; /* 64px */
+}
+
+:root {
   --gradient-rr: linear-gradient(
     to right bottom,
     var(--color-rose),

@@ -52,3 +52,26 @@ Button.defaultProps = {
   className: undefined,
 };
 ```
+
+## Add a new icon
+
+First, clean the `svg` content with [svgomg](https://jakearchibald.github.io/svgomg/).
+<br />
+Pay attention to:
+
+- Removing `width` and `height` from `<svg />`
+- Keeping the `viewBox`
+- Removing the `fill` rules on the children
+
+Then add the content into `src/constants/icons.js`
+_Et voilà_
+
+```js
+// src/constants/icons.js
+
+export const IconNew = (
+  <svg xmlns="" version="1" viewBox="">
+    <path d="" />
+  </svg>
+);
+```

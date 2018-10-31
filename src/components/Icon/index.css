@@ -1,0 +1,27 @@
+.Icon {
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  vertical-align: middle;
+}
+
+.Icon svg {
+  fill: currentColor;
+  width: var(--icon-size);
+}
+
+.Icon--s {
+  --icon-size: var(--icon--s);
+}
+
+.Icon--m {
+  --icon-size: var(--icon--m);
+}
+
+.Icon--l {
+  --icon-size: var(--icon--l);
+}
+
+.Icon--xl {
+  --icon-size: var(--icon--xl);
+}
