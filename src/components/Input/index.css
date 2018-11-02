@@ -1,10 +1,17 @@
+.Input-wrapper {
+  --input-size: 12.5rem;
+
+  position: relative;
+  margin: var(--space-xs);
+}
+
+/* Input */
+
 .Input {
   --border-color: var(--color-alto);
   --border-size: 1px;
-  --size: 12.5rem;
 
-  width: var(--size);
-  margin: var(--space-xs);
+  width: var(--input-size);
   padding: var(--space-xs) var(--space-m);
   border: 0;
   border-radius: 1.25rem;
@@ -29,4 +36,33 @@
   --border-color: var(--color-alto);
   background-color: var(--color-concrete);
   cursor: not-allowed;
+}
+
+.Input.is-invalid {
+  --border-color: var(--color-razzmatazz);
+}
+
+.Input.is-valid {
+  --border-color: var(--color-mountainMeadow2);
+}
+
+/* Icon */
+
+.is-invalid .Input,
+.is-valid .Input {
+  padding-right: calc(var(--space-s) + var(--icon--s) + var(--space-s));
+}
+
+.Input-icon {
+  position: absolute;
+  top: calc(50% - (var(--icon--s) / 2));
+  left: calc(var(--input-size) - var(--icon--s) - var(--space-s));
+}
+
+.is-invalid + .Input-icon {
+  color: var(--color-razzmatazz);
+}
+
+.is-valid + .Input-icon {
+  color: var(--color-mountainMeadow2);
 }

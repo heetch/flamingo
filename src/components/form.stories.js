@@ -42,4 +42,15 @@ const renderContent = ({ inputProps = {} } = {}) => (
   </form>
 );
 
-storiesOf("Form", module).add("Default", () => renderContent());
+storiesOf("Form", module)
+  .add("Default", () => renderContent())
+  .add("With valid inputs", () =>
+    renderContent({
+      inputProps: { valid: true },
+    })
+  )
+  .add("With invalid inputs", () =>
+    renderContent({
+      inputProps: { invalid: true },
+    })
+  );

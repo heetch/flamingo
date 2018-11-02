@@ -20,15 +20,25 @@ storiesOf("Input", module)
       </div>
     ))
   )
-  .add("With states", () =>
-    states.map(state => (
-      <div key={`input-${state}`}>
-        <Input
-          {...inputProps()}
-          className={`is-${state}`}
-          defaultValue={`State: ${state}`}
-          disabled={state === "disabled"}
-        />
+  .add("With states", () => (
+    <>
+      {states.map(state => (
+        <div key={`input-${state}`}>
+          <Input
+            {...inputProps()}
+            className={`is-${state}`}
+            defaultValue={`State: ${state}`}
+            disabled={state === "disabled"}
+          />
+        </div>
+      ))}
+
+      <div>
+        <Input {...inputProps()} defaultValue="Props: invalid" invalid />
       </div>
-    ))
-  );
+
+      <div>
+        <Input {...inputProps()} defaultValue="Props: valid" valid />
+      </div>
+    </>
+  ));
