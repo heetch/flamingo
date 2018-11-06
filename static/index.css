@@ -37,6 +37,11 @@
 }
 
 :root {
+  --font-weight--regular: 400;
+  --font-weight--bold: 700;
+}
+
+:root {
   --icon--s: 1rem; /* 16px */
   --icon--m: 1.5rem; /* 24px */
   --icon--l: 2rem; /* 32px */
@@ -73,6 +78,10 @@
   --space-m: 1rem; /* 16px */
   --space-l: 1.5rem; /* 24px */
   --space-xl: 2rem; /* 32px */
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
