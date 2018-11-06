@@ -2,7 +2,8 @@
   --input-size: 12.5rem;
 
   position: relative;
-  margin: var(--space-xs);
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
 }
 
 /* Input */
@@ -65,4 +66,10 @@
 
 .is-valid + .Input-icon {
   color: var(--color-mountainMeadow2);
+}
+
+/* helper */
+
+.Input-wrapper + .Helper .Text {
+  margin-top: 0;
 }

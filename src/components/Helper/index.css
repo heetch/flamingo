@@ -1,0 +1,11 @@
+.Helper {
+  display: block;
+}
+
+.is-invalid + .Helper .Text {
+  --text-color: var(--color-razzmatazz);
+}
+
+.is-valid + .Helper .Text {
+  --text-color: var(--color-mountainMeadow2);
+}
