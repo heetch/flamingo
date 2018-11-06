@@ -4,3 +4,7 @@
   font-size: var(--font-size--m);
   color: var(--color-smoky);
 }
+
+small .Text {
+  font-size: var(--font-size--xs);
+}

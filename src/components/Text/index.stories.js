@@ -18,6 +18,10 @@ storiesOf("Text", module)
         <Text>Emphasized Text</Text>
       </em>
 
+      <small>
+        <Text>Small Text</Text>
+      </small>
+
       <a href="http://heetch.com" onClick={preventDefault}>
         Default {"<a/>"} tag
       </a>
