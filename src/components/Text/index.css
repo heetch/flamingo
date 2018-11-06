@@ -1,0 +1,6 @@
+.Text {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size--m);
+  color: var(--color-smoky);
+}
