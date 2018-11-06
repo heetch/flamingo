@@ -79,3 +79,24 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+a {
+  color: var(--color-rose2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.u-colorError {
+  color: var(--color-razzmatazz) !important;
+}
+
+.u-colorSuccess {
+  color: var(--color-mountainMeadow2) !important;
+}
+
+.u-colorWarning {
+  color: var(--color-goldenGrass) !important;
+}
