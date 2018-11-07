@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { Helper, Input, Label } from "./";
+import { Helper, Input, Label, Select } from "./";
 
 const defaultInputProps = {
   onChange: console.log,
@@ -37,6 +37,26 @@ const renderContent = ({
         placeholder="Last name"
       />
       {withHelper && <Helper>Last name helper</Helper>}
+    </div>
+
+    <div>
+      {withLabel && <Label htmlFor="city-select-id">City</Label>}
+      <Select
+        {...defaultInputProps}
+        {...inputProps}
+        id="city-select-id"
+        options={[
+          {
+            label: "Paris",
+            value: "PRS",
+          },
+          {
+            label: "Bruxelles",
+            value: "BXL",
+          },
+        ]}
+      />
+      {withHelper && <Helper>City helper</Helper>}
     </div>
 
     <div>
