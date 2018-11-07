@@ -80,17 +80,24 @@ storiesOf("Form", module)
   .add("With helper and label", () =>
     renderContent({ withHelper: true, withLabel: true })
   )
-  .add("With valid inputs", () =>
+  .add("With valid state", () =>
     renderContent({
       withHelper: true,
       withLabel: true,
       inputProps: { valid: true },
     })
   )
-  .add("With invalid inputs", () =>
+  .add("With invalid state", () =>
     renderContent({
       withHelper: true,
       withLabel: true,
       inputProps: { invalid: true },
+    })
+  )
+  .add("With disable state", () =>
+    renderContent({
+      withHelper: true,
+      withLabel: true,
+      inputProps: { disabled: true },
     })
   );
