@@ -5,7 +5,7 @@ import { INPUT_TYPES } from "../../constants/";
 import Input from "./";
 
 const types = Object.values(INPUT_TYPES);
-const states = ["default", "hover", "active", "disabled"];
+const states = ["default", "hover", "focus", "disabled"];
 
 const inputProps = () => ({
   id: `input-${Math.random()}`,

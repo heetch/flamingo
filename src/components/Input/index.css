@@ -26,8 +26,8 @@
   --border-color: var(--color-smoky);
 }
 
-.Input:active,
-.Input.is-active {
+.Input:focus,
+.Input.is-focus {
   --border-color: var(--color-smoky);
   --border-size: 2px;
 }
