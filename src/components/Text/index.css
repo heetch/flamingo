@@ -1,6 +1,12 @@
 .Text {
+  --text-color: var(--color-smoky);
+
   margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
   font-size: var(--font-size--m);
-  color: var(--color-smoky);
+  color: var(--text-color);
+}
+
+small .Text {
+  font-size: var(--font-size--xs);
 }

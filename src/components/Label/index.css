@@ -1,0 +1,11 @@
+.Label {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size--s);
+  font-weight: var(--font-weight--bold);
+}
+
+.Label + .FormEl-wrapper {
+  margin-top: 0;
+}

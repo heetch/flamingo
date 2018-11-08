@@ -1,0 +1,22 @@
+.Input-wrapper.is-invalid {
+  --icon-color: var(--color-razzmatazz);
+}
+
+.Input-wrapper.is-valid {
+  --icon-color: var(--color-mountainMeadow2);
+}
+
+.Input-wrapper.is-invalid .Input {
+  --border-color: var(--color-razzmatazz);
+}
+
+.Input-wrapper.is-valid .Input {
+  --border-color: var(--color-mountainMeadow2);
+}
+
+/* Icon */
+
+.is-invalid .Input,
+.is-valid .Input {
+  padding-right: var(--icon-spaceAround);
+}

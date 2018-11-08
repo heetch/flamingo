@@ -18,6 +18,15 @@ export const ICON_SIZES = {
 
 export { ICONS };
 
+export const INPUT_TYPES = {
+  EMAIL: "email",
+  NUMBER: "number",
+  PASSWORD: "password",
+  SEARCH: "search",
+  TEL: "tel",
+  TEXT: "text",
+};
+
 export const INTENTS = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
