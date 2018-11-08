@@ -11,17 +11,12 @@ const formProps = {
   onSubmit: e => e.preventDefault(),
 };
 
-const renderContent = ({
-  inputProps = {},
-  withHelper = false,
-  withLabel = false,
-} = {}) => (
+const renderContent = ({ withHelper = false, withLabel = false } = {}) => (
   <form {...formProps}>
     <div>
       {withLabel && <Label htmlFor="first-name-input-id">First name</Label>}
       <Input
         {...defaultInputProps}
-        {...inputProps}
         id="first-name-input-id"
         placeholder="First name"
       />
@@ -32,7 +27,6 @@ const renderContent = ({
       {withLabel && <Label htmlFor="last-name-input-id">Last name</Label>}
       <Input
         {...defaultInputProps}
-        {...inputProps}
         id="last-name-input-id"
         placeholder="Last name"
       />
@@ -43,7 +37,6 @@ const renderContent = ({
       {withLabel && <Label htmlFor="city-select-id">City</Label>}
       <Select
         {...defaultInputProps}
-        {...inputProps}
         id="city-select-id"
         options={[
           {
@@ -63,7 +56,6 @@ const renderContent = ({
       {withLabel && <Label htmlFor="email-input-id">Email</Label>}
       <Input
         {...defaultInputProps}
-        {...inputProps}
         id="email-input-id"
         type="email"
         placeholder="Email"
@@ -79,25 +71,4 @@ storiesOf("Form", module)
   .add("With label", () => renderContent({ withLabel: true }))
   .add("With helper and label", () =>
     renderContent({ withHelper: true, withLabel: true })
-  )
-  .add("With valid state", () =>
-    renderContent({
-      withHelper: true,
-      withLabel: true,
-      inputProps: { valid: true },
-    })
-  )
-  .add("With invalid state", () =>
-    renderContent({
-      withHelper: true,
-      withLabel: true,
-      inputProps: { invalid: true },
-    })
-  )
-  .add("With disable state", () =>
-    renderContent({
-      withHelper: true,
-      withLabel: true,
-      inputProps: { disabled: true },
-    })
   );
