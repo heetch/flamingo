@@ -41,6 +41,7 @@
   position: absolute;
   top: calc(50% - (var(--icon--s) / 2));
   left: calc(var(--select-size) - var(--icon--s) - var(--space-s));
+  pointer-events: none;
 }
 
 /* helper */
