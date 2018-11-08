@@ -1,49 +1,16 @@
-.Input-wrapper {
-  --input-size: 12.5rem;
-
-  position: relative;
-  margin-top: var(--space-xs);
-  margin-bottom: var(--space-xs);
+.Input-wrapper.is-invalid {
+  --icon-color: var(--color-razzmatazz);
 }
 
-/* Input */
-
-.Input {
-  --border-color: var(--color-alto);
-  --border-size: 1px;
-
-  width: var(--input-size);
-  padding: var(--space-s) var(--space-m);
-  border: 0;
-  border-radius: 1.25rem;
-  color: var(--color-smoky);
-  box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
-  outline: none;
+.Input-wrapper.is-valid {
+  --icon-color: var(--color-mountainMeadow2);
 }
 
-.Input:hover,
-.Input.is-hover {
-  --border-color: var(--color-smoky);
-}
-
-.Input:focus,
-.Input.is-focus {
-  --border-color: var(--color-smoky);
-  --border-size: 2px;
-}
-
-.Input:disabled,
-.Input.is-disabled {
-  --border-color: var(--color-alto);
-  background-color: var(--color-concrete);
-  cursor: not-allowed;
-}
-
-.Input.is-invalid {
+.Input-wrapper.is-invalid .Input {
   --border-color: var(--color-razzmatazz);
 }
 
-.Input.is-valid {
+.Input-wrapper.is-valid .Input {
   --border-color: var(--color-mountainMeadow2);
 }
 
@@ -51,25 +18,5 @@
 
 .is-invalid .Input,
 .is-valid .Input {
-  padding-right: calc(var(--space-s) + var(--icon--s) + var(--space-s));
-}
-
-.Input-icon {
-  position: absolute;
-  top: calc(50% - (var(--icon--s) / 2));
-  left: calc(var(--input-size) - var(--icon--s) - var(--space-s));
-}
-
-.is-invalid + .Input-icon {
-  color: var(--color-razzmatazz);
-}
-
-.is-valid + .Input-icon {
-  color: var(--color-mountainMeadow2);
-}
-
-/* helper */
-
-.Input-wrapper + .Helper .Text {
-  margin-top: 0;
+  padding-right: var(--icon-spaceAround);
 }

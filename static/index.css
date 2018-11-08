@@ -98,6 +98,8 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Helpers */
+
 .u-colorError {
   color: var(--color-razzmatazz) !important;
 }
@@ -108,4 +110,65 @@ a:hover {
 
 .u-colorWarning {
   color: var(--color-goldenGrass) !important;
+}
+
+/* Shared */
+
+.FormEl-wrapper {
+  /*
+    this variable has to be here because of
+    the Icon children which relies on it
+  */
+  --element-size: 12.5rem;
+  --icon-color: var(--color-smoky);
+  --icon-spaceAround: calc(var(--space-s) + var(--icon--s) + var(--space-s));
+
+  position: relative;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.FormEl-wrapper + .Helper .Text {
+  margin-top: 0;
+}
+
+.FormEl {
+  --border-color: var(--color-alto);
+  --border-size: 1px;
+
+  width: var(--element-size);
+  padding: var(--space-s) var(--space-m);
+  border: 0;
+  border-radius: 1.25rem;
+  color: var(--color-smoky);
+  background-color: var(--color-white);
+  box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.FormEl:hover,
+.FormEl.is-hover {
+  --border-color: var(--color-smoky);
+}
+
+.FormEl:focus,
+.FormEl.is-focus {
+  --border-color: var(--color-smoky);
+  --border-size: 2px;
+}
+
+.FormEl:disabled,
+.FormEl.is-disabled {
+  --border-color: var(--color-alto);
+  background-color: var(--color-concrete);
+  cursor: not-allowed;
+}
+
+.FormEl-icon {
+  position: absolute;
+  top: calc(50% - (var(--icon--s) / 2));
+  left: calc(var(--element-size) - var(--icon--s) - var(--space-s));
+  color: var(--icon-color);
+  pointer-events: none;
 }

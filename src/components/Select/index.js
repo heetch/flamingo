@@ -7,9 +7,9 @@ import { ICON_SIZES } from "../../constants/";
 import "./index.css";
 
 const Select = ({ className, disabled, id, onChange, options, ...props }) => (
-  <div className="Select-wrapper">
+  <div className="FormEl-wrapper Select-wrapper">
     <select
-      className={cx("Select", {
+      className={cx("FormEl", "Select", {
         "is-disabled": disabled,
         [className]: className,
       })}
@@ -26,7 +26,7 @@ const Select = ({ className, disabled, id, onChange, options, ...props }) => (
       ))}
     </select>
 
-    <Icon icon="IconTopDown" className="Select-icon" size={ICON_SIZES.S} />
+    <Icon icon="IconTopDown" className="FormEl-icon" size={ICON_SIZES.S} />
   </div>
 );
 

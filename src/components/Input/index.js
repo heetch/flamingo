@@ -9,7 +9,7 @@ import "./index.css";
 const types = Object.values(INPUT_TYPES);
 
 const defaultIconProps = {
-  className: "Input-icon",
+  className: "FormEl-icon",
   size: ICON_SIZES.S,
 };
 
@@ -35,9 +35,9 @@ const Input = ({
   };
 
   return (
-    <div className={cx("Input-wrapper", { ...classes })}>
+    <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
       <input
-        className={cx("Input", {
+        className={cx("FormEl", "Input", {
           ...classes,
           [className]: className,
         })}

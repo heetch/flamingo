@@ -6,7 +6,6 @@
   font-weight: var(--font-weight--bold);
 }
 
-.Label + .Input-wrapper,
-.Label + .Select-wrapper {
+.Label + .FormEl-wrapper {
   margin-top: 0;
 }
