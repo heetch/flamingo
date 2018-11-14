@@ -22,15 +22,11 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.1.2",
-    "lint-staged": "^8.0.0",
-    "normalize.css": "^8.0.0",
-    "prettier": "^1.14.3"
+    "normalize.css": "^8.0.0"
   },
   "scripts": {
     "build": "build-storybook -c .storybook -o ./build/",
     "start": "start-storybook -p 9001 -c .storybook",
-    "lint": "prettier --write \"./src/**/*.js\"",
     "deploy": "storybook-to-ghpages"
   },
   "repository": {
@@ -42,16 +38,5 @@
   "bugs": {
     "url": "https://github.com/heetch/heetch-flamingo/issues"
   },
-  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
+  "homepage": "https://github.com/heetch/heetch-flamingo#readme"
 }
