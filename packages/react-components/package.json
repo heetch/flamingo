@@ -31,14 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heetch/heetch-flamingo.git"
+    "url": "git+https://github.com/heetch/flamingo.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/heetch/heetch-flamingo/issues"
-  },
-  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
   "publishConfig": {
     "access": "public"
   }
