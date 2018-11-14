@@ -11,6 +11,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@storybook/react": "^4.0.0",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
@@ -30,7 +31,8 @@
   "scripts": {
     "build": "build-storybook -c .storybook -o ./build/",
     "start": "start-storybook -p 9001 -c .storybook",
-    "lint": "prettier --write \"./src/**/*.js\""
+    "lint": "prettier --write \"./src/**/*.js\"",
+    "deploy": "storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
