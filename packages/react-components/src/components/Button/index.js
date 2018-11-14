@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import { INTENTS } from "../../constants/";
-import "./index.css";
 
 const intents = Object.values(INTENTS);
 

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import { HEADING_LEVELS } from "../../constants/";
-import "./index.css";
 
 const levels = Object.keys(HEADING_LEVELS);
 

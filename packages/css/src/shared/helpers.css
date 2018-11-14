@@ -1,0 +1,11 @@
+.u-colorError {
+  color: var(--color-razzmatazz) !important;
+}
+
+.u-colorSuccess {
+  color: var(--color-mountainMeadow2) !important;
+}
+
+.u-colorWarning {
+  color: var(--color-goldenGrass) !important;
+}

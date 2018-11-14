@@ -4,7 +4,6 @@ import cx from "classnames";
 
 import Icon from "../Icon/";
 import { ICON_SIZES, INPUT_TYPES } from "../../constants/";
-import "./index.css";
 
 const types = Object.values(INPUT_TYPES);
 

@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import "./index.css";
-
 const Label = ({ className, htmlFor, ...props }) => (
   <label
     className={cx("Label", {
