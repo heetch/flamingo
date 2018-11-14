@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/heetch/heetch-flamingo/issues"
   },
-  "homepage": "https://github.com/heetch/heetch-flamingo#readme"
+  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
