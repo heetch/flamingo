@@ -1,58 +1,6 @@
 {
-  "name": "heetch-flamingo",
-  "private": true,
-  "description": "Heetch's React Components Library",
-  "version": "0.0.1",
-  "main": "./components/index.js",
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@storybook/react": "^4.0.0",
-    "@storybook/storybook-deployer": "^2.3.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
-    "eslint": "^5.7.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-config-react-app": "^3.0.4",
-    "eslint-plugin-flowtype": "^3.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.1.2",
-    "lint-staged": "^8.0.0",
-    "normalize.css": "^8.0.0",
-    "prettier": "^1.14.3"
-  },
-  "scripts": {
-    "build": "build-storybook -c .storybook -o ./build/",
-    "start": "start-storybook -p 9001 -c .storybook",
-    "lint": "prettier --write \"./src/**/*.js\"",
-    "deploy": "storybook-to-ghpages"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/heetch/heetch-flamingo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/heetch/heetch-flamingo/issues"
-  },
-  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
+	"version": "0.0.1",
+	"devDependencies": {
+		"lerna": "^2.5.1"
+	}
 }
