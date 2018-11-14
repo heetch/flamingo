@@ -1,5 +1,5 @@
 {
-  "name": "heetch-flamingo",
+  "name": "@heetch/flamingo-react",
   "description": "Heetch's React Components Library",
   "version": "0.0.1",
   "main": "./index.js",
