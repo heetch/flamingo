@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import { ICON_SIZES, ICONS } from "../../constants";
-import "./index.css";
 
 const icons = Object.keys(ICONS);
 const sizes = Object.values(ICON_SIZES);

@@ -1,7 +1,7 @@
 {
   "name": "@heetch/flamingo-react",
   "description": "Heetch's React Components Library",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "main": "./index.js",
   "dependencies": {
     "react": "^16.5.2",
@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@heetch/flamingo-css": "^0.2.2",
     "@storybook/react": "^4.0.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
@@ -31,14 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heetch/heetch-flamingo.git"
+    "url": "git+https://github.com/heetch/flamingo.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/heetch/heetch-flamingo/issues"
-  },
-  "homepage": "https://github.com/heetch/heetch-flamingo#readme",
   "publishConfig": {
     "access": "public"
   }

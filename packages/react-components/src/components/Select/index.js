@@ -4,7 +4,6 @@ import cx from "classnames";
 
 import { Icon } from "../";
 import { ICON_SIZES } from "../../constants/";
-import "./index.css";
 
 const Select = ({ className, disabled, id, onChange, options, ...props }) => (
   <div className="FormEl-wrapper Select-wrapper">

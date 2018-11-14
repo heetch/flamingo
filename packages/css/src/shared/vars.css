@@ -1,0 +1,81 @@
+:root {
+  --color-white: #fff;
+  --color-concrete: #f2f2f2;
+  --color-alto: #dedede;
+
+  --color-chatelle: #b3abbc;
+  --color-smoky: #685879;
+  --color-tolopea: #190134;
+
+  --color-darkBlue: #200fc7;
+  --color-jacksonsPurple: #30229b;
+  --color-meteorite: #39197a;
+
+  --color-carnationPink: #fc99bc;
+  --color-rose: #fc006b;
+  --color-rose2: #f80059;
+  --color-razzmatazz: #cf125e;
+
+  --color-capeHoney: #fdeaae;
+  --color-dandelion: #fcd45c;
+  --color-sunglow: #fccb36;
+  --color-goldenGrass: #e0b01d;
+
+  --color-magicMint: #a6edc9;
+  --color-shamrock: #48eb93;
+  --color-mountainMeadow: #21d47a;
+  --color-mountainMeadow2: #13a05a;
+}
+
+:root {
+  --font-size--xs: 0.75rem; /* 12px */
+  --font-size--s: 0.875rem; /* 14px */
+  --font-size--m: 1rem; /* 16px */
+  --font-size--l: 1.5rem; /* 24px */
+  --font-size--xl: 2rem; /* 32px */
+  --font-size--xxl: 2.5rem; /* 40px */
+}
+
+:root {
+  --font-weight--regular: 400;
+  --font-weight--bold: 700;
+}
+
+:root {
+  --icon--s: 1rem; /* 16px */
+  --icon--m: 1.5rem; /* 24px */
+  --icon--l: 2rem; /* 32px */
+  --icon--xl: 4rem; /* 64px */
+}
+
+:root {
+  --gradient-rr: linear-gradient(
+    to right bottom,
+    var(--color-rose),
+    var(--color-razzmatazz)
+  );
+  --gradient-mr: linear-gradient(
+    to right bottom,
+    var(--color-rose2),
+    var(--color-meteorite)
+  );
+  --gradient-dm: linear-gradient(
+    to right bottom,
+    var(--color-darkBlue),
+    var(--color-meteorite)
+  );
+  --gradient-mt: linear-gradient(
+    to right bottom,
+    var(--color-meteorite),
+    var(--color-tolopea)
+  );
+}
+
+:root {
+  --space-xxs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-s: 0.75rem; /* 12px */
+  --space-m: 1rem; /* 16px */
+  --space-l: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+}
