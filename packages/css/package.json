@@ -2,14 +2,19 @@
   "name": "@heetch/flamingo-css",
   "version": "0.0.1",
   "description": "",
-  "main": "./src/index.css",
+  "main": "./dist/index.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postcss": "postcss src/index.css -o dist/index.css"
   },
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heetch/flamingo.git"
+  },
+  "devDependencies": {
+    "postcss": "^7.0.5",
+    "postcss-cli": "^6.0.1",
+    "postcss-easy-import": "^3.0.0"
   }
 }

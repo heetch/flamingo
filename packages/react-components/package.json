@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@heetch/flamingo-css": "0.0.1",
     "@storybook/react": "^4.0.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
