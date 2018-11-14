@@ -4,7 +4,8 @@
   "description": "",
   "main": "./dist/index.css",
   "scripts": {
-    "postcss": "postcss src/index.css -o dist/index.css"
+    "postcss": "postcss src/index.css -o dist/index.css",
+    "prepublish": "npm run postcss"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,6 @@
     "postcss-cli": "^6.0.1",
     "postcss-easy-import": "^3.0.0"
   },
-  "prepublish": "npm run postcss",
   "publishConfig": {
     "access": "public"
   }
