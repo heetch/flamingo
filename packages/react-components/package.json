@@ -1,7 +1,7 @@
 {
   "name": "@heetch/flamingo-react",
   "description": "Heetch's React Components Library",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./index.js",
   "dependencies": {
     "react": "^16.5.2",
@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@heetch/flamingo-css": "0.0.1",
+    "@heetch/flamingo-css": "^0.2.0",
     "@storybook/react": "^4.0.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.3",
