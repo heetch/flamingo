@@ -1,6 +1,6 @@
 {
   "name": "@heetch/flamingo-react",
-  "version": "1.0.0",
+  "version": "0.2.2",
   "description": "",
   "author": "ugogo",
   "license": "MIT",
@@ -16,10 +16,12 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
+    "build:storybook": "build-storybook -c .storybook -o ./build/",
     "start": "rollup -c -w",
+    "start:storybook": "start-storybook -p 9001 -c .storybook",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "storybook-to-ghpages"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -30,6 +32,7 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "@heetch/flamingo-css": "^0.2.2",
     "@storybook/react": "^4.0.6",
     "@storybook/storybook-deployer": "^2.3.0",
     "@svgr/rollup": "^4.0.3",
@@ -46,6 +49,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^4.0.0",
+    "normalize.css": "^8.0.1",
     "prettier": "^1.15.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -63,5 +67,8 @@
   ],
   "dependencies": {
     "classnames": "^2.2.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
