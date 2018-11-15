@@ -20,7 +20,7 @@
     "start": "rollup -c -w",
     "start:storybook": "start-storybook -p 9001 -c .storybook",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
+    "predeploy": "yarn run build && yarn run build:storybook",
     "deploy": "storybook-to-ghpages"
   },
   "peerDependencies": {
