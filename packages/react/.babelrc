@@ -1,0 +1,10 @@
+{
+  "exclude": "node_modules/**",
+  "plugins": [],
+  "presets": [
+    [
+      "@babel/preset-env", { "modules": false }
+    ],
+    "@babel/preset-react"
+  ]
+}

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { Icon } from "../";
+import Icon from "../Icon";
 import { ICON_SIZES } from "../../constants/";
 
 const Select = ({ className, disabled, id, onChange, options, ...props }) => (
