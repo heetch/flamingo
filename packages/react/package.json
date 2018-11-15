@@ -1,6 +1,6 @@
 {
   "name": "@heetch/flamingo-react",
-  "version": "0.3.0-0",
+  "version": "0.3.0",
   "description": "",
   "author": "ugogo",
   "license": "MIT",
@@ -19,8 +19,8 @@
     "build:storybook": "build-storybook -c .storybook -o ./build/",
     "start": "rollup -c -w",
     "start:storybook": "start-storybook -p 9001 -c .storybook",
-    "prepare": "yarn run build",
-    "predeploy": "yarn run build && yarn run build:storybook",
+    "prepare": "npm run build",
+    "predeploy": "npm run build && npm run build:storybook",
     "deploy": "storybook-to-ghpages"
   },
   "peerDependencies": {
@@ -32,7 +32,7 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
-    "@heetch/flamingo-css": "^0.2.2",
+    "@heetch/flamingo-css": "^0.3.0",
     "@storybook/react": "^4.0.6",
     "@storybook/storybook-deployer": "^2.3.0",
     "@svgr/rollup": "^4.0.3",

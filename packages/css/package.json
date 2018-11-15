@@ -1,11 +1,11 @@
 {
   "name": "@heetch/flamingo-css",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "",
   "main": "./dist/index.css",
   "scripts": {
-    "postcss": "postcss src/index.css -o dist/index.css",
-    "prepublish": "npm run postcss"
+    "build": "postcss src/index.css -o dist/index.css",
+    "prepare": "npm run build"
   },
   "author": "",
   "license": "ISC",
