@@ -1,17 +1,17 @@
 {
   "name": "@heetch/flamingo-css",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
+  "author": "ugogo",
+  "license": "MIT",
+  "repository": "https://github.com/heetch/flamingo",
   "main": "./dist/index.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "postcss src/index.css -o dist/index.css",
     "prepare": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/heetch/flamingo.git"
   },
   "devDependencies": {
     "postcss": "^7.0.5",

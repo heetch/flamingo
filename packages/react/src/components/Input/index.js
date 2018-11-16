@@ -71,7 +71,7 @@ Input.defaultProps = {
   disabled: false,
   invalid: false,
   placeholder: "",
-  type: "text",
+  type: INPUT_TYPES.TEXT,
   valid: false,
 };
 
