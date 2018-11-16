@@ -1,5 +1,7 @@
 # @heetch/flamingo-react
 
+https://heetch.github.io/flamingo/
+
 ## Required
 
 For styling purpose, you will also need to install and import `@heetch/flamingo-css` and `normalize.css`
