@@ -13,6 +13,7 @@ const Button = ({ className, disabled, intent, ...props }) => (
       [`is-${intent}`]: intent,
       [className]: className,
     })}
+    disabled={disabled}
     {...props}
   />
 );
