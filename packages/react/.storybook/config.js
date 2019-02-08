@@ -1,7 +1,7 @@
 import { configure } from "@storybook/react";
 
 import "normalize.css";
-import "@heetch/flamingo-css";
+import "../../css/dist/index.css";
 
 const req = require.context("../src/components", true, /\.stories\.js$/);
 
