@@ -17,7 +17,7 @@
 }
 
 .FormEl {
-  --border-color: var(--color-alto);
+  --border-color: var(--color-chatelle);
   --border-size: 1px;
 
   width: var(--element-size);
