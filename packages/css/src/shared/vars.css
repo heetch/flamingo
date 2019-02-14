@@ -28,17 +28,23 @@
 }
 
 :root {
+  --font-size--xs: 0.625rem; /* 10px */
   --font-size--xs: 0.75rem; /* 12px */
   --font-size--s: 0.875rem; /* 14px */
   --font-size--m: 1rem; /* 16px */
-  --font-size--l: 1.5rem; /* 24px */
-  --font-size--xl: 2rem; /* 32px */
-  --font-size--xxl: 2.5rem; /* 40px */
+  --font-size--l: 1.25rem; /* 20px */
+  --font-size--xl: 1.5rem; /* 24px */
+  --font-size--xxl: 2rem; /* 32px */
 }
 
 :root {
   --font-weight--regular: 400;
   --font-weight--bold: 700;
+  --font-weight--black: 900;
+}
+
+:root {
+  --line-height--normal: 1.4;
 }
 
 :root {
@@ -54,16 +60,19 @@
     var(--color-rose),
     var(--color-razzmatazz)
   );
+
   --gradient-mr: linear-gradient(
     to right bottom,
     var(--color-rose2),
     var(--color-meteorite)
   );
+
   --gradient-dm: linear-gradient(
     to right bottom,
     var(--color-darkBlue),
     var(--color-meteorite)
   );
+
   --gradient-mt: linear-gradient(
     to right bottom,
     var(--color-meteorite),
