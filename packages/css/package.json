@@ -10,6 +10,7 @@
     "dist"
   ],
   "scripts": {
+    "start": "postcss src/index.css -o dist/index.css -w",
     "build": "postcss src/index.css -o dist/index.css",
     "prepare": "npm run build"
   },
