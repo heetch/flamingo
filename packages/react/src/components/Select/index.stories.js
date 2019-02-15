@@ -33,4 +33,10 @@ storiesOf("Select", module)
         />
       </div>
     ))
-  );
+  )
+  .add("With custom props", () => (
+    <>
+      <Select {...defaultProps()} />
+      <Select {...defaultProps()} fill />
+    </>
+  ));

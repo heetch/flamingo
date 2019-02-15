@@ -14,21 +14,19 @@ const defaultIconProps = {
 
 const Input = ({
   className,
-  disabled,
+  disabled: isDisabled,
+  fill: isFilled,
   id,
-  invalid,
+  invalid: isInvalid,
   onChange,
   placeholder,
   type,
-  valid,
+  valid: isValid,
   ...props
 }) => {
-  const isDisabled = disabled;
-  const isInvalid = invalid;
-  const isValid = valid;
-
   const classes = {
     "is-disabled": isDisabled,
+    "is-filled": isFilled,
     "is-valid": isValid,
     "is-invalid": isInvalid,
   };
@@ -40,7 +38,7 @@ const Input = ({
           ...classes,
           [className]: className,
         })}
-        disabled={disabled}
+        disabled={isDisabled}
         id={id}
         name={id}
         onChange={onChange}
