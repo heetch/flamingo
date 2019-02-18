@@ -41,4 +41,10 @@ storiesOf("Input", module)
         <Input {...inputProps()} defaultValue="Props: valid" valid />
       </div>
     </>
+  ))
+  .add("With custom props", () => (
+    <>
+      <Input {...inputProps()} placeholder="Default input" />
+      <Input {...inputProps()} placeholder="Will `fill` prop" fill />
+    </>
   ));

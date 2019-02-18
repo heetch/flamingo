@@ -3,13 +3,18 @@
     this variable has to be here because of
     the Icon children which relies on it
   */
-  --element-size: 12.5rem;
   --icon-color: var(--color-smoky);
   --icon-spaceAround: calc(var(--space-s) + var(--icon--s) + var(--space-s));
 
   position: relative;
+  display: inline-block;
+  min-width: 12.5rem;
   margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
+}
+
+.FormEl-wrapper.is-filled {
+  width: 100%;
 }
 
 .FormEl-wrapper + .Helper .Text {
@@ -20,7 +25,7 @@
   --border-color: var(--color-chatelle);
   --border-size: 1px;
 
-  width: var(--element-size);
+  width: 100%;
   padding: var(--space-s) var(--space-m);
   border: 0;
   border-radius: 1.25rem;
@@ -52,7 +57,7 @@
 .FormEl-icon {
   position: absolute;
   top: calc(50% - (var(--icon--s) / 2));
-  left: calc(var(--element-size) - var(--icon--s) - var(--space-s));
+  right: var(--icon--s);
   color: var(--icon-color);
   pointer-events: none;
 }
