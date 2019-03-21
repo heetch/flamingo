@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { ICON_SIZES, ICONS } from "../../constants";
+import { ICON_SIZES, ICONS_SVGS } from "../../constants";
 
-const icons = Object.keys(ICONS);
 const sizes = Object.values(ICON_SIZES);
 
 const Icon = ({ className, icon, size, ...props }) => (
@@ -14,13 +13,13 @@ const Icon = ({ className, icon, size, ...props }) => (
     })}
     {...props}
   >
-    {ICONS[icon]}
+    {ICONS_SVGS[icon]}
   </i>
 );
 
 Icon.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.oneOf(icons).isRequired,
+  icon: PropTypes.string.isRequired,
   size: PropTypes.oneOf(sizes),
 };
 

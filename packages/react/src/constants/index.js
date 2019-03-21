@@ -1,4 +1,4 @@
-import * as ICONS from "./icons";
+import * as ICONS_SVGS from "./icons";
 
 export const HEADING_LEVELS = {
   h1: "h1",
@@ -16,7 +16,13 @@ export const ICON_SIZES = {
   XL: "xl",
 };
 
-export { ICONS };
+export { ICONS_SVGS };
+
+export const ICONS = Object.keys(ICONS_SVGS).reduce((map, obj) => {
+  const newMap = map;
+  newMap[obj] = obj;
+  return newMap;
+}, {});
 
 export const INPUT_TYPES = {
   EMAIL: "email",
