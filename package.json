@@ -19,6 +19,6 @@
     ]
   },
   "scripts": {
-    "publish": "lerna bootstrap && lerna publish"
+    "deploy": "lerna bootstrap && lerna publish"
   }
 }
