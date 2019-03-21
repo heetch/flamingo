@@ -18,11 +18,13 @@ export const ICON_SIZES = {
 
 export { ICONS_SVGS };
 
-export const ICONS = Object.keys(ICONS_SVGS).reduce((map, obj) => {
-  const newMap = map;
-  newMap[obj] = obj;
-  return newMap;
-}, {});
+export const ICONS = Object.keys(ICONS_SVGS).reduce(
+  (icons, icon) => ({
+    ...icons,
+    [icon]: icon,
+  }),
+  {}
+);
 
 export const INPUT_TYPES = {
   EMAIL: "email",
