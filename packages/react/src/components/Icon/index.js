@@ -5,6 +5,7 @@ import cx from "classnames";
 import { ICON_SIZES, ICONS_SVGS } from "../../constants";
 
 const sizes = Object.values(ICON_SIZES);
+const icons = Object.keys(ICON_SIZES);
 
 const Icon = ({ className, icon, size, ...props }) => (
   <i
@@ -19,7 +20,7 @@ const Icon = ({ className, icon, size, ...props }) => (
 
 Icon.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.oneOf(icons).isRequired,
   size: PropTypes.oneOf(sizes),
 };
 
