@@ -5,7 +5,7 @@ import cx from "classnames";
 import { ICON_SIZES, ICONS_SVGS } from "../../constants";
 
 const sizes = Object.values(ICON_SIZES);
-const icons = Object.keys(ICON_SIZES);
+const icons = Object.keys(ICONS_SVGS);
 
 const Icon = ({ className, icon, size, ...props }) => (
   <i
