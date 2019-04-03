@@ -56,8 +56,8 @@
 
 .FormEl-icon {
   position: absolute;
-  top: calc(50% - (var(--icon--s) / 2));
-  right: var(--icon--s);
+  top: var(--space-s);
+  right: var(--space-s);
   color: var(--icon-color);
   pointer-events: none;
 }
