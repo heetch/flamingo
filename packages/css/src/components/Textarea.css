@@ -1,26 +1,27 @@
-.Input-wrapper.is-invalid {
+.Textarea-wrapper.is-invalid {
   --icon-color: var(--color-razzmatazz);
 }
 
-.Input-wrapper.is-valid {
+.Textarea-wrapper.is-valid {
   --icon-color: var(--color-mountainMeadow2);
 }
 
-.Input-wrapper.is-invalid .Input {
+.Textarea-wrapper.is-invalid .Textarea {
   --border-color: var(--color-razzmatazz);
 }
 
-.Input-wrapper.is-valid .Input {
+.Textarea-wrapper.is-valid .Textarea {
   --border-color: var(--color-mountainMeadow2);
 }
 
-.Input {
+.Textarea {
   display: block;
+  resize: vertical;
 }
 
 /* Icon */
 
-.is-invalid .Input,
-.is-valid .Input {
+.is-invalid .Textarea,
+.is-valid .Textarea {
   padding-right: var(--icon-spaceAround);
 }
