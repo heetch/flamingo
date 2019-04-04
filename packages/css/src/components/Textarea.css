@@ -16,6 +16,7 @@
 
 .Textarea {
   display: block;
+  resize: vertical;
 }
 
 /* Icon */
