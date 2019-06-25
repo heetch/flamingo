@@ -7,6 +7,7 @@
 @import "./components/Heading.css";
 @import "./components/Helper.css";
 @import "./components/Icon.css";
+@import "./components/InlineAlert.css";
 @import "./components/Input.css";
 @import "./components/Label.css";
 @import "./components/Select.css";

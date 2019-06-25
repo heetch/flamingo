@@ -1,0 +1,44 @@
+.InlineAlert {
+  position: relative;
+  margin: var(--space-m) 0;
+  padding: var(--space-xl);
+  font-size: var(--font-size--m);
+  line-height: var(--line-height--m);
+  border-radius: var(--space-m);
+  outline: none;
+  border: 0;
+  color: var(--color-white);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.InlineAlert .title {
+  font-weight: bold;
+}
+
+.InlineAlert .icon {
+  padding-right: var(--space-xl);
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.InlineAlert .iconClose {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.InlineAlert.information {
+  background-color: var(--color-sonic);
+}
+
+.InlineAlert.success {
+  background-color: var(--color-link);
+}
+
+.InlineAlert.error {
+  background-color: var(--color-bittersweet);
+}

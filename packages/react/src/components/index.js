@@ -3,6 +3,7 @@ export { default as Heading } from "./Heading";
 export { default as Helper } from "./Helper";
 export { default as Icon } from "./Icon";
 export { default as IconButton } from "./IconButton";
+export { default as InlineAlert } from "./InlineAlert";
 export { default as Input } from "./Input";
 export { default as Label } from "./Label";
 export { default as Select } from "./Select";
