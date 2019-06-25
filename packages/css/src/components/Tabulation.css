@@ -1,0 +1,42 @@
+.Tabulation {
+  position: relative;
+}
+
+.Tabulation span {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Tabulation span .label {
+  color: var(--color-tolopea);
+  font-size: var(--font-size--s);
+  font-weight: var(--font-weight--bold);
+  line-height: var(--line-height--m);
+  margin: var(--space-m) 0;
+  padding: 0 var(--space-xl);
+}
+
+.Tabulation span .marker {
+  width: 100%;
+  height: var(--space-s);
+  background-color: var(--color-grey);
+}
+
+.Tabulation span:hover .marker {
+  background-color: var(--color-alto);
+}
+
+.Tabulation span .marker.is-active {
+  background-color: var(--color-rose);
+}
+
+.Tabulation span:nth-child(1) .marker {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.Tabulation span:last-child .marker {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
