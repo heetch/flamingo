@@ -1,16 +1,25 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { withKnobs, select, text } from "@storybook/addon-knobs";
+import { withInfo } from "@storybook/addon-info";
 
 import InlineAlert from "./";
 import { INLINE_ALERT_TYPES } from "../../constants/";
 
-storiesOf("InlineAlert").add("With types", () =>
-  Object.values(INLINE_ALERT_TYPES).map(type => (
-    <InlineAlert
-      title="Title"
-      message={`Message of ${type} alert`}
-      onClose={() => console.log("Closed")}
-      type={type}
-    />
-  ))
-);
+storiesOf("Alerts")
+  .addDecorator(withKnobs)
+  .add(
+    "InlineAlert",
+    withInfo("")(() => (
+      <InlineAlert
+        title={text("Title", "Title of alert")}
+        message={text("Message", "Alert message")}
+        onClose={() => console.log("Closed")}
+        type={select(
+          "Alert type",
+          INLINE_ALERT_TYPES,
+          INLINE_ALERT_TYPES.INFORMATION
+        )}
+      />
+    ))
+  );

@@ -11,26 +11,28 @@ class Tabulation extends Component {
   }
 
   handleTabClick = activeTabIndex => {
-    const { returnObjectFn, onClick, elements } = this.props;
+    const { buildReturnObject, onClick, elements } = this.props;
     this.setState({ activeTabIndex });
     if (onClick) {
       onClick(
-        returnObjectFn
-          ? returnObjectFn(elements[activeTabIndex])
+        buildReturnObject
+          ? buildReturnObject(elements[activeTabIndex])
           : activeTabIndex
       );
     }
   };
 
   render() {
-    const { elements } = this.props;
+    const { elements, buildTabLabel } = this.props;
     const { activeTabIndex } = this.state;
 
     return (
       <div className="Tabulation">
         {elements.map((element, index) => (
           <span key={element} onClick={() => this.handleTabClick(index)}>
-            <div className="label">{element}</div>
+            <div className="label">
+              {buildTabLabel ? buildTabLabel(element) : element}
+            </div>
             <div
               className={cx("marker", {
                 "is-active": activeTabIndex === index,
@@ -44,14 +46,20 @@ class Tabulation extends Component {
 }
 
 Tabulation.propTypes = {
+  /** An array of strings or objects that will make tabs content */
   elements: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.object])
   ).isRequired,
-  returnObjectFn: PropTypes.func,
+  /** If objects passed to elements, this should be a method that extracts a label string from the obejct */
+  buildTabLabel: PropTypes.func,
+  /** If objects passed to elements, this should be a method that extracts a value to be returned to onClick */
+  buildReturnObject: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 Tabulation.defaultProps = {
-  returnObjectFn: undefined,
+  buildTabLabel: null,
+  buildReturnObject: null,
 };
 
 export default Tabulation;

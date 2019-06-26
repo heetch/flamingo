@@ -1,12 +1,21 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { withKnobs, array } from "@storybook/addon-knobs";
+import { withInfo } from "@storybook/addon-info";
 
 import Tabulation from "./";
 
-storiesOf("Tabulation").add("With types", () => (
-  <Tabulation
-    elements={["Cars", "Drivers", "Rides"]}
-    onClick={e => console.log(e)}
-    returnObjectFn={element => element}
-  />
-));
+storiesOf("Navigation")
+  .addDecorator(withKnobs)
+  .add(
+    "Tabulation",
+    withInfo("")(() => (
+      <Tabulation
+        elements={array("Tabs (separated by comma)", [
+          "Cars",
+          "Drivers",
+          "Rides",
+        ])}
+      />
+    ))
+  );

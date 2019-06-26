@@ -12,23 +12,13 @@ const ALERT_ICONS = {
 
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
 
-const InlineAlert = ({
-  className,
-  title,
-  message,
-  type,
-  onClose,
-  ...props
-}) => (
-  <div
-    className={cx("InlineAlert", type, {
-      [className]: className,
-    })}
-    {...props}
-  >
-    <span className="iconClose" onClick={onClose}>
-      <Icon icon={ICONS.IconClose} />
-    </span>
+const InlineAlert = ({ title, message, type, onClose, ...props }) => (
+  <div className={cx("InlineAlert", type)} {...props}>
+    {onClose && (
+      <span className="iconClose" onClick={onClose}>
+        <Icon icon={ICONS.IconClose} />
+      </span>
+    )}
     <div className="icon">
       <Icon icon={ALERT_ICONS[type]} />
     </div>
@@ -40,15 +30,17 @@ const InlineAlert = ({
 );
 
 InlineAlert.propTypes = {
-  className: PropTypes.string,
+  /** Type of alert */
   type: PropTypes.oneOf(ALERT_TYPES),
+  /** Title of alert */
   title: PropTypes.string.isRequired,
+  /** Message of alert */
   message: PropTypes.string.isRequired,
+  /** Method that is triggered when X button on the alert is clicked. Most likely to be used for hiding the alert. If not provided, no X button is gonna be shown. */
   onClose: PropTypes.func.isRequired,
 };
 
 InlineAlert.defaultProps = {
-  className: undefined,
   type: INLINE_ALERT_TYPES.INFORMATION,
 };
 
