@@ -30,11 +30,11 @@ class Tabulation extends Component {
       <div className="Tabulation">
         {elements.map((element, index) => (
           <span key={element} onClick={() => this.handleTabClick(index)}>
-            <div className="label">
+            <div className="Tabulation-label">
               {buildTabLabel ? buildTabLabel(element) : element}
             </div>
             <div
-              className={cx("marker", {
+              className={cx("Tabulation-marker", {
                 "is-active": activeTabIndex === index,
               })}
             />

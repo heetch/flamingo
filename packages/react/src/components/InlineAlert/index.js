@@ -13,18 +13,18 @@ const ALERT_ICONS = {
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
 
 const InlineAlert = ({ title, message, type, onClose, ...props }) => (
-  <div className={cx("InlineAlert", type)} {...props}>
+  <div className={cx("InlineAlert", `InlineAlert--${type}`)} {...props}>
     {onClose && (
-      <span className="iconClose" onClick={onClose}>
+      <span className="InlineAlert-iconClose" onClick={onClose}>
         <Icon icon={ICONS.IconClose} />
       </span>
     )}
-    <div className="icon">
+    <div className="InlineAlert-icon">
       <Icon icon={ALERT_ICONS[type]} />
     </div>
     <div>
-      <div className="title">{title}</div>
-      <div className="message">{message}</div>
+      <div className="InlineAlert-title">{title}</div>
+      <div>{message}</div>
     </div>
   </div>
 );

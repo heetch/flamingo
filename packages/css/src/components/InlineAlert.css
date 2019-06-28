@@ -13,32 +13,32 @@
   flex-direction: row;
 }
 
-.InlineAlert .title {
+.InlineAlert .InlineAlert-title {
   font-weight: bold;
 }
 
-.InlineAlert .icon {
+.InlineAlert .InlineAlert-icon {
   padding-right: var(--space-xl);
   display: flex;
   display: -webkit-flex;
   align-items: center;
 }
 
-.InlineAlert .iconClose {
+.InlineAlert .InlineAlert-iconClose {
   position: absolute;
   top: 5px;
   right: 10px;
   cursor: pointer;
 }
 
-.InlineAlert.information {
+.InlineAlert.InlineAlert--information {
   background-color: var(--color-sonic);
 }
 
-.InlineAlert.success {
+.InlineAlert.InlineAlert--success {
   background-color: var(--color-link);
 }
 
-.InlineAlert.error {
+.InlineAlert.InlineAlert--error {
   background-color: var(--color-bittersweet);
 }
