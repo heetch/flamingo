@@ -4,10 +4,9 @@
     the Icon children which relies on it
   */
   --icon-color: var(--color-granite);
-  --icon-spaceAround: calc(var(--space-l) + var(--icon--m) + var(--space-l));
+  --icon-spaceAround: calc(var(--space-s) + var(--icon--s) + var(--space-s));
 
   position: relative;
-  display: inline-block;
   min-width: 12.5rem;
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
