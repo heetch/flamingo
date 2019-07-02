@@ -1,6 +1,6 @@
 .Heading {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-xs);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-m);
   line-height: 1.5;
   font-weight: var(--font-weight--black);
   color: var(--color-tolopea);

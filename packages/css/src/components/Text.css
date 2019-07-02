@@ -1,8 +1,8 @@
 .Text {
-  --text-color: var(--color-smoky);
+  --text-color: var(--color-granite);
 
-  margin-top: var(--space-xs);
-  margin-bottom: var(--space-xs);
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-m);
   font-size: var(--font-size--m);
   color: var(--text-color);
 }

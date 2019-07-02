@@ -3,9 +3,9 @@
 }
 
 .is-invalid + .Helper .Text {
-  --text-color: var(--color-razzmatazz);
+  --text-color: var(--color-ruby);
 }
 
 .is-valid + .Helper .Text {
-  --text-color: var(--color-mountainMeadow2);
+  --text-color: var(--color-link);
 }

@@ -1,10 +1,10 @@
 .Button {
-  margin: var(--space-s) 0;
-  padding: var(--space-s) var(--space-l);
+  margin: var(--space-l) 0;
+  padding: var(--space-l) var(--space-xxl);
   font-size: var(--font-size--s);
   font-weight: bold;
   border: 0;
-  border-radius: var(--space-l);
+  border-radius: var(--space-xxl);
   outline: none;
 }
 
@@ -14,7 +14,7 @@ a > .Button {
 
 .Button[disabled],
 .Button.is-disabled {
-  background-color: var(--color-concrete) !important;
+  background-color: var(--color-grey) !important;
   color: var(--color-chatelle) !important;
   cursor: not-allowed !important;
 }
@@ -23,9 +23,9 @@ a > .Button {
 
 .Button.is-primary {
   background-image: var(--gradient-rr);
-  background-color: var(--color-rose);
+  background-color: var(--color-rasberry);
   color: var(--color-white);
-  box-shadow: inset 0 -2px 0 0 var(--color-razzmatazz);
+  box-shadow: inset 0 -2px 0 0 var(--color-ruby);
 }
 
 .Button.is-primary:hover,
@@ -40,14 +40,14 @@ a > .Button {
 
 .Button.is-primary:active,
 .Button.is-primary.is-active {
-  background-color: var(--color-razzmatazz);
+  background-color: var(--color-ruby);
 }
 
 /* Secondary intent */
 
 .Button.is-secondary {
-  color: var(--color-rose2);
-  box-shadow: inset 0 0 0 1px var(--color-rose2);
+  color: var(--color-rose);
+  box-shadow: inset 0 0 0 1px var(--color-rose);
 }
 
 .Button.is-secondary:hover,
@@ -61,25 +61,25 @@ a > .Button {
 
 .Button.is-secondary:hover,
 .Button.is-secondary.is-hover {
-  background-color: var(--color-rose);
+  background-color: var(--color-rasberry);
   color: var(--color-white);
 }
 
 .Button.is-secondary:active,
 .Button.is-secondary.is-active {
-  background-color: var(--color-razzmatazz);
+  background-color: var(--color-ruby);
   color: var(--color-white);
 }
 
 /* Tertiary intent */
 
 .Button.is-tertiary {
-  color: var(--color-rose2);
+  color: var(--color-rose);
 }
 
 .Button.is-tertiary:hover,
 .Button.is-tertiary.is-hover {
-  background-color: var(--color-concrete);
+  background-color: var(--color-grey);
 }
 
 .Button.is-tertiary:active,

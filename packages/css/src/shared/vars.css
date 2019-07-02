@@ -1,34 +1,32 @@
 :root {
-  --color-white: #fff;
-  --color-concrete: #f2f2f2;
-  --color-alto: #dedede;
-
-  --color-chatelle: #b3abbc;
-  --color-smoky: #685879;
-  --color-tolopea: #190134;
-
-  --color-darkBlue: #200fc7;
-  --color-jacksonsPurple: #30229b;
+  --color-zelda: #fc99bc;
+  --color-rasberry: #fc006b;
+  --color-rose: #f80059;
+  --color-ruby: #cf125e;
+  --color-sonic: #200fc7;
+  --color-jackson: #30229b;
   --color-meteorite: #39197a;
-
-  --color-carnationPink: #fc99bc;
-  --color-rose: #fc006b;
-  --color-rose2: #f80059;
-  --color-razzmatazz: #cf125e;
-
-  --color-capeHoney: #fdeaae;
-  --color-dandelion: #fcd45c;
+  --color-concrete: #e8e5ea;
+  --color-chatelle: #b3abbc;
+  --color-granite: #685879;
+  --color-tolopea: #190134;
+  --color-white: #ffffff;
+  --color-grey: #f2f2f2;
+  --color-alto: #dedede;
+  --color-mint: #a6edc9;
+  --color-malachite: #48eb93;
+  --color-yoshi: #21d47a;
+  --color-luigi: #4cb963;
+  --color-link: #13a05a;
+  --color-sand: #fdeaae;
+  --color-canari: #fcd45c;
+  --color-jake: #e0b01d;
   --color-sunglow: #fccb36;
-  --color-goldenGrass: #e0b01d;
-
-  --color-magicMint: #a6edc9;
-  --color-shamrock: #48eb93;
-  --color-mountainMeadow: #21d47a;
-  --color-mountainMeadow2: #13a05a;
+  --color-bittersweet: #ff785a;
 }
 
 :root {
-  --font-size--xs: 0.625rem; /* 10px */
+  --font-size--xxs: 0.625rem; /* 10px */
   --font-size--xs: 0.75rem; /* 12px */
   --font-size--s: 0.875rem; /* 14px */
   --font-size--m: 1rem; /* 16px */
@@ -38,20 +36,22 @@
 }
 
 :root {
-  --font-weight--regular: 400;
+  --font-weight--normal: 400;
   --font-weight--bold: 700;
   --font-weight--black: 900;
 }
 
 :root {
-  --line-height--normal: 1.4;
+  --line-height--s: 1rem;
+  --line-height--m: 1.4rem;
+  --line-height--l: 1.5rem;
+  --line-height--xl: 2rem;
 }
 
 :root {
-  --icon--s: 1rem; /* 16px */
-  --icon--m: 1.5rem; /* 24px */
-  --icon--l: 2rem; /* 32px */
-  --icon--xl: 4rem; /* 64px */
+  --icon--s: 0.75rem; /* 12px */
+  --icon--m: 1rem; /* 16px */
+  --icon--l: 1.25rem; /* 20px */
 }
 
 :root {
@@ -69,7 +69,7 @@
 
   --gradient-dm: linear-gradient(
     to right bottom,
-    var(--color-darkBlue),
+    var(--color-sonic),
     var(--color-meteorite)
   );
 
@@ -81,10 +81,9 @@
 }
 
 :root {
-  --space-xxs: 0.25rem; /* 4px */
-  --space-xs: 0.5rem; /* 8px */
-  --space-s: 0.75rem; /* 12px */
-  --space-m: 1rem; /* 16px */
-  --space-l: 1.5rem; /* 24px */
-  --space-xl: 2rem; /* 32px */
+  --space-s: 0.25rem; /* 4px */
+  --space-m: 0.5rem; /* 8px */
+  --space-l: 0.75rem; /* 12px */
+  --space-xl: 1rem; /* 16px */
+  --space-xxl: 1.5rem; /* 24px */
 }

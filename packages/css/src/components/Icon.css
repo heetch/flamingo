@@ -21,7 +21,3 @@
 .Icon--l {
   --icon-size: var(--icon--l);
 }
-
-.Icon--xl {
-  --icon-size: var(--icon--xl);
-}
