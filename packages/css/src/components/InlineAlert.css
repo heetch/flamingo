@@ -31,6 +31,10 @@
   cursor: pointer;
 }
 
+.InlineAlert.is-closeable {
+  padding-right: 3rem;
+}
+
 .InlineAlert.InlineAlert--information {
   background-color: var(--color-sonic);
 }

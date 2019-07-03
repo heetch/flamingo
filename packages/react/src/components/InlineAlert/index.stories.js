@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
 import InlineAlert from "./";
@@ -14,7 +15,7 @@ storiesOf("Alerts")
       <InlineAlert
         title={text("Title", "Title of alert")}
         message={text("Message", "Alert message")}
-        onClose={() => console.log("Closed")}
+        onClose={action("Alert closed!")}
         type={select(
           "Alert type",
           INLINE_ALERT_TYPES,
