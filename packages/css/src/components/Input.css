@@ -1,17 +1,17 @@
 .Input-wrapper.is-invalid {
-  --icon-color: var(--color-razzmatazz);
+  --icon-color: var(--color-ruby);
 }
 
 .Input-wrapper.is-valid {
-  --icon-color: var(--color-mountainMeadow2);
+  --icon-color: var(--color-link);
 }
 
 .Input-wrapper.is-invalid .Input {
-  --border-color: var(--color-razzmatazz);
+  --border-color: var(--color-ruby);
 }
 
 .Input-wrapper.is-valid .Input {
-  --border-color: var(--color-mountainMeadow2);
+  --border-color: var(--color-link);
 }
 
 .Input {

@@ -1,11 +1,11 @@
 .u-colorError {
-  color: var(--color-razzmatazz) !important;
+  color: var(--color-ruby) !important;
 }
 
 .u-colorSuccess {
-  color: var(--color-mountainMeadow2) !important;
+  color: var(--color-link) !important;
 }
 
 .u-colorWarning {
-  color: var(--color-goldenGrass) !important;
+  color: var(--color-jake) !important;
 }
