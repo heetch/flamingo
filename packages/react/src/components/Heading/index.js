@@ -25,4 +25,6 @@ Heading.defaultProps = {
   className: undefined,
 };
 
+Heading.LEVELS = HEADING_LEVELS;
+
 export default Heading;
