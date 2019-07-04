@@ -1,15 +1,20 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { text, withKnobs } from "@storybook/addon-knobs";
 
-import { HEADING_LEVELS } from "../../constants/";
 import Heading from "./";
 
-const levels = Object.values(HEADING_LEVELS);
+const { LEVELS } = Heading;
 
-storiesOf("Heading", module).add("With levels", () =>
+const levels = Object.keys(LEVELS);
+const stories = storiesOf("Heading", module);
+
+stories.addDecorator(withKnobs);
+
+stories.add("With levels", () =>
   levels.map(level => (
     <Heading key={`heading-${level}`} as={level}>
-      Heading `{level}`
+      {text("content", "Heading")}
     </Heading>
   ))
 );
