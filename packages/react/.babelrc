@@ -1,6 +1,6 @@
 {
   "exclude": "node_modules/**",
-  "plugins": [],
+  "plugins": ["@babel/plugin-proposal-class-properties"],
   "presets": [
     [
       "@babel/preset-env", { "modules": false }
