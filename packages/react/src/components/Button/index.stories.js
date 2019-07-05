@@ -1,8 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { INTENTS } from "../../constants/";
 import Button from "./";
+import Icon from "../Icon";
+
+import { ICONS, INTENTS } from "../../constants/";
 
 const intents = Object.values(INTENTS);
 const states = ["default", "hover", "active", "disabled"];
@@ -32,6 +34,17 @@ storiesOf("Button", module)
               </Button>
             </div>
           ))}
+        </div>
+      ))}
+    </div>
+  ))
+  .add("With icons", () => (
+    <div style={{ display: "flex" }}>
+      {[ICONS.IconCheck, ICONS.IconClose].map(icon => (
+        <div key={icon} style={{ padding: "var(--space-s)" }}>
+          <Button>
+            <Icon icon={icon} />
+          </Button>
         </div>
       ))}
     </div>
