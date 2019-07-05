@@ -1,15 +1,13 @@
 .Button {
-  margin: var(--space-l) 0;
-  padding: var(--space-l) var(--space-xxl);
+  display: inline-block;
+  margin: var(--space-m) 0;
+  padding: var(--space-m) var(--space-xxl);
   font-size: var(--font-size--s);
-  font-weight: bold;
+  font-weight: var(--font-weight--bold);
+  line-height: var(--line-height--m);
   border: 0;
   border-radius: var(--space-xxl);
   outline: none;
-}
-
-a > .Button {
-  cursor: pointer;
 }
 
 .Button[disabled],
