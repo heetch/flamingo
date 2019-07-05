@@ -14,7 +14,7 @@ stories.addDecorator(withKnobs);
 stories.add("With levels", () =>
   levels.map(level => (
     <Heading key={`heading-${level}`} as={level}>
-      {text("content", "Heading")}
+      {text("Content", "Heading")}
     </Heading>
   ))
 );
