@@ -10,6 +10,16 @@ export default () => <Button>Content</Button>;
 
 ## Props
 
+#### `as`: String or Function
+
+```jsx
+export default () => <Button as="a" />;
+```
+
+```jsx
+export default () => <Button as={Link} />;
+```
+
 #### `className`: String
 
 ```jsx

@@ -7,6 +7,12 @@ import Button from "./";
 const intents = Object.values(INTENTS);
 const states = ["default", "hover", "active", "disabled"];
 
+const Link = ({ children, to, ...props }) => (
+  <a {...props} href={to}>
+    {children}
+  </a>
+);
+
 storiesOf("Button", module)
   .add("With intents", () =>
     intents.map(intent =>
@@ -24,7 +30,7 @@ storiesOf("Button", module)
     )
   )
   .add("As link", () => (
-    <a href="heetch.com" onClick={e => e.preventDefault()}>
-      <Button>Link</Button>
-    </a>
+    <Button as={Link} to="https://www.heetch.com" target="_blank">
+      Link to heetch.com
+    </Button>
   ));
