@@ -1,5 +1,6 @@
 .Tabs {
   position: relative;
+  white-space: nowrap;
 }
 
 .Tabs span {
@@ -18,8 +19,10 @@
 }
 
 .Tabs span .Tabs-marker {
+  float: left;
   width: 100%;
   height: var(--space-s);
+  margin: 1px 0;
   background-color: var(--color-grey);
 }
 
@@ -28,15 +31,19 @@
 }
 
 .Tabs span .Tabs-marker.is-active {
+  height: calc(var(--space-s) + 2px);
+  padding: 1px 0;
+  margin: 0;
   background-color: var(--color-rose);
+  border-radius: 3px;
 }
 
 .Tabs span:nth-child(1) .Tabs-marker {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .Tabs span:last-child .Tabs-marker {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }

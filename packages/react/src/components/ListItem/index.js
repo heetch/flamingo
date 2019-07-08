@@ -33,11 +33,25 @@ const ListItem = ({
       </div>
     )}
     <div>
-      <div className="ListItem-title">{children}</div>
+      <div
+        className={cx({
+          "ListItem-title": type !== LIST_ITEM_TYPES.MINI,
+          "ListItem-subtitle": type === LIST_ITEM_TYPES.MINI,
+        })}
+      >
+        {children}
+      </div>
       {subtitle && <div className="ListItem-subtitle">{subtitle}</div>}
     </div>
     <div className="ListItem-valueContainer">
-      <span>{value}</span>
+      <span
+        className={cx({
+          "ListItem-title": type !== LIST_ITEM_TYPES.MINI,
+          "ListItem-subtitle": type === LIST_ITEM_TYPES.MINI,
+        })}
+      >
+        {value}
+      </span>
       <span className="ListItem-itemIcon">
         {(onClick || rightIcon) && (
           <Icon icon={rightIcon || ICONS.IconArrowRight} />
