@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, withKnobs } from "@storybook/addon-knobs";
+import { select, text, withKnobs } from "@storybook/addon-knobs";
 
 import Heading from "./";
 
@@ -14,7 +14,13 @@ stories.addDecorator(withKnobs);
 stories.add("With levels", () =>
   levels.map(level => (
     <Heading key={`heading-${level}`} as={level}>
-      {text("Content", "Heading")}
+      Heading {level}
     </Heading>
   ))
 );
+
+stories.add("Playground", () => (
+  <Heading as={select("Level", levels)}>
+    {text("Content", "Heading content")}
+  </Heading>
+));
