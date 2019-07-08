@@ -12,7 +12,7 @@ const ALERT_ICONS = {
 
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
 
-const InlineAlert = ({ title, message, type, onClose }) => (
+const InlineAlert = ({ title, children, type, onClose }) => (
   <div
     className={cx("InlineAlert", `InlineAlert--${type}`, {
       "is-closeable": !!onClose,
@@ -28,7 +28,7 @@ const InlineAlert = ({ title, message, type, onClose }) => (
     </div>
     <div>
       <div className="InlineAlert-title">{title}</div>
-      <div>{message}</div>
+      {children}
     </div>
   </div>
 );
@@ -38,8 +38,6 @@ InlineAlert.propTypes = {
   type: PropTypes.oneOf(ALERT_TYPES),
   /** Title of alert */
   title: PropTypes.string.isRequired,
-  /** Message of alert */
-  message: PropTypes.string.isRequired,
   /** Method that is triggered when X button on the alert is clicked. Most likely to be used for hiding the alert. If not provided, no X button is gonna be shown. */
   onClose: PropTypes.func.isRequired,
 };

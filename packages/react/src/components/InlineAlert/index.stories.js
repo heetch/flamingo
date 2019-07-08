@@ -14,13 +14,14 @@ storiesOf("Alerts")
     withInfo("")(() => (
       <InlineAlert
         title={text("Title", "Title of alert")}
-        message={text("Message", "Alert message")}
         onClose={action("Alert closed!")}
         type={select(
           "Alert type",
           INLINE_ALERT_TYPES,
           INLINE_ALERT_TYPES.INFORMATION
         )}
-      />
+      >
+        {text("Message", "Alert message")}
+      </InlineAlert>
     ))
   );

@@ -2,40 +2,40 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-class Tabulation extends Component {
+class Tabs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTabIndex: null,
+      activeIndex: null,
     };
   }
 
-  handleTabClick = activeTabIndex => {
+  handleTabClick = activeIndex => {
     const { buildReturnObject, onClick, elements } = this.props;
-    this.setState({ activeTabIndex });
+    this.setState({ activeIndex });
     if (onClick) {
       onClick(
         buildReturnObject
-          ? buildReturnObject(elements[activeTabIndex])
-          : activeTabIndex
+          ? buildReturnObject(elements[activeIndex])
+          : activeIndex
       );
     }
   };
 
   render() {
     const { elements, buildTabLabel } = this.props;
-    const { activeTabIndex } = this.state;
+    const { activeIndex } = this.state;
 
     return (
-      <div className="Tabulation">
+      <div className="Tabs">
         {elements.map((element, index) => (
           <span key={element} onClick={() => this.handleTabClick(index)}>
-            <div className="Tabulation-label">
+            <div className="Tabs-label">
               {buildTabLabel ? buildTabLabel(element) : element}
             </div>
             <div
-              className={cx("Tabulation-marker", {
-                "is-active": activeTabIndex === index,
+              className={cx("Tabs-marker", {
+                "is-active": activeIndex === index,
               })}
             />
           </span>
@@ -45,7 +45,7 @@ class Tabulation extends Component {
   }
 }
 
-Tabulation.propTypes = {
+Tabs.propTypes = {
   /** An array of strings or objects that will make tabs content */
   elements: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.object])
@@ -57,9 +57,9 @@ Tabulation.propTypes = {
   onClick: PropTypes.func,
 };
 
-Tabulation.defaultProps = {
+Tabs.defaultProps = {
   buildTabLabel: null,
   buildReturnObject: null,
 };
 
-export default Tabulation;
+export default Tabs;

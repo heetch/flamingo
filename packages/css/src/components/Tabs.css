@@ -1,14 +1,14 @@
-.Tabulation {
+.Tabs {
   position: relative;
 }
 
-.Tabulation span {
+.Tabs span {
   display: inline-block;
   text-align: center;
   cursor: pointer;
 }
 
-.Tabulation span .Tabulation-label {
+.Tabs span .Tabs-label {
   color: var(--color-tolopea);
   font-size: var(--font-size--s);
   font-weight: var(--font-weight--bold);
@@ -17,26 +17,26 @@
   padding: 0 var(--space-xl);
 }
 
-.Tabulation span .Tabulation-marker {
+.Tabs span .Tabs-marker {
   width: 100%;
   height: var(--space-s);
   background-color: var(--color-grey);
 }
 
-.Tabulation span:hover .Tabulation-marker {
+.Tabs span:hover .Tabs-marker {
   background-color: var(--color-alto);
 }
 
-.Tabulation span .Tabulation-marker.is-active {
+.Tabs span .Tabs-marker.is-active {
   background-color: var(--color-rose);
 }
 
-.Tabulation span:nth-child(1) .Tabulation-marker {
+.Tabs span:nth-child(1) .Tabs-marker {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.Tabulation span:last-child .Tabulation-marker {
+.Tabs span:last-child .Tabs-marker {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }

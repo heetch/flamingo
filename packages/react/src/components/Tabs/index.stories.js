@@ -3,14 +3,14 @@ import { storiesOf } from "@storybook/react";
 import { withKnobs, array } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
-import Tabulation from "./";
+import Tabs from "./";
 
 storiesOf("Navigation")
   .addDecorator(withKnobs)
   .add(
-    "Tabulation",
+    "Tabs",
     withInfo("")(() => (
-      <Tabulation
+      <Tabs
         elements={array("Tabs (separated by comma)", [
           "Cars",
           "Drivers",

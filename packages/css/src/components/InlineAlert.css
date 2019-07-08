@@ -5,26 +5,23 @@
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
   border-radius: var(--space-m);
-  outline: none;
-  border: 0;
   color: var(--color-white);
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
 }
 
-.InlineAlert .InlineAlert-title {
+.InlineAlert-title {
   font-weight: bold;
 }
 
-.InlineAlert .InlineAlert-icon {
+.InlineAlert-icon {
   padding-right: var(--space-xl);
   display: flex;
   display: -webkit-flex;
   align-items: center;
 }
 
-.InlineAlert .InlineAlert-iconClose {
+.InlineAlert-iconClose {
   position: absolute;
   top: 5px;
   right: 10px;

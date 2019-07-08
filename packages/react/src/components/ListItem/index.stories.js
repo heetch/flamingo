@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
-import { ICONS } from "../../constants/";
+import { ICONS, LIST_ITEM_TYPES } from "../../constants/";
 
 import ListItem from "./";
 
@@ -27,15 +27,18 @@ storiesOf("List Items")
         return (
           <ListItem
             active={boolean(`(${itemNumber}) Is active?`, false, groupId)}
-            title={text(`(${itemNumber}) Title`, "ListItem", groupId)}
+            type={select(
+              `(${itemNumber}) Type`,
+              LIST_ITEM_TYPES,
+              null,
+              groupId
+            )}
             subtitle={text(
               `(${itemNumber}) Subtitle`,
               "This is subtitle",
               groupId
             )}
             value={text(`(${itemNumber}) Value`, "Click me", groupId)}
-            subitem={boolean(`(${itemNumber}) Is subitem?`, false, groupId)}
-            miniitem={boolean(`(${itemNumber}) Is mini item?`, false, groupId)}
             hideDivider={boolean(
               `(${itemNumber}) Should hide divider?`,
               false,
@@ -48,7 +51,9 @@ storiesOf("List Items")
               ICONS[select(`(${itemNumber}) Right icon`, ICONS, null, groupId)]
             }
             onClick={action("ListItem clicked")}
-          />
+          >
+            {text(`(${itemNumber}) Title`, "ListItem", groupId)}
+          </ListItem>
         );
       })
     )
