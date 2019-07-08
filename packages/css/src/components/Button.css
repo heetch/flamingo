@@ -29,6 +29,14 @@
   background-color: var(--color-ruby);
 }
 
+@media (max-width: 460px) {
+  /* --breakpoint-s */
+  .Button {
+    flex-grow: 1;
+    padding: var(--space-l) var(--space-xl);
+  }
+}
+
 /* Primary intent */
 
 .Button.is-primary {
