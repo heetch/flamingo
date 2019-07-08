@@ -1,7 +1,7 @@
 .Button {
   display: inline-block;
   margin: var(--space-m) 0;
-  padding: var(--space-m) var(--space-xxl);
+  padding: var(--space-m) var(--space-xl);
   font-size: var(--font-size--s);
   font-weight: var(--font-weight--bold);
   line-height: var(--line-height--m);
