@@ -17,6 +17,18 @@
   cursor: not-allowed !important;
 }
 
+.Button:hover,
+.Button.is-hover {
+  color: var(--color-white);
+  background-color: var(--color-rasberry);
+}
+
+.Button:active,
+.Button.is-active {
+  color: var(--color-white);
+  background-color: var(--color-ruby);
+}
+
 /* Primary intent */
 
 .Button.is-primary {
@@ -54,19 +66,8 @@
 .Button.is-secondary.is-active,
 .Button.is-secondary[disabled],
 .Button.is-secondary.is-disabled {
+  color: var(--color-white);
   box-shadow: initial;
-}
-
-.Button.is-secondary:hover,
-.Button.is-secondary.is-hover {
-  background-color: var(--color-rasberry);
-  color: var(--color-white);
-}
-
-.Button.is-secondary:active,
-.Button.is-secondary.is-active {
-  background-color: var(--color-ruby);
-  color: var(--color-white);
 }
 
 /* Tertiary intent */
@@ -76,11 +77,10 @@
 }
 
 .Button.is-tertiary:hover,
-.Button.is-tertiary.is-hover {
-  background-color: var(--color-grey);
-}
-
+.Button.is-tertiary.is-hover,
 .Button.is-tertiary:active,
-.Button.is-tertiary.is-active {
-  background-color: var(--color-alto);
+.Button.is-tertiary.is-active,
+.Button.is-tertiary[disabled],
+.Button.is-tertiary.is-disabled {
+  color: var(--color-white);
 }
