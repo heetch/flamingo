@@ -1,6 +1,7 @@
 import { addParameters, configure, addDecorator } from "@storybook/react";
-import centered from "@storybook/addon-centered/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import FlexWrapperDecorator from "./FlexWrapperDecorator";
+
 import "normalize.css";
 import "../../css/dist/index.css";
 
@@ -10,7 +11,7 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-addDecorator(centered);
+addDecorator(FlexWrapperDecorator);
 
 addParameters({
   options: {
