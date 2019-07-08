@@ -18,13 +18,17 @@
 }
 
 .Button:hover,
-.Button.is-hover {
+.Button.is-hover,
+.Button.Button--icon:hover,
+.Button.Button--icon.is-hover {
   color: var(--color-white);
   background-color: var(--color-rasberry);
 }
 
 .Button:active,
-.Button.is-active {
+.Button.is-active,
+.Button.Button--icon:active,
+.Button.Button--icon.is-active {
   color: var(--color-white);
   background-color: var(--color-ruby);
 }
@@ -34,6 +38,10 @@
   .Button {
     flex-grow: 1;
     padding: var(--space-l) var(--space-xl);
+  }
+
+  .Button.Button--icon {
+    flex-grow: inherit;
   }
 }
 
@@ -91,4 +99,15 @@
 .Button.is-tertiary[disabled],
 .Button.is-tertiary.is-disabled {
   color: var(--color-white);
+}
+
+/* Icon */
+
+.Button.Button--icon {
+  padding: var(--space-m);
+  line-height: 1;
+  background: var(--color-white);
+  color: var(--color-tolopea);
+  box-shadow: inherit;
+  border-radius: 50%;
 }
