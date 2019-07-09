@@ -2,19 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { Icon } from "..";
-import { ICONS, LIST_ITEM_TYPES } from "../../constants/";
+import {
+  ICONS,
+  LIST_ITEM_TYPES,
+  LIST_ITEM_VALUES_TYPES,
+} from "../../constants/";
 
 const ICONS_KEYS = Object.keys(ICONS);
 
 const ListItem = ({
-  active,
   children,
   subtitle,
   type,
+  valueType,
   value,
   leftIcon,
   rightIcon,
   hideDivider,
+  strongValue,
   onClick,
 }) => (
   <div
@@ -22,7 +27,6 @@ const ListItem = ({
     className={cx("ListItem", {
       "ListItem--subitem": type === LIST_ITEM_TYPES.SUB,
       "ListItem--miniitem": type === LIST_ITEM_TYPES.MINI,
-      "is-active": active,
       "is-clickable": !!onClick,
       "ListItem-divider": !hideDivider,
     })}
@@ -43,7 +47,15 @@ const ListItem = ({
       </div>
       {subtitle && <div className="ListItem-subtitle">{subtitle}</div>}
     </div>
-    <div className="ListItem-valueContainer">
+    <div
+      className={cx("ListItem-valueContainer", {
+        "is-dark": valueType === LIST_ITEM_VALUES_TYPES.DARK,
+        "is-sub-dark": valueType === LIST_ITEM_VALUES_TYPES.SUB_DARK,
+        "is-error": valueType === LIST_ITEM_VALUES_TYPES.ERROR,
+        "is-success": valueType === LIST_ITEM_VALUES_TYPES.SUCCESS,
+        "is-strong-value": strongValue,
+      })}
+    >
       <span
         className={cx({
           "ListItem-title": type !== LIST_ITEM_TYPES.MINI,
@@ -52,7 +64,11 @@ const ListItem = ({
       >
         {value}
       </span>
-      <span className="ListItem-itemIcon">
+      <span
+        className={cx("ListItem-itemIcon", {
+          "is-mini": type === LIST_ITEM_TYPES.MINI,
+        })}
+      >
         {(onClick || rightIcon) && (
           <Icon icon={rightIcon || ICONS.IconArrowRight} />
         )}
@@ -62,28 +78,30 @@ const ListItem = ({
 );
 
 ListItem.propTypes = {
-  active: PropTypes.bool,
   children: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   /** Defines type and size of an item */
   type: PropTypes.oneOf(LIST_ITEM_TYPES),
+  valueType: PropTypes.oneOf(LIST_ITEM_VALUES_TYPES),
   value: PropTypes.string,
   leftIcon: PropTypes.oneOf(ICONS_KEYS),
   /** If `onClick` is set, default icon is Arrow Right */
   rightIcon: PropTypes.oneOf(ICONS_KEYS),
   /** Should be set to `true` for last item in group */
   hideDivider: PropTypes.bool,
+  strongValue: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 ListItem.defaultProps = {
-  active: false,
   subtitle: undefined,
   type: LIST_ITEM_TYPES.NORMAL,
+  valueType: LIST_ITEM_VALUES_TYPES.DARK,
   value: undefined,
   leftIcon: undefined,
   rightIcon: undefined,
   hideDivider: false,
+  strongValue: false,
   onClick: undefined,
 };
 

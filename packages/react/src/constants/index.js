@@ -51,3 +51,10 @@ export const LIST_ITEM_TYPES = {
   SUB: "sub",
   MINI: "mini",
 };
+
+export const LIST_ITEM_VALUES_TYPES = {
+  DARK: "dark",
+  SUB_DARK: "subDark",
+  ERROR: "error",
+  SUCCESS: "success",
+};

@@ -9,7 +9,11 @@ import {
 } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
-import { ICONS, LIST_ITEM_TYPES } from "../../constants/";
+import {
+  ICONS,
+  LIST_ITEM_TYPES,
+  LIST_ITEM_VALUES_TYPES,
+} from "../../constants/";
 
 import ListItem from "./";
 
@@ -26,11 +30,21 @@ storiesOf("List Items")
 
         return (
           <ListItem
-            active={boolean(`(${itemNumber}) Is active?`, false, groupId)}
             type={select(
               `(${itemNumber}) Type`,
               LIST_ITEM_TYPES,
               null,
+              groupId
+            )}
+            valueType={select(
+              `(${itemNumber}) Value type`,
+              LIST_ITEM_VALUES_TYPES,
+              null,
+              groupId
+            )}
+            strongValue={boolean(
+              `(${itemNumber}) Strong value`,
+              false,
               groupId
             )}
             subtitle={text(

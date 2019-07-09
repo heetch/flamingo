@@ -16,10 +16,6 @@
   padding: var(--space-s) var(--space-l);
 }
 
-.ListItem.is-active {
-  background-color: var(--color-alto);
-}
-
 .ListItem.is-clickable {
   cursor: pointer;
 }
@@ -28,12 +24,15 @@
   background-color: var(--color-grey);
 }
 
+.ListItem.is-clickable:active {
+  background-color: var(--color-alto);
+}
+
 .ListItem-divider {
   border-bottom: 1px solid var(--color-grey);
 }
 
 .ListItem-title {
-  color: var(--color-tolopea);
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
 }
@@ -55,7 +54,6 @@
 }
 
 .ListItem-valueContainer {
-  color: var(--color-tolopea);
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
   margin-left: auto;
@@ -66,12 +64,35 @@
   align-items: center;
 }
 
+.ListItem-valueContainer.is-dark {
+  color: var(--color-tolopea);
+}
+
+.ListItem-valueContainer.is-sub-dark {
+  color: var(--color-granite);
+}
+
+.ListItem-valueContainer.is-error {
+  color: var(--color-bittersweet);
+}
+
+.ListItem-valueContainer.is-success {
+  color: var(--color-link);
+}
+
+.ListItem-valueContainer.is-strong-value {
+  font-weight: var(--font-weight--bold);
+}
+
 .ListItem-itemIcon {
   width: var(--space-m);
   margin: 0 var(--space-m);
   display: flex;
   display: -webkit-flex;
-  color: var(--color-tolopea);
+}
+
+.ListItem-itemIcon.is-mini {
+  color: var(--color-granite);
 }
 
 @media only screen and (max-width: 460px) {
