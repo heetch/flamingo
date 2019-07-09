@@ -38,10 +38,7 @@
   .Button {
     flex-grow: 1;
     padding: var(--space-l) var(--space-xl);
-  }
-
-  .Button.Button--icon {
-    flex-grow: inherit;
+    text-align: center;
   }
 }
 
@@ -110,4 +107,12 @@
   color: var(--color-tolopea);
   box-shadow: inherit;
   border-radius: 50%;
+}
+
+@media (max-width: 460px) {
+  /* --breakpoint-s */
+  .Button.Button--icon {
+    flex-grow: inherit;
+    padding: var(--space-l);
+  }
 }
