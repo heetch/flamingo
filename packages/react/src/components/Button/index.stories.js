@@ -44,14 +44,14 @@ stories.add("With intents", () => (
 ));
 
 stories.add("With icons", () => (
-  <div style={{ display: "flex" }}>
-    {[ICONS.IconCheck, ICONS.IconClose].map(icon => (
-      <div key={icon} style={{ padding: "var(--space-s)" }}>
-        <Button>
-          <Icon icon={icon} />
-        </Button>
-      </div>
-    ))}
+  <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+    <Button>
+      Success <Icon icon={ICONS.IconCheck} />
+    </Button>
+
+    <Button>
+      Nope <Icon icon={ICONS.IconClose} />
+    </Button>
   </div>
 ));
 
