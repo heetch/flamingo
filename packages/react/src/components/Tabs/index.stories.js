@@ -5,10 +5,10 @@ import { withInfo } from "@storybook/addon-info";
 
 import Tabs from "./";
 
-storiesOf("Navigation")
+storiesOf("Navigation/Tabs")
   .addDecorator(withKnobs)
   .add(
-    "Tabs",
+    "Playground",
     withInfo("")(() => (
       <Tabs
         elements={array("Tabs (separated by comma)", [

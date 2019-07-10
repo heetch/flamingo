@@ -2,17 +2,15 @@
   padding: var(--space-l);
   position: relative;
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
 }
 
-.ListItem--subitem {
+.ListItem--sub {
   padding: var(--space-m) var(--space-l);
 }
 
-.ListItem--miniitem {
+.ListItem--mini {
   padding: var(--space-s) var(--space-l);
 }
 
@@ -28,7 +26,7 @@
   background-color: var(--color-alto);
 }
 
-.ListItem-divider {
+.ListItem.has-divider {
   border-bottom: 1px solid var(--color-grey);
 }
 
@@ -42,7 +40,6 @@
   margin: var(--space-m) 0;
   margin-right: var(--space-xl);
   display: flex;
-  display: -webkit-flex;
   color: var(--color-tolopea);
 }
 
@@ -59,7 +56,6 @@
   margin-left: auto;
   padding-left: var(--space-l);
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
   align-items: center;
 }
@@ -88,7 +84,6 @@
   width: var(--space-m);
   margin: 0 var(--space-m);
   display: flex;
-  display: -webkit-flex;
 }
 
 .ListItem-itemIcon.is-mini {
@@ -96,7 +91,7 @@
 }
 
 @media only screen and (max-width: 460px) {
-  .ListItem {
+  .ListItem:not(.ListItem--mini):not(.ListItem--sub) {
     padding: var(--space-xl) var(--space-l);
   }
 }

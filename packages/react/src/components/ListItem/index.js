@@ -4,7 +4,7 @@ import cx from "classnames";
 import { Icon } from "..";
 import {
   ICONS,
-  LIST_ITEM_TYPES,
+  LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
 } from "../../constants/";
 
@@ -25,10 +25,10 @@ const ListItem = ({
   <div
     onClick={onClick}
     className={cx("ListItem", {
-      "ListItem--subitem": type === LIST_ITEM_TYPES.SUB,
-      "ListItem--miniitem": type === LIST_ITEM_TYPES.MINI,
+      "ListItem--sub": type === LIST_ITEM_SIZES.SUB,
+      "ListItem--mini": type === LIST_ITEM_SIZES.MINI,
       "is-clickable": !!onClick,
-      "ListItem-divider": !hideDivider,
+      "has-divider": !hideDivider,
     })}
   >
     {leftIcon && (
@@ -39,8 +39,8 @@ const ListItem = ({
     <div>
       <div
         className={cx({
-          "ListItem-title": type !== LIST_ITEM_TYPES.MINI,
-          "ListItem-subtitle": type === LIST_ITEM_TYPES.MINI,
+          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
+          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {children}
@@ -58,15 +58,15 @@ const ListItem = ({
     >
       <span
         className={cx({
-          "ListItem-title": type !== LIST_ITEM_TYPES.MINI,
-          "ListItem-subtitle": type === LIST_ITEM_TYPES.MINI,
+          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
+          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {value}
       </span>
       <span
         className={cx("ListItem-itemIcon", {
-          "is-mini": type === LIST_ITEM_TYPES.MINI,
+          "is-mini": type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {(onClick || rightIcon) && (
@@ -78,10 +78,10 @@ const ListItem = ({
 );
 
 ListItem.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   subtitle: PropTypes.string,
   /** Defines type and size of an item */
-  type: PropTypes.oneOf(LIST_ITEM_TYPES),
+  type: PropTypes.oneOf(LIST_ITEM_SIZES),
   valueType: PropTypes.oneOf(LIST_ITEM_VALUES_TYPES),
   value: PropTypes.string,
   leftIcon: PropTypes.oneOf(ICONS_KEYS),
@@ -95,7 +95,7 @@ ListItem.propTypes = {
 
 ListItem.defaultProps = {
   subtitle: undefined,
-  type: LIST_ITEM_TYPES.NORMAL,
+  type: LIST_ITEM_SIZES.NORMAL,
   valueType: LIST_ITEM_VALUES_TYPES.DARK,
   value: undefined,
   leftIcon: undefined,

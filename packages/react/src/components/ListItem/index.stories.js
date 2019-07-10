@@ -11,7 +11,7 @@ import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
 import {
   ICONS,
-  LIST_ITEM_TYPES,
+  LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
 } from "../../constants/";
 
@@ -19,10 +19,10 @@ import ListItem from "./";
 
 ICONS.None = null;
 
-storiesOf("List Items")
+storiesOf("Items/ListItem")
   .addDecorator(withKnobs)
   .add(
-    "ListItem",
+    "Playground",
     withInfo("")(() =>
       Array.from(new Array(number("Number of levels", 1))).map((_, index) => {
         const itemNumber = index + 1;
@@ -31,8 +31,8 @@ storiesOf("List Items")
         return (
           <ListItem
             type={select(
-              `(${itemNumber}) Type`,
-              LIST_ITEM_TYPES,
+              `(${itemNumber}) Size`,
+              LIST_ITEM_SIZES,
               null,
               groupId
             )}
@@ -70,5 +70,19 @@ storiesOf("List Items")
           </ListItem>
         );
       })
+    )
+  )
+  .add("All states", () =>
+    Object.values(LIST_ITEM_SIZES).map(type =>
+      Object.values(LIST_ITEM_VALUES_TYPES).map(valueType => (
+        <ListItem
+          type={type}
+          valueType={valueType}
+          subtitle="Item's subtitle"
+          value={valueType}
+        >
+          {`List item of type: ${type}`}
+        </ListItem>
+      ))
     )
   );

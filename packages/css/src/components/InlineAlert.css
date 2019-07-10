@@ -17,7 +17,6 @@
 .InlineAlert-icon {
   padding-right: var(--space-xl);
   display: flex;
-  display: -webkit-flex;
   align-items: center;
 }
 
@@ -26,20 +25,25 @@
   top: 5px;
   right: 10px;
   cursor: pointer;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-white);
 }
 
 .InlineAlert.is-closeable {
   padding-right: 3rem;
 }
 
-.InlineAlert.InlineAlert--information {
+.InlineAlert--information {
   background-color: var(--color-sonic);
 }
 
-.InlineAlert.InlineAlert--success {
+.InlineAlert--success {
   background-color: var(--color-link);
 }
 
-.InlineAlert.InlineAlert--error {
+.InlineAlert--error {
   background-color: var(--color-bittersweet);
 }

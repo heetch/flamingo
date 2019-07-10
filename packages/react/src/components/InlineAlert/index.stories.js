@@ -7,10 +7,10 @@ import { withInfo } from "@storybook/addon-info";
 import InlineAlert from "./";
 import { INLINE_ALERT_TYPES } from "../../constants/";
 
-storiesOf("Alerts")
+storiesOf("Alerts/InlineAlert")
   .addDecorator(withKnobs)
   .add(
-    "InlineAlert",
+    "Playground",
     withInfo("")(() => (
       <InlineAlert
         title={text("Title", "Title of alert")}
@@ -22,6 +22,17 @@ storiesOf("Alerts")
         )}
       >
         {text("Message", "Alert message")}
+      </InlineAlert>
+    ))
+  )
+  .add("All states", () =>
+    Object.values(INLINE_ALERT_TYPES).map(type => (
+      <InlineAlert
+        title={`Inline alert of type ${type}`}
+        onClose={action(`Alert ${type} closed!`)}
+        type={type}
+      >
+        Alert message
       </InlineAlert>
     ))
   );
