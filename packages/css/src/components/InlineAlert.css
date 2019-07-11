@@ -12,6 +12,9 @@
 
 .InlineAlert-title {
   font-weight: bold;
+  font-size: var(--font-size--m);
+  line-height: var(--line-height--m);
+  margin: 0;
 }
 
 .InlineAlert-icon {

@@ -27,7 +27,7 @@ const InlineAlert = ({ title, children, type, onClose }) => (
       <Icon icon={ALERT_ICONS[type]} />
     </div>
     <div>
-      <div className="InlineAlert-title">{title}</div>
+      <h1 className="InlineAlert-title">{title}</h1>
       {children}
     </div>
   </div>

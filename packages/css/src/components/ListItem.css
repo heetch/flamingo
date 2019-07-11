@@ -33,6 +33,7 @@
 .ListItem-title {
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
+  margin: 0;
 }
 
 .ListItem-leftIcon {
@@ -48,6 +49,7 @@
   font-size: var(--font-size--s);
   line-height: var(--line-height--m);
   color: var(--color-granite);
+  margin: 0;
 }
 
 .ListItem-valueContainer {

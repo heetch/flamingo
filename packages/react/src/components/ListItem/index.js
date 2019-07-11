@@ -45,7 +45,7 @@ const ListItem = ({
       >
         {children}
       </div>
-      {subtitle && <div className="ListItem-subtitle">{subtitle}</div>}
+      {subtitle && <p className="ListItem-subtitle">{subtitle}</p>}
     </div>
     <div
       className={cx("ListItem-valueContainer", {
