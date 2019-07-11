@@ -1,15 +1,13 @@
 .Button {
-  margin: var(--space-l) 0;
-  padding: var(--space-l) var(--space-xxl);
+  display: inline-block;
+  margin: var(--space-m) 0;
+  padding: var(--space-m) var(--space-xl);
   font-size: var(--font-size--s);
-  font-weight: bold;
+  font-weight: var(--font-weight--bold);
+  line-height: var(--line-height--m);
   border: 0;
   border-radius: var(--space-xxl);
   outline: none;
-}
-
-a > .Button {
-  cursor: pointer;
 }
 
 .Button[disabled],
@@ -17,6 +15,31 @@ a > .Button {
   background-color: var(--color-grey) !important;
   color: var(--color-chatelle) !important;
   cursor: not-allowed !important;
+}
+
+.Button:hover,
+.Button.is-hover,
+.Button.Button--icon:hover,
+.Button.Button--icon.is-hover {
+  color: var(--color-white);
+  background-color: var(--color-rasberry);
+}
+
+.Button:active,
+.Button.is-active,
+.Button.Button--icon:active,
+.Button.Button--icon.is-active {
+  color: var(--color-white);
+  background-color: var(--color-ruby);
+}
+
+@media (max-width: 460px) {
+  /* --breakpoint-s */
+  .Button {
+    flex-grow: 1;
+    padding: var(--space-l) var(--space-xl);
+    text-align: center;
+  }
 }
 
 /* Primary intent */
@@ -56,19 +79,8 @@ a > .Button {
 .Button.is-secondary.is-active,
 .Button.is-secondary[disabled],
 .Button.is-secondary.is-disabled {
+  color: var(--color-white);
   box-shadow: initial;
-}
-
-.Button.is-secondary:hover,
-.Button.is-secondary.is-hover {
-  background-color: var(--color-rasberry);
-  color: var(--color-white);
-}
-
-.Button.is-secondary:active,
-.Button.is-secondary.is-active {
-  background-color: var(--color-ruby);
-  color: var(--color-white);
 }
 
 /* Tertiary intent */
@@ -78,11 +90,29 @@ a > .Button {
 }
 
 .Button.is-tertiary:hover,
-.Button.is-tertiary.is-hover {
-  background-color: var(--color-grey);
+.Button.is-tertiary.is-hover,
+.Button.is-tertiary:active,
+.Button.is-tertiary.is-active,
+.Button.is-tertiary[disabled],
+.Button.is-tertiary.is-disabled {
+  color: var(--color-white);
 }
 
-.Button.is-tertiary:active,
-.Button.is-tertiary.is-active {
-  background-color: var(--color-alto);
+/* Icon */
+
+.Button.Button--icon {
+  padding: var(--space-m);
+  line-height: 1;
+  background: var(--color-white);
+  color: var(--color-tolopea);
+  box-shadow: inherit;
+  border-radius: 50%;
+}
+
+@media (max-width: 460px) {
+  /* --breakpoint-s */
+  .Button.Button--icon {
+    flex-grow: inherit;
+    padding: var(--space-l);
+  }
 }

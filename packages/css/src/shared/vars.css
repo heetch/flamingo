@@ -87,3 +87,9 @@
   --space-xl: 1rem; /* 16px */
   --space-xxl: 1.5rem; /* 24px */
 }
+
+:root {
+  --breakpoint-s: 28.75rem; /* 460px */
+  --breakpoint-m: 50rem; /* 800px */
+  --breakpoint-l: 68.75rem; /* 1100px */
+}
