@@ -3,6 +3,7 @@
 @import "./shared/helpers.css";
 
 @import "./components/Button.css";
+@import "./components/FileUploader.css";
 @import "./components/Form-el.css";
 @import "./components/Heading.css";
 @import "./components/Helper.css";
