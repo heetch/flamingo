@@ -1,8 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { INPUT_TYPES } from "../../constants/";
-import Input from "./";
+import { INPUT_TYPES } from "../../constants";
+import Input from ".";
 
 const types = Object.values(INPUT_TYPES);
 const states = ["default", "hover", "focus", "disabled"];

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { Select } from "../";
+import { Select } from "..";
 
 const states = ["default", "hover", "disabled"];
 

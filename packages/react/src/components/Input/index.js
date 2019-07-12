@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import Icon from "../Icon/";
-import { ICON_SIZES, INPUT_TYPES } from "../../constants/";
+import Icon from "../Icon";
+import { ICON_SIZES, INPUT_TYPES } from "../../constants";
 
 const types = Object.values(INPUT_TYPES);
 
@@ -56,6 +56,7 @@ const Input = ({
 Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -67,6 +68,7 @@ Input.propTypes = {
 Input.defaultProps = {
   className: undefined,
   disabled: false,
+  fill: false,
   invalid: false,
   placeholder: "",
   type: INPUT_TYPES.TEXT,

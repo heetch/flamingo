@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import Text from "./";
+import Text from ".";
 
 const preventDefault = e => e.preventDefault();
 

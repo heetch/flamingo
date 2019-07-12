@@ -17,6 +17,7 @@ const Helper = ({ className, children, ...props }) => (
 
 Helper.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 };
 
 Helper.defaultProps = {

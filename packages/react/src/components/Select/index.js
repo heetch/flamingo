@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import { ICON_SIZES } from "../../constants/";
+import { ICON_SIZES } from "../../constants";
 
 const Select = ({
   className,
@@ -47,6 +47,7 @@ const Select = ({
 Select.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
@@ -60,6 +61,7 @@ Select.propTypes = {
 Select.defaultProps = {
   className: undefined,
   disabled: false,
+  fill: false,
   options: [],
 };
 

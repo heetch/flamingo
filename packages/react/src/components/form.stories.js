@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { Helper, Input, Label, Select } from "./";
+import { Helper, Input, Label, Select } from ".";
 
 const defaultInputProps = {
   onChange: console.log,
@@ -11,7 +11,9 @@ const formProps = {
   onSubmit: e => e.preventDefault(),
 };
 
-const renderContent = ({ withHelper = false, withLabel = false } = {}) => (
+const renderContent = (
+  { withHelper = false, withLabel = false } = {} // eslint-disable-line react/prop-types
+) => (
   <form {...formProps}>
     <div>
       {withLabel && <Label htmlFor="first-name-input-id">First name</Label>}

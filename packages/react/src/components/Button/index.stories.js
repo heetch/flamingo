@@ -2,17 +2,19 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
 
-import Button from "./";
+import Button from ".";
 import Icon from "../Icon";
 
-import { ICONS, INTENTS } from "../../constants/";
+import { ICONS, INTENTS } from "../../constants";
 
 const intents = Object.values(INTENTS);
 const states = ["default", "hover", "active", "disabled"];
 
 const stories = storiesOf("Button", module);
 
-const Link = ({ children, to, ...props }) => (
+const Link = (
+  { children, to, ...props } // eslint-disable-line react/prop-types
+) => (
   <a {...props} href={to}>
     {children}
   </a>
