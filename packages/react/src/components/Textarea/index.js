@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import Icon from "../Icon/";
-import { ICON_SIZES } from "../../constants/";
+import Icon from "../Icon";
+import { ICON_SIZES } from "../../constants";
 
 const defaultIconProps = {
   className: "FormEl-icon",
@@ -18,7 +18,6 @@ const Textarea = ({
   invalid: isInvalid,
   onChange,
   placeholder,
-  type,
   valid: isValid,
   ...props
 }) => {
@@ -41,7 +40,6 @@ const Textarea = ({
         name={id}
         onChange={onChange}
         placeholder={placeholder}
-        type={type}
         {...props}
       />
 
@@ -54,6 +52,7 @@ const Textarea = ({
 Textarea.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -64,6 +63,7 @@ Textarea.propTypes = {
 Textarea.defaultProps = {
   className: undefined,
   disabled: false,
+  fill: false,
   invalid: false,
   placeholder: "",
   valid: false,

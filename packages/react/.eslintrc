@@ -1,19 +1,25 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "react-app"
-  ],
+  "extends": ["airbnb", "prettier"],
   "env": {
     "es6": true
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "parserOptions": {
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "every": ["id"]
+        }
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-indent": 0,
+    "react/jsx-one-expression-per-line": 0
   }
 }

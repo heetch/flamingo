@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { Label } from "../";
+import { Label } from "..";
 
 const defaultProps = {
   htmlFor: "input-id",

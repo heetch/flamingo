@@ -1,8 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { ICONS, ICON_SIZES } from "../../constants/";
-import Icon from "./";
+import { ICONS, ICON_SIZES } from "../../constants";
+import Icon from ".";
 
 const icons = Object.keys(ICONS);
 const sizes = Object.values(ICON_SIZES);

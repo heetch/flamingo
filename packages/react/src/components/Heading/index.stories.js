@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { select, text, withKnobs } from "@storybook/addon-knobs";
 
-import Heading from "./";
+import Heading from ".";
 
 const { LEVELS } = Heading;
 

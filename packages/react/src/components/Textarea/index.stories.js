@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import Textarea from "./";
+import Textarea from ".";
 
 const states = ["default", "hover", "focus", "disabled"];
 

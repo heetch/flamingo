@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { INTENTS } from "../../constants/";
+import { INTENTS } from "../../constants";
 
 const intents = Object.values(INTENTS);
 
