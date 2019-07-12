@@ -36,7 +36,7 @@
 @media (max-width: 460px) {
   /* --breakpoint-s */
   .Button {
-    flex-grow: 1;
+    width: 100%;
     padding: var(--space-l) var(--space-xl);
     text-align: center;
   }
