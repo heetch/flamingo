@@ -109,9 +109,14 @@
   border-radius: 50%;
 }
 
+.Button--icon + .Button--icon {
+  margin-left: var(--space-m);
+}
+
 @media (max-width: 460px) {
   /* --breakpoint-s */
   .Button.Button--icon {
+    width: auto;
     flex-grow: inherit;
     padding: var(--space-l);
   }
