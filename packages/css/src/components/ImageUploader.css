@@ -1,0 +1,31 @@
+.ImageUploader-preview {
+  background-size: cover;
+  background-position: center center;
+  border-radius: 1rem;
+  z-index: 10;
+}
+
+.ImageUploader-preview,
+.ImageUploader-hoverState {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.ImageUploader-hoverState {
+  background: rgba(25, 1, 52, 0.8); /* --color-tolopea */
+  z-index: 15;
+  opacity: 0;
+}
+
+.ImageUploader-hoverState {
+  padding: 0 var(--space-m);
+  text-align: right;
+}
+
+.FileUploader:hover .ImageUploader-hoverState {
+  opacity: 1;
+  border-radius: 1rem;
+}
