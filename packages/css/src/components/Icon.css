@@ -6,6 +6,7 @@
 }
 
 .Icon svg {
+  display: block;
   fill: currentColor;
   width: var(--icon-size);
 }
