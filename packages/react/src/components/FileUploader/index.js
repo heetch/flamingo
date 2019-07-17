@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cx from "classnames";
 
 import Icon from "../Icon";
+import Spinner from "../Spinner";
 import Text from "../Text";
 
 import { ICONS } from "../../constants";
@@ -13,92 +15,106 @@ const texts = {
     id: "flamingo-file-uploader-add-document",
     defaultText: "Add a document",
   },
-  uploading: {
-    id: "flamingo-file-uploader-uploading",
-    defaultText: "Uploading...",
-  },
   error: {
     id: "flamingo-file-uploader-error-title",
-    defaultText: "An error just happened",
+    defaultText: "Upload failed",
   },
   try_again: {
     id: "flamingo-file-uploader-error-try-again",
-    defaultText: "Please try again",
+    defaultText: "Click here to try again",
   },
-};
-
-const STATES = {
-  DEFAULT: "default",
-  ERRORED: "errored",
-  LOADING: "loading",
-  SUCCESS: "success",
 };
 
 const FileUploader = ({
   children,
+  className,
+  file,
   name,
   onChange,
-  state,
   translate,
+  isLoading,
+  isErrored,
   ...props
-}) => (
-  <div className="FileUploader" {...props}>
-    {state === STATES.DEFAULT && (
-      <label
-        className="FileUploader-state FileUploader-state--empty"
-        htmlFor={name}
-      >
-        <Icon icon={ICONS.IconAdd} />
-        <Text>{translate(texts.add_document)}</Text>
-      </label>
-    )}
+}) => {
+  const hasFile = !!file;
 
-    {state === STATES.LOADING && (
-      <div className="FileUploader-state FileUploader-state--uploading">
-        <Text>{translate(texts.uploading)}</Text>
+  const handleFileChange = e => {
+    const [eventFile] = e.target.files;
+    onChange(eventFile);
+  };
+
+  return (
+    <div
+      className={cx("FileUploader", {
+        [className]: className,
+        "has-file": hasFile,
+      })}
+      {...props}
+    >
+      {isLoading && (
+        <div className="FileUploader-state FileUploader-state--uploading">
+          <Spinner />
+        </div>
+      )}
+
+      {isErrored && (
+        <label
+          className="FileUploader-state FileUploader-state--error"
+          htmlFor={name}
+        >
+          <Icon icon={ICONS.IconSadFace} />
+
+          <Text className="FileUploader-errorState-title">
+            {translate(texts.error)}
+          </Text>
+
+          <Text className="FileUploader-errorState-tryAgain">
+            {translate(texts.try_again)}
+          </Text>
+        </label>
+      )}
+
+      {!isLoading && !isErrored && (
+        <>
+          {hasFile ? (
+            children
+          ) : (
+            <label
+              className="FileUploader-state FileUploader-state--empty"
+              htmlFor={name}
+            >
+              <Icon icon={ICONS.IconFilePlus} />
+              <Text>{translate(texts.add_document)}</Text>
+            </label>
+          )}
+        </>
+      )}
+
+      <div className="FileUploader-inputContainer">
+        <input type="file" id={name} name={name} onChange={handleFileChange} />
       </div>
-    )}
-
-    {state === STATES.ERRORED && (
-      <div className="FileUploader-state FileUploader-state--error">
-        <Text className="FileUploader-errorState-title">
-          {translate(texts.error)}
-        </Text>
-
-        <Text className="FileUploader-errorState-tryAgain">
-          {translate(texts.try_again)}
-        </Text>
-      </div>
-    )}
-
-    {state === STATES.SUCCESS && (
-      <div className="FileUploader-state FileUploader-state--success">
-        <Text>Success state, wait for Juanito for more details</Text>
-      </div>
-    )}
-
-    {children}
-
-    <div className="FileUploader-inputContainer">
-      <input type="file" id={name} name={name} onChange={onChange} />
     </div>
-  </div>
-);
+  );
+};
 
 FileUploader.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  state: PropTypes.oneOf(Object.values(STATES)),
   translate: PropTypes.func,
+  file: PropTypes.instanceOf(File),
+  isLoading: PropTypes.bool,
+  isErrored: PropTypes.bool,
 };
 
 FileUploader.defaultProps = {
   children: undefined,
-  state: STATES.DEFAULT,
+  className: undefined,
   translate: defaultTranslate,
+  file: undefined,
+  isErrored: false,
+  isLoading: false,
 };
-
-FileUploader.STATES = STATES;
 
 export default FileUploader;

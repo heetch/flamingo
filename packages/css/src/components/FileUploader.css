@@ -16,6 +16,15 @@
   }
 }
 
+.FileUploader-inputContainer {
+  display: none;
+}
+
+.FileUploader.is-empty:hover .Button {
+  background-color: var(--color-rose);
+  color: var(--color-white);
+}
+
 .FileUploader-state {
   display: flex;
   flex-direction: column;
@@ -26,15 +35,29 @@
   text-align: center;
 }
 
-.FileUploader-errorState-title {
-  font-weight: var(--font-weight--bold);
-  color: var(--color-bittersweet);
+/* No file */
+
+.FileUploader.is-empty .Button {
+  margin-bottom: 0;
 }
 
-.FileUploader-errorState-tryAgain {
+.FileUploader.is-empty .Icon {
+  color: var(--color-rose);
+}
+
+.FileUploader-state .Text {
   font-size: var(--font-size--s);
+  margin: 0;
 }
 
-.FileUploader-inputContainer {
-  display: none;
+.FileUploader-state--empty .Icon,
+.FileUploader-state--uploading .Icon,
+.FileUploader-state--error .Icon {
+  margin-bottom: var(--space-s);
+}
+
+.FileUploader-state--empty .Icon,
+.FileUploader-state--empty .Text,
+.FileUploader-errorState-tryAgain {
+  color: var(--color-rose);
 }

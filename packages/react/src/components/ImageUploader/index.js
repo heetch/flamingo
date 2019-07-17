@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cx from "classnames";
 
 import FileUploader from "../FileUploader";
 import IconButton from "../IconButton";
 
 import { ICONS } from "../../constants";
-
-const { STATES } = FileUploader;
 
 const toBase64 = file => {
   const reader = new FileReader();
@@ -18,39 +17,35 @@ const toBase64 = file => {
 };
 
 const ImageUploader = ({ onChange, ...props }) => {
-  const [uploaderState, setUploaderState] = React.useState(STATES.DEFAULT);
   const [file, setFile] = React.useState(undefined);
   const [preview, setPreview] = React.useState(undefined);
 
-  const setDefaultState = () => setUploaderState(STATES.DEFAULT);
-  const setLoadingState = () => setUploaderState(STATES.LOADING);
-  const setSuccessState = () => setUploaderState(STATES.SUCCESS);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isErrored, setIsErrored] = React.useState(false);
 
-  const handleFileChange = e => {
-    const { files } = e.target;
-
-    if (files.length === 0) {
-      setDefaultState();
+  const handleFileChange = eventFile => {
+    if (!eventFile) {
+      setIsLoading(false);
+      setIsErrored(false);
       setFile(undefined);
       setPreview(undefined);
     }
 
-    setFile(files[0]);
+    setFile(eventFile);
   };
 
   const handleResetState = () => {
     setFile(undefined);
     setPreview(undefined);
-    setDefaultState();
   };
 
   React.useEffect(
     () => {
       if (file) {
-        setLoadingState();
+        setIsLoading(true);
         toBase64(file).then(data => {
           setPreview(data);
-          setSuccessState();
+          setIsLoading(false);
         });
       }
     },
@@ -58,7 +53,16 @@ const ImageUploader = ({ onChange, ...props }) => {
   );
 
   return (
-    <FileUploader state={uploaderState} onChange={handleFileChange} {...props}>
+    <FileUploader
+      className={cx({
+        "has-preview": preview,
+      })}
+      onChange={handleFileChange}
+      file={file}
+      isLoading={isLoading}
+      isErrored={isErrored}
+      {...props}
+    >
       {preview && (
         <>
           <div
@@ -67,8 +71,9 @@ const ImageUploader = ({ onChange, ...props }) => {
               backgroundImage: `url(${preview})`,
             }}
           />
+
           <div className="ImageUploader-hoverState">
-            <IconButton onClick={handleResetState} icon={ICONS.IconArrowDown} />
+            <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
           </div>
         </>
       )}

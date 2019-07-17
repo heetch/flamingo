@@ -1,10 +1,3 @@
-.ImageUploader-preview {
-  background-size: cover;
-  background-position: center center;
-  border-radius: 1rem;
-  z-index: 10;
-}
-
 .ImageUploader-preview,
 .ImageUploader-hoverState {
   position: absolute;
@@ -12,20 +5,28 @@
   right: 0;
   left: 0;
   bottom: 0;
+  border-radius: 1rem;
+}
+
+.ImageUploader-preview {
+  background-size: cover;
+  background-position: center center;
+  z-index: 10;
 }
 
 .ImageUploader-hoverState {
   background: rgba(25, 1, 52, 0.8); /* --color-tolopea */
-  z-index: 15;
-  opacity: 0;
-}
-
-.ImageUploader-hoverState {
   padding: 0 var(--space-m);
   text-align: right;
+  opacity: 0;
+  z-index: 15;
+  transition: opacity 0.1s ease-out;
 }
 
 .FileUploader:hover .ImageUploader-hoverState {
   opacity: 1;
-  border-radius: 1rem;
+}
+
+.FileUploader.has-preview {
+  border-color: transparent;
 }
