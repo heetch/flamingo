@@ -13,7 +13,6 @@ export const ICON_SIZES = {
   S: "s",
   M: "m",
   L: "l",
-  XL: "xl",
 };
 
 export { ICONS_SVGS };
