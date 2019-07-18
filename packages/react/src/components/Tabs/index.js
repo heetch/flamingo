@@ -1,49 +1,38 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-class Tabs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: null,
-    };
-  }
+const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  handleTabClick = activeIndex => {
-    const { buildReturnObject, onClick, elements } = this.props;
-    this.setState({ activeIndex });
+  const handleTabClick = newActiveIndex => {
+    setActiveIndex(newActiveIndex);
     if (onClick) {
       onClick(
         buildReturnObject
-          ? buildReturnObject(elements[activeIndex])
-          : activeIndex
+          ? buildReturnObject(elements[newActiveIndex])
+          : newActiveIndex
       );
     }
   };
 
-  render() {
-    const { elements, buildTabLabel } = this.props;
-    const { activeIndex } = this.state;
-
-    return (
-      <div className="Tabs">
-        {elements.map((element, index) => (
-          <span key={element} onClick={() => this.handleTabClick(index)}>
-            <div className="Tabs-label">
-              {buildTabLabel ? buildTabLabel(element) : element}
-            </div>
-            <div
-              className={cx("Tabs-marker", {
-                "is-active": activeIndex === index,
-              })}
-            />
-          </span>
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="Tabs">
+      {elements.map((element, index) => (
+        <span key={element} onClick={() => handleTabClick(index)}>
+          <div className="Tabs-label">
+            {buildTabLabel ? buildTabLabel(element) : element}
+          </div>
+          <div
+            className={cx("Tabs-marker", {
+              "is-active": activeIndex === index,
+            })}
+          />
+        </span>
+      ))}
+    </div>
+  );
+};
 
 Tabs.propTypes = {
   /** An array of strings or objects that will make tabs content */

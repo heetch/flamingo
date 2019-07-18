@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { Icon } from "..";
+import Icon from "../Icon";
 import {
   ICONS,
   LIST_ITEM_SIZES,
@@ -18,6 +18,7 @@ const ListItem = ({
   value,
   leftIcon,
   rightIcon,
+  mockRightIcon,
   hideDivider,
   strongValue,
   onClick,
@@ -64,15 +65,17 @@ const ListItem = ({
       >
         {value}
       </span>
-      <span
-        className={cx("ListItem-itemIcon", {
-          "is-mini": type === LIST_ITEM_SIZES.MINI,
-        })}
-      >
-        {(onClick || rightIcon) && (
-          <Icon icon={rightIcon || ICONS.IconArrowRight} />
-        )}
-      </span>
+      {(mockRightIcon || onClick || rightIcon) && (
+        <span
+          className={cx("ListItem-itemIcon", {
+            "is-mini": type === LIST_ITEM_SIZES.MINI,
+          })}
+        >
+          {(onClick || rightIcon) && (
+            <Icon icon={rightIcon || ICONS.IconArrowRight} />
+          )}
+        </span>
+      )}
     </div>
   </div>
 );
@@ -87,6 +90,8 @@ ListItem.propTypes = {
   leftIcon: PropTypes.oneOf(ICONS_KEYS),
   /** If `onClick` is set, default icon is Arrow Right */
   rightIcon: PropTypes.oneOf(ICONS_KEYS),
+  /** If no icon is selected, this can be selected to display "empty icon" */
+  mockRightIcon: PropTypes.bool,
   /** Should be set to `true` for last item in group */
   hideDivider: PropTypes.bool,
   strongValue: PropTypes.bool,
@@ -100,6 +105,7 @@ ListItem.defaultProps = {
   value: undefined,
   leftIcon: undefined,
   rightIcon: undefined,
+  mockRightIcon: false,
   hideDivider: false,
   strongValue: false,
   onClick: undefined,

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { Icon } from "..";
+import Icon from "../Icon";
 import { INLINE_ALERT_TYPES, ICONS } from "../../constants/";
 
 const ALERT_ICONS = {

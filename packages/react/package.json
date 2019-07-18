@@ -26,8 +26,6 @@
     "icons": "node scripts/icons"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/react": "^5.1.9",
     "prop-types": "^15.7.2",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
@@ -44,6 +42,7 @@
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/react": "^5.1.9",
     "@svgr/rollup": "^4.3.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",

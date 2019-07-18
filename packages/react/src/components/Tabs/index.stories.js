@@ -5,8 +5,13 @@ import { withInfo } from "@storybook/addon-info";
 
 import Tabs from "./";
 
+const WIDTH_DECORATOR = storiesFn => (
+  <div style={{ maxWidth: "300px" }}>{storiesFn()}</div>
+);
+
 storiesOf("Navigation/Tabs")
   .addDecorator(withKnobs)
+  .addDecorator(WIDTH_DECORATOR)
   .add(
     "Playground",
     withInfo("")(() => (
@@ -15,6 +20,9 @@ storiesOf("Navigation/Tabs")
           "Cars",
           "Drivers",
           "Rides",
+          "Vehicles",
+          "Discounts",
+          "Promotions",
         ])}
       />
     ))

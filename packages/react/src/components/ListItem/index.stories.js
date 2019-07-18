@@ -64,7 +64,18 @@ storiesOf("Items/ListItem")
             rightIcon={
               ICONS[select(`(${itemNumber}) Right icon`, ICONS, null, groupId)]
             }
-            onClick={action("ListItem clicked")}
+            mockRightIcon={boolean(
+              `(${itemNumber}) Should mock right icon?`,
+              false,
+              groupId
+            )}
+            onClick={
+              boolean(
+                `(${itemNumber}) Does it have onClick action?`,
+                false,
+                groupId
+              ) && action("ListItem clicked")
+            }
           >
             {text(`(${itemNumber}) Title`, "ListItem", groupId)}
           </ListItem>
