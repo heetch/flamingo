@@ -42,7 +42,6 @@
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "@storybook/storybook-deployer": "^2.8.1",
-    "@storybook/react": "^5.1.9",
     "@svgr/rollup": "^4.3.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
