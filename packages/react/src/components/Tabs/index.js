@@ -17,19 +17,21 @@ const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
   };
 
   return (
-    <div className="Tabs">
-      {elements.map((element, index) => (
-        <span key={element} onClick={() => handleTabClick(index)}>
-          <div className="Tabs-label">
-            {buildTabLabel ? buildTabLabel(element) : element}
-          </div>
-          <div
-            className={cx("Tabs-marker", {
-              "is-active": activeIndex === index,
-            })}
-          />
-        </span>
-      ))}
+    <div className="container">
+      <div className="Tabs">
+        {elements.map((element, index) => (
+          <span key={element} onClick={() => handleTabClick(index)}>
+            <div className="Tabs-label">
+              {buildTabLabel ? buildTabLabel(element) : element}
+            </div>
+            <div
+              className={cx("Tabs-marker", {
+                "is-active": activeIndex === index,
+              })}
+            />
+          </span>
+        ))}
+      </div>
     </div>
   );
 };

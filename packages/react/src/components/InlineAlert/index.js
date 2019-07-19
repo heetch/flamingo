@@ -7,7 +7,7 @@ import { INLINE_ALERT_TYPES, ICONS } from "../../constants/";
 const ALERT_ICONS = {
   [INLINE_ALERT_TYPES.INFORMATION]: ICONS.IconInfo,
   [INLINE_ALERT_TYPES.SUCCESS]: ICONS.IconCheck,
-  [INLINE_ALERT_TYPES.ERROR]: ICONS.IconStop,
+  [INLINE_ALERT_TYPES.ERROR]: ICONS.IconAlertOctagon,
 };
 
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
@@ -20,7 +20,7 @@ const InlineAlert = ({ title, children, type, onClose }) => (
   >
     {onClose && (
       <button className="InlineAlert-iconClose" onClick={onClose}>
-        <Icon icon={ICONS.IconClose} />
+        <Icon icon={ICONS.IconCross} />
       </button>
     )}
     <div className="InlineAlert-icon">

@@ -7,6 +7,6 @@ const defaultProps = {
   htmlFor: "input-id",
 };
 
-storiesOf("Label", module).add("Default", () => (
+storiesOf("Form controls/Label", module).add("Default", () => (
   <Label {...defaultProps}>Input Label</Label>
 ));

@@ -33,13 +33,13 @@ storiesOf("Items/ListItem")
             type={select(
               `(${itemNumber}) Size`,
               LIST_ITEM_SIZES,
-              null,
+              LIST_ITEM_SIZES.NORMAL,
               groupId
             )}
             valueType={select(
               `(${itemNumber}) Value type`,
               LIST_ITEM_VALUES_TYPES,
-              null,
+              LIST_ITEM_VALUES_TYPES.DARK,
               groupId
             )}
             strongValue={boolean(
@@ -74,7 +74,9 @@ storiesOf("Items/ListItem")
                 `(${itemNumber}) Does it have onClick action?`,
                 false,
                 groupId
-              ) && action("ListItem clicked")
+              )
+                ? action("ListItem clicked")
+                : undefined
             }
           >
             {text(`(${itemNumber}) Title`, "ListItem", groupId)}

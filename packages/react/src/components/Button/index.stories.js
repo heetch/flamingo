@@ -10,7 +10,7 @@ import { ICONS, INTENTS } from "../../constants";
 const intents = Object.values(INTENTS);
 const states = ["default", "hover", "active", "disabled"];
 
-const stories = storiesOf("Button", module);
+const stories = storiesOf("Buttons/Button", module);
 
 const Link = (
   { children, to, ...props } // eslint-disable-line react/prop-types
@@ -27,7 +27,11 @@ stories.add("With intents", () => (
     {intents.map(intent => (
       <div
         key={intent}
-        style={{ textAlign: "center", padding: "0 var(--space-s)" }}
+        style={{
+          textAlign: "center",
+          padding: "0 var(--space-s)",
+          flexGrow: 1,
+        }}
       >
         {states.map(state => (
           <div key={`${intent}-${state}`}>
@@ -52,7 +56,7 @@ stories.add("With icons", () => (
     </Button>
 
     <Button>
-      Nope <Icon icon={ICONS.IconClose} />
+      Nope <Icon icon={ICONS.IconCross} />
     </Button>
   </div>
 ));

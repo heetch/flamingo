@@ -6,9 +6,9 @@ import { ICONS } from "../../constants";
 import IconButton from ".";
 
 const states = ["default", "hover", "active", "disabled"];
-const icon = "IconAdd";
+const icon = "IconCheck";
 
-const stories = storiesOf("IconButton", module);
+const stories = storiesOf("Buttons/IconButton", module);
 
 stories.addDecorator(withKnobs);
 
