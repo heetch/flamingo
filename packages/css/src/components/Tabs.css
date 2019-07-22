@@ -18,6 +18,7 @@
     var(--space-m) calc(100% - var(--space-s)),
     var(--space-m) calc(100% - var(--space-s));
   background-attachment: local, local, scroll, scroll;
+  padding: 0 2px;
 }
 
 .Tabs:before {
