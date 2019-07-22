@@ -20,7 +20,7 @@ const defaultProps = () => ({
   ],
 });
 
-storiesOf("Select", module)
+storiesOf("Form controls/Select", module)
   .add("Default", () => <Select {...defaultProps()} />)
   .add("With states", () =>
     states.map(state => (

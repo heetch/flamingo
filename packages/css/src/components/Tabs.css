@@ -1,0 +1,87 @@
+.container {
+  position: relative;
+}
+
+.Tabs {
+  white-space: nowrap;
+  overflow-x: auto;
+
+  background-image: linear-gradient(to right, white, white),
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0)),
+    linear-gradient(to left, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0));
+
+  background-position: left center, right center, left top, right top;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 15px 100%, 15px 100%,
+    var(--space-m) calc(100% - var(--space-s)),
+    var(--space-m) calc(100% - var(--space-s));
+  background-attachment: local, local, scroll, scroll;
+  padding: 0 2px;
+}
+
+.Tabs:before {
+  content: "";
+  background-color: white;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -1px;
+}
+
+.Tabs:after {
+  content: "";
+  background-color: white;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -1px;
+}
+
+.Tabs span {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Tabs span .Tabs-label {
+  color: var(--color-tolopea);
+  font-size: var(--font-size--s);
+  font-weight: var(--font-weight--bold);
+  line-height: var(--line-height--m);
+  margin: var(--space-m) 0;
+  padding: 0 var(--space-xl);
+}
+
+.Tabs span .Tabs-marker {
+  float: left;
+  width: 100%;
+  height: var(--space-s);
+  margin: 1px 0;
+  background-color: var(--color-grey);
+}
+
+.Tabs span:hover .Tabs-marker {
+  background-color: var(--color-alto);
+}
+
+.Tabs span .Tabs-marker.is-active {
+  height: calc(var(--space-s) + 2px);
+  padding: 1px 0;
+  margin: 0;
+  background-color: var(--color-rose);
+  border-radius: 3px;
+}
+
+.Tabs span:nth-child(1) .Tabs-marker {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.Tabs span:last-child .Tabs-marker {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}

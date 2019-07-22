@@ -12,7 +12,7 @@ const inputProps = () => ({
   onChange: console.log,
 });
 
-storiesOf("Input", module)
+storiesOf("Form controls/Input", module)
   .add("With types", () =>
     types.map(type => (
       <div key={`input-${type}`}>

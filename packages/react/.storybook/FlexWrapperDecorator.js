@@ -10,7 +10,14 @@ const FlexWrapperDecorator = storyFn => (
       justifyContent: "center",
     }}
   >
-    {storyFn()}
+    <div
+      style={{
+        display: "block",
+        width: "90%",
+      }}
+    >
+      {storyFn()}
+    </div>
   </div>
 );
 

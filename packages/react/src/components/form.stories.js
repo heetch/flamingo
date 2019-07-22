@@ -67,7 +67,7 @@ const renderContent = (
   </form>
 );
 
-storiesOf("Form", module)
+storiesOf("Form controls/Form", module)
   .add("Default", () => renderContent())
   .add("With helper", () => renderContent({ withHelper: true }))
   .add("With label", () => renderContent({ withLabel: true }))

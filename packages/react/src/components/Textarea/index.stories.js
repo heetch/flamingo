@@ -10,7 +10,7 @@ const textareaProps = () => ({
   onChange: console.log,
 });
 
-storiesOf("Textarea", module)
+storiesOf("Form controls/Textarea", module)
   .add("With states", () => (
     <>
       {states.map(state => (
