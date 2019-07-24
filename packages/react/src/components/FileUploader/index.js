@@ -5,6 +5,7 @@ import cx from "classnames";
 import Icon from "../Icon";
 import Spinner from "../Spinner";
 import Text from "../Text";
+import UploaderItem from "../UploaderItem";
 
 import { ICONS } from "../../constants";
 
@@ -36,12 +37,26 @@ const FileUploader = ({
   isErrored,
   ...props
 }) => {
-  const hasFile = !!file;
+  const [innerFile, setInnerFile] = React.useState(undefined);
+  const hasFile = !!file || !!innerFile;
 
   const handleFileChange = e => {
     const [eventFile] = e.target.files;
+
+    setInnerFile(eventFile);
     onChange(eventFile);
   };
+
+  const handleResetState = () => {
+    setInnerFile(undefined);
+  };
+
+  React.useEffect(
+    () => {
+      setInnerFile(file);
+    },
+    [file]
+  );
 
   return (
     <div
@@ -77,7 +92,12 @@ const FileUploader = ({
       {!isLoading && !isErrored && (
         <>
           {hasFile ? (
-            children
+            children || (
+              <UploaderItem
+                handleResetState={handleResetState}
+                file={innerFile}
+              />
+            )
           ) : (
             <label
               className="FileUploader-state FileUploader-state--empty"

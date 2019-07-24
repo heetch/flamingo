@@ -56,6 +56,7 @@ const ImageUploader = ({ onChange, ...props }) => {
     <FileUploader
       className={cx({
         "has-preview": preview,
+        "is-loading": isLoading,
       })}
       onChange={handleFileChange}
       file={file}
@@ -63,20 +64,16 @@ const ImageUploader = ({ onChange, ...props }) => {
       isErrored={isErrored}
       {...props}
     >
-      {preview && (
-        <>
-          <div
-            className="ImageUploader-preview"
-            style={{
-              backgroundImage: `url(${preview})`,
-            }}
-          />
+      <div
+        className="ImageUploader-preview"
+        style={{
+          backgroundImage: `url(${preview})`,
+        }}
+      />
 
-          <div className="ImageUploader-hoverState">
-            <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
-          </div>
-        </>
-      )}
+      <div className="ImageUploader-hoverState">
+        <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
+      </div>
     </FileUploader>
   );
 };

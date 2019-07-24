@@ -5,8 +5,16 @@
   height: 8.125rem; /* 130px */
   color: var(--color-granite);
   margin: var(--space-m) 0;
-  border: 1px dashed var(--color-granite);
   border-radius: 1rem;
+}
+
+.FileUploader.has-file {
+  border-color: transparent;
+}
+
+.FileUploader,
+.FileUploader.is-loading {
+  border: 1px dashed var(--color-granite);
 }
 
 @media (max-width: 460px) {
