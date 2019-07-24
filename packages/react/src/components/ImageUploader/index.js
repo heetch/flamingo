@@ -62,6 +62,11 @@ const ImageUploader = ({ onChange, ...props }) => {
       file={file}
       isLoading={isLoading}
       isErrored={isErrored}
+      overrides={{
+        input: {
+          accept: "image/*",
+        },
+      }}
       {...props}
     >
       <div

@@ -35,6 +35,7 @@ const FileUploader = ({
   translate,
   isLoading,
   isErrored,
+  overrides,
   ...props
 }) => {
   const [innerFile, setInnerFile] = React.useState(undefined);
@@ -111,7 +112,13 @@ const FileUploader = ({
       )}
 
       <div className="FileUploader-inputContainer">
-        <input type="file" id={name} name={name} onChange={handleFileChange} />
+        <input
+          type="file"
+          id={name}
+          name={name}
+          onChange={handleFileChange}
+          {...overrides.input}
+        />
       </div>
     </div>
   );
@@ -126,6 +133,9 @@ FileUploader.propTypes = {
   file: PropTypes.instanceOf(File),
   isLoading: PropTypes.bool,
   isErrored: PropTypes.bool,
+  overrides: PropTypes.shape({
+    input: PropTypes.shape({}),
+  }),
 };
 
 FileUploader.defaultProps = {
@@ -135,6 +145,9 @@ FileUploader.defaultProps = {
   file: undefined,
   isErrored: false,
   isLoading: false,
+  overrides: {
+    input: {},
+  },
 };
 
 export default FileUploader;
