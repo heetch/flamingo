@@ -22,10 +22,7 @@ const Select = ({
   return (
     <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
       <select
-        className={cx("FormEl", "Select", {
-          ...classes,
-          [className]: className,
-        })}
+        className={cx("FormEl", "Select", className, { ...classes })}
         disabled={isDisabled}
         id={id}
         name={id}

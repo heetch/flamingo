@@ -8,9 +8,7 @@ import { ICONS } from "../../constants";
 const Spinner = ({ className, ...props }) => (
   <Icon
     {...props}
-    className={cx("Icon--spinner", {
-      [className]: className,
-    })}
+    className={cx("Icon--spinner", className)}
     icon={ICONS.IconLoader}
   />
 );

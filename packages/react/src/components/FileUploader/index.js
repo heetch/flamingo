@@ -61,8 +61,7 @@ const FileUploader = ({
 
   return (
     <div
-      className={cx("FileUploader", {
-        [className]: className,
+      className={cx("FileUploader", className, {
         "has-file": hasFile,
       })}
       {...props}

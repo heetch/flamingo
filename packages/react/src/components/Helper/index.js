@@ -5,12 +5,7 @@ import cx from "classnames";
 import Text from "../Text";
 
 const Helper = ({ className, children, ...props }) => (
-  <small
-    className={cx("Helper", {
-      [className]: className,
-    })}
-    {...props}
-  >
+  <small className={cx("Helper", className)} {...props}>
     <Text>{children}</Text>
   </small>
 );

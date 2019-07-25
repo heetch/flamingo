@@ -4,9 +4,7 @@ import cx from "classnames";
 
 const Text = ({ as: Component, className, ...props }) => (
   <Component
-    className={cx("Text", `Text--${Component}`, {
-      [className]: className,
-    })}
+    className={cx("Text", `Text--${Component}`, className)}
     {...props}
   />
 );

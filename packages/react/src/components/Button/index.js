@@ -8,10 +8,9 @@ const intents = Object.values(INTENTS);
 
 const Button = ({ as: Component, className, disabled, intent, ...props }) => (
   <Component
-    className={cx("Button", {
+    className={cx("Button", className, {
       "is-disabled": disabled,
       [`is-${intent}`]: intent,
-      [className]: className,
     })}
     disabled={disabled}
     {...props}

@@ -8,9 +8,7 @@ const levels = Object.keys(HEADING_LEVELS);
 
 const Heading = ({ as: Component, className, ...props }) => (
   <Component
-    className={cx("Heading", `Heading--${Component}`, {
-      [className]: className,
-    })}
+    className={cx("Heading", `Heading--${Component}`, className)}
     {...props}
   />
 );

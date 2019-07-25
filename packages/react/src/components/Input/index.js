@@ -34,10 +34,7 @@ const Input = ({
   return (
     <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
       <input
-        className={cx("FormEl", "Input", {
-          ...classes,
-          [className]: className,
-        })}
+        className={cx("FormEl", "Input", className, { ...classes })}
         disabled={isDisabled}
         id={id}
         name={id}
