@@ -13,7 +13,7 @@ const UploaderItem = ({ file, handleResetState }) => (
       <Icon icon={ICONS.IconFileText} />
     </div>
 
-    <Text className="UploaderItem-name">{file.name}</Text>
+    <Text className="UploaderItem-name u-ellipsis">{file.name}</Text>
     <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
   </div>
 );

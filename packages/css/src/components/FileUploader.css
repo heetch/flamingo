@@ -1,20 +1,15 @@
+:root {
+  --FileUploader-height: 8.125rem; /* 130px */
+}
+
 .FileUploader {
   position: relative;
   width: 100%;
   max-width: 18rem;
-  height: 8.125rem; /* 130px */
+  height: var(--FileUploader-height);
   color: var(--color-granite);
   margin: var(--space-m) 0;
   border-radius: 1rem;
-}
-
-.FileUploader.has-file {
-  border-color: transparent;
-}
-
-.FileUploader,
-.FileUploader.is-loading {
-  border: 1px dashed var(--color-granite);
 }
 
 @media (max-width: 460px) {
@@ -24,13 +19,22 @@
   }
 }
 
-.FileUploader-inputContainer {
-  display: none;
+.FileUploader.has-file {
+  border-color: transparent;
+  height: auto;
 }
 
-.FileUploader.is-empty:hover .Button {
-  background-color: var(--color-rose);
-  color: var(--color-white);
+.FileUploader,
+.FileUploader.is-loading {
+  border: 1px dashed var(--color-granite);
+}
+
+.FileUploader-actionText {
+  font-weight: var(--font-weight--bold);
+}
+
+.FileUploader-inputContainer {
+  display: none;
 }
 
 .FileUploader-state {
@@ -41,16 +45,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-/* No file */
-
-.FileUploader.is-empty .Button {
-  margin-bottom: 0;
-}
-
-.FileUploader.is-empty .Icon {
-  color: var(--color-rose);
 }
 
 .FileUploader-state .Text {
@@ -65,7 +59,6 @@
 }
 
 .FileUploader-state--empty .Icon,
-.FileUploader-state--empty .Text,
-.FileUploader-errorState-tryAgain {
+.FileUploader-actionText {
   color: var(--color-rose);
 }

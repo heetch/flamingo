@@ -44,9 +44,10 @@ const ImageUploader = ({ onChange, ...props }) => {
       if (file) {
         setIsLoading(true);
         toBase64(file).then(base64 => {
+          console.log(base64);
           setPreview(base64);
           setIsLoading(false);
-          onChange({ file, base64 });
+          // onChange({ file, base64 });
         });
       }
     },
@@ -55,7 +56,7 @@ const ImageUploader = ({ onChange, ...props }) => {
 
   return (
     <FileUploader
-      className={cx({
+      className={cx("ImageUploader", {
         "has-preview": preview,
         "is-loading": isLoading,
       })}

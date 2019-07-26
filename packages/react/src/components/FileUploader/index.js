@@ -14,7 +14,7 @@ const defaultTranslate = ({ defaultText }) => defaultText;
 const texts = {
   add_document: {
     id: "flamingo-file-uploader-add-document",
-    defaultText: "Add a document",
+    defaultText: "Click here to add a document",
   },
   error: {
     id: "flamingo-file-uploader-error-title",
@@ -39,7 +39,7 @@ const FileUploader = ({
   ...props
 }) => {
   const [innerFile, setInnerFile] = React.useState(undefined);
-  const hasFile = !!file || !!innerFile;
+  const hasFile = !isLoading && (!!file || !!innerFile);
 
   const handleFileChange = e => {
     const [eventFile] = e.target.files;
@@ -61,7 +61,7 @@ const FileUploader = ({
 
   return (
     <div
-      className={cx("FileUploader", className, {
+      className={cx("FileUploader FormEl-wrapper", className, {
         "has-file": hasFile,
       })}
       {...props}
@@ -83,7 +83,7 @@ const FileUploader = ({
             {translate(texts.error)}
           </Text>
 
-          <Text className="FileUploader-errorState-tryAgain">
+          <Text className="FileUploader-actionText">
             {translate(texts.try_again)}
           </Text>
         </label>
@@ -104,7 +104,9 @@ const FileUploader = ({
               htmlFor={name}
             >
               <Icon icon={ICONS.IconFilePlus} />
-              <Text>{translate(texts.add_document)}</Text>
+              <Text className="FileUploader-actionText">
+                {translate(texts.add_document)}
+              </Text>
             </label>
           )}
         </>
