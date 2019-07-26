@@ -43,9 +43,10 @@ const ImageUploader = ({ onChange, ...props }) => {
     () => {
       if (file) {
         setIsLoading(true);
-        toBase64(file).then(data => {
-          setPreview(data);
+        toBase64(file).then(base64 => {
+          setPreview(base64);
           setIsLoading(false);
+          onChange({ file, base64 });
         });
       }
     },
