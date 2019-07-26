@@ -6,6 +6,7 @@ import FileUploader from "../FileUploader";
 import IconButton from "../IconButton";
 
 import { ICONS } from "../../constants";
+import { safeInvoke } from "../../utils";
 
 const toBase64 = file => {
   const reader = new FileReader();
@@ -44,10 +45,9 @@ const ImageUploader = ({ onChange, ...props }) => {
       if (file) {
         setIsLoading(true);
         toBase64(file).then(base64 => {
-          console.log(base64);
           setPreview(base64);
           setIsLoading(false);
-          // onChange({ file, base64 });
+          safeInvoke(onChange({ file, base64 }));
         });
       }
     },

@@ -8,6 +8,7 @@ import Text from "../Text";
 import UploaderItem from "../UploaderItem";
 
 import { ICONS } from "../../constants";
+import { safeInvoke } from "../../utils";
 
 const defaultTranslate = ({ defaultText }) => defaultText;
 
@@ -45,7 +46,7 @@ const FileUploader = ({
     const [eventFile] = e.target.files;
 
     setInnerFile(eventFile);
-    onChange(eventFile);
+    safeInvoke(onChange(eventFile));
   };
 
   const handleResetState = () => {
