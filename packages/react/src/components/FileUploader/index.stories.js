@@ -18,7 +18,7 @@ stories.add("Playground", () => (
     name={inputName}
     onChange={action("onChange")}
     isLoading={boolean("isLoading", false)}
-    isErrored={boolean("isErrored", false)}
+    hasError={boolean("hasError", false)}
   />
 ));
 

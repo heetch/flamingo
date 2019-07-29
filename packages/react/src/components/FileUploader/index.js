@@ -35,12 +35,12 @@ const FileUploader = ({
   onChange,
   translate,
   isLoading,
-  isErrored,
+  hasError,
   overrides,
   ...props
 }) => {
   const [innerFile, setInnerFile] = React.useState(undefined);
-  const hasFile = !isLoading && (!!file || !!innerFile);
+  const hasFile = !isLoading && (file || innerFile);
 
   const handleFileChange = e => {
     const [eventFile] = e.target.files;
@@ -73,7 +73,7 @@ const FileUploader = ({
         </div>
       )}
 
-      {isErrored && (
+      {hasError && (
         <label
           className="FileUploader-state FileUploader-state--error"
           htmlFor={name}
@@ -90,7 +90,7 @@ const FileUploader = ({
         </label>
       )}
 
-      {!isLoading && !isErrored && (
+      {!isLoading && !hasError && (
         <>
           {hasFile ? (
             children || (
@@ -134,7 +134,7 @@ FileUploader.propTypes = {
   translate: PropTypes.func,
   file: PropTypes.instanceOf(File),
   isLoading: PropTypes.bool,
-  isErrored: PropTypes.bool,
+  hasError: PropTypes.bool,
   overrides: PropTypes.shape({
     input: PropTypes.shape({}),
   }),
@@ -145,7 +145,7 @@ FileUploader.defaultProps = {
   className: undefined,
   translate: defaultTranslate,
   file: undefined,
-  isErrored: false,
+  hasError: false,
   isLoading: false,
   overrides: {
     input: {},

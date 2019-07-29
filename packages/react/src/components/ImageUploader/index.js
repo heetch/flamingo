@@ -22,12 +22,12 @@ const ImageUploader = ({ onChange, ...props }) => {
   const [preview, setPreview] = React.useState(undefined);
 
   const [isLoading, setIsLoading] = React.useState(false);
-  const [isErrored, setIsErrored] = React.useState(false);
+  const [hasErrored, setHasErrored] = React.useState(false);
 
   const handleFileChange = eventFile => {
     if (!eventFile) {
       setIsLoading(false);
-      setIsErrored(false);
+      setHasErrored(false);
       setFile(undefined);
       setPreview(undefined);
     }
@@ -63,7 +63,7 @@ const ImageUploader = ({ onChange, ...props }) => {
       onChange={handleFileChange}
       file={file}
       isLoading={isLoading}
-      isErrored={isErrored}
+      hasErrored={hasErrored}
       overrides={{
         input: {
           accept: "image/*",
