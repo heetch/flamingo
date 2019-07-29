@@ -9,3 +9,9 @@
 .u-colorWarning {
   color: var(--color-jake) !important;
 }
+
+.u-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

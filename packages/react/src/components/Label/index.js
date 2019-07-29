@@ -5,13 +5,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 const Label = ({ className, htmlFor, ...props }) => (
-  <label
-    className={cx("Label", {
-      [className]: className,
-    })}
-    htmlFor={htmlFor}
-    {...props}
-  />
+  <label className={cx("Label", className)} htmlFor={htmlFor} {...props} />
 );
 
 Label.propTypes = {

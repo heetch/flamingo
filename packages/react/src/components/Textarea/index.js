@@ -31,10 +31,7 @@ const Textarea = ({
   return (
     <div className={cx("FormEl-wrapper", "Textarea-wrapper", { ...classes })}>
       <textarea
-        className={cx("FormEl", "Textarea", {
-          ...classes,
-          [className]: className,
-        })}
+        className={cx("FormEl", "Textarea", className, { ...classes })}
         disabled={isDisabled}
         id={id}
         name={id}

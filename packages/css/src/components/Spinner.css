@@ -1,0 +1,9 @@
+.Icon--spinner {
+  animation: an-spinner 600ms linear infinite;
+}
+
+@keyframes an-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

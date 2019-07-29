@@ -5,9 +5,10 @@ const FlexWrapperDecorator = storyFn => (
     style={{
       display: "flex",
       width: "100vw",
-      height: "100vh",
+      minHeight: "100vh",
       alignItems: "center",
       justifyContent: "center",
+      flexDirection: "column",
     }}
   >
     <div

@@ -1,0 +1,22 @@
+.UploaderItem {
+  display: flex;
+  align-items: center;
+}
+
+.UploaderItem-iconContainer {
+  display: inline-flex;
+  margin-right: var(--space-m);
+  padding: var(--space-l);
+  border: 1px solid var(--color-granite);
+  border-radius: 0.75rem; /* 12px */
+  background-color: var(--color-white);
+}
+
+.UploaderItem-name {
+  flex-grow: 1;
+}
+
+.UploaderItem .Button--icon,
+.UploaderItem .Text {
+  margin: 0;
+}
