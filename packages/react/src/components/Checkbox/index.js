@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { safeInvoke } from "../../utils";
 import cx from "classnames";
 
 const Checkbox = ({
   isUndefined,
   disabled,
   children,
-  isChecked: isDefaultChecked,
-  sublabel,
+  checked: isDefaultChecked,
+  helper,
   onChange,
 }) => {
   const [isChecked, setIsChecked] = useState(isDefaultChecked);
@@ -15,7 +16,7 @@ const Checkbox = ({
   const onCheckboxStateChange = e => {
     const { checked } = e.target;
     setIsChecked(checked);
-    onChange && onChange(e);
+    safeInvoke(onChange(e));
   };
 
   const buildInputTag = () => (
@@ -33,7 +34,7 @@ const Checkbox = ({
       {buildInputTag()}
       <div>
         {children}
-        {sublabel && <p className="Checkbox-sublabel">{sublabel}</p>}
+        {helper && <p className="Checkbox-sublabel">{helper}</p>}
       </div>
     </label>
   ) : (
@@ -42,19 +43,20 @@ const Checkbox = ({
 };
 
 Checkbox.propTypes = {
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   isUndefined: PropTypes.bool,
-  isChecked: PropTypes.bool,
+  checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  helper: PropTypes.string,
 };
 
 Checkbox.defaultProps = {
-  onChange: undefined,
   isUndefined: false,
-  isChecked: false,
+  checked: false,
   disabled: false,
   children: undefined,
+  helper: undefined,
 };
 
 export default Checkbox;

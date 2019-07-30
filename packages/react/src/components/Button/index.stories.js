@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
 
 import Button from ".";
 import Icon from "../Icon";
@@ -19,8 +19,6 @@ const Link = (
     {children}
   </a>
 );
-
-stories.addDecorator(withKnobs);
 
 stories.add("With intents", () => (
   <div style={{ display: "flex" }}>
