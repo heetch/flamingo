@@ -20,7 +20,7 @@
   font-size: var(--font-size--m);
 }
 
-.Checkbox-sublabel {
+.Checkbox-helper {
   margin: 0;
   padding: 0;
   color: var(--color-granite);

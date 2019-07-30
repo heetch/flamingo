@@ -34,7 +34,7 @@ const Checkbox = ({
       {buildInputTag()}
       <div>
         {children}
-        {helper && <p className="Checkbox-sublabel">{helper}</p>}
+        {helper && <p className="Checkbox-helper">{helper}</p>}
       </div>
     </label>
   ) : (
