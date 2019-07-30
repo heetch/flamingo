@@ -12,6 +12,11 @@
   border-radius: 1rem;
 }
 
+.FileUploader.is-loading,
+.FileUploader.has-error {
+  height: var(--FileUploader-height);
+}
+
 @media (max-width: 460px) {
   /* --breakpoint-s */
   .FileUploader {

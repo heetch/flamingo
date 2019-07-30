@@ -1,15 +1,32 @@
 .UploaderItem {
+  --iconContainerSize: 2.625rem; /* 42px */
   display: flex;
   align-items: center;
 }
 
+.UploaderItem + .UploaderItem {
+  margin-top: var(--space-s);
+}
+
 .UploaderItem-iconContainer {
   display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--iconContainerSize);
+  height: var(--iconContainerSize);
   margin-right: var(--space-m);
-  padding: var(--space-l);
   border: 1px solid var(--color-granite);
   border-radius: 0.75rem; /* 12px */
   background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.UploaderItem-iconContainer img {
+  display: block;
+  object-fit: cover;
+  width: var(--iconContainerSize);
+  height: var(--iconContainerSize);
 }
 
 .UploaderItem-name {

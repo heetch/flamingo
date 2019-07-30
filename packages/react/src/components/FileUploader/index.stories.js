@@ -8,7 +8,6 @@ import Helper from "../Helper";
 import Label from "../Label";
 
 const inputName = "input-name";
-
 const stories = storiesOf("Uploaders/FileUploader", module);
 
 stories.addDecorator(withKnobs);
@@ -19,13 +18,18 @@ stories.add("Playground", () => (
     onChange={action("onChange")}
     isLoading={boolean("isLoading", false)}
     hasError={boolean("hasError", false)}
+    multiple={boolean("has multiple files", true)}
   />
 ));
 
 stories.add("Within form", () => (
   <>
-    <Label>File uploader label</Label>
-    <FileUploader name={inputName} onChange={action("onChange")} />
+    <Label htmlFor={inputName}>File uploader label</Label>
+    <FileUploader
+      name={inputName}
+      onChange={action("onChange")}
+      multiple={boolean("has multiple files", true)}
+    />
     <Helper>Helper text</Helper>
   </>
 ));

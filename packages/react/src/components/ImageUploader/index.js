@@ -4,55 +4,47 @@ import cx from "classnames";
 
 import FileUploader from "../FileUploader";
 import IconButton from "../IconButton";
+import UploaderImageItem from "../UploaderImageItem";
 
 import { ICONS } from "../../constants";
-import { safeInvoke } from "../../utils";
+import { toBase64, safeInvoke } from "../../utils";
 
-const toBase64 = file => {
-  const reader = new FileReader();
-
-  return new Promise(resolve => {
-    reader.onload = ({ target }) => resolve(target.result);
-    reader.readAsDataURL(file);
-  });
-};
-
-const ImageUploader = ({ onChange, ...props }) => {
-  const [file, setFile] = React.useState(undefined);
+const ImageUploader = ({ multiple, onChange, ...props }) => {
+  const [files, setFiles] = React.useState([]);
   const [preview, setPreview] = React.useState(undefined);
 
   const [isLoading, setIsLoading] = React.useState(false);
-  const [hasErrored, setHasErrored] = React.useState(false);
+  const [hasError, setHasError] = React.useState(false);
 
-  const handleFileChange = eventFile => {
-    if (!eventFile) {
-      setIsLoading(false);
-      setHasErrored(false);
-      setFile(undefined);
-      setPreview(undefined);
+  const handleDeleteFile = fileToDelete => {
+    const filteredFiles = files.filter(file => file.name !== fileToDelete.name);
+    setFiles(filteredFiles);
+  };
+
+  const handleFileChange = inputFiles => {
+    const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
+
+    setFiles(nextFiles);
+
+    if (multiple) {
+      return;
     }
 
-    setFile(eventFile);
+    setIsLoading(true);
+
+    toBase64(inputFiles[0])
+      .then(base64 => {
+        setPreview(base64);
+        setIsLoading(false);
+        safeInvoke(onChange({ files, base64 }));
+      })
+      .catch(setHasError);
   };
 
-  const handleResetState = () => {
-    setFile(undefined);
+  const handleClear = () => {
     setPreview(undefined);
+    setFiles([]);
   };
-
-  React.useEffect(
-    () => {
-      if (file) {
-        setIsLoading(true);
-        toBase64(file).then(base64 => {
-          setPreview(base64);
-          setIsLoading(false);
-          safeInvoke(onChange({ file, base64 }));
-        });
-      }
-    },
-    [file]
-  );
 
   return (
     <FileUploader
@@ -60,10 +52,11 @@ const ImageUploader = ({ onChange, ...props }) => {
         "has-preview": preview,
         "is-loading": isLoading,
       })}
+      files={files}
       onChange={handleFileChange}
-      file={file}
+      multiple={multiple}
       isLoading={isLoading}
-      hasErrored={hasErrored}
+      hasError={hasError}
       overrides={{
         input: {
           accept: "image/*",
@@ -71,22 +64,40 @@ const ImageUploader = ({ onChange, ...props }) => {
       }}
       {...props}
     >
-      <div
-        className="ImageUploader-preview"
-        style={{
-          backgroundImage: `url(${preview})`,
-        }}
-      />
+      {preview && (
+        <>
+          <div
+            className="ImageUploader-preview"
+            style={{
+              backgroundImage: `url(${preview})`,
+            }}
+          />
 
-      <div className="ImageUploader-hoverState">
-        <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
-      </div>
+          <div className="ImageUploader-hoverState">
+            <IconButton onClick={handleClear} icon={ICONS.IconTrash} />
+          </div>
+        </>
+      )}
+
+      {multiple &&
+        files.map(file => (
+          <UploaderImageItem
+            key={file.name}
+            handleDelete={handleDeleteFile}
+            file={file}
+          />
+        ))}
     </FileUploader>
   );
 };
 
 ImageUploader.propTypes = {
+  multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
+};
+
+ImageUploader.defaultProps = {
+  multiple: false,
 };
 
 export default ImageUploader;

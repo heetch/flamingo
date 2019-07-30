@@ -25,45 +25,54 @@ const texts = {
     id: "flamingo-file-uploader-error-try-again",
     defaultText: "Click here to try again",
   },
+  upload_more_files: {
+    id: "flamingo-file-uploader-upload-more-files",
+    defaultText: "Add more files",
+  },
 };
 
 const FileUploader = ({
   children,
   className,
-  file,
+  files: filesProp,
   name,
   onChange,
   translate,
   isLoading,
   hasError,
+  multiple,
   overrides,
   ...props
 }) => {
-  const [innerFile, setInnerFile] = React.useState(undefined);
-  const hasFile = !isLoading && (file || innerFile);
+  const [files, setFiles] = React.useState(filesProp);
+  const hasFile = !isLoading && !hasError && files.length > 0;
 
-  const handleFileChange = e => {
-    const [eventFile] = e.target.files;
+  const handleFilesChange = e => {
+    const inputFiles = [...e.target.files];
+    const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
-    setInnerFile(eventFile);
-    safeInvoke(onChange(eventFile));
+    setFiles(nextFiles);
+    safeInvoke(onChange(inputFiles));
   };
 
-  const handleResetState = () => {
-    setInnerFile(undefined);
+  const handleDeleteFile = fileToDelete => {
+    const filteredFiles = files.filter(file => file.name !== fileToDelete.name);
+    setFiles(filteredFiles);
   };
 
   React.useEffect(
     () => {
-      setInnerFile(file);
+      setFiles(filesProp);
     },
-    [file]
+    [filesProp]
   );
 
   return (
     <div
       className={cx("FileUploader FormEl-wrapper", className, {
         "has-file": hasFile,
+        "has-error": hasError,
+        "is-loading": isLoading,
       })}
       {...props}
     >
@@ -90,35 +99,52 @@ const FileUploader = ({
         </label>
       )}
 
-      {!isLoading && !hasError && (
-        <>
-          {hasFile ? (
-            children || (
-              <UploaderItem
-                handleResetState={handleResetState}
-                file={innerFile}
-              />
-            )
-          ) : (
-            <label
-              className="FileUploader-state FileUploader-state--empty"
-              htmlFor={name}
-            >
-              <Icon icon={ICONS.IconFilePlus} />
-              <Text className="FileUploader-actionText">
-                {translate(texts.add_document)}
-              </Text>
-            </label>
-          )}
-        </>
-      )}
+      {!isLoading &&
+        !hasError &&
+        (hasFile ? (
+          <>
+            {children || (
+              <>
+                {files.map(file => (
+                  <UploaderItem
+                    key={file.name}
+                    handleDelete={handleDeleteFile}
+                    file={file}
+                  />
+                ))}
+              </>
+            )}
+
+            {multiple && (
+              <label
+                className="FileUploader-state FileUploader-state--empty"
+                htmlFor={name}
+              >
+                <Text className="FileUploader-actionText">
+                  {translate(texts.upload_more_files)}
+                </Text>
+              </label>
+            )}
+          </>
+        ) : (
+          <label
+            className="FileUploader-state FileUploader-state--empty"
+            htmlFor={name}
+          >
+            <Icon icon={ICONS.IconFilePlus} />
+            <Text className="FileUploader-actionText">
+              {translate(texts.add_document)}
+            </Text>
+          </label>
+        ))}
 
       <div className="FileUploader-inputContainer">
         <input
           type="file"
           id={name}
           name={name}
-          onChange={handleFileChange}
+          multiple={multiple}
+          onChange={handleFilesChange}
           {...overrides.input}
         />
       </div>
@@ -132,9 +158,10 @@ FileUploader.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
-  file: PropTypes.instanceOf(File),
+  files: PropTypes.arrayOf(PropTypes.instanceOf(File)),
   isLoading: PropTypes.bool,
   hasError: PropTypes.bool,
+  multiple: PropTypes.bool,
   overrides: PropTypes.shape({
     input: PropTypes.shape({}),
   }),
@@ -144,9 +171,10 @@ FileUploader.defaultProps = {
   children: undefined,
   className: undefined,
   translate: defaultTranslate,
-  file: undefined,
+  files: [],
   hasError: false,
   isLoading: false,
+  multiple: false,
   overrides: {
     input: {},
   },
