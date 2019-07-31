@@ -9,6 +9,8 @@ const Checkbox = ({
   children,
   checked: isDefaultChecked,
   helper,
+  name,
+  value,
   onChange,
 }) => {
   const [isChecked, setIsChecked] = useState(isDefaultChecked);
@@ -25,6 +27,8 @@ const Checkbox = ({
       disabled={disabled}
       className={cx("Checkbox", { "is-undefined": isUndefined })}
       type="checkbox"
+      name={name}
+      value={value}
       onChange={onCheckboxStateChange}
     />
   );
@@ -48,6 +52,8 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
   helper: PropTypes.string,
 };
 
@@ -56,6 +62,7 @@ Checkbox.defaultProps = {
   checked: false,
   disabled: false,
   children: undefined,
+  value: "checked",
   helper: undefined,
 };
 
