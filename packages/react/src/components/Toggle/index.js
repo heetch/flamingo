@@ -3,7 +3,15 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import { safeInvoke } from "../../utils";
 
-const Toggle = ({ checked, disabled, label, helper, onChange }) => {
+const Toggle = ({
+  checked,
+  onLabel,
+  offLabel,
+  disabled,
+  label,
+  helper,
+  onChange,
+}) => {
   const [isOn, setIsOn] = useState(checked);
 
   const handleToggle = () => {
@@ -19,6 +27,8 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
         onClick={!disabled && handleToggle}
       >
         <div className="Toggle--bullet" />
+        <span className="Toggle--bullet-label is-on">{onLabel}</span>
+        <span className="Toggle--bullet-label is-off">{offLabel}</span>
       </div>
       {(label || helper) && (
         <div>
@@ -32,6 +42,8 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
 
 Toggle.propTypes = {
   checked: PropTypes.bool,
+  onLabel: PropTypes.string,
+  offLabel: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,
   helper: PropTypes.string,
@@ -40,6 +52,8 @@ Toggle.propTypes = {
 
 Toggle.defaultProps = {
   checked: false,
+  onLabel: "ON",
+  offLabel: "OFF",
   disabled: false,
   label: null,
   helper: null,

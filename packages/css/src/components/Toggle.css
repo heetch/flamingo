@@ -24,6 +24,44 @@
   transition: all 0.3s;
 }
 
+.Toggle--bullet-label {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--s);
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+}
+
+.Toggle .Toggle--bullet-label.is-off {
+  left: 18px;
+  right: 4px;
+  color: var(--color-granite);
+  visibility: visible;
+  transition: visibility 0.3s linear;
+  transition-delay: 0.1s;
+}
+
+.Toggle.is-active .Toggle--bullet-label.is-off {
+  visibility: hidden;
+  transition: visibility 0.1s linear;
+}
+
+.Toggle .Toggle--bullet-label.is-on {
+  right: 18px;
+  left: 4px;
+  color: var(--color-white);
+  visibility: hidden;
+  transition: visibility 0.1s linear;
+}
+
+.Toggle.is-active .Toggle--bullet-label.is-on {
+  visibility: visible;
+  transition: visibility 0.3s linear;
+  transition-delay: 0.1s;
+}
+
 .Toggle.is-active {
   background-color: var(--color-rose);
   border: 1px solid var(--color-rose);
