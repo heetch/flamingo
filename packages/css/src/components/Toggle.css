@@ -1,0 +1,62 @@
+.Toggle {
+  position: relative;
+  width: 54px;
+  height: 20px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-chatelle);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.Toggle:hover {
+  border: 1px solid var(--color-granite);
+}
+
+.Toggle .Toggle--bullet {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  background-color: var(--color-granite);
+  border-radius: 8px;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+}
+
+.Toggle.is-active {
+  background-color: var(--color-rose);
+  border: 1px solid var(--color-rose);
+  transition: all 0.3s;
+}
+
+.Toggle.is-active .Toggle--bullet {
+  left: 100%;
+  margin-left: -16px;
+  transition: all 0.3s;
+  background-color: var(--color-white);
+}
+
+.Toggle.is-disabled {
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-grey);
+}
+
+.Toggle.is-disabled .Toggle--bullet {
+  background-color: var(--color-chatelle);
+}
+
+.ToggleContainer {
+  display: flex;
+}
+
+.ToggleContainer > .Toggle {
+  margin-right: var(--space-l);
+}
+
+.Toggle-helper {
+  margin: 0;
+  padding: 0;
+  color: var(--color-granite);
+  font-size: var(--font-size--s);
+}
