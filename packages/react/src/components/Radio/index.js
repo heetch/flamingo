@@ -40,6 +40,8 @@ Radio.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   helper: PropTypes.string,
 };
 
