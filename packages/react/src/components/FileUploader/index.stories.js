@@ -16,9 +16,9 @@ stories.add("Playground", () => (
   <FileUploader
     name={inputName}
     onChange={action("onChange")}
-    isLoading={boolean("isLoading", false)}
-    hasError={boolean("hasError", false)}
-    multiple={boolean("has multiple files", true)}
+    isLoading={boolean("Is loading", false)}
+    hasError={boolean("Has error", false)}
+    multiple={boolean("Has multiple files", true)}
   />
 ));
 
@@ -28,7 +28,7 @@ stories.add("Within form", () => (
     <FileUploader
       name={inputName}
       onChange={action("onChange")}
-      multiple={boolean("has multiple files", true)}
+      multiple={boolean("Has multiple files", true)}
     />
     <Helper>Helper text</Helper>
   </>

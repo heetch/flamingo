@@ -14,6 +14,6 @@ stories.add("Playground", () => (
   <ImageUploader
     name={inputName}
     onChange={action("onChange")}
-    multiple={boolean("has multiple files", true)}
+    multiple={boolean("Has multiple files", true)}
   />
 ));

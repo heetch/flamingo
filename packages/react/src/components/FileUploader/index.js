@@ -56,8 +56,10 @@ const FileUploader = ({
   };
 
   const handleDeleteFile = fileToDelete => {
-    const filteredFiles = files.filter(file => file.name !== fileToDelete.name);
-    setFiles(filteredFiles);
+    const remainingFiles = files.filter(
+      file => file.name !== fileToDelete.name
+    );
+    setFiles(remainingFiles);
   };
 
   React.useEffect(
