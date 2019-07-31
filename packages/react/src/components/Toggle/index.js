@@ -16,7 +16,7 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
     <div className="ToggleContainer">
       <div
         className={cx("Toggle", { "is-active": isOn, "is-disabled": disabled })}
-        onClick={handleToggle}
+        onClick={!disabled && handleToggle}
       >
         <div className="Toggle--bullet" />
       </div>

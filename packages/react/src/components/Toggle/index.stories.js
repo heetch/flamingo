@@ -23,4 +23,20 @@ storiesOf("Buttons/Toggle", module)
         onChange={state => action(`onChange - state: ${state}`)}
       />
     ))
-  );
+  )
+  .add("All states", () => (
+    <>
+      <div style={{ width: "100%" }}>
+        <Toggle label="Toggle" helper="Normal" />
+      </div>
+      <div style={{ width: "100%" }}>
+        <Toggle checked label="Toggle" helper="On" />
+      </div>
+      <div style={{ width: "100%" }}>
+        <Toggle disabled label="Toggle" helper="Disabled" />
+      </div>
+      <div style={{ width: "100%" }}>
+        <Toggle disabled checked label="Toggle" helper="On & Disabled" />
+      </div>
+    </>
+  ));
