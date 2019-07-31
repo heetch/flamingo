@@ -105,17 +105,14 @@ const FileUploader = ({
         !hasError &&
         (hasFile ? (
           <>
-            {children || (
-              <>
-                {files.map(file => (
-                  <UploaderItem
-                    key={file.name}
-                    handleDelete={handleDeleteFile}
-                    file={file}
-                  />
-                ))}
-              </>
-            )}
+            {children ||
+              files.map(file => (
+                <UploaderItem
+                  key={file.name}
+                  handleDelete={handleDeleteFile}
+                  file={file}
+                />
+              ))}
 
             {multiple && (
               <label
