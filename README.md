@@ -19,6 +19,7 @@ Every package is available through NPM
 
 - [React components](packages/react/README.md)
 - [Standalone CSS](packages/css/README.md)
+- [How-to review new components](docs/how-to-review-new-components.md)
 
 ## License
 
