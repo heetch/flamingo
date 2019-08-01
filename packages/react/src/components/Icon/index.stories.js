@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { select, withKnobs } from "@storybook/addon-knobs";
+import { select } from "@storybook/addon-knobs";
 
 import Helper from "../Helper";
 import Input from "../Input";
@@ -52,8 +52,6 @@ const IconsFilterer = () => {
 };
 
 const stories = storiesOf("Icons", module);
-
-stories.addDecorator(withKnobs);
 
 stories.add("All", () => <IconsFilterer />);
 
