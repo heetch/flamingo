@@ -32,6 +32,7 @@
   opacity: 1;
 }
 
-.ImageUploader.has-preview {
+.ImageUploader.has-preview,
+.ImageUploader .UploaderItem-iconContainer {
   border-color: transparent;
 }
