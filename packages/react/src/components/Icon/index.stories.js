@@ -1,26 +1,59 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { select, withKnobs } from "@storybook/addon-knobs";
+import { select } from "@storybook/addon-knobs";
+
+import Helper from "../Helper";
+import Input from "../Input";
+import Label from "../Label";
+import Icon from ".";
 
 import { ICONS, ICON_SIZES } from "../../constants";
-import Icon from ".";
 
 const icons = Object.keys(ICONS);
 const sizes = Object.values(ICON_SIZES);
 
-const stories = storiesOf("Icon", module);
+const IconsFilterer = () => {
+  const [filter, setFilter] = React.useState("");
 
-stories.addDecorator(withKnobs);
+  const displayedIcons = icons.filter(icon =>
+    icon.toLowerCase().includes(filter.toLowerCase())
+  );
 
-stories.add("All", () => (
-  <div style={{ padding: "var(--space-xl)" }}>
-    {icons.map(icon => (
-      <div style={{ padding: "var(--space-s)", display: "inline-block" }}>
-        <Icon key={`Icon--${icon}`} icon={icon} />
+  const handleInputChange = e => setFilter(e.target.value);
+
+  return (
+    <div>
+      <Label htmlFor="icon-search">Search</Label>
+      <Input id="icon-search" onChange={handleInputChange} />
+
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          padding: "var(--space-xl)",
+        }}
+      >
+        {displayedIcons.map(icon => (
+          <div
+            key={icon}
+            style={{
+              padding: "var(--space-s)",
+              width: 150,
+              textAlign: "center",
+            }}
+          >
+            <Icon key={`Icon--${icon}`} icon={icon} />
+            <Helper>{icon}</Helper>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-));
+    </div>
+  );
+};
+
+const stories = storiesOf("Icons", module);
+
+stories.add("All", () => <IconsFilterer />);
 
 stories.add("Playground", () => (
   <Icon
