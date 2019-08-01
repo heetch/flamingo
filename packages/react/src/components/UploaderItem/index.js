@@ -7,20 +7,27 @@ import Text from "../Text";
 
 import { ICONS } from "../../constants";
 
-const UploaderItem = ({ file, handleResetState }) => (
+const UploaderItem = ({ file, handleDelete, overrides }) => (
   <div className="UploaderItem">
     <div className="UploaderItem-iconContainer">
-      <Icon icon={ICONS.IconFileText} />
+      {overrides.icon || <Icon icon={ICONS.IconFileText} />}
     </div>
 
     <Text className="UploaderItem-name u-ellipsis">{file.name}</Text>
-    <IconButton onClick={handleResetState} icon={ICONS.IconTrash} />
+    <IconButton onClick={() => handleDelete(file)} icon={ICONS.IconTrash} />
   </div>
 );
 
 UploaderItem.propTypes = {
   file: PropTypes.instanceOf(File).isRequired,
-  handleResetState: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  overrides: PropTypes.shape({
+    icon: PropTypes.node,
+  }),
+};
+
+UploaderItem.defaultProps = {
+  overrides: {},
 };
 
 export default UploaderItem;
