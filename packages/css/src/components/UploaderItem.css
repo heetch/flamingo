@@ -2,6 +2,7 @@
   --iconContainerSize: 2.625rem; /* 42px */
   display: flex;
   align-items: center;
+  text-align: left;
 }
 
 .UploaderItem + .UploaderItem {

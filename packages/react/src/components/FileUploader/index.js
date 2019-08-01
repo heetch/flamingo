@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
+import Button from "../Button";
 import Icon from "../Icon";
 import Spinner from "../Spinner";
 import Text from "../Text";
 import UploaderItem from "../UploaderItem";
 
-import { ICONS } from "../../constants";
+import { ICONS, INTENTS } from "../../constants";
 import { safeInvoke } from "../../utils";
 
 const defaultTranslate = ({ defaultText }) => defaultText;
@@ -115,14 +116,14 @@ const FileUploader = ({
               ))}
 
             {multiple && (
-              <label
-                className="FileUploader-state FileUploader-state--empty"
-                htmlFor={name}
-              >
-                <Text className="FileUploader-actionText">
+              <Button intent={INTENTS.TERTIARY} className="Button--label">
+                <label
+                  className="FileUploader-state FileUploader-state--empty"
+                  htmlFor={name}
+                >
                   {translate(texts.upload_more_files)}
-                </Text>
-              </label>
+                </label>
+              </Button>
             )}
           </>
         ) : (

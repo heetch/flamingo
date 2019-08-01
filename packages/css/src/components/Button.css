@@ -1,7 +1,9 @@
 .Button {
+  --padding: var(--space-m) var(--space-xl);
+
   display: inline-block;
   margin: var(--space-m) 0;
-  padding: var(--space-m) var(--space-xl);
+  padding: var(--padding);
   font-size: var(--font-size--s);
   font-weight: var(--font-weight--bold);
   line-height: var(--line-height--m);
@@ -96,6 +98,14 @@
 .Button.is-tertiary[disabled],
 .Button.is-tertiary.is-disabled {
   color: var(--color-white);
+}
+
+.Button--label {
+  padding: 0;
+}
+
+.Button--label > label {
+  padding: var(--padding);
 }
 
 /* Icon */

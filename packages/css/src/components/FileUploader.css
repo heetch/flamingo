@@ -27,6 +27,7 @@
 .FileUploader.has-file {
   border-color: transparent;
   height: auto;
+  text-align: center;
 }
 
 .FileUploader,
