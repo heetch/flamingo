@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import { ICON_SIZES, INPUT_TYPES } from "../../constants";
+import { ICONS, INPUT_TYPES } from "../../constants";
 
 const types = Object.values(INPUT_TYPES);
 
 const defaultIconProps = {
   className: "FormEl-icon",
-  size: ICON_SIZES.S,
 };
 
 const Input = ({
@@ -44,8 +43,8 @@ const Input = ({
         {...props}
       />
 
-      {isInvalid && <Icon icon="IconClose" {...defaultIconProps} />}
-      {isValid && <Icon icon="IconCheck" {...defaultIconProps} />}
+      {isInvalid && <Icon icon={ICONS.IconCross} {...defaultIconProps} />}
+      {isValid && <Icon icon={ICONS.IconCheck} {...defaultIconProps} />}
     </div>
   );
 };
