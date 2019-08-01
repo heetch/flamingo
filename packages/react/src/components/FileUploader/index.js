@@ -16,7 +16,7 @@ const defaultTranslate = ({ defaultText }) => defaultText;
 const texts = {
   add_document: {
     id: "flamingo-file-uploader-add-document",
-    defaultText: "Click here to add a document",
+    defaultText: "Click to add a document",
   },
   error: {
     id: "flamingo-file-uploader-error-title",
@@ -24,7 +24,7 @@ const texts = {
   },
   try_again: {
     id: "flamingo-file-uploader-error-try-again",
-    defaultText: "Click here to try again",
+    defaultText: "Click to try again",
   },
   upload_more_files: {
     id: "flamingo-file-uploader-upload-more-files",
