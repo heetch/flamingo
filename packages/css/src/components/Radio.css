@@ -2,10 +2,10 @@
   position: relative;
   appearance: none;
   background: white;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem /* 20px */;
+  height: 1.25rem /* 20px */;
   border: 1px solid var(--color-chatelle);
-  border-radius: 10px;
+  border-radius: 0.625rem /* 10px */;
   cursor: pointer;
 }
 
@@ -54,12 +54,12 @@
 .Radio:checked:after {
   content: "";
   background-color: var(--color-white);
-  width: 10px;
-  height: 10px;
+  width: 0.625rem /* 10px */;
+  height: 0.625rem /* 10px */;
   position: absolute;
-  top: 4px;
-  left: 4px;
-  border-radius: 5px;
+  top: 0.25rem /* 4px */;
+  left: 0.25rem /* 4px */;
+  border-radius: 0.3125rem /* 5px */;
 }
 
 .Radio:disabled:checked:after {

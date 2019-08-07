@@ -1,11 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { boolean, text } from "@storybook/addon-knobs";
+import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
 import Radio from ".";
 
 storiesOf("Form controls/Radio", module)
+  .addDecorator(withKnobs)
   .addDecorator(storiesFn => (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {storiesFn()}
