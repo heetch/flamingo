@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 import { INPUT_TYPES } from "../../constants";
 import Input from ".";
 
@@ -9,7 +10,7 @@ const states = ["default", "hover", "focus", "disabled"];
 
 const inputProps = () => ({
   id: `input-${Math.random()}`,
-  onChange: console.log,
+  onChange: action("onChange"),
 });
 
 storiesOf("Form controls/Input", module)
@@ -55,6 +56,7 @@ storiesOf("Form controls/Input", module)
         invalid={boolean("Is invalid?", false)}
         valid={boolean("Is valid?", false)}
         disabled={boolean("Is disabled?", false)}
+        onChange={action("onChange")}
       />
     </>
   ));
