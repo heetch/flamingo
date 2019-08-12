@@ -36,7 +36,11 @@ const Select = ({
         ))}
       </select>
 
-      <Icon icon="IconTopDown" className="FormEl-icon" size={ICON_SIZES.S} />
+      <Icon
+        icon="IconChevronDown"
+        className="FormEl-icon"
+        size={ICON_SIZES.L}
+      />
     </div>
   );
 };
