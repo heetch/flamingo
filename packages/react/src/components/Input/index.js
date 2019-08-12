@@ -43,7 +43,9 @@ const Input = ({
         {...props}
       />
 
-      {isInvalid && <Icon icon={ICONS.IconCross} {...defaultIconProps} />}
+      {isInvalid && (
+        <Icon icon={ICONS.IconAlertOctagon} {...defaultIconProps} />
+      )}
       {isValid && <Icon icon={ICONS.IconCheck} {...defaultIconProps} />}
     </div>
   );

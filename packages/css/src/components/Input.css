@@ -1,5 +1,5 @@
 .Input-wrapper.is-invalid {
-  --icon-color: var(--color-ruby);
+  --icon-color: var(--color-bittersweet);
 }
 
 .Input-wrapper.is-valid {
@@ -7,7 +7,7 @@
 }
 
 .Input-wrapper.is-invalid .Input {
-  --border-color: var(--color-ruby);
+  --border-color: var(--color-bittersweet);
 }
 
 .Input-wrapper.is-valid .Input {

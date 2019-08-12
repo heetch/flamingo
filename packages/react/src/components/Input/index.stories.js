@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { INPUT_TYPES } from "../../constants";
 import Input from ".";
 
@@ -13,6 +13,7 @@ const inputProps = () => ({
 });
 
 storiesOf("Form controls/Input", module)
+  .addDecorator(withKnobs)
   .add("With types", () =>
     types.map(type => (
       <div key={`input-${type}`}>
@@ -22,6 +23,10 @@ storiesOf("Form controls/Input", module)
   )
   .add("With states", () => (
     <>
+      <div>
+        <Input {...inputProps()} placeholder="Props: placeholder" />
+      </div>
+
       {states.map(state => (
         <div key={`input-${state}`}>
           <Input
@@ -42,9 +47,14 @@ storiesOf("Form controls/Input", module)
       </div>
     </>
   ))
-  .add("With custom props", () => (
+  .add("Playground", () => (
     <>
-      <Input {...inputProps()} placeholder="Default input" />
-      <Input {...inputProps()} placeholder="Will `fill` prop" fill />
+      <Input
+        placeholder={text("Placeholder", "Placeholder")}
+        value={text("Value", "My text input")}
+        invalid={boolean("Is invalid?", false)}
+        valid={boolean("Is valid?", false)}
+        disabled={boolean("Is disabled?", false)}
+      />
     </>
   ));
