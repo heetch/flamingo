@@ -13,7 +13,7 @@ storiesOf("Form controls/Checkbox", module)
   ))
   .add(
     "Playground",
-    withInfo("")(() => () => (
+    withInfo("")(() => (
       <Checkbox
         isUndefined={boolean("Is undefined?", false)}
         disabled={boolean("Is disabled?", false)}

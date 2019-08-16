@@ -25,7 +25,7 @@ const Checkbox = ({
     <input
       checked={isChecked}
       disabled={disabled}
-      className={cx("Checkbox", { "is-undefined": isUndefined })}
+      className={cx("Checkbox", { "is-undefined": !isChecked && isUndefined })}
       type="checkbox"
       name={name}
       value={value}
