@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import { ICON_SIZES } from "../../constants";
+import { ICONS, ICON_SIZES } from "../../constants";
 
 const Select = ({
   className,
@@ -37,7 +37,7 @@ const Select = ({
       </select>
 
       <Icon
-        icon="IconChevronDown"
+        icon={ICONS.IconChevronDown}
         className="FormEl-icon"
         size={ICON_SIZES.L}
       />

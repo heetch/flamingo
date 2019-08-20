@@ -40,12 +40,8 @@ storiesOf("Form controls/Select", module)
     ))
   )
   .add("Playground", () => (
-    <>
-      <Select
-        options={mapStringsToSelectOptions(
-          text("Options", "Foo,Bar").split(",")
-        )}
-        onChange={action("onChange")}
-      />
-    </>
+    <Select
+      options={mapStringsToSelectOptions(text("Options", "Foo,Bar").split(","))}
+      onChange={action("onChange")}
+    />
   ));
