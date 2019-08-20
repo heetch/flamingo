@@ -11,6 +11,26 @@ storiesOf("Form controls/Checkbox", module)
       {storiesFn()}
     </div>
   ))
+  .add("All states", () => (
+    <>
+      <Checkbox helper="Normal checkbox">Label</Checkbox>
+      <Checkbox helper="Normal checkbox" checked>
+        Label
+      </Checkbox>
+      <Checkbox helper="Undefined state checkbox" isUndefined>
+        Label
+      </Checkbox>
+      <Checkbox disabled helper="Disabled checkbox">
+        Label
+      </Checkbox>
+      <Checkbox helper="Disabled checked checkbox" checked disabled>
+        Label
+      </Checkbox>
+      <Checkbox helper="Disabled undefined state checkbox" isUndefined disabled>
+        Label
+      </Checkbox>
+    </>
+  ))
   .add(
     "Playground",
     withInfo("")(() => (
