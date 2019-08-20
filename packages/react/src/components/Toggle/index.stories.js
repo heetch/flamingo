@@ -20,7 +20,7 @@ storiesOf("Buttons/Toggle", module)
         disabled={boolean("Is disabled?", false)}
         label={text("Label", "Toggle label")}
         helper={text("Label helper", "Label helper")}
-        onChange={state => action(`onChange - state: ${state}`)}
+        onChange={action(`onChange`)}
       />
     ))
   )

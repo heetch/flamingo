@@ -52,8 +52,8 @@ const FileUploader = ({
     const inputFiles = [...e.target.files];
     const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
-    setFiles(nextFiles);
-    safeInvoke(onChange(inputFiles));
+    setInnerFile(eventFile);
+    safeInvoke(onChange, inputFiles);
   };
 
   const handleDeleteFile = fileToDelete => {
