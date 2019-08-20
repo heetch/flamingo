@@ -52,7 +52,7 @@ const FileUploader = ({
     const inputFiles = [...e.target.files];
     const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
-    setInnerFile(eventFile);
+    setFiles(nextFiles);
     safeInvoke(onChange, inputFiles);
   };
 
