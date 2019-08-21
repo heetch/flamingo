@@ -9,7 +9,7 @@ umask 077
 IFS=$'\n\t'
 
 # prerequisites
-yarn --cwd  packages/css install
+yarn --cwd packages/css install
 yarn --cwd packages/react install
 
 # build
