@@ -7,6 +7,10 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
   const [isOn, setIsOn] = useState(checked);
 
   const handleToggle = () => {
+    if (disabled) {
+      return;
+    }
+
     const newState = !isOn;
     setIsOn(newState);
     safeInvoke(onChange, newState);
@@ -19,7 +23,7 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
         "is-disabled": disabled,
       })}
     >
-      <div className="Toggle" onClick={!disabled ? handleToggle : undefined}>
+      <div className="Toggle" onClick={handleToggle}>
         <div className="Toggle-bullet" />
         <span className="Toggle-bullet-label Toggle-bullet-label--on">ON</span>
         <span className="Toggle-bullet-label Toggle-bullet-label--off">
@@ -27,10 +31,7 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
         </span>
       </div>
       {(label || helper) && (
-        <div
-          className="Toggle-labels"
-          onClick={!disabled ? handleToggle : undefined}
-        >
+        <div className="Toggle-labels" onClick={handleToggle}>
           {label}
           {helper && <p className="Toggle-helper">{helper}</p>}
         </div>
