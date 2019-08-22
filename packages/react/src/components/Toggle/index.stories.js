@@ -6,7 +6,7 @@ import { withInfo } from "@storybook/addon-info";
 
 import Toggle from "./";
 
-storiesOf("Buttons/Toggle", module)
+storiesOf("Toggle", module)
   .addDecorator(withKnobs)
   .addDecorator(storiesFn => (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -27,16 +27,32 @@ storiesOf("Buttons/Toggle", module)
   .add("All states", () => (
     <>
       <div style={{ width: "100%" }}>
-        <Toggle label="Toggle" helper="Normal" />
+        <Toggle label="Toggle" helper="Normal" onChange={action(`onChange`)} />
       </div>
       <div style={{ width: "100%" }}>
-        <Toggle checked label="Toggle" helper="On" />
+        <Toggle
+          checked
+          label="Toggle"
+          helper="On"
+          onChange={action(`onChange`)}
+        />
       </div>
       <div style={{ width: "100%" }}>
-        <Toggle disabled label="Toggle" helper="Disabled" />
+        <Toggle
+          disabled
+          label="Toggle"
+          helper="Disabled"
+          onChange={action(`onChange`)}
+        />
       </div>
       <div style={{ width: "100%" }}>
-        <Toggle disabled checked label="Toggle" helper="On & Disabled" />
+        <Toggle
+          disabled
+          checked
+          label="Toggle"
+          helper="On & Disabled"
+          onChange={action(`onChange`)}
+        />
       </div>
     </>
   ));

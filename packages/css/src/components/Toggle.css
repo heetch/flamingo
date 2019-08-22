@@ -1,22 +1,25 @@
 .Toggle {
   position: relative;
-  width: 3.375rem /* 54px */;
+  min-width: 3.375rem /* 54px */;
   height: 1.25rem /* 20px */;
   background-color: var(--color-white);
   border: 1px solid var(--color-chatelle);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
+  --Toggle-bullet-size: 0.875rem /* 14px */;
+  --Toggle-bullet-space-for-label: 1.125rem /* 18px */;
+  --Toggle-bullet-space: 0.25rem /* 4px */;
 }
 
 .Toggle:hover {
-  border: 1px solid var(--color-granite);
+  border-color: var(--my-new-color);
 }
 
 .Toggle-bullet {
   position: absolute;
-  height: 0.875rem /* 14px */;
-  width: 0.875rem /* 14px */;
+  height: var(--Toggle-bullet-size);
+  width: var(--Toggle-bullet-size);
   background-color: var(--color-granite);
   border-radius: 8px;
   top: 2px;
@@ -35,8 +38,8 @@
 }
 
 .Toggle-bullet-label.Toggle-bullet-label--off {
-  left: 18px;
-  right: 4px;
+  left: var(--Toggle-bullet-space-for-label);
+  right: var(--Toggle-bullet-space);
   color: var(--color-granite);
   visibility: visible;
   transition: visibility 0.3s linear;
@@ -49,8 +52,8 @@
 }
 
 .Toggle-bullet-label--on {
-  right: 18px;
-  left: 4px;
+  right: var(--Toggle-bullet-space-for-label);
+  left: var(--Toggle-bullet-space);
   color: var(--color-white);
   visibility: hidden;
   transition: visibility 0.1s linear;
@@ -68,20 +71,20 @@
 
 .ToggleContainer.is-on .Toggle {
   background-color: var(--color-rose);
-  border: 1px solid var(--color-rose);
+  border-color: var(--color-rose);
   transition: all 0.3s;
 }
 
 .ToggleContainer.is-on .Toggle-bullet {
   left: 100%;
   margin-left: -16px;
-  transition: all 0.3s;
   background-color: var(--color-white);
+  transition: all 0.3s;
 }
 
 .ToggleContainer.is-disabled .Toggle {
   background-color: var(--color-grey);
-  border: 1px solid var(--color-grey);
+  border-color: var(--color-grey);
   cursor: not-allowed;
 }
 
@@ -91,20 +94,17 @@
 
 .ToggleContainer {
   display: flex;
-}
-
-.ToggleContainer > .Toggle {
-  margin-right: var(--space-l);
+  margin: 0 var(--space-m);
 }
 
 .Toggle-helper {
   margin: 0;
-  padding: 0;
   color: var(--color-granite);
   font-size: var(--font-size--s);
 }
 
-.ToggleContainer .Toggle-labels {
+.Toggle-labels {
+  margin-left: var(--space-l);
   cursor: pointer;
 }
 
