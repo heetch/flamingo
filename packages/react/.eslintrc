@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
   "env": {
     "browser": true,
     "es6": true
@@ -10,17 +10,17 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "jsx-a11y/label-has-for": [
-      "error",
-      {
-        "required": {
-          "every": ["id"]
-        }
-      }
-    ],
-    "react/jsx-filename-extension": 0,
+
+    // allow @storybook packages to be used
+    // without having a linting error
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+
+    // eslint rules conflicting with prettier
     "react/jsx-closing-tag-location": 0,
+    "react/jsx-curly-newline": 0,
+    "react/jsx-filename-extension": 0,
     "react/jsx-indent": 0,
-    "react/jsx-one-expression-per-line": 0
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
