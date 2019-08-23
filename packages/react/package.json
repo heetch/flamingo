@@ -23,7 +23,8 @@
     "prepare": "npm run build",
     "predeploy": "npm run build && npm run build:storybook",
     "deploy": "storybook-to-ghpages",
-    "icons": "node scripts/icons"
+    "icons": "node scripts/icons",
+    "prettier": "prettier --write 'src/**/*.{js,jsx,json,md}'"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
@@ -54,7 +55,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
     "normalize.css": "^8.0.1",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
@@ -75,5 +79,16 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
