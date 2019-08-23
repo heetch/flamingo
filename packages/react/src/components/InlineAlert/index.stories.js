@@ -4,8 +4,8 @@ import { withKnobs, select, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import InlineAlert from "./";
-import { INLINE_ALERT_TYPES } from "../../constants/";
+import InlineAlert from ".";
+import { INLINE_ALERT_TYPES } from "../../constants";
 
 storiesOf("Alerts/InlineAlert")
   .addDecorator(withKnobs)

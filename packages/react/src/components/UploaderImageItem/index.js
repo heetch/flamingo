@@ -17,7 +17,7 @@ const UploaderImageItem = ({ file, overrides, ...props }) => {
       setPreview(base64);
       setIsLoading(false);
     });
-  }, []);
+  }, [file]);
 
   return (
     <UploaderItem overrides={{ icon, ...overrides }} file={file} {...props} />

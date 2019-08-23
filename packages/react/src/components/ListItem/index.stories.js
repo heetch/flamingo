@@ -13,9 +13,9 @@ import {
   ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
-} from "../../constants/";
+} from "../../constants";
 
-import ListItem from "./";
+import ListItem from ".";
 
 ICONS.None = null;
 

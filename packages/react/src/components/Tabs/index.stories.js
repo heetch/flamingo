@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { withKnobs, array } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
-import Tabs from "./";
+import Tabs from ".";
 
 storiesOf("Navigation/Tabs")
   .addDecorator(withKnobs)

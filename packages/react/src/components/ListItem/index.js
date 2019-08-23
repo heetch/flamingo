@@ -6,7 +6,7 @@ import {
   ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
-} from "../../constants/";
+} from "../../constants";
 
 const ICONS_KEYS = Object.keys(ICONS);
 
