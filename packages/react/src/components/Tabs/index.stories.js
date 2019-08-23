@@ -1,9 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, array } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import Tabs from "./";
+import Tabs from ".";
 
 storiesOf("Navigation/Tabs")
   .addDecorator(withKnobs)
@@ -11,6 +12,7 @@ storiesOf("Navigation/Tabs")
     "Playground",
     withInfo("")(() => (
       <Tabs
+        onClick={action("onClick")}
         elements={array("Tabs (separated by comma)", [
           "Cars",
           "Drivers",

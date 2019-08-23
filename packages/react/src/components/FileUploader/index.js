@@ -63,12 +63,9 @@ const FileUploader = ({
     setFiles(remainingFiles);
   };
 
-  React.useEffect(
-    () => {
-      setFiles(filesProp);
-    },
-    [filesProp]
-  );
+  React.useEffect(() => {
+    setFiles(filesProp);
+  }, [filesProp]);
 
   return (
     <div

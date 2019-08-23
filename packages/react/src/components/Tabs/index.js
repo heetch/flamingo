@@ -20,7 +20,15 @@ const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
     <div className="container">
       <div className="Tabs">
         {elements.map((element, index) => (
-          <span key={element} onClick={() => handleTabClick(index)}>
+          <span
+            key={element}
+            onClick={() => handleTabClick(index)}
+            role="button"
+            onKeyPress={({ which }) =>
+              which === 13 ? handleTabClick(index) : undefined
+            }
+            tabIndex={0}
+          >
             <div className="Tabs-label">
               {buildTabLabel ? buildTabLabel(element) : element}
             </div>
@@ -51,6 +59,7 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   buildTabLabel: null,
   buildReturnObject: null,
+  onClick: () => {},
 };
 
 export default Tabs;
