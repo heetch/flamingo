@@ -30,6 +30,7 @@ storiesOf("Items/ListItem")
 
         return (
           <ListItem
+            key={groupId}
             type={select(
               `(${itemNumber}) Size`,
               LIST_ITEM_SIZES,

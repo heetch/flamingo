@@ -19,7 +19,7 @@ const InlineAlert = ({ title, children, type, onClose }) => (
     })}
   >
     {onClose && (
-      <button className="InlineAlert-iconClose" onClick={onClose}>
+      <button type="button" className="InlineAlert-iconClose" onClick={onClose}>
         <Icon icon={ICONS.IconCross} />
       </button>
     )}
@@ -34,6 +34,7 @@ const InlineAlert = ({ title, children, type, onClose }) => (
 );
 
 InlineAlert.propTypes = {
+  children: PropTypes.node,
   /** Type of alert */
   type: PropTypes.oneOf(ALERT_TYPES),
   /** Title of alert */
@@ -43,6 +44,7 @@ InlineAlert.propTypes = {
 };
 
 InlineAlert.defaultProps = {
+  children: undefined,
   type: INLINE_ALERT_TYPES.INFORMATION,
 };
 

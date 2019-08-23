@@ -24,7 +24,10 @@ const ListItem = ({
   onClick,
 }) => (
   <div
+    role="button"
+    tabIndex={0}
     onClick={onClick}
+    onKeyPress={({ which }) => (which === 13 ? onClick() : undefined)}
     className={cx("ListItem", {
       "ListItem--sub": type === LIST_ITEM_SIZES.SUB,
       "ListItem--mini": type === LIST_ITEM_SIZES.MINI,
