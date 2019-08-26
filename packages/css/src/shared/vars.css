@@ -23,6 +23,30 @@
   --color-jake: #e0b01d;
   --color-sunglow: #fccb36;
   --color-bittersweet: #ff785a;
+  
+   --gradient-rr: linear-gradient(
+            to right bottom,
+            #f80059,
+            #f80059
+    );
+
+    --gradient-mr: linear-gradient(
+            to right bottom,
+            #f80059,
+            #39197a
+    );
+
+    --gradient-dm: linear-gradient(
+            to right bottom,
+            #200fc7,
+            #39197a
+    );
+
+    --gradient-mt: linear-gradient(
+            to right bottom,
+            #39197a,
+            #190134
+    );
 }
 
 :root {
@@ -54,31 +78,6 @@
   --icon--l: 1.25rem; /* 20px */
 }
 
-:root {
-  --gradient-rr: linear-gradient(
-    to right bottom,
-    var(--color-rose),
-    var(--color-razzmatazz)
-  );
-
-  --gradient-mr: linear-gradient(
-    to right bottom,
-    var(--color-rose2),
-    var(--color-meteorite)
-  );
-
-  --gradient-dm: linear-gradient(
-    to right bottom,
-    var(--color-sonic),
-    var(--color-meteorite)
-  );
-
-  --gradient-mt: linear-gradient(
-    to right bottom,
-    var(--color-meteorite),
-    var(--color-tolopea)
-  );
-}
 
 :root {
   --space-s: 0.25rem; /* 4px */
