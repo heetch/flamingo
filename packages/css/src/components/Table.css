@@ -14,12 +14,28 @@
   padding: var(--space-l) var(--space-xl);
 }
 
+.Table-RowCell .Text,
+.Table-HeaderCell .Text {
+  margin: 0;
+}
+
 .Table-HeaderCell {
   position: sticky;
   top: 0;
   font-weight: var(--font-weight--bold);
   box-shadow: inset 0px -2px 0px var(--borderColor);
   background-color: var(--color-white);
+}
+
+.Table-HeaderCell .Text {
+  color: var(--color-tolopea);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Table-HeaderCell.is-sorted .Text {
+  color: var(--color-rose);
 }
 
 .Table-RowGroup {

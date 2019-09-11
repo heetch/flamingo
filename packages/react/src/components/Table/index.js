@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 
+import Icon from "../Icon";
 import Text from "../Text";
 
 // eslint-disable-next-line react/prop-types
@@ -13,8 +14,13 @@ const HeaderGroup = ({ className, children, ...props }) => (
 );
 
 // eslint-disable-next-line react/prop-types
-const HeaderCell = ({ className, children, ...props }) => (
-  <th className={cx("Table-HeaderCell", className)} {...props}>
+const HeaderCell = ({ className, children, isSorted, ...props }) => (
+  <th
+    className={cx("Table-HeaderCell", className, {
+      "is-sorted": isSorted,
+    })}
+    {...props}
+  >
     {children}
   </th>
 );
@@ -33,17 +39,40 @@ const RowCell = ({ className, children, ...props }) => (
   </td>
 );
 
-const Table = ({ className, columns, data }) => {
-  const { headerGroups, rows, prepareRow } = useTable({ columns, data });
+const Table = ({ className, columns, data, isSortable }) => {
+  const { headerGroups, rows, prepareRow } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   return (
     <table className={cx("Table", className)}>
       <thead>
         {headerGroups.map(({ getHeaderGroupProps, headers }) => (
           <HeaderGroup {...getHeaderGroupProps()}>
-            {headers.map(({ getHeaderProps, render }) => (
-              <HeaderCell {...getHeaderProps()}>{render("Header")}</HeaderCell>
-            ))}
+            {headers.map(
+              ({
+                getHeaderProps,
+                getSortByToggleProps,
+                isSorted,
+                isSortedDesc,
+                render,
+              }) => (
+                <HeaderCell
+                  {...getHeaderProps(isSortable && getSortByToggleProps())}
+                  isSorted={isSorted}
+                >
+                  <Text>
+                    {render("Header")}
+                    {isSorted && isSortedDesc && <Icon icon="IconArrowUp" />}
+                    {isSorted && !isSortedDesc && <Icon icon="IconArrowDown" />}
+                  </Text>
+                </HeaderCell>
+              )
+            )}
           </HeaderGroup>
         ))}
       </thead>
@@ -72,12 +101,14 @@ Table.propTypes = {
     })
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
+  isSortable: PropTypes.bool,
 };
 
 Table.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
+  isSortable: false,
 };
 
 Table.HeaderCell = HeaderCell;

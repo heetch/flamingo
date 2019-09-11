@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
+import { boolean, withKnobs } from "@storybook/addon-knobs";
 
 import Table from ".";
 
@@ -29,4 +29,10 @@ const stories = storiesOf("Table", module);
 
 stories.addDecorator(withKnobs);
 
-stories.add("Playground", () => <Table columns={columns} data={data} />);
+stories.add("Playground", () => (
+  <Table
+    columns={columns}
+    data={data}
+    isSortable={boolean("Is sortable", false)}
+  />
+));
