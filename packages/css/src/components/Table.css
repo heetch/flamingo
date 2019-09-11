@@ -1,0 +1,34 @@
+.Table {
+  --borderColor: var(--color-alto);
+
+  width: 100%;
+  border-spacing: 0;
+}
+
+.Table-HeaderGroup {
+  box-shadow: inset 0px -2px 0px var(--borderColor);
+}
+
+.Table-HeaderCell,
+.Table-RowCell {
+  min-width: 8.4375rem; /* 135px */
+  text-align: left;
+  font-size: var(--font-size--m);
+  padding: var(--space-l) var(--space-xl);
+}
+
+.Table-HeaderCell {
+  font-weight: var(--font-weight--bold);
+}
+
+.Table-RowGroup {
+  box-shadow: inset 0px -1px 0px var(--borderColor);
+}
+
+.Table-RowGroup:hover {
+  background-color: var(--color-grey);
+}
+
+.Table-RowCell .Text {
+  margin: 0;
+}
