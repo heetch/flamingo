@@ -259,6 +259,16 @@ export const IconChevronRight = (
   </svg>
 );
 
+export const IconChevronUpDown = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      fillRule="evenodd"
+      d="M11.495 5.21a.714.714 0 011.01 0l4.286 4.285a.714.714 0 01-1.01 1.01L12 6.725l-3.78 3.78a.714.714 0 01-1.01-1.01l4.285-4.286zm1.01 13.295a.714.714 0 01-1.01 0L7.209 14.22a.714.714 0 011.01-1.01L12 16.99l3.78-3.78a.714.714 0 011.01 1.01l-4.285 4.286z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
 export const IconChevronUp = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
