@@ -81,9 +81,7 @@ const Table = ({ className, columns, data, isSortable }) => {
         {rows.map(row => (
           <RowGroup {...prepareRow(row)} {...row.getRowProps()}>
             {row.cells.map(({ getCellProps, render }) => (
-              <RowCell {...getCellProps()}>
-                <Text>{render("Cell")}</Text>
-              </RowCell>
+              <RowCell {...getCellProps()}>{render("Cell")}</RowCell>
             ))}
           </RowGroup>
         ))}

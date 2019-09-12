@@ -46,6 +46,7 @@
   background-color: var(--color-grey);
 }
 
-.Table-RowCell .Text {
-  margin: 0;
+.Table-RowCell {
+  font-size: var(--font-size--m);
+  color: var(--color-granite);
 }

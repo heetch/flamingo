@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 
 import Table from ".";
+import Text from "../Text";
 
 const data = [...new Array(50)].map(() => ({
   string: Math.random(),
@@ -24,6 +25,7 @@ stories.add("Playground", () => (
       {
         Header: text("Col #2's heading", "With number"),
         accessor: "number",
+        Cell: item => <Text isNumber>{item.cell.value}</Text>,
       },
       {
         Header: text("Col #3's heading", "With custom rendering"),

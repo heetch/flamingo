@@ -7,6 +7,10 @@
   color: var(--text-color);
 }
 
+.Text.is-number {
+  text-align: right;
+}
+
 small .Text {
   font-size: var(--font-size--xs);
 }
