@@ -6,14 +6,22 @@ import { useTable, useSortBy } from "react-table";
 import Icon from "../Icon";
 import Text from "../Text";
 
-// eslint-disable-next-line react/prop-types
 const HeaderGroup = ({ className, children, ...props }) => (
   <tr className={cx("Table-HeaderGroup", className)} {...props}>
     {children}
   </tr>
 );
 
-// eslint-disable-next-line react/prop-types
+HeaderGroup.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+HeaderGroup.defaultProps = {
+  className: undefined,
+  children: undefined,
+};
+
 const HeaderCell = ({ className, children, isSorted, ...props }) => (
   <th
     className={cx("Table-HeaderCell", className, {
@@ -25,19 +33,49 @@ const HeaderCell = ({ className, children, isSorted, ...props }) => (
   </th>
 );
 
-// eslint-disable-next-line react/prop-types
+HeaderCell.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  isSorted: PropTypes.bool,
+};
+
+HeaderCell.defaultProps = {
+  className: undefined,
+  children: undefined,
+  isSorted: false,
+};
+
 const RowGroup = ({ className, children, ...props }) => (
   <tr className={cx("Table-RowGroup", className)} {...props}>
     {children}
   </tr>
 );
 
-// eslint-disable-next-line react/prop-types
+RowGroup.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+RowGroup.defaultProps = {
+  className: undefined,
+  children: undefined,
+};
+
 const RowCell = ({ className, children, ...props }) => (
   <td className={cx("Table-RowCell", className)} {...props}>
     {children}
   </td>
 );
+
+RowCell.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+RowCell.defaultProps = {
+  className: undefined,
+  children: undefined,
+};
 
 const Table = ({ className, columns, data, isSortable }) => {
   const { headerGroups, rows, prepareRow } = useTable(
@@ -112,6 +150,9 @@ Table.defaultProps = {
   isSortable: false,
 };
 
+Table.HeaderGroup = HeaderGroup;
 Table.HeaderCell = HeaderCell;
+Table.RowGroup = RowGroup;
+Table.RowCell = RowCell;
 
 export default Table;
