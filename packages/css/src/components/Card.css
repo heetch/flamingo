@@ -1,0 +1,24 @@
+.Card {
+  --borderColor: var(--color-alto);
+
+  padding: var(--space-xl);
+  box-shadow: 0 0 0 1px var(--borderColor);
+  border-radius: 1.5rem; /* 24px */
+}
+
+.Card.is-selected {
+  --borderColor: var(--color-rose);
+  box-shadow: inset 0 0 0 3px var(--borderColor);
+}
+
+.Card.is-elevated--1 {
+  box-shadow: 0 2px 10px rgba(25, 1, 52, 0.08);
+}
+
+.Card.is-elevated--2 {
+  box-shadow: 0 4px 20px rgba(25, 1, 52, 0.14);
+}
+
+.Card .Text {
+  margin: 0;
+}
