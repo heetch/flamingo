@@ -105,8 +105,14 @@ const Table = ({ className, columns, data, isSortable }) => {
                 >
                   <Text>
                     {render("Header")}
-                    {isSorted && isSortedDesc && <Icon icon="IconArrowUp" />}
-                    {isSorted && !isSortedDesc && <Icon icon="IconArrowDown" />}
+
+                    {isSorted &&
+                      (isSortedDesc ? (
+                        <Icon icon="IconArrowUp" />
+                      ) : (
+                        <Icon icon="IconArrowDown" />
+                      ))}
+
                     {isSortable && !isSorted && (
                       <Icon icon="IconChevronUpDown" />
                     )}
