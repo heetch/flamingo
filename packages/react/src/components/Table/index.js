@@ -86,6 +86,14 @@ const Table = ({ className, columns, data, isSortable }) => {
     useSortBy
   );
 
+  React.useMemo(
+    () =>
+      rows.forEach(row => {
+        prepareRow(row);
+      }),
+    [prepareRow, rows]
+  );
+
   return (
     <table className={cx("Table", className)}>
       <thead>
@@ -126,7 +134,7 @@ const Table = ({ className, columns, data, isSortable }) => {
 
       <tbody>
         {rows.map(row => (
-          <RowGroup {...prepareRow(row)} {...row.getRowProps()}>
+          <RowGroup {...row.getRowProps()}>
             {row.cells.map(({ getCellProps, render }) => (
               <RowCell {...getCellProps()}>{render("Cell")}</RowCell>
             ))}
