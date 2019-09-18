@@ -1,0 +1,52 @@
+.Table {
+  --borderColor: var(--color-alto);
+
+  width: 100%;
+  border-spacing: 0;
+  margin: var(--space-m) 0;
+}
+
+.Table-HeaderCell,
+.Table-RowCell {
+  min-width: 8.4375rem; /* 135px */
+  text-align: left;
+  font-size: var(--font-size--m);
+  padding: var(--space-l) var(--space-xl);
+}
+
+.Table-RowCell .Text,
+.Table-HeaderCell .Text {
+  margin: 0;
+}
+
+.Table-HeaderCell {
+  position: sticky;
+  top: 0;
+  font-weight: var(--font-weight--bold);
+  box-shadow: inset 0px -2px 0px var(--borderColor);
+  background-color: var(--color-white);
+}
+
+.Table-HeaderCell .Text {
+  color: var(--color-tolopea);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Table-HeaderCell.is-sorted .Text {
+  color: var(--color-rose);
+}
+
+.Table-RowGroup {
+  box-shadow: inset 0px -1px 0px var(--borderColor);
+}
+
+.Table-RowGroup:hover {
+  background-color: var(--color-grey);
+}
+
+.Table-RowCell {
+  font-size: var(--font-size--m);
+  color: var(--color-granite);
+}
