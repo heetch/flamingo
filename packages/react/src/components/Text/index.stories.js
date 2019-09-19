@@ -5,7 +5,7 @@ import Text from ".";
 
 const preventDefault = e => e.preventDefault();
 
-storiesOf("Form controls/Text", module)
+storiesOf("Text", module)
   .add("Default", () => (
     <>
       <Text>Default Text</Text>
