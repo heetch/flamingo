@@ -22,12 +22,6 @@ export default () => <Input className="myClass" />;
 export default () => <Input disabled />;
 ```
 
-#### `fill`: Boolean
-
-```jsx
-export default () => <Input fill />;
-```
-
 #### `id`: String **- required**
 
 ```jsx

@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import { ICON_SIZES } from "../../constants";
+import { ICONS, ICON_SIZES } from "../../constants";
 
 const Select = ({
   className,
   disabled: isDisabled,
-  fill: isFilled,
   id,
   onChange,
   options,
@@ -16,13 +15,14 @@ const Select = ({
 }) => {
   const classes = {
     "is-disabled": isDisabled,
-    "is-filled": isFilled,
   };
 
   return (
     <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
       <select
-        className={cx("FormEl", "Select", className, { ...classes })}
+        className={cx("FormEl", "FormEl--withIcon", "Select", className, {
+          ...classes,
+        })}
         disabled={isDisabled}
         id={id}
         name={id}
@@ -36,7 +36,11 @@ const Select = ({
         ))}
       </select>
 
-      <Icon icon="IconTopDown" className="FormEl-icon" size={ICON_SIZES.S} />
+      <Icon
+        icon={ICONS.IconChevronDown}
+        className="FormEl-icon"
+        size={ICON_SIZES.L}
+      />
     </div>
   );
 };
@@ -44,7 +48,6 @@ const Select = ({
 Select.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
@@ -58,7 +61,6 @@ Select.propTypes = {
 Select.defaultProps = {
   className: undefined,
   disabled: false,
-  fill: false,
   options: [],
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 import { INPUT_TYPES } from "../../constants";
@@ -28,52 +28,48 @@ stories.add("With types", () =>
   ))
 );
 
-stories
-  .add("With states", () => (
-    <>
-      {states.map(state => (
-        <div key={`input-${state}`}>
-          <Input
-            id={getId()}
-            className={`is-${state}`}
-            defaultValue={`State: ${state}`}
-            disabled={state === "disabled"}
-            onChange={action("onChange")}
-          />
-        </div>
-      ))}
-
-      <div>
+stories.add("With states", () => (
+  <>
+    {states.map(state => (
+      <div key={`input-${state}`}>
         <Input
           id={getId()}
-          defaultValue="Props: invalid"
-          invalid
+          className={`is-${state}`}
+          defaultValue={`State: ${state}`}
+          disabled={state === "disabled"}
           onChange={action("onChange")}
         />
       </div>
+    ))}
 
-      <div>
-        <Input
-          id={getId()}
-          defaultValue="Props: valid"
-          valid
-          onChange={action("onChange")}
-        />
-      </div>
-    </>
-  ))
-  .add("With custom props", () => (
-    <>
+    <div>
       <Input
         id={getId()}
-        placeholder="Default input"
+        defaultValue="Props: invalid"
+        invalid
         onChange={action("onChange")}
       />
+    </div>
+
+    <div>
       <Input
         id={getId()}
-        placeholder="Will `fill` prop"
-        fill
+        defaultValue="Props: valid"
+        valid
         onChange={action("onChange")}
       />
-    </>
-  ));
+    </div>
+  </>
+));
+
+stories.add("Playground", () => (
+  <Input
+    id={getId()}
+    placeholder={text("Placeholder", "Placeholder")}
+    value={text("Value", "My text input")}
+    invalid={boolean("Is invalid?", false)}
+    valid={boolean("Is valid?", false)}
+    disabled={boolean("Is disabled?", false)}
+    onChange={action("onChange")}
+  />
+));

@@ -18,10 +18,3 @@
   display: block;
   resize: vertical;
 }
-
-/* Icon */
-
-.is-invalid .Textarea,
-.is-valid .Textarea {
-  padding-right: var(--icon-spaceAround);
-}

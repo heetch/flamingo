@@ -22,12 +22,6 @@ export default () => <Textarea className="myClass" />;
 export default () => <Textarea disabled />;
 ```
 
-#### `fill`: Boolean
-
-```jsx
-export default () => <Textarea fill />;
-```
-
 #### `id`: String **- required**
 
 ```jsx
