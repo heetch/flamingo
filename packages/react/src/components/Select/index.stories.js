@@ -1,27 +1,22 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-
+import { withKnobs, text } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 import { Select } from "..";
 
-const states = ["default", "hover", "disabled"];
+const states = ["default", "hover", "focus", "disabled"];
+
+const mapStringsToSelectOptions = options =>
+  options.map(option => ({ label: option, value: option }));
 
 const defaultProps = () => ({
   id: `select-${Math.random()}`,
-  onChange: console.log,
-  options: [
-    {
-      label: "Foo",
-      value: "foo",
-    },
-    {
-      label: "Bar",
-      value: "bar",
-    },
-  ],
+  onChange: action("onChange"),
+  options: mapStringsToSelectOptions(text("Options", "Foo,Bar").split(",")),
 });
 
 storiesOf("Form controls/Select", module)
-  .add("Default", () => <Select {...defaultProps()} />)
+  .addDecorator(withKnobs)
   .add("With states", () =>
     states.map(state => (
       <div key={`input-${state}`}>
@@ -34,9 +29,4 @@ storiesOf("Form controls/Select", module)
       </div>
     ))
   )
-  .add("With custom props", () => (
-    <>
-      <Select {...defaultProps()} />
-      <Select {...defaultProps()} fill />
-    </>
-  ));
+  .add("Playground", () => <Select {...defaultProps()} />);

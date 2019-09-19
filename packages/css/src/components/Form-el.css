@@ -4,16 +4,13 @@
     the Icon children which relies on it
   */
   --icon-color: var(--color-granite);
-  --icon-spaceAround: calc(var(--space-s) + var(--icon--s) + var(--space-s));
+  --icon-size: var(--icon--m);
+  --icon-spaceAround: var(--space-m);
 
   position: relative;
   min-width: 12.5rem;
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
-}
-
-.FormEl-wrapper.is-filled {
-  width: 100%;
 }
 
 .FormEl-wrapper + .Helper .Text {
@@ -25,7 +22,7 @@
   --border-size: 1px;
 
   width: 100%;
-  padding: var(--space-l) var(--space-xl);
+  padding: var(--space-m) var(--space-xl);
   border: 0;
   border-radius: 1.25rem;
   color: var(--color-granite);
@@ -33,6 +30,17 @@
   box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
   outline: none;
   -webkit-appearance: none;
+}
+
+.FormEl--withIcon {
+  padding-right: calc(var(--icon-size) + var(--icon-spaceAround) * 2);
+}
+
+@media (max-width: 460px) {
+  .FormEl {
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
+  }
 }
 
 .FormEl:hover,
@@ -55,8 +63,9 @@
 
 .FormEl-icon {
   position: absolute;
-  top: var(--space-l);
+  top: 50%;
   right: var(--space-l);
+  transform: translateY(-50%);
   color: var(--icon-color);
   pointer-events: none;
 }

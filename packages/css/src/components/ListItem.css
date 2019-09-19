@@ -92,7 +92,7 @@
   color: var(--color-granite);
 }
 
-@media only screen and (max-width: 460px) {
+@media (max-width: 460px) {
   .ListItem:not(.ListItem--mini):not(.ListItem--sub) {
     padding: var(--space-xl) var(--space-l);
   }

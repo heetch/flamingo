@@ -10,32 +10,25 @@ const textareaProps = () => ({
   onChange: console.log,
 });
 
-storiesOf("Form controls/Textarea", module)
-  .add("With states", () => (
-    <>
-      {states.map(state => (
-        <div key={`textarea-${state}`}>
-          <Textarea
-            {...textareaProps()}
-            className={`is-${state}`}
-            defaultValue={`State: ${state}`}
-            disabled={state === "disabled"}
-          />
-        </div>
-      ))}
-
-      <div>
-        <Textarea {...textareaProps()} defaultValue="Props: invalid" invalid />
+storiesOf("Form controls/Textarea", module).add("With states", () => (
+  <>
+    {states.map(state => (
+      <div key={`textarea-${state}`}>
+        <Textarea
+          {...textareaProps()}
+          className={`is-${state}`}
+          defaultValue={`State: ${state}`}
+          disabled={state === "disabled"}
+        />
       </div>
+    ))}
 
-      <div>
-        <Textarea {...textareaProps()} defaultValue="Props: valid" valid />
-      </div>
-    </>
-  ))
-  .add("With custom props", () => (
-    <>
-      <Textarea {...textareaProps()} placeholder="Default textarea" />
-      <Textarea {...textareaProps()} placeholder="Will `fill` prop" fill />
-    </>
-  ));
+    <div>
+      <Textarea {...textareaProps()} defaultValue="Props: invalid" invalid />
+    </div>
+
+    <div>
+      <Textarea {...textareaProps()} defaultValue="Props: valid" valid />
+    </div>
+  </>
+));

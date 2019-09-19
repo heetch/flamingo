@@ -11,10 +11,9 @@ const defaultIconProps = {
 };
 
 const Textarea = ({
+  id,
   className,
   disabled: isDisabled,
-  fill: isFilled,
-  id,
   invalid: isInvalid,
   onChange,
   placeholder,
@@ -23,7 +22,6 @@ const Textarea = ({
 }) => {
   const classes = {
     "is-disabled": isDisabled,
-    "is-filled": isFilled,
     "is-valid": isValid,
     "is-invalid": isInvalid,
   };
@@ -49,7 +47,6 @@ const Textarea = ({
 Textarea.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -60,7 +57,6 @@ Textarea.propTypes = {
 Textarea.defaultProps = {
   className: undefined,
   disabled: false,
-  fill: false,
   invalid: false,
   placeholder: "",
   valid: false,

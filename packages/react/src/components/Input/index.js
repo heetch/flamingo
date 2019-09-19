@@ -14,7 +14,6 @@ const defaultIconProps = {
 const Input = ({
   className,
   disabled: isDisabled,
-  fill: isFilled,
   id,
   invalid: isInvalid,
   onChange,
@@ -25,7 +24,6 @@ const Input = ({
 }) => {
   const classes = {
     "is-disabled": isDisabled,
-    "is-filled": isFilled,
     "is-valid": isValid,
     "is-invalid": isInvalid,
   };
@@ -33,7 +31,10 @@ const Input = ({
   return (
     <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
       <input
-        className={cx("FormEl", "Input", className, { ...classes })}
+        className={cx("FormEl", "Input", className, {
+          ...classes,
+          "FormEl--withIcon": isValid || isInvalid,
+        })}
         disabled={isDisabled}
         id={id}
         name={id}
@@ -43,7 +44,9 @@ const Input = ({
         {...props}
       />
 
-      {isInvalid && <Icon icon={ICONS.IconCross} {...defaultIconProps} />}
+      {isInvalid && (
+        <Icon icon={ICONS.IconAlertOctagon} {...defaultIconProps} />
+      )}
       {isValid && <Icon icon={ICONS.IconCheck} {...defaultIconProps} />}
     </div>
   );
@@ -52,7 +55,6 @@ const Input = ({
 Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  fill: PropTypes.bool,
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -64,7 +66,6 @@ Input.propTypes = {
 Input.defaultProps = {
   className: undefined,
   disabled: false,
-  fill: false,
   invalid: false,
   placeholder: "",
   type: INPUT_TYPES.TEXT,
