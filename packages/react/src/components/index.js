@@ -10,6 +10,7 @@ export { default as Input } from "./Input";
 export { default as Label } from "./Label";
 export { default as ListItem } from "./ListItem";
 export { default as Select } from "./Select";
+export { default as Table } from "./Table";
 export { default as Tabs } from "./Tabs";
 export { default as Text } from "./Text";
 export { default as Textarea } from "./Textarea";
