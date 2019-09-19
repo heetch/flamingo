@@ -9,7 +9,7 @@
   },
   "precommit": "lerna run --concurrency 1 --stream precommit",
   "scripts": {
-    "deploy": "lerna bootstrap && lerna publish",
+    "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
     "prettier": "prettier --write 'packages/**/*.{js,jsx,json,css,md}'",
     "css": "yarn --cwd packages/css start",
     "react": "yarn --cwd packages/react start",
