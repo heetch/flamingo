@@ -65,3 +65,16 @@ export const LIST_ITEM_VALUES_TYPES = {
   ERROR: "error",
   SUCCESS: "success",
 };
+
+export const UI_TYPES = {
+  Heading1: "Heading1",
+  Heading2: "Heading2",
+  Heading3: "Heading3",
+  Heading4: "Heading4",
+  Heading5: "Heading5",
+  Heading6: "Heading6",
+  Content: "Content",
+  ContentBold: "ContentBold",
+  SubContent: "SubContent",
+  SubContentBold: "SubContentBold",
+};
