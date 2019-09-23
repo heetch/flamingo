@@ -1,5 +1,8 @@
 .Helper {
+  --text-color: var(--color-granite);
+
   display: block;
+  color: var(--text-color);
 }
 
 .is-invalid + .Helper .Text {

@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+
 import Icon from "../Icon";
+import UI from "../UI";
+
 import { INLINE_ALERT_TYPES, ICONS } from "../../constants";
 
 const ALERT_ICONS = {
@@ -23,12 +26,18 @@ const InlineAlert = ({ title, children, type, onClose }) => (
         <Icon icon={ICONS.IconCross} />
       </button>
     )}
+
     <div className="InlineAlert-icon">
       <Icon icon={ALERT_ICONS[type]} />
     </div>
+
     <div>
-      <h1 className="InlineAlert-title">{title}</h1>
-      {children}
+      <UI type={UI.TYPES.ContentBold} as="h1" className="InlineAlert-title">
+        {title}
+      </UI>
+      <UI type={UI.TYPES.Content} className="InlineAlert-content">
+        {children}
+      </UI>
     </div>
   </div>
 );

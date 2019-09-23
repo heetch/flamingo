@@ -11,7 +11,7 @@ storiesOf("Text", module)
       <Text>Default Text</Text>
 
       <strong>
-        <Text>Strong Text</Text>
+        <Text as="strong">Strong Text</Text>
       </strong>
 
       <em>

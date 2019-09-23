@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+
 import Icon from "../Icon";
+import UI from "../UI";
+
 import {
   ICONS,
   LIST_ITEM_SIZES,
@@ -40,17 +43,29 @@ const ListItem = ({
         <Icon icon={leftIcon} />
       </div>
     )}
+
     <div>
-      <div
-        className={cx({
-          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
+      <UI
+        type={
+          type === LIST_ITEM_SIZES.MINI ? UI.TYPES.SubContent : UI.TYPES.Content
+        }
+        className={cx("ListItem-title", {
           "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {children}
-      </div>
-      {subtitle && <p className="ListItem-subtitle">{subtitle}</p>}
+      </UI>
+
+      {subtitle && (
+        <UI
+          type={LIST_ITEM_SIZES.MINI ? UI.TYPES.SubContent : UI.TYPES.Content}
+          className="ListItem-subtitle"
+        >
+          {subtitle}
+        </UI>
+      )}
     </div>
+
     <div
       className={cx("ListItem-valueContainer", {
         "is-dark": valueType === LIST_ITEM_VALUES_TYPES.DARK,
@@ -60,14 +75,15 @@ const ListItem = ({
         "is-strong-value": strongValue,
       })}
     >
-      <span
+      <UI
         className={cx({
           "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
           "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {value}
-      </span>
+      </UI>
+
       {(mockRightIcon || onClick || rightIcon) && (
         <span
           className={cx("ListItem-itemIcon", {

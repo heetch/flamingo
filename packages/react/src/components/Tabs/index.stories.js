@@ -5,7 +5,6 @@ import { withInfo } from "@storybook/addon-info";
 
 import Tabs from ".";
 
-
 storiesOf("Navigation/Tabs", module).add(
   "Playground",
   withInfo("")(() => (
