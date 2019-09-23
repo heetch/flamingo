@@ -6,7 +6,7 @@ import { withInfo } from "@storybook/addon-info";
 
 import Tabs from ".";
 
-storiesOf("Navigation/Tabs")
+storiesOf("Navigation/Tabs", module)
   .addDecorator(withKnobs)
   .add(
     "Playground",

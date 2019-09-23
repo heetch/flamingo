@@ -2,12 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import Text from "../Text";
+import UI from "../UI";
 
 const Helper = ({ className, children, ...props }) => (
-  <small className={cx("Helper", className)} {...props}>
-    <Text>{children}</Text>
-  </small>
+  <UI
+    as="small"
+    type={UI.TYPES.SubContent}
+    className={cx("Helper", className)}
+    {...props}
+  >
+    {children}
+  </UI>
 );
 
 Helper.propTypes = {

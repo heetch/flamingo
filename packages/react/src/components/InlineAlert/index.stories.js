@@ -7,7 +7,7 @@ import { withInfo } from "@storybook/addon-info";
 import InlineAlert from ".";
 import { INLINE_ALERT_TYPES } from "../../constants";
 
-storiesOf("Alerts/InlineAlert")
+storiesOf("Alerts/InlineAlert", module)
   .addDecorator(withKnobs)
   .add(
     "Playground",

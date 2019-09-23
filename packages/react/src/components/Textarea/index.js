@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
+import UI from "../UI";
+
 import { ICON_SIZES } from "../../constants";
 
 const defaultIconProps = {
@@ -28,7 +30,9 @@ const Textarea = ({
 
   return (
     <div className={cx("FormEl-wrapper", "Textarea-wrapper", { ...classes })}>
-      <textarea
+      <UI
+        as="textarea"
+        type={UI.TYPES.Content}
         className={cx("FormEl", "Textarea", className, { ...classes })}
         disabled={isDisabled}
         id={id}

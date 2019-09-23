@@ -1,63 +1,19 @@
 .Heading {
   color: var(--color-tolopea);
+  margin-bottom: var(--space-m);
 }
 
 .Heading--h1 {
   margin-top: var(--space-xl);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xxl);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--xl);
 }
 
 .Heading--h2 {
   margin-top: var(--space-l);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xl);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--l);
 }
 
-.Heading--h3 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--l);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--m);
-}
-
-.Heading--h4 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--m);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
-}
-
-.Heading--h5 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--s);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
-}
-
+.Heading--h3,
+.Heading--h4,
+.Heading--h5,
 .Heading--h6 {
   margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xs);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
 }

@@ -5,14 +5,12 @@ import { select, text, withKnobs } from "@storybook/addon-knobs";
 import Heading from ".";
 
 const { LEVELS } = Heading;
-
-const levels = Object.keys(LEVELS);
 const stories = storiesOf("Heading", module);
 
 stories.addDecorator(withKnobs);
 
 stories.add("With levels", () =>
-  levels.map(level => (
+  LEVELS.map(level => (
     <Heading key={`heading-${level}`} as={level}>
       Heading {level}
     </Heading>
@@ -20,7 +18,7 @@ stories.add("With levels", () =>
 );
 
 stories.add("Playground", () => (
-  <Heading as={select("Level", levels)}>
+  <Heading as={select("Level", LEVELS)}>
     {text("Content", "Heading content")}
   </Heading>
 ));

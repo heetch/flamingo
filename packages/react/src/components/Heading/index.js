@@ -2,24 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
+import UI from "../UI";
 import { HEADING_LEVELS } from "../../constants";
 
-const levels = Object.keys(HEADING_LEVELS);
-
-const Heading = ({ as: Component, className, ...props }) => (
-  <Component
-    className={cx("Heading", `Heading--${Component}`, className)}
+const Heading = ({ as, className, ...props }) => (
+  <UI
+    type={`Heading${as}`}
+    className={cx("Heading", `Heading--${as}`, className)}
     {...props}
   />
 );
 
 Heading.propTypes = {
-  as: PropTypes.oneOf(levels),
+  as: PropTypes.oneOf(HEADING_LEVELS),
   className: PropTypes.string,
 };
 
 Heading.defaultProps = {
-  as: HEADING_LEVELS.h1,
+  as: 1,
   className: undefined,
 };
 

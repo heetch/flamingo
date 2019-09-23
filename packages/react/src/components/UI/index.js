@@ -25,4 +25,6 @@ UI.defaultProps = {
   type: UI_TYPES.Content,
 };
 
+UI.TYPES = UI_TYPES;
+
 export default UI;

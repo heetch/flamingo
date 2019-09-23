@@ -19,7 +19,7 @@ import ListItem from ".";
 
 ICONS.None = null;
 
-storiesOf("Items/ListItem")
+storiesOf("Items/ListItem", module)
   .addDecorator(withKnobs)
   .add(
     "Playground",
