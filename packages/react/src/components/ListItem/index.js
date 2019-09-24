@@ -9,6 +9,7 @@ import {
   ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
+  refShapes,
 } from "../../constants";
 
 const icons = Object.values(ICONS);
@@ -17,6 +18,7 @@ const types = Object.values(LIST_ITEM_VALUES_TYPES);
 
 const ListItem = ({
   children,
+  forwardedRef,
   subtitle,
   type,
   valueType,
@@ -43,6 +45,7 @@ const ListItem = ({
         "is-clickable": !!onClick,
         "has-divider": !hideDivider,
       })}
+      ref={forwardedRef}
     >
       {leftIcon && (
         <div className="ListItem-leftIcon">
@@ -106,6 +109,7 @@ const ListItem = ({
 
 ListItem.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  forwardedRef: PropTypes.oneOfType(refShapes),
   subtitle: PropTypes.string,
   /** Defines type and size of an item */
   type: PropTypes.oneOf(sizes),
@@ -123,6 +127,7 @@ ListItem.propTypes = {
 };
 
 ListItem.defaultProps = {
+  forwardedRef: undefined,
   subtitle: undefined,
   type: LIST_ITEM_SIZES.NORMAL,
   valueType: LIST_ITEM_VALUES_TYPES.DARK,

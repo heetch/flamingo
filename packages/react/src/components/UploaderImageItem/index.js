@@ -5,8 +5,9 @@ import Spinner from "../Spinner";
 import UploaderItem from "../UploaderItem";
 
 import { toBase64 } from "../../utils";
+import { refShapes } from "../../constants";
 
-const UploaderImageItem = ({ file, overrides, ...props }) => {
+const UploaderImageItem = ({ file, forwardedRef, overrides, ...props }) => {
   const [preview, setPreview] = React.useState(undefined);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -20,16 +21,23 @@ const UploaderImageItem = ({ file, overrides, ...props }) => {
   }, [file]);
 
   return (
-    <UploaderItem overrides={{ icon, ...overrides }} file={file} {...props} />
+    <UploaderItem
+      overrides={{ icon, ...overrides }}
+      file={file}
+      ref={forwardedRef}
+      {...props}
+    />
   );
 };
 
 UploaderImageItem.propTypes = {
   file: PropTypes.instanceOf(File).isRequired,
+  forwardedRef: PropTypes.oneOfType(refShapes),
   overrides: PropTypes.shape({}),
 };
 
 UploaderImageItem.defaultProps = {
+  forwardedRef: undefined,
   overrides: {},
 };
 

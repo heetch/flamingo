@@ -13,7 +13,7 @@ const Popover = ({ content, children, placement }) => (
       {({ ref }) =>
         React.cloneElement(children, {
           className: "Popover-wrapper",
-          ref,
+          forwardedRef: ref,
         })
       }
     </Reference>

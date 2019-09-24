@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import * as ICONS_SVGS from "./icons";
 
 export const CARD_ELEVATIONS = [0, 1, 2];
@@ -79,3 +80,8 @@ export const POPOVER_PLACEMENTS = {
   BOTTOM: "bottom",
   LEFT: "left",
 };
+
+export const refShapes = [
+  PropTypes.func,
+  PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+];
