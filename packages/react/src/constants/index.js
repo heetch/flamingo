@@ -71,3 +71,11 @@ export const UI_TYPES = {
   SubContent: "SubContent",
   SubContentBold: "SubContentBold",
 };
+
+export const POPOVER_PLACEMENTS = {
+  AUTO: "auto",
+  TOP: "top",
+  RIGHT: "right",
+  BOTTOM: "bottom",
+  LEFT: "left",
+};

@@ -9,6 +9,7 @@ export { default as InlineAlert } from "./InlineAlert";
 export { default as Input } from "./Input";
 export { default as Label } from "./Label";
 export { default as ListItem } from "./ListItem";
+export { default as Popover } from "./Popover";
 export { default as Select } from "./Select";
 export { default as Table } from "./Table";
 export { default as Tabs } from "./Tabs";
