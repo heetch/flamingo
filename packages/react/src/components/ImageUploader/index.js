@@ -6,10 +6,10 @@ import FileUploader from "../FileUploader";
 import IconButton from "../IconButton";
 import UploaderImageItem from "../UploaderImageItem";
 
-import { ICONS } from "../../constants";
+import { ICONS, refShapes } from "../../constants";
 import { toBase64, safeInvoke } from "../../utils";
 
-const ImageUploader = ({ multiple, onChange, ...props }) => {
+const ImageUploader = ({ forwardedRef, multiple, onChange, ...props }) => {
   const [files, setFiles] = React.useState([]);
   const [preview, setPreview] = React.useState(undefined);
 
@@ -62,6 +62,7 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
           accept: "image/*",
         },
       }}
+      ref={forwardedRef}
       {...props}
     >
       {preview && (
@@ -92,11 +93,13 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
 };
 
 ImageUploader.propTypes = {
+  forwardedRef: PropTypes.oneOfType(refShapes),
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 
 ImageUploader.defaultProps = {
+  forwardedRef: undefined,
   multiple: false,
 };
 
