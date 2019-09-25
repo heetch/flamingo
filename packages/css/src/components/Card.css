@@ -2,7 +2,19 @@
   --borderColor: var(--color-alto);
 
   box-shadow: 0 0 0 1px var(--borderColor);
-  border-radius: 1.5rem; /* 24px */
+  border-radius: var(--radius-xl);
+}
+
+.Card .Card {
+  border-radius: var(--radius-l);
+}
+
+.Card .Card .Card {
+  border-radius: var(--radius-m);
+}
+
+.Card .Card .Card .Card {
+  border-radius: var(--radius-s);
 }
 
 .Card--s {

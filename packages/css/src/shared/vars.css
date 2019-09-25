@@ -81,6 +81,13 @@
 }
 
 :root {
+  --radius-xl: 1.5rem; /* 24px */
+  --radius-l: 1rem; /* 16px */
+  --radius-m: 0.5rem; /* 8px */
+  --radius-s: 0.25rem; /* 4px */
+}
+
+:root {
   --space-s: 0.25rem; /* 4px */
   --space-m: 0.5rem; /* 8px */
   --space-l: 0.75rem; /* 12px */

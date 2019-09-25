@@ -56,6 +56,16 @@ stories.add("All states", () => (
         </Card>
       </Container>
     ))}
+
+    <Heading as={Heading.LEVELS.h2}>Cards in Cards</Heading>
+
+    <Card>
+      <Card>
+        <Card>
+          <Card />
+        </Card>
+      </Card>
+    </Card>
   </>
 ));
 
