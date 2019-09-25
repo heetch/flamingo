@@ -6,7 +6,8 @@ import Card from ".";
 import Heading from "../Heading";
 import Text from "../Text";
 
-const { ELEVATIONS } = Card;
+const { ELEVATIONS, SIZES } = Card;
+const sizes = Object.values(SIZES);
 
 const Container = (
   { children } // eslint-disable-line react/prop-types
@@ -45,6 +46,16 @@ stories.add("All states", () => (
         </Card>
       </Container>
     ))}
+
+    <Heading as={Heading.LEVELS.h2}>With sizes</Heading>
+
+    {sizes.map(size => (
+      <Container key={size}>
+        <Card size={size}>
+          <Text>size {size}</Text>
+        </Card>
+      </Container>
+    ))}
   </>
 ));
 
@@ -52,6 +63,7 @@ stories.add("Playground", () => (
   <Card
     isSelected={boolean("Is selected", false)}
     elevation={select("Elevation", ELEVATIONS)}
+    size={select("Size", sizes)}
   >
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

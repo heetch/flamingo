@@ -1,9 +1,16 @@
 .Card {
   --borderColor: var(--color-alto);
 
-  padding: var(--space-xl);
   box-shadow: 0 0 0 1px var(--borderColor);
   border-radius: 1.5rem; /* 24px */
+}
+
+.Card--s {
+  padding: var(--space-xl);
+}
+
+.Card--m {
+  padding: var(--space-xxl);
 }
 
 .Card.is-selected {
