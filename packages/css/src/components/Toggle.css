@@ -5,14 +5,14 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-chatelle);
   border-radius: 10px;
-  cursor: pointer;
+  cursor: default;
   transition: all 0.3s;
   --Toggle-bullet-size: 0.875rem /* 14px */;
   --Toggle-bullet-space-for-label: 1.125rem /* 18px */;
   --Toggle-bullet-space: 0.25rem /* 4px */;
 }
 
-.Toggle:hover {
+.ToggleContainer:hover > .Toggle {
   border-color: var(--my-new-color);
 }
 
@@ -105,7 +105,7 @@
 
 .Toggle-labels {
   margin-left: var(--space-l);
-  cursor: pointer;
+  cursor: default;
 }
 
 .ToggleContainer.is-disabled > .Toggle-labels {
