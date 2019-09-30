@@ -94,7 +94,7 @@
 
 .ToggleContainer {
   display: flex;
-  margin: 0 var(--space-m);
+  margin-right: var(--space-m);
 }
 
 .Toggle-helper {
