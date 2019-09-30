@@ -2,11 +2,10 @@
   position: relative;
   appearance: none;
   background: white;
-  width: 1.25rem /* 20px */;
+  min-width: 1.25rem /* 20px */;
   height: 1.25rem /* 20px */;
   border: 1px solid var(--color-chatelle);
   border-radius: 0.625rem /* 10px */;
-  cursor: pointer;
 }
 
 .Radio-label > .Radio {
@@ -15,9 +14,9 @@
 
 .Radio-label {
   display: flex;
-  cursor: pointer;
   color: var(--color-tolopea);
   font-size: var(--font-size--m);
+  margin-right: 0.625rem /* 10px */;
 }
 
 .Radio-helper {
