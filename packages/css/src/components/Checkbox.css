@@ -6,7 +6,6 @@
   height: 20px;
   border: 1px solid var(--color-chatelle);
   border-radius: var(--space-s);
-  cursor: pointer;
 }
 
 .Checkbox-label > .Checkbox {
@@ -15,7 +14,6 @@
 
 .Checkbox-label {
   display: flex;
-  cursor: pointer;
   color: var(--color-tolopea);
   font-size: var(--font-size--m);
 }
