@@ -11,7 +11,9 @@ import {
   LIST_ITEM_VALUES_TYPES,
 } from "../../constants";
 
-const ICONS_KEYS = Object.keys(ICONS);
+const icons = Object.values(ICONS);
+const sizes = Object.values(LIST_ITEM_SIZES);
+const types = Object.values(LIST_ITEM_VALUES_TYPES);
 
 const ListItem = ({
   children,
@@ -106,12 +108,12 @@ ListItem.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   subtitle: PropTypes.string,
   /** Defines type and size of an item */
-  type: PropTypes.oneOf(LIST_ITEM_SIZES),
-  valueType: PropTypes.oneOf(LIST_ITEM_VALUES_TYPES),
+  type: PropTypes.oneOf(sizes),
+  valueType: PropTypes.oneOf(types),
   value: PropTypes.string,
-  leftIcon: PropTypes.oneOf(ICONS_KEYS),
+  leftIcon: PropTypes.oneOf(icons),
   /** If `onClick` is set, default icon is Arrow Right */
-  rightIcon: PropTypes.oneOf(ICONS_KEYS),
+  rightIcon: PropTypes.oneOf(icons),
   /** If no icon is selected, this can be selected to display "empty icon" */
   mockRightIcon: PropTypes.bool,
   /** Should be set to `true` for last item in group */
