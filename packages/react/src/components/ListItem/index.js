@@ -25,79 +25,82 @@ const ListItem = ({
   hideDivider,
   strongValue,
   onClick,
-}) => (
-  <div
-    role="button"
-    tabIndex={0}
-    onClick={onClick}
-    onKeyPress={({ which }) => (which === 13 ? onClick() : undefined)}
-    className={cx("ListItem", {
-      "ListItem--sub": type === LIST_ITEM_SIZES.SUB,
-      "ListItem--mini": type === LIST_ITEM_SIZES.MINI,
-      "is-clickable": !!onClick,
-      "has-divider": !hideDivider,
-    })}
-  >
-    {leftIcon && (
-      <div className="ListItem-leftIcon">
-        <Icon icon={leftIcon} />
-      </div>
-    )}
+}) => {
+  const isSub = type === LIST_ITEM_SIZES.SUB;
+  const isMini = type === LIST_ITEM_SIZES.MINI;
 
-    <div>
-      <UI
-        type={
-          type === LIST_ITEM_SIZES.MINI ? UI.TYPES.SubContent : UI.TYPES.Content
-        }
-        className={cx("ListItem-title", {
-          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
-        })}
-      >
-        {children}
-      </UI>
-
-      {subtitle && (
-        <UI
-          type={LIST_ITEM_SIZES.MINI ? UI.TYPES.SubContent : UI.TYPES.Content}
-          className="ListItem-subtitle"
-        >
-          {subtitle}
-        </UI>
-      )}
-    </div>
-
+  return (
     <div
-      className={cx("ListItem-valueContainer", {
-        "is-dark": valueType === LIST_ITEM_VALUES_TYPES.DARK,
-        "is-sub-dark": valueType === LIST_ITEM_VALUES_TYPES.SUB_DARK,
-        "is-error": valueType === LIST_ITEM_VALUES_TYPES.ERROR,
-        "is-success": valueType === LIST_ITEM_VALUES_TYPES.SUCCESS,
-        "is-strong-value": strongValue,
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyPress={({ which }) => (which === 13 ? onClick() : undefined)}
+      className={cx("ListItem", {
+        "ListItem--sub": isSub,
+        "ListItem--mini": isMini,
+        "is-clickable": !!onClick,
+        "has-divider": !hideDivider,
       })}
     >
-      <UI
-        className={cx({
-          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
-          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
-        })}
-      >
-        {value}
-      </UI>
+      {leftIcon && (
+        <div className="ListItem-leftIcon">
+          <Icon icon={leftIcon} />
+        </div>
+      )}
 
-      {(mockRightIcon || onClick || rightIcon) && (
-        <span
-          className={cx("ListItem-itemIcon", {
-            "is-mini": type === LIST_ITEM_SIZES.MINI,
+      <div>
+        <UI
+          type={isMini ? UI.TYPES.SubContent : UI.TYPES.Content}
+          className={cx("ListItem-title", {
+            "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
           })}
         >
-          {(onClick || rightIcon) && (
-            <Icon icon={rightIcon || ICONS.IconArrowRight} />
-          )}
-        </span>
-      )}
+          {children}
+        </UI>
+
+        {subtitle && (
+          <UI
+            type={isMini ? UI.TYPES.SubContent : UI.TYPES.Content}
+            className="ListItem-subtitle"
+          >
+            {subtitle}
+          </UI>
+        )}
+      </div>
+
+      <div
+        className={cx("ListItem-valueContainer", {
+          "is-dark": valueType === LIST_ITEM_VALUES_TYPES.DARK,
+          "is-sub-dark": valueType === LIST_ITEM_VALUES_TYPES.SUB_DARK,
+          "is-error": valueType === LIST_ITEM_VALUES_TYPES.ERROR,
+          "is-success": valueType === LIST_ITEM_VALUES_TYPES.SUCCESS,
+          "is-strong-value": strongValue,
+        })}
+      >
+        <UI
+          className={cx({
+            "ListItem-title": !isMini,
+            "ListItem-subtitle": isMini,
+          })}
+        >
+          {value}
+        </UI>
+
+        {(mockRightIcon || onClick || rightIcon) && (
+          <span
+            className={cx("ListItem-itemIcon", {
+              "is-mini": isMini,
+            })}
+          >
+            {(onClick || rightIcon) && (
+              <Icon icon={rightIcon || ICONS.IconArrowRight} />
+            )}
+          </span>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 ListItem.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
