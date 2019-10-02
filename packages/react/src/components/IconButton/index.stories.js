@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import { boolean, select } from "@storybook/addon-knobs";
 
 import { ICONS } from "../../constants";
 import IconButton from ".";
@@ -9,8 +9,6 @@ const states = ["default", "hover", "active", "disabled"];
 const icon = "IconCheck";
 
 const stories = storiesOf("Buttons/IconButton", module);
-
-stories.addDecorator(withKnobs);
 
 stories.add("With states", () =>
   states.map(state => (

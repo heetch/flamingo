@@ -10,11 +10,9 @@
   },
   "rules": {
     "prettier/prettier": "error",
-
     // allow @storybook packages to be used
     // without having a linting error
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-
     // eslint rules conflicting with prettier
     "react/jsx-closing-tag-location": 0,
     "react/jsx-curly-newline": 0,

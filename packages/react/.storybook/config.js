@@ -1,6 +1,7 @@
 import { addParameters, configure, addDecorator } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import FlexWrapperDecorator from "./FlexWrapperDecorator";
+import { withKnobs } from "@storybook/addon-knobs";
 
 import "normalize.css";
 import "../../css/dist/index.css";
@@ -12,6 +13,7 @@ function loadStories() {
 }
 
 addDecorator(FlexWrapperDecorator);
+addDecorator(withKnobs);
 
 addParameters({
   options: {

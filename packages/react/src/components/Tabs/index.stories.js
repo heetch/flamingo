@@ -1,26 +1,23 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, array } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
+import { array } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
 import Tabs from ".";
 
-storiesOf("Navigation/Tabs")
-  .addDecorator(withKnobs)
-  .add(
-    "Playground",
-    withInfo("")(() => (
-      <Tabs
-        onClick={action("onClick")}
-        elements={array("Tabs (separated by comma)", [
-          "Cars",
-          "Drivers",
-          "Rides",
-          "Vehicles",
-          "Discounts",
-          "Promotions",
-        ])}
-      />
-    ))
-  );
+
+storiesOf("Navigation/Tabs", module).add(
+  "Playground",
+  withInfo("")(() => (
+    <Tabs
+      elements={array("Tabs (separated by comma)", [
+        "Cars",
+        "Drivers",
+        "Rides",
+        "Vehicles",
+        "Discounts",
+        "Promotions",
+      ])}
+    />
+  ))
+);

@@ -1,12 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import {
-  withKnobs,
-  select,
-  boolean,
-  text,
-  number,
-} from "@storybook/addon-knobs";
+import { select, boolean, text, number } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
 import {
@@ -19,8 +13,7 @@ import ListItem from ".";
 
 ICONS.None = null;
 
-storiesOf("Items/ListItem")
-  .addDecorator(withKnobs)
+storiesOf("Items/ListItem", module)
   .add(
     "Playground",
     withInfo("")(() =>
