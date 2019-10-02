@@ -36,7 +36,7 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
       .then(base64 => {
         setPreview(base64);
         setIsLoading(false);
-        safeInvoke(onChange({ files, base64 }));
+        safeInvoke(onChange, { files, base64 });
       })
       .catch(setHasError);
   };

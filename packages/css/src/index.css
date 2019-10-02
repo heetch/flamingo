@@ -21,6 +21,7 @@
 @import "./components/FileUploader.css";
 @import "./components/ImageUploader.css";
 @import "./components/Textarea.css";
+@import "./components/Toggle.css";
 @import "./components/ListItem.css";
 @import "./components/Table.css";
 @import "./components/Tabs.css";

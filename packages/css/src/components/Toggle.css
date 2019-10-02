@@ -1,0 +1,113 @@
+.Toggle {
+  position: relative;
+  min-width: 3.375rem /* 54px */;
+  height: 1.25rem /* 20px */;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-chatelle);
+  border-radius: 10px;
+  cursor: default;
+  transition: all 0.3s;
+  --Toggle-bullet-size: 0.875rem /* 14px */;
+  --Toggle-bullet-space-for-label: 1.125rem /* 18px */;
+  --Toggle-bullet-space: 0.25rem /* 4px */;
+}
+
+.ToggleContainer:hover > .Toggle {
+  border-color: var(--my-new-color);
+}
+
+.Toggle-bullet {
+  position: absolute;
+  height: var(--Toggle-bullet-size);
+  width: var(--Toggle-bullet-size);
+  background-color: var(--color-granite);
+  border-radius: 8px;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+}
+
+.Toggle-bullet-label {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--s);
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+}
+
+.Toggle-bullet-label.Toggle-bullet-label--off {
+  left: var(--Toggle-bullet-space-for-label);
+  right: var(--Toggle-bullet-space);
+  color: var(--color-granite);
+  visibility: visible;
+  transition: visibility 0.3s linear;
+  transition-delay: 0.1s;
+}
+
+.ToggleContainer.is-on .Toggle-bullet-label--off {
+  visibility: hidden;
+  transition: visibility 0.1s linear;
+}
+
+.Toggle-bullet-label--on {
+  right: var(--Toggle-bullet-space-for-label);
+  left: var(--Toggle-bullet-space);
+  color: var(--color-white);
+  visibility: hidden;
+  transition: visibility 0.1s linear;
+}
+
+.ToggleContainer.is-disabled .Toggle-bullet-label--on {
+  color: var(--color-granite);
+}
+
+.ToggleContainer.is-on .Toggle-bullet-label--on {
+  visibility: visible;
+  transition: visibility 0.3s linear;
+  transition-delay: 0.1s;
+}
+
+.ToggleContainer.is-on .Toggle {
+  background-color: var(--color-rose);
+  border-color: var(--color-rose);
+  transition: all 0.3s;
+}
+
+.ToggleContainer.is-on .Toggle-bullet {
+  left: 100%;
+  margin-left: -16px;
+  background-color: var(--color-white);
+  transition: all 0.3s;
+}
+
+.ToggleContainer.is-disabled .Toggle {
+  background-color: var(--color-grey);
+  border-color: var(--color-grey);
+  cursor: not-allowed;
+}
+
+.ToggleContainer.is-disabled .Toggle-bullet {
+  background-color: var(--color-chatelle);
+}
+
+.ToggleContainer {
+  display: flex;
+  margin-right: var(--space-m);
+}
+
+.Toggle-helper {
+  margin: 0;
+  color: var(--color-granite);
+  font-size: var(--font-size--s);
+}
+
+.Toggle-labels {
+  margin-left: var(--space-l);
+  cursor: default;
+}
+
+.ToggleContainer.is-disabled > .Toggle-labels {
+  cursor: not-allowed;
+}

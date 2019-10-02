@@ -53,7 +53,7 @@ const FileUploader = ({
     const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
     setFiles(nextFiles);
-    safeInvoke(onChange(inputFiles));
+    safeInvoke(onChange, inputFiles);
   };
 
   const handleDeleteFile = fileToDelete => {
