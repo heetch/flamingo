@@ -1,0 +1,66 @@
+.Radio {
+  position: relative;
+  appearance: none;
+  background: white;
+  min-width: 1.25rem /* 20px */;
+  height: 1.25rem /* 20px */;
+  border: 1px solid var(--color-chatelle);
+  border-radius: 0.625rem /* 10px */;
+}
+
+.Radio-label > .Radio {
+  margin-right: var(--space-l);
+}
+
+.Radio-label {
+  display: flex;
+  color: var(--color-tolopea);
+  font-size: var(--font-size--m);
+  margin-right: 0.625rem /* 10px */;
+}
+
+.Radio-helper {
+  margin: 0;
+  padding: 0;
+  color: var(--color-granite);
+  font-size: var(--font-size--s);
+}
+
+.Radio:hover {
+  border-color: var(--color-granite);
+}
+
+.Radio:disabled {
+  background: var(--color-grey);
+  cursor: not-allowed;
+}
+
+.Radio:disabled:hover {
+  border-color: var(--color-chatelle);
+}
+
+.Radio:checked {
+  color: white;
+  background-color: var(--color-rose);
+  border-color: var(--color-rose);
+}
+
+.Radio:checked:disabled {
+  border: 1px solid var(--color-chatelle);
+  background: var(--color-chatelle);
+}
+
+.Radio:checked:after {
+  content: "";
+  background-color: var(--color-white);
+  width: 0.625rem /* 10px */;
+  height: 0.625rem /* 10px */;
+  position: absolute;
+  top: 0.25rem /* 4px */;
+  left: 0.25rem /* 4px */;
+  border-radius: 0.3125rem /* 5px */;
+}
+
+.Radio:disabled:checked:after {
+  border-color: var(--color-alto);
+}
