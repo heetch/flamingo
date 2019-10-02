@@ -1,5 +1,5 @@
 .Popover {
-  --spacing: var(--space-s);
+  --spaceAround: var(--space-s);
 
   opacity: 0;
   transition: opacity 0.1s ease-out;
@@ -14,17 +14,17 @@
 }
 
 .Popover--top {
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--spaceAround);
 }
 
 .Popover--right {
-  margin-left: var(--spacing);
+  margin-left: var(--spaceAround);
 }
 
 .Popover--bottom {
-  margin-top: var(--spacing);
+  margin-top: var(--spaceAround);
 }
 
 .Popover--left {
-  margin-right: var(--spacing);
+  margin-right: var(--spaceAround);
 }
