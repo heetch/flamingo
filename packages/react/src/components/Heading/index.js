@@ -8,7 +8,7 @@ import { HEADING_LEVELS } from "../../constants";
 const Heading = ({ as, className, ...props }) => (
   <UI
     as={`h${as}`}
-    type={`heading-${as}`}
+    type={`h${as}`}
     className={cx("Heading", `heading--${as}`, className)}
     {...props}
   />
