@@ -14,6 +14,7 @@ small .Text {
   font-size: var(--font-size--xs);
 }
 
-strong .Text {
+strong .Text,
+strong.Text {
   font-weight: var(--font-weight--bold);
 }

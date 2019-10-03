@@ -10,9 +10,7 @@ storiesOf("Text", module)
     <>
       <Text>Default Text</Text>
 
-      <strong>
-        <Text as="strong">Strong Text</Text>
-      </strong>
+      <Text as="strong">Strong Text</Text>
 
       <em>
         <Text>Emphasized Text</Text>
