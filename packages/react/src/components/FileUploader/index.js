@@ -8,7 +8,7 @@ import Spinner from "../Spinner";
 import Text from "../Text";
 import UploaderItem from "../UploaderItem";
 
-import { ICONS, INTENTS } from "../../constants";
+import { ICONS, INTENTS, refShapes } from "../../constants";
 import { safeInvoke } from "../../utils";
 
 const defaultTranslate = ({ defaultText }) => defaultText;
@@ -35,6 +35,7 @@ const texts = {
 const FileUploader = ({
   children,
   className,
+  forwardedRef,
   files: filesProp,
   name,
   onChange,
@@ -74,6 +75,7 @@ const FileUploader = ({
         "has-error": hasError,
         "is-loading": isLoading,
       })}
+      ref={forwardedRef}
       {...props}
     >
       {isLoading && (
@@ -155,6 +157,7 @@ FileUploader.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
+  forwardedRef: PropTypes.oneOfType(refShapes),
   files: PropTypes.arrayOf(PropTypes.instanceOf(File)),
   isLoading: PropTypes.bool,
   hasError: PropTypes.bool,
@@ -169,6 +172,7 @@ FileUploader.defaultProps = {
   className: undefined,
   translate: defaultTranslate,
   files: [],
+  forwardedRef: undefined,
   hasError: false,
   isLoading: false,
   multiple: false,

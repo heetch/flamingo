@@ -3,6 +3,7 @@
 @import "./shared/helpers.css";
 
 /* core */
+@import "./components/TextType.css";
 @import "./components/Button.css";
 @import "./components/Card.css";
 @import "./components/Checkbox.css";
@@ -13,6 +14,7 @@
 @import "./components/Input.css";
 @import "./components/Label.css";
 @import "./components/Radio.css";
+@import "./components/Popover.css";
 @import "./components/Spinner.css";
 @import "./components/Text.css";
 

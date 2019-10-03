@@ -1,63 +1,19 @@
 .Heading {
   color: var(--color-tolopea);
+  margin-bottom: var(--space-m);
 }
 
-.Heading--h1 {
+.Heading--1 {
   margin-top: var(--space-xl);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xxl);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--xl);
 }
 
-.Heading--h2 {
+.Heading--2 {
   margin-top: var(--space-l);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xl);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--l);
 }
 
-.Heading--h3 {
+.Heading--3,
+.Heading--4,
+.Heading--5,
+.Heading--6 {
   margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--l);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--m);
-}
-
-.Heading--h4 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--m);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
-}
-
-.Heading--h5 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--s);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
-}
-
-.Heading--h6 {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-
-  font-size: var(--font-size--xs);
-  font-weight: var(--font-weight--black);
-
-  line-height: var(--line-height--s);
 }

@@ -5,9 +5,14 @@ import { useTable, useSortBy } from "react-table";
 
 import Icon from "../Icon";
 import Text from "../Text";
+import { refShapes } from "../../constants";
 
-const HeaderGroup = ({ className, children, ...props }) => (
-  <tr className={cx("Table-HeaderGroup", className)} {...props}>
+const HeaderGroup = ({ className, children, forwardedRef, ...props }) => (
+  <tr
+    className={cx("Table-HeaderGroup", className)}
+    ref={forwardedRef}
+    {...props}
+  >
     {children}
   </tr>
 );
@@ -15,18 +20,27 @@ const HeaderGroup = ({ className, children, ...props }) => (
 HeaderGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  forwardedRef: PropTypes.oneOfType(refShapes),
 };
 
 HeaderGroup.defaultProps = {
   className: undefined,
   children: undefined,
+  forwardedRef: undefined,
 };
 
-const HeaderCell = ({ className, children, isSorted, ...props }) => (
+const HeaderCell = ({
+  className,
+  children,
+  forwardedRef,
+  isSorted,
+  ...props
+}) => (
   <th
     className={cx("Table-HeaderCell", className, {
       "is-sorted": isSorted,
     })}
+    ref={forwardedRef}
     {...props}
   >
     {children}
@@ -36,17 +50,19 @@ const HeaderCell = ({ className, children, isSorted, ...props }) => (
 HeaderCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  forwardedRef: PropTypes.oneOfType(refShapes),
   isSorted: PropTypes.bool,
 };
 
 HeaderCell.defaultProps = {
   className: undefined,
   children: undefined,
+  forwardedRef: undefined,
   isSorted: false,
 };
 
-const RowGroup = ({ className, children, ...props }) => (
-  <tr className={cx("Table-RowGroup", className)} {...props}>
+const RowGroup = ({ className, children, forwardedRef, ...props }) => (
+  <tr className={cx("Table-RowGroup", className)} ref={forwardedRef} {...props}>
     {children}
   </tr>
 );
@@ -54,15 +70,17 @@ const RowGroup = ({ className, children, ...props }) => (
 RowGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  forwardedRef: PropTypes.oneOfType(refShapes),
 };
 
 RowGroup.defaultProps = {
   className: undefined,
   children: undefined,
+  forwardedRef: undefined,
 };
 
-const RowCell = ({ className, children, ...props }) => (
-  <td className={cx("Table-RowCell", className)} {...props}>
+const RowCell = ({ className, children, forwardedRef, ...props }) => (
+  <td className={cx("Table-RowCell", className)} ref={forwardedRef} {...props}>
     {children}
   </td>
 );
@@ -70,14 +88,16 @@ const RowCell = ({ className, children, ...props }) => (
 RowCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  forwardedRef: PropTypes.oneOfType(refShapes),
 };
 
 RowCell.defaultProps = {
   className: undefined,
   children: undefined,
+  forwardedRef: undefined,
 };
 
-const Table = ({ className, columns, data, isSortable }) => {
+const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
   const { headerGroups, rows, prepareRow } = useTable(
     {
       columns,
@@ -95,7 +115,7 @@ const Table = ({ className, columns, data, isSortable }) => {
   );
 
   return (
-    <table className={cx("Table", className)}>
+    <table className={cx("Table", className)} ref={forwardedRef}>
       <thead>
         {headerGroups.map(({ getHeaderGroupProps, headers }) => (
           <HeaderGroup {...getHeaderGroupProps()}>
@@ -154,6 +174,7 @@ Table.propTypes = {
     })
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
+  forwardedRef: PropTypes.oneOfType(refShapes),
   isSortable: PropTypes.bool,
 };
 
@@ -161,6 +182,7 @@ Table.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
+  forwardedRef: undefined,
   isSortable: false,
 };
 

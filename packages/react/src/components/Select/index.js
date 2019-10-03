@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
+import TextType from "../TextType";
+
 import { ICONS, ICON_SIZES } from "../../constants";
 
 const Select = ({
@@ -19,7 +21,9 @@ const Select = ({
 
   return (
     <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
-      <select
+      <TextType
+        as="select"
+        type={TextType.TYPES.content}
         className={cx("FormEl", "FormEl--withIcon", "Select", className, {
           ...classes,
         })}
@@ -34,7 +38,7 @@ const Select = ({
             {label}
           </option>
         ))}
-      </select>
+      </TextType>
 
       <Icon
         icon={ICONS.IconChevronDown}
