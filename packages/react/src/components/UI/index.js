@@ -17,7 +17,7 @@ const UI = ({ as: Component, className, forwardedRef, type, ...props }) => (
 UI.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfTypes(refShapes),
+  forwardedRef: PropTypes.oneOfType(refShapes),
   type: PropTypes.oneOf(types),
 };
 
