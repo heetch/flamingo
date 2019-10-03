@@ -22,7 +22,7 @@
 }
 
 .Tabs:before {
-  content: "";
+  content: '';
   background-color: white;
   width: 2px;
   height: 100%;
@@ -32,7 +32,7 @@
 }
 
 .Tabs:after {
-  content: "";
+  content: '';
   background-color: white;
   width: 2px;
   height: 100%;
