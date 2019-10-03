@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Icon from "../Icon";
-import { ICONS, ICON_SIZES } from "../../constants";
+import Icon from '../Icon';
+import { ICONS, ICON_SIZES } from '../../constants';
 
 const Select = ({
   className,
@@ -14,13 +14,13 @@ const Select = ({
   ...props
 }) => {
   const classes = {
-    "is-disabled": isDisabled,
+    'is-disabled': isDisabled,
   };
 
   return (
-    <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
+    <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
       <select
-        className={cx("FormEl", "FormEl--withIcon", "Select", className, {
+        className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
           ...classes,
         })}
         disabled={isDisabled}
@@ -38,7 +38,7 @@ const Select = ({
 
       <Icon
         icon={ICONS.IconChevronDown}
-        className="FormEl-icon"
+        className='FormEl-icon'
         size={ICON_SIZES.L}
       />
     </div>
@@ -54,7 +54,7 @@ Select.propTypes = {
     PropTypes.exact({
       label: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 

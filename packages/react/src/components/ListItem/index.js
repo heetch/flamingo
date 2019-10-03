@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-import Icon from "../Icon";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import Icon from '../Icon';
 import {
   ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
-} from "../../constants";
+} from '../../constants';
 
 const ICONS_KEYS = Object.keys(ICONS);
 
@@ -24,54 +24,54 @@ const ListItem = ({
   onClick,
 }) => (
   <div
-    role="button"
+    role='button'
     tabIndex={0}
     onClick={onClick}
     onKeyPress={({ which }) => (which === 13 ? onClick() : undefined)}
-    className={cx("ListItem", {
-      "ListItem--sub": type === LIST_ITEM_SIZES.SUB,
-      "ListItem--mini": type === LIST_ITEM_SIZES.MINI,
-      "is-clickable": !!onClick,
-      "has-divider": !hideDivider,
+    className={cx('ListItem', {
+      'ListItem--sub': type === LIST_ITEM_SIZES.SUB,
+      'ListItem--mini': type === LIST_ITEM_SIZES.MINI,
+      'is-clickable': !!onClick,
+      'has-divider': !hideDivider,
     })}
   >
     {leftIcon && (
-      <div className="ListItem-leftIcon">
+      <div className='ListItem-leftIcon'>
         <Icon icon={leftIcon} />
       </div>
     )}
     <div>
       <div
         className={cx({
-          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
-          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
+          'ListItem-title': type !== LIST_ITEM_SIZES.MINI,
+          'ListItem-subtitle': type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {children}
       </div>
-      {subtitle && <p className="ListItem-subtitle">{subtitle}</p>}
+      {subtitle && <p className='ListItem-subtitle'>{subtitle}</p>}
     </div>
     <div
-      className={cx("ListItem-valueContainer", {
-        "is-dark": valueType === LIST_ITEM_VALUES_TYPES.DARK,
-        "is-sub-dark": valueType === LIST_ITEM_VALUES_TYPES.SUB_DARK,
-        "is-error": valueType === LIST_ITEM_VALUES_TYPES.ERROR,
-        "is-success": valueType === LIST_ITEM_VALUES_TYPES.SUCCESS,
-        "is-strong-value": strongValue,
+      className={cx('ListItem-valueContainer', {
+        'is-dark': valueType === LIST_ITEM_VALUES_TYPES.DARK,
+        'is-sub-dark': valueType === LIST_ITEM_VALUES_TYPES.SUB_DARK,
+        'is-error': valueType === LIST_ITEM_VALUES_TYPES.ERROR,
+        'is-success': valueType === LIST_ITEM_VALUES_TYPES.SUCCESS,
+        'is-strong-value': strongValue,
       })}
     >
       <span
         className={cx({
-          "ListItem-title": type !== LIST_ITEM_SIZES.MINI,
-          "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
+          'ListItem-title': type !== LIST_ITEM_SIZES.MINI,
+          'ListItem-subtitle': type === LIST_ITEM_SIZES.MINI,
         })}
       >
         {value}
       </span>
       {(mockRightIcon || onClick || rightIcon) && (
         <span
-          className={cx("ListItem-itemIcon", {
-            "is-mini": type === LIST_ITEM_SIZES.MINI,
+          className={cx('ListItem-itemIcon', {
+            'is-mini': type === LIST_ITEM_SIZES.MINI,
           })}
         >
           {(onClick || rightIcon) && (

@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Icon from "../Icon";
-import { ICONS, INPUT_TYPES } from "../../constants";
+import Icon from '../Icon';
+import { ICONS, INPUT_TYPES } from '../../constants';
 
 const types = Object.values(INPUT_TYPES);
 
 const defaultIconProps = {
-  className: "FormEl-icon",
+  className: 'FormEl-icon',
 };
 
 const Input = ({
@@ -23,17 +23,17 @@ const Input = ({
   ...props
 }) => {
   const classes = {
-    "is-disabled": isDisabled,
-    "is-valid": isValid,
-    "is-invalid": isInvalid,
+    'is-disabled': isDisabled,
+    'is-valid': isValid,
+    'is-invalid': isInvalid,
   };
 
   return (
-    <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
+    <div className={cx('FormEl-wrapper', 'Input-wrapper', { ...classes })}>
       <input
-        className={cx("FormEl", "Input", className, {
+        className={cx('FormEl', 'Input', className, {
           ...classes,
-          "FormEl--withIcon": isValid || isInvalid,
+          'FormEl--withIcon': isValid || isInvalid,
         })}
         disabled={isDisabled}
         id={id}
@@ -67,7 +67,7 @@ Input.defaultProps = {
   className: undefined,
   disabled: false,
   invalid: false,
-  placeholder: "",
+  placeholder: '',
   type: INPUT_TYPES.TEXT,
   valid: false,
 };

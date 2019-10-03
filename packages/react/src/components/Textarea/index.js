@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Icon from "../Icon";
-import { ICON_SIZES } from "../../constants";
+import Icon from '../Icon';
+import { ICON_SIZES } from '../../constants';
 
 const defaultIconProps = {
-  className: "FormEl-icon",
+  className: 'FormEl-icon',
   size: ICON_SIZES.S,
 };
 
@@ -21,15 +21,15 @@ const Textarea = ({
   ...props
 }) => {
   const classes = {
-    "is-disabled": isDisabled,
-    "is-valid": isValid,
-    "is-invalid": isInvalid,
+    'is-disabled': isDisabled,
+    'is-valid': isValid,
+    'is-invalid': isInvalid,
   };
 
   return (
-    <div className={cx("FormEl-wrapper", "Textarea-wrapper", { ...classes })}>
+    <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
       <textarea
-        className={cx("FormEl", "Textarea", className, { ...classes })}
+        className={cx('FormEl', 'Textarea', className, { ...classes })}
         disabled={isDisabled}
         id={id}
         name={id}
@@ -38,8 +38,8 @@ const Textarea = ({
         {...props}
       />
 
-      {isInvalid && <Icon icon="IconClose" {...defaultIconProps} />}
-      {isValid && <Icon icon="IconCheck" {...defaultIconProps} />}
+      {isInvalid && <Icon icon='IconClose' {...defaultIconProps} />}
+      {isValid && <Icon icon='IconCheck' {...defaultIconProps} />}
     </div>
   );
 };
@@ -58,7 +58,7 @@ Textarea.defaultProps = {
   className: undefined,
   disabled: false,
   invalid: false,
-  placeholder: "",
+  placeholder: '',
   valid: false,
 };
 

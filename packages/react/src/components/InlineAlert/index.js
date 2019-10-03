@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-import Icon from "../Icon";
-import { INLINE_ALERT_TYPES, ICONS } from "../../constants";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import Icon from '../Icon';
+import { INLINE_ALERT_TYPES, ICONS } from '../../constants';
 
 const ALERT_ICONS = {
   [INLINE_ALERT_TYPES.INFORMATION]: ICONS.IconInfo,
@@ -14,20 +14,20 @@ const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
 
 const InlineAlert = ({ title, children, type, onClose }) => (
   <div
-    className={cx("InlineAlert", `InlineAlert--${type}`, {
-      "is-closeable": onClose,
+    className={cx('InlineAlert', `InlineAlert--${type}`, {
+      'is-closeable': onClose,
     })}
   >
     {onClose && (
-      <button type="button" className="InlineAlert-iconClose" onClick={onClose}>
+      <button type='button' className='InlineAlert-iconClose' onClick={onClose}>
         <Icon icon={ICONS.IconCross} />
       </button>
     )}
-    <div className="InlineAlert-icon">
+    <div className='InlineAlert-icon'>
       <Icon icon={ALERT_ICONS[type]} />
     </div>
     <div>
-      <h1 className="InlineAlert-title">{title}</h1>
+      <h1 className='InlineAlert-title'>{title}</h1>
       {children}
     </div>
   </div>

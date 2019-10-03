@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { safeInvoke } from "../../utils";
-import cx from "classnames";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { safeInvoke } from '../../utils';
+import cx from 'classnames';
 
 const Checkbox = ({
   isUndefined,
@@ -25,8 +25,8 @@ const Checkbox = ({
     <input
       checked={isChecked}
       disabled={disabled}
-      className={cx("Checkbox", { "is-undefined": !isChecked && isUndefined })}
-      type="checkbox"
+      className={cx('Checkbox', { 'is-undefined': !isChecked && isUndefined })}
+      type='checkbox'
       name={name}
       value={value}
       onChange={onCheckboxStateChange}
@@ -34,11 +34,11 @@ const Checkbox = ({
   );
 
   return children ? (
-    <label className="Checkbox-label">
+    <label className='Checkbox-label'>
       {buildInputTag()}
       <div>
         {children}
-        {helper && <p className="Checkbox-helper">{helper}</p>}
+        {helper && <p className='Checkbox-helper'>{helper}</p>}
       </div>
     </label>
   ) : (
@@ -62,7 +62,7 @@ Checkbox.defaultProps = {
   checked: false,
   disabled: false,
   children: undefined,
-  value: "checked",
+  value: 'checked',
   helper: undefined,
 };
 

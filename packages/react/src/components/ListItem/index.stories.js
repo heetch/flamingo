@@ -1,23 +1,23 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { select, boolean, text, number } from "@storybook/addon-knobs";
-import { withInfo } from "@storybook/addon-info";
-import { action } from "@storybook/addon-actions";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { select, boolean, text, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
+import { action } from '@storybook/addon-actions';
 import {
   ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
-} from "../../constants";
+} from '../../constants';
 
-import ListItem from ".";
+import ListItem from '.';
 
 ICONS.None = null;
 
-storiesOf("Items/ListItem", module)
+storiesOf('Items/ListItem', module)
   .add(
-    "Playground",
-    withInfo("")(() =>
-      Array.from(new Array(number("Number of levels", 1))).map((_, index) => {
+    'Playground',
+    withInfo('')(() =>
+      Array.from(new Array(number('Number of levels', 1))).map((_, index) => {
         const itemNumber = index + 1;
         const groupId = `Item ${itemNumber}`;
 
@@ -28,29 +28,29 @@ storiesOf("Items/ListItem", module)
               `(${itemNumber}) Size`,
               LIST_ITEM_SIZES,
               LIST_ITEM_SIZES.NORMAL,
-              groupId
+              groupId,
             )}
             valueType={select(
               `(${itemNumber}) Value type`,
               LIST_ITEM_VALUES_TYPES,
               LIST_ITEM_VALUES_TYPES.DARK,
-              groupId
+              groupId,
             )}
             strongValue={boolean(
               `(${itemNumber}) Strong value`,
               false,
-              groupId
+              groupId,
             )}
             subtitle={text(
               `(${itemNumber}) Subtitle`,
-              "This is subtitle",
-              groupId
+              'This is subtitle',
+              groupId,
             )}
-            value={text(`(${itemNumber}) Value`, "Click me", groupId)}
+            value={text(`(${itemNumber}) Value`, 'Click me', groupId)}
             hideDivider={boolean(
               `(${itemNumber}) Should hide divider?`,
               false,
-              groupId
+              groupId,
             )}
             leftIcon={
               ICONS[select(`(${itemNumber}) Left icon`, ICONS, null, groupId)]
@@ -61,25 +61,25 @@ storiesOf("Items/ListItem", module)
             mockRightIcon={boolean(
               `(${itemNumber}) Should mock right icon?`,
               false,
-              groupId
+              groupId,
             )}
             onClick={
               boolean(
                 `(${itemNumber}) Does it have onClick action?`,
                 false,
-                groupId
+                groupId,
               )
-                ? action("ListItem clicked")
+                ? action('ListItem clicked')
                 : undefined
             }
           >
-            {text(`(${itemNumber}) Title`, "ListItem", groupId)}
+            {text(`(${itemNumber}) Title`, 'ListItem', groupId)}
           </ListItem>
         );
-      })
-    )
+      }),
+    ),
   )
-  .add("All states", () =>
+  .add('All states', () =>
     Object.values(LIST_ITEM_SIZES).map(type =>
       Object.values(LIST_ITEM_VALUES_TYPES).map(valueType => (
         <ListItem
@@ -90,6 +90,6 @@ storiesOf("Items/ListItem", module)
         >
           {`List item of type: ${type}`}
         </ListItem>
-      ))
-    )
+      )),
+    ),
   );

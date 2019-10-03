@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import { Helper } from "..";
+import { Helper } from '..';
 
-storiesOf("Form controls/Helper", module).add("Default", () => (
+storiesOf('Form controls/Helper', module).add('Default', () => (
   <Helper>Input helper</Helper>
 ));

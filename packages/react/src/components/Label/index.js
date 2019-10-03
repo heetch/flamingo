@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 const Label = ({ className, htmlFor, ...props }) => (
-  <label className={cx("Label", className)} htmlFor={htmlFor} {...props} />
+  <label className={cx('Label', className)} htmlFor={htmlFor} {...props} />
 );
 
 Label.propTypes = {

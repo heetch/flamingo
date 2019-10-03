@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { CARD_ELEVATIONS, CARD_SIZES } from "../../constants";
+import { CARD_ELEVATIONS, CARD_SIZES } from '../../constants';
 
 const sizes = Object.values(CARD_SIZES);
 
 const Card = ({ className, elevation, isSelected, size, ...props }) => (
   <div
-    className={cx("Card", `Card--${size}`, className, {
-      "is-selected": isSelected,
+    className={cx('Card', `Card--${size}`, className, {
+      'is-selected': isSelected,
       [`is-elevated--${elevation}`]: elevation,
     })}
     {...props}

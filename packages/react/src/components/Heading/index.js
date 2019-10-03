@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { HEADING_LEVELS } from "../../constants";
+import { HEADING_LEVELS } from '../../constants';
 
 const levels = Object.keys(HEADING_LEVELS);
 
 const Heading = ({ as: Component, className, ...props }) => (
   <Component
-    className={cx("Heading", `Heading--${Component}`, className)}
+    className={cx('Heading', `Heading--${Component}`, className)}
     {...props}
   />
 );

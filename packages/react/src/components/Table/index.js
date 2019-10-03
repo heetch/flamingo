@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-import { useTable, useSortBy } from "react-table";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import { useTable, useSortBy } from 'react-table';
 
-import Icon from "../Icon";
-import Text from "../Text";
+import Icon from '../Icon';
+import Text from '../Text';
 
 const HeaderGroup = ({ className, children, ...props }) => (
-  <tr className={cx("Table-HeaderGroup", className)} {...props}>
+  <tr className={cx('Table-HeaderGroup', className)} {...props}>
     {children}
   </tr>
 );
@@ -24,8 +24,8 @@ HeaderGroup.defaultProps = {
 
 const HeaderCell = ({ className, children, isSorted, ...props }) => (
   <th
-    className={cx("Table-HeaderCell", className, {
-      "is-sorted": isSorted,
+    className={cx('Table-HeaderCell', className, {
+      'is-sorted': isSorted,
     })}
     {...props}
   >
@@ -46,7 +46,7 @@ HeaderCell.defaultProps = {
 };
 
 const RowGroup = ({ className, children, ...props }) => (
-  <tr className={cx("Table-RowGroup", className)} {...props}>
+  <tr className={cx('Table-RowGroup', className)} {...props}>
     {children}
   </tr>
 );
@@ -62,7 +62,7 @@ RowGroup.defaultProps = {
 };
 
 const RowCell = ({ className, children, ...props }) => (
-  <td className={cx("Table-RowCell", className)} {...props}>
+  <td className={cx('Table-RowCell', className)} {...props}>
     {children}
   </td>
 );
@@ -83,7 +83,7 @@ const Table = ({ className, columns, data, isSortable }) => {
       columns,
       data,
     },
-    useSortBy
+    useSortBy,
   );
 
   React.useMemo(
@@ -91,11 +91,11 @@ const Table = ({ className, columns, data, isSortable }) => {
       rows.forEach(row => {
         prepareRow(row);
       }),
-    [prepareRow, rows]
+    [prepareRow, rows],
   );
 
   return (
-    <table className={cx("Table", className)}>
+    <table className={cx('Table', className)}>
       <thead>
         {headerGroups.map(({ getHeaderGroupProps, headers }) => (
           <HeaderGroup {...getHeaderGroupProps()}>
@@ -112,21 +112,21 @@ const Table = ({ className, columns, data, isSortable }) => {
                   isSorted={isSorted}
                 >
                   <Text>
-                    {render("Header")}
+                    {render('Header')}
 
                     {isSorted &&
                       (isSortedDesc ? (
-                        <Icon icon="IconArrowUp" />
+                        <Icon icon='IconArrowUp' />
                       ) : (
-                        <Icon icon="IconArrowDown" />
+                        <Icon icon='IconArrowDown' />
                       ))}
 
                     {isSortable && !isSorted && (
-                      <Icon icon="IconChevronUpDown" />
+                      <Icon icon='IconChevronUpDown' />
                     )}
                   </Text>
                 </HeaderCell>
-              )
+              ),
             )}
           </HeaderGroup>
         ))}
@@ -136,7 +136,7 @@ const Table = ({ className, columns, data, isSortable }) => {
         {rows.map(row => (
           <RowGroup {...row.getRowProps()}>
             {row.cells.map(({ getCellProps, render }) => (
-              <RowCell {...getCellProps()}>{render("Cell")}</RowCell>
+              <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
             ))}
           </RowGroup>
         ))}
@@ -151,7 +151,7 @@ Table.propTypes = {
     PropTypes.shape({
       Header: PropTypes.string.isRequired,
       accessor: PropTypes.string.isRequired,
-    })
+    }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
   isSortable: PropTypes.bool,

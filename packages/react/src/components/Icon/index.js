@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { ICON_SIZES, ICONS_SVGS } from "../../constants";
+import { ICON_SIZES, ICONS_SVGS } from '../../constants';
 
 const sizes = Object.values(ICON_SIZES);
 const icons = Object.keys(ICONS_SVGS);
 
 const Icon = ({ className, icon, size, ...props }) => (
-  <i className={cx("Icon", `Icon--${size}`, className)} {...props}>
+  <i className={cx('Icon', `Icon--${size}`, className)} {...props}>
     {ICONS_SVGS[icon]}
   </i>
 );

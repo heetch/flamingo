@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import FileUploader from "../FileUploader";
-import IconButton from "../IconButton";
-import UploaderImageItem from "../UploaderImageItem";
+import FileUploader from '../FileUploader';
+import IconButton from '../IconButton';
+import UploaderImageItem from '../UploaderImageItem';
 
-import { ICONS } from "../../constants";
-import { toBase64, safeInvoke } from "../../utils";
+import { ICONS } from '../../constants';
+import { toBase64, safeInvoke } from '../../utils';
 
 const ImageUploader = ({ multiple, onChange, ...props }) => {
   const [files, setFiles] = React.useState([]);
@@ -48,9 +48,9 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
 
   return (
     <FileUploader
-      className={cx("ImageUploader", {
-        "has-preview": preview,
-        "is-loading": isLoading,
+      className={cx('ImageUploader', {
+        'has-preview': preview,
+        'is-loading': isLoading,
       })}
       files={files}
       onChange={handleFileChange}
@@ -59,7 +59,7 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
       hasError={hasError}
       overrides={{
         input: {
-          accept: "image/*",
+          accept: 'image/*',
         },
       }}
       {...props}
@@ -67,13 +67,13 @@ const ImageUploader = ({ multiple, onChange, ...props }) => {
       {preview && (
         <>
           <div
-            className="ImageUploader-preview"
+            className='ImageUploader-preview'
             style={{
               backgroundImage: `url(${preview})`,
             }}
           />
 
-          <div className="ImageUploader-hoverState">
+          <div className='ImageUploader-hoverState'>
             <IconButton onClick={handleClear} icon={ICONS.IconTrash} />
           </div>
         </>
