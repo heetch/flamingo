@@ -26,7 +26,7 @@ const Popover = ({ content, children, placement }) => (
           data-placement={placement}
           className={`Popover Popover--${placement}`}
         >
-          <UI type={UI.TYPES.SubContent} as="span">
+          <UI type={UI.TYPES.subContent} as="span">
             {content}
           </UI>
         </div>

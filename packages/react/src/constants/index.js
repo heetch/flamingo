@@ -61,16 +61,16 @@ export const LIST_ITEM_VALUES_TYPES = {
 };
 
 export const UI_TYPES = {
-  "Heading-1": "Heading-1",
-  "Heading-2": "Heading-2",
-  "Heading-3": "Heading-3",
-  "Heading-4": "Heading-4",
-  "Heading-5": "Heading-5",
-  "Heading-6": "Heading-6",
-  Content: "Content",
-  ContentBold: "ContentBold",
-  SubContent: "SubContent",
-  SubContentBold: "SubContentBold",
+  "heading-1": "heading-1",
+  "heading-2": "heading-2",
+  "heading-3": "heading-3",
+  "heading-4": "heading-4",
+  "heading-5": "heading-5",
+  "heading-6": "heading-6",
+  content: "content",
+  contentBold: "contentBold",
+  subContent: "subContent",
+  subContentBold: "subContentBold",
 };
 
 export const POPOVER_PLACEMENTS = {

@@ -1,64 +1,64 @@
 /* Headings */
 
-.UI--Heading-1,
-.UI--Heading-2,
-.UI--Heading-3,
-.UI--Heading-4,
-.UI--Heading-5,
-.UI--Heading-6 {
+.UI--heading-1,
+.UI--heading-2,
+.UI--heading-3,
+.UI--heading-4,
+.UI--heading-5,
+.UI--heading-6 {
   font-weight: var(--font-weight--black);
 }
 
-.UI--Heading-1 {
+.UI--heading-1 {
   font-size: var(--font-size--xxl);
   line-height: var(--line-height--xl);
 }
 
-.UI--Heading-2 {
+.UI--heading-2 {
   font-size: var(--font-size--xl);
   line-height: var(--line-height--l);
 }
 
-.UI--Heading-3 {
+.UI--heading-3 {
   font-size: var(--font-size--l);
   line-height: var(--line-height--m);
 }
 
-.UI--Heading-4 {
+.UI--heading-4 {
   font-size: var(--font-size--m);
   line-height: var(--line-height--s);
 }
 
-.UI--Heading-5 {
+.UI--heading-5 {
   font-size: var(--font-size--s);
   line-height: var(--line-height--s);
 }
 
-.UI--Heading-6 {
+.UI--heading-6 {
   font-size: var(--font-size--xs);
   line-height: var(--line-height--s);
 }
 
-/* Content */
+/* Contents */
 
-.UI--Content,
-.UI--ContentBold {
+.UI--content,
+.UI--contentBold {
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
 }
 
-.UI--Content,
-.UI--SubContent {
+.UI--content,
+.UI--subContent {
   font-weight: var(--font-weight--normal);
 }
 
-.UI--ContentBold,
-.UI--SubContentBold {
+.UI--contentBold,
+.UI--subContentBold {
   font-weight: var(--font-weight--bold);
 }
 
-.UI--SubContent,
-.UI--SubContentBold {
+.UI--subContent,
+.UI--subContentBold {
   font-size: var(--font-size--s);
   line-height: var(--line-height--m);
 }

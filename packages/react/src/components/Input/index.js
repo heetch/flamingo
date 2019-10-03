@@ -34,7 +34,7 @@ const Input = ({
     <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
       <UI
         as="input"
-        type={UI.TYPES.Content}
+        type={UI.TYPES.content}
         className={cx("FormEl", "Input", className, {
           ...classes,
           "FormEl--withIcon": isValid || isInvalid,

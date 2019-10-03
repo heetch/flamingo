@@ -6,7 +6,7 @@ import UI from "../UI";
 
 const Text = ({ as: Component, className, isNumber, ...props }) => (
   <UI
-    type={UI.TYPES.Content}
+    type={UI.TYPES.content}
     as={Component}
     className={cx("Text", `Text--${Component}`, className, {
       "is-number": isNumber,

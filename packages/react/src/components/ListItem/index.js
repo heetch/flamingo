@@ -55,7 +55,7 @@ const ListItem = ({
 
       <div>
         <UI
-          type={isMini ? UI.TYPES.SubContent : UI.TYPES.Content}
+          type={isMini ? UI.TYPES.subContent : UI.TYPES.content}
           className={cx("ListItem-title", {
             "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
           })}
@@ -65,7 +65,7 @@ const ListItem = ({
 
         {subtitle && (
           <UI
-            type={isMini ? UI.TYPES.SubContent : UI.TYPES.Content}
+            type={isMini ? UI.TYPES.subContent : UI.TYPES.content}
             className="ListItem-subtitle"
           >
             {subtitle}

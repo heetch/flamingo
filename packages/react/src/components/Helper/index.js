@@ -7,7 +7,7 @@ import UI from "../UI";
 const Helper = ({ className, children, ...props }) => (
   <UI
     as="small"
-    type={UI.TYPES.SubContent}
+    type={UI.TYPES.subContent}
     className={cx("Helper", className)}
     {...props}
   >

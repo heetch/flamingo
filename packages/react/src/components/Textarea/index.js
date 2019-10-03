@@ -32,7 +32,7 @@ const Textarea = ({
     <div className={cx("FormEl-wrapper", "Textarea-wrapper", { ...classes })}>
       <UI
         as="textarea"
-        type={UI.TYPES.Content}
+        type={UI.TYPES.content}
         className={cx("FormEl", "Textarea", className, { ...classes })}
         disabled={isDisabled}
         id={id}

@@ -25,7 +25,7 @@ UI.defaultProps = {
   as: "p",
   className: undefined,
   forwardedRef: undefined,
-  type: UI_TYPES.Content,
+  type: UI_TYPES.content,
 };
 
 UI.TYPES = UI_TYPES;

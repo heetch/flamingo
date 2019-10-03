@@ -23,7 +23,7 @@ const Select = ({
     <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
       <UI
         as="select"
-        type={UI.TYPES.Content}
+        type={UI.TYPES.content}
         className={cx("FormEl", "FormEl--withIcon", "Select", className, {
           ...classes,
         })}

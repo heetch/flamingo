@@ -33,10 +33,10 @@ const InlineAlert = ({ title, children, forwardedRef, type, onClose }) => (
     </div>
 
     <div>
-      <UI type={UI.TYPES.ContentBold} as="h1" className="InlineAlert-title">
+      <UI type={UI.TYPES.contentBold} as="h1" className="InlineAlert-title">
         {title}
       </UI>
-      <UI type={UI.TYPES.Content} className="InlineAlert-content">
+      <UI type={UI.TYPES.content} className="InlineAlert-content">
         {children}
       </UI>
     </div>
