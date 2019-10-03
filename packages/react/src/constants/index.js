@@ -60,7 +60,7 @@ export const LIST_ITEM_VALUES_TYPES = {
   SUCCESS: "success",
 };
 
-export const UI_TYPES = {
+export const TEXT_TYPES = {
   h1: "heading-1",
   h2: "heading-2",
   h3: "heading-3",

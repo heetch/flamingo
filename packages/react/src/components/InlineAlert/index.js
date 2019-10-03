@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import UI from "../UI";
+import TextType from "../TextType";
 
 import { INLINE_ALERT_TYPES, ICONS, refShapes } from "../../constants";
 
@@ -33,12 +33,16 @@ const InlineAlert = ({ title, children, forwardedRef, type, onClose }) => (
     </div>
 
     <div>
-      <UI type={UI.TYPES.contentBold} as="h1" className="InlineAlert-title">
+      <TextType
+        type={TextType.TYPES.contentBold}
+        as="h1"
+        className="InlineAlert-title"
+      >
         {title}
-      </UI>
-      <UI type={UI.TYPES.content} className="InlineAlert-content">
+      </TextType>
+      <TextType type={TextType.TYPES.content} className="InlineAlert-content">
         {children}
-      </UI>
+      </TextType>
     </div>
   </div>
 );

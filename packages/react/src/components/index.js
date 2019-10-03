@@ -15,4 +15,4 @@ export { default as Table } from "./Table";
 export { default as Tabs } from "./Tabs";
 export { default as Text } from "./Text";
 export { default as Textarea } from "./Textarea";
-export { default as UI } from "./UI";
+export { default as TextType } from "./TextType";

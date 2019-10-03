@@ -3,7 +3,7 @@
 @import "./shared/helpers.css";
 
 /* core */
-@import "./components/UI.css";
+@import "./components/TextType.css";
 @import "./components/Button.css";
 @import "./components/Card.css";
 @import "./components/Checkbox.css";
