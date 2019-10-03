@@ -1,40 +1,40 @@
 /* Headings */
 
-.UI--Heading1,
-.UI--Heading2,
-.UI--Heading3,
-.UI--Heading4,
-.UI--Heading5,
-.UI--Heading6 {
+.UI--Heading-1,
+.UI--Heading-2,
+.UI--Heading-3,
+.UI--Heading-4,
+.UI--Heading-5,
+.UI--Heading-6 {
   font-weight: var(--font-weight--black);
 }
 
-.UI--Heading1 {
+.UI--Heading-1 {
   font-size: var(--font-size--xxl);
   line-height: var(--line-height--xl);
 }
 
-.UI--Heading2 {
+.UI--Heading-2 {
   font-size: var(--font-size--xl);
   line-height: var(--line-height--l);
 }
 
-.UI--Heading3 {
+.UI--Heading-3 {
   font-size: var(--font-size--l);
   line-height: var(--line-height--m);
 }
 
-.UI--Heading4 {
+.UI--Heading-4 {
   font-size: var(--font-size--m);
   line-height: var(--line-height--s);
 }
 
-.UI--Heading5 {
+.UI--Heading-5 {
   font-size: var(--font-size--s);
   line-height: var(--line-height--s);
 }
 
-.UI--Heading6 {
+.UI--Heading-6 {
   font-size: var(--font-size--xs);
   line-height: var(--line-height--s);
 }

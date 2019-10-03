@@ -61,12 +61,12 @@ export const LIST_ITEM_VALUES_TYPES = {
 };
 
 export const UI_TYPES = {
-  Heading1: "Heading1",
-  Heading2: "Heading2",
-  Heading3: "Heading3",
-  Heading4: "Heading4",
-  Heading5: "Heading5",
-  Heading6: "Heading6",
+  "Heading-1": "Heading-1",
+  "Heading-2": "Heading-2",
+  "Heading-3": "Heading-3",
+  "Heading-4": "Heading-4",
+  "Heading-5": "Heading-5",
+  "Heading-6": "Heading-6",
   Content: "Content",
   ContentBold: "ContentBold",
   SubContent: "SubContent",
