@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import TextType from "../TextType";
+import UiText from "../UiText";
 import { HEADING_LEVELS } from "../../constants";
 
 const Heading = ({ as, className, ...props }) => (
-  <TextType
+  <UiText
     as={`h${as}`}
     type={`h${as}`}
     className={cx("Heading", `heading--${as}`, className)}

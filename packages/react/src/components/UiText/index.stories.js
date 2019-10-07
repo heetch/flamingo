@@ -2,39 +2,37 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { select, text, withKnobs } from "@storybook/addon-knobs";
 
-import TextType from ".";
+import UiText from ".";
 import Input from "../Input";
 import Text from "../Text";
 
-const { TYPES } = TextType;
+const { TYPES } = UiText;
 
 const types = Object.keys(TYPES);
-const stories = storiesOf("TextType", module);
+const stories = storiesOf("UiText", module);
 
 stories.addDecorator(withKnobs);
 
 stories.add("With types", () =>
   types.map(type => (
-    <TextType key={type} type={type}>
+    <UiText key={type} type={type}>
       {type}
-    </TextType>
+    </UiText>
   ))
 );
 
 stories.add("With custom component", () => (
   <>
-    <TextType as="div" type={TYPES.Heading1}>
+    <UiText as="div" type={TYPES.Heading1}>
       As div
-    </TextType>
-    <TextType as={Text} type={TYPES.Heading1}>
+    </UiText>
+    <UiText as={Text} type={TYPES.Heading1}>
       As Text
-    </TextType>
-    <TextType as={Input} defaultValue="as Input" type={TYPES.Heading1} />
+    </UiText>
+    <UiText as={Input} defaultValue="as Input" type={TYPES.Heading1} />
   </>
 ));
 
 stories.add("Playground", () => (
-  <TextType type={select("Types", types)}>
-    {text("Content", "Content")}
-  </TextType>
+  <UiText type={select("Types", types)}>{text("Content", "Content")}</UiText>
 ));

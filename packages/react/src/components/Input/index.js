@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import TextType from "../TextType";
+import UiText from "../UiText";
 
 import { ICONS, INPUT_TYPES } from "../../constants";
 
@@ -32,9 +32,9 @@ const Input = ({
 
   return (
     <div className={cx("FormEl-wrapper", "Input-wrapper", { ...classes })}>
-      <TextType
+      <UiText
         as="input"
-        type={TextType.TYPES.content}
+        type={UiText.TYPES.content}
         className={cx("FormEl", "Input", className, {
           ...classes,
           "FormEl--withIcon": isValid || isInvalid,
