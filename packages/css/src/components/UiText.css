@@ -1,64 +1,64 @@
 /* Headings */
 
-.TextType--heading-1,
-.TextType--heading-2,
-.TextType--heading-3,
-.TextType--heading-4,
-.TextType--heading-5,
-.TextType--heading-6 {
+.UiText--heading-1,
+.UiText--heading-2,
+.UiText--heading-3,
+.UiText--heading-4,
+.UiText--heading-5,
+.UiText--heading-6 {
   font-weight: var(--font-weight--black);
 }
 
-.TextType--heading-1 {
+.UiText--heading-1 {
   font-size: var(--font-size--xxl);
   line-height: var(--line-height--xl);
 }
 
-.TextType--heading-2 {
+.UiText--heading-2 {
   font-size: var(--font-size--xl);
   line-height: var(--line-height--l);
 }
 
-.TextType--heading-3 {
+.UiText--heading-3 {
   font-size: var(--font-size--l);
   line-height: var(--line-height--m);
 }
 
-.TextType--heading-4 {
+.UiText--heading-4 {
   font-size: var(--font-size--m);
   line-height: var(--line-height--s);
 }
 
-.TextType--heading-5 {
+.UiText--heading-5 {
   font-size: var(--font-size--s);
   line-height: var(--line-height--s);
 }
 
-.TextType--heading-6 {
+.UiText--heading-6 {
   font-size: var(--font-size--xs);
   line-height: var(--line-height--s);
 }
 
 /* Contents */
 
-.TextType--content,
-.TextType--contentBold {
+.UiText--content,
+.UiText--contentBold {
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
 }
 
-.TextType--content,
-.TextType--subContent {
+.UiText--content,
+.UiText--subContent {
   font-weight: var(--font-weight--normal);
 }
 
-.TextType--contentBold,
-.TextType--subContentBold {
+.UiText--contentBold,
+.UiText--subContentBold {
   font-weight: var(--font-weight--bold);
 }
 
-.TextType--subContent,
-.TextType--subContentBold {
+.UiText--subContent,
+.UiText--subContentBold {
   font-size: var(--font-size--s);
   line-height: var(--line-height--m);
 }

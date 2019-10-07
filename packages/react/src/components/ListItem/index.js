@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Icon from "../Icon";
-import TextType from "../TextType";
+import UiText from "../UiText";
 
 import {
   ICONS,
@@ -54,22 +54,22 @@ const ListItem = ({
       )}
 
       <div>
-        <TextType
-          type={isMini ? TextType.TYPES.subContent : TextType.TYPES.content}
+        <UiText
+          type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
           className={cx("ListItem-title", {
             "ListItem-subtitle": type === LIST_ITEM_SIZES.MINI,
           })}
         >
           {children}
-        </TextType>
+        </UiText>
 
         {subtitle && (
-          <TextType
-            type={isMini ? TextType.TYPES.subContent : TextType.TYPES.content}
+          <UiText
+            type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
             className="ListItem-subtitle"
           >
             {subtitle}
-          </TextType>
+          </UiText>
         )}
       </div>
 
@@ -82,14 +82,14 @@ const ListItem = ({
           "is-strong-value": strongValue,
         })}
       >
-        <TextType
+        <UiText
           className={cx({
             "ListItem-title": !isMini,
             "ListItem-subtitle": isMini,
           })}
         >
           {value}
-        </TextType>
+        </UiText>
 
         {(mockRightIcon || onClick || rightIcon) && (
           <span

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Manager, Reference, Popper } from "react-popper";
 
-import TextType from "../TextType";
+import UiText from "../UiText";
 import { POPOVER_PLACEMENTS } from "../../constants";
 
 const placements = Object.values(POPOVER_PLACEMENTS);
@@ -26,9 +26,9 @@ const Popover = ({ content, children, placement }) => (
           data-placement={placement}
           className={`Popover Popover--${placement}`}
         >
-          <TextType type={TextType.TYPES.subContent} as="span">
+          <UiText type={UiText.TYPES.subContent} as="span">
             {content}
-          </TextType>
+          </UiText>
         </div>
       )}
     </Popper>

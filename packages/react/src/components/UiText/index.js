@@ -2,38 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { TEXT_TYPES, refShapes } from "../../constants";
+import { UI_TYPES, refShapes } from "../../constants";
 
-const types = Object.keys(TEXT_TYPES);
+const types = Object.keys(UI_TYPES);
 
-const TextType = ({
-  as: Component,
-  className,
-  forwardedRef,
-  type,
-  ...props
-}) => (
+const UiText = ({ as: Component, className, forwardedRef, type, ...props }) => (
   <Component
-    className={cx("TextType", `TextType--${TEXT_TYPES[type]}`, className)}
+    className={cx("UiText", `UiText--${UI_TYPES[type]}`, className)}
     ref={forwardedRef}
     {...props}
   />
 );
 
-TextType.propTypes = {
+UiText.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
   forwardedRef: PropTypes.oneOfType(refShapes),
   type: PropTypes.oneOf(types),
 };
 
-TextType.defaultProps = {
+UiText.defaultProps = {
   as: "p",
   className: undefined,
   forwardedRef: undefined,
-  type: TEXT_TYPES.content,
+  type: UI_TYPES.content,
 };
 
-TextType.TYPES = TEXT_TYPES;
+UiText.TYPES = UI_TYPES;
 
-export default TextType;
+export default UiText;
