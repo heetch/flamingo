@@ -12,7 +12,7 @@ const Popover = ({ content, children, placement }) => (
     <Reference>
       {({ ref }) =>
         React.cloneElement(children, {
-          className: 'Popover-wrapper',
+          className: 'Popover-triggerer',
           forwardedRef: ref,
         })
       }
@@ -24,11 +24,13 @@ const Popover = ({ content, children, placement }) => (
           ref={ref}
           style={style}
           data-placement={placement}
-          className={`Popover Popover--${placement}`}
+          className={`Popover-wrapper is--${placement}`}
         >
-          <UiText type={UiText.TYPES.subContent} as='span'>
-            {content}
-          </UiText>
+          <div className='Popover'>
+            <UiText type={UiText.TYPES.subContent} as='span'>
+              {content}
+            </UiText>
+          </div>
         </div>
       )}
     </Popper>
