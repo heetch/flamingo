@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import Icon from '../Icon';
-import { INLINE_ALERT_TYPES, ICONS } from '../../constants';
+import UiText from '../UiText';
+
+import { INLINE_ALERT_TYPES, ICONS, refShapes } from '../../constants';
 
 const ALERT_ICONS = {
   [INLINE_ALERT_TYPES.INFORMATION]: ICONS.IconInfo,
@@ -12,29 +15,41 @@ const ALERT_ICONS = {
 
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
 
-const InlineAlert = ({ title, children, type, onClose }) => (
+const InlineAlert = ({ title, children, forwardedRef, type, onClose }) => (
   <div
     className={cx('InlineAlert', `InlineAlert--${type}`, {
       'is-closeable': onClose,
     })}
+    ref={forwardedRef}
   >
     {onClose && (
       <button type='button' className='InlineAlert-iconClose' onClick={onClose}>
         <Icon icon={ICONS.IconCross} />
       </button>
     )}
+
     <div className='InlineAlert-icon'>
       <Icon icon={ALERT_ICONS[type]} />
     </div>
+
     <div>
-      <h1 className='InlineAlert-title'>{title}</h1>
-      {children}
+      <UiText
+        type={UiText.TYPES.contentBold}
+        as='h1'
+        className='InlineAlert-title'
+      >
+        {title}
+      </UiText>
+      <UiText type={UiText.TYPES.content} className='InlineAlert-content'>
+        {children}
+      </UiText>
     </div>
   </div>
 );
 
 InlineAlert.propTypes = {
   children: PropTypes.node,
+  forwardedRef: PropTypes.oneOfType(refShapes),
   /** Type of alert */
   type: PropTypes.oneOf(ALERT_TYPES),
   /** Title of alert */
@@ -45,6 +60,7 @@ InlineAlert.propTypes = {
 
 InlineAlert.defaultProps = {
   children: undefined,
+  forwardedRef: undefined,
   type: INLINE_ALERT_TYPES.INFORMATION,
 };
 

@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
+import { refShapes } from '../../constants';
+
+const Tabs = ({
+  elements,
+  buildTabLabel,
+  buildReturnObject,
+  forwardedRef,
+  onClick,
+}) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleTabClick = newActiveIndex => {
@@ -17,7 +25,7 @@ const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
   };
 
   return (
-    <div className='container'>
+    <div className='container' ref={forwardedRef}>
       <div className='Tabs'>
         {elements.map((element, index) => (
           <span
@@ -45,6 +53,7 @@ const Tabs = ({ elements, buildTabLabel, buildReturnObject, onClick }) => {
 };
 
 Tabs.propTypes = {
+  forwardedRef: PropTypes.oneOfType(refShapes),
   /** An array of strings or objects that will make tabs content */
   elements: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
@@ -59,6 +68,7 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   buildTabLabel: null,
   buildReturnObject: null,
+  forwardedRef: undefined,
   onClick: () => {},
 };
 

@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import UiText from '../UiText';
+
 const Text = ({ as: Component, className, isNumber, ...props }) => (
-  <Component
+  <UiText
+    type={UiText.TYPES.content}
+    as={Component}
     className={cx('Text', `Text--${Component}`, className, {
       'is-number': isNumber,
     })}

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import * as ICONS_SVGS from './icons';
 
 export const CARD_ELEVATIONS = [0, 1, 2];
@@ -7,14 +8,7 @@ export const CARD_SIZES = {
   M: 'm',
 };
 
-export const HEADING_LEVELS = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-};
+export const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
 export const ICON_SIZES = {
   S: 's',
@@ -65,3 +59,29 @@ export const LIST_ITEM_VALUES_TYPES = {
   ERROR: 'error',
   SUCCESS: 'success',
 };
+
+export const UI_TYPES = {
+  h1: 'heading-1',
+  h2: 'heading-2',
+  h3: 'heading-3',
+  h4: 'heading-4',
+  h5: 'heading-5',
+  h6: 'heading-6',
+  content: 'content',
+  contentBold: 'contentBold',
+  subContent: 'subContent',
+  subContentBold: 'subContentBold',
+};
+
+export const POPOVER_PLACEMENTS = {
+  AUTO: 'auto',
+  TOP: 'top',
+  RIGHT: 'right',
+  BOTTOM: 'bottom',
+  LEFT: 'left',
+};
+
+export const refShapes = [
+  PropTypes.func,
+  PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+];
