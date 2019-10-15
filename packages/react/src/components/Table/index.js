@@ -3,99 +3,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useTable, useSortBy } from 'react-table';
 
+import HeaderCell from '../TableHeaderCell';
+import HeaderGroup from '../TableHeaderGroup';
+import RowGroup from '../TableRowGroup';
+import RowCell from '../TableRowCell';
 import Icon from '../Icon';
 import Text from '../Text';
+
 import { refShapes } from '../../constants';
-
-const HeaderGroup = ({ className, children, forwardedRef, ...props }) => (
-  <tr
-    className={cx('Table-HeaderGroup', className)}
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-  </tr>
-);
-
-HeaderGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
-
-HeaderGroup.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
-
-const HeaderCell = ({
-  className,
-  children,
-  forwardedRef,
-  isSorted,
-  ...props
-}) => (
-  <th
-    className={cx('Table-HeaderCell', className, {
-      'is-sorted': isSorted,
-    })}
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-  </th>
-);
-
-HeaderCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  isSorted: PropTypes.bool,
-};
-
-HeaderCell.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-  isSorted: false,
-};
-
-const RowGroup = ({ className, children, forwardedRef, ...props }) => (
-  <tr className={cx('Table-RowGroup', className)} ref={forwardedRef} {...props}>
-    {children}
-  </tr>
-);
-
-RowGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
-
-RowGroup.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
-
-const RowCell = ({ className, children, forwardedRef, ...props }) => (
-  <td className={cx('Table-RowCell', className)} ref={forwardedRef} {...props}>
-    {children}
-  </td>
-);
-
-RowCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
-
-RowCell.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
 
 const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
   const { headerGroups, rows, prepareRow } = useTable(
