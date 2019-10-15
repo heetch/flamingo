@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Manager, Reference, Popper } from "react-popper";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Manager, Reference, Popper } from 'react-popper';
 
-import UiText from "../UiText";
-import { POPOVER_PLACEMENTS } from "../../constants";
+import UiText from '../UiText';
+import { POPOVER_PLACEMENTS } from '../../constants';
 
 const placements = Object.values(POPOVER_PLACEMENTS);
 
@@ -12,7 +12,7 @@ const Popover = ({ content, children, placement }) => (
     <Reference>
       {({ ref }) =>
         React.cloneElement(children, {
-          className: "Popover-wrapper",
+          className: 'Popover-wrapper',
           forwardedRef: ref,
         })
       }
@@ -26,7 +26,7 @@ const Popover = ({ content, children, placement }) => (
           data-placement={placement}
           className={`Popover Popover--${placement}`}
         >
-          <UiText type={UiText.TYPES.subContent} as="span">
+          <UiText type={UiText.TYPES.subContent} as='span'>
             {content}
           </UiText>
         </div>

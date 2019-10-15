@@ -51,7 +51,7 @@
 }
 
 .Radio:checked:after {
-  content: "";
+  content: '';
   background-color: var(--color-white);
   width: 0.625rem /* 10px */;
   height: 0.625rem /* 10px */;

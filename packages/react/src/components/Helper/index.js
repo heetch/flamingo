@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import UiText from "../UiText";
+import UiText from '../UiText';
 
 const Helper = ({ className, children, ...props }) => (
   <UiText
-    as="small"
+    as='small'
     type={UiText.TYPES.subContent}
-    className={cx("Helper", className)}
+    className={cx('Helper', className)}
     {...props}
   >
     {children}

@@ -3,7 +3,7 @@
 ## Usage
 
 ```jsx
-import { Heading } from "@heetch/flamingo-react";
+import { Heading } from '@heetch/flamingo-react';
 
 export default () => <Heading>Content</Heading>;
 ```
@@ -13,7 +13,7 @@ export default () => <Heading>Content</Heading>;
 #### `as`: oneOf(`HEADING_LEVELS`)
 
 ```jsx
-import { Heading } from "@heetch/flamingo-react";
+import { Heading } from '@heetch/flamingo-react';
 
 export default () => <Heading as={3} />;
 ```
@@ -21,5 +21,5 @@ export default () => <Heading as={3} />;
 #### `className`: String
 
 ```jsx
-export default () => <Heading className="myClass" />;
+export default () => <Heading className='myClass' />;
 ```

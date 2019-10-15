@@ -1,45 +1,45 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { boolean, text } from "@storybook/addon-knobs";
-import { withInfo } from "@storybook/addon-info";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { boolean, text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 
-import Checkbox from ".";
+import Checkbox from '.';
 
-storiesOf("Form controls/Checkbox", module)
+storiesOf('Form controls/Checkbox', module)
   .addDecorator(storiesFn => (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       {storiesFn()}
     </div>
   ))
-  .add("All states", () => (
+  .add('All states', () => (
     <>
-      <Checkbox helper="Normal checkbox">Label</Checkbox>
-      <Checkbox helper="Normal checkbox" checked>
+      <Checkbox helper='Normal checkbox'>Label</Checkbox>
+      <Checkbox helper='Normal checkbox' checked>
         Label
       </Checkbox>
-      <Checkbox helper="Undefined state checkbox" isUndefined>
+      <Checkbox helper='Undefined state checkbox' isUndefined>
         Label
       </Checkbox>
-      <Checkbox disabled helper="Disabled checkbox">
+      <Checkbox disabled helper='Disabled checkbox'>
         Label
       </Checkbox>
-      <Checkbox helper="Disabled checked checkbox" checked disabled>
+      <Checkbox helper='Disabled checked checkbox' checked disabled>
         Label
       </Checkbox>
-      <Checkbox helper="Disabled undefined state checkbox" isUndefined disabled>
+      <Checkbox helper='Disabled undefined state checkbox' isUndefined disabled>
         Label
       </Checkbox>
     </>
   ))
   .add(
-    "Playground",
-    withInfo("")(() => (
+    'Playground',
+    withInfo('')(() => (
       <Checkbox
-        isUndefined={boolean("Is undefined?", false)}
-        disabled={boolean("Is disabled?", false)}
-        helper={text("Label helper", "Label helper")}
+        isUndefined={boolean('Is undefined?', false)}
+        disabled={boolean('Is disabled?', false)}
+        helper={text('Label helper', 'Label helper')}
       >
-        {text("Label", "Checkbox label")}
+        {text('Label', 'Checkbox label')}
       </Checkbox>
-    ))
+    )),
   );

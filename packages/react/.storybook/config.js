@@ -1,12 +1,12 @@
-import { addParameters, configure, addDecorator } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import FlexWrapperDecorator from "./FlexWrapperDecorator";
-import { withKnobs } from "@storybook/addon-knobs";
+import { addParameters, configure, addDecorator } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import FlexWrapperDecorator from './FlexWrapperDecorator';
+import { withKnobs } from '@storybook/addon-knobs';
 
-import "normalize.css";
-import "../../css/dist/index.css";
+import 'normalize.css';
+import '../../css/dist/index.css';
 
-const req = require.context("../src/components", true, /\.stories\.js$/);
+const req = require.context('../src/components', true, /\.stories\.js$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
@@ -17,7 +17,7 @@ addDecorator(withKnobs);
 
 addParameters({
   options: {
-    name: "Heetch Flamingo",
+    name: 'Heetch Flamingo',
     addonPanelInRight: true,
     hierarchySeparator: /\//,
   },
@@ -25,24 +25,24 @@ addParameters({
 
 const flamingoViewports = {
   BreakpointS: {
-    name: "Flamingo Breakpoint S",
+    name: 'Flamingo Breakpoint S',
     styles: {
-      width: "460px",
-      height: "963px",
+      width: '460px',
+      height: '963px',
     },
   },
   BreakpointM: {
-    name: "Flamingo Breakpoint M",
+    name: 'Flamingo Breakpoint M',
     styles: {
-      width: "800px",
-      height: "963px",
+      width: '800px',
+      height: '963px',
     },
   },
   BreakpointL: {
-    name: "Flamingo Breakpoint L",
+    name: 'Flamingo Breakpoint L',
     styles: {
-      width: "1100px",
-      height: "963px",
+      width: '1100px',
+      height: '963px',
     },
   },
 };

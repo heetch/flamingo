@@ -1,23 +1,23 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 
-import Card from ".";
-import Heading from "../Heading";
-import Text from "../Text";
+import Card from '.';
+import Heading from '../Heading';
+import Text from '../Text';
 
 const { ELEVATIONS, SIZES } = Card;
 const sizes = Object.values(SIZES);
 
 const Container = (
-  { children } // eslint-disable-line react/prop-types
-) => <div style={{ margin: "var(--space-xl) 0" }}>{children}</div>;
+  { children }, // eslint-disable-line react/prop-types
+) => <div style={{ margin: 'var(--space-xl) 0' }}>{children}</div>;
 
-const stories = storiesOf("Card", module);
+const stories = storiesOf('Card', module);
 
 stories.addDecorator(withKnobs);
 
-stories.add("All states", () => (
+stories.add('All states', () => (
   <>
     <Heading as={Heading.LEVELS.h1}>Card</Heading>
 
@@ -69,11 +69,11 @@ stories.add("All states", () => (
   </>
 ));
 
-stories.add("Playground", () => (
+stories.add('Playground', () => (
   <Card
-    isSelected={boolean("Is selected", false)}
-    elevation={select("Elevation", ELEVATIONS)}
-    size={select("Size", sizes)}
+    isSelected={boolean('Is selected', false)}
+    elevation={select('Elevation', ELEVATIONS)}
+    size={select('Size', sizes)}
   >
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

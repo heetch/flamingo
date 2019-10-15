@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const SVGO = require("svgo"); // eslint-disable-line import/no-extraneous-dependencies
-const prettier = require("prettier"); // eslint-disable-line import/no-extraneous-dependencies
-const { CLIEngine } = require("eslint"); // eslint-disable-line import/no-extraneous-dependencies
+const fs = require('fs');
+const path = require('path');
+const SVGO = require('svgo'); // eslint-disable-line import/no-extraneous-dependencies
+const prettier = require('prettier'); // eslint-disable-line import/no-extraneous-dependencies
+const { CLIEngine } = require('eslint'); // eslint-disable-line import/no-extraneous-dependencies
 
 const eslint = new CLIEngine({ fix: true });
 
@@ -41,13 +41,13 @@ const svgo = new SVGO({
     { convertShapeToPath: true },
     { sortAttrs: true },
     { removeDimensions: true },
-    { removeAttrs: { attrs: "(stroke|fill)" } },
+    { removeAttrs: { attrs: '(stroke|fill)' } },
   ],
 });
 
 const paths = {
-  icons: path.resolve(__dirname, "../src/icons/"),
-  dist: path.resolve(__dirname, "../src/constants/icons.js"),
+  icons: path.resolve(__dirname, '../src/icons/'),
+  dist: path.resolve(__dirname, '../src/constants/icons.js'),
 };
 
 function toCamelCase(str) {
@@ -59,8 +59,8 @@ function toPascalCase(str) {
 }
 
 function formatIconName(str) {
-  const prefix = "Icon";
-  const iconName = toPascalCase(toCamelCase(str)).replace(".svg", "");
+  const prefix = 'Icon';
+  const iconName = toPascalCase(toCamelCase(str)).replace('.svg', '');
   return `${prefix}${iconName}`;
 }
 
@@ -87,16 +87,16 @@ const formatIcons = iconsPath.map(async iconPath => {
 });
 
 Promise.all(formatIcons).then(icons => {
-  const reactIcons = icons.join("");
+  const reactIcons = icons.join('');
   const output = `import React from 'react';
 
 /* This file has been generated via the 'icons' script */
 ${reactIcons}`;
 
-  const formattedOutput = prettier.format(output, { parser: "babel" });
-  const { results } = eslint.executeOnText(formattedOutput, "icons.js");
+  const formattedOutput = prettier.format(output, { parser: 'babel' });
+  const { results } = eslint.executeOnText(formattedOutput, 'icons.js');
 
   fs.writeFileSync(paths.dist, results[0].output);
 
-  console.log("Done!"); // eslint-disable-line no-console
+  console.log('Done!'); // eslint-disable-line no-console
 });

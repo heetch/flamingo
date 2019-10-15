@@ -1,34 +1,34 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Button from "../Button";
-import Icon from "../Icon";
-import Spinner from "../Spinner";
-import Text from "../Text";
-import UploaderItem from "../UploaderItem";
+import Button from '../Button';
+import Icon from '../Icon';
+import Spinner from '../Spinner';
+import Text from '../Text';
+import UploaderItem from '../UploaderItem';
 
-import { ICONS, INTENTS, refShapes } from "../../constants";
-import { safeInvoke } from "../../utils";
+import { ICONS, INTENTS, refShapes } from '../../constants';
+import { safeInvoke } from '../../utils';
 
 const defaultTranslate = ({ defaultText }) => defaultText;
 
 const texts = {
   add_document: {
-    id: "flamingo-file-uploader-add-document",
-    defaultText: "Click to add a document",
+    id: 'flamingo-file-uploader-add-document',
+    defaultText: 'Click to add a document',
   },
   error: {
-    id: "flamingo-file-uploader-error-title",
-    defaultText: "Upload failed",
+    id: 'flamingo-file-uploader-error-title',
+    defaultText: 'Upload failed',
   },
   try_again: {
-    id: "flamingo-file-uploader-error-try-again",
-    defaultText: "Click to try again",
+    id: 'flamingo-file-uploader-error-try-again',
+    defaultText: 'Click to try again',
   },
   upload_more_files: {
-    id: "flamingo-file-uploader-upload-more-files",
-    defaultText: "Add more files",
+    id: 'flamingo-file-uploader-upload-more-files',
+    defaultText: 'Add more files',
   },
 };
 
@@ -59,7 +59,7 @@ const FileUploader = ({
 
   const handleDeleteFile = fileToDelete => {
     const remainingFiles = files.filter(
-      file => file.name !== fileToDelete.name
+      file => file.name !== fileToDelete.name,
     );
     setFiles(remainingFiles);
   };
@@ -70,32 +70,32 @@ const FileUploader = ({
 
   return (
     <div
-      className={cx("FileUploader FormEl-wrapper", className, {
-        "has-file": hasFile,
-        "has-error": hasError,
-        "is-loading": isLoading,
+      className={cx('FileUploader FormEl-wrapper', className, {
+        'has-file': hasFile,
+        'has-error': hasError,
+        'is-loading': isLoading,
       })}
       ref={forwardedRef}
       {...props}
     >
       {isLoading && (
-        <div className="FileUploader-state FileUploader-state--uploading">
+        <div className='FileUploader-state FileUploader-state--uploading'>
           <Spinner />
         </div>
       )}
 
       {hasError && (
         <label
-          className="FileUploader-state FileUploader-state--error"
+          className='FileUploader-state FileUploader-state--error'
           htmlFor={name}
         >
           <Icon icon={ICONS.IconSadFace} />
 
-          <Text className="FileUploader-errorState-title">
+          <Text className='FileUploader-errorState-title'>
             {translate(texts.error)}
           </Text>
 
-          <Text className="FileUploader-actionText">
+          <Text className='FileUploader-actionText'>
             {translate(texts.try_again)}
           </Text>
         </label>
@@ -115,9 +115,9 @@ const FileUploader = ({
               ))}
 
             {multiple && (
-              <Button intent={INTENTS.TERTIARY} className="Button--label">
+              <Button intent={INTENTS.TERTIARY} className='Button--label'>
                 <label
-                  className="FileUploader-state FileUploader-state--empty"
+                  className='FileUploader-state FileUploader-state--empty'
                   htmlFor={name}
                 >
                   {translate(texts.upload_more_files)}
@@ -127,19 +127,19 @@ const FileUploader = ({
           </>
         ) : (
           <label
-            className="FileUploader-state FileUploader-state--empty"
+            className='FileUploader-state FileUploader-state--empty'
             htmlFor={name}
           >
             <Icon icon={ICONS.IconFilePlus} />
-            <Text className="FileUploader-actionText">
+            <Text className='FileUploader-actionText'>
               {translate(texts.add_document)}
             </Text>
           </label>
         ))}
 
-      <div className="FileUploader-inputContainer">
+      <div className='FileUploader-inputContainer'>
         <input
-          type="file"
+          type='file'
           id={name}
           name={name}
           multiple={multiple}

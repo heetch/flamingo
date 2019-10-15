@@ -1,16 +1,16 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import Textarea from ".";
+import Textarea from '.';
 
-const states = ["default", "hover", "focus", "disabled"];
+const states = ['default', 'hover', 'focus', 'disabled'];
 
 const textareaProps = () => ({
   id: `textarea-${Math.random()}`,
   onChange: console.log,
 });
 
-storiesOf("Form controls/Textarea", module).add("With states", () => (
+storiesOf('Form controls/Textarea', module).add('With states', () => (
   <>
     {states.map(state => (
       <div key={`textarea-${state}`}>
@@ -18,17 +18,17 @@ storiesOf("Form controls/Textarea", module).add("With states", () => (
           {...textareaProps()}
           className={`is-${state}`}
           defaultValue={`State: ${state}`}
-          disabled={state === "disabled"}
+          disabled={state === 'disabled'}
         />
       </div>
     ))}
 
     <div>
-      <Textarea {...textareaProps()} defaultValue="Props: invalid" invalid />
+      <Textarea {...textareaProps()} defaultValue='Props: invalid' invalid />
     </div>
 
     <div>
-      <Textarea {...textareaProps()} defaultValue="Props: valid" valid />
+      <Textarea {...textareaProps()} defaultValue='Props: valid' valid />
     </div>
   </>
 ));

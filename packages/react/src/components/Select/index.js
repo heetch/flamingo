@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Icon from "../Icon";
-import UiText from "../UiText";
+import Icon from '../Icon';
+import UiText from '../UiText';
 
-import { ICONS, ICON_SIZES } from "../../constants";
+import { ICONS, ICON_SIZES } from '../../constants';
 
 const Select = ({
   className,
@@ -16,15 +16,15 @@ const Select = ({
   ...props
 }) => {
   const classes = {
-    "is-disabled": isDisabled,
+    'is-disabled': isDisabled,
   };
 
   return (
-    <div className={cx("FormEl-wrapper Select-wrapper", { ...classes })}>
+    <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
       <UiText
-        as="select"
+        as='select'
         type={UiText.TYPES.content}
-        className={cx("FormEl", "FormEl--withIcon", "Select", className, {
+        className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
           ...classes,
         })}
         disabled={isDisabled}
@@ -42,7 +42,7 @@ const Select = ({
 
       <Icon
         icon={ICONS.IconChevronDown}
-        className="FormEl-icon"
+        className='FormEl-icon'
         size={ICON_SIZES.L}
       />
     </div>
@@ -58,7 +58,7 @@ Select.propTypes = {
     PropTypes.exact({
       label: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 

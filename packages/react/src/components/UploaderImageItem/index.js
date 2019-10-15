@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Spinner from "../Spinner";
-import UploaderItem from "../UploaderItem";
+import Spinner from '../Spinner';
+import UploaderItem from '../UploaderItem';
 
-import { toBase64 } from "../../utils";
-import { refShapes } from "../../constants";
+import { toBase64 } from '../../utils';
+import { refShapes } from '../../constants';
 
 const UploaderImageItem = ({ file, forwardedRef, overrides, ...props }) => {
   const [preview, setPreview] = React.useState(undefined);

@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import UiText from "../UiText";
+import UiText from '../UiText';
 
 const Text = ({ as: Component, className, isNumber, ...props }) => (
   <UiText
     type={UiText.TYPES.content}
     as={Component}
-    className={cx("Text", `Text--${Component}`, className, {
-      "is-number": isNumber,
+    className={cx('Text', `Text--${Component}`, className, {
+      'is-number': isNumber,
     })}
     {...props}
   />
@@ -22,7 +22,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  as: "p",
+  as: 'p',
   className: undefined,
   isNumber: false,
 };

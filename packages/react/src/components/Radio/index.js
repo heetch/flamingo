@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Radio = ({
   disabled,
@@ -14,8 +14,8 @@ const Radio = ({
     <input
       defaultChecked={checked}
       disabled={disabled}
-      className="Radio"
-      type="radio"
+      className='Radio'
+      type='radio'
       name={name}
       value={value}
       onChange={onChange}
@@ -23,11 +23,11 @@ const Radio = ({
   );
 
   return children ? (
-    <label className="Radio-label">
+    <label className='Radio-label'>
       {buildInputTag()}
       <div>
         {children}
-        {helper && <p className="Radio-helper">{helper}</p>}
+        {helper && <p className='Radio-helper'>{helper}</p>}
       </div>
     </label>
   ) : (

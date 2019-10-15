@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { INTENTS, refShapes } from "../../constants";
+import { INTENTS, refShapes } from '../../constants';
 
 const intents = Object.values(INTENTS);
 
@@ -15,8 +15,8 @@ const Button = ({
   ...props
 }) => (
   <Component
-    className={cx("Button", className, {
-      "is-disabled": disabled,
+    className={cx('Button', className, {
+      'is-disabled': disabled,
       [`is-${intent}`]: intent,
     })}
     disabled={disabled}
@@ -34,7 +34,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  as: "button",
+  as: 'button',
   className: undefined,
   disabled: false,
   intent: INTENTS.PRIMARY,
