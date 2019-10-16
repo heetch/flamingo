@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { CARD_ELEVATIONS, CARD_SIZES } from '../../constants';
+const ELEVATIONS = [0, 1, 2];
+const SIZES = { S: 's', M: 'm' };
 
-const sizes = Object.values(CARD_SIZES);
+const sizes = Object.values(SIZES);
 
 const Card = ({ className, elevation, isSelected, size, ...props }) => (
   <div
@@ -18,7 +19,7 @@ const Card = ({ className, elevation, isSelected, size, ...props }) => (
 
 Card.propTypes = {
   className: PropTypes.string,
-  elevation: PropTypes.oneOf(CARD_ELEVATIONS),
+  elevation: PropTypes.oneOf(ELEVATIONS),
   isSelected: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
 };
@@ -27,10 +28,10 @@ Card.defaultProps = {
   className: undefined,
   elevation: 0,
   isSelected: false,
-  size: CARD_SIZES.M,
+  size: SIZES.M,
 };
 
-Card.ELEVATIONS = CARD_ELEVATIONS;
-Card.SIZES = CARD_SIZES;
+Card.ELEVATIONS = ELEVATIONS;
+Card.SIZES = SIZES;
 
 export default Card;

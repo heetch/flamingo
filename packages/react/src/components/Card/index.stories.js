@@ -19,7 +19,7 @@ stories.addDecorator(withKnobs);
 
 stories.add('All states', () => (
   <>
-    <Heading as={Heading.LEVELS.h1}>Card</Heading>
+    <Heading>Card</Heading>
 
     <Container>
       <Card>
@@ -37,7 +37,7 @@ stories.add('All states', () => (
       </Card>
     </Container>
 
-    <Heading as={Heading.LEVELS.h2}>With elevations</Heading>
+    <Heading as={2}>With elevations</Heading>
 
     {ELEVATIONS.map(elevation => (
       <Container key={elevation}>
@@ -47,7 +47,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading as={Heading.LEVELS.h2}>With sizes</Heading>
+    <Heading as={2}>With sizes</Heading>
 
     {sizes.map(size => (
       <Container key={size}>
@@ -57,7 +57,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading as={Heading.LEVELS.h2}>Cards in Cards</Heading>
+    <Heading as={2}>Cards in Cards</Heading>
 
     <Card>
       <Card>

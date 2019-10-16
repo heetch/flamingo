@@ -1,6 +1,7 @@
 .Card {
-  --borderColor: var(--color-alto);
+  --borderColor: var(--color-ui-element--inactive);
 
+  background-color: var(--color-ui-element--primary);
   box-shadow: 0 0 0 1px var(--borderColor);
   border-radius: var(--radius-xl);
 }
@@ -26,7 +27,7 @@
 }
 
 .Card.is-selected {
-  --borderColor: var(--color-rose);
+  --borderColor: var(--color-brand-primary);
   box-shadow: inset 0 0 0 3px var(--borderColor);
 }
 

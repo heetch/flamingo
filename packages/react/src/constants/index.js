@@ -1,13 +1,6 @@
 import PropTypes from 'prop-types';
 import * as ICONS_SVGS from './icons';
 
-export const CARD_ELEVATIONS = [0, 1, 2];
-
-export const CARD_SIZES = {
-  S: 's',
-  M: 'm',
-};
-
 export const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
 export const ICON_SIZES = {
