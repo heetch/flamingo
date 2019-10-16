@@ -3,75 +3,64 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
 import Button from '.';
-import Icon from '../Icon';
+import Heading from '../Heading';
 
-import { ICONS, INTENTS } from '../../constants';
+import { capitalize } from '../../utils';
+
+const { INTENTS, VARIANTS } = Button;
 
 const intents = Object.values(INTENTS);
+const variants = Object.values(VARIANTS);
 const states = ['default', 'hover', 'active', 'disabled'];
 
 const stories = storiesOf('Buttons/Button', module);
 
-const Link = (
-  { children, to, ...props }, // eslint-disable-line react/prop-types
-) => (
-  <a {...props} href={to}>
-    {children}
-  </a>
-);
+stories.add('All states', () => (
+  <>
+    <Heading>Button</Heading>
 
-stories.add('With intents', () => (
-  <div style={{ display: 'flex' }}>
     {intents.map(intent => (
-      <div
-        key={intent}
-        style={{
-          textAlign: 'center',
-          padding: '0 var(--space-s)',
-          flexGrow: 1,
-        }}
-      >
-        {states.map(state => (
-          <div key={`${intent}-${state}`}>
+      <div key={intent}>
+        <Heading as={2}>{capitalize(intent)}</Heading>
+
+        <div>
+          <Heading as={3}>States</Heading>
+          {states.map(state => (
             <Button
-              className={`is-${state}`}
-              disabled={state === 'disabled'}
+              key={state}
               intent={intent}
+              className={`is-${state}`}
+              style={{ marginRight: 'var(--space-m)' }}
             >
-              {intent} ({state})
+              {intent}
+              {state !== 'default' && `:${state}`}
             </Button>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div>
+          <Heading as={3}>Variants</Heading>
+          {variants.map(variant => (
+            <Button
+              key={variant}
+              intent={intent}
+              className={`is-${variant}`}
+              style={{ marginRight: 'var(--space-m)' }}
+            >
+              {intent}
+              {variant && `:${variant}`}
+            </Button>
+          ))}
+        </div>
       </div>
     ))}
-  </div>
-));
-
-stories.add('With icons', () => (
-  <>
-    <div style={{ width: '100%', textAlign: 'center' }}>
-      <Button>
-        Success <Icon icon={ICONS.IconCheck} />
-      </Button>
-    </div>
-
-    <div style={{ width: '100%', textAlign: 'center' }}>
-      <Button>
-        Nope <Icon icon={ICONS.IconCross} />
-      </Button>
-    </div>
   </>
-));
-
-stories.add('As link', () => (
-  <Button as={Link} to='https://www.heetch.com' target='_blank'>
-    Link to heetch.com
-  </Button>
 ));
 
 stories.add('Playground', () => (
   <Button
-    intent={select('Intent', INTENTS, 'primary')}
+    intent={select('Intent', INTENTS)}
+    variant={select('Variant', VARIANTS)}
     disabled={boolean('Disabled', false)}
   >
     {text('Content', 'Button content')}

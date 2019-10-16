@@ -2,9 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { INTENTS, refShapes } from '../../constants';
+import { refShapes } from '../../constants';
+
+const INTENTS = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+};
+
+const VARIANTS = {
+  DEFAULT: 'default',
+  OUTLINE: 'outline',
+  MINIMAL: 'minimal',
+};
 
 const intents = Object.values(INTENTS);
+const variants = Object.values(VARIANTS);
 
 const Button = ({
   as: Component,
@@ -12,12 +24,14 @@ const Button = ({
   disabled,
   forwardedRef,
   intent,
+  variant,
   ...props
 }) => (
   <Component
     className={cx('Button', className, {
       'is-disabled': disabled,
       [`is-${intent}`]: intent,
+      [`is-${variant}`]: variant,
     })}
     disabled={disabled}
     ref={forwardedRef}
@@ -31,14 +45,19 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   forwardedRef: PropTypes.oneOfType(refShapes),
   intent: PropTypes.oneOf(intents),
+  variant: PropTypes.oneOf(variants),
 };
 
 Button.defaultProps = {
   as: 'button',
   className: undefined,
   disabled: false,
-  intent: INTENTS.PRIMARY,
   forwardedRef: undefined,
+  intent: INTENTS.PRIMARY,
+  variant: undefined,
 };
+
+Button.INTENTS = INTENTS;
+Button.VARIANTS = VARIANTS;
 
 export default Button;

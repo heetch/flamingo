@@ -2,29 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import { ICONS } from '../../constants';
+import Button from '../Button';
 import IconButton from '.';
 
-const states = ['default', 'hover', 'active', 'disabled'];
-const icon = 'IconCheck';
+import { ICONS } from '../../constants';
+
+const { INTENTS, VARIANTS } = Button;
 
 const stories = storiesOf('Buttons/IconButton', module);
-
-stories.add('With states', () =>
-  states.map(state => (
-    <div key={state} style={{ padding: 'var(--space-s)' }}>
-      <IconButton
-        className={`is-${state}`}
-        disabled={state === 'disabled'}
-        icon={icon}
-      />
-    </div>
-  )),
-);
 
 stories.add('Playground', () => (
   <IconButton
     disabled={boolean('Disabled', false)}
-    icon={select('Icon', ICONS, icon)}
+    icon={select('Icon', ICONS, ICONS.IconCandy)}
+    intent={select('Intent', INTENTS)}
+    variant={select('Variant', VARIANTS)}
   />
 ));
