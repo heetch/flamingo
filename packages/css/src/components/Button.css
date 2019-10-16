@@ -12,7 +12,9 @@
 
 .Button {
   --padding: var(--space-m) var(--space-xl);
+  --radius: var(--space-xxl);
 
+  position: relative;
   display: inline-block;
   margin: var(--space-m) 0;
   padding: var(--padding);
@@ -20,9 +22,9 @@
   font-weight: var(--font-weight--bold);
   line-height: var(--line-height--m);
   border: 0;
-  border-radius: var(--space-xxl);
+  border-radius: var(--radius);
   outline: none;
-  transition: background-color 0.1s ease-out;
+  transition: background-color 0.2s ease-out;
   color: var(--textColor);
 }
 
@@ -98,4 +100,29 @@
     flex-grow: inherit;
     padding: var(--space-l);
   }
+}
+
+/* Loading state */
+
+.Button-loadingState {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+}
+
+.Button-loadingState,
+.Button.is-loading .Button-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Button.is-loading .Button-loadingState {
+  opacity: 1;
+  pointer-events: inherit;
 }

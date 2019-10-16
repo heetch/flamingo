@@ -30,4 +30,6 @@ Icon.defaultProps = {
   size: ICON_SIZES.M,
 };
 
+Icon.SIZES = ICON_SIZES;
+
 export default Icon;

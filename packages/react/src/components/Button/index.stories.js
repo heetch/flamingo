@@ -11,7 +11,7 @@ const { INTENTS, VARIANTS } = Button;
 
 const intents = Object.values(INTENTS);
 const variants = Object.values(VARIANTS);
-const states = ['default', 'hover', 'active', 'disabled'];
+const states = ['default', 'hover', 'active'];
 
 const stories = storiesOf('Buttons/Button', module);
 
@@ -36,6 +36,14 @@ stories.add('All states', () => (
               {state !== 'default' && `:${state}`}
             </Button>
           ))}
+          <Button
+            intent={intent}
+            className={`is-${intent}`}
+            isLoading
+            style={{ marginRight: 'var(--space-m)' }}
+          >
+            Loading
+          </Button>
         </div>
 
         <div>
@@ -54,6 +62,9 @@ stories.add('All states', () => (
         </div>
       </div>
     ))}
+
+    <Heading as={2}>Disabled</Heading>
+    <Button disabled>Disabled</Button>
   </>
 ));
 
@@ -62,6 +73,7 @@ stories.add('Playground', () => (
     intent={select('Intent', INTENTS)}
     variant={select('Variant', VARIANTS)}
     disabled={boolean('Disabled', false)}
+    isLoading={boolean('Loading', false)}
   >
     {text('Content', 'Button content')}
   </Button>
