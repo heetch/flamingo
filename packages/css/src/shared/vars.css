@@ -5,13 +5,17 @@
   --color-brand-secondary--light: #252d9b;
 
   --color-icon-white: #fff;
+  --color-icon-disabled: #dedede;
 
   --color-ui-element--primary: #fff;
+  --color-ui-element--secondary: #685879;
+  --color-ui-element--tertiary: #b3abbc;
   --color-ui-element--inactive: #f2f2f2;
   --color-ui-element--error: #ee7d52;
   --color-ui-element--success: #5cc689;
 
   --color-ui-text-primary: #190134;
+  --color-ui-text-secondary: #685879;
   --color-ui-text-tertiary: #b3abbc;
   --color-ui-text-white: #fff;
 }

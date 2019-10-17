@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { safeInvoke } from '../../utils';
 import cx from 'classnames';
+import { safeInvoke } from '../../utils';
+
+import UiText from '../UiText';
 
 const Checkbox = ({
   isUndefined,
@@ -18,10 +20,10 @@ const Checkbox = ({
   const onCheckboxStateChange = e => {
     const { checked } = e.target;
     setIsChecked(checked);
-    safeInvoke(onChange(e));
+    safeInvoke(onChange, e);
   };
 
-  const buildInputTag = () => (
+  const checkbox = (
     <input
       checked={isChecked}
       disabled={disabled}
@@ -33,16 +35,26 @@ const Checkbox = ({
     />
   );
 
-  return children ? (
-    <label className='Checkbox-label'>
-      {buildInputTag()}
+  if (!children) {
+    return checkbox;
+  }
+
+  return (
+    <UiText as='label' className='Checkbox-label' type={UiText.TYPES.content}>
+      {checkbox}
       <div>
         {children}
-        {helper && <p className='Checkbox-helper'>{helper}</p>}
+        {helper && (
+          <UiText
+            type={UiText.TYPES.subContent}
+            as='span'
+            className='Checkbox-helper'
+          >
+            {helper}
+          </UiText>
+        )}
       </div>
-    </label>
-  ) : (
-    buildInputTag()
+    </UiText>
   );
 };
 
