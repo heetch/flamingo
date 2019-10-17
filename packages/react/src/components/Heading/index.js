@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import UiText from '../UiText';
-import { HEADING_LEVELS } from '../../constants';
+
+const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
 const Heading = ({ as, className, ...props }) => (
   <UiText
