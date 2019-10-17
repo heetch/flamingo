@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { safeInvoke } from '../../utils';
 
+import Helper from '../Helper';
 import UiText from '../UiText';
 
 const Checkbox = ({
@@ -44,15 +45,7 @@ const Checkbox = ({
       {checkbox}
       <div>
         {children}
-        {helper && (
-          <UiText
-            type={UiText.TYPES.subContent}
-            as='span'
-            className='Checkbox-helper'
-          >
-            {helper}
-          </UiText>
-        )}
+        {helper && <Helper className='Checkbox-helper'>{helper}</Helper>}
       </div>
     </UiText>
   );
