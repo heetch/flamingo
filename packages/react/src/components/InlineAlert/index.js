@@ -5,12 +5,12 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { INLINE_ALERT_TYPES, ICONS, refShapes } from '../../constants';
+import { INLINE_ALERT_TYPES, refShapes } from '../../constants';
 
 const ALERT_ICONS = {
-  [INLINE_ALERT_TYPES.INFORMATION]: ICONS.IconInfo,
-  [INLINE_ALERT_TYPES.SUCCESS]: ICONS.IconCheck,
-  [INLINE_ALERT_TYPES.ERROR]: ICONS.IconAlertOctagon,
+  [INLINE_ALERT_TYPES.INFORMATION]: Icon.ICONS.IconInfo,
+  [INLINE_ALERT_TYPES.SUCCESS]: Icon.ICONS.IconCheck,
+  [INLINE_ALERT_TYPES.ERROR]: Icon.ICONS.IconAlertOctagon,
 };
 
 const ALERT_TYPES = Object.values(INLINE_ALERT_TYPES);
@@ -24,7 +24,7 @@ const InlineAlert = ({ title, children, forwardedRef, type, onClose }) => (
   >
     {onClose && (
       <button type='button' className='InlineAlert-iconClose' onClick={onClose}>
-        <Icon icon={ICONS.IconCross} />
+        <Icon icon={Icon.ICONS.IconCross} />
       </button>
     )}
 

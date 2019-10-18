@@ -5,11 +5,9 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICON_SIZES } from '../../constants';
-
 const defaultIconProps = {
   className: 'FormEl-icon',
-  size: ICON_SIZES.S,
+  size: Icon.SIZES.S,
 };
 
 const Textarea = ({

@@ -5,8 +5,6 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICONS, ICON_SIZES } from '../../constants';
-
 const Select = ({
   className,
   disabled: isDisabled,
@@ -41,9 +39,9 @@ const Select = ({
       </UiText>
 
       <Icon
-        icon={ICONS.IconChevronDown}
+        icon={Icon.ICONS.IconChevronDown}
         className='FormEl-icon'
-        size={ICON_SIZES.L}
+        size={Icon.SIZES.L}
       />
     </div>
   );

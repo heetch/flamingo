@@ -6,13 +6,12 @@ import Icon from '../Icon';
 import UiText from '../UiText';
 
 import {
-  ICONS,
   LIST_ITEM_SIZES,
   LIST_ITEM_VALUES_TYPES,
   refShapes,
 } from '../../constants';
 
-const icons = Object.values(ICONS);
+const icons = Object.values(Icon.ICONS);
 const sizes = Object.values(LIST_ITEM_SIZES);
 const types = Object.values(LIST_ITEM_VALUES_TYPES);
 
@@ -98,7 +97,7 @@ const ListItem = ({
             })}
           >
             {(onClick || rightIcon) && (
-              <Icon icon={rightIcon || ICONS.IconArrowRight} />
+              <Icon icon={rightIcon || Icon.ICONS.IconArrowRight} />
             )}
           </span>
         )}

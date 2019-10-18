@@ -1,21 +1,4 @@
 import PropTypes from 'prop-types';
-import * as ICONS_SVGS from './icons';
-
-export const ICON_SIZES = {
-  S: 's',
-  M: 'm',
-  L: 'l',
-};
-
-export { ICONS_SVGS };
-
-export const ICONS = Object.keys(ICONS_SVGS).reduce(
-  (icons, icon) => ({
-    ...icons,
-    [icon]: icon,
-  }),
-  {},
-);
 
 export const INPUT_TYPES = {
   EMAIL: 'email',

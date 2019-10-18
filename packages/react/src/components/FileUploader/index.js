@@ -8,7 +8,7 @@ import Spinner from '../Spinner';
 import Text from '../Text';
 import UploaderItem from '../UploaderItem';
 
-import { ICONS, INTENTS, refShapes } from '../../constants';
+import { INTENTS, refShapes } from '../../constants';
 import { safeInvoke } from '../../utils';
 
 const defaultTranslate = ({ defaultText }) => defaultText;
@@ -89,7 +89,7 @@ const FileUploader = ({
           className='FileUploader-state FileUploader-state--error'
           htmlFor={name}
         >
-          <Icon icon={ICONS.IconSadFace} />
+          <Icon icon={Icon.ICONS.IconSadFace} />
 
           <Text className='FileUploader-errorState-title'>
             {translate(texts.error)}
@@ -130,7 +130,7 @@ const FileUploader = ({
             className='FileUploader-state FileUploader-state--empty'
             htmlFor={name}
           >
-            <Icon icon={ICONS.IconFilePlus} />
+            <Icon icon={Icon.ICONS.IconFilePlus} />
             <Text className='FileUploader-actionText'>
               {translate(texts.add_document)}
             </Text>

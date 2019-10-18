@@ -3,15 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { select, boolean, text, number } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
-import {
-  ICONS,
-  LIST_ITEM_SIZES,
-  LIST_ITEM_VALUES_TYPES,
-} from '../../constants';
 
+import { LIST_ITEM_SIZES, LIST_ITEM_VALUES_TYPES } from '../../constants';
+
+import Icon from '../Icon';
 import ListItem from '.';
 
-ICONS.None = null;
+const ICONS = { ...Icon.ICONS, None: null };
 
 storiesOf('Items/ListItem', module)
   .add(

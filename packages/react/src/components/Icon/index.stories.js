@@ -7,10 +7,8 @@ import Input from '../Input';
 import Label from '../Label';
 import Icon from '.';
 
-import { ICONS, ICON_SIZES } from '../../constants';
-
-const icons = Object.keys(ICONS);
-const sizes = Object.values(ICON_SIZES);
+const icons = Object.keys(Icon.ICONS);
+const sizes = Object.values(Icon.SIZES);
 
 const IconsFilterer = () => {
   const [filter, setFilter] = React.useState('');
@@ -57,7 +55,7 @@ stories.add('All', () => <IconsFilterer />);
 
 stories.add('Playground', () => (
   <Icon
-    icon={select('Icon', icons, ICONS.IconAlertOctagon)}
-    size={select('Size', sizes, ICON_SIZES.M)}
+    icon={select('Icon', icons, Icon.ICONS.IconAlertOctagon)}
+    size={select('Size', sizes, Icon.SIZES.M)}
   />
 ));

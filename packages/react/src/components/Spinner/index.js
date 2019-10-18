@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import Icon from '../Icon';
-import { ICONS, refShapes } from '../../constants';
+import { refShapes } from '../../constants';
 
 const Spinner = ({ className, forwardedRef, ...props }) => (
   <Icon
     className={cx('Icon--spinner', className)}
-    icon={ICONS.IconLoader}
+    icon={Icon.ICONS.IconLoader}
     ref={forwardedRef}
     {...props}
   />

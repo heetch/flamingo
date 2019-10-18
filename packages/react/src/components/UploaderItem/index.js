@@ -5,16 +5,19 @@ import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Text from '../Text';
 
-import { ICONS, refShapes } from '../../constants';
+import { refShapes } from '../../constants';
 
 const UploaderItem = ({ file, forwardedRef, handleDelete, overrides }) => (
   <div className='UploaderItem' ref={forwardedRef}>
     <div className='UploaderItem-iconContainer'>
-      {overrides.icon || <Icon icon={ICONS.IconFileText} />}
+      {overrides.icon || <Icon icon={Icon.ICONS.IconFileText} />}
     </div>
 
     <Text className='UploaderItem-name u-ellipsis'>{file.name}</Text>
-    <IconButton onClick={() => handleDelete(file)} icon={ICONS.IconTrash} />
+    <IconButton
+      onClick={() => handleDelete(file)}
+      icon={Icon.ICONS.IconTrash}
+    />
   </div>
 );
 

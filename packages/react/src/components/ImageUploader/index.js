@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import FileUploader from '../FileUploader';
+import Icon from '../Icon';
 import IconButton from '../IconButton';
 import UploaderImageItem from '../UploaderImageItem';
 
-import { ICONS, refShapes } from '../../constants';
+import { refShapes } from '../../constants';
 import { toBase64, safeInvoke } from '../../utils';
 
 const ImageUploader = ({ forwardedRef, multiple, onChange, ...props }) => {
@@ -75,7 +76,7 @@ const ImageUploader = ({ forwardedRef, multiple, onChange, ...props }) => {
           />
 
           <div className='ImageUploader-hoverState'>
-            <IconButton onClick={handleClear} icon={ICONS.IconTrash} />
+            <IconButton onClick={handleClear} icon={Icon.ICONS.IconTrash} />
           </div>
         </>
       )}

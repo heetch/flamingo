@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import Button from '../Button';
+import Icon from '../Icon';
 import IconButton from '.';
 
-import { ICONS } from '../../constants';
-
 const { INTENTS, VARIANTS } = Button;
+const { ICONS } = Icon;
 
 const stories = storiesOf('Buttons/IconButton', module);
 

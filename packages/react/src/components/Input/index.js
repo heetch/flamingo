@@ -5,7 +5,7 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICONS, INPUT_TYPES } from '../../constants';
+import { INPUT_TYPES } from '../../constants';
 
 const types = Object.values(INPUT_TYPES);
 
@@ -48,10 +48,10 @@ const Input = ({
       />
 
       {isInvalid && (
-        <Icon icon={ICONS.IconAlertOctagon} {...defaultIconProps} />
+        <Icon icon={Icon.ICONS.IconAlertOctagon} {...defaultIconProps} />
       )}
 
-      {isValid && <Icon icon={ICONS.IconCheck} {...defaultIconProps} />}
+      {isValid && <Icon icon={Icon.ICONS.IconCheck} {...defaultIconProps} />}
     </div>
   );
 };
