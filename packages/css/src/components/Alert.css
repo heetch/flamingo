@@ -1,0 +1,61 @@
+.Alert--information {
+  --mainColor: var(--color-brand-secondary);
+}
+
+.Alert--success {
+  --mainColor: var(--color-ui-element--success);
+}
+
+.Alert--error {
+  --mainColor: var(--color-ui-element--error);
+}
+
+.Alert {
+  --leftIconPadding: var(--space-m);
+  --iconSize: var(--icon--m);
+  --iconContainerSize: calc(
+    var(--leftIconPadding) * 2 + var(--iconSize) + var(--space-xl)
+  );
+
+  position: relative;
+  margin: var(--space-m) 0;
+  padding: var(--space-xl) var(--iconContainerSize);
+  font-size: var(--font-size--m);
+  line-height: var(--line-height--m);
+  border-radius: var(--space-m);
+  background-color: var(--color-ui-element--primary);
+  border: 2px solid var(--mainColor);
+}
+
+.Alert .Alert-title,
+.Alert .Alert-content {
+  margin: 0;
+}
+
+.Alert-title {
+  margin-bottom: var(--space-s);
+}
+
+/* Left icon */
+
+.Alert-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 var(--space-m);
+  color: var(--color-icon-white);
+  background-color: var(--mainColor);
+}
+
+/* Close button */
+
+.Alert .Alert-closeBtn {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  cursor: pointer;
+  margin: 0;
+}

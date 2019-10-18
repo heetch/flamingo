@@ -15,12 +15,6 @@ export const INTENTS = {
   TERTIARY: 'tertiary',
 };
 
-export const INLINE_ALERT_TYPES = {
-  INFORMATION: 'information',
-  SUCCESS: 'success',
-  ERROR: 'error',
-};
-
 export const LIST_ITEM_SIZES = {
   NORMAL: 'normal',
   SUB: 'sub',
