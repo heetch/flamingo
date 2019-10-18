@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Text from '../Text';
@@ -14,7 +15,10 @@ const UploaderItem = ({ file, forwardedRef, handleDelete, overrides }) => (
     </div>
 
     <Text className='UploaderItem-name u-ellipsis'>{file.name}</Text>
+
     <IconButton
+      intent={Button.INTENTS.SECONDARY}
+      variant={Button.VARIANTS.MINIMAL}
       onClick={() => handleDelete(file)}
       icon={Icon.ICONS.IconTrash}
     />

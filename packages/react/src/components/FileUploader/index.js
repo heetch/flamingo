@@ -2,35 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Button from '../Button';
 import Icon from '../Icon';
 import Spinner from '../Spinner';
-import Text from '../Text';
+import UiText from '../UiText';
 import UploaderItem from '../UploaderItem';
 
-import { INTENTS, refShapes } from '../../constants';
+import { refShapes } from '../../constants';
 import { safeInvoke } from '../../utils';
 
 const defaultTranslate = ({ defaultText }) => defaultText;
 
 const texts = {
   add_document: {
-    id: 'flamingo-file-uploader-add-document',
+    id: 'flamingo.file-uploader.add-document',
     defaultText: 'Click to add a document',
   },
   error: {
-    id: 'flamingo-file-uploader-error-title',
-    defaultText: 'Upload failed',
-  },
-  try_again: {
-    id: 'flamingo-file-uploader-error-try-again',
-    defaultText: 'Click to try again',
+    id: 'flamingo.file-uploader.error-title',
+    defaultText: 'Upload failed... Click to try again',
   },
   upload_more_files: {
-    id: 'flamingo-file-uploader-upload-more-files',
+    id: 'flamingo.file-uploader.upload-more-files',
     defaultText: 'Add more files',
   },
+  uploading: {
+    id: 'flamingo.file-uploader.uploading',
+    defaultText: 'Uploading...',
+  },
 };
+
+const iconSize = Icon.SIZES.L;
 
 const FileUploader = ({
   children,
@@ -79,26 +80,26 @@ const FileUploader = ({
       {...props}
     >
       {isLoading && (
-        <div className='FileUploader-state FileUploader-state--uploading'>
-          <Spinner />
-        </div>
+        <UiText
+          className='FileUploader-state FileUploader-state--uploading'
+          type={UiText.TYPES.subContentBold}
+          as='div'
+        >
+          <Spinner size={iconSize} />
+          {translate(texts.uploading)}
+        </UiText>
       )}
 
       {hasError && (
-        <label
+        <UiText
           className='FileUploader-state FileUploader-state--error'
+          type={UiText.TYPES.subContentBold}
+          as='label'
           htmlFor={name}
         >
-          <Icon icon={Icon.ICONS.IconSadFace} />
-
-          <Text className='FileUploader-errorState-title'>
-            {translate(texts.error)}
-          </Text>
-
-          <Text className='FileUploader-actionText'>
-            {translate(texts.try_again)}
-          </Text>
-        </label>
+          <Icon icon={Icon.ICONS.IconSadFace} size={iconSize} />
+          {translate(texts.error)}
+        </UiText>
       )}
 
       {!isLoading &&
@@ -115,26 +116,26 @@ const FileUploader = ({
               ))}
 
             {multiple && (
-              <Button intent={INTENTS.TERTIARY} className='Button--label'>
-                <label
-                  className='FileUploader-state FileUploader-state--empty'
-                  htmlFor={name}
-                >
-                  {translate(texts.upload_more_files)}
-                </label>
-              </Button>
+              <UiText
+                className='FileUploader-state FileUploader-state--addFiles'
+                type={UiText.TYPES.subContentBold}
+                as='label'
+                htmlFor={name}
+              >
+                {translate(texts.upload_more_files)}
+              </UiText>
             )}
           </>
         ) : (
-          <label
+          <UiText
+            type={UiText.TYPES.subContentBold}
+            as='label'
             className='FileUploader-state FileUploader-state--empty'
             htmlFor={name}
           >
-            <Icon icon={Icon.ICONS.IconFilePlus} />
-            <Text className='FileUploader-actionText'>
-              {translate(texts.add_document)}
-            </Text>
-          </label>
+            <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />
+            {translate(texts.add_document)}
+          </UiText>
         ))}
 
       <div className='FileUploader-inputContainer'>
