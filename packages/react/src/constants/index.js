@@ -15,19 +15,6 @@ export const INTENTS = {
   TERTIARY: 'tertiary',
 };
 
-export const LIST_ITEM_SIZES = {
-  NORMAL: 'normal',
-  SUB: 'sub',
-  MINI: 'mini',
-};
-
-export const LIST_ITEM_VALUES_TYPES = {
-  DARK: 'dark',
-  SUB_DARK: 'subDark',
-  ERROR: 'error',
-  SUCCESS: 'success',
-};
-
 export const UI_TYPES = {
   h1: 'heading-1',
   h2: 'heading-2',

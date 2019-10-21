@@ -4,90 +4,115 @@ import { select, boolean, text, number } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import { LIST_ITEM_SIZES, LIST_ITEM_VALUES_TYPES } from '../../constants';
+// import { LIST_ITEM_VALUES_TYPES } from '../../constants';
 
+import Heading from '../Heading';
 import Icon from '../Icon';
 import ListItem from '.';
 
+import { capitalize } from '../../utils';
+
+const { SIZES } = ListItem;
 const ICONS = { ...Icon.ICONS, None: null };
 
-storiesOf('Items/ListItem', module)
-  .add(
-    'Playground',
-    withInfo('')(() =>
-      Array.from(new Array(number('Number of levels', 1))).map((_, index) => {
-        const itemNumber = index + 1;
-        const groupId = `Item ${itemNumber}`;
+const stories = storiesOf('ListItem', module);
 
-        return (
-          <ListItem
-            key={groupId}
-            type={select(
-              `(${itemNumber}) Size`,
-              LIST_ITEM_SIZES,
-              LIST_ITEM_SIZES.NORMAL,
-              groupId,
-            )}
-            valueType={select(
-              `(${itemNumber}) Value type`,
-              LIST_ITEM_VALUES_TYPES,
-              LIST_ITEM_VALUES_TYPES.DARK,
-              groupId,
-            )}
-            strongValue={boolean(
-              `(${itemNumber}) Strong value`,
-              false,
-              groupId,
-            )}
-            subtitle={text(
-              `(${itemNumber}) Subtitle`,
-              'This is subtitle',
-              groupId,
-            )}
-            value={text(`(${itemNumber}) Value`, 'Click me', groupId)}
-            hideDivider={boolean(
-              `(${itemNumber}) Should hide divider?`,
-              false,
-              groupId,
-            )}
-            leftIcon={
-              ICONS[select(`(${itemNumber}) Left icon`, ICONS, null, groupId)]
-            }
-            rightIcon={
-              ICONS[select(`(${itemNumber}) Right icon`, ICONS, null, groupId)]
-            }
-            mockRightIcon={boolean(
-              `(${itemNumber}) Should mock right icon?`,
-              false,
-              groupId,
-            )}
-            onClick={
-              boolean(
-                `(${itemNumber}) Does it have onClick action?`,
-                false,
-                groupId,
-              )
-                ? action('ListItem clicked')
-                : undefined
-            }
-          >
-            {text(`(${itemNumber}) Title`, 'ListItem', groupId)}
+stories.add('All states', () => (
+  <>
+    <Heading>ListItem</Heading>
+    <Heading as={2}>Sizes</Heading>
+
+    {Object.values(SIZES).map(size => (
+      <div key={size} style={{ marginBottom: 'var(--space-l)' }}>
+        <div style={{ marginBottom: 'var(--space-s)' }}>
+          <ListItem size={size}>{`${capitalize(size)} size`}</ListItem>
+        </div>
+
+        <div style={{ marginBottom: 'var(--space-s)' }}>
+          <ListItem size={size} helper='with onClick' onClick={() => {}}>
+            {`${capitalize(size)} size`}
           </ListItem>
-        );
-      }),
-    ),
-  )
-  .add('All states', () =>
-    Object.values(LIST_ITEM_SIZES).map(type =>
-      Object.values(LIST_ITEM_VALUES_TYPES).map(valueType => (
+        </div>
+
+        <div style={{ marginBottom: 'var(--space-s)' }}>
+          <ListItem
+            size={size}
+            helper='with onClick and value'
+            onClick={() => {}}
+            value='Click'
+          >
+            {`${capitalize(size)} size`}
+          </ListItem>
+        </div>
+
+        <div style={{ marginBottom: 'var(--space-s)' }}>
+          <ListItem
+            size={size}
+            contentIcon={Icon.ICONS.IconMoon}
+            helper='with custom icons'
+            onClick={() => {}}
+            value='Click'
+            valueIcon={Icon.ICONS.IconWallet}
+          >
+            {`${capitalize(size)} size`}
+          </ListItem>
+        </div>
+      </div>
+    ))}
+
+    <Heading as={2}>States</Heading>
+    <div style={{ marginBottom: 'var(--space-s)' }}>
+      <ListItem invalid value='All good' valueIcon={Icon.ICONS.IconCheck}>
+        Invalid
+      </ListItem>
+    </div>
+    <div style={{ marginBottom: 'var(--space-s)' }}>
+      <ListItem valid value='Nope' valueIcon={Icon.ICONS.IconCross}>
+        Valid
+      </ListItem>
+    </div>
+  </>
+));
+
+stories.add(
+  'Playground',
+  withInfo('')(() =>
+    Array.from(new Array(number('Number of levels', 1))).map((_, index) => {
+      const itemNumber = index + 1;
+      const groupId = `Item ${itemNumber}`;
+
+      return (
         <ListItem
-          type={type}
-          valueType={valueType}
-          subtitle="Item's subtitle"
-          value={valueType}
+          key={groupId}
+          size={select(`(${itemNumber}) Size`, SIZES, undefined, groupId)}
+          invalid={boolean('Invalid', false)}
+          valid={boolean('Valid', false)}
+          contentIcon={select(
+            `(${itemNumber}) Content icon`,
+            ICONS,
+            ICONS.None,
+            groupId,
+          )}
+          value={text(`(${itemNumber}) Value`, 'Value', groupId)}
+          valueIcon={select(
+            `(${itemNumber}) Value icon`,
+            ICONS,
+            ICONS.None,
+            groupId,
+          )}
+          onClick={
+            boolean(
+              `(${itemNumber}) Does it have onClick action?`,
+              false,
+              groupId,
+            )
+              ? action('ListItem clicked')
+              : undefined
+          }
         >
-          {`List item of type: ${type}`}
+          {text(`(${itemNumber}) Content`, 'ListItem', groupId)}
         </ListItem>
-      )),
-    ),
-  );
+      );
+    }),
+  ),
+);
