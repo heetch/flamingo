@@ -3,7 +3,7 @@
     this variable has to be here because of
     the Icon children which relies on it
   */
-  --icon-color: var(--color-granite);
+  --icon-color: var(--color-icon-dark);
   --icon-size: var(--icon--m);
   --icon-spaceAround: var(--space-m);
 
@@ -13,23 +13,38 @@
   margin-bottom: var(--space-m);
 }
 
-.FormEl-wrapper + .Helper .Text {
-  margin-top: 0;
+.FormEl-wrapper.is-invalid {
+  --icon-color: var(--color-ui-element--error);
+}
+
+.FormEl-wrapper.is-valid {
+  --icon-color: var(--color-ui-element--success);
 }
 
 .FormEl {
-  --border-color: var(--color-chatelle);
+  --background-color: var(--color-ui-element--primary);
+  --border-color: var(--color-ui-element--tertiary);
   --border-size: 1px;
 
+  display: block;
   width: 100%;
   padding: var(--space-m) var(--space-xl);
   border: 0;
   border-radius: 1.25rem;
-  color: var(--color-granite);
-  background-color: var(--color-white);
+  color: var(--color-ui-text-secondary);
+  background-color: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
   outline: none;
-  -webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow 0.1s ease-out;
+}
+
+.FormEl-wrapper.is-invalid .FormEl {
+  --border-color: var(--color-ui-element--error);
+}
+
+.FormEl-wrapper.is-valid .FormEl {
+  --border-color: var(--color-ui-element--success);
 }
 
 .FormEl--withIcon {
@@ -44,20 +59,21 @@
 }
 
 .FormEl:hover,
-.FormEl.is-hover {
-  --border-color: var(--color-granite);
+.FormEl.is-hover,
+.FormEl:focus,
+.FormEl.is-focus {
+  --border-color: var(--color-ui-element--secondary);
 }
 
 .FormEl:focus,
 .FormEl.is-focus {
-  --border-color: var(--color-granite);
   --border-size: 2px;
 }
 
 .FormEl:disabled,
 .FormEl.is-disabled {
-  --border-color: var(--color-alto);
-  background-color: var(--color-grey);
+  --border-color: var(--color-ui-element--tertiary);
+  --background-color: var(--color-ui-element--inactive);
   cursor: not-allowed;
 }
 
