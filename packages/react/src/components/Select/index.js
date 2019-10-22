@@ -39,7 +39,7 @@ const Select = ({
       </UiText>
 
       <Icon
-        icon={Icon.ICONS.IconChevronDown}
+        icon={Icon.ICONS.IconChevronUpDown}
         className='FormEl-icon'
         size={Icon.SIZES.L}
       />
@@ -54,7 +54,8 @@ Select.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.exact({
-      label: PropTypes.string.isRequired,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
     }),
