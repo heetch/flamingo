@@ -9,6 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-nested-ternary": 0,
     "prettier/prettier": "error",
     // allow @storybook packages to be used
     // without having a linting error

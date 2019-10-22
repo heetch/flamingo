@@ -7,8 +7,6 @@ import HeaderCell from '../TableHeaderCell';
 import HeaderGroup from '../TableHeaderGroup';
 import RowGroup from '../TableRowGroup';
 import RowCell from '../TableRowCell';
-import Icon from '../Icon';
-import Text from '../Text';
 
 import { refShapes } from '../../constants';
 
@@ -30,7 +28,12 @@ const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
   );
 
   return (
-    <table className={cx('Table', className)} ref={forwardedRef}>
+    <table
+      className={cx('Table', className)}
+      cellPadding={0}
+      cellSpacing={0}
+      ref={forwardedRef}
+    >
       <thead>
         {headerGroups.map(({ getHeaderGroupProps, headers }) => (
           <HeaderGroup {...getHeaderGroupProps()}>
@@ -45,21 +48,10 @@ const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
                 <HeaderCell
                   {...getHeaderProps(isSortable && getSortByToggleProps())}
                   isSorted={isSorted}
+                  isSortedDesc={isSortedDesc}
+                  isSortable={isSortable}
                 >
-                  <Text>
-                    {render('Header')}
-
-                    {isSorted &&
-                      (isSortedDesc ? (
-                        <Icon icon='IconArrowUp' />
-                      ) : (
-                        <Icon icon='IconArrowDown' />
-                      ))}
-
-                    {isSortable && !isSorted && (
-                      <Icon icon='IconChevronUpDown' />
-                    )}
-                  </Text>
+                  {render('Header')}
                 </HeaderCell>
               ),
             )}
