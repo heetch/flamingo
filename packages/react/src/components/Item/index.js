@@ -18,7 +18,7 @@ const SIZES = {
 const icons = Object.values(Icon.ICONS);
 const sizes = Object.values(SIZES);
 
-const ListItem = ({
+const Item = ({
   forwardedRef,
   helper,
   size,
@@ -42,28 +42,28 @@ const ListItem = ({
   return (
     <div
       {...containerProps}
-      className={cx('ListItem', `ListItem--${size}`, {
+      className={cx('Item', `Item--${size}`, {
         'is-invalid': invalid,
         'is-valid': valid,
         'has-action': onClick,
       })}
       ref={forwardedRef}
     >
-      <div className='ListItem-contentContainer'>
+      <div className='Item-contentContainer'>
         {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
 
         <UiText
           type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
-          className='ListItem-content'
+          className='Item-content'
         >
           {children}
           {helper && <Helper>{helper}</Helper>}
         </UiText>
       </div>
 
-      <div className='ListItem-valueContainer'>
+      <div className='Item-valueContainer'>
         {value && (
-          <UiText type={UiText.TYPES.contentBold} className='ListItem-value'>
+          <UiText type={UiText.TYPES.contentBold} className='Item-value'>
             {value}
           </UiText>
         )}
@@ -74,7 +74,7 @@ const ListItem = ({
   );
 };
 
-ListItem.propTypes = {
+Item.propTypes = {
   forwardedRef: PropTypes.oneOfType(refShapes),
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
@@ -87,7 +87,7 @@ ListItem.propTypes = {
   onClick: PropTypes.func,
 };
 
-ListItem.defaultProps = {
+Item.defaultProps = {
   forwardedRef: undefined,
   invalid: false,
   valid: false,
@@ -99,6 +99,6 @@ ListItem.defaultProps = {
   onClick: undefined,
 };
 
-ListItem.SIZES = SIZES;
+Item.SIZES = SIZES;
 
-export default ListItem;
+export default Item;

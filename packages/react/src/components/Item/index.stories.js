@@ -4,49 +4,47 @@ import { select, boolean, text, number } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-// import { LIST_ITEM_VALUES_TYPES } from '../../constants';
-
 import Heading from '../Heading';
 import Icon from '../Icon';
-import ListItem from '.';
+import Item from '.';
 
 import { capitalize } from '../../utils';
 
-const { SIZES } = ListItem;
+const { SIZES } = Item;
 const ICONS = { ...Icon.ICONS, None: null };
 
-const stories = storiesOf('ListItem', module);
+const stories = storiesOf('Item', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>ListItem</Heading>
+    <Heading>Item</Heading>
     <Heading as={2}>Sizes</Heading>
 
     {Object.values(SIZES).map(size => (
       <div key={size} style={{ marginBottom: 'var(--space-l)' }}>
         <div style={{ marginBottom: 'var(--space-s)' }}>
-          <ListItem size={size}>{`${capitalize(size)} size`}</ListItem>
+          <Item size={size}>{`${capitalize(size)} size`}</Item>
         </div>
 
         <div style={{ marginBottom: 'var(--space-s)' }}>
-          <ListItem size={size} helper='with onClick' onClick={() => {}}>
+          <Item size={size} helper='with onClick' onClick={() => {}}>
             {`${capitalize(size)} size`}
-          </ListItem>
+          </Item>
         </div>
 
         <div style={{ marginBottom: 'var(--space-s)' }}>
-          <ListItem
+          <Item
             size={size}
             helper='with onClick and value'
             onClick={() => {}}
             value='Click'
           >
             {`${capitalize(size)} size`}
-          </ListItem>
+          </Item>
         </div>
 
         <div style={{ marginBottom: 'var(--space-s)' }}>
-          <ListItem
+          <Item
             size={size}
             contentIcon={Icon.ICONS.IconMoon}
             helper='with custom icons'
@@ -55,21 +53,21 @@ stories.add('All states', () => (
             valueIcon={Icon.ICONS.IconWallet}
           >
             {`${capitalize(size)} size`}
-          </ListItem>
+          </Item>
         </div>
       </div>
     ))}
 
     <Heading as={2}>States</Heading>
     <div style={{ marginBottom: 'var(--space-s)' }}>
-      <ListItem invalid value='All good' valueIcon={Icon.ICONS.IconCheck}>
+      <Item invalid value='Nope' valueIcon={Icon.ICONS.IconCross}>
         Invalid
-      </ListItem>
+      </Item>
     </div>
     <div style={{ marginBottom: 'var(--space-s)' }}>
-      <ListItem valid value='Nope' valueIcon={Icon.ICONS.IconCross}>
+      <Item valid value='All good' valueIcon={Icon.ICONS.IconCheck}>
         Valid
-      </ListItem>
+      </Item>
     </div>
   </>
 ));
@@ -82,7 +80,7 @@ stories.add(
       const groupId = `Item ${itemNumber}`;
 
       return (
-        <ListItem
+        <Item
           key={groupId}
           size={select(`(${itemNumber}) Size`, SIZES, undefined, groupId)}
           invalid={boolean('Invalid', false)}
@@ -106,12 +104,12 @@ stories.add(
               false,
               groupId,
             )
-              ? action('ListItem clicked')
+              ? action('Item clicked')
               : undefined
           }
         >
-          {text(`(${itemNumber}) Content`, 'ListItem', groupId)}
-        </ListItem>
+          {text(`(${itemNumber}) Content`, 'Item', groupId)}
+        </Item>
       );
     }),
   ),

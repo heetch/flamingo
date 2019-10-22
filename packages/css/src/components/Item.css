@@ -1,4 +1,4 @@
-.ListItem {
+.Item {
   --contentColor: var(--color-ui-text-primary);
   --horizontalPadding: var(--space-l);
   --verticalPadding: var(--space-l);
@@ -9,54 +9,54 @@
   color: var(--contentColor);
 }
 
-.ListItem,
-.ListItem-contentContainer,
-.ListItem-valueContainer {
+.Item,
+.Item-contentContainer,
+.Item-valueContainer {
   display: flex;
   align-items: center;
 }
 
-.ListItem.has-action {
+.Item.has-action {
   cursor: pointer;
 }
 
-.ListItem--sub {
+.Item--sub {
   --horizontalPadding: var(--space-m);
 }
 
-.ListItem--mini {
+.Item--mini {
   --contentColor: var(--color-ui-text-secondary);
   --horizontalPadding: var(--space-s);
 }
 
-.ListItem-content,
-.ListItem-value {
+.Item-content,
+.Item-value {
   margin: 0;
 }
 
-.ListItem-contentContainer {
+.Item-contentContainer {
   flex-grow: 1;
 }
 
-.ListItem-contentContainer .Icon {
+.Item-contentContainer .Icon {
   margin-right: var(--space-m);
 }
 
-.ListItem-valueContainer .Icon {
+.Item-valueContainer .Icon {
   display: block;
   margin-left: var(--space-m);
 }
 
-.ListItem.is-valid .ListItem-valueContainer {
+.Item.is-valid .Item-valueContainer {
   color: var(--color-ui-element--success);
 }
 
-.ListItem.is-invalid .ListItem-valueContainer {
+.Item.is-invalid .Item-valueContainer {
   color: var(--color-ui-element--error);
 }
 
 @media (max-width: 460px) {
-  .ListItem:not(.ListItem--mini):not(.ListItem--sub) {
+  .Item:not(.Item--mini):not(.Item--sub) {
     padding: var(--space-xl) var(--space-l);
   }
 }
