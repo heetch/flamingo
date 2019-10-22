@@ -6,14 +6,22 @@
   white-space: nowrap;
   overflow-x: auto;
 
-  background-image: linear-gradient(to right, white, white),
-    linear-gradient(to right, white, white),
+  background-image: linear-gradient(
+      to right,
+      var(--color-ui-element--primary),
+      var(--color-ui-element--primary)
+    ),
+    linear-gradient(
+      to right,
+      var(--color-ui-element--primary),
+      var(--color-ui-element--primary)
+    ),
     linear-gradient(to right, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0)),
     linear-gradient(to left, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0));
 
   background-position: left center, right center, left top, right top;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: var(--color-ui-element--primary);
   background-size: 15px 100%, 15px 100%,
     var(--space-m) calc(100% - var(--space-s)),
     var(--space-m) calc(100% - var(--space-s));
@@ -23,7 +31,7 @@
 
 .Tabs:before {
   content: '';
-  background-color: white;
+  background-color: var(--color-ui-element--primary);
   width: 2px;
   height: 100%;
   position: absolute;
@@ -33,7 +41,7 @@
 
 .Tabs:after {
   content: '';
-  background-color: white;
+  background-color: var(--color-ui-element--primary);
   width: 2px;
   height: 100%;
   position: absolute;
@@ -61,18 +69,19 @@
   width: 100%;
   height: var(--space-s);
   margin: 1px 0;
-  background-color: var(--color-grey);
+  background-color: var(--color-ui-element--inactive);
+  transition: all 0.1s ease-out;
 }
 
 .Tabs span:hover .Tabs-marker {
-  background-color: var(--color-alto);
+  background-color: var(--color-brand-primary);
 }
 
 .Tabs span .Tabs-marker.is-active {
   height: calc(var(--space-s) + 2px);
   padding: 1px 0;
   margin: 0;
-  background-color: var(--color-rose);
+  background-color: var(--color-brand-primary);
   border-radius: 3px;
 }
 
