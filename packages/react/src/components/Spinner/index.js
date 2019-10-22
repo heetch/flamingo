@@ -7,7 +7,7 @@ import { refShapes } from '../../constants';
 
 const Spinner = ({ className, forwardedRef, ...props }) => (
   <Icon
-    className={cx('Icon--spinner', className)}
+    className={cx('Spinner', className)}
     icon={Icon.ICONS.IconLoader}
     ref={forwardedRef}
     {...props}
