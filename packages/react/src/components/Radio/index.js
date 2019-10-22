@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Helper from '../Helper';
+import UiText from '../UiText';
+
 const Radio = ({
   disabled,
   children,
@@ -10,7 +13,7 @@ const Radio = ({
   value,
   onChange,
 }) => {
-  const buildInputTag = () => (
+  const input = (
     <input
       defaultChecked={checked}
       disabled={disabled}
@@ -22,16 +25,18 @@ const Radio = ({
     />
   );
 
-  return children ? (
-    <label className='Radio-label'>
-      {buildInputTag()}
-      <div>
+  if (!children) {
+    return input;
+  }
+
+  return (
+    <div className='FormEl-wrapper'>
+      {input}
+      <UiText as='label' htmlFor={name} type={UiText.TYPES.content}>
         {children}
-        {helper && <p className='Radio-helper'>{helper}</p>}
-      </div>
-    </label>
-  ) : (
-    buildInputTag()
+        {helper && <Helper>{helper}</Helper>}
+      </UiText>
+    </div>
   );
 };
 

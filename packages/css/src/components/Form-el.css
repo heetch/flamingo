@@ -7,6 +7,7 @@
   --icon-size: var(--icon--m);
   --icon-spaceAround: var(--space-m);
 
+  display: flex;
   position: relative;
   min-width: 12.5rem;
   margin-top: var(--space-m);
@@ -84,4 +85,32 @@
   transform: translateY(-50%);
   color: var(--icon-color);
   pointer-events: none;
+}
+
+/* Shared */
+
+.Checkbox,
+.Radio {
+  --size: 1.25rem /* 20px */;
+
+  position: relative;
+  appearance: none;
+  background-color: var(--color-ui-element--primary);
+  min-width: var(--size);
+  margin-right: var(--space-l);
+  height: var(--size);
+  border: 1px solid var(--color-ui-element--tertiary);
+  border-radius: var(--space-s);
+  transition: border-color 0.2s ease-out;
+}
+.Checkbox:hover,
+.Radio:hover {
+  border-color: var(--color-ui-element--secondary);
+}
+
+.Checkbox:disabled,
+.Radio:disabled {
+  border-color: var(--color-ui-element--tertiary) !important;
+  background-color: var(--color-ui-element--inactive) !important;
+  cursor: not-allowed;
 }

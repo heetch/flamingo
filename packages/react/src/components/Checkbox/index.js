@@ -30,6 +30,7 @@ const Checkbox = ({
       disabled={disabled}
       className={cx('Checkbox', { 'is-undefined': !isChecked && isUndefined })}
       type='checkbox'
+      id={name}
       name={name}
       value={value}
       onChange={onCheckboxStateChange}
@@ -41,13 +42,13 @@ const Checkbox = ({
   }
 
   return (
-    <UiText as='label' className='Checkbox-label' type={UiText.TYPES.content}>
+    <div className='FormEl-wrapper'>
       {checkbox}
-      <div>
+      <UiText as='label' htmlFor={name} type={UiText.TYPES.content}>
         {children}
-        {helper && <Helper className='Checkbox-helper'>{helper}</Helper>}
-      </div>
-    </UiText>
+        {helper && <Helper>{helper}</Helper>}
+      </UiText>
+    </div>
   );
 };
 

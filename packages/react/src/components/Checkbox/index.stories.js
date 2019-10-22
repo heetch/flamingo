@@ -9,7 +9,6 @@ import Heading from '../Heading';
 const defaultProps = {
   children: 'Label',
   onChange: () => {},
-  name: 'checkbox',
 };
 
 const stories = storiesOf('Form controls/Checkbox', module);
@@ -21,40 +20,48 @@ stories.add('All states', () => (
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading as={2}>Default</Heading>
-        <Checkbox {...defaultProps} />
+        <Checkbox {...defaultProps} name='c1' />
       </div>
       <div>
         <Heading as={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} disabled />
+        <Checkbox {...defaultProps} name='c2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading as={2}>Checked</Heading>
-        <Checkbox {...defaultProps} checked />
+        <Checkbox {...defaultProps} name='c3' checked />
       </div>
       <div>
         <Heading as={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} checked disabled />
+        <Checkbox {...defaultProps} name='c4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading as={2}>Undefined</Heading>
-        <Checkbox {...defaultProps} isUndefined />
+        <Checkbox {...defaultProps} name='c5' isUndefined />
       </div>
       <div>
         <Heading as={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} isUndefined disabled />
+        <Checkbox {...defaultProps} name='c6' isUndefined disabled />
       </div>
     </div>
 
-    <Heading as={2}>Helper</Heading>
-    <Checkbox {...defaultProps} helper='With helper'>
-      Label
-    </Checkbox>
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading as={2}>No text</Heading>
+        <Checkbox onChange={defaultProps.onChange} name='c7' />
+      </div>
+      <div>
+        <Heading as={2}>With helper</Heading>
+        <Checkbox {...defaultProps} name='c8' helper='With helper'>
+          Label
+        </Checkbox>
+      </div>
+    </div>
   </>
 ));
 
