@@ -10,7 +10,7 @@
 
 .Popover {
   padding: var(--space-s) var(--space-m);
-  color: var(--color-white);
+  color: var(--color-ui-text-white);
   background-color: rgba(25, 1, 52, 0.8);
   border-radius: var(--radius-s);
 }

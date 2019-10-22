@@ -28,14 +28,6 @@ export const UI_TYPES = {
   subContentBold: 'subContentBold',
 };
 
-export const POPOVER_PLACEMENTS = {
-  AUTO: 'auto',
-  TOP: 'top',
-  RIGHT: 'right',
-  BOTTOM: 'bottom',
-  LEFT: 'left',
-};
-
 export const refShapes = [
   PropTypes.func,
   PropTypes.shape({ current: PropTypes.instanceOf(Element) }),

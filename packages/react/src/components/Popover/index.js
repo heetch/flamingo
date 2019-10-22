@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import UiText from '../UiText';
-import { POPOVER_PLACEMENTS } from '../../constants';
 
-const placements = Object.values(POPOVER_PLACEMENTS);
+const PLACEMENTS = {
+  AUTO: 'auto',
+  TOP: 'top',
+  RIGHT: 'right',
+  BOTTOM: 'bottom',
+  LEFT: 'left',
+};
+
+const placements = Object.values(PLACEMENTS);
 
 const Popover = ({ content, children, placement }) => (
   <Manager>
@@ -44,9 +51,9 @@ Popover.propTypes = {
 };
 
 Popover.defaultProps = {
-  placement: POPOVER_PLACEMENTS.BOTTOM,
+  placement: PLACEMENTS.BOTTOM,
 };
 
-Popover.PLACEMENTS = POPOVER_PLACEMENTS;
+Popover.PLACEMENTS = PLACEMENTS;
 
 export default Popover;
