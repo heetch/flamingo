@@ -36,7 +36,7 @@ const Alert = ({ title, children, forwardedRef, type, onClose }) => (
       <Icon icon={icons[type]} />
     </div>
 
-    <UiText type={UiText.TYPES.contentBold} as='h4' className='Alert-title'>
+    <UiText type={UiText.TYPES.contentBold} as='h1' className='Alert-title'>
       {title}
     </UiText>
 

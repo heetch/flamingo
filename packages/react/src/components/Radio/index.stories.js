@@ -19,33 +19,33 @@ stories.add('All states', () => (
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
-        <Heading as={2}>Default</Heading>
+        <Heading level={2}>Default</Heading>
         <Radio {...defaultProps} name='r1' />
       </div>
       <div>
-        <Heading as={2}>& disabled</Heading>
+        <Heading level={2}>& disabled</Heading>
         <Radio {...defaultProps} name='r2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
-        <Heading as={2}>Checked</Heading>
+        <Heading level={2}>Checked</Heading>
         <Radio {...defaultProps} name='r3' checked />
       </div>
       <div>
-        <Heading as={2}>& disabled</Heading>
+        <Heading level={2}>& disabled</Heading>
         <Radio {...defaultProps} name='r4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
-        <Heading as={2}>No text</Heading>
+        <Heading level={2}>No text</Heading>
         <Radio onChange={defaultProps.onChange} name='r5' />
       </div>
       <div>
-        <Heading as={2}>With helper</Heading>
+        <Heading level={2}>With helper</Heading>
         <Radio {...defaultProps} name='r6' helper='With helper'>
           Label
         </Radio>

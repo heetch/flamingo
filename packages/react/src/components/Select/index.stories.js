@@ -21,7 +21,7 @@ const stories = storiesOf('Form controls/Select', module);
 stories.add('All states', () => (
   <>
     <Heading>Select</Heading>
-    <Heading as={2}>States</Heading>
+    <Heading level={2}>States</Heading>
 
     {states.map(state => (
       <div key={`input-${state}`}>

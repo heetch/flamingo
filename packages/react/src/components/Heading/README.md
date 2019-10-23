@@ -15,7 +15,7 @@ export default () => <Heading>Content</Heading>;
 ```jsx
 import { Heading } from '@heetch/flamingo-react';
 
-export default () => <Heading as={3} />;
+export default () => <Heading level={3} />;
 ```
 
 #### `className`: String

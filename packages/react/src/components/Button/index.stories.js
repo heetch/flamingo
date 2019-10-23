@@ -21,10 +21,10 @@ stories.add('All states', () => (
 
     {intents.map(intent => (
       <div key={intent}>
-        <Heading as={2}>{capitalize(intent)}</Heading>
+        <Heading level={2}>{capitalize(intent)}</Heading>
 
         <div>
-          <Heading as={3}>States</Heading>
+          <Heading level={3}>States</Heading>
           {states.map(state => (
             <Button
               key={state}
@@ -47,7 +47,7 @@ stories.add('All states', () => (
         </div>
 
         <div>
-          <Heading as={3}>Variants</Heading>
+          <Heading level={3}>Variants</Heading>
           {variants.map(variant => (
             <Button
               key={variant}
@@ -63,7 +63,7 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading as={2}>Disabled</Heading>
+    <Heading level={2}>Disabled</Heading>
     <Button disabled>Disabled</Button>
   </>
 ));

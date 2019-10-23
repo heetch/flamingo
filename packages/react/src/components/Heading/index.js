@@ -6,23 +6,26 @@ import UiText from '../UiText';
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
-const Heading = ({ as, className, ...props }) => (
+const Heading = ({ as, className, level, ...props }) => (
   <UiText
-    as={`h${as}`}
-    type={`h${as}`}
-    className={cx('Heading', `heading--${as}`, className)}
+    as={as || `h${level}`}
+    level={level}
+    type={`h${level}`}
+    className={cx('Heading', `heading--${level}`, className)}
     {...props}
   />
 );
 
 Heading.propTypes = {
-  as: PropTypes.oneOf(HEADING_LEVELS),
+  as: PropTypes.node,
   className: PropTypes.string,
+  level: PropTypes.oneOf(HEADING_LEVELS),
 };
 
 Heading.defaultProps = {
-  as: 1,
+  as: undefined,
   className: undefined,
+  level: 1,
 };
 
 Heading.LEVELS = HEADING_LEVELS;

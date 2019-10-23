@@ -18,7 +18,7 @@ const stories = storiesOf('Item', module);
 stories.add('All states', () => (
   <>
     <Heading>Item</Heading>
-    <Heading as={2}>Sizes</Heading>
+    <Heading level={2}>Sizes</Heading>
 
     {Object.values(SIZES).map(size => (
       <div key={size} style={{ marginBottom: 'var(--space-l)' }}>
@@ -58,7 +58,7 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading as={2}>States</Heading>
+    <Heading level={2}>States</Heading>
     <div style={{ marginBottom: 'var(--space-s)' }}>
       <Item invalid value='Nope' valueIcon={Icon.ICONS.IconCross}>
         Invalid
