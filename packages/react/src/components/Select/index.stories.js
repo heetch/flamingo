@@ -15,6 +15,12 @@ const defaultProps = () => ({
   options: mapStringsToSelectOptions(text('Options', 'Foo,Bar').split(',')),
 });
 
+const numProps = () => ({
+  id: `select-${Math.random()}`,
+  onChange: action('onChange'),
+  options: [{ value: 1, label: 'One' }, { value: 2, label: 'Two' }],
+});
+
 storiesOf('Form controls/Select', module)
   .addDecorator(withKnobs)
   .add('With states', () =>
@@ -29,4 +35,5 @@ storiesOf('Form controls/Select', module)
       </div>
     )),
   )
-  .add('Playground', () => <Select {...defaultProps()} />);
+  .add('Playground', () => <Select {...defaultProps()} />)
+  .add('With Number values', () => <Select {...numProps()} />);

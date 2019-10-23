@@ -57,7 +57,8 @@ Select.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.exact({
       label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
     }),
   ),
 };
