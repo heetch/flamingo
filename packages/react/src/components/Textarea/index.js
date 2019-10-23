@@ -7,7 +7,6 @@ import UiText from '../UiText';
 
 const defaultIconProps = {
   className: 'FormEl-icon',
-  size: Icon.SIZES.S,
 };
 
 const Textarea = ({
@@ -31,7 +30,10 @@ const Textarea = ({
       <UiText
         as='textarea'
         type={UiText.TYPES.content}
-        className={cx('FormEl', 'Textarea', className, { ...classes })}
+        className={cx('FormEl', 'Textarea', className, {
+          ...classes,
+          'FormEl--withIcon': isValid || isInvalid,
+        })}
         disabled={isDisabled}
         id={id}
         name={id}
@@ -40,8 +42,11 @@ const Textarea = ({
         {...props}
       />
 
-      {isInvalid && <Icon icon='IconClose' {...defaultIconProps} />}
-      {isValid && <Icon icon='IconCheck' {...defaultIconProps} />}
+      {isInvalid && (
+        <Icon icon={Icon.ICONS.IconAlertOctagon} {...defaultIconProps} />
+      )}
+
+      {isValid && <Icon icon={Icon.ICONS.IconCheck} {...defaultIconProps} />}
     </div>
   );
 };

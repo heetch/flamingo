@@ -1,20 +1,9 @@
-.Textarea-wrapper.is-invalid {
-  --icon-color: var(--color-ruby);
-}
-
-.Textarea-wrapper.is-valid {
-  --icon-color: var(--color-link);
-}
-
-.Textarea-wrapper.is-invalid .Textarea {
-  --border-color: var(--color-ruby);
-}
-
-.Textarea-wrapper.is-valid .Textarea {
-  --border-color: var(--color-link);
-}
-
 .Textarea {
-  display: block;
+  min-height: 9.375rem; /* 150px */
   resize: vertical;
+}
+
+.Textarea-wrapper .FormEl-icon {
+  top: var(--space-l);
+  transform: none;
 }
