@@ -1,40 +1,40 @@
 /* Headings */
 
-.UiText--heading-1,
-.UiText--heading-2,
-.UiText--heading-3,
-.UiText--heading-4,
-.UiText--heading-5,
-.UiText--heading-6 {
+.UiText--h1,
+.UiText--h2,
+.UiText--h3,
+.UiText--h4,
+.UiText--h5,
+.UiText--h6 {
   font-weight: var(--font-weight--black);
 }
 
-.UiText--heading-1 {
+.UiText--h1 {
   font-size: var(--font-size--xxl);
   line-height: var(--line-height--xl);
 }
 
-.UiText--heading-2 {
+.UiText--h2 {
   font-size: var(--font-size--xl);
   line-height: var(--line-height--l);
 }
 
-.UiText--heading-3 {
+.UiText--h3 {
   font-size: var(--font-size--l);
   line-height: var(--line-height--m);
 }
 
-.UiText--heading-4 {
+.UiText--h4 {
   font-size: var(--font-size--m);
   line-height: var(--line-height--s);
 }
 
-.UiText--heading-5 {
+.UiText--h5 {
   font-size: var(--font-size--s);
   line-height: var(--line-height--s);
 }
 
-.UiText--heading-6 {
+.UiText--h6 {
   font-size: var(--font-size--xs);
   line-height: var(--line-height--s);
 }
