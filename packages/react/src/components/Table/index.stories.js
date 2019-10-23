@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
 import Icon from '../Icon';
@@ -14,8 +14,6 @@ const data = [...new Array(50)].map(() => ({
 }));
 
 const stories = storiesOf('Table', module);
-
-stories.addDecorator(withKnobs);
 
 stories.add('Playground', () => (
   <>

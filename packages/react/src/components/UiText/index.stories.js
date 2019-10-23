@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { select, text, withKnobs } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 
 import UiText from '.';
 import Input from '../Input';
@@ -10,8 +10,6 @@ const { TYPES } = UiText;
 
 const types = Object.keys(TYPES);
 const stories = storiesOf('UiText', module);
-
-stories.addDecorator(withKnobs);
 
 stories.add('With types', () =>
   types.map(type => (

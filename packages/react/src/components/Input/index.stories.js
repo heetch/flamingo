@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Input from '.';
@@ -8,8 +8,6 @@ import Input from '.';
 const getId = () => `input-${Math.random()}`;
 const states = ['default', 'hover', 'focus', 'disabled'];
 const stories = storiesOf('Form controls/Input', module);
-
-stories.addDecorator(withKnobs);
 
 stories.add('All states', () => (
   <>

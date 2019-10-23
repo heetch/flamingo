@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 
-import Toggle from './';
+import Toggle from '.';
 
 storiesOf('Toggle', module)
-  .addDecorator(withKnobs)
   .addDecorator(storiesFn => (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       {storiesFn()}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import Card from '.';
 import Heading from '../Heading';
@@ -14,8 +14,6 @@ const Container = (
 ) => <div style={{ margin: 'var(--space-xl) 0' }}>{children}</div>;
 
 const stories = storiesOf('Card', module);
-
-stories.addDecorator(withKnobs);
 
 stories.add('All states', () => (
   <>
