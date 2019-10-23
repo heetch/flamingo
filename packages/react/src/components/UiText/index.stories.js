@@ -3,34 +3,32 @@ import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
 import UiText from '.';
-import Input from '../Input';
-import Text from '../Text';
+import Heading from '../Heading';
 
 const { TYPES } = UiText;
 
 const types = Object.keys(TYPES);
 const stories = storiesOf('UiText', module);
 
-stories.add('With types', () =>
-  types.map(type => (
-    <UiText key={type} type={type}>
-      {type}
-    </UiText>
-  )),
-);
-
-stories.add('With custom component', () => (
+stories.add('All states', () => (
   <>
-    <UiText as='div' type={TYPES.Heading1}>
+    <Heading>UiText</Heading>
+    <Heading level={2}>Types</Heading>
+    {types.map(type => (
+      <UiText key={type} type={type}>
+        {type}
+      </UiText>
+    ))}
+
+    <Heading level={2}>Custom component</Heading>
+    <UiText as='div' type={TYPES.h1}>
       As div
     </UiText>
-    <UiText as={Text} type={TYPES.Heading1}>
-      As Text
-    </UiText>
-    <UiText as={Input} defaultValue='as Input' type={TYPES.Heading1} />
   </>
 ));
 
 stories.add('Playground', () => (
-  <UiText type={select('Types', types)}>{text('Content', 'Content')}</UiText>
+  <UiText type={select('Types', types, TYPES.contentBold)}>
+    {text('Content', 'Content')}
+  </UiText>
 ));

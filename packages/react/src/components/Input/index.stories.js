@@ -4,6 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Input from '.';
+import Heading from '../Heading';
 
 const getId = () => `input-${Math.random()}`;
 const states = ['default', 'hover', 'focus', 'disabled'];
@@ -11,6 +12,8 @@ const stories = storiesOf('Form controls/Input', module);
 
 stories.add('All states', () => (
   <>
+    <Heading>Input</Heading>
+    <Heading level={2}>States</Heading>
     {states.map(state => (
       <Input
         key={`input-${state}`}
@@ -21,6 +24,8 @@ stories.add('All states', () => (
         onChange={action('onChange')}
       />
     ))}
+
+    <Heading level={2}>Validation</Heading>
 
     <Input
       id={getId()}

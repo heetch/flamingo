@@ -35,7 +35,7 @@ stories.add('All states', () => (
       </Card>
     </Container>
 
-    <Heading level={2}>With elevations</Heading>
+    <Heading level={2}>Elevations</Heading>
 
     {ELEVATIONS.map(elevation => (
       <Container key={elevation}>
@@ -45,7 +45,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading level={2}>With sizes</Heading>
+    <Heading level={2}>Sizes</Heading>
 
     {sizes.map(size => (
       <Container key={size}>
@@ -55,7 +55,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading level={2}>Cards in Cards</Heading>
+    <Heading level={2}>Inception</Heading>
 
     <Card>
       <Card>

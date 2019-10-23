@@ -5,23 +5,28 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 
 import Alert from '.';
+import Heading from '../Heading';
 
 const { TYPES } = Alert;
 
 const stories = storiesOf('Alert', module);
 
-stories.add('All states', () =>
-  Object.values(TYPES).map(type => (
-    <Alert
-      key={type}
-      title={`Inline alert of type ${type}`}
-      onClose={action(`Alert ${type} closed!`)}
-      type={type}
-    >
-      Alert message
-    </Alert>
-  )),
-);
+stories.add('All states', () => (
+  <>
+    <Heading>Alert</Heading>
+    <Heading level={2}>States</Heading>
+    {Object.values(TYPES).map(type => (
+      <Alert
+        key={type}
+        title={`Inline alert of type ${type}`}
+        onClose={action(`Alert ${type} closed!`)}
+        type={type}
+      >
+        Alert message
+      </Alert>
+    ))}
+  </>
+));
 
 stories.add(
   'Playground',

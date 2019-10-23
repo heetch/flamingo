@@ -4,23 +4,15 @@ import PropTypes from 'prop-types';
 import Helper from '../Helper';
 import UiText from '../UiText';
 
-const Radio = ({
-  disabled,
-  children,
-  checked,
-  helper,
-  name,
-  value,
-  onChange,
-}) => {
+const Radio = ({ disabled, children, checked, helper, id, name, onChange }) => {
   const input = (
     <input
       defaultChecked={checked}
       disabled={disabled}
       className='Radio'
       type='radio'
+      id={id}
       name={name}
-      value={value}
       onChange={onChange}
     />
   );
@@ -32,7 +24,7 @@ const Radio = ({
   return (
     <div className='FormEl-wrapper'>
       {input}
-      <UiText as='label' htmlFor={name} type={UiText.TYPES.content}>
+      <UiText as='label' htmlFor={id} type={UiText.TYPES.content}>
         {children}
         {helper && <Helper>{helper}</Helper>}
       </UiText>
@@ -45,8 +37,8 @@ Radio.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   helper: PropTypes.string,
 };
 

@@ -1,76 +1,130 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
-import { Helper, Input, Label, Select } from '.';
-
-const defaultInputProps = {
-  onChange: console.log,
-};
+import Checkbox from './Checkbox';
+import Heading from './Heading';
+import Helper from './Helper';
+import Input from './Input';
+import Label from './Label';
+import Radio from './Radio';
+import Select from './Select';
+import Textarea from './Textarea';
+import Toggle from './Toggle';
 
 const formProps = {
   onSubmit: e => e.preventDefault(),
 };
 
-const renderContent = (
-  { withHelper = false, withLabel = false } = {}, // eslint-disable-line react/prop-types
-) => (
-  <form {...formProps}>
-    <div>
-      {withLabel && <Label htmlFor='first-name-input-id'>First name</Label>}
-      <Input
-        {...defaultInputProps}
-        id='first-name-input-id'
-        placeholder='First name'
-      />
-      {withHelper && <Helper>First name helper</Helper>}
-    </div>
-
-    <div>
-      {withLabel && <Label htmlFor='last-name-input-id'>Last name</Label>}
-      <Input
-        {...defaultInputProps}
-        id='last-name-input-id'
-        placeholder='Last name'
-      />
-      {withHelper && <Helper>Last name helper</Helper>}
-    </div>
-
-    <div>
-      {withLabel && <Label htmlFor='city-select-id'>City</Label>}
-      <Select
-        {...defaultInputProps}
-        id='city-select-id'
-        options={[
-          {
-            label: 'Paris',
-            value: 'PRS',
-          },
-          {
-            label: 'Bruxelles',
-            value: 'BXL',
-          },
-        ]}
-      />
-      {withHelper && <Helper>City helper</Helper>}
-    </div>
-
-    <div>
-      {withLabel && <Label htmlFor='email-input-id'>Email</Label>}
-      <Input
-        {...defaultInputProps}
-        id='email-input-id'
-        type='email'
-        placeholder='Email'
-      />
-      {withHelper && <Helper>Email helper</Helper>}
-    </div>
-  </form>
+const Wrapper = props => (
+  <div style={{ paddingBottom: 'var(--space-m)' }} {...props} />
 );
 
-storiesOf('Form controls/Form', module)
-  .add('Default', () => renderContent())
-  .add('With helper', () => renderContent({ withHelper: true }))
-  .add('With label', () => renderContent({ withLabel: true }))
-  .add('With helper and label', () =>
-    renderContent({ withHelper: true, withLabel: true }),
+const stories = storiesOf('Form controls', module);
+
+stories.add('Playground', () => {
+  const disabled = boolean('Disable all the things', false);
+  const withLabel = boolean('Display labels', true);
+  const withHelper = boolean('Display helpers', false);
+
+  return (
+    <>
+      <Heading>Form</Heading>
+      <form {...formProps}>
+        <Wrapper>
+          {withLabel && <Label htmlFor='first-name-id'>First name</Label>}
+          <Input
+            id='first-name-id'
+            disabled={disabled}
+            placeholder='First name'
+            onChange={action('onChange')}
+          />
+          {withHelper ? <Helper>First name helper</Helper> : null}
+        </Wrapper>
+
+        <Wrapper>
+          {withLabel && <Label htmlFor='last-name-id'>Last name</Label>}
+          <Input
+            id='last-name-id'
+            disabled={disabled}
+            placeholder='Last name'
+            onChange={action('onChange')}
+          />
+          {withHelper ? <Helper>Last name helper</Helper> : null}
+        </Wrapper>
+
+        <Wrapper>
+          {withLabel && <Label htmlFor='city-id'>City</Label>}
+          <Select
+            id='city-id'
+            disabled={disabled}
+            options={[
+              { label: '-', value: '' },
+              { label: 'Paris', value: 'paris' },
+              { label: 'Brussels', value: 'bxl' },
+              { label: 'Budapest', value: 'bdp' },
+            ]}
+            onChange={action('onChange')}
+          />
+          {withHelper ? <Helper>City helper</Helper> : null}
+        </Wrapper>
+
+        <Wrapper>
+          <Checkbox
+            id='checkbox-id'
+            disabled={disabled}
+            onChange={action('onChange')}
+            helper={withHelper ? 'Checkbox helper' : null}
+          >
+            {withLabel && 'Are you human?'}
+          </Checkbox>
+        </Wrapper>
+
+        <Wrapper>
+          {withLabel && (
+            <Label htmlFor='textarea-id'>What was your last dream about?</Label>
+          )}
+          <Textarea
+            id='textarea-id'
+            disabled={disabled}
+            placeholder='Last name'
+            onChange={action('onChange')}
+          />
+          {withHelper ? <Helper>Textarea helper</Helper> : null}
+        </Wrapper>
+
+        <Wrapper>
+          <Toggle
+            id='toggle-id'
+            disabled={disabled}
+            onChange={action('onChange')}
+            helper={withHelper ? 'Toggle helper' : null}
+          >
+            {withLabel && "I'm just a toggle dude "}
+          </Toggle>
+        </Wrapper>
+
+        <Wrapper>
+          {[
+            'Radio ga ga',
+            'Radio goo goo',
+            'Radio blah blah',
+            'Radio, someone still loves you',
+          ].map((label, i) => (
+            <Radio
+              key={label}
+              id={`radio-${i}`}
+              disabled={disabled}
+              name='radio-name'
+              onChange={action('onChange')}
+              helper={withHelper ? 'Checkbox helper' : null}
+            >
+              {withLabel && label}
+            </Radio>
+          ))}
+        </Wrapper>
+      </form>
+    </>
   );
+});

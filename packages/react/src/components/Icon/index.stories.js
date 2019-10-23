@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
+import Card from '../Card';
+import Heading from '../Heading';
 import Helper from '../Helper';
 import Input from '../Input';
 import Label from '../Label';
@@ -21,6 +23,7 @@ const IconsFilterer = () => {
 
   return (
     <div>
+      <Heading>Icons</Heading>
       <Label htmlFor='icon-search'>Search</Label>
       <Input id='icon-search' onChange={handleInputChange} />
 
@@ -28,7 +31,6 @@ const IconsFilterer = () => {
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          padding: 'var(--space-xl)',
         }}
       >
         {displayedIcons.map(icon => (
@@ -36,12 +38,19 @@ const IconsFilterer = () => {
             key={icon}
             style={{
               padding: 'var(--space-s)',
-              width: 150,
+              width: '25%',
               textAlign: 'center',
             }}
           >
-            <Icon key={`Icon--${icon}`} icon={icon} />
-            <Helper>{icon}</Helper>
+            <Card size={Card.SIZES.S}>
+              <Icon key={`Icon--${icon}`} icon={icon} size={Icon.SIZES.L} />
+              <Helper
+                className='u-ellipsis'
+                style={{ marginTop: 'var(--space-s)' }}
+              >
+                {icon}
+              </Helper>
+            </Card>
           </div>
         ))}
       </div>
