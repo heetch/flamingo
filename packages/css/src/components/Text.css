@@ -1,20 +1,3 @@
-.Text {
-  --text-color: var(--color-granite);
-
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-  color: var(--text-color);
-}
-
 .Text.is-number {
   text-align: right;
-}
-
-small .Text {
-  font-size: var(--font-size--xs);
-}
-
-strong .Text,
-strong.Text {
-  font-weight: var(--font-weight--bold);
 }
