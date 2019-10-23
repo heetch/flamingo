@@ -5,10 +5,6 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { INPUT_TYPES } from '../../constants';
-
-const types = Object.values(INPUT_TYPES);
-
 const defaultIconProps = {
   className: 'FormEl-icon',
 };
@@ -20,7 +16,6 @@ const Input = ({
   invalid: isInvalid,
   onChange,
   placeholder,
-  type,
   valid: isValid,
   ...props
 }) => {
@@ -63,7 +58,6 @@ Input.propTypes = {
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(types),
   valid: PropTypes.bool,
 };
 
@@ -72,7 +66,6 @@ Input.defaultProps = {
   disabled: false,
   invalid: false,
   placeholder: '',
-  type: INPUT_TYPES.TEXT,
   valid: false,
 };
 
