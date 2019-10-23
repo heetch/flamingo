@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
+import Helper from '../Helper';
+
 import { safeInvoke } from '../../utils';
 
 const Toggle = ({ checked, disabled, label, helper, onChange }) => {
@@ -12,8 +15,16 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
     }
 
     const newState = !isOn;
+
     setIsOn(newState);
     safeInvoke(onChange, newState);
+  };
+
+  const labelProps = {
+    onClick: handleToggle,
+    role: 'button',
+    tabIndex: 0,
+    onKeyPress: ({ which }) => (which === 13 ? handleToggle : undefined),
   };
 
   return (
@@ -23,7 +34,7 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
         'is-disabled': disabled,
       })}
     >
-      <div className='Toggle' onClick={handleToggle}>
+      <div className='Toggle' {...labelProps}>
         <div className='Toggle-bullet' />
         <span className='Toggle-bullet-label Toggle-bullet-label--on'>ON</span>
         <span className='Toggle-bullet-label Toggle-bullet-label--off'>
@@ -31,9 +42,9 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
         </span>
       </div>
       {(label || helper) && (
-        <div className='Toggle-labels' onClick={handleToggle}>
+        <div className='Toggle-labels' {...labelProps}>
           {label}
-          {helper && <p className='Toggle-helper'>{helper}</p>}
+          {helper && <Helper>{helper}</Helper>}
         </div>
       )}
     </div>

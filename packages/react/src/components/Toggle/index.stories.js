@@ -1,57 +1,67 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action, boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
+import Heading from '../Heading';
 import Toggle from '.';
 
-storiesOf('Toggle', module)
-  .addDecorator(storiesFn => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      {storiesFn()}
+const defaultProps = {
+  children: 'Label',
+  onChange: () => {},
+};
+
+const stories = storiesOf('Form controls/Toggle', module);
+
+stories.add('All states', () => (
+  <>
+    <Heading>Toggle</Heading>
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>Default</Heading>
+        <Toggle {...defaultProps} name='r1' />
+      </div>
+      <div>
+        <Heading level={2}>& disabled</Heading>
+        <Toggle {...defaultProps} name='r2' disabled />
+      </div>
     </div>
-  ))
-  .add(
-    'Playground',
-    withInfo('')(() => (
-      <Toggle
-        disabled={boolean('Is disabled?', false)}
-        label={text('Label', 'Toggle label')}
-        helper={text('Label helper', 'Label helper')}
-        onChange={action(`onChange`)}
-      />
-    )),
-  )
-  .add('All states', () => (
-    <>
-      <div style={{ width: '100%' }}>
-        <Toggle label='Toggle' helper='Normal' onChange={action(`onChange`)} />
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>Checked</Heading>
+        <Toggle {...defaultProps} name='r3' checked />
       </div>
-      <div style={{ width: '100%' }}>
-        <Toggle
-          checked
-          label='Toggle'
-          helper='On'
-          onChange={action(`onChange`)}
-        />
+      <div>
+        <Heading level={2}>& disabled</Heading>
+        <Toggle {...defaultProps} name='r4' checked disabled />
       </div>
-      <div style={{ width: '100%' }}>
-        <Toggle
-          disabled
-          label='Toggle'
-          helper='Disabled'
-          onChange={action(`onChange`)}
-        />
+    </div>
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>No text</Heading>
+        <Toggle onChange={defaultProps.onChange} name='r5' />
       </div>
-      <div style={{ width: '100%' }}>
-        <Toggle
-          disabled
-          checked
-          label='Toggle'
-          helper='On & Disabled'
-          onChange={action(`onChange`)}
-        />
+      <div>
+        <Heading level={2}>With helper</Heading>
+        <Toggle {...defaultProps} name='r6' label='Label' helper='With texts'>
+          Label
+        </Toggle>
       </div>
-    </>
-  ));
+    </div>
+  </>
+));
+
+stories.add(
+  'Playground',
+  withInfo('')(() => (
+    <Toggle
+      disabled={boolean('Is disabled?', false)}
+      label={text('Label', 'Toggle label')}
+      helper={text('Label helper', 'Label helper')}
+      onChange={action(`onChange`)}
+    />
+  )),
+);
