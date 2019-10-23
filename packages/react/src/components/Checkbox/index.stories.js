@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
+import { action } from '@storybook/addon-actions';
 
 import Checkbox from '.';
 import Heading from '../Heading';
@@ -20,44 +21,44 @@ stories.add('All states', () => (
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading level={2}>Default</Heading>
-        <Checkbox {...defaultProps} name='c1' />
+        <Checkbox {...defaultProps} id='c1' />
       </div>
       <div>
         <Heading level={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} name='c2' disabled />
+        <Checkbox {...defaultProps} id='c2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading level={2}>Checked</Heading>
-        <Checkbox {...defaultProps} name='c3' checked />
+        <Checkbox {...defaultProps} id='c3' checked />
       </div>
       <div>
         <Heading level={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} name='c4' checked disabled />
+        <Checkbox {...defaultProps} id='c4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading level={2}>Undefined</Heading>
-        <Checkbox {...defaultProps} name='c5' isUndefined />
+        <Checkbox {...defaultProps} id='c5' isUndefined />
       </div>
       <div>
         <Heading level={2}>& disabled</Heading>
-        <Checkbox {...defaultProps} name='c6' isUndefined disabled />
+        <Checkbox {...defaultProps} id='c6' isUndefined disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
         <Heading level={2}>No text</Heading>
-        <Checkbox onChange={defaultProps.onChange} name='c7' />
+        <Checkbox onChange={defaultProps.onChange} id='c7' />
       </div>
       <div>
         <Heading level={2}>With helper</Heading>
-        <Checkbox {...defaultProps} name='c8' helper='With helper'>
+        <Checkbox {...defaultProps} id='c8' helper='With helper'>
           Label
         </Checkbox>
       </div>
@@ -69,7 +70,8 @@ stories.add(
   'Playground',
   withInfo('')(() => (
     <Checkbox
-      {...defaultProps}
+      id='playground'
+      onChange={action('onChange')}
       isUndefined={boolean('Is undefined?', false)}
       disabled={boolean('Is disabled?', false)}
       helper={text('Label helper', 'Label helper')}

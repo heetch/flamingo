@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, boolean, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 
 import Heading from '../Heading';
@@ -59,9 +60,10 @@ stories.add(
   withInfo('')(() => (
     <Toggle
       disabled={boolean('Is disabled?', false)}
-      label={text('Label', 'Toggle label')}
       helper={text('Label helper', 'Label helper')}
-      onChange={action(`onChange`)}
-    />
+      onChange={action('onChange')}
+    >
+      {text('Label', 'Toggle label')}
+    </Toggle>
   )),
 );

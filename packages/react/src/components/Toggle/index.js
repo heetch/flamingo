@@ -6,7 +6,7 @@ import Helper from '../Helper';
 
 import { safeInvoke } from '../../utils';
 
-const Toggle = ({ checked, disabled, label, helper, onChange }) => {
+const Toggle = ({ children, checked, disabled, helper, onChange }) => {
   const [isOn, setIsOn] = useState(checked);
 
   const handleToggle = () => {
@@ -41,9 +41,9 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
           OFF
         </span>
       </div>
-      {(label || helper) && (
+      {(children || helper) && (
         <div className='Toggle-labels' {...labelProps}>
-          {label}
+          {children}
           {helper && <Helper>{helper}</Helper>}
         </div>
       )}
@@ -53,16 +53,16 @@ const Toggle = ({ checked, disabled, label, helper, onChange }) => {
 
 Toggle.propTypes = {
   checked: PropTypes.bool,
+  children: PropTypes.node,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
   helper: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
 Toggle.defaultProps = {
   checked: false,
+  children: null,
   disabled: false,
-  label: null,
   helper: null,
 };
 

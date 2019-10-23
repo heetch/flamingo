@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { safeInvoke } from '../../utils';
 
 import Helper from '../Helper';
 import UiText from '../UiText';
@@ -10,30 +9,22 @@ const Checkbox = ({
   isUndefined,
   disabled,
   children,
-  checked: isDefaultChecked,
+  checked,
   helper,
-  name,
+  id,
   value,
   onChange,
 }) => {
-  const [isChecked, setIsChecked] = useState(isDefaultChecked);
-
-  const onCheckboxStateChange = e => {
-    const { checked } = e.target;
-    setIsChecked(checked);
-    safeInvoke(onChange, e);
-  };
-
   const checkbox = (
     <input
-      checked={isChecked}
+      defaultChecked={checked}
       disabled={disabled}
-      className={cx('Checkbox', { 'is-undefined': !isChecked && isUndefined })}
+      className={cx('Checkbox', { 'is-undefined': !checked && isUndefined })}
       type='checkbox'
-      id={name}
-      name={name}
+      id={id}
+      name={id}
       value={value}
-      onChange={onCheckboxStateChange}
+      onChange={onChange}
     />
   );
 
@@ -44,7 +35,7 @@ const Checkbox = ({
   return (
     <div className='FormEl-wrapper'>
       {checkbox}
-      <UiText as='label' htmlFor={name} type={UiText.TYPES.content}>
+      <UiText as='label' htmlFor={id} type={UiText.TYPES.content}>
         {children}
         {helper && <Helper>{helper}</Helper>}
       </UiText>
@@ -58,7 +49,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   value: PropTypes.string,
   helper: PropTypes.string,
 };
