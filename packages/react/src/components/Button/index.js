@@ -28,6 +28,7 @@ const Button = ({
   forwardedRef,
   intent,
   isLoading,
+  type,
   variant,
   ...props
 }) => (
@@ -40,6 +41,7 @@ const Button = ({
     })}
     disabled={disabled}
     ref={forwardedRef}
+    type={type}
     {...props}
   >
     <div className='Button-loadingState'>
@@ -58,6 +60,7 @@ Button.propTypes = {
   forwardedRef: PropTypes.oneOfType(refShapes),
   intent: PropTypes.oneOf(intents),
   isLoading: PropTypes.bool,
+  type: PropTypes.string,
   variant: PropTypes.oneOf(variants),
 };
 
@@ -69,6 +72,7 @@ Button.defaultProps = {
   forwardedRef: undefined,
   intent: INTENTS.PRIMARY,
   isLoading: false,
+  type: 'button',
   variant: undefined,
 };
 
