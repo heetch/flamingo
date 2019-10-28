@@ -5,10 +5,6 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-const defaultIconProps = {
-  className: 'FormEl-icon',
-};
-
 const Input = ({
   className,
   disabled: isDisabled,
@@ -43,10 +39,10 @@ const Input = ({
       />
 
       {isInvalid && (
-        <Icon icon={Icon.ICONS.IconAlertOctagon} {...defaultIconProps} />
+        <Icon icon={Icon.ICONS.IconAlertOctagon} className='FormEl-icon' />
       )}
 
-      {isValid && <Icon icon={Icon.ICONS.IconCheck} {...defaultIconProps} />}
+      {isValid && <Icon icon={Icon.ICONS.IconCheck} className='FormEl-icon' />}
     </div>
   );
 };
