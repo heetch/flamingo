@@ -9,7 +9,6 @@ import UiText from '../UiText';
 import Text from '../Text';
 
 import { safeInvoke } from '../../utils';
-import { refShapes } from '../../constants';
 
 const TYPES = {
   INFORMATION: 'information',
@@ -25,12 +24,12 @@ const icons = {
 
 const types = Object.values(TYPES);
 
-const Alert = ({ title, children, forwardedRef, type, onClose }) => (
+const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
   <div
     className={cx('Alert', `Alert--${type}`, {
       'is-closeable': onClose,
     })}
-    ref={forwardedRef}
+    ref={ref}
   >
     <div className='Alert-icon'>
       <Icon icon={icons[type]} />
@@ -52,14 +51,11 @@ const Alert = ({ title, children, forwardedRef, type, onClose }) => (
       />
     )}
   </div>
-);
+));
 
 Alert.propTypes = {
   children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  /** Type of alert */
   type: PropTypes.oneOf(types),
-  /** Title of alert */
   title: PropTypes.string.isRequired,
   /** Method that is triggered when X button on the alert is clicked. Most likely to be used for hiding the alert. If not provided, no X button is gonna be shown. */
   onClose: PropTypes.func,
@@ -68,7 +64,6 @@ Alert.propTypes = {
 Alert.defaultProps = {
   children: undefined,
   onClose: undefined,
-  forwardedRef: undefined,
   type: TYPES.INFORMATION,
 };
 

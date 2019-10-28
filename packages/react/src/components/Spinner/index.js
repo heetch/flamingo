@@ -3,25 +3,22 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import Icon from '../Icon';
-import { refShapes } from '../../constants';
 
-const Spinner = ({ className, forwardedRef, ...props }) => (
+const Spinner = React.forwardRef(({ className, ...props }, ref) => (
   <Icon
     className={cx('Spinner', className)}
     icon={Icon.ICONS.IconLoader}
-    ref={forwardedRef}
+    ref={ref}
     {...props}
   />
-);
+));
 
 Spinner.propTypes = {
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
 };
 
 Spinner.defaultProps = {
   className: undefined,
-  forwardedRef: undefined,
 };
 
 export default Spinner;

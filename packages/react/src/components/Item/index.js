@@ -7,7 +7,6 @@ import Icon from '../Icon';
 import UiText from '../UiText';
 
 import { safeInvoke } from '../../utils';
-import { refShapes } from '../../constants';
 
 const SIZES = {
   NORMAL: 'normal',
@@ -18,64 +17,68 @@ const SIZES = {
 const icons = Object.values(Icon.ICONS);
 const sizes = Object.values(SIZES);
 
-const Item = ({
-  forwardedRef,
-  helper,
-  size,
-  invalid,
-  valid,
-  contentIcon,
-  children,
-  value,
-  valueIcon,
-  onClick,
-}) => {
-  const isMini = size === SIZES.MINI;
+const Item = React.forwardRef(
+  (
+    {
+      helper,
+      size,
+      invalid,
+      valid,
+      contentIcon,
+      children,
+      value,
+      valueIcon,
+      onClick,
+    },
+    ref,
+  ) => {
+    const isMini = size === SIZES.MINI;
 
-  const containerProps = onClick && {
-    onClick: safeInvoke(onClick),
-    onKeyPress: ({ which }) => (which === 13 ? safeInvoke(onClick) : undefined),
-    role: 'button',
-    tabIndex: 0,
-  };
+    const containerProps = onClick && {
+      onClick: safeInvoke(onClick),
+      onKeyPress: ({ which }) =>
+        which === 13 ? safeInvoke(onClick) : undefined,
+      role: 'button',
+      tabIndex: 0,
+    };
 
-  return (
-    <div
-      {...containerProps}
-      className={cx('Item', `Item--${size}`, {
-        'is-invalid': invalid,
-        'is-valid': valid,
-        'has-action': onClick,
-      })}
-      ref={forwardedRef}
-    >
-      <div className='Item-contentContainer'>
-        {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
+    return (
+      <div
+        {...containerProps}
+        className={cx('Item', `Item--${size}`, {
+          'is-invalid': invalid,
+          'is-valid': valid,
+          'has-action': onClick,
+        })}
+        ref={ref}
+      >
+        <div className='Item-contentContainer'>
+          {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
 
-        <UiText
-          type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
-          className='Item-content'
-        >
-          {children}
-          {helper && <Helper>{helper}</Helper>}
-        </UiText>
-      </div>
-
-      <div className='Item-valueContainer'>
-        {value && (
-          <UiText type={UiText.TYPES.contentBold} className='Item-value'>
-            {value}
+          <UiText
+            type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
+            className='Item-content'
+          >
+            {children}
+            {helper && <Helper>{helper}</Helper>}
           </UiText>
-        )}
+        </div>
 
-        {valueIcon && <Icon icon={valueIcon} />}
+        <div className='Item-valueContainer'>
+          {value && (
+            <UiText type={UiText.TYPES.contentBold} className='Item-value'>
+              {value}
+            </UiText>
+          )}
+
+          {valueIcon && <Icon icon={valueIcon} />}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
 
 Item.propTypes = {
-  forwardedRef: PropTypes.oneOfType(refShapes),
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
@@ -88,7 +91,6 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
-  forwardedRef: undefined,
   invalid: false,
   valid: false,
   size: SIZES.NORMAL,

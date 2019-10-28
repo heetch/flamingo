@@ -3,28 +3,25 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import UiText from '../UiText';
-import { refShapes } from '../../constants';
 
-const Label = ({ className, forwardedRef, htmlFor, ...props }) => (
+const Label = React.forwardRef(({ className, htmlFor, ...props }, ref) => (
   <UiText
     type={UiText.TYPES.subContentBold}
     as='label'
     className={cx('Label', className)}
     htmlFor={htmlFor}
-    ref={forwardedRef}
+    ref={ref}
     {...props}
   />
-);
+));
 
 Label.propTypes = {
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   htmlFor: PropTypes.string.isRequired,
 };
 
 Label.defaultProps = {
   className: undefined,
-  forwardedRef: undefined,
 };
 
 export default Label;

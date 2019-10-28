@@ -8,69 +8,69 @@ import HeaderGroup from '../TableHeaderGroup';
 import RowGroup from '../TableRowGroup';
 import RowCell from '../TableRowCell';
 
-import { refShapes } from '../../constants';
+const Table = React.forwardRef(
+  ({ className, columns, data, isSortable }, ref) => {
+    const { headerGroups, rows, prepareRow } = useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy,
+    );
 
-const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
-  const { headerGroups, rows, prepareRow } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy,
-  );
+    React.useMemo(
+      () =>
+        rows.forEach(row => {
+          prepareRow(row);
+        }),
+      [prepareRow, rows],
+    );
 
-  React.useMemo(
-    () =>
-      rows.forEach(row => {
-        prepareRow(row);
-      }),
-    [prepareRow, rows],
-  );
+    return (
+      <table
+        className={cx('Table', className)}
+        cellPadding={0}
+        cellSpacing={0}
+        ref={ref}
+      >
+        <thead>
+          {headerGroups.map(({ getHeaderGroupProps, headers }) => (
+            <HeaderGroup {...getHeaderGroupProps()}>
+              {headers.map(
+                ({
+                  getHeaderProps,
+                  getSortByToggleProps,
+                  isSorted,
+                  isSortedDesc,
+                  render,
+                }) => (
+                  <HeaderCell
+                    {...getHeaderProps(isSortable && getSortByToggleProps())}
+                    isSorted={isSorted}
+                    isSortedDesc={isSortedDesc}
+                    isSortable={isSortable}
+                  >
+                    {render('Header')}
+                  </HeaderCell>
+                ),
+              )}
+            </HeaderGroup>
+          ))}
+        </thead>
 
-  return (
-    <table
-      className={cx('Table', className)}
-      cellPadding={0}
-      cellSpacing={0}
-      ref={forwardedRef}
-    >
-      <thead>
-        {headerGroups.map(({ getHeaderGroupProps, headers }) => (
-          <HeaderGroup {...getHeaderGroupProps()}>
-            {headers.map(
-              ({
-                getHeaderProps,
-                getSortByToggleProps,
-                isSorted,
-                isSortedDesc,
-                render,
-              }) => (
-                <HeaderCell
-                  {...getHeaderProps(isSortable && getSortByToggleProps())}
-                  isSorted={isSorted}
-                  isSortedDesc={isSortedDesc}
-                  isSortable={isSortable}
-                >
-                  {render('Header')}
-                </HeaderCell>
-              ),
-            )}
-          </HeaderGroup>
-        ))}
-      </thead>
-
-      <tbody>
-        {rows.map(row => (
-          <RowGroup {...row.getRowProps()}>
-            {row.cells.map(({ getCellProps, render }) => (
-              <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
-            ))}
-          </RowGroup>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+        <tbody>
+          {rows.map(row => (
+            <RowGroup {...row.getRowProps()}>
+              {row.cells.map(({ getCellProps, render }) => (
+                <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
+              ))}
+            </RowGroup>
+          ))}
+        </tbody>
+      </table>
+    );
+  },
+);
 
 Table.propTypes = {
   className: PropTypes.string,
@@ -81,7 +81,6 @@ Table.propTypes = {
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
-  forwardedRef: PropTypes.oneOfType(refShapes),
   isSortable: PropTypes.bool,
 };
 
@@ -89,7 +88,6 @@ Table.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
-  forwardedRef: undefined,
   isSortable: false,
 };
 

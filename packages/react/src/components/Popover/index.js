@@ -19,8 +19,8 @@ const Popover = ({ content, children, placement }) => (
     <Reference>
       {({ ref }) =>
         React.cloneElement(children, {
+          ref,
           className: 'Popover-triggerer',
-          forwardedRef: ref,
         })
       }
     </Reference>

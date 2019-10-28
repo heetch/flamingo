@@ -6,10 +6,8 @@ import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Text from '../Text';
 
-import { refShapes } from '../../constants';
-
-const UploaderItem = ({ file, forwardedRef, handleDelete, overrides }) => (
-  <div className='UploaderItem' ref={forwardedRef}>
+const UploaderItem = ({ file, handleDelete, overrides }, ref) => (
+  <div className='UploaderItem' ref={ref}>
     <div className='UploaderItem-iconContainer'>
       {overrides.icon || <Icon icon={Icon.ICONS.IconFileText} />}
     </div>
@@ -27,7 +25,6 @@ const UploaderItem = ({ file, forwardedRef, handleDelete, overrides }) => (
 
 UploaderItem.propTypes = {
   file: PropTypes.instanceOf(File).isRequired,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   handleDelete: PropTypes.func.isRequired,
   overrides: PropTypes.shape({
     icon: PropTypes.node,
@@ -35,7 +32,6 @@ UploaderItem.propTypes = {
 };
 
 UploaderItem.defaultProps = {
-  forwardedRef: undefined,
   overrides: {},
 };
 

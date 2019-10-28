@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { refShapes } from '../../constants';
-
 const TYPES = {
   h1: 'h1',
   h2: 'h2',
@@ -19,25 +17,25 @@ const TYPES = {
 
 const types = Object.keys(TYPES);
 
-const UiText = ({ as: Component, className, forwardedRef, type, ...props }) => (
-  <Component
-    className={cx('UiText', `UiText--${TYPES[type]}`, className)}
-    ref={forwardedRef}
-    {...props}
-  />
+const UiText = React.forwardRef(
+  ({ as: Component, className, type, ...props }, ref) => (
+    <Component
+      className={cx('UiText', `UiText--${TYPES[type]}`, className)}
+      ref={ref}
+      {...props}
+    />
+  ),
 );
 
 UiText.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   type: PropTypes.oneOf(types),
 };
 
 UiText.defaultProps = {
   as: 'p',
   className: undefined,
-  forwardedRef: undefined,
   type: TYPES.content,
 };
 

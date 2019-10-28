@@ -4,7 +4,6 @@ import cx from 'classnames';
 
 import Icon from '../Icon';
 import Spinner from '../Spinner';
-import { refShapes } from '../../constants';
 
 const INTENTS = {
   PRIMARY: 'primary',
@@ -25,7 +24,6 @@ const Button = ({
   className,
   children,
   disabled,
-  forwardedRef,
   intent,
   isLoading,
   type,
@@ -40,7 +38,6 @@ const Button = ({
       [`is-${variant}`]: variant,
     })}
     disabled={disabled}
-    ref={forwardedRef}
     type={type}
     {...props}
   >
@@ -57,7 +54,6 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   disabled: PropTypes.bool,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   intent: PropTypes.oneOf(intents),
   isLoading: PropTypes.bool,
   type: PropTypes.string,
@@ -69,7 +65,6 @@ Button.defaultProps = {
   className: undefined,
   children: undefined,
   disabled: false,
-  forwardedRef: undefined,
   intent: INTENTS.PRIMARY,
   isLoading: false,
   type: 'button',

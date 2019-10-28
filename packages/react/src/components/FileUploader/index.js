@@ -7,7 +7,6 @@ import Spinner from '../Spinner';
 import UiText from '../UiText';
 import UploaderItem from '../UploaderItem';
 
-import { refShapes } from '../../constants';
 import { safeInvoke } from '../../utils';
 
 const defaultTranslate = ({ defaultText }) => defaultText;
@@ -33,124 +32,128 @@ const texts = {
 
 const iconSize = Icon.SIZES.L;
 
-const FileUploader = ({
-  children,
-  className,
-  forwardedRef,
-  files: filesProp,
-  name,
-  onChange,
-  translate,
-  isLoading,
-  hasError,
-  multiple,
-  overrides,
-  ...props
-}) => {
-  const [files, setFiles] = React.useState(filesProp);
-  const hasFile = !isLoading && !hasError && files.length > 0;
+const FileUploader = React.forwardRef(
+  (
+    {
+      children,
+      className,
+      files: filesProp,
+      name,
+      onChange,
+      translate,
+      isLoading,
+      hasError,
+      multiple,
+      overrides,
+      ...props
+    },
+    ref,
+  ) => {
+    const [files, setFiles] = React.useState(filesProp);
+    const hasFile = !isLoading && !hasError && files.length > 0;
 
-  const handleFilesChange = e => {
-    const inputFiles = [...e.target.files];
-    const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
+    const handleFilesChange = e => {
+      const inputFiles = [...e.target.files];
+      const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
-    setFiles(nextFiles);
-    safeInvoke(onChange, inputFiles);
-  };
+      setFiles(nextFiles);
+      safeInvoke(onChange, inputFiles);
+    };
 
-  const handleDeleteFile = fileToDelete => {
-    const remainingFiles = files.filter(
-      file => file.name !== fileToDelete.name,
-    );
-    setFiles(remainingFiles);
-  };
+    const handleDeleteFile = fileToDelete => {
+      const remainingFiles = files.filter(
+        file => file.name !== fileToDelete.name,
+      );
+      setFiles(remainingFiles);
+    };
 
-  React.useEffect(() => {
-    setFiles(filesProp);
-  }, [filesProp]);
+    React.useEffect(() => {
+      setFiles(filesProp);
+    }, [filesProp]);
 
-  return (
-    <div
-      className={cx('FileUploader FormEl-wrapper', className, {
-        'has-file': hasFile,
-        'has-error': hasError,
-        'is-loading': isLoading,
-      })}
-      ref={forwardedRef}
-      {...props}
-    >
-      {isLoading && (
-        <UiText
-          className='FileUploader-state FileUploader-state--uploading'
-          type={UiText.TYPES.subContentBold}
-          as='div'
-        >
-          <Spinner size={iconSize} />
-          {translate(texts.uploading)}
-        </UiText>
-      )}
-
-      {hasError && (
-        <UiText
-          className='FileUploader-state FileUploader-state--error'
-          type={UiText.TYPES.subContentBold}
-          as='label'
-          htmlFor={name}
-        >
-          <Icon icon={Icon.ICONS.IconSadFace} size={iconSize} />
-          {translate(texts.error)}
-        </UiText>
-      )}
-
-      {!isLoading &&
-        !hasError &&
-        (hasFile ? (
-          <>
-            {children ||
-              files.map(file => (
-                <UploaderItem
-                  key={file.name}
-                  handleDelete={handleDeleteFile}
-                  file={file}
-                />
-              ))}
-
-            {multiple && (
-              <UiText
-                className='FileUploader-state FileUploader-state--addFiles'
-                type={UiText.TYPES.subContentBold}
-                as='label'
-                htmlFor={name}
-              >
-                {translate(texts.upload_more_files)}
-              </UiText>
-            )}
-          </>
-        ) : (
+    return (
+      <div
+        className={cx('FileUploader FormEl-wrapper', className, {
+          'has-file': hasFile,
+          'has-error': hasError,
+          'is-loading': isLoading,
+        })}
+        ref={ref}
+        {...props}
+      >
+        {isLoading && (
           <UiText
+            className='FileUploader-state FileUploader-state--uploading'
+            type={UiText.TYPES.subContentBold}
+            as='div'
+          >
+            <Spinner size={iconSize} />
+            {translate(texts.uploading)}
+          </UiText>
+        )}
+
+        {hasError && (
+          <UiText
+            className='FileUploader-state FileUploader-state--error'
             type={UiText.TYPES.subContentBold}
             as='label'
-            className='FileUploader-state FileUploader-state--empty'
             htmlFor={name}
           >
-            <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />
-            {translate(texts.add_document)}
+            <Icon icon={Icon.ICONS.IconSadFace} size={iconSize} />
+            {translate(texts.error)}
           </UiText>
-        ))}
+        )}
 
-      <div className='FileUploader-inputContainer'>
-        <input
-          type='file'
-          id={name}
-          name={name}
-          multiple={multiple}
-          onChange={handleFilesChange}
-          {...overrides.input}
-        />
+        {!isLoading &&
+          !hasError &&
+          (hasFile ? (
+            <>
+              {children ||
+                files.map(file => (
+                  <UploaderItem
+                    key={file.name}
+                    handleDelete={handleDeleteFile}
+                    file={file}
+                  />
+                ))}
+
+              {multiple && (
+                <UiText
+                  className='FileUploader-state FileUploader-state--addFiles'
+                  type={UiText.TYPES.subContentBold}
+                  as='label'
+                  htmlFor={name}
+                >
+                  {translate(texts.upload_more_files)}
+                </UiText>
+              )}
+            </>
+          ) : (
+            <UiText
+              type={UiText.TYPES.subContentBold}
+              as='label'
+              className='FileUploader-state FileUploader-state--empty'
+              htmlFor={name}
+            >
+              <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />
+              {translate(texts.add_document)}
+            </UiText>
+          ))}
+
+        <div className='FileUploader-inputContainer'>
+          <input
+            type='file'
+            id={name}
+            name={name}
+            multiple={multiple}
+            onChange={handleFilesChange}
+            {...overrides.input}
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
 
 FileUploader.propTypes = {
   children: PropTypes.node,
@@ -158,7 +161,6 @@ FileUploader.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   files: PropTypes.arrayOf(PropTypes.instanceOf(File)),
   isLoading: PropTypes.bool,
   hasError: PropTypes.bool,
@@ -173,7 +175,6 @@ FileUploader.defaultProps = {
   className: undefined,
   translate: defaultTranslate,
   files: [],
-  forwardedRef: undefined,
   hasError: false,
   isLoading: false,
   multiple: false,

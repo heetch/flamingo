@@ -5,50 +5,43 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { refShapes } from '../../constants';
+const TableHeaderCell = React.forwardRef(
+  (
+    { as, className, children, isSorted, isSortedDesc, isSortable, ...props },
+    ref,
+  ) => (
+    <UiText
+      as={as}
+      className={cx('Table-HeaderCell', className, {
+        'is-sortable': isSortable,
+        'is-sorted': isSorted,
+      })}
+      type={UiText.TYPES.subContentBold}
+      ref={ref}
+      {...props}
+    >
+      {children}
 
-const TableHeaderCell = ({
-  as,
-  className,
-  children,
-  forwardedRef,
-  isSorted,
-  isSortedDesc,
-  isSortable,
-  ...props
-}) => (
-  <UiText
-    as={as}
-    className={cx('Table-HeaderCell', className, {
-      'is-sortable': isSortable,
-      'is-sorted': isSorted,
-    })}
-    type={UiText.TYPES.subContentBold}
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-
-    {isSortable && (
-      <Icon
-        className='Table-HeaderCellIcon'
-        icon={
-          !isSorted
-            ? 'IconChevronUpDown'
-            : isSortedDesc
-            ? 'IconArrowUp'
-            : 'IconArrowDown'
-        }
-      />
-    )}
-  </UiText>
+      {isSortable && (
+        <Icon
+          className='Table-HeaderCellIcon'
+          icon={
+            !isSorted
+              ? 'IconChevronUpDown'
+              : isSortedDesc
+              ? 'IconArrowUp'
+              : 'IconArrowDown'
+          }
+        />
+      )}
+    </UiText>
+  ),
 );
 
 TableHeaderCell.propTypes = {
   as: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   isSorted: PropTypes.bool,
   isSortedDesc: PropTypes.bool,
   isSortable: PropTypes.bool,
@@ -58,7 +51,6 @@ TableHeaderCell.defaultProps = {
   as: 'th',
   className: undefined,
   children: undefined,
-  forwardedRef: undefined,
   isSorted: false,
   isSortedDesc: false,
   isSortable: false,
