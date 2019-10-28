@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 
 import Heading from '../Heading';
 import Toggle from '.';
@@ -55,15 +54,12 @@ stories.add('All states', () => (
   </>
 ));
 
-stories.add(
-  'Playground',
-  withInfo('')(() => (
-    <Toggle
-      disabled={boolean('Is disabled?', false)}
-      helper={text('Label helper', 'Label helper')}
-      onChange={action('onChange')}
-    >
-      {text('Label', 'Toggle label')}
-    </Toggle>
-  )),
-);
+stories.add('Playground', () => (
+  <Toggle
+    disabled={boolean('Is disabled?', false)}
+    helper={text('Label helper', 'Label helper')}
+    onChange={action('onChange')}
+  >
+    {text('Label', 'Toggle label')}
+  </Toggle>
+));

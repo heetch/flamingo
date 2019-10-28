@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Radio from '.';
 import Heading from '../Heading';
@@ -54,16 +53,13 @@ stories.add('All states', () => (
   </>
 ));
 
-stories.add(
-  'Playground',
-  withInfo('')(() => (
-    <Radio
-      {...defaultProps}
-      name='r7'
-      disabled={boolean('Is disabled?', false)}
-      helper={text('Label helper', 'Label helper')}
-    >
-      {text('Label', 'Radio label')}
-    </Radio>
-  )),
-);
+stories.add('Playground', () => (
+  <Radio
+    {...defaultProps}
+    name='r7'
+    disabled={boolean('Is disabled?', false)}
+    helper={text('Label helper', 'Label helper')}
+  >
+    {text('Label', 'Radio label')}
+  </Radio>
+));

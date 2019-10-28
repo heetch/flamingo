@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean, text, number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
@@ -72,45 +71,42 @@ stories.add('All states', () => (
   </>
 ));
 
-stories.add(
-  'Playground',
-  withInfo('')(() =>
-    Array.from(new Array(number('Number of levels', 1))).map((_, index) => {
-      const itemNumber = index + 1;
-      const groupId = `Item ${itemNumber}`;
+stories.add('Playground', () =>
+  Array.from(new Array(number('Number of levels', 1))).map((_, index) => {
+    const itemNumber = index + 1;
+    const groupId = `Item ${itemNumber}`;
 
-      return (
-        <Item
-          key={groupId}
-          size={select(`(${itemNumber}) Size`, SIZES, undefined, groupId)}
-          invalid={boolean('Invalid', false)}
-          valid={boolean('Valid', false)}
-          contentIcon={select(
-            `(${itemNumber}) Content icon`,
-            ICONS,
-            ICONS.None,
+    return (
+      <Item
+        key={groupId}
+        size={select(`(${itemNumber}) Size`, SIZES, undefined, groupId)}
+        invalid={boolean('Invalid', false)}
+        valid={boolean('Valid', false)}
+        contentIcon={select(
+          `(${itemNumber}) Content icon`,
+          ICONS,
+          ICONS.None,
+          groupId,
+        )}
+        value={text(`(${itemNumber}) Value`, 'Value', groupId)}
+        valueIcon={select(
+          `(${itemNumber}) Value icon`,
+          ICONS,
+          ICONS.None,
+          groupId,
+        )}
+        onClick={
+          boolean(
+            `(${itemNumber}) Does it have onClick action?`,
+            false,
             groupId,
-          )}
-          value={text(`(${itemNumber}) Value`, 'Value', groupId)}
-          valueIcon={select(
-            `(${itemNumber}) Value icon`,
-            ICONS,
-            ICONS.None,
-            groupId,
-          )}
-          onClick={
-            boolean(
-              `(${itemNumber}) Does it have onClick action?`,
-              false,
-              groupId,
-            )
-              ? action('Item clicked')
-              : undefined
-          }
-        >
-          {text(`(${itemNumber}) Content`, 'Item', groupId)}
-        </Item>
-      );
-    }),
-  ),
+          )
+            ? action('Item clicked')
+            : undefined
+        }
+      >
+        {text(`(${itemNumber}) Content`, 'Item', groupId)}
+      </Item>
+    );
+  }),
 );
