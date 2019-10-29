@@ -85,7 +85,7 @@ const FileUploader = React.forwardRef(
         {isLoading && (
           <UiText
             className='FileUploader-state FileUploader-state--uploading'
-            type={UiText.TYPES.subContentBold}
+            variant={UiText.VARIANTS.subContentBold}
             as='div'
           >
             <Spinner size={iconSize} />
@@ -96,7 +96,7 @@ const FileUploader = React.forwardRef(
         {hasError && (
           <UiText
             className='FileUploader-label FileUploader-state FileUploader-state--error'
-            type={UiText.TYPES.subContentBold}
+            variant={UiText.VARIANTS.subContentBold}
             as='label'
             htmlFor={name}
           >
@@ -121,7 +121,7 @@ const FileUploader = React.forwardRef(
               {multiple && (
                 <UiText
                   className='FileUploader-label FileUploader-state FileUploader-state--addFiles'
-                  type={UiText.TYPES.subContentBold}
+                  variant={UiText.VARIANTS.subContentBold}
                   as='label'
                   htmlFor={name}
                 >
@@ -131,7 +131,7 @@ const FileUploader = React.forwardRef(
             </>
           ) : (
             <UiText
-              type={UiText.TYPES.subContentBold}
+              variant={UiText.VARIANTS.subContentBold}
               as='label'
               className='FileUploader-label FileUploader-state FileUploader-state--empty'
               htmlFor={name}

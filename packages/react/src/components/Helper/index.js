@@ -7,7 +7,7 @@ import UiText from '../UiText';
 const Helper = React.forwardRef(({ className, children, ...props }, ref) => (
   <UiText
     as='small'
-    type={UiText.TYPES.subContent}
+    variant={UiText.VARIANTS.subContent}
     className={cx('Helper', className)}
     ref={ref}
     {...props}

@@ -35,7 +35,7 @@ const Checkbox = ({
   return (
     <div className='FormEl-wrapper'>
       {checkbox}
-      <UiText as='label' htmlFor={id} type={UiText.TYPES.content}>
+      <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
         {children}
         {helper && <Helper>{helper}</Helper>}
       </UiText>

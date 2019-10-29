@@ -25,7 +25,7 @@ const Textarea = ({
     <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
       <UiText
         as='textarea'
-        type={UiText.TYPES.content}
+        variant={UiText.VARIANTS.content}
         className={cx('FormEl', 'Textarea', className, {
           ...classes,
           'FormEl--withIcon': isValid || isInvalid,

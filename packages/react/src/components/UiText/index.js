@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const TYPES = {
+const VARIANTS = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -15,12 +15,12 @@ const TYPES = {
   subContentBold: 'subContentBold',
 };
 
-const types = Object.keys(TYPES);
+const variants = Object.keys(VARIANTS);
 
 const UiText = React.forwardRef(
-  ({ as: Component, className, type, ...props }, ref) => (
+  ({ as: Component, className, variant, ...props }, ref) => (
     <Component
-      className={cx('UiText', `UiText--${TYPES[type]}`, className)}
+      className={cx('UiText', `UiText--${VARIANTS[variant]}`, className)}
       ref={ref}
       {...props}
     />
@@ -30,15 +30,15 @@ const UiText = React.forwardRef(
 UiText.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
-  type: PropTypes.oneOf(types),
+  variant: PropTypes.oneOf(variants),
 };
 
 UiText.defaultProps = {
   as: 'p',
   className: undefined,
-  type: TYPES.content,
+  variant: VARIANTS.content,
 };
 
-UiText.TYPES = TYPES;
+UiText.VARIANTS = VARIANTS;
 
 export default UiText;

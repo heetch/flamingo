@@ -35,7 +35,11 @@ const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
       <Icon icon={icons[type]} />
     </div>
 
-    <UiText type={UiText.TYPES.contentBold} as='h1' className='Alert-title'>
+    <UiText
+      variant={UiText.VARIANTS.contentBold}
+      as='h1'
+      className='Alert-title'
+    >
       {title}
     </UiText>
 

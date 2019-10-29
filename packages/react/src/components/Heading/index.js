@@ -10,7 +10,7 @@ const Heading = ({ as, className, level, ...props }) => (
   <UiText
     as={as || `h${level}`}
     level={level}
-    type={`h${level}`}
+    variant={`h${level}`}
     className={cx('Heading', `Heading--${level}`, className)}
     {...props}
   />

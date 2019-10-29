@@ -24,7 +24,7 @@ const Radio = ({ disabled, children, checked, helper, id, name, onChange }) => {
   return (
     <div className='FormEl-wrapper'>
       {input}
-      <UiText as='label' htmlFor={id} type={UiText.TYPES.content}>
+      <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
         {children}
         {helper && <Helper>{helper}</Helper>}
       </UiText>

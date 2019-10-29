@@ -34,7 +34,7 @@ const Popover = ({ content, children, placement }) => (
           className={`Popover-wrapper is--${placement}`}
         >
           <div className='Popover'>
-            <UiText type={UiText.TYPES.subContent} as='span'>
+            <UiText variant={UiText.VARIANTS.subContent} as='span'>
               {content}
             </UiText>
           </div>

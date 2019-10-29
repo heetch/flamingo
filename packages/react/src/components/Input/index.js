@@ -25,7 +25,7 @@ const Input = ({
     <div className={cx('FormEl-wrapper', 'Input-wrapper', { ...classes })}>
       <UiText
         as='input'
-        type={UiText.TYPES.content}
+        variant={UiText.VARIANTS.content}
         className={cx('FormEl', 'Input', className, {
           ...classes,
           'FormEl--withIcon': isValid || isInvalid,

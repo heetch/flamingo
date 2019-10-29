@@ -56,7 +56,9 @@ const Item = React.forwardRef(
           {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
 
           <UiText
-            type={isMini ? UiText.TYPES.subContent : UiText.TYPES.content}
+            variant={
+              isMini ? UiText.VARIANTS.subContent : UiText.VARIANTS.content
+            }
             className='Item-content'
           >
             {children}
@@ -66,7 +68,10 @@ const Item = React.forwardRef(
 
         <div className='Item-valueContainer'>
           {value && (
-            <UiText type={UiText.TYPES.contentBold} className='Item-value'>
+            <UiText
+              variant={UiText.VARIANTS.contentBold}
+              className='Item-value'
+            >
               {value}
             </UiText>
           )}

@@ -21,7 +21,7 @@ const Select = ({
     <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
       <UiText
         as='select'
-        type={UiText.TYPES.content}
+        variant={UiText.VARIANTS.content}
         className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
           ...classes,
         })}

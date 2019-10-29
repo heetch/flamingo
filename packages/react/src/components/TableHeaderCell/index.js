@@ -16,7 +16,7 @@ const TableHeaderCell = React.forwardRef(
         'is-sortable': isSortable,
         'is-sorted': isSorted,
       })}
-      type={UiText.TYPES.subContentBold}
+      variant={UiText.VARIANTS.subContentBold}
       ref={ref}
       {...props}
     >

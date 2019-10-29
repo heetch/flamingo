@@ -8,7 +8,7 @@ const TableRowCell = React.forwardRef(
   ({ as, className, children, ...props }, ref) => (
     <UiText
       as={as}
-      type={UiText.TYPES.subContent}
+      variant={UiText.VARIANTS.subContent}
       className={cx('Table-RowCell', className)}
       ref={ref}
       {...props}

@@ -6,7 +6,7 @@ import UiText from '../UiText';
 
 const Label = React.forwardRef(({ className, htmlFor, ...props }, ref) => (
   <UiText
-    type={UiText.TYPES.subContentBold}
+    variant={UiText.VARIANTS.subContentBold}
     as='label'
     className={cx('Label', className)}
     htmlFor={htmlFor}
