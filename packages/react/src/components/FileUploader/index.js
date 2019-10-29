@@ -76,6 +76,7 @@ const FileUploader = React.forwardRef(
         className={cx('FileUploader FormEl-wrapper', className, {
           'has-file': hasFile,
           'has-error': hasError,
+          'is-empty': !hasFile,
           'is-loading': isLoading,
         })}
         ref={ref}
@@ -94,7 +95,7 @@ const FileUploader = React.forwardRef(
 
         {hasError && (
           <UiText
-            className='FileUploader-state FileUploader-state--error'
+            className='FileUploader-label FileUploader-state FileUploader-state--error'
             type={UiText.TYPES.subContentBold}
             as='label'
             htmlFor={name}
@@ -119,7 +120,7 @@ const FileUploader = React.forwardRef(
 
               {multiple && (
                 <UiText
-                  className='FileUploader-state FileUploader-state--addFiles'
+                  className='FileUploader-label FileUploader-state FileUploader-state--addFiles'
                   type={UiText.TYPES.subContentBold}
                   as='label'
                   htmlFor={name}
@@ -132,7 +133,7 @@ const FileUploader = React.forwardRef(
             <UiText
               type={UiText.TYPES.subContentBold}
               as='label'
-              className='FileUploader-state FileUploader-state--empty'
+              className='FileUploader-label FileUploader-state FileUploader-state--empty'
               htmlFor={name}
             >
               <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />

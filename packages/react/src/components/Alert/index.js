@@ -47,6 +47,7 @@ const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
         intent={Button.INTENTS.SECONDARY}
         variant={Button.VARIANTS.MINIMAL}
         className='Alert-closeBtn'
+        size={Icon.SIZES.S}
         onClick={() => safeInvoke(onClose)}
       />
     )}

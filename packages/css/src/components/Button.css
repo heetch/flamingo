@@ -87,10 +87,19 @@
   padding: var(--space-m);
   line-height: 1;
   border-radius: 50%;
+  color: var(--color-icon-dark);
+}
+
+.Button--icon:hover {
+  background-color: var(--color-ui-element--inactive);
 }
 
 .Button--icon + .Button--icon {
   margin-left: var(--space-m);
+}
+
+.Button--icon .Icon {
+  display: block;
 }
 
 @media (max-width: 460px) {

@@ -29,7 +29,7 @@ const Toggle = ({ children, checked, disabled, helper, onChange }) => {
 
   return (
     <div
-      className={cx('ToggleContainer', {
+      className={cx('FormEl-wrapper', 'ToggleContainer', {
         'is-on': isOn,
         'is-disabled': disabled,
       })}

@@ -25,7 +25,7 @@ const IconsFilterer = () => {
     <div>
       <Heading>Icons</Heading>
       <Label htmlFor='icon-search'>Search</Label>
-      <Input id='icon-search' onChange={handleInputChange} />
+      <Input id='icon-search' onChange={handleInputChange} type='search' />
 
       <div
         style={{

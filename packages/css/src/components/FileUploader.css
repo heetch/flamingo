@@ -14,6 +14,17 @@
   background-color: var(--color-ui-element--primary);
 }
 
+.FileUploader,
+.FileUploader-label {
+  transition: all 0.15s ease-out;
+}
+
+.FileUploader-label:hover,
+.FileUploader.is-empty:hover {
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+}
+
 @media (max-width: 460px) {
   /* --breakpoint-s */
   .FileUploader {

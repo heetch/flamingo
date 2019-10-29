@@ -56,7 +56,7 @@
 }
 
 .Tabs span .Tabs-label {
-  color: var(--color-tolopea);
+  color: var(--color-ui-text-primary);
   font-size: var(--font-size--s);
   font-weight: var(--font-weight--bold);
   line-height: var(--line-height--m);

@@ -11,7 +11,7 @@ const Heading = ({ as, className, level, ...props }) => (
     as={as || `h${level}`}
     level={level}
     type={`h${level}`}
-    className={cx('Heading', `heading--${level}`, className)}
+    className={cx('Heading', `Heading--${level}`, className)}
     {...props}
   />
 );

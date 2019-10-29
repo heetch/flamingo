@@ -51,32 +51,6 @@
 }
 
 :root {
-  --gradient-rr: linear-gradient(
-    to right bottom,
-    var(--color-rose),
-    var(--color-razzmatazz)
-  );
-
-  --gradient-mr: linear-gradient(
-    to right bottom,
-    var(--color-rose2),
-    var(--color-meteorite)
-  );
-
-  --gradient-dm: linear-gradient(
-    to right bottom,
-    var(--color-sonic),
-    var(--color-meteorite)
-  );
-
-  --gradient-mt: linear-gradient(
-    to right bottom,
-    var(--color-meteorite),
-    var(--color-tolopea)
-  );
-}
-
-:root {
   --radius-xl: 1.5rem; /* 24px */
   --radius-l: 1rem; /* 16px */
   --radius-m: 0.5rem; /* 8px */

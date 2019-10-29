@@ -20,7 +20,7 @@
 }
 
 .ImageUploader-hoverState {
-  background: rgba(25, 1, 52, 0.8); /* --color-tolopea */
+  background: rgba(25, 1, 52, 0.8); /* --color-ui-text-primary */
   padding: 0 var(--space-m);
   text-align: right;
   opacity: 0;

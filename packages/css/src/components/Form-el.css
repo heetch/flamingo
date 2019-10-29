@@ -12,6 +12,7 @@
   min-width: 12.5rem;
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
+  color: var(--color-ui-text-primary);
 }
 
 .FormEl-wrapper.is-invalid {
