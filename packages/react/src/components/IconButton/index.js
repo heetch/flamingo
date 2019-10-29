@@ -5,7 +5,7 @@ import cx from 'classnames';
 import Button from '../Button';
 import Icon from '../Icon';
 
-const sizes = Object.keys(Icon.SIZES);
+const sizes = Object.values(Icon.SIZES);
 
 const IconButton = React.forwardRef(
   ({ className, icon, size, ...props }, ref) => (
