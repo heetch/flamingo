@@ -55,6 +55,8 @@ const Button = React.forwardRef(
   ),
 );
 
+Button.displayName = 'Button';
+
 Button.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,

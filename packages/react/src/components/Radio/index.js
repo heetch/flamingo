@@ -35,6 +35,8 @@ const Radio = React.forwardRef(
   },
 );
 
+Radio.displayName = 'Radio';
+
 Radio.propTypes = {
   onChange: PropTypes.func.isRequired,
   checked: PropTypes.bool,

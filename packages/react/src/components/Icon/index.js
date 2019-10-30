@@ -28,6 +28,8 @@ const Icon = React.forwardRef(({ className, icon, size, ...props }, ref) => (
   </i>
 ));
 
+Icon.displayName = 'Icon';
+
 Icon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(NAMES).isRequired,

@@ -46,6 +46,8 @@ const Select = React.forwardRef(
   },
 );
 
+Select.displayName = 'Select';
+
 Select.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,

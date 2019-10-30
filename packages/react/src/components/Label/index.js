@@ -15,6 +15,8 @@ const Label = React.forwardRef(({ className, htmlFor, ...props }, ref) => (
   />
 ));
 
+Label.displayName = 'Label';
+
 Label.propTypes = {
   className: PropTypes.string,
   htmlFor: PropTypes.string.isRequired,

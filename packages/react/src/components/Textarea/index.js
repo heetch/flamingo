@@ -55,6 +55,8 @@ const Textarea = React.forwardRef(
   },
 );
 
+Textarea.displayName = 'Textarea';
+
 Textarea.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,

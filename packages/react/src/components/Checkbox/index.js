@@ -40,6 +40,8 @@ const Checkbox = React.forwardRef(
   },
 );
 
+Checkbox.displayName = 'Checkbox';
+
 Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,
   isUndefined: PropTypes.bool,

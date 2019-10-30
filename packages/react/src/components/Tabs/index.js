@@ -46,6 +46,8 @@ const Tabs = React.forwardRef(
   },
 );
 
+Tabs.displayName = 'Tabs';
+
 Tabs.propTypes = {
   /** An array of strings or objects that will make tabs content */
   elements: PropTypes.arrayOf(

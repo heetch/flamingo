@@ -156,6 +156,8 @@ const FileUploader = React.forwardRef(
   },
 );
 
+FileUploader.displayName = 'FileUploader';
+
 FileUploader.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,

@@ -27,6 +27,8 @@ const UiText = React.forwardRef(
   ),
 );
 
+UiText.displayName = 'UiText';
+
 UiText.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,

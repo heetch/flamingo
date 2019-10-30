@@ -38,6 +38,8 @@ const TableHeaderCell = React.forwardRef(
   ),
 );
 
+TableHeaderCell.displayName = 'TableHeaderCell';
+
 TableHeaderCell.propTypes = {
   as: PropTypes.string,
   className: PropTypes.string,

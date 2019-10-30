@@ -10,6 +10,8 @@ const TableRowGroup = React.forwardRef(
   ),
 );
 
+TableRowGroup.displayName = 'TableRowGroup';
+
 TableRowGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,

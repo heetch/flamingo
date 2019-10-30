@@ -58,6 +58,8 @@ const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
   </div>
 ));
 
+Alert.displayName = 'Alert';
+
 Alert.propTypes = {
   children: PropTypes.node,
   type: PropTypes.oneOf(types),

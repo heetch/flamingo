@@ -55,6 +55,8 @@ const Input = React.forwardRef(
   },
 );
 
+Input.displayName = 'Input';
+
 Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,

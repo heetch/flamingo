@@ -13,6 +13,8 @@ const Spinner = React.forwardRef(({ className, ...props }, ref) => (
   />
 ));
 
+Spinner.displayName = 'Spinner';
+
 Spinner.propTypes = {
   className: PropTypes.string,
 };

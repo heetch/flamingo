@@ -22,6 +22,8 @@ const IconButton = React.forwardRef(
   ),
 );
 
+IconButton.displayName = 'IconButton';
+
 IconButton.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(Icon.NAMES).isRequired,

@@ -10,6 +10,8 @@ const TableHeaderGroup = React.forwardRef(
   ),
 );
 
+TableHeaderGroup.displayName = 'TableHeaderGroup';
+
 TableHeaderGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,

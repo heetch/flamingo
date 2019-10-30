@@ -18,6 +18,8 @@ const TableRowCell = React.forwardRef(
   ),
 );
 
+TableRowCell.displayName = 'TableRowCell';
+
 TableRowCell.propTypes = {
   as: PropTypes.string,
   className: PropTypes.string,

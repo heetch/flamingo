@@ -16,6 +16,8 @@ const Helper = React.forwardRef(({ className, children, ...props }, ref) => (
   </UiText>
 ));
 
+Helper.displayName = 'Helper';
+
 Helper.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,

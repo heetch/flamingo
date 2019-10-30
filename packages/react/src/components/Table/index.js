@@ -72,6 +72,8 @@ const Table = React.forwardRef(
   },
 );
 
+Table.displayName = 'Table';
+
 Table.propTypes = {
   className: PropTypes.string,
   columns: PropTypes.arrayOf(

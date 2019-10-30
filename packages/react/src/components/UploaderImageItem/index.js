@@ -35,6 +35,8 @@ const UploaderImageItem = React.forwardRef(
   },
 );
 
+UploaderImageItem.displayName = 'UploaderImageItem';
+
 UploaderImageItem.propTypes = {
   file: PropTypes.instanceOf(File).isRequired,
   overrides: PropTypes.shape({}),

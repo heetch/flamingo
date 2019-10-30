@@ -20,6 +20,8 @@ const Card = React.forwardRef(
   ),
 );
 
+Card.displayName = 'Card';
+
 Card.propTypes = {
   className: PropTypes.string,
   elevation: PropTypes.oneOf(ELEVATIONS),

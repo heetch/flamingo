@@ -20,6 +20,8 @@ const Text = React.forwardRef(
   ),
 );
 
+Text.displayName = 'Text';
+
 Text.propTypes = {
   as: PropTypes.string,
   className: PropTypes.string,

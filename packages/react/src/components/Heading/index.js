@@ -17,6 +17,8 @@ const Heading = React.forwardRef(({ as, className, level, ...props }, ref) => (
   />
 ));
 
+Heading.displayName = 'Heading';
+
 Heading.propTypes = {
   as: PropTypes.node,
   className: PropTypes.string,

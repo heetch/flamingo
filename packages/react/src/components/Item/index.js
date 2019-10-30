@@ -83,6 +83,8 @@ const Item = React.forwardRef(
   },
 );
 
+Item.displayName = 'Item';
+
 Item.propTypes = {
   invalid: PropTypes.bool,
   valid: PropTypes.bool,

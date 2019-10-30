@@ -25,6 +25,8 @@ const UploaderItem = React.forwardRef(
   ),
 );
 
+UploaderItem.displayName = 'UploaderItem';
+
 UploaderItem.propTypes = {
   file: PropTypes.instanceOf(File).isRequired,
   handleDelete: PropTypes.func.isRequired,

@@ -56,6 +56,8 @@ const Toggle = React.forwardRef(
   },
 );
 
+Toggle.displayName = 'Toggle';
+
 Toggle.propTypes = {
   checked: PropTypes.bool,
   children: PropTypes.node,

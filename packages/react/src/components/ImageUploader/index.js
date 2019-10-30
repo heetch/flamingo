@@ -96,6 +96,8 @@ const ImageUploader = React.forwardRef(
   },
 );
 
+ImageUploader.displayName = 'ImageUploader';
+
 ImageUploader.propTypes = {
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
