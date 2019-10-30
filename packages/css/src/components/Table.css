@@ -1,52 +1,43 @@
-.Table {
-  --borderColor: var(--color-alto);
+.f-Table {
+  --borderColor: var(--color-ui-element--inactive);
 
   width: 100%;
   border-spacing: 0;
   margin: var(--space-m) 0;
 }
 
-.Table-HeaderCell,
-.Table-RowCell {
+.f-Table-HeaderCell,
+.f-Table-RowCell {
   min-width: 8.4375rem; /* 135px */
   text-align: left;
-  font-size: var(--font-size--m);
   padding: var(--space-l) var(--space-xl);
+  box-shadow: inset 0px -1px 0px var(--borderColor);
+  background-color: var(--color-ui-element--primary);
 }
 
-.Table-RowCell .Text,
-.Table-HeaderCell .Text {
+.f-Table-RowCell .f-Text,
+.f-Table-HeaderCell .f-Text {
   margin: 0;
 }
 
-.Table-HeaderCell {
+.f-Table-HeaderCell {
   position: sticky;
   top: 0;
-  font-weight: var(--font-weight--bold);
-  box-shadow: inset 0px -2px 0px var(--borderColor);
-  background-color: var(--color-white);
+  padding-right: calc(var(--icon--m) + var(--space-m) * 2);
+  color: var(--color-ui-text-primary);
 }
 
-.Table-HeaderCell .Text {
-  color: var(--color-tolopea);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.f-Table-HeaderCell.is-sortable.is-sorted {
+  color: var(--color-brand-primary);
 }
 
-.Table-HeaderCell.is-sorted .Text {
-  color: var(--color-rose);
+.f-Table-HeaderCellIcon {
+  position: absolute;
+  right: var(--space-m);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.Table-RowGroup {
-  box-shadow: inset 0px -1px 0px var(--borderColor);
-}
-
-.Table-RowGroup:hover {
-  background-color: var(--color-grey);
-}
-
-.Table-RowCell {
-  font-size: var(--font-size--m);
-  color: var(--color-granite);
+.f-Table-RowCell {
+  color: var(--color-ui-text-secondary);
 }

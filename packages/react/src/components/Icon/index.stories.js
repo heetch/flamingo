@@ -2,15 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
+import Card from '../Card';
+import Heading from '../Heading';
 import Helper from '../Helper';
 import Input from '../Input';
 import Label from '../Label';
 import Icon from '.';
 
-import { ICONS, ICON_SIZES } from '../../constants';
-
-const icons = Object.keys(ICONS);
-const sizes = Object.values(ICON_SIZES);
+const icons = Object.keys(Icon.ICONS);
+const sizes = Object.values(Icon.SIZES);
 
 const IconsFilterer = () => {
   const [filter, setFilter] = React.useState('');
@@ -23,14 +23,14 @@ const IconsFilterer = () => {
 
   return (
     <div>
+      <Heading>Icons</Heading>
       <Label htmlFor='icon-search'>Search</Label>
-      <Input id='icon-search' onChange={handleInputChange} />
+      <Input id='icon-search' onChange={handleInputChange} type='search' />
 
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          padding: 'var(--space-xl)',
         }}
       >
         {displayedIcons.map(icon => (
@@ -38,12 +38,19 @@ const IconsFilterer = () => {
             key={icon}
             style={{
               padding: 'var(--space-s)',
-              width: 150,
+              width: '25%',
               textAlign: 'center',
             }}
           >
-            <Icon key={`Icon--${icon}`} icon={icon} />
-            <Helper>{icon}</Helper>
+            <Card size={Card.SIZES.S}>
+              <Icon key={`Icon--${icon}`} icon={icon} size={Icon.SIZES.L} />
+              <Helper
+                className='u-ellipsis'
+                style={{ marginTop: 'var(--space-s)' }}
+              >
+                {icon}
+              </Helper>
+            </Card>
           </div>
         ))}
       </div>
@@ -57,7 +64,7 @@ stories.add('All', () => <IconsFilterer />);
 
 stories.add('Playground', () => (
   <Icon
-    icon={select('Icon', icons, ICONS.IconAlertOctagon)}
-    size={select('Size', sizes, ICON_SIZES.M)}
+    icon={select('Icon', icons, Icon.ICONS.IconAlertOctagon)}
+    size={select('Size', sizes, Icon.SIZES.M)}
   />
 ));

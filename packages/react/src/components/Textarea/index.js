@@ -5,48 +5,59 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICON_SIZES } from '../../constants';
+const Textarea = React.forwardRef(
+  (
+    {
+      id,
+      className,
+      disabled: isDisabled,
+      invalid: isInvalid,
+      onChange,
+      placeholder,
+      valid: isValid,
+      ...props
+    },
+    ref,
+  ) => {
+    const classes = {
+      'is-disabled': isDisabled,
+      'is-valid': isValid,
+      'is-invalid': isInvalid,
+    };
 
-const defaultIconProps = {
-  className: 'FormEl-icon',
-  size: ICON_SIZES.S,
-};
+    return (
+      <div
+        className={cx('f-FormEl-wrapper', 'f-Textarea-wrapper', { ...classes })}
+      >
+        <UiText
+          as='textarea'
+          variant={UiText.VARIANTS.content}
+          className={cx('f-FormEl', 'f-Textarea', className, {
+            ...classes,
+            'f-FormEl--withIcon': isValid || isInvalid,
+          })}
+          disabled={isDisabled}
+          id={id}
+          name={id}
+          onChange={onChange}
+          placeholder={placeholder}
+          ref={ref}
+          {...props}
+        />
 
-const Textarea = ({
-  id,
-  className,
-  disabled: isDisabled,
-  invalid: isInvalid,
-  onChange,
-  placeholder,
-  valid: isValid,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-    'is-valid': isValid,
-    'is-invalid': isInvalid,
-  };
+        {isInvalid && (
+          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
+        )}
 
-  return (
-    <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
-      <UiText
-        as='textarea'
-        type={UiText.TYPES.content}
-        className={cx('FormEl', 'Textarea', className, { ...classes })}
-        disabled={isDisabled}
-        id={id}
-        name={id}
-        onChange={onChange}
-        placeholder={placeholder}
-        {...props}
-      />
+        {isValid && (
+          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
+        )}
+      </div>
+    );
+  },
+);
 
-      {isInvalid && <Icon icon='IconClose' {...defaultIconProps} />}
-      {isValid && <Icon icon='IconCheck' {...defaultIconProps} />}
-    </div>
-  );
-};
+Textarea.displayName = 'Textarea';
 
 Textarea.propTypes = {
   className: PropTypes.string,

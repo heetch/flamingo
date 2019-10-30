@@ -1,15 +1,21 @@
-.UploaderItem {
+.f-UploaderItem {
   --iconContainerSize: 2.625rem; /* 42px */
+
   display: flex;
   align-items: center;
+  width: 100%;
   text-align: left;
+  padding: var(--space-s);
+  color: var(--color-ui-text-secondary);
+  background-color: var(--color-ui-element--primary);
+  border-radius: var(--radius-l);
 }
 
-.UploaderItem + .UploaderItem {
+.f-UploaderItem + .f-UploaderItem {
   margin-top: var(--space-s);
 }
 
-.UploaderItem-iconContainer {
+.f-UploaderItem-iconContainer {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
@@ -17,24 +23,24 @@
   width: var(--iconContainerSize);
   height: var(--iconContainerSize);
   margin-right: var(--space-m);
-  border: 1px solid var(--color-granite);
+  border: 1px solid var(--color-ui-element--secondary);
   border-radius: 0.75rem; /* 12px */
   background-color: var(--color-white);
   overflow: hidden;
 }
 
-.UploaderItem-iconContainer img {
+.f-UploaderItem-iconContainer img {
   display: block;
   object-fit: cover;
   width: var(--iconContainerSize);
   height: var(--iconContainerSize);
 }
 
-.UploaderItem-name {
+.f-UploaderItem-name {
   flex-grow: 1;
 }
 
-.UploaderItem .Button--icon,
-.UploaderItem .Text {
+.f-UploaderItem .f-Button--icon,
+.f-UploaderItem .f-Text {
   margin: 0;
 }

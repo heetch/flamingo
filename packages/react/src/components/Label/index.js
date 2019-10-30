@@ -1,29 +1,29 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { refShapes } from '../../constants';
+import UiText from '../UiText';
 
-const Label = ({ className, forwardedRef, htmlFor, ...props }) => (
-  <label
-    className={cx('Label', className)}
+const Label = React.forwardRef(({ className, htmlFor, ...props }, ref) => (
+  <UiText
+    variant={UiText.VARIANTS.subContentBold}
+    as='label'
+    className={cx('f-Label', className)}
     htmlFor={htmlFor}
-    ref={forwardedRef}
+    ref={ref}
     {...props}
   />
-);
+));
+
+Label.displayName = 'Label';
 
 Label.propTypes = {
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
   htmlFor: PropTypes.string.isRequired,
 };
 
 Label.defaultProps = {
   className: undefined,
-  forwardedRef: undefined,
 };
 
 export default Label;

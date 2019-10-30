@@ -5,29 +5,34 @@ import cx from 'classnames';
 import Button from '../Button';
 import Icon from '../Icon';
 
-import { ICON_SIZES, ICONS_SVGS, refShapes } from '../../constants';
+const sizes = Object.values(Icon.SIZES);
 
-const icons = Object.keys(ICONS_SVGS);
-
-const IconButton = ({ className, forwardedRef, icon, ...props }) => (
-  <Button
-    className={cx('Button--icon', className)}
-    ref={forwardedRef}
-    {...props}
-  >
-    <Icon icon={icon} size={ICON_SIZES.L} />
-  </Button>
+const IconButton = React.forwardRef(
+  ({ className, icon, size, ...props }, ref) => (
+    <Button
+      className={cx('f-Button--icon', className)}
+      ref={ref}
+      intent={Button.INTENTS.SECONDARY}
+      variant={Button.VARIANTS.MINIMAL}
+      size={size}
+      {...props}
+    >
+      <Icon icon={icon} size={size} />
+    </Button>
+  ),
 );
+
+IconButton.displayName = 'IconButton';
 
 IconButton.propTypes = {
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  icon: PropTypes.oneOf(icons).isRequired,
+  icon: PropTypes.oneOf(Icon.NAMES).isRequired,
+  size: PropTypes.oneOf(sizes),
 };
 
 IconButton.defaultProps = {
   className: undefined,
-  forwardedRef: undefined,
+  size: Icon.SIZES.L,
 };
 
 export default IconButton;

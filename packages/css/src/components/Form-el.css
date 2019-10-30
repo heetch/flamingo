@@ -1,71 +1,117 @@
-.FormEl-wrapper {
+.f-FormEl-wrapper {
   /*
     this variable has to be here because of
     the Icon children which relies on it
   */
-  --icon-color: var(--color-granite);
+  --icon-color: var(--color-icon-dark);
   --icon-size: var(--icon--m);
   --icon-spaceAround: var(--space-m);
 
+  display: flex;
   position: relative;
   min-width: 12.5rem;
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
+  color: var(--color-ui-text-primary);
 }
 
-.FormEl-wrapper + .Helper .Text {
-  margin-top: 0;
+.f-FormEl-wrapper.is-invalid {
+  --icon-color: var(--color-ui-element--error);
 }
 
-.FormEl {
-  --border-color: var(--color-chatelle);
+.f-FormEl-wrapper.is-valid {
+  --icon-color: var(--color-ui-element--success);
+}
+
+.f-FormEl {
+  --background-color: var(--color-ui-element--primary);
+  --border-color: var(--color-ui-element--tertiary);
   --border-size: 1px;
 
+  display: block;
   width: 100%;
   padding: var(--space-m) var(--space-xl);
   border: 0;
   border-radius: 1.25rem;
-  color: var(--color-granite);
-  background-color: var(--color-white);
+  color: var(--color-ui-text-secondary);
+  background-color: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
   outline: none;
-  -webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow 0.1s ease-out;
 }
 
-.FormEl--withIcon {
+.f-FormEl-wrapper.is-invalid .f-FormEl {
+  --border-color: var(--color-ui-element--error);
+}
+
+.f-FormEl-wrapper.is-valid .f-FormEl {
+  --border-color: var(--color-ui-element--success);
+}
+
+.f-FormEl--withIcon {
   padding-right: calc(var(--icon-size) + var(--icon-spaceAround) * 2);
 }
 
 @media (max-width: 460px) {
-  .FormEl {
+  .f-FormEl {
     padding-top: var(--space-l);
     padding-bottom: var(--space-l);
   }
 }
 
-.FormEl:hover,
-.FormEl.is-hover {
-  --border-color: var(--color-granite);
+.f-FormEl:hover,
+.f-FormEl.is-hover,
+.f-FormEl:focus,
+.f-FormEl.is-focus {
+  --border-color: var(--color-ui-element--secondary);
 }
 
-.FormEl:focus,
-.FormEl.is-focus {
-  --border-color: var(--color-granite);
+.f-FormEl:focus,
+.f-FormEl.is-focus {
   --border-size: 2px;
 }
 
-.FormEl:disabled,
-.FormEl.is-disabled {
-  --border-color: var(--color-alto);
-  background-color: var(--color-grey);
+.f-FormEl:disabled,
+.f-FormEl.is-disabled {
+  --border-color: var(--color-ui-element--tertiary);
+  --background-color: var(--color-ui-element--inactive);
   cursor: not-allowed;
 }
 
-.FormEl-icon {
+.f-FormEl-icon {
   position: absolute;
   top: 50%;
   right: var(--space-l);
   transform: translateY(-50%);
   color: var(--icon-color);
   pointer-events: none;
+}
+
+/* Shared */
+
+.f-Checkbox,
+.f-Radio {
+  --size: 1.25rem /* 20px */;
+
+  position: relative;
+  appearance: none;
+  background-color: var(--color-ui-element--primary);
+  min-width: var(--size);
+  margin-right: var(--space-l);
+  height: var(--size);
+  border: 1px solid var(--color-ui-element--tertiary);
+  border-radius: var(--space-s);
+  transition: border-color 0.2s ease-out;
+}
+.f-Checkbox:hover,
+.f-Radio:hover {
+  border-color: var(--color-ui-element--secondary);
+}
+
+.f-Checkbox:disabled,
+.f-Radio:disabled {
+  border-color: var(--color-ui-element--tertiary) !important;
+  background-color: var(--color-ui-element--inactive) !important;
+  cursor: not-allowed;
 }

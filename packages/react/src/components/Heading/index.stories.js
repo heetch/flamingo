@@ -7,16 +7,40 @@ import Heading from '.';
 const { LEVELS } = Heading;
 const stories = storiesOf('Heading', module);
 
-stories.add('With levels', () =>
-  LEVELS.map(level => (
-    <Heading key={`heading-${level}`} as={level}>
-      Heading {level}
-    </Heading>
-  )),
+const Wrapper = props => (
+  <div
+    style={{
+      backgroundColor: 'var(--color-ui-element--primary)',
+      marginBottom: 'var(--space-m)',
+      overflow: 'hidden',
+      borderRadius: 'var(--radius-m)',
+    }}
+    {...props}
+  />
 );
 
+stories.add('All states', () => (
+  <>
+    <Heading>Heading</Heading>
+    <Heading level={2}>Levels</Heading>
+    {LEVELS.map(level => (
+      <Wrapper key={`heading-${level}`}>
+        <Heading level={level}>Heading {level}</Heading>
+      </Wrapper>
+    ))}
+
+    <Heading level={2}>Custom tag</Heading>
+
+    <Wrapper>
+      <Heading level={2} as='h6'>
+        h6 with h1 styles
+      </Heading>
+    </Wrapper>
+  </>
+));
+
 stories.add('Playground', () => (
-  <Heading as={select('Level', LEVELS)}>
+  <Heading level={select('Level', LEVELS)}>
     {text('Content', 'Heading content')}
   </Heading>
 ));

@@ -3,167 +3,76 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useTable, useSortBy } from 'react-table';
 
-import Icon from '../Icon';
-import Text from '../Text';
-import { refShapes } from '../../constants';
+import HeaderCell from '../TableHeaderCell';
+import HeaderGroup from '../TableHeaderGroup';
+import RowGroup from '../TableRowGroup';
+import RowCell from '../TableRowCell';
 
-const HeaderGroup = ({ className, children, forwardedRef, ...props }) => (
-  <tr
-    className={cx('Table-HeaderGroup', className)}
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-  </tr>
-);
+const Table = React.forwardRef(
+  ({ className, columns, data, isSortable }, ref) => {
+    const { headerGroups, rows, prepareRow } = useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy,
+    );
 
-HeaderGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
+    React.useMemo(
+      () =>
+        rows.forEach(row => {
+          prepareRow(row);
+        }),
+      [prepareRow, rows],
+    );
 
-HeaderGroup.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
-
-const HeaderCell = ({
-  className,
-  children,
-  forwardedRef,
-  isSorted,
-  ...props
-}) => (
-  <th
-    className={cx('Table-HeaderCell', className, {
-      'is-sorted': isSorted,
-    })}
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-  </th>
-);
-
-HeaderCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  isSorted: PropTypes.bool,
-};
-
-HeaderCell.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-  isSorted: false,
-};
-
-const RowGroup = ({ className, children, forwardedRef, ...props }) => (
-  <tr className={cx('Table-RowGroup', className)} ref={forwardedRef} {...props}>
-    {children}
-  </tr>
-);
-
-RowGroup.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
-
-RowGroup.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
-
-const RowCell = ({ className, children, forwardedRef, ...props }) => (
-  <td className={cx('Table-RowCell', className)} ref={forwardedRef} {...props}>
-    {children}
-  </td>
-);
-
-RowCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-};
-
-RowCell.defaultProps = {
-  className: undefined,
-  children: undefined,
-  forwardedRef: undefined,
-};
-
-const Table = ({ className, columns, data, forwardedRef, isSortable }) => {
-  const { headerGroups, rows, prepareRow } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy,
-  );
-
-  React.useMemo(
-    () =>
-      rows.forEach(row => {
-        prepareRow(row);
-      }),
-    [prepareRow, rows],
-  );
-
-  return (
-    <table className={cx('Table', className)} ref={forwardedRef}>
-      <thead>
-        {headerGroups.map(({ getHeaderGroupProps, headers }) => (
-          <HeaderGroup {...getHeaderGroupProps()}>
-            {headers.map(
-              ({
-                getHeaderProps,
-                getSortByToggleProps,
-                isSorted,
-                isSortedDesc,
-                render,
-              }) => (
-                <HeaderCell
-                  {...getHeaderProps(isSortable && getSortByToggleProps())}
-                  isSorted={isSorted}
-                >
-                  <Text>
+    return (
+      <table
+        className={cx('f-Table', className)}
+        cellPadding={0}
+        cellSpacing={0}
+        ref={ref}
+      >
+        <thead>
+          {headerGroups.map(({ getHeaderGroupProps, headers }) => (
+            <HeaderGroup {...getHeaderGroupProps()}>
+              {headers.map(
+                ({
+                  getHeaderProps,
+                  getSortByToggleProps,
+                  isSorted,
+                  isSortedDesc,
+                  render,
+                }) => (
+                  <HeaderCell
+                    {...getHeaderProps(isSortable && getSortByToggleProps())}
+                    isSorted={isSorted}
+                    isSortedDesc={isSortedDesc}
+                    isSortable={isSortable}
+                  >
                     {render('Header')}
+                  </HeaderCell>
+                ),
+              )}
+            </HeaderGroup>
+          ))}
+        </thead>
 
-                    {isSorted &&
-                      (isSortedDesc ? (
-                        <Icon icon='IconArrowUp' />
-                      ) : (
-                        <Icon icon='IconArrowDown' />
-                      ))}
+        <tbody>
+          {rows.map(row => (
+            <RowGroup {...row.getRowProps()}>
+              {row.cells.map(({ getCellProps, render }) => (
+                <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
+              ))}
+            </RowGroup>
+          ))}
+        </tbody>
+      </table>
+    );
+  },
+);
 
-                    {isSortable && !isSorted && (
-                      <Icon icon='IconChevronUpDown' />
-                    )}
-                  </Text>
-                </HeaderCell>
-              ),
-            )}
-          </HeaderGroup>
-        ))}
-      </thead>
-
-      <tbody>
-        {rows.map(row => (
-          <RowGroup {...row.getRowProps()}>
-            {row.cells.map(({ getCellProps, render }) => (
-              <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
-            ))}
-          </RowGroup>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+Table.displayName = 'Table';
 
 Table.propTypes = {
   className: PropTypes.string,
@@ -174,7 +83,6 @@ Table.propTypes = {
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
-  forwardedRef: PropTypes.oneOfType(refShapes),
   isSortable: PropTypes.bool,
 };
 
@@ -182,7 +90,6 @@ Table.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
-  forwardedRef: undefined,
   isSortable: false,
 };
 

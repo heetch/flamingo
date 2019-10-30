@@ -1,50 +1,66 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
+import { boolean, text } from '@storybook/addon-knobs';
 
 import Radio from '.';
+import Heading from '../Heading';
 
-storiesOf('Form controls/Radio', module)
-  .addDecorator(withKnobs)
-  .addDecorator(storiesFn => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      {storiesFn()}
+const defaultProps = {
+  children: 'Label',
+  onChange: () => {},
+};
+
+const stories = storiesOf('Form controls/Radio', module);
+
+stories.add('All states', () => (
+  <>
+    <Heading>Radio</Heading>
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>Default</Heading>
+        <Radio {...defaultProps} id='r1-1' name='r1' />
+      </div>
+      <div>
+        <Heading level={2}>& disabled</Heading>
+        <Radio {...defaultProps} id='r2-1' name='r2' disabled />
+      </div>
     </div>
-  ))
-  .add(
-    'Playground',
-    withInfo('')(() =>
-      Array.from(Array(2)).map(() => (
-        <Radio
-          name='radio-group-1'
-          disabled={boolean('Is disabled?', false)}
-          helper={text('Label helper', 'Label helper')}
-        >
-          {text('Label', 'Label')}
-        </Radio>
-      )),
-    ),
-  )
-  .add('All states', () => (
-    <>
-      <div style={{ width: '100%' }}>
-        <Radio name='radio-group-1'>Normal</Radio>
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>Checked</Heading>
+        <Radio {...defaultProps} id='r3-1' name='r3' checked />
       </div>
-      <div style={{ width: '100%' }}>
-        <Radio name='radio-group-2' checked>
-          Checked
+      <div>
+        <Heading level={2}>& disabled</Heading>
+        <Radio {...defaultProps} id='r4-1' name='r4' checked disabled />
+      </div>
+    </div>
+
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+        <Heading level={2}>No text</Heading>
+        <Radio onChange={defaultProps.onChange} id='r5-1' name='r5' />
+      </div>
+      <div>
+        <Heading level={2}>With helper</Heading>
+        <Radio {...defaultProps} id='r6-1' name='r6' helper='With helper'>
+          Label
         </Radio>
       </div>
-      <div style={{ width: '100%' }}>
-        <Radio name='radio-group-3' disabled>
-          Disabled
-        </Radio>
-      </div>
-      <div style={{ width: '100%' }}>
-        <Radio name='radio-group-4' disabled checked>
-          Disabled & checked
-        </Radio>
-      </div>
-    </>
-  ));
+    </div>
+  </>
+));
+
+stories.add('Playground', () => (
+  <Radio
+    {...defaultProps}
+    id='r7-1'
+    name='r7'
+    disabled={boolean('Is disabled?', false)}
+    helper={text('Label helper', 'Label helper')}
+  >
+    {text('Label', 'Radio label')}
+  </Radio>
+));

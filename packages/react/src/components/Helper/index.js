@@ -4,16 +4,19 @@ import cx from 'classnames';
 
 import UiText from '../UiText';
 
-const Helper = ({ className, children, ...props }) => (
+const Helper = React.forwardRef(({ className, children, ...props }, ref) => (
   <UiText
     as='small'
-    type={UiText.TYPES.subContent}
-    className={cx('Helper', className)}
+    variant={UiText.VARIANTS.subContent}
+    className={cx('f-Helper', className)}
+    ref={ref}
     {...props}
   >
     {children}
   </UiText>
-);
+));
+
+Helper.displayName = 'Helper';
 
 Helper.propTypes = {
   className: PropTypes.string,

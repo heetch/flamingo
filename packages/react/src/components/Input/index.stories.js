@@ -1,64 +1,45 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { INPUT_TYPES } from '../../constants';
 import Input from '.';
-
-const types = Object.values(INPUT_TYPES);
-const states = ['default', 'hover', 'focus', 'disabled'];
+import Heading from '../Heading';
 
 const getId = () => `input-${Math.random()}`;
-
+const states = ['default', 'hover', 'focus', 'disabled'];
 const stories = storiesOf('Form controls/Input', module);
 
-stories.addDecorator(withKnobs);
-
-stories.add('With types', () =>
-  types.map(type => (
-    <div key={`input-${type}`}>
+stories.add('All states', () => (
+  <>
+    <Heading>Input</Heading>
+    <Heading level={2}>States</Heading>
+    {states.map(state => (
       <Input
+        key={`input-${state}`}
         id={getId()}
-        placeholder={`Type: ${type}`}
-        type={type}
+        className={`is-${state}`}
+        defaultValue={`State: ${state}`}
+        disabled={state === 'disabled'}
         onChange={action('onChange')}
       />
-    </div>
-  )),
-);
-
-stories.add('With states', () => (
-  <>
-    {states.map(state => (
-      <div key={`input-${state}`}>
-        <Input
-          id={getId()}
-          className={`is-${state}`}
-          defaultValue={`State: ${state}`}
-          disabled={state === 'disabled'}
-          onChange={action('onChange')}
-        />
-      </div>
     ))}
 
-    <div>
-      <Input
-        id={getId()}
-        defaultValue='Props: invalid'
-        invalid
-        onChange={action('onChange')}
-      />
-    </div>
+    <Heading level={2}>Validation</Heading>
 
-    <div>
-      <Input
-        id={getId()}
-        defaultValue='Props: valid'
-        valid
-        onChange={action('onChange')}
-      />
-    </div>
+    <Input
+      id={getId()}
+      defaultValue='Props: invalid'
+      invalid
+      onChange={action('onChange')}
+    />
+
+    <Input
+      id={getId()}
+      defaultValue='Props: valid'
+      valid
+      onChange={action('onChange')}
+    />
   </>
 ));
 

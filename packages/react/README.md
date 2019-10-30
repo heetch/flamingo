@@ -1,17 +1,6 @@
 # @heetch/flamingo-react
 
-https://heetch.github.io/flamingo/
-
-## Required
-
-For styling purpose, you will also need to install and import `@heetch/flamingo-css` and `normalize.css`
-
-```js
-// index.js
-
-@import "@heetch/flamingo-css";
-@import "normalize.css";
-```
+https://flamingo.heetch-eng.now.sh
 
 ## Install
 
@@ -21,23 +10,18 @@ yarn add @heetch/flamingo-react -s
 
 ## Usage
 
-```jsx
+For styling purpose, you will also need to install and import `@heetch/flamingo-css` and `normalize.css`
+
+```js
+// index.js
 import React from "react";
-import { Text } from "@heetch/flamingo-react";
+import { Button } from "@heetch/flamingo-react";
 
-export default () => <Text>Example</Text>;
+import "@heetch/flamingo-css";
+import "normalize.css";
+
+export default () => <Button>Example</Button>;
 ```
-
-## Components
-
-- [Button](src/components/Button/README.md)
-- [Heading](src/components/Heading/README.md)
-- [Helper](src/components/Helper/README.md)
-- [Icon](src/components/Icon/README.md)
-- [Input](src/components/Input/README.md)
-- [Label](src/components/Label/README.md)
-- [Select](src/components/Select/README.md)
-- [Text](src/components/Text/README.md)
 
 ## License
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Select } from '..';
+
+import Heading from '../Heading';
+import Select from '.';
 
 const states = ['default', 'hover', 'focus', 'disabled'];
 
@@ -12,19 +13,17 @@ const mapStringsToSelectOptions = options =>
 const defaultProps = () => ({
   id: `select-${Math.random()}`,
   onChange: action('onChange'),
-  options: mapStringsToSelectOptions(text('Options', 'Foo,Bar').split(',')),
+  options: mapStringsToSelectOptions(['Foo', 1, 'Bar', 2]),
 });
 
-const numProps = () => ({
-  id: `select-${Math.random()}`,
-  onChange: action('onChange'),
-  options: [{ value: 1, label: 'One' }, { value: 2, label: 'Two' }],
-});
+const stories = storiesOf('Form controls/Select', module);
 
-storiesOf('Form controls/Select', module)
-  .addDecorator(withKnobs)
-  .add('With states', () =>
-    states.map(state => (
+stories.add('All states', () => (
+  <>
+    <Heading>Select</Heading>
+    <Heading level={2}>States</Heading>
+
+    {states.map(state => (
       <div key={`input-${state}`}>
         <Select
           {...defaultProps()}
@@ -33,7 +32,8 @@ storiesOf('Form controls/Select', module)
           disabled={state === 'disabled'}
         />
       </div>
-    )),
-  )
-  .add('Playground', () => <Select {...defaultProps()} />)
-  .add('With Number values', () => <Select {...numProps()} />);
+    ))}
+  </>
+));
+
+stories.add('Playground', () => <Select {...defaultProps()} />);

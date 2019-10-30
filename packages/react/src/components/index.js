@@ -1,3 +1,4 @@
+export { default as Alert } from './Alert';
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
@@ -7,10 +8,9 @@ export { default as Helper } from './Helper';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
 export { default as ImageUploader } from './ImageUploader';
-export { default as InlineAlert } from './InlineAlert';
 export { default as Input } from './Input';
+export { default as Item } from './Item';
 export { default as Label } from './Label';
-export { default as ListItem } from './ListItem';
 export { default as Popover } from './Popover';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';

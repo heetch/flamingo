@@ -3,17 +3,24 @@ import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import UiText from '../UiText';
-import { POPOVER_PLACEMENTS } from '../../constants';
 
-const placements = Object.values(POPOVER_PLACEMENTS);
+const PLACEMENTS = {
+  AUTO: 'auto',
+  TOP: 'top',
+  RIGHT: 'right',
+  BOTTOM: 'bottom',
+  LEFT: 'left',
+};
+
+const placements = Object.values(PLACEMENTS);
 
 const Popover = ({ content, children, placement }) => (
   <Manager>
     <Reference>
       {({ ref }) =>
         React.cloneElement(children, {
-          className: 'Popover-wrapper',
-          forwardedRef: ref,
+          ref,
+          className: 'f-Popover-triggerer',
         })
       }
     </Reference>
@@ -24,11 +31,13 @@ const Popover = ({ content, children, placement }) => (
           ref={ref}
           style={style}
           data-placement={placement}
-          className={`Popover Popover--${placement}`}
+          className={`f-Popover-wrapper is--${placement}`}
         >
-          <UiText type={UiText.TYPES.subContent} as='span'>
-            {content}
-          </UiText>
+          <div className='f-Popover'>
+            <UiText variant={UiText.VARIANTS.subContent} as='span'>
+              {content}
+            </UiText>
+          </div>
         </div>
       )}
     </Popper>
@@ -42,9 +51,9 @@ Popover.propTypes = {
 };
 
 Popover.defaultProps = {
-  placement: POPOVER_PLACEMENTS.BOTTOM,
+  placement: PLACEMENTS.BOTTOM,
 };
 
-Popover.PLACEMENTS = POPOVER_PLACEMENTS;
+Popover.PLACEMENTS = PLACEMENTS;
 
 export default Popover;

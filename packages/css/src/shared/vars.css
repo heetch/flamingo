@@ -1,28 +1,24 @@
 :root {
-  --color-zelda: #fc99bc;
-  --color-rasberry: #fc006b;
-  --color-rose: #f80059;
-  --color-ruby: #cf125e;
-  --color-sonic: #200fc7;
-  --color-jackson: #30229b;
-  --color-meteorite: #39197a;
-  --color-concrete: #e8e5ea;
-  --color-chatelle: #b3abbc;
-  --color-granite: #685879;
-  --color-tolopea: #190134;
-  --color-white: #ffffff;
-  --color-grey: #f2f2f2;
-  --color-alto: #dedede;
-  --color-mint: #a6edc9;
-  --color-malachite: #48eb93;
-  --color-yoshi: #21d47a;
-  --color-luigi: #4cb963;
-  --color-link: #13a05a;
-  --color-sand: #fdeaae;
-  --color-canari: #fcd45c;
-  --color-jake: #e0b01d;
-  --color-sunglow: #fccb36;
-  --color-bittersweet: #ff785a;
+  --color-brand-primary: #ff2773;
+  --color-brand-primary--light: #ff4d95;
+  --color-brand-secondary: #2b1e70;
+  --color-brand-secondary--light: #252d9b;
+
+  --color-icon-white: #fff;
+  --color-icon-disabled: #dedede;
+  --color-icon-dark: #190134;
+
+  --color-ui-element--primary: #fff;
+  --color-ui-element--secondary: #685879;
+  --color-ui-element--tertiary: #b3abbc;
+  --color-ui-element--inactive: #f2f2f2;
+  --color-ui-element--error: #ee7d52;
+  --color-ui-element--success: #5cc689;
+
+  --color-ui-text-primary: #190134;
+  --color-ui-text-secondary: #685879;
+  --color-ui-text-tertiary: #b3abbc;
+  --color-ui-text-white: #fff;
 }
 
 :root {
@@ -52,32 +48,6 @@
   --icon--s: 0.75rem; /* 12px */
   --icon--m: 1rem; /* 16px */
   --icon--l: 1.25rem; /* 20px */
-}
-
-:root {
-  --gradient-rr: linear-gradient(
-    to right bottom,
-    var(--color-rose),
-    var(--color-razzmatazz)
-  );
-
-  --gradient-mr: linear-gradient(
-    to right bottom,
-    var(--color-rose2),
-    var(--color-meteorite)
-  );
-
-  --gradient-dm: linear-gradient(
-    to right bottom,
-    var(--color-sonic),
-    var(--color-meteorite)
-  );
-
-  --gradient-mt: linear-gradient(
-    to right bottom,
-    var(--color-meteorite),
-    var(--color-tolopea)
-  );
 }
 
 :root {

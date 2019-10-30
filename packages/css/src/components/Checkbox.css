@@ -1,83 +1,33 @@
-.Checkbox {
-  position: relative;
-  appearance: none;
-  background: white;
-  min-width: 1.25rem /* 20px */;
-  height: 1.25rem /* 20px */;
-  border: 1px solid var(--color-chatelle);
-  border-radius: var(--space-s);
+.f-Checkbox:checked,
+.f-Checkbox.is-undefined {
+  background-color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
 }
 
-.Checkbox-label > .Checkbox {
-  margin-right: var(--space-l);
+.f-Checkbox:disabled:after {
+  border-color: var(--color-icon-disabled) !important;
 }
 
-.Checkbox-label {
-  display: flex;
-  color: var(--color-tolopea);
-  font-size: var(--font-size--m);
-  margin-right: 0.625rem /* 10px */;
-}
+/* Icons */
 
-.Checkbox-helper {
-  margin: 0;
-  padding: 0;
-  color: var(--color-granite);
-  font-size: var(--font-size--s);
-}
-
-.Checkbox:hover {
-  border-color: var(--color-granite);
-}
-
-.Checkbox:disabled {
-  background: var(--color-grey);
-  cursor: not-allowed;
-}
-
-.Checkbox:disabled:hover {
-  border-color: var(--color-chatelle);
-}
-
-.Checkbox:checked,
-.Checkbox.is-undefined {
-  color: white;
-  background-color: var(--color-rose);
-  border-color: var(--color-rose);
-}
-
-.Checkbox:checked:disabled,
-.Checkbox:disabled.is-undefined {
-  border: 1px solid var(--color-chatelle);
-  background: var(--color-grey);
-}
-
-.Checkbox:checked:after {
+.f-Checkbox:checked:after {
   content: '';
   width: 10px;
   height: 5px;
   position: absolute;
   top: 4px;
   left: 3px;
-  border-left: 2px solid white;
-  border-bottom: 2px solid white;
+  border-left: 2px solid var(--color-ui-element--primary);
+  border-bottom: 2px solid var(--color-ui-element--primary);
   transform: rotate(-45deg);
 }
 
-.Checkbox:disabled:checked:after {
-  border-color: var(--color-alto);
-}
-
-.Checkbox.is-undefined:after {
+.f-Checkbox.is-undefined:after {
   content: '';
   width: 12px;
   height: 1px;
   position: absolute;
   top: 7px;
   left: 3px;
-  border-bottom: 2px solid white;
-}
-
-.Checkbox:disabled.is-undefined:after {
-  border-color: var(--color-alto);
+  border-bottom: 2px solid var(--color-ui-element--primary);
 }

@@ -1,24 +1,24 @@
-.Icon {
+.f-Icon {
   display: inline-block;
   width: var(--icon-size);
   height: var(--icon-size);
   vertical-align: middle;
 }
 
-.Icon svg {
+.f-Icon svg {
   display: block;
   fill: currentColor;
   width: var(--icon-size);
 }
 
-.Icon--s {
+.f-Icon--s {
   --icon-size: var(--icon--s);
 }
 
-.Icon--m {
+.f-Icon--m {
   --icon-size: var(--icon--m);
 }
 
-.Icon--l {
+.f-Icon--l {
   --icon-size: var(--icon--l);
 }

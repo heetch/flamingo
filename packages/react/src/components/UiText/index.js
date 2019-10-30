@@ -2,32 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { UI_TYPES, refShapes } from '../../constants';
+const VARIANTS = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
+  content: 'content',
+  contentBold: 'contentBold',
+  subContent: 'subContent',
+  subContentBold: 'subContentBold',
+};
 
-const types = Object.keys(UI_TYPES);
+const variants = Object.keys(VARIANTS);
 
-const UiText = ({ as: Component, className, forwardedRef, type, ...props }) => (
-  <Component
-    className={cx('UiText', `UiText--${UI_TYPES[type]}`, className)}
-    ref={forwardedRef}
-    {...props}
-  />
+const UiText = React.forwardRef(
+  ({ as: Component, className, variant, ...props }, ref) => (
+    <Component
+      className={cx('f-UiText', `f-UiText--${VARIANTS[variant]}`, className)}
+      ref={ref}
+      {...props}
+    />
+  ),
 );
+
+UiText.displayName = 'UiText';
 
 UiText.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  type: PropTypes.oneOf(types),
+  variant: PropTypes.oneOf(variants),
 };
 
 UiText.defaultProps = {
   as: 'p',
   className: undefined,
-  forwardedRef: undefined,
-  type: UI_TYPES.content,
+  variant: VARIANTS.content,
 };
 
-UiText.TYPES = UI_TYPES;
+UiText.VARIANTS = VARIANTS;
 
 export default UiText;

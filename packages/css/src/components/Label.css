@@ -1,11 +1,10 @@
-.Label {
+.f-Label {
   display: inline-block;
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
-  font-size: var(--font-size--s);
-  font-weight: var(--font-weight--bold);
+  color: var(--color-ui-text-primary);
 }
 
-.Label + .FormEl-wrapper {
+.f-Label + .f-FormEl-wrapper {
   margin-top: 0;
 }

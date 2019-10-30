@@ -2,58 +2,53 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { refShapes } from '../../constants';
+const Tabs = React.forwardRef(
+  ({ elements, buildTabLabel, buildReturnObject, onClick }, ref) => {
+    const [activeIndex, setActiveIndex] = useState(null);
 
-const Tabs = ({
-  elements,
-  buildTabLabel,
-  buildReturnObject,
-  forwardedRef,
-  onClick,
-}) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+    const handleTabClick = newActiveIndex => {
+      setActiveIndex(newActiveIndex);
+      if (onClick) {
+        onClick(
+          buildReturnObject
+            ? buildReturnObject(elements[newActiveIndex])
+            : newActiveIndex,
+        );
+      }
+    };
 
-  const handleTabClick = newActiveIndex => {
-    setActiveIndex(newActiveIndex);
-    if (onClick) {
-      onClick(
-        buildReturnObject
-          ? buildReturnObject(elements[newActiveIndex])
-          : newActiveIndex,
-      );
-    }
-  };
-
-  return (
-    <div className='container' ref={forwardedRef}>
-      <div className='Tabs'>
-        {elements.map((element, index) => (
-          <span
-            key={element}
-            onClick={() => handleTabClick(index)}
-            role='button'
-            onKeyPress={({ which }) =>
-              which === 13 ? handleTabClick(index) : undefined
-            }
-            tabIndex={0}
-          >
-            <div className='Tabs-label'>
-              {buildTabLabel ? buildTabLabel(element) : element}
-            </div>
-            <div
-              className={cx('Tabs-marker', {
-                'is-active': activeIndex === index,
-              })}
-            />
-          </span>
-        ))}
+    return (
+      <div className='f-TabsContainer' ref={ref}>
+        <div className='f-Tabs'>
+          {elements.map((element, index) => (
+            <span
+              key={element}
+              onClick={() => handleTabClick(index)}
+              role='button'
+              onKeyPress={({ which }) =>
+                which === 13 ? handleTabClick(index) : undefined
+              }
+              tabIndex={0}
+            >
+              <div className='f-Tabs-label'>
+                {buildTabLabel ? buildTabLabel(element) : element}
+              </div>
+              <div
+                className={cx('f-Tabs-marker', {
+                  'is-active': activeIndex === index,
+                })}
+              />
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
+
+Tabs.displayName = 'Tabs';
 
 Tabs.propTypes = {
-  forwardedRef: PropTypes.oneOfType(refShapes),
   /** An array of strings or objects that will make tabs content */
   elements: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
@@ -68,7 +63,6 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   buildTabLabel: null,
   buildReturnObject: null,
-  forwardedRef: undefined,
   onClick: () => {},
 };
 

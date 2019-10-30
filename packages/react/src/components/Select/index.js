@@ -5,49 +5,48 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICONS, ICON_SIZES } from '../../constants';
+const Select = React.forwardRef(
+  (
+    { className, disabled: isDisabled, id, onChange, options, ...props },
+    ref,
+  ) => {
+    const classes = {
+      'is-disabled': isDisabled,
+    };
 
-const Select = ({
-  className,
-  disabled: isDisabled,
-  id,
-  onChange,
-  options,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-  };
+    return (
+      <div className={cx('f-FormEl-wrapper Select-wrapper', { ...classes })}>
+        <UiText
+          as='select'
+          variant={UiText.VARIANTS.content}
+          className={cx('f-FormEl', 'f-FormEl--withIcon', 'Select', className, {
+            ...classes,
+          })}
+          disabled={isDisabled}
+          id={id}
+          name={id}
+          onChange={onChange}
+          ref={ref}
+          {...props}
+        >
+          {options.map(({ label, value }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </UiText>
 
-  return (
-    <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
-      <UiText
-        as='select'
-        type={UiText.TYPES.content}
-        className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
-          ...classes,
-        })}
-        disabled={isDisabled}
-        id={id}
-        name={id}
-        onChange={onChange}
-        {...props}
-      >
-        {options.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </UiText>
+        <Icon
+          icon={Icon.ICONS.IconChevronUpDown}
+          className='f-FormEl-icon'
+          size={Icon.SIZES.L}
+        />
+      </div>
+    );
+  },
+);
 
-      <Icon
-        icon={ICONS.IconChevronDown}
-        className='FormEl-icon'
-        size={ICON_SIZES.L}
-      />
-    </div>
-  );
-};
+Select.displayName = 'Select';
 
 Select.propTypes = {
   className: PropTypes.string,
@@ -56,7 +55,8 @@ Select.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.exact({
-      label: PropTypes.string.isRequired,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
     }),

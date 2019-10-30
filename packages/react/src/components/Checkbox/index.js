@@ -1,50 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { safeInvoke } from '../../utils';
 import cx from 'classnames';
 
-const Checkbox = ({
-  isUndefined,
-  disabled,
-  children,
-  checked: isDefaultChecked,
-  helper,
-  name,
-  value,
-  onChange,
-}) => {
-  const [isChecked, setIsChecked] = useState(isDefaultChecked);
+import Helper from '../Helper';
+import UiText from '../UiText';
 
-  const onCheckboxStateChange = e => {
-    const { checked } = e.target;
-    setIsChecked(checked);
-    safeInvoke(onChange(e));
-  };
+const Checkbox = React.forwardRef(
+  (
+    { isUndefined, disabled, children, checked, helper, id, value, onChange },
+    ref,
+  ) => {
+    const checkbox = (
+      <input
+        defaultChecked={checked}
+        disabled={disabled}
+        className={cx('f-Checkbox', {
+          'is-undefined': !checked && isUndefined,
+        })}
+        type='checkbox'
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        ref={ref}
+      />
+    );
 
-  const buildInputTag = () => (
-    <input
-      checked={isChecked}
-      disabled={disabled}
-      className={cx('Checkbox', { 'is-undefined': !isChecked && isUndefined })}
-      type='checkbox'
-      name={name}
-      value={value}
-      onChange={onCheckboxStateChange}
-    />
-  );
+    if (!children) {
+      return checkbox;
+    }
 
-  return children ? (
-    <label className='Checkbox-label'>
-      {buildInputTag()}
-      <div>
-        {children}
-        {helper && <p className='Checkbox-helper'>{helper}</p>}
+    return (
+      <div className='f-FormEl-wrapper'>
+        {checkbox}
+        <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
+          {children}
+          {helper && <Helper>{helper}</Helper>}
+        </UiText>
       </div>
-    </label>
-  ) : (
-    buildInputTag()
-  );
-};
+    );
+  },
+);
+
+Checkbox.displayName = 'Checkbox';
 
 Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,
@@ -52,7 +50,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   value: PropTypes.string,
   helper: PropTypes.string,
 };

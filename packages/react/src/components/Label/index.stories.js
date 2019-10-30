@@ -1,12 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 
-import { Label } from '..';
+import Label from '.';
+import Heading from '../Heading';
 
-const defaultProps = {
-  htmlFor: 'input-id',
-};
+const inputId = 'input-id';
 
-storiesOf('Form controls/Label', module).add('Default', () => (
-  <Label {...defaultProps}>Input Label</Label>
+const stories = storiesOf('Form controls/Label', module);
+
+stories.add('Playground', () => (
+  <>
+    <Heading>Label</Heading>
+    <Label htmlFor={inputId}>{text('Label content', 'Label')}</Label>
+  </>
 ));

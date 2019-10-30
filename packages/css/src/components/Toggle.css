@@ -1,9 +1,9 @@
-.Toggle {
+.f-Toggle {
   position: relative;
   min-width: 3.375rem /* 54px */;
   height: 1.25rem /* 20px */;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-chatelle);
+  background-color: var(--color-ui-element--primary);
+  border: 1px solid var(--color-ui-element--tertiary);
   border-radius: 10px;
   cursor: default;
   transition: all 0.3s;
@@ -12,22 +12,22 @@
   --Toggle-bullet-space: 0.25rem /* 4px */;
 }
 
-.ToggleContainer:hover > .Toggle {
-  border-color: var(--my-new-color);
+.f-Toggle:hover {
+  border-color: var(--color-ui-element--secondary);
 }
 
-.Toggle-bullet {
+.f-Toggle-bullet {
   position: absolute;
   height: var(--Toggle-bullet-size);
   width: var(--Toggle-bullet-size);
-  background-color: var(--color-granite);
+  background-color: var(--color-ui-element--secondary);
   border-radius: 8px;
   top: 2px;
   left: 2px;
   transition: all 0.3s;
 }
 
-.Toggle-bullet-label {
+.f-Toggle-bullet-label {
   text-transform: uppercase;
   text-align: center;
   font-size: var(--font-size--xs);
@@ -37,77 +37,72 @@
   bottom: 2px;
 }
 
-.Toggle-bullet-label.Toggle-bullet-label--off {
+.f-Toggle-bullet-label.f-Toggle-bullet-label--off {
   left: var(--Toggle-bullet-space-for-label);
   right: var(--Toggle-bullet-space);
-  color: var(--color-granite);
+  color: var(--color-ui-text-secondary);
   visibility: visible;
   transition: visibility 0.3s linear;
   transition-delay: 0.1s;
 }
 
-.ToggleContainer.is-on .Toggle-bullet-label--off {
+.f-ToggleContainer.is-on .f-Toggle-bullet-label--off {
   visibility: hidden;
   transition: visibility 0.1s linear;
 }
 
-.Toggle-bullet-label--on {
+.f-Toggle-bullet-label--on {
   right: var(--Toggle-bullet-space-for-label);
   left: var(--Toggle-bullet-space);
-  color: var(--color-white);
+  color: var(--color-ui-text-white);
   visibility: hidden;
   transition: visibility 0.1s linear;
 }
 
-.ToggleContainer.is-disabled .Toggle-bullet-label--on {
-  color: var(--color-granite);
+.f-ToggleContainer.is-disabled .f-Toggle-bullet-label--on,
+.f-ToggleContainer.is-disabled .f-Toggle-bullet-label--off {
+  color: var(--color-ui-element--tertiary);
 }
 
-.ToggleContainer.is-on .Toggle-bullet-label--on {
+.f-ToggleContainer.is-on .f-Toggle-bullet-label--on {
   visibility: visible;
   transition: visibility 0.3s linear;
   transition-delay: 0.1s;
 }
 
-.ToggleContainer.is-on .Toggle {
-  background-color: var(--color-rose);
-  border-color: var(--color-rose);
+.f-ToggleContainer.is-on .f-Toggle {
+  background-color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
   transition: all 0.3s;
 }
 
-.ToggleContainer.is-on .Toggle-bullet {
+.f-ToggleContainer.is-on .f-Toggle-bullet {
   left: 100%;
   margin-left: -16px;
-  background-color: var(--color-white);
+  background-color: var(--color-ui-text-white);
   transition: all 0.3s;
 }
 
-.ToggleContainer.is-disabled .Toggle {
-  background-color: var(--color-grey);
-  border-color: var(--color-grey);
+.f-ToggleContainer.is-disabled .f-Toggle {
+  background-color: var(--color-ui-element--inactive);
+  border-color: var(--color-ui-element--tertiary);
   cursor: not-allowed;
 }
 
-.ToggleContainer.is-disabled .Toggle-bullet {
-  background-color: var(--color-chatelle);
+.f-ToggleContainer.is-disabled .f-Toggle-bullet {
+  background-color: var(--color-ui-element--tertiary);
 }
 
-.ToggleContainer {
+.f-ToggleContainer {
   display: flex;
   margin-right: var(--space-m);
 }
 
-.Toggle-helper {
-  margin: 0;
-  color: var(--color-granite);
-  font-size: var(--font-size--s);
-}
-
-.Toggle-labels {
+.f-Toggle-labels {
   margin-left: var(--space-l);
   cursor: default;
 }
 
-.ToggleContainer.is-disabled > .Toggle-labels {
+.f-ToggleContainer.is-disabled > .f-Toggle-labels {
   cursor: not-allowed;
 }

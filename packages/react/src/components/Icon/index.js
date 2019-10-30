@@ -2,32 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ICON_SIZES, ICONS_SVGS, refShapes } from '../../constants';
+import * as SVGS from '../../constants/icons';
 
-const sizes = Object.values(ICON_SIZES);
-const icons = Object.keys(ICONS_SVGS);
+const NAMES = Object.keys(SVGS);
 
-const Icon = ({ className, forwardedRef, icon, size, ...props }) => (
+const ICONS = NAMES.reduce(
+  (icons, icon) => ({
+    ...icons,
+    [icon]: icon,
+  }),
+  {},
+);
+
+const SIZES = {
+  S: 's',
+  M: 'm',
+  L: 'l',
+};
+
+const sizes = Object.values(SIZES);
+
+const Icon = React.forwardRef(({ className, icon, size, ...props }, ref) => (
   <i
-    className={cx('Icon', `Icon--${size}`, className)}
-    ref={forwardedRef}
+    className={cx('f-Icon', `f-Icon--${size}`, className)}
+    ref={ref}
     {...props}
   >
-    {ICONS_SVGS[icon]}
+    {SVGS[icon]}
   </i>
-);
+));
+
+Icon.displayName = 'Icon';
 
 Icon.propTypes = {
   className: PropTypes.string,
-  forwardedRef: PropTypes.oneOfType(refShapes),
-  icon: PropTypes.oneOf(icons).isRequired,
+  icon: PropTypes.oneOf(NAMES).isRequired,
   size: PropTypes.oneOf(sizes),
 };
 
 Icon.defaultProps = {
   className: undefined,
-  forwardedRef: undefined,
-  size: ICON_SIZES.M,
+  size: SIZES.M,
 };
+
+Icon.ICONS = ICONS;
+Icon.NAMES = NAMES;
+Icon.SIZES = SIZES;
 
 export default Icon;

@@ -5,56 +5,57 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { ICONS, INPUT_TYPES } from '../../constants';
+const Input = React.forwardRef(
+  (
+    {
+      className,
+      disabled: isDisabled,
+      id,
+      invalid: isInvalid,
+      onChange,
+      placeholder,
+      valid: isValid,
+      ...props
+    },
+    ref,
+  ) => {
+    const classes = {
+      'is-disabled': isDisabled,
+      'is-valid': isValid,
+      'is-invalid': isInvalid,
+    };
 
-const types = Object.values(INPUT_TYPES);
+    return (
+      <div className={cx('f-FormEl-wrapper', 'Input-wrapper', { ...classes })}>
+        <UiText
+          as='input'
+          variant={UiText.VARIANTS.content}
+          className={cx('f-FormEl', 'Input', className, {
+            ...classes,
+            'f-FormEl--withIcon': isValid || isInvalid,
+          })}
+          disabled={isDisabled}
+          id={id}
+          name={id}
+          onChange={onChange}
+          placeholder={placeholder}
+          ref={ref}
+          {...props}
+        />
 
-const defaultIconProps = {
-  className: 'FormEl-icon',
-};
+        {isInvalid && (
+          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
+        )}
 
-const Input = ({
-  className,
-  disabled: isDisabled,
-  id,
-  invalid: isInvalid,
-  onChange,
-  placeholder,
-  type,
-  valid: isValid,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-    'is-valid': isValid,
-    'is-invalid': isInvalid,
-  };
+        {isValid && (
+          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
+        )}
+      </div>
+    );
+  },
+);
 
-  return (
-    <div className={cx('FormEl-wrapper', 'Input-wrapper', { ...classes })}>
-      <UiText
-        as='input'
-        type={UiText.TYPES.content}
-        className={cx('FormEl', 'Input', className, {
-          ...classes,
-          'FormEl--withIcon': isValid || isInvalid,
-        })}
-        disabled={isDisabled}
-        id={id}
-        name={id}
-        onChange={onChange}
-        placeholder={placeholder}
-        {...props}
-      />
-
-      {isInvalid && (
-        <Icon icon={ICONS.IconAlertOctagon} {...defaultIconProps} />
-      )}
-
-      {isValid && <Icon icon={ICONS.IconCheck} {...defaultIconProps} />}
-    </div>
-  );
-};
+Input.displayName = 'Input';
 
 Input.propTypes = {
   className: PropTypes.string,
@@ -63,7 +64,6 @@ Input.propTypes = {
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(types),
   valid: PropTypes.bool,
 };
 
@@ -72,7 +72,6 @@ Input.defaultProps = {
   disabled: false,
   invalid: false,
   placeholder: '',
-  type: INPUT_TYPES.TEXT,
   valid: false,
 };
 

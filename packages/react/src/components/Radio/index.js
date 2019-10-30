@@ -1,47 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Radio = ({
-  disabled,
-  children,
-  checked,
-  helper,
-  name,
-  value,
-  onChange,
-}) => {
-  const buildInputTag = () => (
-    <input
-      defaultChecked={checked}
-      disabled={disabled}
-      className='Radio'
-      type='radio'
-      name={name}
-      value={value}
-      onChange={onChange}
-    />
-  );
+import Helper from '../Helper';
+import UiText from '../UiText';
 
-  return children ? (
-    <label className='Radio-label'>
-      {buildInputTag()}
-      <div>
-        {children}
-        {helper && <p className='Radio-helper'>{helper}</p>}
+const Radio = React.forwardRef(
+  ({ disabled, children, checked, helper, id, name, onChange }, ref) => {
+    const input = (
+      <input
+        defaultChecked={checked}
+        disabled={disabled}
+        className='f-Radio'
+        type='radio'
+        id={id}
+        name={name}
+        onChange={onChange}
+        ref={ref}
+      />
+    );
+
+    if (!children) {
+      return input;
+    }
+
+    return (
+      <div className='f-FormEl-wrapper'>
+        {input}
+        <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
+          {children}
+          {helper && <Helper>{helper}</Helper>}
+        </UiText>
       </div>
-    </label>
-  ) : (
-    buildInputTag()
-  );
-};
+    );
+  },
+);
+
+Radio.displayName = 'Radio';
 
 Radio.propTypes = {
   onChange: PropTypes.func.isRequired,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   helper: PropTypes.string,
 };
 

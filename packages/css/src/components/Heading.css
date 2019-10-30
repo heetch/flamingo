@@ -1,19 +1,20 @@
-.Heading {
-  color: var(--color-tolopea);
+.f-Heading {
+  color: var(--color-ui-text-primary);
+  margin-top: var(--space-m);
   margin-bottom: var(--space-m);
 }
 
-.Heading--1 {
+.f-Heading--1 {
   margin-top: var(--space-xl);
 }
 
-.Heading--2 {
+.f-Heading--2 {
   margin-top: var(--space-l);
 }
 
-.Heading--3,
-.Heading--4,
-.Heading--5,
-.Heading--6 {
+.f-Heading--3,
+.f-Heading--4,
+.f-Heading--5,
+.f-Heading--6 {
   margin-top: var(--space-m);
 }

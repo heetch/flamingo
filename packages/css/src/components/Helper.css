@@ -1,14 +1,14 @@
-.Helper {
-  --text-color: var(--color-granite);
+.f-Helper {
+  --text-color: var(--color-ui-text-secondary);
 
   display: block;
   color: var(--text-color);
 }
 
-.is-invalid + .Helper .Text {
-  --text-color: var(--color-ruby);
+.is-invalid + .f-Helper .f-Text {
+  --text-color: var(--color-ui-element--error);
 }
 
-.is-valid + .Helper .Text {
-  --text-color: var(--color-link);
+.is-valid + .f-Helper .f-Text {
+  --text-color: var(--color-ui-element--success);
 }

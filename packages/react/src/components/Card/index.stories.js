@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import Card from '.';
 import Heading from '../Heading';
@@ -15,11 +15,9 @@ const Container = (
 
 const stories = storiesOf('Card', module);
 
-stories.addDecorator(withKnobs);
-
 stories.add('All states', () => (
   <>
-    <Heading as={Heading.LEVELS.h1}>Card</Heading>
+    <Heading>Card</Heading>
 
     <Container>
       <Card>
@@ -37,7 +35,7 @@ stories.add('All states', () => (
       </Card>
     </Container>
 
-    <Heading as={Heading.LEVELS.h2}>With elevations</Heading>
+    <Heading level={2}>Elevations</Heading>
 
     {ELEVATIONS.map(elevation => (
       <Container key={elevation}>
@@ -47,7 +45,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading as={Heading.LEVELS.h2}>With sizes</Heading>
+    <Heading level={2}>Sizes</Heading>
 
     {sizes.map(size => (
       <Container key={size}>
@@ -57,7 +55,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading as={Heading.LEVELS.h2}>Cards in Cards</Heading>
+    <Heading level={2}>Inception</Heading>
 
     <Card>
       <Card>
