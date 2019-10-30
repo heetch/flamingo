@@ -4,8 +4,7 @@ https://heetch.github.io/flamingo/
 
 ## What is it
 
-Flamingo is Heetch's design system
-
+Flamingo is Heetch's web design system
 It's available as React component library and standalone CSS
 
 ## Packages
