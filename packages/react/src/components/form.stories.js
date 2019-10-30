@@ -18,7 +18,7 @@ const formProps = {
 };
 
 const Wrapper = props => (
-  <div style={{ paddingBottom: 'var(--space-m)' }} {...props} />
+  <div style={{ paddingBottom: 'var(--f-space--m)' }} {...props} />
 );
 
 const stories = storiesOf('Form controls', module);

@@ -37,16 +37,20 @@ const IconsFilterer = () => {
           <div
             key={icon}
             style={{
-              padding: 'var(--space-s)',
+              padding: 'var(--f-space--s)',
               width: '25%',
               textAlign: 'center',
             }}
           >
             <Card size={Card.SIZES.S}>
-              <Icon key={`Icon--${icon}`} icon={icon} size={Icon.SIZES.L} />
+              <Icon
+                key={`f-iconSize--${icon}`}
+                icon={icon}
+                size={Icon.SIZES.L}
+              />
               <Helper
                 className='u-ellipsis'
-                style={{ marginTop: 'var(--space-s)' }}
+                style={{ marginTop: 'var(--f-space--s)' }}
               >
                 {icon}
               </Helper>

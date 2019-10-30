@@ -20,8 +20,8 @@
 }
 
 .f-ImageUploader-hoverState {
-  background: rgba(25, 1, 52, 0.8); /* --color-ui-text-primary */
-  padding: 0 var(--space-m);
+  background: rgba(25, 1, 52, 0.8); /* --f-color-text--primary */
+  padding: 0 var(--f-space--m);
   text-align: right;
   opacity: 0;
   z-index: 15;

@@ -20,18 +20,18 @@ stories.add('All states', () => (
     <Heading level={2}>Sizes</Heading>
 
     {Object.values(SIZES).map(size => (
-      <div key={size} style={{ marginBottom: 'var(--space-l)' }}>
-        <div style={{ marginBottom: 'var(--space-s)' }}>
+      <div key={size} style={{ marginBottom: 'var(--f-space--l)' }}>
+        <div style={{ marginBottom: 'var(--f-space--s)' }}>
           <Item size={size}>{`${capitalize(size)} size`}</Item>
         </div>
 
-        <div style={{ marginBottom: 'var(--space-s)' }}>
+        <div style={{ marginBottom: 'var(--f-space--s)' }}>
           <Item size={size} helper='with onClick' onClick={() => {}}>
             {`${capitalize(size)} size`}
           </Item>
         </div>
 
-        <div style={{ marginBottom: 'var(--space-s)' }}>
+        <div style={{ marginBottom: 'var(--f-space--s)' }}>
           <Item
             size={size}
             helper='with onClick and value'
@@ -42,7 +42,7 @@ stories.add('All states', () => (
           </Item>
         </div>
 
-        <div style={{ marginBottom: 'var(--space-s)' }}>
+        <div style={{ marginBottom: 'var(--f-space--s)' }}>
           <Item
             size={size}
             contentIcon={Icon.ICONS.IconMoon}
@@ -58,12 +58,12 @@ stories.add('All states', () => (
     ))}
 
     <Heading level={2}>States</Heading>
-    <div style={{ marginBottom: 'var(--space-s)' }}>
+    <div style={{ marginBottom: 'var(--f-space--s)' }}>
       <Item invalid value='Nope' valueIcon={Icon.ICONS.IconCross}>
         Invalid
       </Item>
     </div>
-    <div style={{ marginBottom: 'var(--space-s)' }}>
+    <div style={{ marginBottom: 'var(--f-space--s)' }}>
       <Item valid value='All good' valueIcon={Icon.ICONS.IconCheck}>
         Valid
       </Item>

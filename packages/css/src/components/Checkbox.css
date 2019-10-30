@@ -1,11 +1,11 @@
 .f-Checkbox:checked,
 .f-Checkbox.is-undefined {
-  background-color: var(--color-brand-primary);
-  border-color: var(--color-brand-primary);
+  background-color: var(--f-color-brandPrimary);
+  border-color: var(--f-color-brandPrimary);
 }
 
 .f-Checkbox:disabled:after {
-  border-color: var(--color-icon-disabled) !important;
+  border-color: var(--f-color-icon--disabled) !important;
 }
 
 /* Icons */
@@ -17,8 +17,8 @@
   position: absolute;
   top: 4px;
   left: 3px;
-  border-left: 2px solid var(--color-ui-element--primary);
-  border-bottom: 2px solid var(--color-ui-element--primary);
+  border-left: 2px solid var(--f-color-element--primary);
+  border-bottom: 2px solid var(--f-color-element--primary);
   transform: rotate(-45deg);
 }
 
@@ -29,5 +29,5 @@
   position: absolute;
   top: 7px;
   left: 3px;
-  border-bottom: 2px solid var(--color-ui-element--primary);
+  border-bottom: 2px solid var(--f-color-element--primary);
 }

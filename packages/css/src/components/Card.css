@@ -1,33 +1,33 @@
 .f-Card {
-  --borderColor: var(--color-ui-element--inactive);
+  --borderColor: var(--f-color-element--inactive);
 
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
   box-shadow: 0 0 0 1px var(--borderColor);
-  border-radius: var(--radius-xl);
+  border-radius: var(--f-borderRadius--xl);
 }
 
 .f-Card .f-Card {
-  border-radius: var(--radius-l);
+  border-radius: var(--f-borderRadius--l);
 }
 
 .f-Card .f-Card .f-Card {
-  border-radius: var(--radius-m);
+  border-radius: var(--f-borderRadius--m);
 }
 
 .f-Card .f-Card .f-Card .f-Card {
-  border-radius: var(--radius-s);
+  border-radius: var(--f-borderRadius--s);
 }
 
 .f-Card--s {
-  padding: var(--space-xl);
+  padding: var(--f-space--xl);
 }
 
 .f-Card--m {
-  padding: var(--space-xxl);
+  padding: var(--f-space--xxl);
 }
 
 .f-Card.is-selected {
-  --borderColor: var(--color-brand-primary);
+  --borderColor: var(--f-color-brandPrimary);
   box-shadow: inset 0 0 0 3px var(--borderColor);
 }
 

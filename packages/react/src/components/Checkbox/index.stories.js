@@ -18,7 +18,7 @@ stories.add('All states', () => (
     <Heading>Checkbox</Heading>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>Default</Heading>
         <Checkbox {...defaultProps} id='c1' />
       </div>
@@ -29,7 +29,7 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>Checked</Heading>
         <Checkbox {...defaultProps} id='c3' checked />
       </div>
@@ -40,7 +40,7 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>Undefined</Heading>
         <Checkbox {...defaultProps} id='c5' isUndefined />
       </div>
@@ -51,7 +51,7 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>No text</Heading>
         <Checkbox onChange={defaultProps.onChange} id='c7' />
       </div>

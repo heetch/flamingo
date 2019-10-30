@@ -3,37 +3,37 @@
     this variable has to be here because of
     the Icon children which relies on it
   */
-  --icon-color: var(--color-icon-dark);
-  --icon-size: var(--icon--m);
-  --icon-spaceAround: var(--space-m);
+  --icon-color: var(--f-color-icon--dark);
+  --icon-size: var(--f-iconSize--m);
+  --icon-spaceAround: var(--f-space--m);
 
   display: flex;
   position: relative;
   min-width: 12.5rem;
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
-  color: var(--color-ui-text-primary);
+  margin-top: var(--f-space--m);
+  margin-bottom: var(--f-space--m);
+  color: var(--f-color-text--primary);
 }
 
 .f-FormEl-wrapper.is-invalid {
-  --icon-color: var(--color-ui-element--error);
+  --icon-color: var(--f-color-element--error);
 }
 
 .f-FormEl-wrapper.is-valid {
-  --icon-color: var(--color-ui-element--success);
+  --icon-color: var(--f-color-element--success);
 }
 
 .f-FormEl {
-  --background-color: var(--color-ui-element--primary);
-  --border-color: var(--color-ui-element--tertiary);
+  --background-color: var(--f-color-element--primary);
+  --border-color: var(--f-color-element--tertiary);
   --border-size: 1px;
 
   display: block;
   width: 100%;
-  padding: var(--space-m) var(--space-xl);
+  padding: var(--f-space--m) var(--f-space--xl);
   border: 0;
   border-radius: 1.25rem;
-  color: var(--color-ui-text-secondary);
+  color: var(--f-color-text--secondary);
   background-color: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
   outline: none;
@@ -42,11 +42,11 @@
 }
 
 .f-FormEl-wrapper.is-invalid .f-FormEl {
-  --border-color: var(--color-ui-element--error);
+  --border-color: var(--f-color-element--error);
 }
 
 .f-FormEl-wrapper.is-valid .f-FormEl {
-  --border-color: var(--color-ui-element--success);
+  --border-color: var(--f-color-element--success);
 }
 
 .f-FormEl--withIcon {
@@ -55,8 +55,8 @@
 
 @media (max-width: 460px) {
   .f-FormEl {
-    padding-top: var(--space-l);
-    padding-bottom: var(--space-l);
+    padding-top: var(--f-space--l);
+    padding-bottom: var(--f-space--l);
   }
 }
 
@@ -64,7 +64,7 @@
 .f-FormEl.is-hover,
 .f-FormEl:focus,
 .f-FormEl.is-focus {
-  --border-color: var(--color-ui-element--secondary);
+  --border-color: var(--f-color-element--secondary);
 }
 
 .f-FormEl:focus,
@@ -74,15 +74,15 @@
 
 .f-FormEl:disabled,
 .f-FormEl.is-disabled {
-  --border-color: var(--color-ui-element--tertiary);
-  --background-color: var(--color-ui-element--inactive);
+  --border-color: var(--f-color-element--tertiary);
+  --background-color: var(--f-color-element--inactive);
   cursor: not-allowed;
 }
 
 .f-FormEl-icon {
   position: absolute;
   top: 50%;
-  right: var(--space-l);
+  right: var(--f-space--l);
   transform: translateY(-50%);
   color: var(--icon-color);
   pointer-events: none;
@@ -96,22 +96,22 @@
 
   position: relative;
   appearance: none;
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
   min-width: var(--size);
-  margin-right: var(--space-l);
+  margin-right: var(--f-space--l);
   height: var(--size);
-  border: 1px solid var(--color-ui-element--tertiary);
-  border-radius: var(--space-s);
+  border: 1px solid var(--f-color-element--tertiary);
+  border-radius: var(--f-space--s);
   transition: border-color 0.2s ease-out;
 }
 .f-Checkbox:hover,
 .f-Radio:hover {
-  border-color: var(--color-ui-element--secondary);
+  border-color: var(--f-color-element--secondary);
 }
 
 .f-Checkbox:disabled,
 .f-Radio:disabled {
-  border-color: var(--color-ui-element--tertiary) !important;
-  background-color: var(--color-ui-element--inactive) !important;
+  border-color: var(--f-color-element--tertiary) !important;
+  background-color: var(--f-color-element--inactive) !important;
   cursor: not-allowed;
 }
