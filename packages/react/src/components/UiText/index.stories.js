@@ -13,22 +13,22 @@ const stories = storiesOf('UiText', module);
 stories.add('All states', () => (
   <>
     <Heading>UiText</Heading>
-    <Heading level={2}>Types</Heading>
-    {variants.map(type => (
-      <UiText key={type} type={type}>
-        {type}
+    <Heading level={2}>Variants</Heading>
+    {variants.map(variant => (
+      <UiText key={variant} variant={variant}>
+        {variant}
       </UiText>
     ))}
 
     <Heading level={2}>Custom component</Heading>
-    <UiText as='div' type={VARIANTS.h1}>
+    <UiText as='div' variant={VARIANTS.h1}>
       As div
     </UiText>
   </>
 ));
 
 stories.add('Playground', () => (
-  <UiText type={select('Variants', variants, VARIANTS.contentBold)}>
+  <UiText variant={select('Variants', variants, VARIANTS.contentBold)}>
     {text('Content', 'Content')}
   </UiText>
 ));
