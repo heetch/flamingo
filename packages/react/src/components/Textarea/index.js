@@ -5,47 +5,55 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-const Textarea = ({
-  id,
-  className,
-  disabled: isDisabled,
-  invalid: isInvalid,
-  onChange,
-  placeholder,
-  valid: isValid,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-    'is-valid': isValid,
-    'is-invalid': isInvalid,
-  };
+const Textarea = React.forwardRef(
+  (
+    {
+      id,
+      className,
+      disabled: isDisabled,
+      invalid: isInvalid,
+      onChange,
+      placeholder,
+      valid: isValid,
+      ...props
+    },
+    ref,
+  ) => {
+    const classes = {
+      'is-disabled': isDisabled,
+      'is-valid': isValid,
+      'is-invalid': isInvalid,
+    };
 
-  return (
-    <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
-      <UiText
-        as='textarea'
-        variant={UiText.VARIANTS.content}
-        className={cx('FormEl', 'Textarea', className, {
-          ...classes,
-          'FormEl--withIcon': isValid || isInvalid,
-        })}
-        disabled={isDisabled}
-        id={id}
-        name={id}
-        onChange={onChange}
-        placeholder={placeholder}
-        {...props}
-      />
+    return (
+      <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
+        <UiText
+          as='textarea'
+          variant={UiText.VARIANTS.content}
+          className={cx('FormEl', 'Textarea', className, {
+            ...classes,
+            'FormEl--withIcon': isValid || isInvalid,
+          })}
+          disabled={isDisabled}
+          id={id}
+          name={id}
+          onChange={onChange}
+          placeholder={placeholder}
+          ref={ref}
+          {...props}
+        />
 
-      {isInvalid && (
-        <Icon icon={Icon.ICONS.IconAlertOctagon} className='FormEl-icon' />
-      )}
+        {isInvalid && (
+          <Icon icon={Icon.ICONS.IconAlertOctagon} className='FormEl-icon' />
+        )}
 
-      {isValid && <Icon icon={Icon.ICONS.IconCheck} className='FormEl-icon' />}
-    </div>
-  );
-};
+        {isValid && (
+          <Icon icon={Icon.ICONS.IconCheck} className='FormEl-icon' />
+        )}
+      </div>
+    );
+  },
+);
 
 Textarea.propTypes = {
   className: PropTypes.string,

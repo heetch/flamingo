@@ -19,34 +19,40 @@ const VARIANTS = {
 const intents = Object.values(INTENTS);
 const variants = Object.values(VARIANTS);
 
-const Button = ({
-  as: Component,
-  className,
-  children,
-  disabled,
-  intent,
-  isLoading,
-  type,
-  variant,
-  ...props
-}) => (
-  <Component
-    className={cx('Button', className, {
-      'is-disabled': disabled,
-      'is-loading': isLoading,
-      [`is-${intent}`]: intent,
-      [`is-${variant}`]: variant,
-    })}
-    disabled={disabled}
-    type={type}
-    {...props}
-  >
-    <div className='Button-loadingState'>
-      <Spinner size={Icon.SIZES.L} />
-    </div>
+const Button = React.forwardRef(
+  (
+    {
+      as: Component,
+      className,
+      children,
+      disabled,
+      intent,
+      isLoading,
+      type,
+      variant,
+      ...props
+    },
+    ref,
+  ) => (
+    <Component
+      className={cx('Button', className, {
+        'is-disabled': disabled,
+        'is-loading': isLoading,
+        [`is-${intent}`]: intent,
+        [`is-${variant}`]: variant,
+      })}
+      disabled={disabled}
+      type={type}
+      ref={ref}
+      {...props}
+    >
+      <div className='Button-loadingState'>
+        <Spinner size={Icon.SIZES.L} />
+      </div>
 
-    <span className='Button-content'>{children}</span>
-  </Component>
+      <span className='Button-content'>{children}</span>
+    </Component>
+  ),
 );
 
 Button.propTypes = {

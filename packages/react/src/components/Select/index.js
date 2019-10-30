@@ -5,47 +5,46 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-const Select = ({
-  className,
-  disabled: isDisabled,
-  id,
-  onChange,
-  options,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-  };
+const Select = React.forwardRef(
+  (
+    { className, disabled: isDisabled, id, onChange, options, ...props },
+    ref,
+  ) => {
+    const classes = {
+      'is-disabled': isDisabled,
+    };
 
-  return (
-    <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
-      <UiText
-        as='select'
-        variant={UiText.VARIANTS.content}
-        className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
-          ...classes,
-        })}
-        disabled={isDisabled}
-        id={id}
-        name={id}
-        onChange={onChange}
-        {...props}
-      >
-        {options.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </UiText>
+    return (
+      <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
+        <UiText
+          as='select'
+          variant={UiText.VARIANTS.content}
+          className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
+            ...classes,
+          })}
+          disabled={isDisabled}
+          id={id}
+          name={id}
+          onChange={onChange}
+          ref={ref}
+          {...props}
+        >
+          {options.map(({ label, value }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </UiText>
 
-      <Icon
-        icon={Icon.ICONS.IconChevronUpDown}
-        className='FormEl-icon'
-        size={Icon.SIZES.L}
-      />
-    </div>
-  );
-};
+        <Icon
+          icon={Icon.ICONS.IconChevronUpDown}
+          className='FormEl-icon'
+          size={Icon.SIZES.L}
+        />
+      </div>
+    );
+  },
+);
 
 Select.propTypes = {
   className: PropTypes.string,

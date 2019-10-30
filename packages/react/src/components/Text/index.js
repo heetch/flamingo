@@ -6,15 +6,18 @@ import UiText from '../UiText';
 
 const variants = Object.values(UiText.VARIANTS);
 
-const Text = ({ as: Component, className, variant, isNumber, ...props }) => (
-  <UiText
-    variant={variant}
-    as={Component}
-    className={cx('Text', `Text--${Component}`, className, {
-      'is-number': isNumber,
-    })}
-    {...props}
-  />
+const Text = React.forwardRef(
+  ({ as: Component, className, variant, isNumber, ...props }, ref) => (
+    <UiText
+      variant={variant}
+      as={Component}
+      className={cx('Text', `Text--${Component}`, className, {
+        'is-number': isNumber,
+      })}
+      ref={ref}
+      {...props}
+    />
+  ),
 );
 
 Text.propTypes = {

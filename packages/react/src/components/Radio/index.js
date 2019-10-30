@@ -4,33 +4,36 @@ import PropTypes from 'prop-types';
 import Helper from '../Helper';
 import UiText from '../UiText';
 
-const Radio = ({ disabled, children, checked, helper, id, name, onChange }) => {
-  const input = (
-    <input
-      defaultChecked={checked}
-      disabled={disabled}
-      className='Radio'
-      type='radio'
-      id={id}
-      name={name}
-      onChange={onChange}
-    />
-  );
+const Radio = React.forwardRef(
+  ({ disabled, children, checked, helper, id, name, onChange }, ref) => {
+    const input = (
+      <input
+        defaultChecked={checked}
+        disabled={disabled}
+        className='Radio'
+        type='radio'
+        id={id}
+        name={name}
+        onChange={onChange}
+        ref={ref}
+      />
+    );
 
-  if (!children) {
-    return input;
-  }
+    if (!children) {
+      return input;
+    }
 
-  return (
-    <div className='FormEl-wrapper'>
-      {input}
-      <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
-        {children}
-        {helper && <Helper>{helper}</Helper>}
-      </UiText>
-    </div>
-  );
-};
+    return (
+      <div className='FormEl-wrapper'>
+        {input}
+        <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
+          {children}
+          {helper && <Helper>{helper}</Helper>}
+        </UiText>
+      </div>
+    );
+  },
+);
 
 Radio.propTypes = {
   onChange: PropTypes.func.isRequired,

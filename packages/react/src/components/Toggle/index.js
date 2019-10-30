@@ -6,50 +6,55 @@ import Helper from '../Helper';
 
 import { safeInvoke } from '../../utils';
 
-const Toggle = ({ children, checked, disabled, helper, onChange }) => {
-  const [isOn, setIsOn] = useState(checked);
+const Toggle = React.forwardRef(
+  ({ children, checked, disabled, helper, onChange }, ref) => {
+    const [isOn, setIsOn] = useState(checked);
 
-  const handleToggle = () => {
-    if (disabled) {
-      return;
-    }
+    const handleToggle = () => {
+      if (disabled) {
+        return;
+      }
 
-    const newState = !isOn;
+      const newState = !isOn;
 
-    setIsOn(newState);
-    safeInvoke(onChange, newState);
-  };
+      setIsOn(newState);
+      safeInvoke(onChange, newState);
+    };
 
-  const labelProps = {
-    onClick: handleToggle,
-    role: 'button',
-    tabIndex: 0,
-    onKeyPress: ({ which }) => (which === 13 ? handleToggle : undefined),
-  };
+    const labelProps = {
+      onClick: handleToggle,
+      role: 'button',
+      tabIndex: 0,
+      onKeyPress: ({ which }) => (which === 13 ? handleToggle : undefined),
+    };
 
-  return (
-    <div
-      className={cx('FormEl-wrapper', 'ToggleContainer', {
-        'is-on': isOn,
-        'is-disabled': disabled,
-      })}
-    >
-      <div className='Toggle' {...labelProps}>
-        <div className='Toggle-bullet' />
-        <span className='Toggle-bullet-label Toggle-bullet-label--on'>ON</span>
-        <span className='Toggle-bullet-label Toggle-bullet-label--off'>
-          OFF
-        </span>
-      </div>
-      {(children || helper) && (
-        <div className='Toggle-labels' {...labelProps}>
-          {children}
-          {helper && <Helper>{helper}</Helper>}
+    return (
+      <div
+        className={cx('FormEl-wrapper', 'ToggleContainer', {
+          'is-on': isOn,
+          'is-disabled': disabled,
+        })}
+        ref={ref}
+      >
+        <div className='Toggle' {...labelProps}>
+          <div className='Toggle-bullet' />
+          <span className='Toggle-bullet-label Toggle-bullet-label--on'>
+            ON
+          </span>
+          <span className='Toggle-bullet-label Toggle-bullet-label--off'>
+            OFF
+          </span>
         </div>
-      )}
-    </div>
-  );
-};
+        {(children || helper) && (
+          <div className='Toggle-labels' {...labelProps}>
+            {children}
+            {helper && <Helper>{helper}</Helper>}
+          </div>
+        )}
+      </div>
+    );
+  },
+);
 
 Toggle.propTypes = {
   checked: PropTypes.bool,

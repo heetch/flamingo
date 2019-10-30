@@ -5,43 +5,40 @@ import cx from 'classnames';
 import Helper from '../Helper';
 import UiText from '../UiText';
 
-const Checkbox = ({
-  isUndefined,
-  disabled,
-  children,
-  checked,
-  helper,
-  id,
-  value,
-  onChange,
-}) => {
-  const checkbox = (
-    <input
-      defaultChecked={checked}
-      disabled={disabled}
-      className={cx('Checkbox', { 'is-undefined': !checked && isUndefined })}
-      type='checkbox'
-      id={id}
-      name={id}
-      value={value}
-      onChange={onChange}
-    />
-  );
+const Checkbox = React.forwardRef(
+  (
+    { isUndefined, disabled, children, checked, helper, id, value, onChange },
+    ref,
+  ) => {
+    const checkbox = (
+      <input
+        defaultChecked={checked}
+        disabled={disabled}
+        className={cx('Checkbox', { 'is-undefined': !checked && isUndefined })}
+        type='checkbox'
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        ref={ref}
+      />
+    );
 
-  if (!children) {
-    return checkbox;
-  }
+    if (!children) {
+      return checkbox;
+    }
 
-  return (
-    <div className='FormEl-wrapper'>
-      {checkbox}
-      <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
-        {children}
-        {helper && <Helper>{helper}</Helper>}
-      </UiText>
-    </div>
-  );
-};
+    return (
+      <div className='FormEl-wrapper'>
+        {checkbox}
+        <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
+          {children}
+          {helper && <Helper>{helper}</Helper>}
+        </UiText>
+      </div>
+    );
+  },
+);
 
 Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,

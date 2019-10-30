@@ -6,15 +6,16 @@ import UiText from '../UiText';
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
-const Heading = ({ as, className, level, ...props }) => (
+const Heading = React.forwardRef(({ as, className, level, ...props }, ref) => (
   <UiText
     as={as || `h${level}`}
     level={level}
     variant={`h${level}`}
     className={cx('Heading', `Heading--${level}`, className)}
+    ref={ref}
     {...props}
   />
-);
+));
 
 Heading.propTypes = {
   as: PropTypes.node,
