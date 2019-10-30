@@ -8,7 +8,7 @@ const Label = React.forwardRef(({ className, htmlFor, ...props }, ref) => (
   <UiText
     variant={UiText.VARIANTS.subContentBold}
     as='label'
-    className={cx('Label', className)}
+    className={cx('f-Label', className)}
     htmlFor={htmlFor}
     ref={ref}
     {...props}

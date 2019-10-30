@@ -1,8 +1,8 @@
-.container {
+.f-TabsContainer {
   position: relative;
 }
 
-.Tabs {
+.f-Tabs {
   white-space: nowrap;
   overflow-x: auto;
 
@@ -29,7 +29,7 @@
   padding: 0 2px;
 }
 
-.Tabs:before {
+.f-Tabs:before {
   content: '';
   background-color: var(--color-ui-element--primary);
   width: 2px;
@@ -39,7 +39,7 @@
   left: -1px;
 }
 
-.Tabs:after {
+.f-Tabs:after {
   content: '';
   background-color: var(--color-ui-element--primary);
   width: 2px;
@@ -49,13 +49,13 @@
   right: -1px;
 }
 
-.Tabs span {
+.f-Tabs span {
   display: inline-block;
   text-align: center;
   cursor: pointer;
 }
 
-.Tabs span .Tabs-label {
+.f-Tabs span .f-Tabs-label {
   color: var(--color-ui-text-primary);
   font-size: var(--font-size--s);
   font-weight: var(--font-weight--bold);
@@ -64,7 +64,7 @@
   padding: 0 var(--space-xl);
 }
 
-.Tabs span .Tabs-marker {
+.f-Tabs span .f-Tabs-marker {
   float: left;
   width: 100%;
   height: var(--space-s);
@@ -73,11 +73,11 @@
   transition: all 0.1s ease-out;
 }
 
-.Tabs span:hover .Tabs-marker {
+.f-Tabs span:hover .f-Tabs-marker {
   background-color: var(--color-brand-primary);
 }
 
-.Tabs span .Tabs-marker.is-active {
+.f-Tabs span .f-Tabs-marker.is-active {
   height: calc(var(--space-s) + 2px);
   padding: 1px 0;
   margin: 0;
@@ -85,12 +85,12 @@
   border-radius: 3px;
 }
 
-.Tabs span:nth-child(1) .Tabs-marker {
+.f-Tabs span:nth-child(1) .f-Tabs-marker {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-.Tabs span:last-child .Tabs-marker {
+.f-Tabs span:last-child .f-Tabs-marker {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }

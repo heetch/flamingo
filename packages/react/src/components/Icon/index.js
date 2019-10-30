@@ -23,7 +23,11 @@ const SIZES = {
 const sizes = Object.values(SIZES);
 
 const Icon = React.forwardRef(({ className, icon, size, ...props }, ref) => (
-  <i className={cx('Icon', `Icon--${size}`, className)} ref={ref} {...props}>
+  <i
+    className={cx('f-Icon', `f-Icon--${size}`, className)}
+    ref={ref}
+    {...props}
+  >
     {SVGS[icon]}
   </i>
 ));

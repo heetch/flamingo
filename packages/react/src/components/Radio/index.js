@@ -10,7 +10,7 @@ const Radio = React.forwardRef(
       <input
         defaultChecked={checked}
         disabled={disabled}
-        className='Radio'
+        className='f-Radio'
         type='radio'
         id={id}
         name={name}
@@ -24,7 +24,7 @@ const Radio = React.forwardRef(
     }
 
     return (
-      <div className='FormEl-wrapper'>
+      <div className='f-FormEl-wrapper'>
         {input}
         <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
           {children}

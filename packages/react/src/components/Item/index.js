@@ -45,32 +45,32 @@ const Item = React.forwardRef(
     return (
       <div
         {...containerProps}
-        className={cx('Item', `Item--${size}`, {
+        className={cx('f-Item', `f-Item--${size}`, {
           'is-invalid': invalid,
           'is-valid': valid,
           'has-action': onClick,
         })}
         ref={ref}
       >
-        <div className='Item-contentContainer'>
+        <div className='f-Item-contentContainer'>
           {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
 
           <UiText
             variant={
               isMini ? UiText.VARIANTS.subContent : UiText.VARIANTS.content
             }
-            className='Item-content'
+            className='f-Item-content'
           >
             {children}
             {helper && <Helper>{helper}</Helper>}
           </UiText>
         </div>
 
-        <div className='Item-valueContainer'>
+        <div className='f-Item-valueContainer'>
           {value && (
             <UiText
               variant={UiText.VARIANTS.contentBold}
-              className='Item-value'
+              className='f-Item-value'
             >
               {value}
             </UiText>

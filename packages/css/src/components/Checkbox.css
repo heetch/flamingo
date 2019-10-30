@@ -1,16 +1,16 @@
-.Checkbox:checked,
-.Checkbox.is-undefined {
+.f-Checkbox:checked,
+.f-Checkbox.is-undefined {
   background-color: var(--color-brand-primary);
   border-color: var(--color-brand-primary);
 }
 
-.Checkbox:disabled:after {
+.f-Checkbox:disabled:after {
   border-color: var(--color-icon-disabled) !important;
 }
 
 /* Icons */
 
-.Checkbox:checked:after {
+.f-Checkbox:checked:after {
   content: '';
   width: 10px;
   height: 5px;
@@ -22,7 +22,7 @@
   transform: rotate(-45deg);
 }
 
-.Checkbox.is-undefined:after {
+.f-Checkbox.is-undefined:after {
   content: '';
   width: 12px;
   height: 1px;

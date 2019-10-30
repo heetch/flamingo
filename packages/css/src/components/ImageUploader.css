@@ -1,10 +1,10 @@
-.ImageUploader,
-.ImageUploader.has-preview {
+.f-ImageUploader,
+.f-ImageUploader.has-preview {
   height: var(--FileUploader-height);
 }
 
-.ImageUploader-preview,
-.ImageUploader-hoverState {
+.f-ImageUploader-preview,
+.f-ImageUploader-hoverState {
   position: absolute;
   top: 0;
   right: 0;
@@ -13,13 +13,13 @@
   border-radius: 1rem;
 }
 
-.ImageUploader-preview {
+.f-ImageUploader-preview {
   background-size: cover;
   background-position: center center;
   z-index: 10;
 }
 
-.ImageUploader-hoverState {
+.f-ImageUploader-hoverState {
   background: rgba(25, 1, 52, 0.8); /* --color-ui-text-primary */
   padding: 0 var(--space-m);
   text-align: right;
@@ -28,11 +28,11 @@
   transition: opacity 0.1s ease-out;
 }
 
-.ImageUploader:hover .ImageUploader-hoverState {
+.f-ImageUploader:hover .f-ImageUploader-hoverState {
   opacity: 1;
 }
 
-.ImageUploader.has-preview,
-.ImageUploader .UploaderItem-iconContainer {
+.f-ImageUploader.has-preview,
+.f-ImageUploader .f-UploaderItem-iconContainer {
   border-color: transparent;
 }

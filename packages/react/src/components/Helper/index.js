@@ -8,7 +8,7 @@ const Helper = React.forwardRef(({ className, children, ...props }, ref) => (
   <UiText
     as='small'
     variant={UiText.VARIANTS.subContent}
-    className={cx('Helper', className)}
+    className={cx('f-Helper', className)}
     ref={ref}
     {...props}
   >

@@ -15,11 +15,11 @@ const Select = React.forwardRef(
     };
 
     return (
-      <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
+      <div className={cx('f-FormEl-wrapper Select-wrapper', { ...classes })}>
         <UiText
           as='select'
           variant={UiText.VARIANTS.content}
-          className={cx('FormEl', 'FormEl--withIcon', 'Select', className, {
+          className={cx('f-FormEl', 'f-FormEl--withIcon', 'Select', className, {
             ...classes,
           })}
           disabled={isDisabled}
@@ -38,7 +38,7 @@ const Select = React.forwardRef(
 
         <Icon
           icon={Icon.ICONS.IconChevronUpDown}
-          className='FormEl-icon'
+          className='f-FormEl-icon'
           size={Icon.SIZES.L}
         />
       </div>

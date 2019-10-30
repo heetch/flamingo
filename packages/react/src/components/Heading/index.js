@@ -11,7 +11,7 @@ const Heading = React.forwardRef(({ as, className, level, ...props }, ref) => (
     as={as || `h${level}`}
     level={level}
     variant={`h${level}`}
-    className={cx('Heading', `Heading--${level}`, className)}
+    className={cx('f-Heading', `f-Heading--${level}`, className)}
     ref={ref}
     {...props}
   />

@@ -1,4 +1,4 @@
-.UploaderItem {
+.f-UploaderItem {
   --iconContainerSize: 2.625rem; /* 42px */
 
   display: flex;
@@ -11,11 +11,11 @@
   border-radius: var(--radius-l);
 }
 
-.UploaderItem + .UploaderItem {
+.f-UploaderItem + .f-UploaderItem {
   margin-top: var(--space-s);
 }
 
-.UploaderItem-iconContainer {
+.f-UploaderItem-iconContainer {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
@@ -29,18 +29,18 @@
   overflow: hidden;
 }
 
-.UploaderItem-iconContainer img {
+.f-UploaderItem-iconContainer img {
   display: block;
   object-fit: cover;
   width: var(--iconContainerSize);
   height: var(--iconContainerSize);
 }
 
-.UploaderItem-name {
+.f-UploaderItem-name {
   flex-grow: 1;
 }
 
-.UploaderItem .Button--icon,
-.UploaderItem .Text {
+.f-UploaderItem .f-Button--icon,
+.f-UploaderItem .f-Text {
   margin: 0;
 }

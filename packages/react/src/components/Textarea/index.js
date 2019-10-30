@@ -26,13 +26,15 @@ const Textarea = React.forwardRef(
     };
 
     return (
-      <div className={cx('FormEl-wrapper', 'Textarea-wrapper', { ...classes })}>
+      <div
+        className={cx('f-FormEl-wrapper', 'f-Textarea-wrapper', { ...classes })}
+      >
         <UiText
           as='textarea'
           variant={UiText.VARIANTS.content}
-          className={cx('FormEl', 'Textarea', className, {
+          className={cx('f-FormEl', 'f-Textarea', className, {
             ...classes,
-            'FormEl--withIcon': isValid || isInvalid,
+            'f-FormEl--withIcon': isValid || isInvalid,
           })}
           disabled={isDisabled}
           id={id}
@@ -44,11 +46,11 @@ const Textarea = React.forwardRef(
         />
 
         {isInvalid && (
-          <Icon icon={Icon.ICONS.IconAlertOctagon} className='FormEl-icon' />
+          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
         )}
 
         {isValid && (
-          <Icon icon={Icon.ICONS.IconCheck} className='FormEl-icon' />
+          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
         )}
       </div>
     );

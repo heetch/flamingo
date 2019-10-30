@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 const Spinner = React.forwardRef(({ className, ...props }, ref) => (
   <Icon
-    className={cx('Spinner', className)}
+    className={cx('f-Spinner', className)}
     icon={Icon.ICONS.IconLoader}
     ref={ref}
     {...props}

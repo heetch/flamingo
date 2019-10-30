@@ -73,7 +73,7 @@ const FileUploader = React.forwardRef(
 
     return (
       <div
-        className={cx('FileUploader FormEl-wrapper', className, {
+        className={cx('f-FileUploader f-FormEl-wrapper', className, {
           'has-file': hasFile,
           'has-error': hasError,
           'is-empty': !hasFile,
@@ -84,7 +84,7 @@ const FileUploader = React.forwardRef(
       >
         {isLoading && (
           <UiText
-            className='FileUploader-state FileUploader-state--uploading'
+            className='f-FileUploader-state f-FileUploader-state--uploading'
             variant={UiText.VARIANTS.subContentBold}
             as='div'
           >
@@ -95,7 +95,7 @@ const FileUploader = React.forwardRef(
 
         {hasError && (
           <UiText
-            className='FileUploader-label FileUploader-state FileUploader-state--error'
+            className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--error'
             variant={UiText.VARIANTS.subContentBold}
             as='label'
             htmlFor={name}
@@ -120,7 +120,7 @@ const FileUploader = React.forwardRef(
 
               {multiple && (
                 <UiText
-                  className='FileUploader-label FileUploader-state FileUploader-state--addFiles'
+                  className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--addFiles'
                   variant={UiText.VARIANTS.subContentBold}
                   as='label'
                   htmlFor={name}
@@ -133,7 +133,7 @@ const FileUploader = React.forwardRef(
             <UiText
               variant={UiText.VARIANTS.subContentBold}
               as='label'
-              className='FileUploader-label FileUploader-state FileUploader-state--empty'
+              className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--empty'
               htmlFor={name}
             >
               <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />
@@ -141,7 +141,7 @@ const FileUploader = React.forwardRef(
             </UiText>
           ))}
 
-        <div className='FileUploader-inputContainer'>
+        <div className='f-FileUploader-inputContainer'>
           <input
             type='file'
             id={name}

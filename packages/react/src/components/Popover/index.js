@@ -20,7 +20,7 @@ const Popover = ({ content, children, placement }) => (
       {({ ref }) =>
         React.cloneElement(children, {
           ref,
-          className: 'Popover-triggerer',
+          className: 'f-Popover-triggerer',
         })
       }
     </Reference>
@@ -31,9 +31,9 @@ const Popover = ({ content, children, placement }) => (
           ref={ref}
           style={style}
           data-placement={placement}
-          className={`Popover-wrapper is--${placement}`}
+          className={`f-Popover-wrapper is--${placement}`}
         >
-          <div className='Popover'>
+          <div className='f-Popover'>
             <UiText variant={UiText.VARIANTS.subContent} as='span'>
               {content}
             </UiText>

@@ -12,7 +12,7 @@ const TableHeaderCell = React.forwardRef(
   ) => (
     <UiText
       as={as}
-      className={cx('Table-HeaderCell', className, {
+      className={cx('f-Table-HeaderCell', className, {
         'is-sortable': isSortable,
         'is-sorted': isSorted,
       })}
@@ -24,7 +24,7 @@ const TableHeaderCell = React.forwardRef(
 
       {isSortable && (
         <Icon
-          className='Table-HeaderCellIcon'
+          className='f-Table-HeaderCellIcon'
           icon={
             !isSorted
               ? 'IconChevronUpDown'

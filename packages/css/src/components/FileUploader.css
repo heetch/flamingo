@@ -2,7 +2,7 @@
   --FileUploader-height: 8.125rem; /* 130px */
 }
 
-.FileUploader {
+.f-FileUploader {
   position: relative;
   width: 100%;
   flex-direction: column;
@@ -14,35 +14,35 @@
   background-color: var(--color-ui-element--primary);
 }
 
-.FileUploader,
-.FileUploader-label {
+.f-FileUploader,
+.f-FileUploader-label {
   transition: all 0.15s ease-out;
 }
 
-.FileUploader-label:hover,
-.FileUploader.is-empty:hover {
+.f-FileUploader-label:hover,
+.f-FileUploader.is-empty:hover {
   border-color: var(--color-brand-primary);
   color: var(--color-brand-primary);
 }
 
 @media (max-width: 460px) {
   /* --breakpoint-s */
-  .FileUploader {
+  .f-FileUploader {
     max-width: inherit;
   }
 }
 
-.FileUploader.has-file {
+.f-FileUploader.has-file {
   border-color: transparent;
   height: auto;
   text-align: center;
 }
 
-.FileUploader-inputContainer {
+.f-FileUploader-inputContainer {
   display: none;
 }
 
-.FileUploader-state {
+.f-FileUploader-state {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -52,12 +52,12 @@
   text-align: center;
 }
 
-.FileUploader-state--addFiles {
+.f-FileUploader-state--addFiles {
   padding: var(--space-l);
 }
 
-.FileUploader-state--empty .Icon,
-.FileUploader-state--uploading .Icon,
-.FileUploader-state--error .Icon {
+.f-FileUploader-state--empty .f-Icon,
+.f-FileUploader-state--uploading .f-Icon,
+.f-FileUploader-state--error .f-Icon {
   margin-bottom: var(--space-m);
 }

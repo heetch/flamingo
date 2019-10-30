@@ -51,7 +51,7 @@ const ImageUploader = React.forwardRef(
 
     return (
       <FileUploader
-        className={cx('ImageUploader', {
+        className={cx('f-ImageUploader', {
           'has-preview': preview,
           'is-loading': isLoading,
         })}
@@ -71,13 +71,13 @@ const ImageUploader = React.forwardRef(
         {preview && (
           <>
             <div
-              className='ImageUploader-preview'
+              className='f-ImageUploader-preview'
               style={{
                 backgroundImage: `url(${preview})`,
               }}
             />
 
-            <div className='ImageUploader-hoverState'>
+            <div className='f-ImageUploader-hoverState'>
               <IconButton onClick={handleClear} icon={Icon.ICONS.IconTrash} />
             </div>
           </>

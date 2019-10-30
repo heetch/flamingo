@@ -10,7 +10,7 @@ const sizes = Object.values(SIZES);
 const Card = React.forwardRef(
   ({ className, elevation, isSelected, size, ...props }, ref) => (
     <div
-      className={cx('Card', `Card--${size}`, className, {
+      className={cx('f-Card', `f-Card--${size}`, className, {
         'is-selected': isSelected,
         [`is-elevated--${elevation}`]: elevation,
       })}

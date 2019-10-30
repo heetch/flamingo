@@ -30,23 +30,23 @@ const Toggle = React.forwardRef(
 
     return (
       <div
-        className={cx('FormEl-wrapper', 'ToggleContainer', {
+        className={cx('f-FormEl-wrapper', 'f-ToggleContainer', {
           'is-on': isOn,
           'is-disabled': disabled,
         })}
         ref={ref}
       >
-        <div className='Toggle' {...labelProps}>
-          <div className='Toggle-bullet' />
-          <span className='Toggle-bullet-label Toggle-bullet-label--on'>
+        <div className='f-Toggle' {...labelProps}>
+          <div className='f-Toggle-bullet' />
+          <span className='f-Toggle-bullet-label f-Toggle-bullet-label--on'>
             ON
           </span>
-          <span className='Toggle-bullet-label Toggle-bullet-label--off'>
+          <span className='f-Toggle-bullet-label f-Toggle-bullet-label--off'>
             OFF
           </span>
         </div>
         {(children || helper) && (
-          <div className='Toggle-labels' {...labelProps}>
+          <div className='f-Toggle-labels' {...labelProps}>
             {children}
             {helper && <Helper>{helper}</Helper>}
           </div>

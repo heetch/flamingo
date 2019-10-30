@@ -20,7 +20,7 @@ const variants = Object.keys(VARIANTS);
 const UiText = React.forwardRef(
   ({ as: Component, className, variant, ...props }, ref) => (
     <Component
-      className={cx('UiText', `UiText--${VARIANTS[variant]}`, className)}
+      className={cx('f-UiText', `f-UiText--${VARIANTS[variant]}`, className)}
       ref={ref}
       {...props}
     />

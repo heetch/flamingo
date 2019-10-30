@@ -11,7 +11,7 @@ const stories = storiesOf('Text', module);
 stories.add('Playground', () => (
   <>
     <Heading>Text</Heading>
-    <Text type={select('Type', UiText.VARIANTS, UiText.VARIANTS.content)}>
+    <Text variant={select('Type', UiText.VARIANTS, UiText.VARIANTS.content)}>
       {text('Content', 'My custom text content')}
     </Text>
   </>

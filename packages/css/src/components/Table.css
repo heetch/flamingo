@@ -1,4 +1,4 @@
-.Table {
+.f-Table {
   --borderColor: var(--color-ui-element--inactive);
 
   width: 100%;
@@ -6,8 +6,8 @@
   margin: var(--space-m) 0;
 }
 
-.Table-HeaderCell,
-.Table-RowCell {
+.f-Table-HeaderCell,
+.f-Table-RowCell {
   min-width: 8.4375rem; /* 135px */
   text-align: left;
   padding: var(--space-l) var(--space-xl);
@@ -15,28 +15,28 @@
   background-color: var(--color-ui-element--primary);
 }
 
-.Table-RowCell .Text,
-.Table-HeaderCell .Text {
+.f-Table-RowCell .f-Text,
+.f-Table-HeaderCell .f-Text {
   margin: 0;
 }
 
-.Table-HeaderCell {
+.f-Table-HeaderCell {
   position: sticky;
   top: 0;
   padding-right: calc(var(--icon--m) + var(--space-m) * 2);
 }
 
-.Table-HeaderCell.is-sortable.is-sorted {
+.f-Table-HeaderCell.is-sortable.is-sorted {
   color: var(--color-brand-primary);
 }
 
-.Table-HeaderCellIcon {
+.f-Table-HeaderCellIcon {
   position: absolute;
   right: var(--space-m);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.Table-RowCell {
+.f-Table-RowCell {
   color: var(--color-ui-text-secondary);
 }

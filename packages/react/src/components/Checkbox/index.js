@@ -14,7 +14,9 @@ const Checkbox = React.forwardRef(
       <input
         defaultChecked={checked}
         disabled={disabled}
-        className={cx('Checkbox', { 'is-undefined': !checked && isUndefined })}
+        className={cx('f-Checkbox', {
+          'is-undefined': !checked && isUndefined,
+        })}
         type='checkbox'
         id={id}
         name={id}
@@ -29,7 +31,7 @@ const Checkbox = React.forwardRef(
     }
 
     return (
-      <div className='FormEl-wrapper'>
+      <div className='f-FormEl-wrapper'>
         {checkbox}
         <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
           {children}

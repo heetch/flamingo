@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 const TableHeaderGroup = React.forwardRef(
   ({ className, children, ...props }, ref) => (
-    <tr className={cx('Table-HeaderGroup', className)} ref={ref} {...props}>
+    <tr className={cx('f-Table-HeaderGroup', className)} ref={ref} {...props}>
       {children}
     </tr>
   ),

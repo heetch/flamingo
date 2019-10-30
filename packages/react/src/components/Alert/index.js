@@ -26,31 +26,31 @@ const types = Object.values(TYPES);
 
 const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
   <div
-    className={cx('Alert', `Alert--${type}`, {
+    className={cx('f-Alert', `f-Alert--${type}`, {
       'is-closeable': onClose,
     })}
     ref={ref}
   >
-    <div className='Alert-icon'>
+    <div className='f-Alert-icon'>
       <Icon icon={icons[type]} />
     </div>
 
     <UiText
       variant={UiText.VARIANTS.contentBold}
       as='h1'
-      className='Alert-title'
+      className='f-Alert-title'
     >
       {title}
     </UiText>
 
-    <Text className='Alert-content'>{children}</Text>
+    <Text className='f-Alert-content'>{children}</Text>
 
     {onClose && (
       <IconButton
         icon={Icon.ICONS.IconCross}
         intent={Button.INTENTS.SECONDARY}
         variant={Button.VARIANTS.MINIMAL}
-        className='Alert-closeBtn'
+        className='f-Alert-closeBtn'
         size={Icon.SIZES.S}
         onClick={() => safeInvoke(onClose)}
       />

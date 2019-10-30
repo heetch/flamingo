@@ -1,16 +1,16 @@
-.Alert--information {
+.f-Alert--information {
   --mainColor: var(--color-brand-secondary);
 }
 
-.Alert--success {
+.f-Alert--success {
   --mainColor: var(--color-ui-element--success);
 }
 
-.Alert--error {
+.f-Alert--error {
   --mainColor: var(--color-ui-element--error);
 }
 
-.Alert {
+.f-Alert {
   --leftIconPadding: var(--space-m);
   --iconSize: var(--icon--m);
   --iconContainerSize: calc(
@@ -27,18 +27,18 @@
   border: 2px solid var(--mainColor);
 }
 
-.Alert .Alert-title,
-.Alert .Alert-content {
+.f-Alert .f-Alert-title,
+.f-Alert .f-Alert-content {
   margin: 0;
 }
 
-.Alert-title {
+.f-Alert-title {
   margin-bottom: var(--space-s);
 }
 
 /* Left icon */
 
-.Alert-icon {
+.f-Alert-icon {
   display: flex;
   align-items: center;
   position: absolute;
@@ -52,7 +52,7 @@
 
 /* Close button */
 
-.Alert .Alert-closeBtn {
+.f-Alert .f-Alert-closeBtn {
   position: absolute;
   top: var(--space-s);
   right: var(--space-s);

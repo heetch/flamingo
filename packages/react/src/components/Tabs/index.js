@@ -18,8 +18,8 @@ const Tabs = React.forwardRef(
     };
 
     return (
-      <div className='container' ref={ref}>
-        <div className='Tabs'>
+      <div className='f-TabsContainer' ref={ref}>
+        <div className='f-Tabs'>
           {elements.map((element, index) => (
             <span
               key={element}
@@ -30,11 +30,11 @@ const Tabs = React.forwardRef(
               }
               tabIndex={0}
             >
-              <div className='Tabs-label'>
+              <div className='f-Tabs-label'>
                 {buildTabLabel ? buildTabLabel(element) : element}
               </div>
               <div
-                className={cx('Tabs-marker', {
+                className={cx('f-Tabs-marker', {
                   'is-active': activeIndex === index,
                 })}
               />

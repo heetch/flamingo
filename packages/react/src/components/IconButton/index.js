@@ -10,7 +10,7 @@ const sizes = Object.values(Icon.SIZES);
 const IconButton = React.forwardRef(
   ({ className, icon, size, ...props }, ref) => (
     <Button
-      className={cx('Button--icon', className)}
+      className={cx('f-Button--icon', className)}
       ref={ref}
       intent={Button.INTENTS.SECONDARY}
       variant={Button.VARIANTS.MINIMAL}

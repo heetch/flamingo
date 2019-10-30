@@ -1,4 +1,4 @@
-.Item {
+.f-Item {
   --contentColor: var(--color-ui-text-primary);
   --horizontalPadding: var(--space-l);
   --verticalPadding: var(--space-l);
@@ -10,58 +10,58 @@
   transition: background-color 0.1s ease-out;
 }
 
-.Item,
-.Item-contentContainer,
-.Item-valueContainer {
+.f-Item,
+.f-Item-contentContainer,
+.f-Item-valueContainer {
   display: flex;
   align-items: center;
 }
 
-.Item.has-action {
+.f-Item.has-action {
   cursor: pointer;
 }
 
-.Item.has-action:hover {
+.f-Item.has-action:hover {
   background-color: var(--color-ui-element--inactive);
 }
 
-.Item--sub {
+.f-Item--sub {
   --horizontalPadding: var(--space-m);
 }
 
-.Item--mini {
+.f-Item--mini {
   --contentColor: var(--color-ui-text-secondary);
   --horizontalPadding: var(--space-s);
 }
 
-.Item-content,
-.Item-value {
+.f-Item-content,
+.f-Item-value {
   margin: 0;
 }
 
-.Item-contentContainer {
+.f-Item-contentContainer {
   flex-grow: 1;
 }
 
-.Item-contentContainer .Icon {
+.f-Item-contentContainer .f-Icon {
   margin-right: var(--space-m);
 }
 
-.Item-valueContainer .Icon {
+.f-Item-valueContainer .f-Icon {
   display: block;
   margin-left: var(--space-m);
 }
 
-.Item.is-valid .Item-valueContainer {
+.f-Item.is-valid .f-Item-valueContainer {
   color: var(--color-ui-element--success);
 }
 
-.Item.is-invalid .Item-valueContainer {
+.f-Item.is-invalid .f-Item-valueContainer {
   color: var(--color-ui-element--error);
 }
 
 @media (max-width: 460px) {
-  .Item:not(.Item--mini):not(.Item--sub) {
+  .f-Item:not(.f-Item--mini):not(.f-Item--sub) {
     padding: var(--space-xl) var(--space-l);
   }
 }

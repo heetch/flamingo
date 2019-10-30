@@ -1,64 +1,64 @@
 /* Headings */
 
-.UiText--h1,
-.UiText--h2,
-.UiText--h3,
-.UiText--h4,
-.UiText--h5,
-.UiText--h6 {
+.f-UiText--h1,
+.f-UiText--h2,
+.f-UiText--h3,
+.f-UiText--h4,
+.f-UiText--h5,
+.f-UiText--h6 {
   font-weight: var(--font-weight--black);
 }
 
-.UiText--h1 {
+.f-UiText--h1 {
   font-size: var(--font-size--xxl);
   line-height: var(--line-height--xl);
 }
 
-.UiText--h2 {
+.f-UiText--h2 {
   font-size: var(--font-size--xl);
   line-height: var(--line-height--l);
 }
 
-.UiText--h3 {
+.f-UiText--h3 {
   font-size: var(--font-size--l);
   line-height: var(--line-height--m);
 }
 
-.UiText--h4 {
+.f-UiText--h4 {
   font-size: var(--font-size--m);
   line-height: var(--line-height--s);
 }
 
-.UiText--h5 {
+.f-UiText--h5 {
   font-size: var(--font-size--s);
   line-height: var(--line-height--s);
 }
 
-.UiText--h6 {
+.f-UiText--h6 {
   font-size: var(--font-size--xs);
   line-height: var(--line-height--s);
 }
 
 /* Contents */
 
-.UiText--content,
-.UiText--contentBold {
+.f-UiText--content,
+.f-UiText--contentBold {
   font-size: var(--font-size--m);
   line-height: var(--line-height--m);
 }
 
-.UiText--content,
-.UiText--subContent {
+.f-UiText--content,
+.f-UiText--subContent {
   font-weight: var(--font-weight--normal);
 }
 
-.UiText--contentBold,
-.UiText--subContentBold {
+.f-UiText--contentBold,
+.f-UiText--subContentBold {
   font-weight: var(--font-weight--bold);
 }
 
-.UiText--subContent,
-.UiText--subContentBold {
+.f-UiText--subContent,
+.f-UiText--subContentBold {
   font-size: var(--font-size--s);
   line-height: var(--line-height--m);
 }

@@ -26,13 +26,13 @@ const Input = React.forwardRef(
     };
 
     return (
-      <div className={cx('FormEl-wrapper', 'Input-wrapper', { ...classes })}>
+      <div className={cx('f-FormEl-wrapper', 'Input-wrapper', { ...classes })}>
         <UiText
           as='input'
           variant={UiText.VARIANTS.content}
-          className={cx('FormEl', 'Input', className, {
+          className={cx('f-FormEl', 'Input', className, {
             ...classes,
-            'FormEl--withIcon': isValid || isInvalid,
+            'f-FormEl--withIcon': isValid || isInvalid,
           })}
           disabled={isDisabled}
           id={id}
@@ -44,11 +44,11 @@ const Input = React.forwardRef(
         />
 
         {isInvalid && (
-          <Icon icon={Icon.ICONS.IconAlertOctagon} className='FormEl-icon' />
+          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
         )}
 
         {isValid && (
-          <Icon icon={Icon.ICONS.IconCheck} className='FormEl-icon' />
+          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
         )}
       </div>
     );

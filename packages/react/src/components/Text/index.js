@@ -11,7 +11,7 @@ const Text = React.forwardRef(
     <UiText
       variant={variant}
       as={Component}
-      className={cx('Text', `Text--${Component}`, className, {
+      className={cx('f-Text', `f-Text--${Component}`, className, {
         'is-number': isNumber,
       })}
       ref={ref}

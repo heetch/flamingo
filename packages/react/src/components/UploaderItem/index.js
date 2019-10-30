@@ -8,12 +8,12 @@ import Text from '../Text';
 
 const UploaderItem = React.forwardRef(
   ({ file, handleDelete, overrides }, ref) => (
-    <div className='UploaderItem' ref={ref}>
-      <div className='UploaderItem-iconContainer'>
+    <div className='f-UploaderItem' ref={ref}>
+      <div className='f-UploaderItem-iconContainer'>
         {overrides.icon || <Icon icon={Icon.ICONS.IconFileText} />}
       </div>
 
-      <Text className='UploaderItem-name u-ellipsis'>{file.name}</Text>
+      <Text className='f-UploaderItem-name u-ellipsis'>{file.name}</Text>
 
       <IconButton
         intent={Button.INTENTS.SECONDARY}

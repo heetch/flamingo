@@ -35,7 +35,7 @@ const Button = React.forwardRef(
     ref,
   ) => (
     <Component
-      className={cx('Button', className, {
+      className={cx('f-Button', className, {
         'is-disabled': disabled,
         'is-loading': isLoading,
         [`is-${intent}`]: intent,
@@ -46,11 +46,11 @@ const Button = React.forwardRef(
       ref={ref}
       {...props}
     >
-      <div className='Button-loadingState'>
+      <div className='f-Button-loadingState'>
         <Spinner size={Icon.SIZES.L} />
       </div>
 
-      <span className='Button-content'>{children}</span>
+      <span className='f-Button-content'>{children}</span>
     </Component>
   ),
 );

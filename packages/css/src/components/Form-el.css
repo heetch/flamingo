@@ -1,4 +1,4 @@
-.FormEl-wrapper {
+.f-FormEl-wrapper {
   /*
     this variable has to be here because of
     the Icon children which relies on it
@@ -15,15 +15,15 @@
   color: var(--color-ui-text-primary);
 }
 
-.FormEl-wrapper.is-invalid {
+.f-FormEl-wrapper.is-invalid {
   --icon-color: var(--color-ui-element--error);
 }
 
-.FormEl-wrapper.is-valid {
+.f-FormEl-wrapper.is-valid {
   --icon-color: var(--color-ui-element--success);
 }
 
-.FormEl {
+.f-FormEl {
   --background-color: var(--color-ui-element--primary);
   --border-color: var(--color-ui-element--tertiary);
   --border-size: 1px;
@@ -41,45 +41,45 @@
   transition: box-shadow 0.1s ease-out;
 }
 
-.FormEl-wrapper.is-invalid .FormEl {
+.f-FormEl-wrapper.is-invalid .f-FormEl {
   --border-color: var(--color-ui-element--error);
 }
 
-.FormEl-wrapper.is-valid .FormEl {
+.f-FormEl-wrapper.is-valid .f-FormEl {
   --border-color: var(--color-ui-element--success);
 }
 
-.FormEl--withIcon {
+.f-FormEl--withIcon {
   padding-right: calc(var(--icon-size) + var(--icon-spaceAround) * 2);
 }
 
 @media (max-width: 460px) {
-  .FormEl {
+  .f-FormEl {
     padding-top: var(--space-l);
     padding-bottom: var(--space-l);
   }
 }
 
-.FormEl:hover,
-.FormEl.is-hover,
-.FormEl:focus,
-.FormEl.is-focus {
+.f-FormEl:hover,
+.f-FormEl.is-hover,
+.f-FormEl:focus,
+.f-FormEl.is-focus {
   --border-color: var(--color-ui-element--secondary);
 }
 
-.FormEl:focus,
-.FormEl.is-focus {
+.f-FormEl:focus,
+.f-FormEl.is-focus {
   --border-size: 2px;
 }
 
-.FormEl:disabled,
-.FormEl.is-disabled {
+.f-FormEl:disabled,
+.f-FormEl.is-disabled {
   --border-color: var(--color-ui-element--tertiary);
   --background-color: var(--color-ui-element--inactive);
   cursor: not-allowed;
 }
 
-.FormEl-icon {
+.f-FormEl-icon {
   position: absolute;
   top: 50%;
   right: var(--space-l);
@@ -90,8 +90,8 @@
 
 /* Shared */
 
-.Checkbox,
-.Radio {
+.f-Checkbox,
+.f-Radio {
   --size: 1.25rem /* 20px */;
 
   position: relative;
@@ -104,13 +104,13 @@
   border-radius: var(--space-s);
   transition: border-color 0.2s ease-out;
 }
-.Checkbox:hover,
-.Radio:hover {
+.f-Checkbox:hover,
+.f-Radio:hover {
   border-color: var(--color-ui-element--secondary);
 }
 
-.Checkbox:disabled,
-.Radio:disabled {
+.f-Checkbox:disabled,
+.f-Radio:disabled {
   border-color: var(--color-ui-element--tertiary) !important;
   background-color: var(--color-ui-element--inactive) !important;
   cursor: not-allowed;

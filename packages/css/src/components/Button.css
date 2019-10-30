@@ -1,16 +1,16 @@
-.Button.is-primary {
+.f-Button.is-primary {
   --mainBgColor: var(--color-brand-primary);
   --secondaryBgColor: var(--color-brand-primary--light);
   --textColor: var(--color-ui-text-white);
 }
 
-.Button.is-secondary {
+.f-Button.is-secondary {
   --mainBgColor: var(--color-brand-secondary);
   --secondaryBgColor: var(--color-brand-secondary--light);
   --textColor: var(--color-ui-text-white);
 }
 
-.Button {
+.f-Button {
   --padding: var(--space-m) var(--space-xl);
   --radius: var(--space-xxl);
 
@@ -30,81 +30,81 @@
 
 @media (max-width: 460px) {
   /* --breakpoint-s */
-  .Button {
+  .f-Button {
     width: 100%;
     padding: var(--space-l) var(--space-xl);
     text-align: center;
   }
 }
 
-.Button[disabled],
-.Button.is-disabled {
+.f-Button[disabled],
+.f-Button.is-disabled {
   background-color: var(--color-ui-element-primary) !important;
   color: var(--color-ui-text-tertiary) !important;
   cursor: not-allowed !important;
 }
 
-.Button:hover,
-.Button.is-hover {
+.f-Button:hover,
+.f-Button.is-hover {
   background-color: var(--secondaryBgColor);
 }
 
-.Button,
-.Button:active,
-.Button.is-active {
+.f-Button,
+.f-Button:active,
+.f-Button.is-active {
   background-color: var(--mainBgColor);
 }
 
 /* Variants */
 
-.Button.is-outline {
+.f-Button.is-outline {
   background-color: var(--textColor);
   color: var(--mainBgColor);
   border: 1px solid var(--mainBgColor);
 }
 
-.Button.is-minimal {
+.f-Button.is-minimal {
   background-color: var(--textColor);
   color: var(--mainBgColor);
 }
 
-.Button:hover,
-.Button.is-hover {
+.f-Button:hover,
+.f-Button.is-hover {
   color: var(--textColor);
   background-color: var(--secondaryBgColor);
 }
 
-.Button,
-.Button:active,
-.Button.is-active {
+.f-Button,
+.f-Button:active,
+.f-Button.is-active {
   color: var(--textColor);
   background-color: var(--mainBgColor);
 }
 
 /* Icon */
 
-.Button.Button--icon {
+.f-Button.f-Button--icon {
   padding: var(--space-m);
   line-height: 1;
   border-radius: 50%;
   color: var(--color-icon-dark);
 }
 
-.Button--icon:hover {
+.f-Button--icon:hover {
   background-color: var(--color-ui-element--inactive);
 }
 
-.Button--icon + .Button--icon {
+.f-Button--icon + .f-Button--icon {
   margin-left: var(--space-m);
 }
 
-.Button--icon .Icon {
+.f-Button--icon .f-Icon {
   display: block;
 }
 
 @media (max-width: 460px) {
   /* --breakpoint-s */
-  .Button.Button--icon {
+  .f-Button.f-Button--icon {
     width: auto;
     flex-grow: inherit;
     padding: var(--space-l);
@@ -113,7 +113,7 @@
 
 /* Loading state */
 
-.Button-loadingState {
+.f-Button-loadingState {
   position: absolute;
   top: 0;
   right: 0;
@@ -125,13 +125,13 @@
   border-radius: var(--radius);
 }
 
-.Button-loadingState,
-.Button.is-loading .Button-content {
+.f-Button-loadingState,
+.f-Button.is-loading .f-Button-content {
   opacity: 0;
   pointer-events: none;
 }
 
-.Button.is-loading .Button-loadingState {
+.f-Button.is-loading .f-Button-loadingState {
   opacity: 1;
   pointer-events: inherit;
 }

@@ -1,14 +1,14 @@
-.Popover-wrapper {
+.f-Popover-wrapper {
   padding: var(--space-s);
   opacity: 0;
   transition: opacity 0.1s ease-out;
 }
 
-.Popover-triggerer:hover + .Popover-wrapper {
+.f-Popover-triggerer:hover + .f-Popover-wrapper {
   opacity: 1;
 }
 
-.Popover {
+.f-Popover {
   padding: var(--space-s) var(--space-m);
   color: var(--color-ui-text-white);
   background-color: rgba(25, 1, 52, 0.8);

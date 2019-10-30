@@ -28,7 +28,7 @@ const Table = React.forwardRef(
 
     return (
       <table
-        className={cx('Table', className)}
+        className={cx('f-Table', className)}
         cellPadding={0}
         cellSpacing={0}
         ref={ref}
