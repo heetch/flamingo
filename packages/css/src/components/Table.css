@@ -24,6 +24,7 @@
   position: sticky;
   top: 0;
   padding-right: calc(var(--icon--m) + var(--space-m) * 2);
+  color: var(--color-ui-text-primary);
 }
 
 .f-Table-HeaderCell.is-sortable.is-sorted {

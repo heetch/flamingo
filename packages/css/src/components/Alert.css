@@ -33,7 +33,12 @@
 }
 
 .f-Alert-title {
+  color: var(--color-ui-text-primary);
   margin-bottom: var(--space-s);
+}
+
+.f-Alert-content {
+  color: var(--color-ui-text-secondary);
 }
 
 /* Left icon */
