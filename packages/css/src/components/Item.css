@@ -22,7 +22,7 @@
 }
 
 .Item.has-action:hover {
-  background-color: var(--color-ui-element-inactive);
+  background-color: var(--color-ui-element--inactive);
 }
 
 .Item--sub {
