@@ -17,7 +17,7 @@ stories.add('All states', () => (
     <Heading>Radio</Heading>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>Default</Heading>
         <Radio {...defaultProps} id='r1-1' name='r1' />
       </div>
@@ -28,7 +28,7 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>Checked</Heading>
         <Radio {...defaultProps} id='r3-1' name='r3' checked />
       </div>
@@ -39,7 +39,7 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--space-xl)', width: '10rem' }}>
+      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
         <Heading level={2}>No text</Heading>
         <Radio onChange={defaultProps.onChange} id='r5-1' name='r5' />
       </div>

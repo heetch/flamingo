@@ -1,18 +1,18 @@
 .f-Table {
-  --borderColor: var(--color-ui-element--inactive);
+  --borderColor: var(--f-color-element--inactive);
 
   width: 100%;
   border-spacing: 0;
-  margin: var(--space-m) 0;
+  margin: var(--f-space--m) 0;
 }
 
 .f-Table-HeaderCell,
 .f-Table-RowCell {
   min-width: 8.4375rem; /* 135px */
   text-align: left;
-  padding: var(--space-l) var(--space-xl);
+  padding: var(--f-space--l) var(--f-space--xl);
   box-shadow: inset 0px -1px 0px var(--borderColor);
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
 }
 
 .f-Table-RowCell .f-Text,
@@ -23,21 +23,21 @@
 .f-Table-HeaderCell {
   position: sticky;
   top: 0;
-  padding-right: calc(var(--icon--m) + var(--space-m) * 2);
-  color: var(--color-ui-text-primary);
+  padding-right: calc(var(--f-iconSize--m) + var(--f-space--m) * 2);
+  color: var(--f-color-text--primary);
 }
 
 .f-Table-HeaderCell.is-sortable.is-sorted {
-  color: var(--color-brand-primary);
+  color: var(--f-color-brandPrimary);
 }
 
 .f-Table-HeaderCellIcon {
   position: absolute;
-  right: var(--space-m);
+  right: var(--f-space--m);
   top: 50%;
   transform: translateY(-50%);
 }
 
 .f-Table-RowCell {
-  color: var(--color-ui-text-secondary);
+  color: var(--f-color-text--secondary);
 }

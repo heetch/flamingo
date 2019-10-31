@@ -11,14 +11,14 @@
   width: var(--icon-size);
 }
 
-.f-Icon--s {
-  --icon-size: var(--icon--s);
+.f-iconSize--s {
+  --icon-size: var(--f-iconSize--s);
 }
 
-.f-Icon--m {
-  --icon-size: var(--icon--m);
+.f-iconSize--m {
+  --icon-size: var(--f-iconSize--m);
 }
 
-.f-Icon--l {
-  --icon-size: var(--icon--l);
+.f-iconSize--l {
+  --icon-size: var(--f-iconSize--l);
 }

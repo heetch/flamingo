@@ -30,7 +30,7 @@ stories.add('All states', () => (
               key={state}
               intent={intent}
               className={`is-${state}`}
-              style={{ marginRight: 'var(--space-m)' }}
+              style={{ marginRight: 'var(--f-space--m)' }}
             >
               {intent}
               {state !== 'default' && `:${state}`}
@@ -40,7 +40,7 @@ stories.add('All states', () => (
             intent={intent}
             className={`is-${intent}`}
             isLoading
-            style={{ marginRight: 'var(--space-m)' }}
+            style={{ marginRight: 'var(--f-space--m)' }}
           >
             Loading
           </Button>
@@ -53,7 +53,7 @@ stories.add('All states', () => (
               key={variant}
               intent={intent}
               className={`is-${variant}`}
-              style={{ marginRight: 'var(--space-m)' }}
+              style={{ marginRight: 'var(--f-space--m)' }}
             >
               {intent}
               {variant && `:${variant}`}

@@ -5,5 +5,5 @@
 
 .f-Radio:checked {
   border-width: 6px;
-  border-color: var(--color-brand-primary);
+  border-color: var(--f-color-brandPrimary);
 }

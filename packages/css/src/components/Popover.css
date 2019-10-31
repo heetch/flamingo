@@ -1,5 +1,5 @@
 .f-Popover-wrapper {
-  padding: var(--space-s);
+  padding: var(--f-space--s);
   opacity: 0;
   transition: opacity 0.1s ease-out;
 }
@@ -9,8 +9,8 @@
 }
 
 .f-Popover {
-  padding: var(--space-s) var(--space-m);
-  color: var(--color-ui-text-white);
+  padding: var(--f-space--s) var(--f-space--m);
+  color: var(--f-color-text--white);
   background-color: rgba(25, 1, 52, 0.8);
-  border-radius: var(--radius-s);
+  border-radius: var(--f-borderRadius--s);
 }

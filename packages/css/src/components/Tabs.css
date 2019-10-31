@@ -8,30 +8,30 @@
 
   background-image: linear-gradient(
       to right,
-      var(--color-ui-element--primary),
-      var(--color-ui-element--primary)
+      var(--f-color-element--primary),
+      var(--f-color-element--primary)
     ),
     linear-gradient(
       to right,
-      var(--color-ui-element--primary),
-      var(--color-ui-element--primary)
+      var(--f-color-element--primary),
+      var(--f-color-element--primary)
     ),
     linear-gradient(to right, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0)),
     linear-gradient(to left, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0));
 
   background-position: left center, right center, left top, right top;
   background-repeat: no-repeat;
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
   background-size: 15px 100%, 15px 100%,
-    var(--space-m) calc(100% - var(--space-s)),
-    var(--space-m) calc(100% - var(--space-s));
+    var(--f-space--m) calc(100% - var(--f-space--s)),
+    var(--f-space--m) calc(100% - var(--f-space--s));
   background-attachment: local, local, scroll, scroll;
   padding: 0 2px;
 }
 
 .f-Tabs:before {
   content: '';
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
   width: 2px;
   height: 100%;
   position: absolute;
@@ -41,7 +41,7 @@
 
 .f-Tabs:after {
   content: '';
-  background-color: var(--color-ui-element--primary);
+  background-color: var(--f-color-element--primary);
   width: 2px;
   height: 100%;
   position: absolute;
@@ -56,32 +56,32 @@
 }
 
 .f-Tabs span .f-Tabs-label {
-  color: var(--color-ui-text-primary);
-  font-size: var(--font-size--s);
-  font-weight: var(--font-weight--bold);
-  line-height: var(--line-height--m);
-  margin: var(--space-m) 0;
-  padding: 0 var(--space-xl);
+  color: var(--f-color-text--primary);
+  font-size: var(--f-fontSize--s);
+  font-weight: var(--f-fontWeight--bold);
+  line-height: var(--f-lineHeight--m);
+  margin: var(--f-space--m) 0;
+  padding: 0 var(--f-space--xl);
 }
 
 .f-Tabs span .f-Tabs-marker {
   float: left;
   width: 100%;
-  height: var(--space-s);
+  height: var(--f-space--s);
   margin: 1px 0;
-  background-color: var(--color-ui-element--inactive);
+  background-color: var(--f-color-element--inactive);
   transition: all 0.1s ease-out;
 }
 
 .f-Tabs span:hover .f-Tabs-marker {
-  background-color: var(--color-brand-primary);
+  background-color: var(--f-color-brandPrimary);
 }
 
 .f-Tabs span .f-Tabs-marker.is-active {
-  height: calc(var(--space-s) + 2px);
+  height: calc(var(--f-space--s) + 2px);
   padding: 1px 0;
   margin: 0;
-  background-color: var(--color-brand-primary);
+  background-color: var(--f-color-brandPrimary);
   border-radius: 3px;
 }
 

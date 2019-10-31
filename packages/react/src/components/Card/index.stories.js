@@ -11,7 +11,7 @@ const sizes = Object.values(SIZES);
 
 const Container = (
   { children }, // eslint-disable-line react/prop-types
-) => <div style={{ margin: 'var(--space-xl) 0' }}>{children}</div>;
+) => <div style={{ margin: 'var(--f-space--xl) 0' }}>{children}</div>;
 
 const stories = storiesOf('Card', module);
 

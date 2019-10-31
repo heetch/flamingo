@@ -10,10 +10,10 @@ const stories = storiesOf('Heading', module);
 const Wrapper = props => (
   <div
     style={{
-      backgroundColor: 'var(--color-ui-element--primary)',
-      marginBottom: 'var(--space-m)',
+      backgroundColor: 'var(--f-color-element--primary)',
+      marginBottom: 'var(--f-space--m)',
       overflow: 'hidden',
-      borderRadius: 'var(--radius-m)',
+      borderRadius: 'var(--f-borderRadius--m)',
     }}
     {...props}
   />

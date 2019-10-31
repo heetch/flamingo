@@ -1,20 +1,20 @@
 .f-Heading {
-  color: var(--color-ui-text-primary);
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
+  color: var(--f-color-text--primary);
+  margin-top: var(--f-space--m);
+  margin-bottom: var(--f-space--m);
 }
 
 .f-Heading--1 {
-  margin-top: var(--space-xl);
+  margin-top: var(--f-space--xl);
 }
 
 .f-Heading--2 {
-  margin-top: var(--space-l);
+  margin-top: var(--f-space--l);
 }
 
 .f-Heading--3,
 .f-Heading--4,
 .f-Heading--5,
 .f-Heading--6 {
-  margin-top: var(--space-m);
+  margin-top: var(--f-space--m);
 }

@@ -4,6 +4,6 @@
 }
 
 .f-Textarea-wrapper .f-FormEl-icon {
-  top: var(--space-l);
+  top: var(--f-space--l);
   transform: none;
 }

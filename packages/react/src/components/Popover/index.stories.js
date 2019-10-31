@@ -18,8 +18,8 @@ stories.add('All states', () => (
       style={{
         position: 'relative',
         height: '15rem',
-        border: '1px dashed var(--color-brand-secondary--light)',
-        borderRadius: 'var(--radius-m)',
+        border: '1px dashed var(--f-color-brandSecondary--light)',
+        borderRadius: 'var(--f-borderRadius--m)',
       }}
     >
       <div

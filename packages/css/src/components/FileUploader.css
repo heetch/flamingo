@@ -7,11 +7,11 @@
   width: 100%;
   flex-direction: column;
   height: var(--FileUploader-height);
-  margin: var(--space-m) 0;
-  border: 1px dashed var(--color-ui-element--tertiary);
-  border-radius: var(--radius-l);
-  color: var(--color-ui-text-secondary);
-  background-color: var(--color-ui-element--primary);
+  margin: var(--f-space--m) 0;
+  border: 1px dashed var(--f-color-element--tertiary);
+  border-radius: var(--f-borderRadius--l);
+  color: var(--f-color-text--secondary);
+  background-color: var(--f-color-element--primary);
 }
 
 .f-FileUploader,
@@ -21,12 +21,12 @@
 
 .f-FileUploader-label:hover,
 .f-FileUploader.is-empty:hover {
-  border-color: var(--color-brand-primary);
-  color: var(--color-brand-primary);
+  border-color: var(--f-color-brandPrimary);
+  color: var(--f-color-brandPrimary);
 }
 
 @media (max-width: 460px) {
-  /* --breakpoint-s */
+  /* --f-breakpoint--s */
   .f-FileUploader {
     max-width: inherit;
   }
@@ -53,11 +53,11 @@
 }
 
 .f-FileUploader-state--addFiles {
-  padding: var(--space-l);
+  padding: var(--f-space--l);
 }
 
 .f-FileUploader-state--empty .f-Icon,
 .f-FileUploader-state--uploading .f-Icon,
 .f-FileUploader-state--error .f-Icon {
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--f-space--m);
 }
