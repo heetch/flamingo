@@ -3,6 +3,8 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
+import theme from './theme';
+
 import FlexWrapperDecorator from './FlexWrapperDecorator';
 
 import 'normalize.css';
@@ -20,7 +22,7 @@ addDecorator(withInfo);
 
 addParameters({
   options: {
-    name: 'Heetch Flamingo',
+    theme,
     addonPanelInRight: true,
     hierarchySeparator: /\//,
   },
