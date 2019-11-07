@@ -24,6 +24,7 @@ const Item = React.forwardRef(
       size,
       invalid,
       valid,
+      focused,
       contentIcon,
       children,
       value,
@@ -48,6 +49,7 @@ const Item = React.forwardRef(
         className={cx('f-Item', `f-Item--${size}`, {
           'is-invalid': invalid,
           'is-valid': valid,
+          'is-focused': focused,
           'has-action': onClick,
         })}
         ref={ref}
@@ -86,6 +88,7 @@ const Item = React.forwardRef(
 Item.displayName = 'Item';
 
 Item.propTypes = {
+  focused: PropTypes.bool,
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
@@ -98,6 +101,7 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
+  focused: false,
   invalid: false,
   valid: false,
   size: SIZES.NORMAL,

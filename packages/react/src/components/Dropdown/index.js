@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import ReactSelect from 'react-select';
@@ -47,21 +47,23 @@ const CustomSingleValue = ({ children }) => (
   </UiText>
 );
 
-const buildCustomOption = (onChange, isSelectable) => props => {
-  const { data, innerProps } = props;
-  return {
-    ...data.labelComponent,
-    props: {
-      ...innerProps,
-      ...data.labelComponent.props,
-      onClick: e => {
-        safeInvoke(onChange, data.value);
-        safeInvoke(data.labelComponent.props.onClick, e);
-        isSelectable ? innerProps.onClick(e) : props.setValue(null);
-      },
+const buildCustomOption = (onChange, isSelectable) => ({
+  data,
+  innerProps,
+  isFocused,
+}) => ({
+  ...data.labelComponent,
+  props: {
+    ...innerProps,
+    ...data.labelComponent.props,
+    focused: isFocused,
+    onClick: e => {
+      safeInvoke(onChange, data.value);
+      safeInvoke(data.labelComponent.props.onClick, e);
+      isSelectable ? innerProps.onClick(e) : props.setValue(null);
     },
-  };
-};
+  },
+});
 
 const parseListItemObjectsIntoOptionObjects = objects =>
   [].concat(objects).map(object => ({
@@ -74,32 +76,39 @@ const Dropdown = React.forwardRef(
   (
     { className, onChange, children, placeholder, isSelectable, ...props },
     ref,
-  ) => (
-    <div className='f-FormEl-wrapper f-Select-wrapper'>
-      <ReactSelect
-        placeholder={placeholder}
-        options={parseListItemObjectsIntoOptionObjects(children)}
-        components={{
-          DropdownIndicator: CustomDropdownIndicator,
-          Option: buildCustomOption(onChange, isSelectable),
-          Placeholder: CustomSingleValue,
-          SingleValue: CustomSingleValue,
-        }}
-        className={cx(
-          'f-FormEl',
-          'f-FormEl--withIcon',
-          'f-Select',
-          'f-Dropdown',
-          className,
-        )}
-        isSearchable={false}
-        styles={customStyles}
-        classNamePrefix='FlamingoDropdown'
-        ref={ref}
-        {...props}
-      />
-    </div>
-  ),
+  ) => {
+    const [hasFocus, setHasFocus] = useState(false);
+
+    return (
+      <div className='f-FormEl-wrapper f-Select-wrapper'>
+        <ReactSelect
+          placeholder={placeholder}
+          options={parseListItemObjectsIntoOptionObjects(children)}
+          components={{
+            DropdownIndicator: CustomDropdownIndicator,
+            Option: buildCustomOption(onChange, isSelectable),
+            Placeholder: CustomSingleValue,
+            SingleValue: CustomSingleValue,
+          }}
+          onFocus={() => setHasFocus(true)}
+          onBlur={() => setHasFocus(false)}
+          className={cx(
+            'f-FormEl',
+            'f-FormEl--withIcon',
+            'f-Select',
+            'f-Dropdown',
+            className,
+            { 'is-focus': hasFocus },
+          )}
+          isSearchable={false}
+          styles={customStyles}
+          classNamePrefix='FlamingoDropdown'
+          ref={ref}
+          {...props}
+        />
+      </div>
+    );
+  },
 );
 
 Dropdown.displayName = 'Dropdown';

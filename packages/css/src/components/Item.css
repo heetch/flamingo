@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.f-Item.has-action:hover {
+.f-Item.has-action:hover, .f-Item.is-focused {
   background-color: var(--f-color-element--inactive);
 }
 
