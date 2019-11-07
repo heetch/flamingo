@@ -51,6 +51,7 @@ const buildCustomOption = (onChange, isSelectable) => ({
   data,
   innerProps,
   isFocused,
+  setValue,
 }) => ({
   ...data.labelComponent,
   props: {
@@ -60,7 +61,7 @@ const buildCustomOption = (onChange, isSelectable) => ({
     onClick: e => {
       safeInvoke(onChange, data.value);
       safeInvoke(data.labelComponent.props.onClick, e);
-      isSelectable ? innerProps.onClick(e) : props.setValue(null);
+      isSelectable ? innerProps.onClick(e) : setValue(null);
     },
   },
 });
