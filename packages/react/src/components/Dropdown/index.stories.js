@@ -10,12 +10,22 @@ const defaultProps = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Dropdowns', module)
+storiesOf('Dropdowns/Dropdown', module)
   .addDecorator(withKnobs)
-  .add('Dropdown', () => (
-    <Dropdown {...defaultProps()}>
+  .add('As Select component', () => (
+    <Dropdown {...defaultProps()} placeholder='Select...' isSelectable>
+      <Item type={Item.SIZES.MINI} optionValue='blueberry'>
+        Blueberry
+      </Item>
+      <Item type={Item.SIZES.MINI} optionValue='strawberry'>
+        Strawberry
+      </Item>
+    </Dropdown>
+  ))
+  .add('As Navigation', () => (
+    <Dropdown {...defaultProps()} placeholder='What do you wanna do?'>
       <Item
-        type={Item.SIZES.normal}
+        type={Item.SIZES.NORMAL}
         value='Take me there'
         helper='Check what can really happend!'
         onClick={action('onClick')}
@@ -23,9 +33,8 @@ storiesOf('Dropdowns', module)
         Cars choice
       </Item>
       <Item
-        type={Item.SIZES.normal}
+        type={Item.SIZES.NORMAL}
         value='Check out'
-        hideDivider
         helper='Enjoy your ride'
         onClick={action('onClick')}
       >

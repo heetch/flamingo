@@ -47,16 +47,17 @@ const CustomSingleValue = ({ children }) => (
   </UiText>
 );
 
-const buildCustomOption = onChange => ({ data, innerProps }) => {
+const buildCustomOption = (onChange, isSelectable) => props => {
+  const { data, innerProps } = props;
   return {
     ...data.labelComponent,
     props: {
       ...innerProps,
       ...data.labelComponent.props,
       onClick: e => {
-        innerProps.onClick(e);
-        safeInvoke(onChange(data.value));
-        safeInvoke(data.labelComponent.props.onClick(e));
+        safeInvoke(onChange, data.value);
+        safeInvoke(data.labelComponent.props.onClick, e);
+        isSelectable ? innerProps.onClick(e) : props.setValue(null);
       },
     },
   };
@@ -70,14 +71,17 @@ const parseListItemObjectsIntoOptionObjects = objects =>
   }));
 
 const Dropdown = React.forwardRef(
-  ({ className, onChange, children, placeholder, ...props }, ref) => (
+  (
+    { className, onChange, children, placeholder, isSelectable, ...props },
+    ref,
+  ) => (
     <div className='f-FormEl-wrapper f-Select-wrapper'>
       <ReactSelect
         placeholder={placeholder}
         options={parseListItemObjectsIntoOptionObjects(children)}
         components={{
           DropdownIndicator: CustomDropdownIndicator,
-          Option: buildCustomOption(onChange),
+          Option: buildCustomOption(onChange, isSelectable),
           Placeholder: CustomSingleValue,
           SingleValue: CustomSingleValue,
         }}
@@ -101,12 +105,15 @@ const Dropdown = React.forwardRef(
 Dropdown.displayName = 'Dropdown';
 
 Dropdown.propTypes = {
+  /** Make this true if you want this dropdown to behave like a select component */
+  isSelectable: PropTypes.bool,
   className: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
 Dropdown.defaultProps = {
+  isSelectable: false,
   className: undefined,
 };
 
