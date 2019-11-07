@@ -5,7 +5,6 @@ import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import UiText from '../UiText';
 import { safeInvoke } from '../../utils';
-import { ICONS, ICON_SIZES } from '../../constants';
 
 const customStyles = {
   control: () => ({
@@ -36,26 +35,24 @@ const CustomDropdownIndicator = ({ innerRef, innerProps }) => (
   <Icon
     ref={innerRef}
     {...innerProps}
-    icon={ICONS.IconChevronDown}
-    className='FormEl-icon'
-    size={ICON_SIZES.L}
+    icon={Icon.ICONS.IconChevronUpDown}
+    className='f-FormEl-icon'
+    size={Icon.SIZES.L}
   />
 );
 
-const CustomSingleValue = ({ children, ...props }) => {
-  return (
-    <UiText as='span' type={UiText.TYPES.content} {...props}>
-      {children}
-    </UiText>
-  );
-};
+const CustomSingleValue = ({ children }) => (
+  <UiText as='span' type={UiText.VARIANTS.content}>
+    {children}
+  </UiText>
+);
 
 const buildCustomOption = onChange => ({ data, innerProps }) => {
   return {
     ...data.labelComponent,
     props: {
-      ...data.labelComponent.props,
       ...innerProps,
+      ...data.labelComponent.props,
       onClick: e => {
         innerProps.onClick(e);
         safeInvoke(onChange(data.value));
@@ -72,30 +69,36 @@ const parseListItemObjectsIntoOptionObjects = objects =>
     labelComponent: object,
   }));
 
-const Dropdown = ({ className, onChange, children, placeholder, ...props }) => (
-  <div className='FormEl-wrapper Select-wrapper'>
-    <ReactSelect
-      placeholder={placeholder}
-      options={parseListItemObjectsIntoOptionObjects(children)}
-      components={{
-        DropdownIndicator: CustomDropdownIndicator,
-        Option: buildCustomOption(onChange),
-        Placeholder: CustomSingleValue,
-        SingleValue: CustomSingleValue,
-      }}
-      className={cx(
-        'FormEl',
-        'FormEl--withIcon',
-        'Select',
-        'Dropdown',
-        className,
-      )}
-      styles={customStyles}
-      classNamePrefix='FlamingoDropdown'
-      {...props}
-    />
-  </div>
+const Dropdown = React.forwardRef(
+  ({ className, onChange, children, placeholder, ...props }, ref) => (
+    <div className='f-FormEl-wrapper f-Select-wrapper'>
+      <ReactSelect
+        placeholder={placeholder}
+        options={parseListItemObjectsIntoOptionObjects(children)}
+        components={{
+          DropdownIndicator: CustomDropdownIndicator,
+          Option: buildCustomOption(onChange),
+          Placeholder: CustomSingleValue,
+          SingleValue: CustomSingleValue,
+        }}
+        className={cx(
+          'f-FormEl',
+          'f-FormEl--withIcon',
+          'f-Select',
+          'f-Dropdown',
+          className,
+        )}
+        isSearchable={false}
+        styles={customStyles}
+        classNamePrefix='FlamingoDropdown'
+        ref={ref}
+        {...props}
+      />
+    </div>
+  ),
 );
+
+Dropdown.displayName = 'Dropdown';
 
 Dropdown.propTypes = {
   className: PropTypes.string,
