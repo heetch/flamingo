@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import ReactSelect from 'react-select';
 import Icon from '../Icon';
+import UiText from '../UiText';
 import { safeInvoke } from '../../utils';
 import { ICONS, ICON_SIZES } from '../../constants';
 
@@ -41,6 +42,14 @@ const CustomDropdownIndicator = ({ innerRef, innerProps }) => (
   />
 );
 
+const CustomSingleValue = ({ children, ...props }) => {
+  return (
+    <UiText as='span' type={UiText.TYPES.content} {...props}>
+      {children}
+    </UiText>
+  );
+};
+
 const buildCustomOption = onChange => ({ data, innerProps }) => {
   return {
     ...data.labelComponent,
@@ -50,6 +59,7 @@ const buildCustomOption = onChange => ({ data, innerProps }) => {
       onClick: e => {
         innerProps.onClick(e);
         safeInvoke(onChange(data.value));
+        safeInvoke(data.labelComponent.props.onClick(e));
       },
     },
   };
@@ -58,58 +68,43 @@ const buildCustomOption = onChange => ({ data, innerProps }) => {
 const parseListItemObjectsIntoOptionObjects = objects =>
   [].concat(objects).map(object => ({
     label: object.props.children,
-    value: object.props.children,
+    value: object.props.optionValue || object.props.children,
     labelComponent: object,
   }));
 
-const Dropdown = ({
-  className,
-  disabled: isDisabled,
-  id,
-  onChange,
-  children,
-  ...props
-}) => {
-  const classes = {
-    'is-disabled': isDisabled,
-  };
-
-  return (
-    <div className={cx('FormEl-wrapper Select-wrapper', { ...classes })}>
-      <ReactSelect
-        options={parseListItemObjectsIntoOptionObjects(children)}
-        components={{
-          DropdownIndicator: CustomDropdownIndicator,
-          Option: buildCustomOption(onChange),
-        }}
-        className={cx(
-          'FormEl',
-          'FormEl--withIcon',
-          'Select',
-          'Dropdown',
-          className,
-          {
-            ...classes,
-          },
-        )}
-        styles={customStyles}
-        classNamePrefix='FlamingoDropdown'
-        {...props}
-      />
-    </div>
-  );
-};
+const Dropdown = ({ className, onChange, children, placeholder, ...props }) => (
+  <div className='FormEl-wrapper Select-wrapper'>
+    <ReactSelect
+      placeholder={placeholder}
+      options={parseListItemObjectsIntoOptionObjects(children)}
+      components={{
+        DropdownIndicator: CustomDropdownIndicator,
+        Option: buildCustomOption(onChange),
+        Placeholder: CustomSingleValue,
+        SingleValue: CustomSingleValue,
+      }}
+      className={cx(
+        'FormEl',
+        'FormEl--withIcon',
+        'Select',
+        'Dropdown',
+        className,
+      )}
+      styles={customStyles}
+      classNamePrefix='FlamingoDropdown'
+      {...props}
+    />
+  </div>
+);
 
 Dropdown.propTypes = {
   className: PropTypes.string,
-  disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
 Dropdown.defaultProps = {
   className: undefined,
-  disabled: false,
 };
 
 export default Dropdown;
