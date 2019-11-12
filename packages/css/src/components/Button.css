@@ -60,7 +60,7 @@
 .f-Button.is-outline {
   background-color: var(--textColor);
   color: var(--mainBgColor);
-  border: 1px solid var(--mainBgColor);
+  box-shadow: 0 0 0 1px var(--mainBgColor);
 }
 
 .f-Button.is-minimal {
