@@ -1,0 +1,23 @@
+.f-Grid {
+  --gutter: var(--f-space--xxl);
+
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 460px) {
+  /* --f-breakpoint--s */
+  .f-Grid {
+    --gutter: var(--f-space--xl);
+  }
+}
+
+.f-Grid-col {
+  flex: 1;
+  margin-right: var(--gutter);
+}
+
+.f-Grid-col:last-child {
+  margin-right: 0;
+}
