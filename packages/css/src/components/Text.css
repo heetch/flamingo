@@ -1,5 +1,5 @@
 .f-Text {
-  color: var(--f-text--secondary);
+  color: var(--f-color-text--secondary);
 }
 
 .f-Text.is-number {
