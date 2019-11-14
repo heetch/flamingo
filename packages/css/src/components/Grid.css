@@ -6,13 +6,6 @@
   margin-right: auto;
 }
 
-@media (max-width: 460px) {
-  /* --f-breakpoint--s */
-  .f-Grid {
-    --gutter: var(--f-space--xl);
-  }
-}
-
 .f-Grid-col {
   flex: 1;
   margin-right: var(--gutter);
@@ -20,4 +13,147 @@
 
 .f-Grid-col:last-child {
   margin-right: 0;
+}
+
+@media (max-width: 460px) {
+  /* --f-breakpoint--s */
+  .f-Grid {
+    --colsCount: 4;
+    --gutter: var(--f-space--xl);
+  }
+
+  .f-Grid-col--s1 {
+    flex-basis: calc(100% / var(--colsCount) * 1);
+    max-width: calc(100% / var(--colsCount) * 1);
+  }
+
+  .f-Grid-col--s2 {
+    flex-basis: calc(100% / var(--colsCount) * 2);
+    max-width: calc(100% / var(--colsCount) * 2);
+  }
+
+  .f-Grid-col--s3 {
+    flex-basis: calc(100% / var(--colsCount) * 3);
+    max-width: calc(100% / var(--colsCount) * 3);
+  }
+
+  .f-Grid-col--s4 {
+    flex-basis: calc(100% / var(--colsCount) * 4);
+    max-width: calc(100% / var(--colsCount) * 4);
+  }
+}
+
+@media (min-width: 460px) and (max-width: 800px) {
+  /* --f-breakpoint--s */
+  /* --f-breakpoint--m */
+  .f-Grid {
+    --colsCount: 8;
+  }
+
+  .f-Grid-col--m1 {
+    flex-basis: calc(100% / var(--colsCount) * 1);
+    max-width: calc(100% / var(--colsCount) * 1);
+  }
+
+  .f-Grid-col--m2 {
+    flex-basis: calc(100% / var(--colsCount) * 2);
+    max-width: calc(100% / var(--colsCount) * 2);
+  }
+
+  .f-Grid-col--m3 {
+    flex-basis: calc(100% / var(--colsCount) * 3);
+    max-width: calc(100% / var(--colsCount) * 3);
+  }
+
+  .f-Grid-col--m4 {
+    flex-basis: calc(100% / var(--colsCount) * 4);
+    max-width: calc(100% / var(--colsCount) * 4);
+  }
+
+  .f-Grid-col--m5 {
+    flex-basis: calc(100% / var(--colsCount) * 5);
+    max-width: calc(100% / var(--colsCount) * 5);
+  }
+
+  .f-Grid-col--m6 {
+    flex-basis: calc(100% / var(--colsCount) * 6);
+    max-width: calc(100% / var(--colsCount) * 6);
+  }
+
+  .f-Grid-col--m7 {
+    flex-basis: calc(100% / var(--colsCount) * 7);
+    max-width: calc(100% / var(--colsCount) * 7);
+  }
+
+  .f-Grid-col--m8 {
+    flex-basis: calc(100% / var(--colsCount) * 8);
+    max-width: calc(100% / var(--colsCount) * 8);
+  }
+}
+
+@media (min-width: 800px) {
+  /* --f-breakpoint--m */
+  .f-Grid {
+    --colsCount: 12;
+  }
+
+  .f-Grid-col--l1 {
+    flex-basis: calc(100% / var(--colsCount) * 1);
+    max-width: calc(100% / var(--colsCount) * 1);
+  }
+
+  .f-Grid-col--l2 {
+    flex-basis: calc(100% / var(--colsCount) * 2);
+    max-width: calc(100% / var(--colsCount) * 2);
+  }
+
+  .f-Grid-col--l3 {
+    flex-basis: calc(100% / var(--colsCount) * 3);
+    max-width: calc(100% / var(--colsCount) * 3);
+  }
+
+  .f-Grid-col--l4 {
+    flex-basis: calc(100% / var(--colsCount) * 4);
+    max-width: calc(100% / var(--colsCount) * 4);
+  }
+
+  .f-Grid-col--l5 {
+    flex-basis: calc(100% / var(--colsCount) * 5);
+    max-width: calc(100% / var(--colsCount) * 5);
+  }
+
+  .f-Grid-col--l6 {
+    flex-basis: calc(100% / var(--colsCount) * 6);
+    max-width: calc(100% / var(--colsCount) * 6);
+  }
+
+  .f-Grid-col--l7 {
+    flex-basis: calc(100% / var(--colsCount) * 7);
+    max-width: calc(100% / var(--colsCount) * 7);
+  }
+
+  .f-Grid-col--l8 {
+    flex-basis: calc(100% / var(--colsCount) * 8);
+    max-width: calc(100% / var(--colsCount) * 8);
+  }
+
+  .f-Grid-col--l9 {
+    flex-basis: calc(100% / var(--colsCount) * 9);
+    max-width: calc(100% / var(--colsCount) * 9);
+  }
+
+  .f-Grid-col--l10 {
+    flex-basis: calc(100% / var(--colsCount) * 10);
+    max-width: calc(100% / var(--colsCount) * 10);
+  }
+
+  .f-Grid-col--l11 {
+    flex-basis: calc(100% / var(--colsCount) * 11);
+    max-width: calc(100% / var(--colsCount) * 11);
+  }
+
+  .f-Grid-col--l12 {
+    flex-basis: calc(100% / var(--colsCount) * 12);
+    max-width: calc(100% / var(--colsCount) * 12);
+  }
 }
