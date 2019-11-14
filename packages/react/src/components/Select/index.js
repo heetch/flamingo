@@ -15,7 +15,7 @@ const Select = React.forwardRef(
     };
 
     return (
-      <div className={cx('f-FormEl-wrapper Select-wrapper', { ...classes })}>
+      <div className={cx('f-FormEl-wrapper', { ...classes })}>
         <UiText
           as='select'
           variant={UiText.VARIANTS.content}
