@@ -5,6 +5,8 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
+const icons = Object.values(Icon.ICONS);
+
 const Input = React.forwardRef(
   (
     {
@@ -15,6 +17,7 @@ const Input = React.forwardRef(
       onChange,
       placeholder,
       valid: isValid,
+      inputIcon,
       ...props
     },
     ref,
@@ -50,6 +53,10 @@ const Input = React.forwardRef(
         {isValid && (
           <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
         )}
+
+        {!isValid && !isInvalid && inputIcon && (
+          <Icon icon={inputIcon} className='f-FormEl-icon' />
+        )}
       </div>
     );
   },
@@ -60,6 +67,7 @@ Input.displayName = 'Input';
 Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  inputIcon: PropTypes.oneOf(icons),
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -70,6 +78,7 @@ Input.propTypes = {
 Input.defaultProps = {
   className: undefined,
   disabled: false,
+  inputIcon: undefined,
   invalid: false,
   placeholder: '',
   valid: false,
