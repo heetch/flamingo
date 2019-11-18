@@ -54,7 +54,7 @@ stories.add('Playground', () => (
     invalid={boolean('Is invalid?', false)}
     valid={boolean('Is valid?', false)}
     disabled={boolean('Is disabled?', false)}
-    inputIcon={select('Input icon', ICONS, ICONS.None)}
+    icon={select('Icon', ICONS, ICONS.None)}
     onChange={action('onChange')}
   />
 ));
