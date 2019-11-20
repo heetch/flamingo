@@ -28,6 +28,14 @@ const Input = React.forwardRef(
       'is-invalid': isInvalid,
     };
 
+    const getInputIcon = () => {
+      if (isValid) return Icon.ICONS.IconCheck;
+      if (isInvalid) return Icon.ICONS.IconAlertOctagon;
+      return icon;
+    };
+
+    const inputIcon = getInputIcon();
+
     return (
       <div className={cx('f-FormEl-wrapper', 'Input-wrapper', { ...classes })}>
         <UiText
@@ -46,17 +54,7 @@ const Input = React.forwardRef(
           {...props}
         />
 
-        {isInvalid && (
-          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
-        )}
-
-        {isValid && (
-          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
-        )}
-
-        {!isValid && !isInvalid && icon && (
-          <Icon icon={icon} className='f-FormEl-icon' />
-        )}
+        {inputIcon && <Icon icon={inputIcon} className='f-FormEl-icon' />}
       </div>
     );
   },
