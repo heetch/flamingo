@@ -11,6 +11,7 @@ export { default as ImageUploader } from './ImageUploader';
 export { default as Input } from './Input';
 export { default as Item } from './Item';
 export { default as Label } from './Label';
+export { default as Link } from './Link';
 export { default as Popover } from './Popover';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
