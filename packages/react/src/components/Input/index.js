@@ -42,7 +42,7 @@ const Input = React.forwardRef(
           variant={UiText.VARIANTS.content}
           className={cx('f-FormEl', 'Input', className, {
             ...classes,
-            'f-FormEl--withIcon': isValid || isInvalid || icon,
+            'f-FormEl--withIcon': !!icon,
           })}
           disabled={isDisabled}
           id={id}
