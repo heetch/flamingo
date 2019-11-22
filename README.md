@@ -1,6 +1,6 @@
 # @heetch/flamingo
 
-[https://flamingo.heetch-eng.now.sh](Flamingo storybook)
+[Flamingo storybook](https://flamingo.heetch-eng.now.sh)
 
 ## What is it
 
