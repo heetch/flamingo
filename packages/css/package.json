@@ -13,7 +13,7 @@
     "start": "postcss src/index.css -o dist/index.css -w",
     "build": "postcss src/index.css -o dist/index.css",
     "prepare": "npm run build",
-    "prettier": "prettier --write 'src/**/*.css'"
+    "prettier": "prettier --check 'src/**/*.css'"
   },
   "devDependencies": {
     "postcss": "^7.0.23",

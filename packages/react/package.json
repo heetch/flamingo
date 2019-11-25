@@ -24,7 +24,7 @@
     "predeploy": "npm run build && npm run build:storybook",
     "deploy": "storybook-to-ghpages",
     "icons": "node scripts/icons",
-    "prettier": "prettier --write 'src/**/*.{js,jsx,json,md}'"
+    "prettier": "prettier --check 'src/**/*.{js,jsx,json,md}'"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
