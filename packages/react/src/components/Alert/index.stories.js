@@ -30,11 +30,11 @@ stories.add('All states', () => (
 stories.add('Playground', () => {
   const withOnClose = boolean('With onClose handler', true);
   const onClose = withOnClose ? action('Alert closed!') : null;
+  const foo = true; // linting should fail here
 
   return (
     <Alert
-      title={text('Title', 'Title of alert')}
-      onClose={onClose}
+      title={text('Title', 'Title of alert')}      onClose={onClose} // prettier should fail here
       type={select('Alert type', TYPES, TYPES.INFORMATION)}
     >
       {text('Message', 'Alert message')}
