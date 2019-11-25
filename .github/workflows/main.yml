@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Prettier
+      run: npm run prettier --prefix packages/react
+    - name: Linting
+      run: npm run lint --prefix packages/react
