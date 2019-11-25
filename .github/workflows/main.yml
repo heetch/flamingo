@@ -11,10 +11,14 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Install dependencies
-      run: npm install --prefix packages/react
+      run: |
+        npm install --prefix packages/react
+        npm install --prefix packages/css
 
     - name: Prettier
-      run: npm run prettier --prefix packages/react
+      run: |
+        npm run prettier --prefix packages/react
+        npm run prettier --prefix packages/css
 
     - name: Linting
       run: npm run lint --prefix packages/react
