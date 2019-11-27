@@ -62,7 +62,9 @@ const FileUploader = React.forwardRef(
       const remainingFiles = files.filter(
         file => file.name !== fileToDelete.name,
       );
+
       setFiles(remainingFiles);
+      onChange(remainingFiles);
     };
 
     React.useEffect(() => {
