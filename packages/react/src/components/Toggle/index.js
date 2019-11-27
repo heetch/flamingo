@@ -4,8 +4,6 @@ import cx from 'classnames';
 
 import Helper from '../Helper';
 
-import { safeInvoke } from '../../utils';
-
 const Toggle = React.forwardRef(
   ({ children, checked, disabled, helper, onChange }, ref) => {
     const [isOn, setIsOn] = useState(checked);
@@ -18,7 +16,7 @@ const Toggle = React.forwardRef(
       const newState = !isOn;
 
       setIsOn(newState);
-      safeInvoke(onChange, newState);
+      onChange(newState);
     };
 
     const labelProps = {

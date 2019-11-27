@@ -7,7 +7,7 @@ import Icon from '../Icon';
 import IconButton from '../IconButton';
 import UploaderImageItem from '../UploaderImageItem';
 
-import { toBase64, safeInvoke } from '../../utils';
+import { toBase64 } from '../../utils';
 
 const ImageUploader = React.forwardRef(
   ({ multiple, onChange, ...props }, ref) => {
@@ -39,7 +39,7 @@ const ImageUploader = React.forwardRef(
         .then(base64 => {
           setPreview(base64);
           setIsLoading(false);
-          safeInvoke(onChange, { files, base64 });
+          onChange({ files, base64 });
         })
         .catch(setHasError);
     };

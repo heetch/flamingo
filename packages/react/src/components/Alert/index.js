@@ -8,8 +8,6 @@ import IconButton from '../IconButton';
 import UiText from '../UiText';
 import Text from '../Text';
 
-import { safeInvoke } from '../../utils';
-
 const TYPES = {
   INFORMATION: 'information',
   SUCCESS: 'success',
@@ -52,7 +50,7 @@ const Alert = React.forwardRef(({ title, children, type, onClose }, ref) => (
         variant={Button.VARIANTS.MINIMAL}
         className='f-Alert-closeBtn'
         size={Icon.SIZES.S}
-        onClick={() => safeInvoke(onClose)}
+        onClick={onClose}
       />
     )}
   </div>
