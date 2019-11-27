@@ -35,7 +35,7 @@ const Item = React.forwardRef(
     const isMini = size === SIZES.MINI;
 
     const containerProps = onClick && {
-      onClick: safeInvoke(onClick),
+      onClick: () => safeInvoke(onClick),
       onKeyPress: ({ which }) =>
         which === 13 ? safeInvoke(onClick) : undefined,
       role: 'button',
