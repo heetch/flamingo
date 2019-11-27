@@ -7,8 +7,6 @@ import Spinner from '../Spinner';
 import UiText from '../UiText';
 import UploaderItem from '../UploaderItem';
 
-import { safeInvoke } from '../../utils';
-
 const defaultTranslate = ({ defaultText }) => defaultText;
 
 const texts = {
@@ -57,14 +55,16 @@ const FileUploader = React.forwardRef(
       const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
       setFiles(nextFiles);
-      safeInvoke(onChange, inputFiles);
+      onChange(inputFiles);
     };
 
     const handleDeleteFile = fileToDelete => {
       const remainingFiles = files.filter(
         file => file.name !== fileToDelete.name,
       );
+
       setFiles(remainingFiles);
+      onChange(remainingFiles);
     };
 
     React.useEffect(() => {
