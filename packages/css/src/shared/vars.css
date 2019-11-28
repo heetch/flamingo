@@ -71,3 +71,7 @@
   --f-breakpoint--m: 50rem; /* 800px */
   --f-breakpoint--l: 68.75rem; /* 1100px */
 }
+
+:root {
+  --f-zIndex--Overlay: 100;
+}

@@ -13,8 +13,9 @@
 @import './components/Icon.css';
 @import './components/Label.css';
 @import './components/Link.css';
-@import './components/Radio.css';
+@import './components/Overlay.css';
 @import './components/Popover.css';
+@import './components/Radio.css';
 @import './components/Spinner.css';
 @import './components/Text.css';
 
