@@ -16,6 +16,7 @@ export { default as Overlay } from './Overlay';
 export { default as Popover } from './Popover';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
+export { default as SidePanel } from './SidePanel';
 export { default as Spinner } from './Spinner';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';

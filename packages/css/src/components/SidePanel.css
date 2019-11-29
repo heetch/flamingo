@@ -1,0 +1,58 @@
+.f-SidePanel {
+  --content-hSpacing: var(--f-space--xxl);
+  --content-vSpacing: var(--f-space--xxl);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 33.75rem; /* 540px */
+  overflow: auto;
+  z-index: calc(var(--f-zIndex--Overlay) + 1);
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  background-color: var(--f-color-element--primary);
+}
+
+@media (max-width: 460px) {
+  .f-SidePanel {
+    --content-hSpacing: var(--f-space--xl);
+  }
+}
+
+.f-SidePanel.is-open {
+  transform: translateX(0);
+  pointer-events: inherit;
+}
+
+.f-SidePanel-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--f-space--m) var(--content-hSpacing);
+  border-bottom: 1px solid var(--f-color-element--inactive);
+  background-color: var(--f-color-element--primary);
+}
+
+.f-SidePanel-content {
+  padding: var(--content-vSpacing) var(--content-hSpacing);
+}
+
+.f-SidePanel-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--f-color-element--primary);
+  border-top: 1px solid var(--f-color-element--inactive);
+  padding: 0 var(--content-hSpacing);
+}
+
+.f-SidePanel-footer .f-Button + .f-Button {
+  margin-left: var(--f-space--m);
+}
