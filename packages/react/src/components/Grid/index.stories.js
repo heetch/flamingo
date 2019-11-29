@@ -11,6 +11,7 @@ import UiText from '../UiText';
 const ColInner = ({ children, style }) => (
   <div
     style={{
+      margin: 'var(--f-space--m) 0',
       padding: 'var(--f-space--m)',
       textAlign: 'center',
       color: 'var(--f-color-text--white)',
@@ -84,6 +85,15 @@ stories.add('All sizes', () => (
       </Grid.Col>
       <Grid.Col>
         <ColInner>Fluid</ColInner>
+      </Grid.Col>
+    </Grid>
+
+    <Grid>
+      <Grid.Col m={12} l={6}>
+        <ColInner>{`m={${12}} l={${6}}`}</ColInner>
+      </Grid.Col>
+      <Grid.Col m={12} l={6}>
+        <ColInner>{`m={${12}} l={${6}}`}</ColInner>
       </Grid.Col>
     </Grid>
   </>

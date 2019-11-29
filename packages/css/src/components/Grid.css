@@ -3,17 +3,16 @@
   --gutter: var(--f-space--xxl);
 
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  flex-wrap: wrap;
+  margin-left: calc(var(--gutter) / 2 * -1);
+  margin-right: calc(var(--gutter) / 2 * -1);
 }
 
 .f-Grid-col {
   flex: 1;
-  margin-right: var(--gutter);
-}
-
-.f-Grid-col:last-child {
-  margin-right: 0;
+  flex-shrink: 0;
+  margin-left: calc(var(--gutter) / 2);
+  margin-right: calc(var(--gutter) / 2);
 }
 
 @media (max-width: 460px) {
