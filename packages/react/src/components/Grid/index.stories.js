@@ -25,44 +25,40 @@ const ColInner = ({ children, style }) => (
   </div>
 );
 
-const gridProps = {
-  style: { margin: 'var(--f-space--xl) 0' },
-};
-
 const stories = storiesOf('Grid', module);
 
 stories.add('All sizes', () => (
   <>
     <Heading>Grid</Heading>
-    <Heading level={2}>Fluid columns</Heading>
+    <Heading level={2}>Fluid by default</Heading>
 
-    <Grid {...gridProps}>
-      <Grid.Col fluid>
+    <Grid>
+      <Grid.Col>
         <ColInner>Fluid</ColInner>
       </Grid.Col>
-      <Grid.Col fluid>
+      <Grid.Col>
         <ColInner>Fluid</ColInner>
       </Grid.Col>
-      <Grid.Col fluid>
+      <Grid.Col>
         <ColInner>Fluid</ColInner>
       </Grid.Col>
     </Grid>
 
     <Heading level={2}>Sized columns</Heading>
 
-    <Grid {...gridProps}>
-      <Grid.Col fluid>
+    <Grid>
+      <Grid.Col>
         <ColInner>Fluid</ColInner>
       </Grid.Col>
       <Grid.Col s={6}>
         <ColInner>{`s={${6}}`}</ColInner>
       </Grid.Col>
-      <Grid.Col fluid>
+      <Grid.Col>
         <ColInner>Fluid</ColInner>
       </Grid.Col>
     </Grid>
 
-    <Grid {...gridProps}>
+    <Grid>
       <Grid.Col s={2}>
         <ColInner>{`s={${2}}`}</ColInner>
       </Grid.Col>
@@ -73,7 +69,7 @@ stories.add('All sizes', () => (
 
     <Heading level={2}>Responsive columns</Heading>
 
-    <Grid {...gridProps}>
+    <Grid>
       <Grid.Col m={6} l={10}>
         <ColInner>{`m={${6}} l={${10}}`}</ColInner>
       </Grid.Col>
@@ -82,9 +78,9 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
-    <Grid {...gridProps}>
-      <Grid.Col m={4} l={6}>
-        <ColInner>{`m={${4}} l={${6}}`}</ColInner>
+    <Grid>
+      <Grid.Col m={3} l={10}>
+        <ColInner>{`m={${3}} l={${10}}`}</ColInner>
       </Grid.Col>
       <Grid.Col>
         <ColInner>Fluid</ColInner>
