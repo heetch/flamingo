@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--f-color-brandSecondary);
+  background-color: var(--f-color-element--overlay);
   z-index: var(--f-zIndex--Overlay);
   transition: opacity 0.2s ease-out;
   opacity: 0.8;
