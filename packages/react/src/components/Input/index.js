@@ -36,11 +36,11 @@ const Input = React.forwardRef(
       : defaultIcon;
 
     return (
-      <div className={cx('f-FormEl-wrapper', 'Input-wrapper', { ...classes })}>
+      <div className={cx('f-FormEl-wrapper', { ...classes })}>
         <UiText
           as='input'
           variant={UiText.VARIANTS.content}
-          className={cx('f-FormEl', 'Input', className, {
+          className={cx('f-FormEl', className, {
             ...classes,
             'f-FormEl--withIcon': !!icon,
           })}
