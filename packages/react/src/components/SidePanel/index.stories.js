@@ -12,6 +12,7 @@ const stories = storiesOf('SidePanel', module);
 
 stories.add('Playground', () => {
   const isOpen = boolean('Is Open?', true);
+  const closesOnOverlayClick = boolean('closesOnOverlayClick?', true);
   const withLargeContent = boolean('With large content?', false);
   const withFooter = boolean('With footer?', true);
 
@@ -27,6 +28,7 @@ stories.add('Playground', () => {
       <Heading>SidePanel</Heading>
 
       <SidePanel
+        closesOnOverlayClick={closesOnOverlayClick}
         title={text('Title', 'Side Panel Title')}
         footer={
           withFooter && (

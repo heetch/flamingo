@@ -9,6 +9,7 @@ import Overlay from '../Overlay';
 const SidePanel = ({
   children,
   className,
+  closesOnOverlayClick,
   footer,
   isOpen: isOpenProp,
   onClose,
@@ -24,6 +25,12 @@ const SidePanel = ({
     onClose();
   };
 
+  const onOverlayClick = () => {
+    if (closesOnOverlayClick) {
+      handleClose();
+    }
+  };
+
   React.useEffect(() => {
     setIsOpen(isOpenProp);
   }, [isOpenProp]);
@@ -34,7 +41,7 @@ const SidePanel = ({
         className={cx({
           'is-hidden': !isOpen,
         })}
-        onClick={handleClose}
+        onClick={onOverlayClick}
       />
 
       <div
@@ -63,6 +70,7 @@ const SidePanel = ({
 SidePanel.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  closesOnOverlayClick: PropTypes.bool,
   footer: PropTypes.node,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
@@ -72,6 +80,7 @@ SidePanel.propTypes = {
 SidePanel.defaultProps = {
   children: undefined,
   className: undefined,
+  closesOnOverlayClick: undefined,
   footer: undefined,
   isOpen: false,
   onClose: () => {},
