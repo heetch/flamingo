@@ -5,6 +5,7 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
+const { IconCheck, IconAlertOctagon } = Icon.ICONS;
 const icons = Object.values(Icon.ICONS);
 
 const Input = React.forwardRef(
@@ -28,7 +29,6 @@ const Input = React.forwardRef(
       'is-invalid': isInvalid,
     };
 
-    const { IconCheck, IconAlertOctagon } = Icon.ICONS;
     const icon = isValid
       ? IconCheck
       : isInvalid
