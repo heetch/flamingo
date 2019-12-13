@@ -7,11 +7,22 @@ import UiText from '../UiText';
 
 const Select = React.forwardRef(
   (
-    { className, disabled: isDisabled, id, onChange, options, ...props },
+    {
+      className,
+      disabled: isDisabled,
+      id,
+      invalid: isInvalid,
+      onChange,
+      options,
+      valid: isValid,
+      ...props
+    },
     ref,
   ) => {
     const classes = {
       'is-disabled': isDisabled,
+      'is-valid': isValid,
+      'is-invalid': isInvalid,
     };
 
     return (
@@ -52,6 +63,7 @@ Select.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
+  invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.exact({
@@ -61,12 +73,15 @@ Select.propTypes = {
         .isRequired,
     }),
   ),
+  valid: PropTypes.bool,
 };
 
 Select.defaultProps = {
   className: undefined,
   disabled: false,
+  invalid: false,
   options: [],
+  valid: false,
 };
 
 export default Select;
