@@ -14,6 +14,7 @@
   --f-color-element--inactive: #eaeaea;
   --f-color-element--error: #ee7d52;
   --f-color-element--success: #5cc689;
+  --f-color-element--overlay: #2b1e70;
 
   --f-color-text--primary: #190134;
   --f-color-text--secondary: #685879;
@@ -70,4 +71,8 @@
   --f-breakpoint--s: 28.75rem; /* 460px */
   --f-breakpoint--m: 50rem; /* 800px */
   --f-breakpoint--l: 68.75rem; /* 1100px */
+}
+
+:root {
+  --f-zIndex--Overlay: 100;
 }
