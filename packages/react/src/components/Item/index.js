@@ -6,8 +6,6 @@ import Helper from '../Helper';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
-import { safeInvoke } from '../../utils';
-
 const SIZES = {
   NORMAL: 'normal',
   SUB: 'sub',
@@ -35,9 +33,8 @@ const Item = React.forwardRef(
     const isMini = size === SIZES.MINI;
 
     const containerProps = onClick && {
-      onClick: safeInvoke(onClick),
-      onKeyPress: ({ which }) =>
-        which === 13 ? safeInvoke(onClick) : undefined,
+      onClick,
+      onKeyPress: ({ which }) => (which === 13 ? onClick() : undefined),
       role: 'button',
       tabIndex: 0,
     };

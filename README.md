@@ -1,6 +1,6 @@
 # @heetch/flamingo
 
-https://heetch.github.io/flamingo/
+[Flamingo storybook](https://flamingo.heetch-eng.now.sh)
 
 ## What is it
 

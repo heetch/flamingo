@@ -1,10 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Input from '.';
 import Heading from '../Heading';
+import Icon from '../Icon';
+
+const ICONS = { ...Icon.ICONS, None: null };
 
 const getId = () => `input-${Math.random()}`;
 const states = ['default', 'hover', 'focus', 'disabled'];
@@ -51,6 +54,7 @@ stories.add('Playground', () => (
     invalid={boolean('Is invalid?', false)}
     valid={boolean('Is valid?', false)}
     disabled={boolean('Is disabled?', false)}
+    icon={select('Icon', ICONS, ICONS.None)}
     onChange={action('onChange')}
   />
 ));

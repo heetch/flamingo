@@ -5,6 +5,9 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import UiText from '../UiText';
 
+const { IconCheck, IconAlertOctagon } = Icon.ICONS;
+const icons = Object.values(Icon.ICONS);
+
 const Input = React.forwardRef(
   (
     {
@@ -15,6 +18,7 @@ const Input = React.forwardRef(
       onChange,
       placeholder,
       valid: isValid,
+      icon: defaultIcon,
       ...props
     },
     ref,
@@ -25,6 +29,12 @@ const Input = React.forwardRef(
       'is-invalid': isInvalid,
     };
 
+    const icon = isValid
+      ? IconCheck
+      : isInvalid
+      ? IconAlertOctagon
+      : defaultIcon;
+
     return (
       <div className={cx('f-FormEl-wrapper', 'Input-wrapper', { ...classes })}>
         <UiText
@@ -32,7 +42,7 @@ const Input = React.forwardRef(
           variant={UiText.VARIANTS.content}
           className={cx('f-FormEl', 'Input', className, {
             ...classes,
-            'f-FormEl--withIcon': isValid || isInvalid,
+            'f-FormEl--withIcon': !!icon,
           })}
           disabled={isDisabled}
           id={id}
@@ -43,13 +53,7 @@ const Input = React.forwardRef(
           {...props}
         />
 
-        {isInvalid && (
-          <Icon icon={Icon.ICONS.IconAlertOctagon} className='f-FormEl-icon' />
-        )}
-
-        {isValid && (
-          <Icon icon={Icon.ICONS.IconCheck} className='f-FormEl-icon' />
-        )}
+        {icon && <Icon icon={icon} className='f-FormEl-icon' />}
       </div>
     );
   },
@@ -60,6 +64,7 @@ Input.displayName = 'Input';
 Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  icon: PropTypes.oneOf(icons),
   id: PropTypes.string.isRequired,
   invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -70,6 +75,7 @@ Input.propTypes = {
 Input.defaultProps = {
   className: undefined,
   disabled: false,
+  icon: undefined,
   invalid: false,
   placeholder: '',
   valid: false,
