@@ -9,7 +9,6 @@ const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 const Heading = React.forwardRef(({ as, className, level, ...props }, ref) => (
   <UiText
     as={as || `h${level}`}
-    level={level}
     variant={`h${level}`}
     className={cx('f-Heading', `f-Heading--${level}`, className)}
     ref={ref}

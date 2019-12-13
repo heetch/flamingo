@@ -35,4 +35,6 @@ IconButton.defaultProps = {
   size: Icon.SIZES.L,
 };
 
+IconButton.ICONS = Icon.ICONS;
+
 export default IconButton;
