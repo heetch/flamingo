@@ -4,6 +4,7 @@ export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export { default as FormField } from './FormField';
 export { default as FileUploader } from './FileUploader';
+export { default as Grid } from './Grid';
 export { default as Heading } from './Heading';
 export { default as Helper } from './Helper';
 export { default as Icon } from './Icon';
