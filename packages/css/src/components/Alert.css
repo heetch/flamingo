@@ -16,6 +16,7 @@
   --iconContainerSize: calc(
     var(--leftIconPadding) * 2 + var(--iconSize) + var(--f-space--xl)
   );
+  text-align: left;
 
   position: relative;
   margin: var(--f-space--m) 0;
@@ -58,6 +59,7 @@
 /* Close button */
 
 .f-Alert .f-Alert-closeBtn {
+  width: initial;
   position: absolute;
   top: var(--f-space--s);
   right: var(--f-space--s);
