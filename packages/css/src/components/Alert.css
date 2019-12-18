@@ -11,12 +11,12 @@
 }
 
 .f-Alert {
-  text-align: left;
   --leftIconPadding: var(--f-space--m);
   --iconSize: var(--f-iconSize--m);
   --iconContainerSize: calc(
     var(--leftIconPadding) * 2 + var(--iconSize) + var(--f-space--xl)
   );
+  text-align: left;
 
   position: relative;
   margin: var(--f-space--m) 0;
