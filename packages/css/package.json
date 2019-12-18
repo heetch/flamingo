@@ -6,6 +6,9 @@
   "license": "MIT",
   "repository": "https://github.com/heetch/flamingo",
   "main": "./dist/index.css",
+  "engines": {
+    "node": "12.x"
+  },
   "files": [
     "dist"
   ],
