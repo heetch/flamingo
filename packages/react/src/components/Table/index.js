@@ -78,7 +78,7 @@ Table.propTypes = {
   className: PropTypes.string,
   columns: PropTypes.arrayOf(
     PropTypes.shape({
-      Header: PropTypes.string.isRequired,
+      Header: PropTypes.string,
       accessor: PropTypes.string.isRequired,
     }),
   ),
