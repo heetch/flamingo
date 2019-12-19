@@ -16,13 +16,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install --prefix packages/react
-        npm install --prefix packages/css
+        yarn --cwd packages/react install
+        yarn --cwd packages/css install
 
     - name: Prettier
       run: |
-        npm run prettier --prefix packages/react
-        npm run prettier --prefix packages/css
+        yarn --cwd packages/react prettier
+        yarn --cwd packages/css prettier
 
     - name: Linting
-      run: npm run lint --prefix packages/react
+      run: yarn --cwd packages/react lint
