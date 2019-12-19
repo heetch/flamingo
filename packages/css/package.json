@@ -6,6 +6,9 @@
   "license": "MIT",
   "repository": "https://github.com/heetch/flamingo",
   "main": "./dist/index.css",
+  "engines": {
+    "node": "12.x"
+  },
   "files": [
     "dist"
   ],
@@ -13,11 +16,9 @@
     "start": "postcss src/index.css -o dist/index.css -w",
     "build": "postcss src/index.css -o dist/index.css",
     "prepare": "npm run build",
-    "prettier": "prettier --write 'src/**/*.css'"
+    "prettier": "prettier --check 'src/**/*.css'"
   },
   "devDependencies": {
-    "husky": "^3.1.0",
-    "lint-staged": "^9.4.3",
     "postcss": "^7.0.23",
     "postcss-cli": "^6.1.3",
     "postcss-easy-import": "^3.0.0",
@@ -25,16 +26,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

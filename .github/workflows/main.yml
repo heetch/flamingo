@@ -1,0 +1,28 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x] # Only run the 12.x build
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run: |
+        yarn --cwd packages/react install
+        yarn --cwd packages/css install
+
+    - name: Prettier
+      run: |
+        yarn --cwd packages/react prettier
+        yarn --cwd packages/css prettier
+
+    - name: Linting
+      run: yarn --cwd packages/react lint
