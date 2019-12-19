@@ -17,6 +17,6 @@
     "react:setup": "yarn --cwd packages/react install",
     "react:storybook": "yarn --cwd packages/react start:storybook",
     "start": "npm-run-all --parallel css react react:storybook",
-    "setup": "yarn && npm-run-all --parallel css:setup react:setup"
+    "setup": "yarn css:setup && yarn react:setup"
   }
 }
