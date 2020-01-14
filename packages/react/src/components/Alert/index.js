@@ -60,15 +60,16 @@ Alert.displayName = 'Alert';
 
 Alert.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(types),
-  title: PropTypes.string.isRequired,
   /** Method that is triggered when X button on the alert is clicked. Most likely to be used for hiding the alert. If not provided, no X button is gonna be shown. */
   onClose: PropTypes.func,
+  title: PropTypes.node,
+  type: PropTypes.oneOf(types),
 };
 
 Alert.defaultProps = {
   children: undefined,
   onClose: undefined,
+  title: undefined,
   type: TYPES.INFORMATION,
 };
 
