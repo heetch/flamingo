@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logo from './logo.png';
+import logo from './heetch-logo.png';
 
 // https://github.com/storybookjs/storybook/blob/next/lib/theming/src/themes/light.ts
 
@@ -30,7 +30,8 @@ export default create({
   appBorderColor: colors.elementInactive,
   appBorderRadius: radius.m,
 
-  fontBase: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+  fontBase:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
   fontCode: 'monospace',
 
   textColor: colors.textPrimary,
