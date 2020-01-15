@@ -3,7 +3,7 @@ import { addons } from '@storybook/addons';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import theme from './theme/'
+import theme from './theme/';
 import StoryWrapper from './theme/StoryWrapper';
 
 import 'normalize.css';

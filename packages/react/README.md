@@ -14,11 +14,11 @@ For styling purpose, you will also need to install and import `@heetch/flamingo-
 
 ```js
 // index.js
-import React from "react";
-import { Button } from "@heetch/flamingo-react";
+import React from 'react';
+import { Button } from '@heetch/flamingo-react';
 
-import "@heetch/flamingo-css";
-import "normalize.css";
+import '@heetch/flamingo-css';
+import 'normalize.css';
 
 export default () => <Button>Example</Button>;
 ```
