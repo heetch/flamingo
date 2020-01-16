@@ -8,7 +8,12 @@ import Selector from '.';
 const defaultProps = () => ({
   id: `selector-${Math.random()}`,
   onChange: action('onChange'),
-  options: [{label: 'First', value: 123}],
+  options: [
+    { label: 'First', value: 123 },
+    // { label: 'Second', value: 456 },
+    { label: 'Third', value: 789 },
+    { label: 'Fourth', value: 'Another' },
+  ],
 });
 
 const stories = storiesOf('Form controls/Selector', module);
@@ -17,7 +22,7 @@ stories.add('All states', () => (
   <>
     <Heading>Selector</Heading>
     <Heading level={2}>States</Heading>
-    <Selector {...defaultProps()}/>
+    <Selector {...defaultProps()} />
   </>
 ));
 

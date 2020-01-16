@@ -1,0 +1,57 @@
+.f-Selector {
+    display: flex;
+    flex-direction: row;
+    width: 288px;
+    position: relative;
+    z-index: 0;
+}
+
+.f-Selector-item {
+    flex: 1;
+    line-height: 36px;
+    text-align: center;
+    color: var(--f-color-text--tertiary);
+    border-left: 1px var(--f-color-element--tertiary) solid;
+    border-top: 1px var(--f-color-element--tertiary) solid;
+    border-bottom: 1px var(--f-color-element--tertiary) solid;
+    cursor: pointer;
+    font-size: var(--f-fontSize--s);
+    background-color: var(--f-color-element--primary);
+    text-overflow: ellipsis;
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.f-Selector .f-Selector-item:first-child {
+    border-top-left-radius: var(--f-borderRadius--xl);
+    border-bottom-left-radius: var(--f-borderRadius--xl);
+}
+
+.f-Selector .f-Selector-item:last-child {
+    border-top-right-radius: var(--f-borderRadius--xl);
+    border-bottom-right-radius: var(--f-borderRadius--xl);
+    border-right: 1px var(--f-color-element--tertiary) solid;
+    margin: 0;
+}
+
+.f-Selector-item:hover,
+.f-Selector-item:focus {
+    border-color: var(--f-color-text--secondary);
+    border-right: 1px var(--f-color-element--secondary) solid;
+    color: var(--f-color-text--secondary);
+    margin-right: -1px;
+    z-index: 1;
+}
+
+.f-Selector .f-Selector-item:last-child:hover,
+.f-Selector .f-Selector-item:last-child:focus {
+    border-right: 1px var(--f-color-element--secondary) solid;
+    z-index: 1;
+}
+
+.f-Selector-item.is-active {
+    background: var(--f-color-brandPrimary);
+    color: var(--f-color-text--white);
+    border-color: var(--f-color-brandPrimary);
+}
