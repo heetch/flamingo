@@ -9,28 +9,34 @@ const Selector = React.forwardRef(
       className,
       disabled: isDisabled,
       id,
-      invalid: isInvalid,
       onChange,
       options,
-      valid: isValid,
+      defaultIndex,
       ...props
     },
     ref,
   ) => {
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
-    const handleOptionClick = (index, value) => {
-      console.log('selected', index, value);
+    const handleOptionClick = (index, option) => {
+      if (isDisabled || option.disabled) return;
+      if (index === activeIndex) {
+        setActiveIndex(null);
+        onChange(null);
+        return;
+      }
+
       setActiveIndex(index);
-      onChange(value);
+      onChange(option.value);
     };
 
     return (
       <div className='f-FormEl-wrapper'>
         <UiText
           as='div'
-          variant={UiText.VARIANTS.content}
-          className={cx('f-Selector', className)}
+          className={cx('f-Selector', className, {
+            'is-disabled': isDisabled,
+          })}
           disabled={isDisabled}
           id={id}
           name={id}
@@ -38,20 +44,21 @@ const Selector = React.forwardRef(
           ref={ref}
           {...props}
         >
-          {options.map(({ label, value }, index) => (
+          {options.map((option, index) => (
             <div
-              key={value}
+              key={option.value}
               role='button'
-              onClick={() => handleOptionClick(index, value)}
+              onClick={() => handleOptionClick(index, option)}
               onKeyPress={({ which }) =>
-                which === 13 ? handleOptionClick(index, value) : undefined
+                which === 13 ? handleOptionClick(index, option) : undefined
               }
               className={cx('f-Selector-item', {
                 'is-active': activeIndex === index,
+                'is-disabled': option.disabled === true,
               })}
               tabIndex={0}
             >
-              {label}
+              {option.label}
             </div>
           ))}
         </UiText>
@@ -66,25 +73,24 @@ Selector.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
-  invalid: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
+  defaultIndex: PropTypes.number,
   options: PropTypes.arrayOf(
     PropTypes.exact({
+      disabled: PropTypes.bool,
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
     }),
   ),
-  valid: PropTypes.bool,
 };
 
 Selector.defaultProps = {
   className: undefined,
   disabled: false,
-  invalid: false,
+  defaultIndex: null,
   options: [],
-  valid: false,
 };
 
 export default Selector;
