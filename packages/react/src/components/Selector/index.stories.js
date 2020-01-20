@@ -52,6 +52,7 @@ stories.add('All states', () => (
     <Heading level={3}>Selected</Heading>
     <Selector
       {...defaultProps()}
+      defaultIndex={1}
       options={object('Selected options', [
         { label: 'Luke', value: 1 },
         { label: 'Han', value: 2 },
