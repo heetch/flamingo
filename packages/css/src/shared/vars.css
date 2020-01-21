@@ -1,6 +1,7 @@
 :root {
   --f-color-brandPrimary: #ff2773;
   --f-color-brandPrimary--light: #ff4d95;
+  --f-color-brandPrimary--inactive: #fc99bc;
   --f-color-brandSecondary: #2b1e70;
   --f-color-brandSecondary--light: #252d9b;
 

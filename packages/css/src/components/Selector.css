@@ -1,0 +1,85 @@
+.f-Selector {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.f-Selector-item {
+  flex: 1;
+  text-align: center;
+  color: var(--f-color-text--secondary);
+  border-left: 1px var(--f-color-element--tertiary) solid;
+  border-top: 1px var(--f-color-element--tertiary) solid;
+  border-bottom: 1px var(--f-color-element--tertiary) solid;
+  cursor: pointer;
+  font-size: var(--f-fontSize--s);
+  background-color: var(--f-color-element--primary);
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: var(--f-space--xl);
+  padding-right: var(--f-space--xl);
+  padding-top: var(--f-space--m);
+  padding-bottom: var(--f-space--m);
+}
+
+@media (max-width: 460px) {
+  /* --f-breakpoint--s */
+  .f-Selector-item {
+    padding-top: var(--f-space--l);
+    padding-bottom: var(--f-space--l);
+  }
+}
+
+.f-Selector .f-Selector-item:first-child {
+  border-top-left-radius: var(--f-borderRadius--xl);
+  border-bottom-left-radius: var(--f-borderRadius--xl);
+}
+
+.f-Selector .f-Selector-item:last-child {
+  border-top-right-radius: var(--f-borderRadius--xl);
+  border-bottom-right-radius: var(--f-borderRadius--xl);
+  border-right: 1px var(--f-color-element--tertiary) solid;
+  margin: 0;
+}
+
+.f-Selector.is-hover .f-Selector-item,
+.f-Selector-item:hover,
+.f-Selector-item:focus {
+  border-color: var(--f-color-text--secondary);
+  border-right: 1px var(--f-color-element--secondary) solid;
+  color: var(--f-color-text--secondary);
+  margin-right: -1px;
+  z-index: 1;
+}
+
+.f-Selector .f-Selector-item:last-child:hover,
+.f-Selector .f-Selector-item:last-child:focus {
+  border-right: 1px var(--f-color-element--secondary) solid;
+  z-index: 1;
+}
+
+.f-Selector.is-hover .f-Selector-item.is-active,
+.f-Selector-item.is-active {
+  background: var(--f-color-brandPrimary);
+  color: var(--f-color-text--white);
+  border-color: var(--f-color-brandPrimary);
+}
+
+.f-Selector.is-disabled .f-Selector-item,
+.f-Selector-item.is-disabled {
+  cursor: not-allowed !important;
+  background: var(--f-color-element--inactive);
+  color: var(--f-color-text--secondary);
+  border-color: var(--f-color-element--tertiary);
+}
+
+.f-Selector.is-disabled .f-Selector-item.is-active,
+.f-Selector-item.is-active.is-disabled {
+  background: var(--f-color-brandPrimary--inactive);
+  border-color: var(--f-color-brandPrimary--inactive);
+  color: var(--f-color-text--white);
+}

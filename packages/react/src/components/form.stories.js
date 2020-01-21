@@ -12,6 +12,7 @@ import Radio from './Radio';
 import Select from './Select';
 import Textarea from './Textarea';
 import Toggle from './Toggle';
+import Selector from './Selector';
 
 const formProps = {
   onSubmit: e => e.preventDefault(),
@@ -123,6 +124,19 @@ stories.add('Playground', () => {
               {withLabel && label}
             </Radio>
           ))}
+        </Wrapper>
+
+        <Wrapper>
+          {withLabel && <Label htmlFor='first-name-id'>A Selector</Label>}
+          <Selector
+            disabled={disabled}
+            options={[
+              { label: 'Luke', value: 1 },
+              { label: 'Han', value: 2 },
+              { label: 'Chewy', value: 3 },
+              { label: 'Leia', value: 4 },
+            ]}
+          />
         </Wrapper>
       </form>
     </>
