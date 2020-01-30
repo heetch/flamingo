@@ -30,3 +30,5 @@ export { default as Toggle } from './Toggle';
 export { default as UiText } from './UiText';
 export { default as UploaderImageItem } from './UploaderImageItem';
 export { default as UploaderItem } from './UploaderItem';
+export { default as Selector } from './Selector';
+export { default as SelectorField } from './SelectorField';
