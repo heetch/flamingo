@@ -70,6 +70,30 @@ stories.add('All states', () => (
         { label: 'Chewy', value: 3 },
       ])}
     />
+
+    <Heading level={3}>Invalid</Heading>
+    <Selector
+      {...defaultProps()}
+      defaultIndex={1}
+      isInvalid
+      options={object('Invalid options', [
+        { label: 'Luke', value: 1 },
+        { label: 'Han', value: 2 },
+        { label: 'Chewy', value: 3 },
+      ])}
+    />
+
+    <Heading level={3}>Valid</Heading>
+    <Selector
+      {...defaultProps()}
+      defaultIndex={2}
+      isValid
+      options={object('Valid options', [
+        { label: 'Luke', value: 1 },
+        { label: 'Han', value: 2 },
+        { label: 'Chewy', value: 3 },
+      ])}
+    />
   </>
 ));
 

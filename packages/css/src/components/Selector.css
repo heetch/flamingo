@@ -83,3 +83,11 @@
   border-color: var(--f-color-brandPrimary--inactive);
   color: var(--f-color-text--white);
 }
+
+.f-Selector.is-valid .f-Selector-item {
+  border-color: var(--f-color-element--success);
+}
+
+.f-Selector.is-invalid .f-Selector-item {
+  border-color: var(--f-color-element--error);
+}

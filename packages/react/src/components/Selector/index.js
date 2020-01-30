@@ -12,6 +12,8 @@ const Selector = React.forwardRef(
       onChange,
       options,
       defaultIndex,
+      isValid,
+      isInvalid,
       ...props
     },
     ref,
@@ -30,13 +32,17 @@ const Selector = React.forwardRef(
       onChange(option.value);
     };
 
+    const classes = {
+      'is-disabled': isDisabled,
+      'is-valid': isValid,
+      'is-invalid': isInvalid,
+    };
+
     return (
-      <div className='f-FormEl-wrapper'>
+      <div className={cx('f-FormEl-wrapper', { ...classes })}>
         <UiText
           as='div'
-          className={cx('f-Selector', className, {
-            'is-disabled': isDisabled,
-          })}
+          className={cx('f-Selector', className, { ...classes })}
           disabled={isDisabled}
           id={id}
           name={id}
@@ -72,6 +78,8 @@ Selector.displayName = 'Selector';
 Selector.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  isValid: PropTypes.bool,
+  isInvalid: PropTypes.bool,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   defaultIndex: PropTypes.number,
@@ -89,6 +97,8 @@ Selector.propTypes = {
 Selector.defaultProps = {
   className: undefined,
   disabled: false,
+  isValid: false,
+  isInvalid: false,
   defaultIndex: null,
   options: [],
 };
