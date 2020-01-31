@@ -88,8 +88,11 @@ Selector.propTypes = {
       disabled: PropTypes.bool,
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.bool,
+      ]).isRequired,
     }),
   ),
 };
