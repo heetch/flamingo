@@ -12,11 +12,51 @@ export const IconAlertOctagon = (
   </svg>
 );
 
+export const IconArrowDownCircle = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path
+      fillRule='evenodd'
+      d='M3 12a9 9 0 1018 0 9 9 0 00-18 0zm9 11C5.925 23 1 18.075 1 12S5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M7.293 11.293a1 1 0 011.414 0L12 14.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M12 17a1 1 0 01-1-1V8a1 1 0 112 0v8a1 1 0 01-1 1z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
 export const IconArrowDown = (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <path
       fillRule='evenodd'
       d='M13 3a1 1 0 10-2 0v15.586l-7.293-7.293a1 1 0 00-1.414 1.414l9 9a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414L13 18.586V3z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
+export const IconArrowLeftCircle = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path
+      fillRule='evenodd'
+      d='M12 3a9 9 0 100 18 9 9 0 000-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M12.707 7.293a1 1 0 010 1.414L9.414 12l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M7 12a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z'
       clipRule='evenodd'
     />
   </svg>
@@ -32,11 +72,51 @@ export const IconArrowLeft = (
   </svg>
 );
 
+export const IconArrowRightCircle = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path
+      fillRule='evenodd'
+      d='M12 21a9 9 0 100-18 9 9 0 000 18zm11-9c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M11.293 16.707a1 1 0 010-1.414L14.586 12l-3.293-3.293a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M17 12a1 1 0 01-1 1H8a1 1 0 110-2h8a1 1 0 011 1z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
 export const IconArrowRight = (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <path
       fillRule='evenodd'
       d='M12.707 2.293a1 1 0 10-1.414 1.414L18.586 11H3a1 1 0 100 2h15.586l-7.293 7.293a1 1 0 001.414 1.414l9-9a1 1 0 000-1.414l-9-9z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
+export const IconArrowUpCircle = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path
+      fillRule='evenodd'
+      d='M21 12a9 9 0 10-18 0 9 9 0 0018 0zM12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M16.707 12.707a1 1 0 01-1.414 0L12 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z'
+      clipRule='evenodd'
+    />
+    <path
+      fillRule='evenodd'
+      d='M12 7a1 1 0 011 1v8a1 1 0 11-2 0V8a1 1 0 011-1z'
       clipRule='evenodd'
     />
   </svg>
@@ -387,6 +467,40 @@ export const IconEuro = (
       fillRule='evenodd'
       d='M6.41 9c1.016-3.58 3.797-6 6.84-6 1.957 0 3.774.972 5.114 2.629a1 1 0 001.555-1.258C18.265 2.326 15.909 1 13.249 1 8.896 1 5.433 4.478 4.352 9H3a1 1 0 100 2h1.038a13.043 13.043 0 000 2H3a1 1 0 100 2h1.351c1.08 4.522 4.544 8 8.899 8 2.658 0 5.015-1.326 6.669-3.371a1 1 0 10-1.555-1.258C17.024 20.028 15.207 21 13.25 21c-3.043 0-5.824-2.42-6.84-6H13a1 1 0 100-2H6.043a11.442 11.442 0 010-2H13a1 1 0 100-2H6.41z'
       clipRule='evenodd'
+    />
+  </svg>
+);
+
+export const IconEyeClose = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <g clipPath='url(#clip0)'>
+      <path
+        fillRule='evenodd'
+        d='M1.707.293A1 1 0 00.293 1.707L4.545 5.96a19.527 19.527 0 00-4.426 5.534 1 1 0 00-.014.92L1 11.966l-.894.447v.001l.001.002.004.007.011.023a7.736 7.736 0 00.192.355 20.753 20.753 0 002.84 3.866C5.122 18.764 8.128 21 12.04 21h.016a11.1 11.1 0 005.79-1.741l4.448 4.448a1 1 0 001.414-1.414l-4.816-4.817a.998.998 0 00-.184-.252l-3.83-3.832-.006-.007-4.25-4.252-.006-.007-3.83-3.833a.998.998 0 00-.27-.193L1.706.293zm12.345 15.174l2.336 2.335A9.099 9.099 0 0112.031 19c-3.109-.003-5.62-1.784-7.416-3.7a18.754 18.754 0 01-2.473-3.331 17.527 17.527 0 013.821-4.592L8.54 9.953a4.018 4.018 0 00-.294 3.59 4.013 4.013 0 003.79 2.51 4.008 4.008 0 002.017-.586zm-4.012-4.012l2.512 2.51a2.007 2.007 0 01-2.452-1.17 2.014 2.014 0 01-.06-1.34zm10.33 4.234a1 1 0 01-.146-1.407 17.446 17.446 0 001.573-2.285 18.674 18.674 0 00-2.462-3.313c-1.789-1.909-4.29-3.68-7.387-3.684a9.07 9.07 0 00-1.864.226 1 1 0 11-.445-1.95c.746-.17 1.511-.263 2.285-.276h.016c3.9 0 6.896 2.226 8.854 4.316a20.672 20.672 0 012.832 3.85 12.618 12.618 0 01.192.354l.011.022.003.007.002.002v.001L22.94 12l.894-.447a1 1 0 01-.013.92 19.449 19.449 0 01-2.045 3.07 1 1 0 01-1.407.146z'
+        clipRule='evenodd'
+      />
+    </g>
+    <defs>
+      <clipPath id='clip0'>
+        <path d='M0 0h24v24H0V0z' />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const IconEyeOpen = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+      d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'
+    />
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+      d='M12 15a3 3 0 100-6 3 3 0 000 6z'
     />
   </svg>
 );
