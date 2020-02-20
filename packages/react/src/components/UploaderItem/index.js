@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -7,8 +8,8 @@ import IconButton from '../IconButton';
 import Text from '../Text';
 
 const UploaderItem = React.forwardRef(
-  ({ file, handleDelete, overrides }, ref) => (
-    <div className='f-UploaderItem' ref={ref}>
+  ({ className, file, handleDelete, overrides }, ref) => (
+    <div className={cx('f-UploaderItem', className)} ref={ref}>
       <div className='f-UploaderItem-iconContainer'>
         {overrides.icon || <Icon icon={Icon.ICONS.IconFileText} />}
       </div>
@@ -28,6 +29,7 @@ const UploaderItem = React.forwardRef(
 UploaderItem.displayName = 'UploaderItem';
 
 UploaderItem.propTypes = {
+  className: PropTypes.string,
   file: PropTypes.instanceOf(File).isRequired,
   handleDelete: PropTypes.func.isRequired,
   overrides: PropTypes.shape({
@@ -36,6 +38,7 @@ UploaderItem.propTypes = {
 };
 
 UploaderItem.defaultProps = {
+  className: undefined,
   overrides: {},
 };
 

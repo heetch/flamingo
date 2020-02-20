@@ -18,6 +18,7 @@ const sizes = Object.values(SIZES);
 const Item = React.forwardRef(
   (
     {
+      className,
       helper,
       size,
       invalid,
@@ -42,7 +43,7 @@ const Item = React.forwardRef(
     return (
       <div
         {...containerProps}
-        className={cx('f-Item', `f-Item--${size}`, {
+        className={cx('f-Item', `f-Item--${size}`, className, {
           'is-invalid': invalid,
           'is-valid': valid,
           'has-action': onClick,
@@ -83,6 +84,7 @@ const Item = React.forwardRef(
 Item.displayName = 'Item';
 
 Item.propTypes = {
+  className: PropTypes.string,
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
@@ -95,6 +97,7 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
+  className: undefined,
   invalid: false,
   valid: false,
   size: SIZES.NORMAL,
