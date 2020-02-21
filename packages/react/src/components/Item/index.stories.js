@@ -78,6 +78,7 @@ stories.add('Playground', () => (
     valid={boolean('Valid', false)}
     contentIcon={select('Content icon', ICONS, ICONS.None)}
     value={text('Value', 'Value')}
+    helper={text('Helper', 'Helper')}
     valueIcon={select('Value icon', ICONS, ICONS.None)}
     onClick={
       boolean('Does it have onClick action?', false)
