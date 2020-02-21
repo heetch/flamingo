@@ -47,6 +47,10 @@
   margin-right: var(--f-space--m);
 }
 
+.f-Item-valueContainer {
+  padding-left: var(--f-space--m);
+}
+
 .f-Item-valueContainer .f-Icon {
   display: block;
   margin-left: var(--f-space--m);
