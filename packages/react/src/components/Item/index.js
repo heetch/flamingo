@@ -54,10 +54,11 @@ const Item = React.forwardRef(
           {contentIcon && <Icon icon={contentIcon} size={Icon.SIZES.L} />}
 
           <UiText
+            as='div'
+            className='f-Item-content'
             variant={
               isMini ? UiText.VARIANTS.subContent : UiText.VARIANTS.content
             }
-            className='f-Item-content'
           >
             {children}
             {helper && <Helper>{helper}</Helper>}
