@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import FormField from '../FormField';
-import Select from '../Input';
+import Select from '../Select';
 
 const SelectField = React.forwardRef(
   ({ label, helper, selectRef, ...props }, ref) => (
