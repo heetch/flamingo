@@ -7,14 +7,24 @@ import UiText from '../UiText';
 
 const Checkbox = React.forwardRef(
   (
-    { isUndefined, disabled, children, checked, helper, id, value, onChange },
+    {
+      className,
+      isUndefined,
+      disabled,
+      children,
+      checked,
+      helper,
+      id,
+      value,
+      onChange,
+    },
     ref,
   ) => {
     const checkbox = (
       <input
         defaultChecked={checked}
         disabled={disabled}
-        className={cx('f-Checkbox', {
+        className={cx('f-Checkbox', className, {
           'is-undefined': !checked && isUndefined,
         })}
         type='checkbox'
@@ -45,6 +55,7 @@ const Checkbox = React.forwardRef(
 Checkbox.displayName = 'Checkbox';
 
 Checkbox.propTypes = {
+  className: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   isUndefined: PropTypes.bool,
   checked: PropTypes.bool,
@@ -58,6 +69,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   isUndefined: false,
   checked: false,
+  className: false,
   disabled: false,
   children: undefined,
   value: 'checked',

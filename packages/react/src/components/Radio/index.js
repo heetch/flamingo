@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import Helper from '../Helper';
 import UiText from '../UiText';
 
 const Radio = React.forwardRef(
-  ({ disabled, children, checked, helper, id, name, onChange }, ref) => {
+  (
+    { className, disabled, children, checked, helper, id, name, onChange },
+    ref,
+  ) => {
     const input = (
       <input
         defaultChecked={checked}
         disabled={disabled}
-        className='f-Radio'
+        className={cx('f-Radio', className)}
         type='radio'
         id={id}
         name={name}
@@ -38,6 +42,7 @@ const Radio = React.forwardRef(
 Radio.displayName = 'Radio';
 
 Radio.propTypes = {
+  className: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -48,6 +53,7 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
+  className: undefined,
   checked: false,
   disabled: false,
   children: undefined,

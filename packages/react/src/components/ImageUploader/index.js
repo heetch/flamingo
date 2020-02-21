@@ -10,7 +10,7 @@ import UploaderImageItem from '../UploaderImageItem';
 import { toBase64 } from '../../utils';
 
 const ImageUploader = React.forwardRef(
-  ({ multiple, onChange, ...props }, ref) => {
+  ({ className, multiple, onChange, ...props }, ref) => {
     const [files, setFiles] = React.useState([]);
     const [preview, setPreview] = React.useState(undefined);
 
@@ -53,7 +53,7 @@ const ImageUploader = React.forwardRef(
 
     return (
       <FileUploader
-        className={cx('f-ImageUploader', {
+        className={cx('f-ImageUploader', className, {
           'has-preview': preview,
           'is-loading': isLoading,
         })}
@@ -101,11 +101,13 @@ const ImageUploader = React.forwardRef(
 ImageUploader.displayName = 'ImageUploader';
 
 ImageUploader.propTypes = {
+  className: PropTypes.string,
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 
 ImageUploader.defaultProps = {
+  className: undefined,
   multiple: false,
 };
 

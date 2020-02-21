@@ -5,7 +5,7 @@ import cx from 'classnames';
 import Helper from '../Helper';
 
 const Toggle = React.forwardRef(
-  ({ children, checked, disabled, helper, onChange }, ref) => {
+  ({ children, className, checked, disabled, helper, onChange }, ref) => {
     const [isOn, setIsOn] = useState(checked);
 
     const handleToggle = () => {
@@ -28,7 +28,7 @@ const Toggle = React.forwardRef(
 
     return (
       <div
-        className={cx('f-FormEl-wrapper', 'f-ToggleContainer', {
+        className={cx('f-FormEl-wrapper', 'f-ToggleContainer', className, {
           'is-on': isOn,
           'is-disabled': disabled,
         })}
@@ -43,6 +43,7 @@ const Toggle = React.forwardRef(
             OFF
           </span>
         </div>
+
         {(children || helper) && (
           <div className='f-Toggle-labels' {...labelProps}>
             {children}
@@ -59,6 +60,7 @@ Toggle.displayName = 'Toggle';
 Toggle.propTypes = {
   checked: PropTypes.bool,
   children: PropTypes.node,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
   helper: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -67,6 +69,7 @@ Toggle.propTypes = {
 Toggle.defaultProps = {
   checked: false,
   children: null,
+  className: undefined,
   disabled: false,
   helper: null,
 };
