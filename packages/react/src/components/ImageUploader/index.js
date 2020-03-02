@@ -101,6 +101,7 @@ ImageUploader.displayName = 'ImageUploader';
 ImageUploader.propTypes = {
   accept: PropTypes.string,
   className: PropTypes.string,
+  id: PropTypes.string.isRequired,
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };

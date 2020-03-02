@@ -6,14 +6,13 @@ import { action } from '@storybook/addon-actions';
 import Heading from '../Heading';
 import ImageUploader from '.';
 
-const inputName = 'input-name';
 const stories = storiesOf('Form/ImageUploader', module);
 
 stories.add('Playground', () => (
   <>
     <Heading>ImageUploader</Heading>
     <ImageUploader
-      name={inputName}
+      id='input-id'
       onChange={action('onChange')}
       multiple={boolean('Has multiple files', true)}
     />

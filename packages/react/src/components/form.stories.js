@@ -129,6 +129,7 @@ stories.add('Playground', () => {
         <Wrapper>
           {withLabel && <Label htmlFor='first-name-id'>A Selector</Label>}
           <Selector
+            id='selector'
             disabled={disabled}
             options={[
               { label: 'Luke', value: 1 },

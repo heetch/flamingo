@@ -36,7 +36,7 @@ const FileUploader = React.forwardRef(
       children,
       className,
       files: filesProp,
-      name,
+      id,
       onChange,
       translate,
       isLoading,
@@ -98,7 +98,7 @@ const FileUploader = React.forwardRef(
             className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--error'
             variant={UiText.VARIANTS.subContentBold}
             as='label'
-            htmlFor={name}
+            htmlFor={id}
           >
             <Icon icon={Icon.ICONS.IconSadFace} size={iconSize} />
             {translate(texts.error)}
@@ -123,7 +123,7 @@ const FileUploader = React.forwardRef(
                   className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--addFiles'
                   variant={UiText.VARIANTS.subContentBold}
                   as='label'
-                  htmlFor={name}
+                  htmlFor={id}
                 >
                   {translate(texts.upload_more_files)}
                 </UiText>
@@ -134,7 +134,7 @@ const FileUploader = React.forwardRef(
               variant={UiText.VARIANTS.subContentBold}
               as='label'
               className='f-FileUploader-label f-FileUploader-state f-FileUploader-state--empty'
-              htmlFor={name}
+              htmlFor={id}
             >
               <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />
               {translate(texts.add_document)}
@@ -144,8 +144,8 @@ const FileUploader = React.forwardRef(
         <div className='f-FileUploader-inputContainer'>
           <input
             type='file'
-            id={name}
-            name={name}
+            id={id}
+            name={id}
             multiple={multiple}
             onChange={handleFilesChange}
             {...overrides.input}
@@ -161,7 +161,7 @@ FileUploader.displayName = 'FileUploader';
 FileUploader.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
   files: PropTypes.arrayOf(PropTypes.instanceOf(File)),
