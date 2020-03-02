@@ -22,7 +22,7 @@ const Wrapper = props => (
   <div style={{ paddingBottom: 'var(--f-space--m)' }} {...props} />
 );
 
-const stories = storiesOf('Form controls', module);
+const stories = storiesOf('Form', module);
 
 stories.add('Playground', () => {
   const disabled = boolean('Disable all the things', false);

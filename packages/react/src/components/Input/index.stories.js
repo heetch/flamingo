@@ -11,7 +11,7 @@ const ICONS = { ...Icon.ICONS, None: null };
 
 const getId = () => `input-${Math.random()}`;
 const states = ['default', 'hover', 'focus', 'disabled'];
-const stories = storiesOf('Form controls/Input', module);
+const stories = storiesOf('Form/Input', module);
 
 stories.add('All states', () => (
   <>

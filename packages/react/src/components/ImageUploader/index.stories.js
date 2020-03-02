@@ -7,7 +7,7 @@ import Heading from '../Heading';
 import ImageUploader from '.';
 
 const inputName = 'input-name';
-const stories = storiesOf('Uploaders/ImageUploader', module);
+const stories = storiesOf('Form/ImageUploader', module);
 
 stories.add('Playground', () => (
   <>

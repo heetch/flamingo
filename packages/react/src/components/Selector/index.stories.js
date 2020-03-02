@@ -11,7 +11,7 @@ const defaultProps = () => ({
   onChange: action('onChange'),
 });
 
-const stories = storiesOf('Form controls/Selector', module);
+const stories = storiesOf('Form/Selector', module);
 
 stories.add('All states', () => (
   <>

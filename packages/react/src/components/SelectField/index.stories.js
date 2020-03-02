@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import SelectField from '.';
 
-const stories = storiesOf('Form controls/SelectField', module);
+const stories = storiesOf('Form/SelectField', module);
 
 stories.add('Playground', () => (
   <SelectField

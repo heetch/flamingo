@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import FileUploaderField from '.';
 
-const stories = storiesOf('Uploaders/FileUploaderField', module);
+const stories = storiesOf('Form/FileUploaderField', module);
 
 stories.add('Playground', () => (
   <FileUploaderField

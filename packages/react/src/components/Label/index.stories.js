@@ -7,7 +7,7 @@ import Heading from '../Heading';
 
 const inputId = 'input-id';
 
-const stories = storiesOf('Form controls/Label', module);
+const stories = storiesOf('Form/Label', module);
 
 stories.add('Playground', () => (
   <>
