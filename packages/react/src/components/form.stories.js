@@ -131,6 +131,7 @@ stories.add('Playground', () => {
           <Selector
             id='selector'
             disabled={disabled}
+            onChange={action('onChange')}
             options={[
               { label: 'Luke', value: 1 },
               { label: 'Han', value: 2 },

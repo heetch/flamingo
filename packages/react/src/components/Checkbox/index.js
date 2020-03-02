@@ -69,7 +69,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   isUndefined: false,
   checked: false,
-  className: false,
+  className: undefined,
   disabled: false,
   children: undefined,
   value: 'checked',
