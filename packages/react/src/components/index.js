@@ -28,6 +28,7 @@ export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as Text } from './Text';
 export { default as Textarea } from './Textarea';
+export { default as TextareaField } from './TextareaField';
 export { default as Toggle } from './Toggle';
 export { default as UiText } from './UiText';
 export { default as UploaderImageItem } from './UploaderImageItem';
