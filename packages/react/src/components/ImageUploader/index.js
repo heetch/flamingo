@@ -10,7 +10,7 @@ import UploaderImageItem from '../UploaderImageItem';
 import { toBase64 } from '../../utils';
 
 const ImageUploader = React.forwardRef(
-  ({ className, multiple, onChange, ...props }, ref) => {
+  ({ accept, className, multiple, onChange, ...props }, ref) => {
     const [files, setFiles] = React.useState([]);
     const [preview, setPreview] = React.useState(undefined);
 
@@ -63,9 +63,7 @@ const ImageUploader = React.forwardRef(
         isLoading={isLoading}
         hasError={hasError}
         overrides={{
-          input: {
-            accept: 'image/*',
-          },
+          input: { accept },
         }}
         ref={ref}
         {...props}
@@ -101,12 +99,14 @@ const ImageUploader = React.forwardRef(
 ImageUploader.displayName = 'ImageUploader';
 
 ImageUploader.propTypes = {
+  accept: PropTypes.string,
   className: PropTypes.string,
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 
 ImageUploader.defaultProps = {
+  accept: 'image/*',
   className: undefined,
   multiple: false,
 };
