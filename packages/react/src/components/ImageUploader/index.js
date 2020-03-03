@@ -49,6 +49,7 @@ const ImageUploader = React.forwardRef(
     const handleClear = () => {
       setPreview(undefined);
       setFiles([]);
+      onChange([]);
     };
 
     return (
