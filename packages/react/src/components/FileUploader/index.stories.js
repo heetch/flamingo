@@ -12,7 +12,7 @@ stories.add('Playground', () => (
   <>
     <Heading>FileUploader</Heading>
     <FileUploader
-      name='input-id'
+      id='input-id'
       onChange={action('onChange')}
       isLoading={boolean('Is loading', false)}
       hasError={boolean('Has error', false)}
