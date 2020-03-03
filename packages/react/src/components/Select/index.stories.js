@@ -16,7 +16,7 @@ const defaultProps = () => ({
   options: mapStringsToSelectOptions(['Foo', 1, 'Bar', 2]),
 });
 
-const stories = storiesOf('Form controls/Select', module);
+const stories = storiesOf('Form/Select', module);
 
 stories.add('All states', () => (
   <>

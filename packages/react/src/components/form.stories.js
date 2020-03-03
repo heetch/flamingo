@@ -22,7 +22,7 @@ const Wrapper = props => (
   <div style={{ paddingBottom: 'var(--f-space--m)' }} {...props} />
 );
 
-const stories = storiesOf('Form controls', module);
+const stories = storiesOf('Form', module);
 
 stories.add('Playground', () => {
   const disabled = boolean('Disable all the things', false);
@@ -129,7 +129,9 @@ stories.add('Playground', () => {
         <Wrapper>
           {withLabel && <Label htmlFor='first-name-id'>A Selector</Label>}
           <Selector
+            id='selector'
             disabled={disabled}
+            onChange={action('onChange')}
             options={[
               { label: 'Luke', value: 1 },
               { label: 'Han', value: 2 },

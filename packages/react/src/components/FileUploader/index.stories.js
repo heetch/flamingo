@@ -6,14 +6,13 @@ import { action } from '@storybook/addon-actions';
 import Heading from '../Heading';
 import FileUploader from '.';
 
-const inputName = 'input-name';
-const stories = storiesOf('Uploaders/FileUploader', module);
+const stories = storiesOf('Form/FileUploader', module);
 
 stories.add('Playground', () => (
   <>
     <Heading>FileUploader</Heading>
     <FileUploader
-      name={inputName}
+      id='input-id'
       onChange={action('onChange')}
       isLoading={boolean('Is loading', false)}
       hasError={boolean('Has error', false)}

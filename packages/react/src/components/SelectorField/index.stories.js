@@ -6,7 +6,7 @@ import Heading from '../Heading';
 
 import SelectorField from '.';
 
-const stories = storiesOf('Form controls/SelectorField', module);
+const stories = storiesOf('Form/SelectorField', module);
 
 stories.add('Playground', () => (
   <>

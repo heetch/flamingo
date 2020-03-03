@@ -10,7 +10,7 @@ const defaultProps = {
   onChange: () => {},
 };
 
-const stories = storiesOf('Form controls/Radio', module);
+const stories = storiesOf('Form/Radio', module);
 
 stories.add('All states', () => (
   <>

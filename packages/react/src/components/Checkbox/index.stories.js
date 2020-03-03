@@ -11,7 +11,7 @@ const defaultProps = {
   onChange: () => {},
 };
 
-const stories = storiesOf('Form controls/Checkbox', module);
+const stories = storiesOf('Form/Checkbox', module);
 
 stories.add('All states', () => (
   <>

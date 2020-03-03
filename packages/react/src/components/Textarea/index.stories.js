@@ -13,7 +13,7 @@ const textareaProps = () => ({
   onChange: console.log,
 });
 
-const stories = storiesOf('Form controls/Textarea', module);
+const stories = storiesOf('Form/Textarea', module);
 
 stories.add('All states', () => (
   <>

@@ -5,7 +5,7 @@ import { text } from '@storybook/addon-knobs';
 import Helper from '.';
 import Heading from '../Heading';
 
-const stories = storiesOf('Form controls/Helper', module);
+const stories = storiesOf('Form/Helper', module);
 
 stories.add('Playground', () => (
   <>

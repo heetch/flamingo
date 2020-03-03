@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import Heading from '../Heading';
 import UploaderItem from '.';
 
-const stories = storiesOf('Uploaders/UploaderItem', module);
+const stories = storiesOf('Form/UploaderItem', module);
 
 stories.add('Playground', () => (
   <>
