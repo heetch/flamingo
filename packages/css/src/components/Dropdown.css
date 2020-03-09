@@ -1,0 +1,16 @@
+.f-DropdownList {
+  border-radius: var(--f-borderRadius--m);
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: inset 0px -1px 0px #f2f2f2, inset 1px 0px 0px #f2f2f2,
+    inset -1px 0px 0px #f2f2f2;
+}
+
+.f-DropdownList.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.f-DropdownList .f-Item {
+  border-radius: 0;
+}
