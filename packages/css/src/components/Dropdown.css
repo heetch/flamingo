@@ -3,11 +3,23 @@
   border-radius: var(--borderRadius);
   background-color: #fff;
   box-shadow: 0px 2px 10px rgba(25, 1, 52, 0.12);
+  z-index: calc(var(--f-zIndex--Overlay) + 1);
 }
 
 .f-DropdownList.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+@media (max-width: 460px) {
+  /* --f-breakpoint--s */
+  /* !important are needed to override inline styles */
+  .f-DropdownList {
+    top: 50% !important;
+    left: var(--f-space--xl) !important;
+    right: var(--f-space--xl) !important;
+    transform: translateY(-50%) !important;
+  }
 }
 
 .f-DropdownList .f-Item {
@@ -31,4 +43,15 @@
 .f-DropdownList > *:last-child {
   border-bottom-left-radius: var(--borderRadius);
   border-bottom-right-radius: var(--borderRadius);
+}
+
+.f-DropdownOverlay {
+  z-index: 5;
+}
+
+@media (min-width: 460px) {
+  /* --f-breakpoint--s */
+  .f-DropdownOverlay {
+    display: none;
+  }
 }
