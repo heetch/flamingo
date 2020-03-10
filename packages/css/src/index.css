@@ -23,6 +23,7 @@
 @import './components/Text.css';
 
 /* rest */
+@import './components/Dropdown.css';
 @import './components/Helper.css';
 @import './components/FileUploader.css';
 @import './components/ImageUploader.css';
