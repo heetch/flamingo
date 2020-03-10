@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
-const Dropdown = ({ children, isOpen: isOpenProp, triggerer, placement }) => {
+const Dropdown = ({
+  children,
+  clickOutsideToHide,
+  isOpen: isOpenProp,
+  triggerer,
+  placement,
+}) => {
   const [isOpen, setIsOpen] = React.useState(isOpenProp);
 
   const open = () => setIsOpen(true);
@@ -17,6 +23,10 @@ const Dropdown = ({ children, isOpen: isOpenProp, triggerer, placement }) => {
 
   React.useEffect(() => {
     const onDocumentClick = ({ target }) => {
+      if (!clickOutsideToHide) {
+        return;
+      }
+
       if (!popperNode.contains(target) && !refNode.contains(target)) {
         hide();
       }
@@ -24,7 +34,7 @@ const Dropdown = ({ children, isOpen: isOpenProp, triggerer, placement }) => {
 
     document.addEventListener('click', onDocumentClick);
     return () => document.removeEventListener('click', onDocumentClick);
-  }, [popperNode, refNode]);
+  }, [clickOutsideToHide, popperNode, refNode]);
 
   return (
     <Manager>
@@ -60,12 +70,14 @@ Dropdown.displayName = 'Dropdown';
 
 Dropdown.propTypes = {
   children: PropTypes.func.isRequired,
+  clickOutsideToHide: PropTypes.bool,
   isOpen: PropTypes.bool,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
 };
 
 Dropdown.defaultProps = {
+  clickOutsideToHide: true,
   isOpen: false,
   placement: 'bottom-end',
 };
