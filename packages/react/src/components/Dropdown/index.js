@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
-const Dropdown = ({ children, triggerer, placement }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+const Dropdown = ({ children, isOpen: isOpenProp, triggerer, placement }) => {
+  const [isOpen, setIsOpen] = React.useState(isOpenProp);
 
   const open = () => setIsOpen(true);
   const hide = () => setIsOpen(false);
@@ -60,11 +60,13 @@ Dropdown.displayName = 'Dropdown';
 
 Dropdown.propTypes = {
   children: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
 };
 
 Dropdown.defaultProps = {
+  isOpen: false,
   placement: 'bottom-end',
 };
 

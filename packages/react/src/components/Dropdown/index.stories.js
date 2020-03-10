@@ -25,6 +25,7 @@ stories.add('Playground', () => (
       }}
     >
       <Dropdown
+        isOpen
         triggerer={({ ref, toggle }) => (
           <Button ref={ref} onClick={toggle}>
             Click me
