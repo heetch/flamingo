@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
-const Dropdown = ({ children, options, placement }) => {
+const Dropdown = ({ children, triggerer, placement }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const open = () => setIsOpen(true);
@@ -29,7 +29,7 @@ const Dropdown = ({ children, options, placement }) => {
   return (
     <Manager>
       <Reference innerRef={setRefNode}>
-        {({ ref }) => children({ ...renderFnProps, ref })}
+        {({ ref }) => triggerer({ ...renderFnProps, ref })}
       </Reference>
 
       <Popper
@@ -48,7 +48,7 @@ const Dropdown = ({ children, options, placement }) => {
             style={style}
             data-placement={placement}
           >
-            {options(renderFnProps)}
+            {children(renderFnProps)}
           </div>
         )}
       </Popper>
@@ -60,7 +60,7 @@ Dropdown.displayName = 'Dropdown';
 
 Dropdown.propTypes = {
   children: PropTypes.func.isRequired,
-  options: PropTypes.func.isRequired,
+  triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
 };
 

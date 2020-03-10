@@ -25,7 +25,13 @@ stories.add('Playground', () => (
       }}
     >
       <Dropdown
-        options={({ hide }) => (
+        triggerer={({ ref, toggle }) => (
+          <Button ref={ref} onClick={toggle}>
+            Click me
+          </Button>
+        )}
+      >
+        {({ hide }) => (
           <>
             <Item
               onClick={() => {
@@ -44,12 +50,6 @@ stories.add('Playground', () => (
               Robin
             </Item>
           </>
-        )}
-      >
-        {({ ref, toggle }) => (
-          <Button ref={ref} onClick={toggle}>
-            Click me
-          </Button>
         )}
       </Dropdown>
     </div>
