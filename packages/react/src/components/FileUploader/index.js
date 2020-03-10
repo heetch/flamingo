@@ -143,6 +143,7 @@ const FileUploader = React.forwardRef(
 
         <div className='f-FileUploader-inputContainer'>
           <input
+            className='f-FileUploader-input'
             type='file'
             id={id}
             name={id}
