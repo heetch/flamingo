@@ -1,23 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
-import Heading from '.';
+import Heading from './Heading';
+import { BORDER_RADIUS, COLOR, SPACE } from '../../constants';
 
 const { LEVELS } = Heading;
 const stories = storiesOf('Heading', module);
 
-const Wrapper = props => (
-  <div
-    style={{
-      backgroundColor: 'var(--f-color-element--primary)',
-      marginBottom: 'var(--f-space--m)',
-      overflow: 'hidden',
-      borderRadius: 'var(--f-borderRadius--m)',
-    }}
-    {...props}
-  />
-);
+const Wrapper = styled.div`
+  background-color: ${COLOR.ELEMENT.PRIMARY};
+  margin-bottom: ${SPACE.M};
+  overflow: hidden;
+  border-radius: ${BORDER_RADIUS.M};
+`;
 
 stories.add('All states', () => (
   <>

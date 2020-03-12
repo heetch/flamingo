@@ -1,0 +1,12 @@
+export const VARIANTS = {
+  H1: 'H1',
+  H2: 'H2',
+  H3: 'H3',
+  H4: 'H4',
+  H5: 'H5',
+  H6: 'H6',
+  CONTENT: 'CONTENT',
+  CONTENT_BOLD: 'CONTENT_BOLD',
+  SUBCONTENT: 'SUBCONTENT',
+  SUBCONTENT_BOLD: 'SUBCONTENT_BOLD',
+};
