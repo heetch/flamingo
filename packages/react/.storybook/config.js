@@ -4,11 +4,9 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
 import theme from './theme';
-
 import FlexWrapperDecorator from './FlexWrapperDecorator';
 
 import 'normalize.css';
-import '../../css/dist/index.css';
 
 const req = require.context('../src/components', true, /\.stories\.js$/);
 

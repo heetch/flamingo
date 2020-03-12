@@ -11,12 +11,10 @@
   "scripts": {
     "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
     "prettier": "prettier --write 'packages/**/*.{js,jsx,json,css,md}'",
-    "css": "yarn --cwd packages/css start",
-    "css:setup": "yarn --cwd packages/css install",
     "react": "yarn --cwd packages/react start",
     "react:setup": "yarn --cwd packages/react install",
     "react:storybook": "yarn --cwd packages/react start:storybook",
-    "start": "npm-run-all --parallel css react react:storybook",
-    "setup": "yarn css:setup && yarn react:setup"
+    "start": "npm-run-all --parallel react react:storybook",
+    "setup": "yarn react:setup"
   }
 }
