@@ -9,6 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "import/prefer-default-export": 0,
     "no-nested-ternary": 0,
     "prettier/prettier": "error",
     // allow @storybook packages to be used

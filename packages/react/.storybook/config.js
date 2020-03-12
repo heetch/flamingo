@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
 import theme from './theme';
-import FlexWrapperDecorator from './FlexWrapperDecorator';
+import StoriesWrapper from './StoriesWrapper';
 
 import 'normalize.css';
 
@@ -14,7 +14,7 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-addDecorator(FlexWrapperDecorator);
+addDecorator(StoriesWrapper);
 addDecorator(withKnobs);
 addDecorator(withInfo);
 
