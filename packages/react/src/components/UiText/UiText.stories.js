@@ -31,7 +31,6 @@ stories.add('All states', () => (
 
     <Heading level={2}>Custom component</Heading>
 
-    <a href='#'>Hello</a>
     <Wrapper>
       <UiText as='div' variant={VARIANTS.h1}>
         As div
