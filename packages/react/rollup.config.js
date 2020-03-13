@@ -31,6 +31,14 @@ export default {
     svgr(),
     babel(),
     resolve(),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react-is/index.js': [
+          'isElement',
+          'isValidElementType',
+        ]
+      }
+    })
   ],
 };
