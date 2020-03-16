@@ -35,7 +35,6 @@ const FileUploader = React.forwardRef(
     {
       children,
       className,
-      files: filesProp,
       id,
       onChange,
       translate,
@@ -43,11 +42,12 @@ const FileUploader = React.forwardRef(
       hasError,
       multiple,
       overrides,
+      value,
       ...props
     },
     ref,
   ) => {
-    const [files, setFiles] = React.useState(filesProp);
+    const [files, setFiles] = React.useState(value);
     const hasFile = !isLoading && !hasError && files.length > 0;
 
     const handleFilesChange = e => {
@@ -66,10 +66,6 @@ const FileUploader = React.forwardRef(
       setFiles(remainingFiles);
       onChange(remainingFiles);
     };
-
-    React.useEffect(() => {
-      setFiles(filesProp);
-    }, [filesProp]);
 
     return (
       <div
@@ -165,26 +161,31 @@ FileUploader.propTypes = {
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
-  files: PropTypes.arrayOf(PropTypes.instanceOf(File)),
   isLoading: PropTypes.bool,
   hasError: PropTypes.bool,
   multiple: PropTypes.bool,
   overrides: PropTypes.shape({
     input: PropTypes.shape({}),
   }),
+  value: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 FileUploader.defaultProps = {
   children: undefined,
   className: undefined,
   translate: defaultTranslate,
-  files: [],
   hasError: false,
   isLoading: false,
   multiple: false,
   overrides: {
     input: {},
   },
+  value: [],
 };
 
 export default FileUploader;

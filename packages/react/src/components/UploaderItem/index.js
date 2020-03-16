@@ -30,7 +30,10 @@ UploaderItem.displayName = 'UploaderItem';
 
 UploaderItem.propTypes = {
   className: PropTypes.string,
-  file: PropTypes.instanceOf(File).isRequired,
+  file: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  }).isRequired,
   handleDelete: PropTypes.func.isRequired,
   overrides: PropTypes.shape({
     icon: PropTypes.node,
