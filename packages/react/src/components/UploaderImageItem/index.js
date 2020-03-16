@@ -8,8 +8,8 @@ import { toBase64 } from '../../utils';
 
 const UploaderImageItem = React.forwardRef(
   ({ file, overrides, ...props }, ref) => {
-    const [preview, setPreview] = React.useState(undefined);
-    const [isLoading, setIsLoading] = React.useState(true);
+    const [preview, setPreview] = React.useState(file.preview);
+    const [isLoading, setIsLoading] = React.useState(!file.preview);
 
     const icon = isLoading ? (
       <Spinner />
@@ -18,6 +18,10 @@ const UploaderImageItem = React.forwardRef(
     );
 
     React.useEffect(() => {
+      if (file.preview) {
+        return;
+      }
+
       toBase64(file).then(base64 => {
         setPreview(base64);
         setIsLoading(false);
@@ -38,7 +42,11 @@ const UploaderImageItem = React.forwardRef(
 UploaderImageItem.displayName = 'UploaderImageItem';
 
 UploaderImageItem.propTypes = {
-  file: PropTypes.instanceOf(File).isRequired,
+  file: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    preview: PropTypes.string,
+  }).isRequired,
   overrides: PropTypes.shape({}),
 };
 
