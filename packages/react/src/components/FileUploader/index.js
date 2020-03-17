@@ -151,6 +151,7 @@ const FileUploader = React.forwardRef(
             name={id}
             multiple={multiple}
             onChange={handleFilesChange}
+            value=''
             {...overrides.input}
           />
         </div>
