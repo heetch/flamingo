@@ -9,7 +9,8 @@ import UploaderImageItem from '../UploaderImageItem';
 
 import { toBase64 } from '../../utils';
 
-const getDefaultValuePreviews = files => files.map(file => file.preview);
+const getDefaultValuePreviews = files =>
+  Array.isArray(files) ? files.map(file => file.preview) : [];
 
 const ImageUploader = React.forwardRef(
   ({ accept, className, multiple, onChange, value, ...props }, ref) => {
