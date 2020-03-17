@@ -9,10 +9,14 @@ import UploaderImageItem from '../UploaderImageItem';
 
 import { toBase64 } from '../../utils';
 
+const getDefaultValuePreviews = files => files.map(file => file.preview);
+
 const ImageUploader = React.forwardRef(
-  ({ accept, className, multiple, onChange, ...props }, ref) => {
-    const [files, setFiles] = React.useState([]);
-    const [preview, setPreview] = React.useState(undefined);
+  ({ accept, className, multiple, onChange, value, ...props }, ref) => {
+    const [files, setFiles] = React.useState(value);
+    const [preview, setPreview] = React.useState(
+      getDefaultValuePreviews(value),
+    );
 
     const [isLoading, setIsLoading] = React.useState(false);
     const [hasError, setHasError] = React.useState(false);
@@ -55,7 +59,7 @@ const ImageUploader = React.forwardRef(
     return (
       <FileUploader
         className={cx('f-ImageUploader', className, {
-          'has-preview': preview,
+          'has-preview': !multiple && preview,
           'is-loading': isLoading,
         })}
         files={files}
@@ -67,9 +71,10 @@ const ImageUploader = React.forwardRef(
           input: { accept },
         }}
         ref={ref}
+        value={value}
         {...props}
       >
-        {preview && (
+        {!multiple && preview && (
           <>
             <div
               className='f-ImageUploader-preview'
@@ -105,12 +110,20 @@ ImageUploader.propTypes = {
   id: PropTypes.string.isRequired,
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      preview: PropTypes.string,
+    }),
+  ),
 };
 
 ImageUploader.defaultProps = {
   accept: 'image/*',
   className: undefined,
   multiple: false,
+  value: [],
 };
 
 export default ImageUploader;
