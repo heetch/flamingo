@@ -9,7 +9,8 @@ import UploaderImageItem from '../UploaderImageItem';
 
 import { toBase64 } from '../../utils';
 
-const getDefaultValuePreviews = files => files.map(file => file.preview);
+const getDefaultValuePreviews = files =>
+  Array.isArray(files) ? files.map(file => file.preview) : [];
 
 const ImageUploader = React.forwardRef(
   ({ accept, className, multiple, onChange, value, ...props }, ref) => {
@@ -51,18 +52,19 @@ const ImageUploader = React.forwardRef(
     };
 
     const handleClear = () => {
-      setPreview(undefined);
+      setPreview([]);
       setFiles([]);
       onChange([]);
     };
 
+    const hasPreview = !multiple && preview.length > 0;
+
     return (
       <FileUploader
         className={cx('f-ImageUploader', className, {
-          'has-preview': !multiple && preview,
+          'has-preview': hasPreview,
           'is-loading': isLoading,
         })}
-        files={files}
         onChange={handleFileChange}
         multiple={multiple}
         isLoading={isLoading}
@@ -71,10 +73,10 @@ const ImageUploader = React.forwardRef(
           input: { accept },
         }}
         ref={ref}
-        value={value}
+        value={files}
         {...props}
       >
-        {!multiple && preview && (
+        {hasPreview && (
           <>
             <div
               className='f-ImageUploader-preview'

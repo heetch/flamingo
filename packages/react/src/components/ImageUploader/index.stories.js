@@ -20,29 +20,39 @@ const stubFile2 = {
 
 const stories = storiesOf('Form/ImageUploader', module);
 
-stories.add('Playground', () => (
+stories.add('All states', () => (
   <>
     <Heading>ImageUploader</Heading>
+    <ImageUploader id='image-uploader' onChange={action('onChange')} />
+
+    <Heading>With multiple files</Heading>
     <ImageUploader
-      id='input-id'
+      id='image-uploader-multiple'
       onChange={action('onChange')}
-      multiple={boolean('Has multiple files', true)}
+      multiple
     />
 
     <Heading level={2}>With default value</Heading>
     <ImageUploader
-      id='input-default-value'
+      id='image-uploaders-default-value'
       onChange={action('onChange')}
-      multiple={false}
       value={[stubFile1]}
     />
 
-    <Heading level={2}>With default values</Heading>
+    <Heading level={2}>With default value and multiple files</Heading>
     <ImageUploader
-      id='input-default-values'
+      id='image-uploaders-default-value-multiple'
       onChange={action('onChange')}
       multiple
       value={[stubFile1, stubFile2]}
     />
   </>
+));
+
+stories.add('Playground', () => (
+  <ImageUploader
+    id='input-id'
+    onChange={action('onChange')}
+    multiple={boolean('Has multiple files', true)}
+  />
 ));

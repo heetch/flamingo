@@ -18,35 +18,39 @@ const stubFile2 = {
 
 const stories = storiesOf('Form/FileUploader', module);
 
-stories.add('Playground', () => (
+stories.add('All states', () => (
   <>
     <Heading>FileUploader</Heading>
+    <FileUploader id='file-uploader' onChange={action('onChange')} />
+
+    <Heading>With multiple files</Heading>
     <FileUploader
-      id='input-id'
+      id='file-uploader-multiple'
       onChange={action('onChange')}
-      isLoading={boolean('Is loading', false)}
-      hasError={boolean('Has error', false)}
-      multiple={boolean('Has multiple files', true)}
+      multiple
     />
 
     <Heading level={2}>With default value</Heading>
     <FileUploader
-      id='input-id'
+      id='file-uploaders-default-value'
       onChange={action('onChange')}
-      isLoading={boolean('Is loading', false)}
-      hasError={boolean('Has error', false)}
-      multiple={false}
       value={[stubFile1]}
     />
 
-    <Heading level={2}>With default values</Heading>
+    <Heading level={2}>With default value and multiple files</Heading>
     <FileUploader
-      id='input-id'
+      id='file-uploaders-default-value-multiple'
       onChange={action('onChange')}
-      isLoading={boolean('Is loading', false)}
-      hasError={boolean('Has error', false)}
       multiple
       value={[stubFile1, stubFile2]}
     />
   </>
+));
+
+stories.add('Playground', () => (
+  <FileUploader
+    id='input-id'
+    onChange={action('onChange')}
+    multiple={boolean('Has multiple files', true)}
+  />
 ));

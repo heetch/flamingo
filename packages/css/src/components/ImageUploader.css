@@ -1,6 +1,5 @@
-.f-ImageUploader,
 .f-ImageUploader.has-preview {
-  height: var(--FileUploader-height);
+  height: var(--f-FileUploader-height);
 }
 
 .f-ImageUploader-preview,
@@ -32,7 +31,6 @@
   opacity: 1;
 }
 
-.f-ImageUploader.has-preview,
 .f-ImageUploader .f-UploaderItem-iconContainer {
   border-color: transparent;
 }
