@@ -56,7 +56,7 @@ const ImageUploader = React.forwardRef(
       onChange([]);
     };
 
-    const hasPreview = preview.length > 0;
+    const hasPreview = !multiple && preview.length > 0;
 
     return (
       <FileUploader
@@ -75,7 +75,7 @@ const ImageUploader = React.forwardRef(
         value={files}
         {...props}
       >
-        {!multiple && hasPreview && (
+        {hasPreview && (
           <>
             <div
               className='f-ImageUploader-preview'
