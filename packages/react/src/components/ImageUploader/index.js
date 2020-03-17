@@ -51,18 +51,19 @@ const ImageUploader = React.forwardRef(
     };
 
     const handleClear = () => {
-      setPreview(undefined);
+      setPreview([]);
       setFiles([]);
       onChange([]);
     };
 
+    const hasPreview = preview.length > 0;
+
     return (
       <FileUploader
         className={cx('f-ImageUploader', className, {
-          'has-preview': !multiple && preview,
+          'has-preview': hasPreview,
           'is-loading': isLoading,
         })}
-        files={files}
         onChange={handleFileChange}
         multiple={multiple}
         isLoading={isLoading}
@@ -71,10 +72,10 @@ const ImageUploader = React.forwardRef(
           input: { accept },
         }}
         ref={ref}
-        value={value}
+        value={files}
         {...props}
       >
-        {!multiple && preview && (
+        {!multiple && hasPreview && (
           <>
             <div
               className='f-ImageUploader-preview'

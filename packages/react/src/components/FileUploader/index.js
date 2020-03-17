@@ -67,6 +67,12 @@ const FileUploader = React.forwardRef(
       onChange(remainingFiles);
     };
 
+    React.useEffect(() => {
+      // keep files in sync with value
+      // when changed on image uploader
+      setFiles(value);
+    }, [value]);
+
     return (
       <div
         className={cx('f-FileUploader f-FormEl-wrapper', className, {
