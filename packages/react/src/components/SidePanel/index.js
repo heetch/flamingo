@@ -14,6 +14,7 @@ const SidePanel = ({
   isOpen: isOpenProp,
   onClose,
   title,
+  header,
   ...props
 }) => {
   const [isOpen, setIsOpen] = React.useState(isOpenProp);
@@ -51,9 +52,11 @@ const SidePanel = ({
         {...props}
       >
         <div className='f-SidePanel-header'>
-          <Heading level={4} as='h1'>
-            {title}
-          </Heading>
+          {header || (
+            <Heading level={4} as='h1'>
+              {title}
+            </Heading>
+          )}
 
           <IconButton icon={IconButton.ICONS.IconCross} onClick={handleClose} />
         </div>
@@ -75,6 +78,7 @@ SidePanel.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.node,
+  header: PropTypes.node,
 };
 
 SidePanel.defaultProps = {
@@ -85,6 +89,7 @@ SidePanel.defaultProps = {
   isOpen: false,
   onClose: () => {},
   title: undefined,
+  header: undefined,
 };
 
 export default SidePanel;
