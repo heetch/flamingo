@@ -16,13 +16,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        yarn --cwd packages/react install
-        yarn --cwd packages/css install
+        yarn install
 
     - name: Prettier
       run: |
-        yarn --cwd packages/react prettier
-        yarn --cwd packages/css prettier
+        yarn prettier
 
     - name: Linting
-      run: yarn --cwd packages/react lint
+      run: yarn lint
