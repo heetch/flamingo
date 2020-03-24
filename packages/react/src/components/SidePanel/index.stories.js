@@ -15,6 +15,8 @@ stories.add('Playground', () => {
   const closesOnOverlayClick = boolean('closesOnOverlayClick?', true);
   const withLargeContent = boolean('With large content?', false);
   const withFooter = boolean('With footer?', true);
+  const withHeader = boolean('With header?', false);
+  const withTitle = !withHeader && text('Title', 'Side Panel Title');
 
   const content = (
     <>
@@ -29,7 +31,20 @@ stories.add('Playground', () => {
 
       <SidePanel
         closesOnOverlayClick={closesOnOverlayClick}
-        title={text('Title', 'Side Panel Title')}
+        title={withTitle}
+        header={
+          withHeader && (
+            <>
+              <Button
+                intent={Button.INTENTS.SECONDARY}
+                variant={Button.VARIANTS.MINIMAL}
+              >
+                Select all
+              </Button>
+              <Button>Never gonna let you down</Button>
+            </>
+          )
+        }
         footer={
           withFooter && (
             <>
