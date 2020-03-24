@@ -52,7 +52,9 @@ const SidePanel = ({
         {...props}
       >
         <div className='f-SidePanel-header'>
-          {header || (
+          {header ? (
+            <div className='f-SidePanel-headerContent'>{header}</div>
+          ) : (
             <Heading level={4} as='h1'>
               {title}
             </Heading>
