@@ -5,6 +5,8 @@ import styled, { keyframes } from 'styled-components';
 
 import Icon from '../Icon';
 
+const sizes = Object.values(Icon.SIZES);
+
 const rotate = keyframes`
   to {
     transform: rotate(360deg);
@@ -25,6 +27,7 @@ Spinner.displayName = 'Spinner';
 
 Spinner.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.oneOf(sizes),
 };
 
 Spinner.defaultProps = {

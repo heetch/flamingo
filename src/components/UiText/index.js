@@ -20,85 +20,52 @@ const variants = Object.keys(VARIANTS);
 
 const styles = {
   fontSize({ variant }) {
-    if (variant === VARIANTS.h1) {
-      return 'var(--f-fontSize--xxl)';
-    }
-    if (variant === VARIANTS.h2) {
-      return 'var(--f-fontSize--xl)';
-    }
-    if (variant === VARIANTS.h3) {
-      return 'var(--f-fontSize--l)';
-    }
-    if (variant === VARIANTS.h4) {
-      return 'var(--f-fontSize--m)';
-    }
-    if (variant === VARIANTS.h5) {
-      return 'var(--f-fontSize--s)';
-    }
-    if (variant === VARIANTS.h6) {
-      return 'var(--f-fontSize--xs)';
-    }
-    if (variant === VARIANTS.content || variant === VARIANTS.contentBold) {
-      return 'var(--f-fontSize--m)';
-    }
-    if (
-      variant === VARIANTS.subContent ||
-      variant === VARIANTS.subContentBold
-    ) {
-      return 'var(--f-fontSize--s)';
-    }
+    const variants = {
+      [VARIANTS.h1]: 'var(--f-fontSize--xxl)',
+      [VARIANTS.h2]: 'var(--f-fontSize--xl)',
+      [VARIANTS.h3]: 'var(--f-fontSize--l)',
+      [VARIANTS.h4]: 'var(--f-fontSize--m)',
+      [VARIANTS.h5]: 'var(--f-fontSize--s)',
+      [VARIANTS.h6]: 'var(--f-fontSize--xs)',
+      [VARIANTS.content]: 'var(--f-fontSize--m)',
+      [VARIANTS.contentBold]: 'var(--f-fontSize--m)',
+      [VARIANTS.subContent]: 'var(--f-fontSize--s)',
+      [VARIANTS.subContentBold]: 'var(--f-fontSize--s)',
+    };
 
-    return undefined;
+    return variants[variant] || undefined;
   },
   lineHeight({ variant }) {
-    if (variant === VARIANTS.h1) {
-      return 'var(--f-lineHeight--xl)';
-    }
-    if (variant === VARIANTS.h2) {
-      return 'var(--f-lineHeight--l)';
-    }
-    if (variant === VARIANTS.h3) {
-      return 'var(--f-lineHeight--m)';
-    }
-    if (
-      variant === VARIANTS.h4 ||
-      variant === VARIANTS.h5 ||
-      variant === VARIANTS.h6
-    ) {
-      return 'var(--f-lineHeight--s)';
-    }
-    if (
-      variant === VARIANTS.content ||
-      variant === VARIANTS.contentBold ||
-      variant === VARIANTS.subContent ||
-      variant === VARIANTS.subContentBold
-    ) {
-      return 'var(--f-lineHeight--m)';
-    }
-    return undefined;
+    const variants = {
+      [VARIANTS.h1]: 'var(--f-lineHeight--xl)',
+      [VARIANTS.h2]: 'var(--f-lineHeight--l)',
+      [VARIANTS.h3]: 'var(--f-lineHeight--m)',
+      [VARIANTS.h4]: 'var(--f-lineHeight--s)',
+      [VARIANTS.h5]: 'var(--f-lineHeight--s)',
+      [VARIANTS.h6]: 'var(--f-lineHeight--s)',
+      [VARIANTS.content]: 'var(--f-lineHeight--m)',
+      [VARIANTS.contentBold]: 'var(--f-lineHeight--m)',
+      [VARIANTS.subContent]: 'var(--f-lineHeight--m)',
+      [VARIANTS.subContentBold]: 'var(--f-lineHeight--m)',
+    };
+
+    return variants[variant] || undefined;
   },
   fontWeight({ variant }) {
-    if (
-      variant === VARIANTS.h1 ||
-      variant === VARIANTS.h2 ||
-      variant === VARIANTS.h3 ||
-      variant === VARIANTS.h4 ||
-      variant === VARIANTS.h5 ||
-      variant === VARIANTS.h6
-    ) {
-      return 'var(--f-fontWeight--black)';
-    }
-    if (
-      variant === VARIANTS.contentBold ||
-      variant === VARIANTS.subContentBold
-    ) {
-      return 'var(--f-fontWeight--bold)';
-    }
-    if (variant === VARIANTS.content || variant === VARIANTS.subContent) {
-      return 'var(--f-fontWeight--normal)';
-    }
+    const variants = {
+      [VARIANTS.h1]: 'var(--f-fontWeight--black)',
+      [VARIANTS.h2]: 'var(--f-fontWeight--black)',
+      [VARIANTS.h3]: 'var(--f-fontWeight--black)',
+      [VARIANTS.h4]: 'var(--f-fontWeight--black)',
+      [VARIANTS.h5]: 'var(--f-fontWeight--black)',
+      [VARIANTS.h6]: 'var(--f-fontWeight--black)',
+      [VARIANTS.content]: 'var(--f-fontWeight--normal)',
+      [VARIANTS.subContent]: 'var(--f-fontWeight--normal)',
+      [VARIANTS.contentBold]: 'var(--f-fontWeight--bold)',
+      [VARIANTS.subContentBold]: 'var(--f-fontWeight--bold)',
+    };
 
-    return undefined;
+    return variants[variant] || undefined;
   },
 };
 const UiText = styled(({ className, variant, ...rest }) => (
