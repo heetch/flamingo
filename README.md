@@ -17,7 +17,6 @@ However, you can still use it and browse the files on [its latest stable version
 
 ## Documentations
 
-- [React components](packages/react/README.md)
 - [How-to review new components](docs/how-to-review-new-components.md)
 
 ## License
