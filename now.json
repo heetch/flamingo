@@ -5,7 +5,7 @@
     {
       "src": "now-build.sh",
       "use": "@now/static-build",
-      "config": { "distDir": "packages/react/build" }
+      "config": { "distDir": "build" }
     }
   ],
   "regions": ["cdg1", "dub1", "bru1", "lhr1"]

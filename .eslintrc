@@ -1,0 +1,36 @@
+{
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-nested-ternary": 0,
+    "prettier/prettier": "error",
+    "import/prefer-default-export": 0,
+    // allow @storybook packages to be used
+    // without having a linting error
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    // eslint rules conflicting with prettier
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-curly-newline": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-indent": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/button-has-type": 0,
+    "react/destructuring-assignment": 0,
+    "react/no-children-prop": 0,
+    "react/require-default-props": 0,
+    "react/jsx-curly-brace-presence": 0
+  },
+  "parser": "babel-eslint"
+}

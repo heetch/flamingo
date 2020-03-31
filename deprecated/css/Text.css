@@ -1,7 +1,0 @@
-.f-Text {
-  color: var(--f-color-text--secondary);
-}
-
-.f-Text.is-number {
-  text-align: right;
-}
