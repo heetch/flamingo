@@ -39,9 +39,11 @@ const FileUploader = React.forwardRef(
       onChange,
       translate,
       isLoading,
+      invalid: isInvalid,
       hasError,
       multiple,
       overrides,
+      valid: isValid,
       value,
       ...props
     },
@@ -80,6 +82,8 @@ const FileUploader = React.forwardRef(
           'has-error': hasError,
           'is-empty': !hasFile,
           'is-loading': isLoading,
+          'is-invalid': isInvalid,
+          'is-valid': isValid,
         })}
         ref={ref}
         {...props}
@@ -169,11 +173,13 @@ FileUploader.propTypes = {
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
   isLoading: PropTypes.bool,
+  invalid: PropTypes.bool,
   hasError: PropTypes.bool,
   multiple: PropTypes.bool,
   overrides: PropTypes.shape({
     input: PropTypes.shape({}),
   }),
+  valid: PropTypes.bool,
   value: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -188,10 +194,12 @@ FileUploader.defaultProps = {
   translate: defaultTranslate,
   hasError: false,
   isLoading: false,
+  invalid: false,
   multiple: false,
   overrides: {
     input: {},
   },
+  valid: false,
   value: [],
 };
 
