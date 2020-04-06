@@ -15,6 +15,7 @@ stories.add('Playground', () => (
       handleDelete={action('handleDelete')}
       file={{
         name: text('File name', 'doc.txt'),
+        type: 'text/plain',
       }}
     />
   </>

@@ -32,17 +32,30 @@ stories.add('All states', () => (
 
     <Heading level={2}>With default value</Heading>
     <FileUploader
-      id='file-uploaders-default-value'
+      id='file-uploader-default-value'
       onChange={action('onChange')}
       value={[stubFile1]}
     />
 
     <Heading level={2}>With default value and multiple files</Heading>
     <FileUploader
-      id='file-uploaders-default-value-multiple'
+      id='file-uploader-default-value-multiple'
       onChange={action('onChange')}
       multiple
       value={[stubFile1, stubFile2]}
+    />
+
+    <Heading level={2}>Validation</Heading>
+    <FileUploader
+      id='file-uploader-invalid'
+      onChange={action('onChange')}
+      invalid
+    />
+
+    <FileUploader
+      id='file-uploader-invalid'
+      onChange={action('onChange')}
+      valid
     />
   </>
 ));

@@ -4,15 +4,28 @@
 }
 
 .f-FileUploader {
+  --text-color: var(--f-color-text--secondary);
+  --border-color: var(--f-color-element--tertiary);
+
   position: relative;
   width: 100%;
   flex-direction: column;
   height: var(--f-FileUploader-height);
   margin: var(--f-space--m) 0;
-  border: 1px dashed var(--f-color-element--tertiary);
+  border: 1px dashed var(--border-color);
   border-radius: var(--f-borderRadius--l);
-  color: var(--f-color-text--secondary);
+  color: var(--text-color);
   background-color: var(--f-color-element--primary);
+}
+
+.f-FileUploader.is-invalid {
+  --text-color: var(--f-color-element--error);
+  --border-color: var(--f-color-element--error);
+}
+
+.f-FileUploader.is-valid {
+  --text-color: var(--f-color-element--success);
+  --border-color: var(--f-color-element--success);
 }
 
 .f-FileUploader,
