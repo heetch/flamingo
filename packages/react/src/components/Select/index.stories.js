@@ -33,6 +33,11 @@ stories.add('All states', () => (
         />
       </div>
     ))}
+
+    <Heading level={2}>Validation</Heading>
+
+    <Select invalid {...defaultProps()} />
+    <Select valid {...defaultProps()} />
   </>
 ));
 
