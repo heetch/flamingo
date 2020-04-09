@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import Overlay from '../Overlay';
@@ -53,20 +52,22 @@ const Dropdown = ({
         innerRef={setPopperNode}
         placement={placement}
       >
-        {({ ref, style }) => (
-          <>
-            <div
-              className={cx('f-DropdownList', { 'is-hidden': !isOpen })}
-              ref={ref}
-              style={style}
-              data-placement={placement}
-            >
-              {children(renderFnProps)}
-            </div>
+        {({ ref, style }) =>
+          isOpen && (
+            <>
+              <div
+                className='f-DropdownList'
+                ref={ref}
+                style={style}
+                data-placement={placement}
+              >
+                {children(renderFnProps)}
+              </div>
 
-            {isOpen && <Overlay className='f-DropdownOverlay' />}
-          </>
-        )}
+              <Overlay className='f-DropdownOverlay' />
+            </>
+          )
+        }
       </Popper>
     </Manager>
   );

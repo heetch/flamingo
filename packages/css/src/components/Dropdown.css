@@ -6,11 +6,6 @@
   z-index: calc(var(--f-zIndex--Overlay) + 1);
 }
 
-.f-DropdownList.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 @media (max-width: 460px) {
   /* --f-breakpoint--s */
   /* !important are needed to override inline styles */
