@@ -8,6 +8,8 @@ const Dropdown = ({
   children,
   clickOutsideToHide,
   isOpen: isOpenProp,
+  onHide,
+  onOpen,
   triggerer,
   placement,
 }) => {
@@ -21,6 +23,11 @@ const Dropdown = ({
   const [refNode, setRefNode] = React.useState();
 
   const renderFnProps = { isOpen, open, hide, toggle };
+
+  React.useEffect(() => {
+    if (isOpen) onOpen();
+    else onHide();
+  }, [isOpen, onHide, onOpen]);
 
   React.useEffect(() => {
     const onDocumentClick = ({ target }) => {
@@ -79,6 +86,8 @@ Dropdown.propTypes = {
   children: PropTypes.func.isRequired,
   clickOutsideToHide: PropTypes.bool,
   isOpen: PropTypes.bool,
+  onHide: PropTypes.func,
+  onOpen: PropTypes.func,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
 };
@@ -86,6 +95,8 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   clickOutsideToHide: true,
   isOpen: false,
+  onHide: () => {},
+  onOpen: () => {},
   placement: 'bottom-end',
 };
 
