@@ -10,6 +10,7 @@
   /* --f-breakpoint--s */
   /* !important are needed to override inline styles */
   .f-DropdownList {
+    position: fixed !important;
     top: 50% !important;
     left: var(--f-space--xl) !important;
     right: var(--f-space--xl) !important;
