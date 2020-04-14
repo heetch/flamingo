@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import Icon from '../Icon';
@@ -37,6 +38,30 @@ stories.add('Playground', () => (
       ]}
       data={data}
       isSortable={boolean('Is sortable', false)}
+    />
+
+    <Heading>Table with manual sorting</Heading>
+    <Table
+      columns={[
+        {
+          Header: text("Col #1's heading", 'With string'),
+          accessor: 'string',
+        },
+        {
+          Header: text("Col #2's heading", 'With number'),
+          accessor: 'number',
+          Cell: item => <Text isNumber>{item.cell.value}</Text>,
+        },
+        {
+          Header: text("Col #3's heading", 'With custom rendering'),
+          accessor: 'custom',
+          Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
+        },
+      ]}
+      data={data}
+      isSortable={boolean('Is sortable', false)}
+      manualSorting
+      onChangeSort={action('onChangeSort')}
     />
   </>
 ));

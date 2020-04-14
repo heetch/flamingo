@@ -9,11 +9,20 @@ import RowGroup from '../TableRowGroup';
 import RowCell from '../TableRowCell';
 
 const Table = React.forwardRef(
-  ({ className, columns, data, isSortable }, ref) => {
-    const { headerGroups, rows, prepareRow } = useTable(
+  (
+    { className, columns, data, isSortable, manualSorting, onChangeSort },
+    ref,
+  ) => {
+    const {
+      headerGroups,
+      rows,
+      prepareRow,
+      state: { sortBy },
+    } = useTable(
       {
         columns,
         data,
+        manualSorting,
       },
       useSortBy,
     );
@@ -25,6 +34,10 @@ const Table = React.forwardRef(
         }),
       [prepareRow, rows],
     );
+
+    React.useEffect(() => {
+      onChangeSort(sortBy);
+    }, [onChangeSort, sortBy]);
 
     return (
       <table
@@ -84,6 +97,8 @@ Table.propTypes = {
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
   isSortable: PropTypes.bool,
+  manualSorting: PropTypes.bool,
+  onChangeSort: PropTypes.func,
 };
 
 Table.defaultProps = {
@@ -91,6 +106,8 @@ Table.defaultProps = {
   columns: [],
   data: [],
   isSortable: false,
+  onChangeSort: () => {},
+  manualSorting: false,
 };
 
 Table.HeaderGroup = HeaderGroup;
