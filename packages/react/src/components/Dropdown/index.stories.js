@@ -25,6 +25,8 @@ stories.add('Playground', () => (
       }}
     >
       <Dropdown
+        onHide={action('onHide')}
+        onOpen={action('onOpen')}
         isOpen
         triggerer={({ ref, toggle }) => (
           <Button ref={ref} onClick={toggle}>

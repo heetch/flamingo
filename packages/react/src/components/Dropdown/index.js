@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import Overlay from '../Overlay';
@@ -9,6 +8,8 @@ const Dropdown = ({
   children,
   clickOutsideToHide,
   isOpen: isOpenProp,
+  onHide,
+  onOpen,
   triggerer,
   placement,
 }) => {
@@ -22,6 +23,11 @@ const Dropdown = ({
   const [refNode, setRefNode] = React.useState();
 
   const renderFnProps = { isOpen, open, hide, toggle };
+
+  React.useEffect(() => {
+    if (isOpen) onOpen();
+    else onHide();
+  }, [isOpen, onHide, onOpen]);
 
   React.useEffect(() => {
     const onDocumentClick = ({ target }) => {
@@ -53,20 +59,22 @@ const Dropdown = ({
         innerRef={setPopperNode}
         placement={placement}
       >
-        {({ ref, style }) => (
-          <>
-            <div
-              className={cx('f-DropdownList', { 'is-hidden': !isOpen })}
-              ref={ref}
-              style={style}
-              data-placement={placement}
-            >
-              {children(renderFnProps)}
-            </div>
+        {({ ref, style }) =>
+          isOpen && (
+            <>
+              <div
+                className='f-DropdownList'
+                ref={ref}
+                style={style}
+                data-placement={placement}
+              >
+                {children(renderFnProps)}
+              </div>
 
-            {isOpen && <Overlay className='f-DropdownOverlay' />}
-          </>
-        )}
+              <Overlay className='f-DropdownOverlay' />
+            </>
+          )
+        }
       </Popper>
     </Manager>
   );
@@ -78,6 +86,8 @@ Dropdown.propTypes = {
   children: PropTypes.func.isRequired,
   clickOutsideToHide: PropTypes.bool,
   isOpen: PropTypes.bool,
+  onHide: PropTypes.func,
+  onOpen: PropTypes.func,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
 };
@@ -85,6 +95,8 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   clickOutsideToHide: true,
   isOpen: false,
+  onHide: () => {},
+  onOpen: () => {},
   placement: 'bottom-end',
 };
 
