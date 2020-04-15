@@ -60,10 +60,10 @@ Checkbox.propTypes = {
   isUndefined: PropTypes.bool,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  children: PropTypes.string,
+  children: PropTypes.node,
   id: PropTypes.string.isRequired,
   value: PropTypes.string,
-  helper: PropTypes.string,
+  helper: PropTypes.node,
 };
 
 Checkbox.defaultProps = {
