@@ -9,14 +9,14 @@ import Icon from '../Icon';
 const sizes = Object.values(Icon.SIZES);
 
 const IconButton = styled(
-  ({ className, icon, size, iconColor, disabled, ...props }) => (
+  ({ className, icon, size, iconColor, disabled, ...rest }) => (
     <Button
       className={cx('f-Button--icon', className)}
       intent={Button.INTENTS.SECONDARY}
       variant={Button.VARIANTS.MINIMAL}
       size={size}
       disabled={disabled}
-      {...props}
+      {...rest}
     >
       <Icon icon={icon} size={size} iconColor={!disabled && iconColor} />
     </Button>
@@ -54,10 +54,10 @@ IconButton.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(Icon.NAMES).isRequired,
   size: PropTypes.oneOf(sizes),
+  iconColor: PropTypes.string,
 };
 
 IconButton.defaultProps = {
-  className: undefined,
   size: Icon.SIZES.L,
 };
 
