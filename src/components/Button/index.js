@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import cx from 'classnames';
 import Spinner from '../Spinner';
-import Icon from '../Icon';
 
 const INTENTS = {
   PRIMARY: 'primary',
