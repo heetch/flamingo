@@ -35,7 +35,12 @@ const Dropdown = ({
         return;
       }
 
-      if (!popperNode.contains(target) && !refNode.contains(target)) {
+      if (
+        popperNode &&
+        !popperNode.contains(target) &&
+        refNode &&
+        !refNode.contains(target)
+      ) {
         hide();
       }
     };
