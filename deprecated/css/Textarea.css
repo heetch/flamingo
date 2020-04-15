@@ -1,9 +1,0 @@
-.f-Textarea {
-  min-height: 9.375rem; /* 150px */
-  resize: vertical;
-}
-
-.f-Textarea-wrapper .f-FormEl-icon {
-  top: var(--f-space--l);
-  transform: none;
-}
