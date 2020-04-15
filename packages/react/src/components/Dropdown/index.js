@@ -82,7 +82,7 @@ const Dropdown = ({
       <Popper
         modifiers={{
           offset: {
-            offset: '0 4px',
+            offset: '0, 4px',
           },
         }}
         innerRef={setPopperNode}
