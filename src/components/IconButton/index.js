@@ -8,20 +8,34 @@ import Icon from '../Icon';
 
 const sizes = Object.values(Icon.SIZES);
 
-const IconButton = styled(
-  ({ className, icon, size, iconColor, disabled, ...rest }) => (
-    <Button
-      className={cx('f-Button--icon', className)}
-      intent={Button.INTENTS.SECONDARY}
-      variant={Button.VARIANTS.MINIMAL}
-      size={size}
-      disabled={disabled}
-      {...rest}
-    >
-      <Icon icon={icon} size={size} iconColor={!disabled && iconColor} />
-    </Button>
-  ),
-)`
+const IconButtonComponent = ({
+  className,
+  icon,
+  size,
+  iconColor,
+  disabled,
+  ...props
+}) => (
+  <Button
+    className={cx('f-Button--icon', className)}
+    intent={Button.INTENTS.SECONDARY}
+    variant={Button.VARIANTS.MINIMAL}
+    disabled={disabled}
+    {...props}
+  >
+    <Icon icon={icon} size={size} iconColor={!disabled && iconColor} />
+  </Button>
+);
+
+IconButtonComponent.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.oneOf(Icon.NAMES).isRequired,
+  size: PropTypes.oneOf(sizes),
+  iconColor: PropTypes.string,
+  disabled: PropTypes.bool,
+};
+
+const IconButton = styled(IconButtonComponent)`
   padding: var(--f-space--m);
   line-height: 1;
   border-radius: 50%;

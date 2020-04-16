@@ -28,6 +28,13 @@ stories.add('All states', () => (
         <Heading level={level}>Heading {level}</Heading>
       </Wrapper>
     ))}
+
+    <Heading level={2}>Custom tag</Heading>
+    <Wrapper>
+      <Heading level={2} as='h6'>
+        h6 with h2 styles
+      </Heading>
+    </Wrapper>
   </>
 ));
 

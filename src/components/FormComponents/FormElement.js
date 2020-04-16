@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import Icon from '../Icon';
 
 const styles = {
@@ -42,9 +42,9 @@ const styles = {
   },
 };
 
-const FormElement = styled(({ className, ...rest }) => (
-  <div className={cx('f-FormEl', className)} {...rest} />
-))`
+const FormElement = styled('div').attrs(({ className }) => ({
+  className: cx('f-FormEl', className),
+}))`
   display: block;
   width: 100%;
   padding: var(--f-space--m) var(--f-space--xl);

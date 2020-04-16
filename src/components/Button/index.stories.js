@@ -24,14 +24,14 @@ stories.add('All states', () => (
 
         <div>
           <Heading level={3}>States</Heading>
-          <Button intent={intent} style={{ marginRight: 'var(--f-space--m)' }}>
+          <Button intent={intent} margin={'0 var(--f-space--m) 0 0'}>
             {intent}
           </Button>
           <Button
             intent={intent}
             className={`is-${intent}`}
             isLoading
-            style={{ marginRight: 'var(--f-space--m)' }}
+            margin={'0 var(--f-space--m) 0 0'}
           >
             Loading
           </Button>
@@ -45,7 +45,7 @@ stories.add('All states', () => (
               intent={intent}
               variant={variant}
               className={`is-${variant}`}
-              style={{ marginRight: 'var(--f-space--m)' }}
+              margin={'0 var(--f-space--m) 0 0'}
             >
               {intent}
               {variant && `:${variant}`}

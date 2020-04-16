@@ -9,6 +9,6 @@ const stories = storiesOf('Overlay', module);
 stories.add('Playground', () => (
   <>
     <Heading>Overlay</Heading>
-    <Overlay />
+    <Overlay isOpen />
   </>
 ));

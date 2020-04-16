@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styled from 'styled-components';
@@ -15,8 +14,6 @@ const VARIANTS = {
   subContent: 'subContent',
   subContentBold: 'subContentBold',
 };
-
-const variants = Object.keys(VARIANTS);
 
 const styles = {
   fontSize({ variant }) {
@@ -68,12 +65,9 @@ const styles = {
     return variants[variant] || undefined;
   },
 };
-const UiText = styled(({ className, variant, ...rest }) => (
-  <p
-    className={cx('f-UiText', `f-UiText--${VARIANTS[variant]}`, className)}
-    {...rest}
-  />
-))`
+const UiText = styled('p').attrs(({ className, variant }) => ({
+  className: cx('f-UiText', `f-UiText--${VARIANTS[variant]}`, className),
+}))`
   font-weight: ${styles.fontWeight};
   font-size: ${styles.fontSize};
   line-height: ${styles.lineHeight};
@@ -83,7 +77,7 @@ UiText.displayName = 'UiText';
 
 UiText.propTypes = {
   className: PropTypes.string,
-  variant: PropTypes.oneOf(variants),
+  variant: PropTypes.oneOf(Object.keys(VARIANTS)),
 };
 
 UiText.defaultProps = {

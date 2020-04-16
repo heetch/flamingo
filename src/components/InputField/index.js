@@ -21,12 +21,6 @@ InputField.propTypes = {
   }),
 };
 
-InputField.defaultProps = {
-  helper: undefined,
-  label: undefined,
-  inputRef: undefined,
-};
-
 InputField.displayName = 'InputField';
 
 export default InputField;

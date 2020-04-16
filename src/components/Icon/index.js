@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styled from 'styled-components';
@@ -29,9 +28,10 @@ const styles = {
   },
 };
 
-const Icon = styled(({ className, icon, iconColor, ...props }) => (
-  <i className={cx('f-Icon', className)} {...props} children={SVGS[icon]} />
-))`
+const Icon = styled('i').attrs(({ className, icon }) => ({
+  className: cx('f-Icon', className),
+  children: SVGS[icon],
+}))`
   display: inline-block;
   width: ${styles.iconSize};
   height: ${styles.iconSize};
@@ -54,9 +54,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  className: undefined,
   size: SIZES.M,
-  iconColor: undefined,
 };
 
 Icon.ICONS = ICONS;

@@ -1,10 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Overlay = styled(({ isOpen, ...rest }) => (
-  <div className={'f-Overlay'} {...rest} />
-))`
+const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   position: fixed;
   top: 0;
   right: 0;

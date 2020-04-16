@@ -96,29 +96,10 @@ const styles = {
     },
   },
 };
-const Button = styled(
-  ({
-    intent,
-    isLoading,
-    variant,
-    disabled,
-    type,
-    margin,
-    className,
-    forwardedRef,
-    children,
-    ...rest
-  }) => (
-    <button
-      disabled={disabled}
-      type={type}
-      className={cx('f-Button', className)}
-      ref={forwardedRef}
-      children={isLoading ? <Spinner /> : children}
-      {...rest}
-    />
-  ),
-)`
+const Button = styled('button').attrs(({ className, isLoading, children }) => ({
+  className: cx('f-Button', className),
+  children: isLoading ? <Spinner /> : children,
+}))`
   position: relative;
   display: inline-block;
   margin: ${({ margin }) => margin ?? 'var(--f-space--m) 0'};
