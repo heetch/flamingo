@@ -41,10 +41,6 @@
   border-bottom-right-radius: var(--borderRadius);
 }
 
-.f-DropdownOverlay {
-  z-index: 5;
-}
-
 @media (min-width: 460px) {
   /* --f-breakpoint--s */
   .f-DropdownOverlay {

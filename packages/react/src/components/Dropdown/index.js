@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 
@@ -12,6 +13,7 @@ const Dropdown = ({
   onOpen,
   triggerer,
   placement,
+  portalNode,
 }) => {
   const [isOpen, setIsOpen] = React.useState(isOpenProp);
 
@@ -23,6 +25,28 @@ const Dropdown = ({
   const [refNode, setRefNode] = React.useState();
 
   const renderFnProps = { isOpen, open, hide, toggle };
+  const usePortal = !!portalNode;
+
+  const renderChildren = ({ ref, style }) => {
+    if (!isOpen) return null;
+
+    const elements = (
+      <>
+        <div
+          className='f-DropdownList'
+          ref={ref}
+          style={style}
+          data-placement={placement}
+        >
+          {children(renderFnProps)}
+        </div>
+
+        <Overlay className='f-DropdownOverlay' />
+      </>
+    );
+
+    return usePortal ? ReactDOM.createPortal(elements, portalNode) : elements;
+  };
 
   React.useEffect(() => {
     if (isOpen) onOpen();
@@ -35,7 +59,12 @@ const Dropdown = ({
         return;
       }
 
-      if (!popperNode.contains(target) && !refNode.contains(target)) {
+      if (
+        popperNode &&
+        !popperNode.contains(target) &&
+        refNode &&
+        !refNode.contains(target)
+      ) {
         hide();
       }
     };
@@ -53,28 +82,13 @@ const Dropdown = ({
       <Popper
         modifiers={{
           offset: {
-            offset: '0 4px',
+            offset: '0, 4px',
           },
         }}
         innerRef={setPopperNode}
         placement={placement}
       >
-        {({ ref, style }) =>
-          isOpen && (
-            <>
-              <div
-                className='f-DropdownList'
-                ref={ref}
-                style={style}
-                data-placement={placement}
-              >
-                {children(renderFnProps)}
-              </div>
-
-              <Overlay className='f-DropdownOverlay' />
-            </>
-          )
-        }
+        {renderChildren}
       </Popper>
     </Manager>
   );
@@ -90,6 +104,7 @@ Dropdown.propTypes = {
   onOpen: PropTypes.func,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
+  portalNode: PropTypes.instanceOf(HTMLElement),
 };
 
 Dropdown.defaultProps = {
@@ -98,6 +113,7 @@ Dropdown.defaultProps = {
   onHide: () => {},
   onOpen: () => {},
   placement: 'bottom-end',
+  portalNode: null,
 };
 
 export default Dropdown;
