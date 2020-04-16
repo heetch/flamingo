@@ -10,7 +10,15 @@ import RowCell from '../TableRowCell';
 
 const Table = React.forwardRef(
   (
-    { className, columns, data, isSortable, manualSorting, onChangeSort },
+    {
+      className,
+      columns,
+      data,
+      isSortable,
+      manualSorting,
+      onChangeSort,
+      initialState,
+    },
     ref,
   ) => {
     const {
@@ -23,6 +31,7 @@ const Table = React.forwardRef(
         columns,
         data,
         manualSorting,
+        initialState,
       },
       useSortBy,
     );
@@ -99,6 +108,14 @@ Table.propTypes = {
   isSortable: PropTypes.bool,
   manualSorting: PropTypes.bool,
   onChangeSort: PropTypes.func,
+  initialState: PropTypes.shape({
+    sortBy: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        desc: PropTypes.bool,
+      }),
+    ),
+  }),
 };
 
 Table.defaultProps = {
@@ -108,6 +125,7 @@ Table.defaultProps = {
   isSortable: false,
   onChangeSort: () => {},
   manualSorting: false,
+  initialState: undefined,
 };
 
 Table.HeaderGroup = HeaderGroup;

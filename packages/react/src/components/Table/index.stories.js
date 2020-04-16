@@ -37,7 +37,7 @@ stories.add('Playground', () => (
         },
       ]}
       data={data}
-      isSortable={boolean('Is sortable', false)}
+      isSortable={boolean('Table 1 sortable', false)}
     />
 
     <Heading>Table with manual sorting</Heading>
@@ -59,9 +59,10 @@ stories.add('Playground', () => (
         },
       ]}
       data={data}
-      isSortable={boolean('Is sortable', false)}
+      isSortable={boolean('Table 2 sortable', true)}
       manualSorting
       onChangeSort={action('onChangeSort')}
+      initialState={{ sortBy: [{ id: 'number', desc: true }] }}
     />
   </>
 ));
