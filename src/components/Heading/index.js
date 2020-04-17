@@ -29,8 +29,6 @@ const Heading = styled(UiText).attrs(({ as, level, className }) => ({
   margin-bottom: var(--f-space--m);
 `;
 
-Heading.displayName = 'Heading';
-
 Heading.propTypes = {
   as: PropTypes.node,
   className: PropTypes.string,

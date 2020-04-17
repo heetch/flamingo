@@ -21,8 +21,6 @@ const Helper = styled(UiText).attrs(({ className }) => ({
   }
 `;
 
-Helper.displayName = 'Helper';
-
 Helper.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,

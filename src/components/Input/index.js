@@ -30,8 +30,6 @@ const Input = React.forwardRef(({ id, icon: defaultIcon, ...props }, ref) => {
   );
 });
 
-Input.displayName = 'Input';
-
 Input.propTypes = {
   icon: PropTypes.oneOf(icons),
   id: PropTypes.string.isRequired,

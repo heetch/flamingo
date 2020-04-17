@@ -23,15 +23,9 @@ const Spinner = styled(({ className, ...props }) => (
   animation: ${rotate} 600ms linear infinite;
 `;
 
-Spinner.displayName = 'Spinner';
-
 Spinner.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(sizes),
-};
-
-Spinner.defaultProps = {
-  className: undefined,
 };
 
 export default Spinner;

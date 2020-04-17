@@ -44,8 +44,6 @@ const Icon = styled('i').attrs(({ className, icon }) => ({
   }
 `;
 
-Icon.displayName = 'Icon';
-
 Icon.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(NAMES).isRequired,

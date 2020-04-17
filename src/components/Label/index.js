@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Label = styled('div').attrs(({ className }) => ({
+const Label = styled('label').attrs(({ className }) => ({
   className: cx('f-Label', className),
   variant: UiText.VARIANTS.subContentBold,
   as: 'label',
@@ -18,8 +18,6 @@ const Label = styled('div').attrs(({ className }) => ({
     margin-top: 0;
   }
 `;
-
-Label.displayName = 'Label';
 
 Label.propTypes = {
   className: PropTypes.string,

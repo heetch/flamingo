@@ -13,8 +13,6 @@ const Text = styled(UiText).attrs(({ className }) => ({
   text-align: ${({ isNumber }) => isNumber && 'right'};
 `;
 
-Text.displayName = 'Text';
-
 Text.propTypes = {
   as: PropTypes.string,
   className: PropTypes.string,

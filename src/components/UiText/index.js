@@ -73,8 +73,6 @@ const UiText = styled('p').attrs(({ className, variant }) => ({
   line-height: ${styles.lineHeight};
 `;
 
-UiText.displayName = 'UiText';
-
 UiText.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
