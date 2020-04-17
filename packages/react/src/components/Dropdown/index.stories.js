@@ -70,5 +70,17 @@ stories.add('Playground', () => (
     <DropdownContainer>
       <StoryDropdown portalNode={document.body} />
     </DropdownContainer>
+
+    <Heading>With modifiers</Heading>
+    <DropdownContainer>
+      <StoryDropdown
+        modifiers={{
+          preventOverflow: {
+            enabled: false,
+          },
+        }}
+        portalNode={document.body}
+      />
+    </DropdownContainer>
   </>
 ));
