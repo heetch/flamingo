@@ -1,0 +1,119 @@
+:root {
+  --f-color-brandPrimary: #ff2773;
+  --f-color-brandPrimary--light: #ff4d95;
+  --f-color-brandPrimary--inactive: #fc99bc;
+  --f-color-brandSecondary: #2b1e70;
+  --f-color-brandSecondary--light: #252d9b;
+
+  --f-color-icon--white: #fff;
+  --f-color-icon--disabled: #dedede;
+  --f-color-icon--dark: #190134;
+
+  --f-color-element--primary: #fff;
+  --f-color-element--secondary: #685879;
+  --f-color-element--tertiary: #b3abbc;
+  --f-color-element--inactive: #eaeaea;
+  --f-color-element--error: #ee7d52;
+  --f-color-element--success: #5cc689;
+  --f-color-element--overlay: #2b1e70;
+
+  --f-color-text--primary: #190134;
+  --f-color-text--secondary: #685879;
+  --f-color-text--tertiary: #b3abbc;
+  --f-color-text--link: #252d9b;
+  --f-color-text--white: #fff;
+}
+
+:root {
+  --f-fontSize--xxs: 0.625rem; /* 10px */
+  --f-fontSize--xs: 0.75rem; /* 12px */
+  --f-fontSize--s: 0.875rem; /* 14px */
+  --f-fontSize--m: 1rem; /* 16px */
+  --f-fontSize--l: 1.25rem; /* 20px */
+  --f-fontSize--xl: 1.5rem; /* 24px */
+  --f-fontSize--xxl: 2rem; /* 32px */
+}
+
+:root {
+  --f-fontWeight--normal: 400;
+  --f-fontWeight--bold: 700;
+  --f-fontWeight--black: 800;
+}
+
+:root {
+  --f-lineHeight--s: 1rem;
+  --f-lineHeight--m: 1.4rem;
+  --f-lineHeight--l: 1.5rem;
+  --f-lineHeight--xl: 2rem;
+}
+
+:root {
+  --f-iconSize--s: 0.75rem; /* 12px */
+  --f-iconSize--m: 1rem; /* 16px */
+  --f-iconSize--l: 1.25rem; /* 20px */
+}
+
+:root {
+  --f-borderRadius--xl: 1.5rem; /* 24px */
+  --f-borderRadius--l: 1rem; /* 16px */
+  --f-borderRadius--m: 0.5rem; /* 8px */
+  --f-borderRadius--s: 0.25rem; /* 4px */
+}
+
+:root {
+  --f-space--s: 0.25rem; /* 4px */
+  --f-space--m: 0.5rem; /* 8px */
+  --f-space--l: 0.75rem; /* 12px */
+  --f-space--xl: 1rem; /* 16px */
+  --f-space--xxl: 1.5rem; /* 24px */
+}
+
+:root {
+  --f-breakpoint--s: 28.75rem; /* 460px */
+  --f-breakpoint--m: 50rem; /* 800px */
+  --f-breakpoint--l: 68.75rem; /* 1100px */
+}
+
+:root {
+  --f-zIndex--Overlay: 100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  line-height: var(--f-lineHeight--m);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+.f-colorError {
+  color: var(--f-color-element--error) !important;
+}
+
+.f-colorSuccess {
+  color: var(--f-color-element--success) !important;
+}
+
+.f-colorWarning {
+  color: var(--f-color-brandSecondary) !important;
+}
+
+.f-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
