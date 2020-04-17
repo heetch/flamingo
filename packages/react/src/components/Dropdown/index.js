@@ -14,6 +14,7 @@ const Dropdown = ({
   triggerer,
   placement,
   portalNode,
+  modifiers,
 }) => {
   const [isOpen, setIsOpen] = React.useState(isOpenProp);
 
@@ -84,6 +85,7 @@ const Dropdown = ({
           offset: {
             offset: '0, 4px',
           },
+          ...modifiers,
         }}
         innerRef={setPopperNode}
         placement={placement}
@@ -105,6 +107,7 @@ Dropdown.propTypes = {
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
   portalNode: PropTypes.instanceOf(HTMLElement),
+  modifiers: PropTypes.shape({}), // https://popper.js.org/docs/v1/#modifiers
 };
 
 Dropdown.defaultProps = {
@@ -114,6 +117,7 @@ Dropdown.defaultProps = {
   onOpen: () => {},
   placement: 'bottom-end',
   portalNode: null,
+  modifiers: {},
 };
 
 export default Dropdown;
