@@ -6,7 +6,7 @@ import { withInfo } from '@storybook/addon-info';
 import theme from './theme/';
 import StoryWrapper from './theme/StoryWrapper';
 
-import './styles.css'
+import './styles.css';
 import 'normalize.css';
 
 addons.setConfig({
