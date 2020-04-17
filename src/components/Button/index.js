@@ -96,9 +96,36 @@ const styles = {
     },
   },
 };
-const Button = styled('button').attrs(({ className, isLoading, children }) => ({
+
+export const Content = styled.span`
+  opacity: ${({ isLoading }) => isLoading && 0};
+  pointer-events: ${({ isLoading }) => isLoading && 'none'};
+`;
+
+export const SpinnerContainer = styled('div')`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Button = styled(
+  ({ isLoading, children, margin, intent, variant, ...props }) => (
+    <button {...props}>
+      {isLoading && (
+        <SpinnerContainer>
+          <Spinner size={'l'} />
+        </SpinnerContainer>
+      )}
+      <Content isLoading={isLoading}>{children}</Content>
+    </button>
+  ),
+).attrs(({ className }) => ({
   className: cx('f-Button', className),
-  children: isLoading ? <Spinner /> : children,
 }))`
   position: relative;
   display: inline-block;
@@ -133,8 +160,6 @@ const Button = styled('button').attrs(({ className, isLoading, children }) => ({
   }
 `;
 
-Button.displayName = 'Button';
-
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
@@ -147,14 +172,10 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  className: undefined,
-  children: undefined,
   disabled: false,
   intent: INTENTS.PRIMARY,
   isLoading: false,
   type: 'button',
-  variant: undefined,
-  margin: undefined,
 };
 
 Button.INTENTS = INTENTS;
