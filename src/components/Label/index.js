@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Label = styled('label').attrs(({ className }) => ({
-  className: cx('f-Label', className),
+const Label = styled('label').attrs(() => ({
+  className: 'f-Label',
   variant: UiText.VARIANTS.subContentBold,
   as: 'label',
 }))`

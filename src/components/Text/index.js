@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
 
 const variants = Object.values(UiText.VARIANTS);
 
-const Text = styled(UiText).attrs(({ className }) => ({
-  className: cx('f-Text', className),
+const Text = styled(UiText).attrs(() => ({
+  className: 'f-Text',
 }))`
   color: var(--f-color-text--secondary);
   text-align: ${({ isNumber }) => isNumber && 'right'};

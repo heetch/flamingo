@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import cx from 'classnames';
 
 import UiText from '../UiText';
 
@@ -19,10 +18,10 @@ const styles = {
   },
 };
 
-const Heading = styled(UiText).attrs(({ as, level, className }) => ({
+const Heading = styled(UiText).attrs(({ as, level }) => ({
   as: as || `h${level}`,
   variant: `h${level}`,
-  className: cx('f-Heading', className),
+  className: 'f-Heading',
 }))`
   color: var(--f-color-text--primary);
   margin-top: ${styles.marginTop};

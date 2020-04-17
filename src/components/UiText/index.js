@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 const VARIANTS = {
@@ -65,8 +64,8 @@ const styles = {
     return variants[variant] || undefined;
   },
 };
-const UiText = styled('p').attrs(({ className, variant }) => ({
-  className: cx('f-UiText', `f-UiText--${VARIANTS[variant]}`, className),
+const UiText = styled('p').attrs(({ variant }) => ({
+  className: `f-UiText f-UiText--${VARIANTS[variant]}`,
 }))`
   font-weight: ${styles.fontWeight};
   font-size: ${styles.fontSize};

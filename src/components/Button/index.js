@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import cx from 'classnames';
 import Spinner from '../Spinner';
 
 const INTENTS = {
@@ -124,8 +123,8 @@ const Button = styled(
       <Content isLoading={isLoading}>{children}</Content>
     </button>
   ),
-).attrs(({ className }) => ({
-  className: cx('f-Button', className),
+).attrs(() => ({
+  className: 'f-Button',
 }))`
   position: relative;
   display: inline-block;

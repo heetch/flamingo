@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 import * as SVGS from '../../constants/icons';
@@ -28,8 +27,8 @@ const styles = {
   },
 };
 
-const Icon = styled('i').attrs(({ className, icon }) => ({
-  className: cx('f-Icon', className),
+const Icon = styled('i').attrs(({ icon }) => ({
+  className: 'f-Icon',
   children: SVGS[icon],
 }))`
   display: inline-block;

@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Helper = styled(UiText).attrs(({ className }) => ({
+const Helper = styled(UiText).attrs(() => ({
   as: 'small',
   variant: UiText.VARIANTS.subContent,
-  className: cx('f-Helper', className),
+  className: 'f-Helper',
 }))`
   display: block;
   color: var(--f-color-text--secondary);
