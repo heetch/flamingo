@@ -40,7 +40,7 @@ const Textarea = React.forwardRef(
 
         {invalid && <StyledIcon icon={Icon.ICONS.IconAlertOctagon} />}
 
-        {valid && <StyledIcon icon={Icon.ICONS.IconCheck} />}
+        {valid && !invalid && <StyledIcon icon={Icon.ICONS.IconCheck} />}
       </FormElementWrapper>
     );
   },
