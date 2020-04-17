@@ -1,19 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Label = styled(({ className, htmlFor, ...rest }) => (
-  <UiText
-    variant={UiText.VARIANTS.subContentBold}
-    as='label'
-    className={cx('f-Label', className)}
-    htmlFor={htmlFor}
-    {...rest}
-  />
-))`
+const Label = styled('label').attrs(() => ({
+  className: 'f-Label',
+  variant: UiText.VARIANTS.subContentBold,
+  as: 'label',
+}))`
   display: inline-block;
   margin-top: var(--f-space--m);
   margin-bottom: var(--f-space--m);
@@ -23,8 +17,6 @@ const Label = styled(({ className, htmlFor, ...rest }) => (
     margin-top: 0;
   }
 `;
-
-Label.displayName = 'Label';
 
 Label.propTypes = {
   className: PropTypes.string,

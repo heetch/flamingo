@@ -25,10 +25,4 @@ FormField.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-FormField.defaultProps = {
-  className: undefined,
-  helper: undefined,
-  label: undefined,
-};
-
 export default FormField;

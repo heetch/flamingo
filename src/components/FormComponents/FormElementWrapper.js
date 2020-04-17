@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import cx from 'classnames';
 import Helper from '../Helper';
 
 const styles = {
@@ -16,9 +14,9 @@ const styles = {
   },
 };
 
-const FormElementWrapper = styled(({ className, ...rest }) => (
-  <div className={cx('f-FormEl-wrapper', className)} {...rest} />
-))`
+const FormElementWrapper = styled('div').attrs(() => ({
+  className: 'f-FormEl-wrapper',
+}))`
   display: flex;
   position: relative;
   min-width: 12.5rem;

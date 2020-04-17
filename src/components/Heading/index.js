@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import cx from 'classnames';
+
+import UiText from '../UiText';
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
@@ -17,19 +17,16 @@ const styles = {
     return 'var(--f-space--m)';
   },
 };
-const StyledHeading = styled(({ level, as, className, ...props }) => (
-  <div className={cx('f-Heading', className)} {...props} />
-))`
+
+const Heading = styled(UiText).attrs(({ as, level }) => ({
+  as: as || `h${level}`,
+  variant: `h${level}`,
+  className: 'f-Heading',
+}))`
   color: var(--f-color-text--primary);
   margin-top: ${styles.marginTop};
   margin-bottom: var(--f-space--m);
 `;
-
-const Heading = ({ as, level, ...props }) => (
-  <StyledHeading as={as || `h${level}`} {...props} />
-);
-
-Heading.displayName = 'Heading';
 
 Heading.propTypes = {
   as: PropTypes.node,
@@ -38,8 +35,6 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  as: undefined,
-  className: undefined,
   level: 1,
 };
 

@@ -15,7 +15,7 @@ stories.add('All states', () => (
     <Heading>UiText</Heading>
     <Heading level={2}>Variants</Heading>
     {variants.map(variant => (
-      <UiText key={variant} variant={variant}>
+      <UiText key={variant} variant={variant} as={variant}>
         {variant}
       </UiText>
     ))}
