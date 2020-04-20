@@ -86,7 +86,7 @@ const FileUploader = React.forwardRef(
         {isLoading && (
           <FileUploaderLabel
             className='f-FileUploader-label f-FileUploader-state--uploading'
-            withIconMargin
+            withIcon
             as='div'
           >
             <Spinner size={iconSize} />
@@ -97,7 +97,7 @@ const FileUploader = React.forwardRef(
         {hasError && (
           <FileUploaderLabel
             className='f-FileUploader-state--error'
-            withIconMargin
+            withIcon
             htmlFor={id}
           >
             <Icon icon={Icon.ICONS.IconSadFace} size={iconSize} />
@@ -130,7 +130,7 @@ const FileUploader = React.forwardRef(
           ) : (
             <FileUploaderLabel
               className='f-FileUploader-state--empty'
-              withIconMargin
+              withIcon
               htmlFor={id}
             >
               <Icon icon={Icon.ICONS.IconFilePlus} size={iconSize} />

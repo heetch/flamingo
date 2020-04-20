@@ -7,7 +7,7 @@ import IconButton from '../IconButton';
 import UploaderImageItem from '../UploaderImageItem';
 
 import { toBase64 } from '../../utils';
-import { StyledImageUploader, UploaderPreview } from './styles';
+import { StyledImageUploader, UploaderPreview, PreviewHover } from './styles';
 
 const getDefaultValuePreviews = files =>
   Array.isArray(files) ? files.map(file => file.preview) : [];
@@ -77,13 +77,13 @@ const ImageUploader = React.forwardRef(
         {hasPreview && (
           <>
             <UploaderPreview
-              className='f-ImageUploader-preview'
               preview={preview}
+              className={'f-ImageUploader-preview'}
             />
 
-            <div className='f-ImageUploader-hoverState'>
+            <PreviewHover className={'f-ImageUploader-hoverState'}>
               <IconButton onClick={handleClear} icon={Icon.ICONS.IconTrash} />
-            </div>
+            </PreviewHover>
           </>
         )}
 

@@ -1,27 +1,20 @@
 import styled, { css } from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import UiText from '../UiText';
+import Icon from '../Icon';
 
 const styles = {
   textColor({ invalid, valid }) {
-    if (invalid) {
-      return 'var(--f-color-element--error)';
-    }
-    if (valid) {
-      return 'var(--f-color-element--success)';
-    }
+    if (invalid) return 'var(--f-color-element--error)';
+    if (valid) return 'var(--f-color-element--success)';
+
     return 'var(--f-color-text--secondary)';
   },
   borderColor({ invalid, valid, hasFile }) {
-    if (hasFile) {
-      return 'transparent';
-    }
-    if (invalid) {
-      return 'var(--f-color-element--error)';
-    }
-    if (valid) {
-      return 'var(--f-color-element--success)';
-    }
+    if (hasFile) return 'transparent';
+    if (invalid) return 'var(--f-color-element--error)';
+    if (valid) return 'var(--f-color-element--success)';
+
     return 'var(--f-color-element--tertiary)';
   },
 };
@@ -79,8 +72,7 @@ export const FileUploaderLabel = styled(UiText).attrs(props => ({
     padding: var(--f-space--l);
   }
 
-  .f-Icon {
-    margin-bottom: ${({ withIconMargin }) =>
-      withIconMargin && 'var(--f-space--m)'};
+  ${Icon} {
+    margin-bottom: ${({ withIcon }) => withIcon && 'var(--f-space--m)'};
   }
 `;

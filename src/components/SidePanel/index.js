@@ -8,9 +8,8 @@ import Overlay from '../Overlay';
 import { StyledSidePanel, Content, Header, Footer } from './styles';
 /**
  * SidePanel will animate while mounting and un-mounting
- * The `isOpen` prop controls the animation. \
- *  isOpen state is used to be able to close on click rather than by prop
- * while `shouldRender` state controls the rendering
+ * `isOpen` controls the animation while `shouldRender` state controls the rendering
+ *  We need 2 states because we need to know when it's animating and when to render
  */
 const SidePanel = props => {
   const { footer, header } = props;
@@ -46,9 +45,9 @@ const SidePanel = props => {
       />
 
       <StyledSidePanel
-        {...props}
         className={cx('f-SidePanel', props.className)}
         onAnimationEnd={onAnimationEnd}
+        maxWidth={props.maxWidth}
         isOpen={isOpen}
       >
         <Header className='f-SidePanel-header'>

@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
+
 import Button from '../Button';
 
 const slideIn = keyframes`
@@ -38,6 +40,12 @@ export const StyledSidePanel = styled('div')`
     --content-hSpacing: var(--f-space--xl);
   }
 `;
+
+StyledSidePanel.propTypes = {
+  maxWidth: PropTypes.string,
+  isOpen: PropTypes.bool,
+  animateOnMount: PropTypes.bool,
+};
 
 export const Content = styled('div')`
   padding: var(--f-space--xxl) var(--content-hSpacing);
