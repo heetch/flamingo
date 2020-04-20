@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import UiText from '../UiText';
 import Icon from '../Icon';
@@ -32,14 +32,10 @@ export const StyledFileUploader = styled(FormElementWrapper)`
     hasFile ? 'auto' : 'var(--f-FileUploader-height)'};
   text-align: ${({ hasFile }) => hasFile && 'center'};
 
-  ${({ hasFile }) =>
-    !hasFile &&
-    css`
-      &:hover {
-        border-color: var(--f-color-brandPrimary);
-        color: var(--f-color-brandPrimary);
-      }
-    `};
+  &:hover {
+    border-color: ${({ hasFile }) => hasFile && 'var(--f-color-brandPrimary)'};
+    color: ${({ hasFile }) => hasFile && 'var(--f-color-brandPrimary)'};
+  }
 
   @media (max-width: 460px) {
     /* --f-breakpoint--s */
