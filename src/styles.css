@@ -76,6 +76,7 @@
 
 :root {
   --f-zIndex--Overlay: 100;
+  --f-FileUploader-height: 8.125rem; /* 130px */
 }
 
 * {
