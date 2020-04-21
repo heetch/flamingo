@@ -64,6 +64,7 @@ const styles = {
     return variants[variant] || undefined;
   },
 };
+
 const UiText = styled('p').attrs(({ variant }) => ({
   className: `f-UiText f-UiText--${VARIANTS[variant]}`,
 }))`
