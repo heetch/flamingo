@@ -9,9 +9,9 @@ const Label = styled('label').attrs(() => ({
   as: 'label',
 }))`
   display: inline-block;
-  margin-top: var(--f-space--m);
-  margin-bottom: var(--f-space--m);
-  color: var(--f-color-text--primary);
+  margin-top: ${({ theme }) => theme.spaces.m};
+  margin-bottom: ${({ theme }) => theme.spaces.m};
+  color: ${({ theme }) => theme.colors.text.primary};
 
   & + .f-FormEl-wrapper {
     margin-top: 0;
