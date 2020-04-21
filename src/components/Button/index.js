@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import Icon from '../Icon';
 import Spinner from '../Spinner';
 
 const INTENTS = {
@@ -16,81 +18,49 @@ const VARIANTS = {
 const intents = Object.values(INTENTS);
 const variants = Object.values(VARIANTS);
 
+const hasVariant = variant => variants.includes(variant);
+const isOutline = variant => variant === VARIANTS.OUTLINE;
+const isPrimary = intent => intent === INTENTS.PRIMARY;
+const isSecondary = intent => intent === INTENTS.SECONDARY;
+
 const styles = {
-  color({ disabled, variant, intent }) {
-    if (disabled) {
-      return 'var(--f-color-text--tertiary) !important';
-    }
-    if (variants.includes(variant) && intent === INTENTS.PRIMARY) {
-      return 'var(--f-color-brandPrimary)';
-    }
-    if (variants.includes(variant) && intent === INTENTS.SECONDARY) {
-      return 'var(--f-color-brandSecondary)';
-    }
-
-    return 'var(--f-color-text--white)';
+  color({ disabled, variant, intent, theme: { colors } }) {
+    if (disabled) return `${colors.text.tertiary} !important`;
+    if (!hasVariant(variant)) return colors.text.white;
+    if (isPrimary(intent)) return colors.brand.primary;
+    if (isSecondary(intent)) return colors.brand.secondary;
+    return colors.text.white;
   },
-  backgroundColor({ intent, disabled, variant }) {
-    if (disabled) {
-      return 'var(--f-color-element--primary) !important';
-    }
-    if (variants.includes(variant)) {
-      return 'var(--f-color-text--white)';
-    }
-    if (intent === INTENTS.PRIMARY) {
-      return 'var(--f-color-brandPrimary)';
-    }
-    if (intent === INTENTS.SECONDARY) {
-      return 'var(--f-color-brandSecondary)';
-    }
-
+  backgroundColor({ intent, disabled, variant, theme: { colors } }) {
+    if (disabled) return `${colors.element.primary} !important`;
+    if (hasVariant(variant)) return colors.text.white;
+    if (isPrimary(intent)) return colors.brand.primary;
+    if (isSecondary(intent)) return colors.brand.secondary;
     return undefined;
   },
-  boxShadow({ intent, variant, disabled }) {
-    if (disabled) {
-      return undefined;
-    }
-    if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
-      return '0 0 0 1px var(--f-color-brandPrimary)';
-    }
-    if (variant === VARIANTS.OUTLINE && intent === INTENTS.SECONDARY) {
-      return '0 0 0 1px var(--f-color-brandSecondary)';
-    }
-
+  boxShadow({ intent, variant, disabled, theme: { colors } }) {
+    const shape = '0 0 0 1px';
+    if (disabled || !isOutline(variant)) return undefined;
+    if (isPrimary(intent)) return `${shape} ${colors.brand.primary}`;
+    if (isSecondary(intent)) return `${shape} ${colors.brand.secondary}`;
     return undefined;
   },
   cursor({ disabled, isLoading }) {
-    if (disabled) {
-      return 'not-allowed !important';
-    }
-    if (isLoading) {
-      // Don't add cursor value, use default.
-      return undefined;
-    }
-
+    if (disabled) return 'not-allowed !important';
+    if (isLoading) return undefined; // Don't add cursor value, use default.
     return 'pointer';
   },
   hover: {
-    backgroundColor({ intent }) {
-      if (intent === INTENTS.PRIMARY) {
-        return 'var(--f-color-brandPrimary--light)';
-      }
-      if (intent === INTENTS.SECONDARY) {
-        return 'var(--f-color-brandSecondary--light)';
-      }
-
+    backgroundColor({ intent, theme: { colors } }) {
+      if (isPrimary(intent)) return colors.brand.primaryLight;
+      if (isSecondary(intent)) return colors.brand.secondaryLight;
       return undefined;
     },
   },
   active: {
-    backgroundColor({ intent }) {
-      if (intent === INTENTS.PRIMARY) {
-        return 'var(--f-color-brandPrimary)';
-      }
-      if (intent === INTENTS.SECONDARY) {
-        return 'var(--f-color-brandSecondary)';
-      }
-
+    backgroundColor({ intent, theme: { colors } }) {
+      if (isPrimary(intent)) return colors.brand.primary;
+      if (isSecondary(intent)) return colors.brand.secondary;
       return undefined;
     },
   },
@@ -117,7 +87,7 @@ const Button = styled(
     <button {...props}>
       {isLoading && (
         <SpinnerContainer>
-          <Spinner size={'l'} />
+          <Spinner size={Icon.SIZES.L} />
         </SpinnerContainer>
       )}
       <Content isLoading={isLoading}>{children}</Content>
@@ -128,13 +98,13 @@ const Button = styled(
 }))`
   position: relative;
   display: inline-block;
-  margin: ${({ margin }) => margin ?? 'var(--f-space--m) 0'};
-  padding: var(--f-space--m) var(--f-space--xl);
-  font-size: var(--f-fontSize--s);
-  font-weight: var(--f-fontWeight--bold);
-  line-height: var(--f-lineHeight--m);
+  margin: ${({ margin, theme }) => margin ?? `${theme.spaces.m} 0`};
+  padding: ${({ theme }) => `${theme.spaces.m} ${theme.spaces.xl}`};
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  line-height: ${({ theme }) => theme.lineHeights.m};
   border: 0;
-  border-radius: var(--f-space--xxl);
+  border-radius: ${({ theme }) => theme.spaces.xxl};
   outline: none;
   transition: background-color 0.2s ease-out;
   cursor: ${styles.cursor};
@@ -144,7 +114,7 @@ const Button = styled(
 
   &:hover {
     background-color: ${styles.hover.backgroundColor};
-    color: var(--f-color-text--white);
+    color: ${({ theme }) => theme.colors.text.white};
   }
 
   &:active {
@@ -154,7 +124,7 @@ const Button = styled(
   @media (max-width: 460px) {
     /* --f-breakpoint--s */
     width: 100%;
-    padding: var(--f-space--l) var(--f-space--xl);
+    padding: ${({ theme }) => `${theme.spaces.l} ${theme.spaces.xl}`};
     text-align: center;
   }
 `;
