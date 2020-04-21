@@ -112,7 +112,7 @@ export const SpinnerContainer = styled('div')`
   align-items: center;
 `;
 
-const StyledButton = styled('button').attrs(() => ({
+export const StyledButton = styled('button').attrs(() => ({
   className: 'f-Button',
 }))`
   position: relative;
