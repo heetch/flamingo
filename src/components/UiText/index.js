@@ -70,15 +70,18 @@ const UiText = styled('p').attrs(({ variant }) => ({
   font-weight: ${styles.fontWeight};
   font-size: ${styles.fontSize};
   line-height: ${styles.lineHeight};
+  margin: ${({ margin }) => margin};
+  color: ${({ color }) => color};
 `;
 
 UiText.propTypes = {
   className: PropTypes.string,
+  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  color: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
 };
 
 UiText.defaultProps = {
-  className: undefined,
   variant: VARIANTS.content,
 };
 

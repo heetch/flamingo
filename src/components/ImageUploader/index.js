@@ -1,0 +1,126 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+
+import Icon from '../Icon';
+import IconButton from '../IconButton';
+import UploaderImageItem from '../UploaderImageItem';
+
+import { toBase64 } from '../../utils';
+import { StyledImageUploader, UploaderPreview, PreviewHover } from './styles';
+
+const getDefaultValuePreviews = files =>
+  Array.isArray(files) ? files.map(file => file.preview) : [];
+
+const ImageUploader = React.forwardRef(
+  ({ accept, className, multiple, onChange, value, ...props }, ref) => {
+    const [files, setFiles] = React.useState(value);
+    const [preview, setPreview] = React.useState(
+      getDefaultValuePreviews(value),
+    );
+
+    const [isLoading, setIsLoading] = React.useState(false);
+    const [hasError, setHasError] = React.useState(false);
+
+    const handleDeleteFile = fileToDelete => {
+      const filteredFiles = files.filter(
+        file => file.name !== fileToDelete.name,
+      );
+
+      setFiles(filteredFiles);
+      onChange(filteredFiles);
+    };
+
+    const handleFileChange = inputFiles => {
+      const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
+
+      setFiles(nextFiles);
+      onChange(inputFiles);
+
+      if (multiple) {
+        return;
+      }
+
+      setIsLoading(true);
+
+      toBase64(inputFiles[0])
+        .then(base64 => {
+          setPreview(base64);
+          setIsLoading(false);
+        })
+        .catch(setHasError);
+    };
+
+    const handleClear = () => {
+      setPreview([]);
+      setFiles([]);
+      onChange([]);
+    };
+
+    const hasPreview = !multiple && preview.length > 0;
+
+    return (
+      <StyledImageUploader
+        className={cx('f-ImageUploader', className)}
+        onChange={handleFileChange}
+        multiple={multiple}
+        hasPreview={hasPreview}
+        isLoading={isLoading}
+        hasError={hasError}
+        overrides={{
+          input: { accept },
+        }}
+        ref={ref}
+        value={files}
+        {...props}
+      >
+        {hasPreview && (
+          <>
+            <UploaderPreview
+              preview={preview}
+              className={'f-ImageUploader-preview'}
+            />
+
+            <PreviewHover className={'f-ImageUploader-hoverState'}>
+              <IconButton onClick={handleClear} icon={Icon.ICONS.IconTrash} />
+            </PreviewHover>
+          </>
+        )}
+
+        {multiple &&
+          files.map(file => (
+            <UploaderImageItem
+              key={file.name}
+              handleDelete={handleDeleteFile}
+              file={file}
+            />
+          ))}
+      </StyledImageUploader>
+    );
+  },
+);
+
+ImageUploader.displayName = 'ImageUploader';
+
+ImageUploader.propTypes = {
+  accept: PropTypes.string,
+  className: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  multiple: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      preview: PropTypes.string,
+    }),
+  ),
+};
+
+ImageUploader.defaultProps = {
+  accept: 'image/*',
+  multiple: false,
+  value: [],
+};
+
+export default ImageUploader;

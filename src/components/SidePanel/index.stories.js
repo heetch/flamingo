@@ -32,7 +32,6 @@ stories.add('Playground', () => {
       <SidePanel
         closesOnOverlayClick={closesOnOverlayClick}
         title={withTitle}
-        animateOnMount
         header={
           withHeader && (
             <>

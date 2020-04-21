@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import Helper from '../Helper';
 
 const styles = {
@@ -28,5 +30,10 @@ const FormElementWrapper = styled('div').attrs(() => ({
     color: ${styles.helperColor};
   }
 `;
+
+FormElementWrapper.propTypes = {
+  invalid: PropTypes.bool,
+  valid: PropTypes.bool,
+};
 
 export default FormElementWrapper;
