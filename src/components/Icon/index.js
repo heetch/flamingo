@@ -22,8 +22,8 @@ const SIZES = {
 const sizes = Object.values(SIZES);
 
 const styles = {
-  iconSize({ size }) {
-    return `var(--f-iconSize--${size})`;
+  iconSize({ size, theme }) {
+    return theme.iconSizes[size];
   },
 };
 

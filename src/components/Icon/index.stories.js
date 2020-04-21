@@ -43,7 +43,7 @@ const IconsFilterer = () => {
               textAlign: 'center',
             }}
           >
-            {/*<Card size={Card.SIZES.S}>*/}
+            {/* <Card size={Card.SIZES.S}> */}
             <Icon key={`f-iconSize--${icon}`} icon={icon} size={Icon.SIZES.L} />
             <Helper
               className='u-ellipsis'
@@ -51,7 +51,7 @@ const IconsFilterer = () => {
             >
               {icon}
             </Helper>
-            {/*</Card>*/}
+            {/* </Card> */}
           </div>
         ))}
       </div>
