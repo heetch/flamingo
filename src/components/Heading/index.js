@@ -6,15 +6,10 @@ import UiText from '../UiText';
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
 const styles = {
-  marginTop({ level }) {
-    if (level === 1) {
-      return `var(--f-space--xl)`;
-    }
-    if (level === 2) {
-      return `var(--f-space--l)`;
-    }
-
-    return 'var(--f-space--m)';
+  marginTop({ level, theme }) {
+    if (level === 1) return theme.spaces.xl;
+    if (level === 2) return theme.spaces.l;
+    return theme.spaces.m;
   },
 };
 
@@ -23,9 +18,9 @@ const Heading = styled(UiText).attrs(({ as, level }) => ({
   variant: `h${level}`,
   className: 'f-Heading',
 }))`
-  color: var(--f-color-text--primary);
+  color: ${({ theme }) => theme.colors.text.primary};
   margin-top: ${styles.marginTop};
-  margin-bottom: var(--f-space--m);
+  margin-bottom: ${({ theme }) => theme.spaces.m};
 `;
 
 Heading.propTypes = {
