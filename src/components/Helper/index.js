@@ -9,14 +9,14 @@ const Helper = styled(UiText).attrs(() => ({
   className: 'f-Helper',
 }))`
   display: block;
-  color: var(--f-color-text--secondary);
+  color: ${({ theme }) => theme.colors.text.secondary};
 
   .is-invalid + & {
-    color: var(--f-color-element--error);
+    color: ${({ theme }) => theme.colors.element.error};
   }
 
   .is-valid + & {
-    color: var(--f-color-element--success);
+    color: ${({ theme }) => theme.colors.element.success};
   }
 `;
 
