@@ -36,18 +36,18 @@ IconButtonComponent.propTypes = {
 };
 
 const IconButton = styled(IconButtonComponent)`
-  padding: var(--f-space--m);
+  padding: ${({ theme }) => theme.spaces.m}
   line-height: 1;
   border-radius: 50%;
-  color: var(--f-color-icon--dark);
+  color: ${({ theme }) => theme.colors.icon.dark}
 
   &:hover {
-    background-color: var(--f-color-element--inactive);
-    color: var(--f-color-icon--dark);
+    background-color: ${({ theme }) => theme.colors.element.inactive}
+    color: ${({ theme }) => theme.colors.icon.dark}
   }
 
   & + & {
-    margin-left: var(--f-space--m);
+    margin-left: ${({ theme }) => theme.spaces.m}
   }
 
   ${Icon} {
@@ -58,7 +58,7 @@ const IconButton = styled(IconButtonComponent)`
     /* --f-breakpoint--s */
     width: auto;
     flex-grow: inherit;
-    padding: var(--f-space--l);
+    padding: ${({ theme }) => theme.spaces.l}
   }
 `;
 
