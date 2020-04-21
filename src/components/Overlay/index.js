@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 const fadeIn = keyframes`
   0% {
     opacity: 0;
-  } 
+  }
   100%{
     opacity: 0.8;
   }
@@ -13,7 +13,7 @@ const fadeIn = keyframes`
 const fadeOut = keyframes`
   0% {
     opacity: 0.8;
-  } 
+  }
   100%{
     opacity: 0;
   }
@@ -25,12 +25,13 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--f-color-element--overlay);
-  z-index: var(--f-zIndex--Overlay);
+  background-color: ${({ theme }) => theme.colors.element.overlay};
+  z-index: ${({ theme }) => theme.zIndexes.overlay};
   animation: ${({ isOpen, animateOnMount }) =>
       isOpen ? animateOnMount && fadeIn : fadeOut}
     0.2s ease-out;
   opacity: 0.8;
+  pointer-events: ${({ isOpen }) => (isOpen ? 'inherit' : 'none')};
 `;
 
 Overlay.propTypes = {
