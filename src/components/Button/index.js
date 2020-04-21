@@ -131,6 +131,10 @@ const StyledButton = styled('button').attrs(() => ({
   background-color: ${styles.backgroundColor};
   box-shadow: ${styles.boxShadow};
 
+  & + & {
+    margin-left: var(--f-space--m);
+  }
+
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: var(--f-color-text--white);
@@ -141,6 +145,10 @@ const StyledButton = styled('button').attrs(() => ({
   }
 
   @media (max-width: 460px) {
+    & + & {
+      margin-left: 0;
+    }
+
     /* --f-breakpoint--s */
     width: 100%;
     padding: var(--f-space--l) var(--f-space--xl);
