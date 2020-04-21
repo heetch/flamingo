@@ -112,18 +112,7 @@ export const SpinnerContainer = styled('div')`
   align-items: center;
 `;
 
-const Button = styled(
-  ({ isLoading, children, margin, intent, variant, ...props }) => (
-    <button {...props}>
-      {isLoading && (
-        <SpinnerContainer>
-          <Spinner size={'l'} />
-        </SpinnerContainer>
-      )}
-      <Content isLoading={isLoading}>{children}</Content>
-    </button>
-  ),
-).attrs(() => ({
+const StyledButton = styled('button').attrs(() => ({
   className: 'f-Button',
 }))`
   position: relative;
@@ -158,6 +147,18 @@ const Button = styled(
     text-align: center;
   }
 `;
+
+const Button = React.forwardRef((props, ref) => (
+  <StyledButton {...props} ref={ref}>
+    {props.isLoading && (
+      <SpinnerContainer>
+        <Spinner size={'l'} />
+      </SpinnerContainer>
+    )}
+
+    <Content isLoading={props.isLoading}>{props.children}</Content>
+  </StyledButton>
+));
 
 Button.propTypes = {
   className: PropTypes.string,
