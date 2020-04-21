@@ -1,11 +1,12 @@
+import React from 'react';
 import { addParameters, configure, addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import theme from './theme';
-
+import ThemeProvider from '../src/components/ThemeProvider'
 import FlexWrapperDecorator from './FlexWrapperDecorator';
+import theme from './theme';
 
 import 'normalize.css';
 import '../dist/styles.css';
@@ -16,6 +17,7 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
+addDecorator(ThemeProvider);
 addDecorator(FlexWrapperDecorator);
 addDecorator(withKnobs);
 addDecorator(withInfo);

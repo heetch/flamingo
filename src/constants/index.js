@@ -5,4 +5,4 @@ export const refShapes = [
   PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
 ];
 
-export default { refShapes };
+export const theme = {};
