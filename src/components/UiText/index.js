@@ -65,8 +65,8 @@ const styles = {
   },
 };
 
-const UiText = styled('p').attrs(({ variant }) => ({
-  className: `f-UiText f-UiText--${VARIANTS[variant]}`,
+const UiText = styled('p').attrs(() => ({
+  className: `f-UiText`,
 }))`
   font-weight: ${styles.fontWeight};
   font-size: ${styles.fontSize};
