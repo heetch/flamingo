@@ -40,8 +40,8 @@ const Select = React.forwardRef(
           ref={ref}
           {...props}
         >
-          {options.map(({ label, value }) => (
-            <option key={value} value={value}>
+          {options.map(({ label, value, disabled = false }) => (
+            <option key={value} value={value} disabled={disabled}>
               {label}
             </option>
           ))}
@@ -71,6 +71,7 @@ Select.propTypes = {
         .isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
+      disabled: PropTypes.bool,
     }),
   ),
   valid: PropTypes.bool,
