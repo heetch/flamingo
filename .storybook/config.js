@@ -1,10 +1,9 @@
-import React from 'react';
 import { addParameters, configure, addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import ThemeProvider from '../src/components/ThemeProvider'
+import ThemeProvider from '../src/components/ThemeProvider';
 import FlexWrapperDecorator from './FlexWrapperDecorator';
 import theme from './theme';
 
