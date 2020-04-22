@@ -25,8 +25,8 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: ${({ theme }) => theme.colors.element.overlay};
-  z-index: ${({ theme }) => theme.zIndexes.overlay};
+  background-color: ${({ theme }) => theme.color.element.overlay};
+  z-index: ${({ theme }) => theme.zIndex.overlay};
   animation: ${({ isOpen, animateOnMount }) =>
       isOpen ? animateOnMount && fadeIn : fadeOut}
     0.2s ease-out;

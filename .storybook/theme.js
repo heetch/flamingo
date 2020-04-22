@@ -23,26 +23,26 @@ const { colors, radius } = vars;
 export default create({
   base: 'light',
 
-  colorPrimary: colors.brandPrimary,
-  colorSecondary: colors.brandSecondary,
+  colorPrimary: color.brandPrimary,
+  colorSecondary: color.brandSecondary,
 
-  appBg: colors.elementPrimary,
-  appBorderColor: colors.elementInactive,
+  appBg: color.elementPrimary,
+  appBorderColor: color.elementInactive,
   appBorderRadius: radius.m,
 
   fontBase:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
   fontCode: 'monospace',
 
-  textColor: colors.textPrimary,
+  textColor: color.textPrimary,
 
-  barTextColor: colors.textPrimary,
-  barSelectedColor: colors.brandPrimary,
-  barBg: colors.elementPrimary,
+  barTextColor: color.textPrimary,
+  barSelectedColor: color.brandPrimary,
+  barBg: color.elementPrimary,
 
-  inputBg: colors.elementPrimary,
-  inputBorder: colors.elementTertiary,
-  inputTextColor: colors.textSecondary,
+  inputBg: color.elementPrimary,
+  inputBorder: color.elementTertiary,
+  inputTextColor: color.textSecondary,
   inputBorderRadius: radius.m,
 
   brandTitle: 'Heetch Flamingo',

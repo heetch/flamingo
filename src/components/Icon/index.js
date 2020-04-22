@@ -23,7 +23,7 @@ const sizes = Object.values(SIZES);
 
 const styles = {
   iconSize({ size, theme }) {
-    return theme.iconSizes[size];
+    return theme.iconSize[size];
   },
 };
 

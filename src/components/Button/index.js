@@ -24,25 +24,25 @@ const isPrimary = intent => intent === INTENTS.PRIMARY;
 const isSecondary = intent => intent === INTENTS.SECONDARY;
 
 const styles = {
-  color({ disabled, variant, intent, theme: { colors } }) {
-    if (disabled) return `${colors.text.tertiary} !important`;
-    if (!hasVariant(variant)) return colors.text.white;
-    if (isPrimary(intent)) return colors.brand.primary;
-    if (isSecondary(intent)) return colors.brand.secondary;
-    return colors.text.white;
+  color({ disabled, variant, intent, theme: { color } }) {
+    if (disabled) return `${color.text.tertiary} !important`;
+    if (!hasVariant(variant)) return color.text.white;
+    if (isPrimary(intent)) return color.brand.primary;
+    if (isSecondary(intent)) return color.brand.secondary;
+    return color.text.white;
   },
-  backgroundColor({ intent, disabled, variant, theme: { colors } }) {
-    if (disabled) return `${colors.element.primary} !important`;
-    if (hasVariant(variant)) return colors.text.white;
-    if (isPrimary(intent)) return colors.brand.primary;
-    if (isSecondary(intent)) return colors.brand.secondary;
+  backgroundColor({ intent, disabled, variant, theme: { color } }) {
+    if (disabled) return `${color.element.primary} !important`;
+    if (hasVariant(variant)) return color.text.white;
+    if (isPrimary(intent)) return color.brand.primary;
+    if (isSecondary(intent)) return color.brand.secondary;
     return undefined;
   },
-  boxShadow({ intent, variant, disabled, theme: { colors } }) {
+  boxShadow({ intent, variant, disabled, theme: { color } }) {
     const shape = '0 0 0 1px';
     if (disabled || !isOutline(variant)) return undefined;
-    if (isPrimary(intent)) return `${shape} ${colors.brand.primary}`;
-    if (isSecondary(intent)) return `${shape} ${colors.brand.secondary}`;
+    if (isPrimary(intent)) return `${shape} ${color.brand.primary}`;
+    if (isSecondary(intent)) return `${shape} ${color.brand.secondary}`;
     return undefined;
   },
   cursor({ disabled, isLoading }) {
@@ -51,16 +51,16 @@ const styles = {
     return 'pointer';
   },
   hover: {
-    backgroundColor({ intent, theme: { colors } }) {
-      if (isPrimary(intent)) return colors.brand.primaryLight;
-      if (isSecondary(intent)) return colors.brand.secondaryLight;
+    backgroundColor({ intent, theme: { color } }) {
+      if (isPrimary(intent)) return color.brand.primaryLight;
+      if (isSecondary(intent)) return color.brand.secondaryLight;
       return undefined;
     },
   },
   active: {
-    backgroundColor({ intent, theme: { colors } }) {
-      if (isPrimary(intent)) return colors.brand.primary;
-      if (isSecondary(intent)) return colors.brand.secondary;
+    backgroundColor({ intent, theme: { color } }) {
+      if (isPrimary(intent)) return color.brand.primary;
+      if (isSecondary(intent)) return color.brand.secondary;
       return undefined;
     },
   },
@@ -98,13 +98,13 @@ const Button = styled(
 }))`
   position: relative;
   display: inline-block;
-  margin: ${({ margin, theme }) => margin ?? `${theme.spaces.m} 0`};
-  padding: ${({ theme }) => `${theme.spaces.m} ${theme.spaces.xl}`};
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  line-height: ${({ theme }) => theme.lineHeights.m};
+  margin: ${({ margin, theme }) => margin ?? `${theme.space.m} 0`};
+  padding: ${({ theme }) => `${theme.space.m} ${theme.space.xl}`};
+  font-size: ${({ theme }) => theme.fontSize.s};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  line-height: ${({ theme }) => theme.lineHeight.m};
   border: 0;
-  border-radius: ${({ theme }) => theme.spaces.xxl};
+  border-radius: ${({ theme }) => theme.space.xxl};
   outline: none;
   transition: background-color 0.2s ease-out;
   cursor: ${styles.cursor};
@@ -114,7 +114,7 @@ const Button = styled(
 
   &:hover {
     background-color: ${styles.hover.backgroundColor};
-    color: ${({ theme }) => theme.colors.text.white};
+    color: ${({ theme }) => theme.color.text.white};
   }
 
   &:active {
@@ -124,7 +124,7 @@ const Button = styled(
   @media (max-width: 460px) {
     /* --f-breakpoint--s */
     width: 100%;
-    padding: ${({ theme }) => `${theme.spaces.l} ${theme.spaces.xl}`};
+    padding: ${({ theme }) => `${theme.space.l} ${theme.space.xl}`};
     text-align: center;
   }
 `;

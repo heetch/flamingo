@@ -15,50 +15,50 @@ const VARIANTS = {
 };
 
 const styles = {
-  fontSize({ variant, theme: { fontSizes } }) {
+  fontSize({ variant, theme: { fontSize } }) {
     const variants = {
-      [VARIANTS.h1]: fontSizes.xxl,
-      [VARIANTS.h2]: fontSizes.xl,
-      [VARIANTS.h3]: fontSizes.l,
-      [VARIANTS.h4]: fontSizes.m,
-      [VARIANTS.h5]: fontSizes.s,
-      [VARIANTS.h6]: fontSizes.xs,
-      [VARIANTS.content]: fontSizes.m,
-      [VARIANTS.contentBold]: fontSizes.m,
-      [VARIANTS.subContent]: fontSizes.s,
-      [VARIANTS.subContentBold]: fontSizes.s,
+      [VARIANTS.h1]: fontSize.xxl,
+      [VARIANTS.h2]: fontSize.xl,
+      [VARIANTS.h3]: fontSize.l,
+      [VARIANTS.h4]: fontSize.m,
+      [VARIANTS.h5]: fontSize.s,
+      [VARIANTS.h6]: fontSize.xs,
+      [VARIANTS.content]: fontSize.m,
+      [VARIANTS.contentBold]: fontSize.m,
+      [VARIANTS.subContent]: fontSize.s,
+      [VARIANTS.subContentBold]: fontSize.s,
     };
 
     return variants[variant] || undefined;
   },
-  lineHeight({ variant, theme: { lineHeights } }) {
+  lineHeight({ variant, theme: { lineHeight } }) {
     const variants = {
-      [VARIANTS.h1]: lineHeights.xl,
-      [VARIANTS.h2]: lineHeights.l,
-      [VARIANTS.h3]: lineHeights.m,
-      [VARIANTS.h4]: lineHeights.s,
-      [VARIANTS.h5]: lineHeights.s,
-      [VARIANTS.h6]: lineHeights.s,
-      [VARIANTS.content]: lineHeights.m,
-      [VARIANTS.contentBold]: lineHeights.m,
-      [VARIANTS.subContent]: lineHeights.m,
-      [VARIANTS.subContentBold]: lineHeights.m,
+      [VARIANTS.h1]: lineHeight.xl,
+      [VARIANTS.h2]: lineHeight.l,
+      [VARIANTS.h3]: lineHeight.m,
+      [VARIANTS.h4]: lineHeight.s,
+      [VARIANTS.h5]: lineHeight.s,
+      [VARIANTS.h6]: lineHeight.s,
+      [VARIANTS.content]: lineHeight.m,
+      [VARIANTS.contentBold]: lineHeight.m,
+      [VARIANTS.subContent]: lineHeight.m,
+      [VARIANTS.subContentBold]: lineHeight.m,
     };
 
     return variants[variant] || undefined;
   },
-  fontWeight({ variant, theme: { fontWeights } }) {
+  fontWeight({ variant, theme: { fontWeight } }) {
     const variants = {
-      [VARIANTS.h1]: fontWeights.black,
-      [VARIANTS.h2]: fontWeights.black,
-      [VARIANTS.h3]: fontWeights.black,
-      [VARIANTS.h4]: fontWeights.black,
-      [VARIANTS.h5]: fontWeights.black,
-      [VARIANTS.h6]: fontWeights.black,
-      [VARIANTS.content]: fontWeights.normal,
-      [VARIANTS.subContent]: fontWeights.normal,
-      [VARIANTS.contentBold]: fontWeights.bold,
-      [VARIANTS.subContentBold]: fontWeights.bold,
+      [VARIANTS.h1]: fontWeight.black,
+      [VARIANTS.h2]: fontWeight.black,
+      [VARIANTS.h3]: fontWeight.black,
+      [VARIANTS.h4]: fontWeight.black,
+      [VARIANTS.h5]: fontWeight.black,
+      [VARIANTS.h6]: fontWeight.black,
+      [VARIANTS.content]: fontWeight.normal,
+      [VARIANTS.subContent]: fontWeight.normal,
+      [VARIANTS.contentBold]: fontWeight.bold,
+      [VARIANTS.subContentBold]: fontWeight.bold,
     };
 
     return variants[variant] || undefined;

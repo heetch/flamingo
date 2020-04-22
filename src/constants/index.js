@@ -6,7 +6,18 @@ export const refShapes = [
 ];
 
 export const theme = {
-  colors: {
+  borderRadius: {
+    xl: 'var(--f-borderRadius--xl)',
+    l: 'var(--f-borderRadius--l)',
+    m: 'var(--f-borderRadius--m)',
+    s: 'var(--f-borderRadius--s)',
+  },
+  breakPoint: {
+    s: 'var(--f-breakpoint--s)',
+    m: 'var(--f-breakpoint--m)',
+    l: 'var(--f-breakpoint--l)',
+  },
+  color: {
     brand: {
       primary: 'var(--f-color-brandPrimary)',
       primaryLight: 'var(--f-color-brandPrimary--light)',
@@ -36,8 +47,7 @@ export const theme = {
       white: 'var(--f-color-text--white)',
     },
   },
-
-  fontSizes: {
+  fontSize: {
     xxs: 'var(--f-fontSize--xxs)',
     xs: 'var(--f-fontSize--xs)',
     s: 'var(--f-fontSize--s)',
@@ -46,48 +56,30 @@ export const theme = {
     xl: 'var(--f-fontSize--xl)',
     xxl: 'var(--f-fontSize--xxl)',
   },
-
-  fontWeights: {
+  fontWeight: {
     normal: 'var(--f-fontWeight--normal)',
     bold: 'var(--f-fontWeight--bold)',
     black: 'var(--f-fontWeight--black)',
   },
-
-  lineHeights: {
+  iconSize: {
+    s: 'var(--f-iconSize--s)',
+    m: 'var(--f-iconSize--m)',
+    l: 'var(--f-iconSize--l)',
+  },
+  lineHeight: {
     s: 'var(--f-lineHeight--s)',
     m: 'var(--f-lineHeight--m)',
     l: 'var(--f-lineHeight--l)',
     xl: 'var(--f-lineHeight--xl)',
   },
-
-  iconSizes: {
-    s: 'var(--f-iconSize--s)',
-    m: 'var(--f-iconSize--m)',
-    l: 'var(--f-iconSize--l)',
-  },
-
-  borderRadiuses: {
-    xl: 'var(--f-borderRadius--xl)',
-    l: 'var(--f-borderRadius--l)',
-    m: 'var(--f-borderRadius--m)',
-    s: 'var(--f-borderRadius--s)',
-  },
-
-  spaces: {
+  space: {
     s: 'var(--f-space--s)',
     m: 'var(--f-space--m)',
     l: 'var(--f-space--l)',
     xl: 'var(--f-space--xl)',
     xxl: 'var(--f-space--xxl)',
   },
-
-  breakPoints: {
-    s: 'var(--f-breakpoint--s)',
-    m: 'var(--f-breakpoint--m)',
-    l: 'var(--f-breakpoint--l)',
-  },
-
-  zIndexes: {
+  zIndex: {
     overlay: 'var(--f-zIndex--Overlay)',
   },
 };
