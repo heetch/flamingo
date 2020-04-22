@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logo from './logo.png';
+import logo from './heetch-logo.png';
 
 // https://github.com/storybookjs/storybook/blob/next/lib/theming/src/themes/light.ts
 

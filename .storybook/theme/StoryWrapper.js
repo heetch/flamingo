@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FlexWrapperDecorator = storyFn => (
+export default storyFn => (
   <div
     style={{
       minHeight: '100vh',
@@ -11,5 +11,3 @@ const FlexWrapperDecorator = storyFn => (
     {storyFn()}
   </div>
 );
-
-export default FlexWrapperDecorator;
