@@ -81,17 +81,17 @@ stories.add('Playground', () => (
 
     <Heading>Different positions</Heading>
 
-    <Heading level={'2'}>Top End</Heading>
+    <Heading level={2}>Top End</Heading>
     <DropdownContainer>
       <StoryDropdown placement={'top-end'} />
     </DropdownContainer>
 
-    <Heading level={'2'}>Left </Heading>
+    <Heading level={2}>Left </Heading>
     <DropdownContainer>
       <StoryDropdown placement={'left'} />
     </DropdownContainer>
 
-    <Heading level={'2'}>Right Start </Heading>
+    <Heading level={2}>Right Start </Heading>
     <DropdownContainer>
       <StoryDropdown placement={'right-start'} />
     </DropdownContainer>

@@ -42,8 +42,8 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
 `;
 
 Overlay.propTypes = {
-  isOpen: PropTypes.boolean,
-  animateOnMount: PropTypes.boolean,
+  isOpen: PropTypes.bool,
+  animateOnMount: PropTypes.bool,
 };
 
 export default Overlay;
