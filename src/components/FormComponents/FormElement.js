@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
+import UiText from '../UiText';
 
 const styles = {
   stateColor(props) {
@@ -16,6 +17,16 @@ const styles = {
     }
 
     return 'var(--f-color-element--tertiary)';
+  },
+  iconColor(props) {
+    if (props.invalid) {
+      return 'var(--f-color-element--error)';
+    }
+    if (props.valid) {
+      return 'var(--f-color-element--success)';
+    }
+
+    return '--f-color-icon--dark';
   },
   backgroundColor({ disabled }) {
     if (disabled) {
@@ -41,18 +52,15 @@ const styles = {
   },
 };
 
-const FormElement = styled('div').attrs(() => ({
+const FormElement = styled(UiText).attrs(({ textColor }) => ({
   className: 'f-FormEl',
+  textColor: textColor || 'var(--f-color-text--secondary)',
 }))`
   display: block;
   width: 100%;
   padding: var(--f-space--m) var(--f-space--xl);
   border: 0;
   border-radius: 1.25rem;
-  font-weight: var(--f-fontWeight--normal);
-  font-size: var(--f-fontSize--m);
-  line-height: var(--f-lineHeight--m);
-  color: var(--f-color-text--secondary);
   outline: none;
   appearance: none;
   transition: box-shadow 0.1s ease-out;
@@ -81,7 +89,7 @@ const FormElement = styled('div').attrs(() => ({
     top: 50%;
     right: var(--f-space--l);
     transform: translateY(-50%);
-    color: ${styles.stateColor};
+    color: ${styles.iconColor};
     pointer-events: none;
   }
 `;
