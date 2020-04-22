@@ -7,13 +7,24 @@ import Select from '.';
 
 const states = ['default', 'hover', 'focus', 'disabled'];
 
-const mapStringsToSelectOptions = options =>
-  options.map(option => ({ label: option, value: option }));
-
 const defaultProps = () => ({
   id: `select-${Math.random()}`,
   onChange: action('onChange'),
-  options: mapStringsToSelectOptions(['Foo', 1, 'Bar', 2]),
+  options: [
+    {
+      label: 'Foo',
+      value: 'foo',
+    },
+    {
+      label: 'Disabled',
+      value: 'disabled',
+      disabled: true,
+    },
+    {
+      label: 'Foo',
+      value: 'foo',
+    },
+  ],
 });
 
 const stories = storiesOf('Form/Select', module);
