@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Label = styled('label').attrs(() => ({
+const Label = styled(UiText).attrs(() => ({
   className: 'f-Label',
   variant: UiText.VARIANTS.subContentBold,
   as: 'label',
