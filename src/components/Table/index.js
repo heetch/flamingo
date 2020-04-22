@@ -4,8 +4,6 @@ import cx from 'classnames';
 import { useTable, useSortBy } from 'react-table';
 
 import HeaderCell from './components/TableHeaderCell';
-import HeaderGroup from './components/TableHeaderGroup';
-import RowGroup from './components/TableRowGroup';
 import RowCell from './components/TableRowCell';
 import { StyledTable } from './styles';
 
@@ -58,7 +56,7 @@ const Table = React.forwardRef(
       >
         <thead>
           {headerGroups.map(({ getHeaderGroupProps, headers }) => (
-            <HeaderGroup {...getHeaderGroupProps()}>
+            <tr className={'f-Table-HeaderGroup'} {...getHeaderGroupProps()}>
               {headers.map(
                 ({
                   getHeaderProps,
@@ -77,17 +75,17 @@ const Table = React.forwardRef(
                   </HeaderCell>
                 ),
               )}
-            </HeaderGroup>
+            </tr>
           ))}
         </thead>
 
         <tbody>
           {rows.map(row => (
-            <RowGroup {...row.getRowProps()}>
+            <tr className={'f-Table-RowGroup'} {...row.getRowProps()}>
               {row.cells.map(({ getCellProps, render }) => (
                 <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
               ))}
-            </RowGroup>
+            </tr>
           ))}
         </tbody>
       </StyledTable>
@@ -127,9 +125,7 @@ Table.defaultProps = {
   manualSorting: false,
 };
 
-Table.HeaderGroup = HeaderGroup;
 Table.HeaderCell = HeaderCell;
-Table.RowGroup = RowGroup;
 Table.RowCell = RowCell;
 
 export default Table;
