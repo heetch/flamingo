@@ -12,17 +12,17 @@ const defaultProps = () => ({
   onChange: action('onChange'),
   options: [
     {
-      label: 'Foo',
-      value: 'foo',
+      label: 'String',
+      value: 'string',
+    },
+    {
+      label: 'Number',
+      value: 3,
     },
     {
       label: 'Disabled',
       value: 'disabled',
       disabled: true,
-    },
-    {
-      label: 'Foo',
-      value: 'foo',
     },
   ],
 });
