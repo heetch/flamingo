@@ -37,11 +37,9 @@ const FileUploader = React.forwardRef(
       onChange,
       translate,
       isLoading,
-      invalid: isInvalid,
       hasError,
       multiple,
       overrides,
-      valid: isValid,
       value,
       ...props
     },
@@ -67,16 +65,13 @@ const FileUploader = React.forwardRef(
       onChange(remainingFiles);
     };
 
+    // keep files in sync with value when changed on image uploader
     React.useEffect(() => {
-      // keep files in sync with value
-      // when changed on image uploader
       setFiles(value);
     }, [value]);
 
     return (
       <StyledFileUploader
-        valid={isValid}
-        invalid={isInvalid}
         hasFile={hasFile}
         hasError={hasError}
         className={cx('f-FileUploader', className)}
@@ -181,14 +176,9 @@ FileUploader.propTypes = {
 
 FileUploader.defaultProps = {
   translate: ({ defaultText }) => defaultText,
-  hasError: false,
-  isLoading: false,
-  invalid: false,
-  multiple: false,
   overrides: {
     input: {},
   },
-  valid: false,
   value: [],
 };
 

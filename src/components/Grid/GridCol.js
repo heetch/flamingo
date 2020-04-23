@@ -17,22 +17,21 @@ const GridCol = styled('div').attrs(({ s, m, l }) => ({
   @media (max-width: 460px) {
     --gutter: var(--f-space--xl);
     flex-basis: ${({ s }) =>
-      s && `(100% / var(--colsCount) * ${s}) - var(--gutter)`};
+      s && `calc((100% / var(--colsCount) * ${s}) - var(--gutter))`};
     max-width: ${({ s }) =>
       s && `calc((100% / var(--colsCount) * ${s}) - var(--gutter))`};
   }
 
   @media (min-width: 460px) and (max-width: 800px) {
     flex-basis: ${({ m }) =>
-      m && `(100% / var(--colsCount) * ${m}) - var(--gutter)`};
+      m && `calc((100% / var(--colsCount) * ${m}) - var(--gutter))`};
     max-width: ${({ m }) =>
       m && `calc((100% / var(--colsCount) * ${m}) - var(--gutter))`};
   }
 
   @media (min-width: 800px) {
     flex-basis: ${({ l }) =>
-      l && `(100% / var(--colsCount) * ${l}) - var(--gutter)`};
-
+      l && `calc((100% / var(--colsCount) * ${l}) - var(--gutter))`};
     max-width: ${({ l }) =>
       l && `calc((100% / var(--colsCount) * ${l}) - var(--gutter))`};
   }

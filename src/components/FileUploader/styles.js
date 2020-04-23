@@ -18,6 +18,7 @@ const styles = {
     return 'var(--f-color-element--tertiary)';
   },
 };
+
 export const StyledFileUploader = styled(FormElementWrapper)`
   position: relative;
   width: 100%;
@@ -33,8 +34,8 @@ export const StyledFileUploader = styled(FormElementWrapper)`
   text-align: ${({ hasFile }) => hasFile && 'center'};
 
   &:hover {
-    border-color: ${({ hasFile }) => hasFile && 'var(--f-color-brandPrimary)'};
-    color: ${({ hasFile }) => hasFile && 'var(--f-color-brandPrimary)'};
+    border-color: ${({ hasFile }) => !hasFile && 'var(--f-color-brandPrimary)'};
+    color: ${({ hasFile }) => !hasFile && 'var(--f-color-brandPrimary)'};
   }
 
   @media (max-width: 460px) {
@@ -59,6 +60,7 @@ export const FileUploaderLabel = styled(UiText).attrs(props => ({
   align-items: center;
   text-align: center;
   transition: color 0.15s ease-out;
+  cursor: pointer;
 
   &:hover {
     color: var(--f-color-brandPrimary);

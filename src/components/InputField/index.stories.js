@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import InputField from './index';
 
-const stories = storiesOf('Form controls/InputField', module);
+const stories = storiesOf('Form/InputField', module);
 
 stories.add('Playground', () => (
   <InputField

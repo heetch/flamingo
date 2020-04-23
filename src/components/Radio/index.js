@@ -21,7 +21,7 @@ export const StyledRadio = styled('input').attrs(({ defaultChecked }) => ({
   height: var(--size);
   border: 1px solid var(--f-color-element--tertiary);
   border-radius: 50%;
-  transition: border-color 0.2s ease-out;
+  transition: all 0.1s ease-out;
 
   &:hover {
     border-color: var(--f-color-element--secondary);
