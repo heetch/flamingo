@@ -1,8 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
-
 const slideIn = keyframes`
   0% {
     transform: translateX(100%);
@@ -63,14 +61,10 @@ export const Header = styled('div')`
 `;
 
 export const Footer = styled('div')`
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid var(--f-color-element--inactive);
-    padding: 0 var(--content-hSpacing);
-
-   ${Button} + ${Button} {
-    margin-left: var(--f-space--m);
-  }
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--f-color-element--inactive);
+  padding: 0 var(--content-hSpacing);
 `;

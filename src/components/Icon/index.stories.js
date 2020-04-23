@@ -2,8 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
-// TODO add Card here when it's implemented
-// import Card from '../Card';
+import Card from '../Card';
 import Heading from '../Heading';
 import Helper from '../Helper';
 import Input from '../Input';
@@ -43,15 +42,14 @@ const IconsFilterer = () => {
               textAlign: 'center',
             }}
           >
-            {/* <Card size={Card.SIZES.S}> */}
-            <Icon key={`f-iconSize--${icon}`} icon={icon} size={Icon.SIZES.L} />
-            <Helper
-              className='u-ellipsis'
-              style={{ marginTop: 'var(--f-space--s)' }}
-            >
-              {icon}
-            </Helper>
-            {/* </Card> */}
+            <Card size={Card.SIZES.S}>
+              <Icon
+                key={`f-iconSize--${icon}`}
+                icon={icon}
+                size={Icon.SIZES.L}
+              />
+              <Helper style={{ marginTop: 'var(--f-space--s)' }}>{icon}</Helper>
+            </Card>
           </div>
         ))}
       </div>

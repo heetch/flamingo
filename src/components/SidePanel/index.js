@@ -49,6 +49,7 @@ const SidePanel = props => {
         onAnimationEnd={onAnimationEnd}
         maxWidth={props.maxWidth}
         isOpen={isOpen}
+        animateOnMount={props.animateOnMount}
       >
         <Header className='f-SidePanel-header'>
           {header ? (

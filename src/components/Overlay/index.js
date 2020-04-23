@@ -19,6 +19,16 @@ const fadeOut = keyframes`
   }
 `;
 
+const styles = {
+  // If we don't a isOpen value it won't animate
+  animation({ isOpen, animateOnMount }) {
+    if (isOpen && animateOnMount) return fadeIn;
+    if (isOpen === false) return fadeOut;
+
+    return '';
+  },
+};
+
 const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   position: fixed;
   top: 0;
@@ -27,9 +37,7 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   left: 0;
   background-color: var(--f-color-element--overlay);
   z-index: var(--f-zIndex--Overlay);
-  animation: ${({ isOpen, animateOnMount }) =>
-      isOpen ? animateOnMount && fadeIn : fadeOut}
-    0.2s ease-out;
+  animation: ${styles.animation} 0.2s ease-out;
   opacity: 0.8;
 `;
 

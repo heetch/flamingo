@@ -64,20 +64,21 @@ const styles = {
     return variants[variant] || undefined;
   },
 };
-const UiText = styled('p').attrs(({ variant }) => ({
-  className: `f-UiText f-UiText--${VARIANTS[variant]}`,
+
+const UiText = styled('p').attrs(() => ({
+  className: `f-UiText`,
 }))`
   font-weight: ${styles.fontWeight};
   font-size: ${styles.fontSize};
   line-height: ${styles.lineHeight};
   margin: ${({ margin }) => margin};
-  color: ${({ color }) => color};
+  color: ${({ textColor }) => textColor};
 `;
 
 UiText.propTypes = {
   className: PropTypes.string,
   margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  color: PropTypes.string,
+  textColor: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
 };
 

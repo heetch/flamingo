@@ -900,6 +900,17 @@ export const IconSearch = (
   </svg>
 );
 
+export const IconSearchPlus = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+    <path d='M11 7a1 1 0 011 1v2h2a1 1 0 110 2h-2v2a1 1 0 11-2 0v-2H8a1 1 0 110-2h2V8a1 1 0 011-1z' />
+    <path
+      fillRule='evenodd'
+      d='M16.618 18.032a9 9 0 111.414-1.414l3.675 3.675a1 1 0 01-1.414 1.414l-3.675-3.675zM4 11a7 7 0 1112.041 4.856 1.01 1.01 0 00-.185.185A7 7 0 014 11z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
 export const IconSeatbelt = (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <g clipPath='url(#clip0)'>
