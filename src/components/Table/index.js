@@ -100,7 +100,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       Header: PropTypes.string,
-      accessor: PropTypes.string.isRequired,
+      accessor: PropTypes.string,
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),

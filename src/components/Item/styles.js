@@ -8,7 +8,7 @@ const styles = {
 
     return 'var(--f-color-text--primary)';
   },
-  xPadding({ size }) {
+  yPadding({ size }) {
     if (size === 'sub') return 'var(--f-space--m)';
     if (size === 'mini') return 'var(--f-space--s)';
 
@@ -47,7 +47,7 @@ export const ValueContainer = styled.div`
 export const StyledItem = styled.div`
   display: flex;
   align-items: center;
-  padding: ${styles.xPadding} var(--f-space--l);
+  padding: ${styles.yPadding} var(--f-space--l);
   background-color: var(--f-color-element--primary);
   border-radius: var(--f-borderRadius--m);
   color: ${styles.color};
