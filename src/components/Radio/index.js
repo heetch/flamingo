@@ -71,9 +71,4 @@ Radio.propTypes = {
   size: PropTypes.string,
 };
 
-Radio.defaultProps = {
-  checked: false,
-  disabled: false,
-};
-
 export default Radio;

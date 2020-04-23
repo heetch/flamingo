@@ -23,8 +23,4 @@ Label.propTypes = {
   htmlFor: PropTypes.string.isRequired,
 };
 
-Label.defaultProps = {
-  className: undefined,
-};
-
 export default Label;

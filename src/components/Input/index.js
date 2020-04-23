@@ -37,9 +37,4 @@ Input.propTypes = {
   valid: PropTypes.bool,
 };
 
-Input.defaultProps = {
-  invalid: false,
-  valid: false,
-};
-
 export default Input;

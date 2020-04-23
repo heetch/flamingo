@@ -111,12 +111,10 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   clickOutsideToHide: true,
-  isOpen: false,
   onHide: () => {},
   onOpen: () => {},
   placement: 'bottom-end',
   portalNode: null,
-  modifiers: {},
 };
 
 export default Dropdown;

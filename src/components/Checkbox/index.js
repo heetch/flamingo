@@ -49,8 +49,6 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  isUndefined: false,
-  checked: false,
   value: 'checked',
 };
 

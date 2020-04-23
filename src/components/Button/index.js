@@ -45,9 +45,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  disabled: false,
   intent: INTENTS.PRIMARY,
-  isLoading: false,
   type: 'button',
 };
 

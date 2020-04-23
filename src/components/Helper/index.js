@@ -25,8 +25,4 @@ Helper.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Helper.defaultProps = {
-  className: undefined,
-};
-
 export default Helper;

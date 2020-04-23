@@ -120,9 +120,7 @@ Table.propTypes = {
 Table.defaultProps = {
   columns: [],
   data: [],
-  isSortable: false,
   onChangeSort: () => {},
-  manualSorting: false,
 };
 
 Table.HeaderCell = HeaderCell;

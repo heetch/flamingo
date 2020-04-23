@@ -92,9 +92,4 @@ Toggle.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-Toggle.defaultProps = {
-  checked: false,
-  disabled: false,
-};
-
 export default Toggle;

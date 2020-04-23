@@ -21,7 +21,6 @@ Text.propTypes = {
 
 Text.defaultProps = {
   as: 'p',
-  isNumber: false,
   variant: UiText.VARIANTS.content,
 };
 

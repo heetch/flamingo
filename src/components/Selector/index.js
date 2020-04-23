@@ -81,9 +81,6 @@ Selector.propTypes = {
 };
 
 Selector.defaultProps = {
-  disabled: false,
-  isValid: false,
-  isInvalid: false,
   options: [],
 };
 
