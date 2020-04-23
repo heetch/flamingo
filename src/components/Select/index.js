@@ -9,8 +9,8 @@ const Select = React.forwardRef(({ id, options, ...props }, ref) => {
   return (
     <FormElementWrapper invalid={props.invalid} valid={props.valid}>
       <FormElement as='select' id={id} name={id} ref={ref} withIcon {...props}>
-        {options.map(({ label, value }) => (
-          <option key={value} value={value}>
+        {options.map(({ label, value, disabled = false }) => (
+          <option key={value} value={value} disabled={disabled}>
             {label}
           </option>
         ))}
@@ -35,16 +35,14 @@ Select.propTypes = {
         .isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
         .isRequired,
+      disabled: PropTypes.bool,
     }),
   ),
   valid: PropTypes.bool,
 };
 
 Select.defaultProps = {
-  disabled: false,
-  invalid: false,
   options: [],
-  valid: false,
 };
 
 export default Select;
