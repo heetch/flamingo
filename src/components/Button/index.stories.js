@@ -47,8 +47,20 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading level={2}>Disabled</Heading>
+    <Heading level={2}>States</Heading>
+    <Heading level={3}>Disabled</Heading>
     <Button disabled>Disabled</Button>
+
+    <Heading level={3}>Success</Heading>
+    <Button intent={'success'}>Success</Button>
+
+    <Heading level={3}>Error</Heading>
+    <Button intent={'error'}>Error</Button>
+
+    <Heading level={3}>Is Loading and Error - Intent takes precedence </Heading>
+    <Button intent={'error'} isLoading>
+      Error
+    </Button>
   </>
 ));
 
