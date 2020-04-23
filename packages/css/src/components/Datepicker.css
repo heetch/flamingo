@@ -1,0 +1,53 @@
+.f-Datepicker {
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+}
+
+.f-Datepicker .DayPicker-Weekday {
+  color: var(--f-color-element--tertiary);
+}
+
+.f-Datepicker .DayPicker {
+  display: flex;
+  justify-content: center;
+}
+
+.f-Datepicker--wrapper {
+  width: 100%;
+}
+
+.f-Datepicker .DayPicker-Day--today {
+  color: var(--f-color-brandPrimary);
+}
+
+.f-Datepicker
+  .DayPicker:not(.DayPicker--interactionDisabled)
+  .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: var(--f-color-element--tertiary);
+}
+
+.f-Datepicker
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background-color: var(--f-color-brandPrimary);
+}
+
+.f-Datepicker--navbar {
+  padding-left: var(--f-space--xxl);
+  padding-right: var(--f-space--xl);
+  padding-top: var(--f-space--xl);
+  color: var(--f-color-text--primary);
+  font-weight: var(--f-fontWeight--bold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-Datepicker--actions .f-Button {
+  margin: 0;
+  cursor: pointer;
+}
+
+.f-Datepicker .DayPicker-Month {
+  margin-top: 0;
+}
