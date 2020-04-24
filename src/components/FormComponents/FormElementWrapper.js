@@ -2,14 +2,15 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Helper from '../Helper';
+import { theme } from '../../theme';
 
 const styles = {
   helperColor(props) {
     if (props.invalid) {
-      return 'var(--f-color-element--error)';
+      return theme.color.element.error;
     }
     if (props.valid) {
-      return 'var(--f-color-element--success)';
+      return theme.color.element.success;
     }
 
     return undefined;
@@ -22,9 +23,9 @@ const FormElementWrapper = styled('div').attrs(() => ({
   display: flex;
   position: relative;
   min-width: 12.5rem;
-  margin-top: var(--f-space--m);
-  margin-bottom: var(--f-space--m);
-  color: var(--f-color-text--primary);
+  margin-top: ${theme.space.m};
+  margin-bottom: ${theme.space.m};
+  color: ${theme.color.text.primary};
 
   & + ${Helper}, ${Helper} {
     color: ${styles.helperColor};

@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Checkbox from '.';
 import Heading from '../Heading';
+import { theme } from '../../theme';
 
 const defaultProps = {
   children: 'Label',
@@ -13,15 +14,20 @@ const defaultProps = {
 
 const stories = storiesOf('Form/Checkbox', module);
 
+// eslint-disable-next-line react/prop-types
+const Wrapper = ({ children }) => (
+  <div style={{ marginRight: theme.space.xl, width: '10rem' }}>{children}</div>
+);
+
 stories.add('All states', () => (
   <>
     <Heading>Checkbox</Heading>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>Default</Heading>
         <Checkbox {...defaultProps} id='c1' />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>& disabled</Heading>
         <Checkbox {...defaultProps} id='c2' disabled />
@@ -29,10 +35,10 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>Checked</Heading>
         <Checkbox {...defaultProps} id='c3' checked />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>& disabled</Heading>
         <Checkbox {...defaultProps} id='c4' checked disabled />
@@ -40,10 +46,10 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>Undefined</Heading>
         <Checkbox {...defaultProps} id='c5' isUndefined />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>& disabled</Heading>
         <Checkbox {...defaultProps} id='c6' isUndefined disabled />
@@ -51,10 +57,10 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>No text</Heading>
         <Checkbox onChange={defaultProps.onChange} id='c7' />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>With helper</Heading>
         <Checkbox

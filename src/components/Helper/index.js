@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const Helper = styled(UiText).attrs(() => ({
   as: 'small',
@@ -9,14 +10,14 @@ const Helper = styled(UiText).attrs(() => ({
   className: 'f-Helper',
 }))`
   display: block;
-  color: var(--f-color-text--secondary);
+  color: ${theme.color.text.secondary};
 
   .is-invalid + & {
-    color: var(--f-color-element--error);
+    color: ${theme.color.element.error};
   }
 
   .is-valid + & {
-    color: var(--f-color-element--success);
+    color: ${theme.color.element.success};
   }
 `;
 

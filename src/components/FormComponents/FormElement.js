@@ -3,62 +3,45 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const styles = {
   stateColor(props) {
-    if (props.disabled) {
-      return 'var(--f-color-element--tertiary)';
-    }
-    if (props.invalid) {
-      return 'var(--f-color-element--error)';
-    }
-    if (props.valid) {
-      return 'var(--f-color-element--success)';
-    }
+    if (props.disabled) return theme.color.element.tertiary;
+    if (props.invalid) return theme.color.element.error;
+    if (props.valid) return theme.color.element.success;
 
-    return 'var(--f-color-element--tertiary)';
+    return theme.color.element.tertiary;
   },
   iconColor(props) {
-    if (props.invalid) {
-      return 'var(--f-color-element--error)';
-    }
-    if (props.valid) {
-      return 'var(--f-color-element--success)';
-    }
+    if (props.invalid) return theme.color.element.error;
+    if (props.valid) return theme.color.element.success;
 
-    return 'var(--f-color-icon--dark)';
+    return theme.color.icon.dark;
   },
   backgroundColor({ disabled }) {
-    if (disabled) {
-      return 'var(--f-color-element--inactive)';
-    }
+    if (disabled) return theme.color.element.inactive;
 
-    return 'var(--f-color-element--primary)';
+    return theme.color.element.primary;
   },
   hover: {
     stateColor(props) {
-      if (props.disabled) {
-        return 'var(--f-color-element--tertiary)';
-      }
-      if (props.invalid) {
-        return 'var(--f-color-element--error)';
-      }
-      if (props.valid) {
-        return 'var(--f-color-element--success)';
-      }
+      if (props.disabled) return theme.color.element.tertiary;
+      if (props.invalid) return theme.color.element.error;
+      if (props.valid) return theme.color.element.success;
 
-      return 'var(--f-color-element--secondary)';
+      return theme.color.element.secondary;
     },
   },
 };
 
 const FormElement = styled(UiText).attrs(({ textColor }) => ({
   className: 'f-FormEl',
-  textColor: textColor || 'var(--f-color-text--secondary)',
+  textColor: textColor || theme.color.text.secondary,
 }))`
   display: block;
   width: 100%;
-  padding: var(--f-space--m) var(--f-space--xl);
+  padding: ${theme.space.m} ${theme.space.xl};
   border: 0;
   border-radius: 1.25rem;
   outline: none;
@@ -68,7 +51,7 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
   background-color: ${styles.backgroundColor};
   box-shadow: inset 0 0 0 1px ${styles.stateColor};
   padding-right: ${({ withIcon }) =>
-    withIcon && 'calc(var(--f-iconSize--m) + var(--f-space--m) * 2)'};
+    withIcon && `calc(${theme.iconSize.m} + ${theme.space.m} * 2)`};
   cursor: ${({ disabled }) => disabled && 'not-allowed;'};
 
   &:hover {
@@ -79,15 +62,15 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
     box-shadow: inset 0 0 0 2px ${styles.hover.stateColor};
   }
 
-  @media (max-width: 460px) {
-    padding-top: var(--f-space--l);
-    padding-bottom: var(--f-space--l);
+  ${theme.breakPoint.s} {
+    padding-top: ${theme.space.l};
+    padding-bottom: ${theme.space.l};
   }
 
   & + ${Icon}, ${Icon} {
     position: absolute;
     top: 50%;
-    right: var(--f-space--l);
+    right: ${theme.space.l};
     transform: translateY(-50%);
     color: ${styles.iconColor};
     transition: color 0.2s ease-out;

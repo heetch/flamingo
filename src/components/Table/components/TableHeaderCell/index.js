@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import UiText from '../../../UiText';
 import { HeaderCell, HeaderCellIcon } from '../../styles';
+import { theme } from '../../../../theme';
 
 const TableHeaderCell = React.forwardRef(
   ({ as, className, isSorted, isSortedDesc, isSortable, ...props }, ref) => (
@@ -10,7 +12,7 @@ const TableHeaderCell = React.forwardRef(
       as={as || 'th'}
       className={cx('f-Table-HeaderCell', className)}
       variant={UiText.VARIANTS.subContentBold}
-      textColor={isSortable && isSorted && 'var(--f-color-brandPrimary)'}
+      textColor={isSortable && isSorted && theme.color.brand.primary}
       margin={'20px'}
       ref={ref}
       {...props}

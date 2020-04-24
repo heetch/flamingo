@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import GridCol from './GridCol';
+import { theme } from '../../theme';
 
 const Grid = styled('div').attrs(() => ({
   className: 'f-Grid',
 }))`
   --colsCount: ${({ colsCount }) => colsCount || 12};
-  --gutter: var(--f-space--xxl);
+  --gutter: ${theme.space.xxl};
 
   display: flex;
   flex-wrap: wrap;

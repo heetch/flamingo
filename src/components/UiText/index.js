@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 const VARIANTS = {
   h1: 'h1',
@@ -17,48 +18,48 @@ const VARIANTS = {
 const styles = {
   fontSize({ variant }) {
     const variants = {
-      [VARIANTS.h1]: 'var(--f-fontSize--xxl)',
-      [VARIANTS.h2]: 'var(--f-fontSize--xl)',
-      [VARIANTS.h3]: 'var(--f-fontSize--l)',
-      [VARIANTS.h4]: 'var(--f-fontSize--m)',
-      [VARIANTS.h5]: 'var(--f-fontSize--s)',
-      [VARIANTS.h6]: 'var(--f-fontSize--xs)',
-      [VARIANTS.content]: 'var(--f-fontSize--m)',
-      [VARIANTS.contentBold]: 'var(--f-fontSize--m)',
-      [VARIANTS.subContent]: 'var(--f-fontSize--s)',
-      [VARIANTS.subContentBold]: 'var(--f-fontSize--s)',
+      [VARIANTS.h1]: theme.fontSize.xxl,
+      [VARIANTS.h2]: theme.fontSize.xl,
+      [VARIANTS.h3]: theme.fontSize.l,
+      [VARIANTS.h4]: theme.fontSize.m,
+      [VARIANTS.h5]: theme.fontSize.s,
+      [VARIANTS.h6]: theme.fontSize.xs,
+      [VARIANTS.content]: theme.fontSize.m,
+      [VARIANTS.contentBold]: theme.fontSize.m,
+      [VARIANTS.subContent]: theme.fontSize.s,
+      [VARIANTS.subContentBold]: theme.fontSize.s,
     };
 
     return variants[variant] || undefined;
   },
   lineHeight({ variant }) {
     const variants = {
-      [VARIANTS.h1]: 'var(--f-lineHeight--xl)',
-      [VARIANTS.h2]: 'var(--f-lineHeight--l)',
-      [VARIANTS.h3]: 'var(--f-lineHeight--m)',
-      [VARIANTS.h4]: 'var(--f-lineHeight--s)',
-      [VARIANTS.h5]: 'var(--f-lineHeight--s)',
-      [VARIANTS.h6]: 'var(--f-lineHeight--s)',
-      [VARIANTS.content]: 'var(--f-lineHeight--m)',
-      [VARIANTS.contentBold]: 'var(--f-lineHeight--m)',
-      [VARIANTS.subContent]: 'var(--f-lineHeight--m)',
-      [VARIANTS.subContentBold]: 'var(--f-lineHeight--m)',
+      [VARIANTS.h1]: theme.lineHeight.xl,
+      [VARIANTS.h2]: theme.lineHeight.l,
+      [VARIANTS.h3]: theme.lineHeight.m,
+      [VARIANTS.h4]: theme.lineHeight.s,
+      [VARIANTS.h5]: theme.lineHeight.s,
+      [VARIANTS.h6]: theme.lineHeight.s,
+      [VARIANTS.content]: theme.lineHeight.m,
+      [VARIANTS.contentBold]: theme.lineHeight.m,
+      [VARIANTS.subContent]: theme.lineHeight.m,
+      [VARIANTS.subContentBold]: theme.lineHeight.m,
     };
 
     return variants[variant] || undefined;
   },
   fontWeight({ variant }) {
     const variants = {
-      [VARIANTS.h1]: 'var(--f-fontWeight--black)',
-      [VARIANTS.h2]: 'var(--f-fontWeight--black)',
-      [VARIANTS.h3]: 'var(--f-fontWeight--black)',
-      [VARIANTS.h4]: 'var(--f-fontWeight--black)',
-      [VARIANTS.h5]: 'var(--f-fontWeight--black)',
-      [VARIANTS.h6]: 'var(--f-fontWeight--black)',
-      [VARIANTS.content]: 'var(--f-fontWeight--normal)',
-      [VARIANTS.subContent]: 'var(--f-fontWeight--normal)',
-      [VARIANTS.contentBold]: 'var(--f-fontWeight--bold)',
-      [VARIANTS.subContentBold]: 'var(--f-fontWeight--bold)',
+      [VARIANTS.h1]: theme.fontWeight.black,
+      [VARIANTS.h2]: theme.fontWeight.black,
+      [VARIANTS.h3]: theme.fontWeight.black,
+      [VARIANTS.h4]: theme.fontWeight.black,
+      [VARIANTS.h5]: theme.fontWeight.black,
+      [VARIANTS.h6]: theme.fontWeight.black,
+      [VARIANTS.content]: theme.fontWeight.normal,
+      [VARIANTS.subContent]: theme.fontWeight.normal,
+      [VARIANTS.contentBold]: theme.fontWeight.bold,
+      [VARIANTS.subContentBold]: theme.fontWeight.bold,
     };
 
     return variants[variant] || undefined;

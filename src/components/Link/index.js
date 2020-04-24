@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styled from 'styled-components';
 
+import { theme } from '../../theme';
+
 const Link = styled('a').attrs(({ className }) => ({
   className: cx('f-Link', className),
 }))`
-  color: var(--f-color-text--link);
+  color: ${theme.color.text.link};
 `;
 
 Link.propTypes = {

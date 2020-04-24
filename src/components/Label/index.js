@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const Label = styled(UiText).attrs(() => ({
   className: 'f-Label',
@@ -9,9 +10,9 @@ const Label = styled(UiText).attrs(() => ({
   as: 'label',
 }))`
   display: inline-block;
-  margin-top: var(--f-space--m);
-  margin-bottom: var(--f-space--m);
-  color: var(--f-color-text--primary);
+  margin-top: ${theme.space.m};
+  margin-bottom: ${theme.space.m};
+  color: ${theme.color.text.primary};
 
   & + .f-FormEl-wrapper {
     margin-top: 0;

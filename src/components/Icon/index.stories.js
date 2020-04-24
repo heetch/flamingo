@@ -8,6 +8,7 @@ import Helper from '../Helper';
 import Input from '../Input';
 import Label from '../Label';
 import Icon from '.';
+import { theme } from '../../theme';
 
 const icons = Object.keys(Icon.ICONS);
 const sizes = Object.values(Icon.SIZES);
@@ -37,7 +38,7 @@ const IconsFilterer = () => {
           <div
             key={icon}
             style={{
-              padding: 'var(--f-space--s)',
+              padding: theme.space.s,
               width: '25%',
               textAlign: 'center',
             }}
@@ -48,7 +49,7 @@ const IconsFilterer = () => {
                 icon={icon}
                 size={Icon.SIZES.L}
               />
-              <Helper style={{ marginTop: 'var(--f-space--s)' }}>{icon}</Helper>
+              <Helper style={{ marginTop: theme.space.s }}>{icon}</Helper>
             </Card>
           </div>
         ))}

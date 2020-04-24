@@ -6,6 +6,7 @@ import Button from '../Button';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Text from '../Text';
+import { theme } from '../../theme';
 
 const UploaderItemStyled = styled('div').attrs(() => ({
   className: 'f-UploaderItem',
@@ -18,13 +19,13 @@ const UploaderItemStyled = styled('div').attrs(() => ({
   align-items: center;
   width: 100%;
   text-align: left;
-  padding: var(--f-space--s);
-  color: var(--f-color-text--secondary);
-  background-color: var(--f-color-element--primary);
-  border-radius: var(--f-borderRadius--l);
+  padding: ${theme.space.s};
+  color: ${theme.color.text.secondary};
+  background-color: ${theme.color.element.primary};
+  border-radius: ${theme.borderRadius.l};
 
   & + & {
-    margin-top: var(--f-space--s);
+    margin-top: ${theme.space.s};
   }
 
   .f-UploaderItem-name {
@@ -43,10 +44,9 @@ const IconContainer = styled.div`
   justify-content: center;
   width: var(--iconContainerSize);
   height: var(--iconContainerSize);
-  margin-right: var(--f-space--m);
-  border: 1px solid var(--f-color-element--secondary);
+  margin-right: ${theme.space.m};
+  border: 1px solid ${theme.color.element.secondary};
   border-radius: 0.75rem; /* 12px */
-  background-color: var(--color-white);
   overflow: hidden;
 
   img {

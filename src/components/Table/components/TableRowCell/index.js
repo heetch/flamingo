@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import UiText from '../../../UiText';
+import { theme } from '../../../../theme';
 
 const TableRowCell = styled(UiText).attrs(({ as }) => ({
   className: 'f-Table-RowCell',
@@ -9,10 +10,10 @@ const TableRowCell = styled(UiText).attrs(({ as }) => ({
 }))`
   min-width: 8.4375rem; /* 135px */
   text-align: left;
-  padding: var(--f-space--l) var(--f-space--xl);
+  padding: ${theme.space.l} ${theme.space.xl};
   box-shadow: inset 0px -1px 0px var(--borderColor);
-  background-color: var(--f-color-element--primary);
-  color: var(--f-color-text--secondary);
+  background-color: ${theme.color.element.primary};
+  color: ${theme.color.text.secondary};
 
   ${UiText} {
     margin: 0;

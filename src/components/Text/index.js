@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const variants = Object.values(UiText.VARIANTS);
 
 const Text = styled(UiText).attrs(({ textColor }) => ({
   className: 'f-Text',
-  textColor: textColor || 'var(--f-color-text--secondary)',
+  textColor: textColor || theme.color.text.secondary,
 }))`
   text-align: ${({ isNumber }) => isNumber && 'right'};
 `;

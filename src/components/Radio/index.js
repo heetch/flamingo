@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import FormElementWrapper from '../FormComponents/FormElementWrapper';
 
+import FormElementWrapper from '../FormComponents/FormElementWrapper';
+import { theme } from '../../theme';
 import Helper from '../Helper';
 import UiText from '../UiText';
 
@@ -11,31 +12,31 @@ export const StyledRadio = styled('input').attrs(({ defaultChecked }) => ({
   type: 'radio',
   defaultChecked,
 }))`
-  --size: ${({ size }) => size || '1.25rem'} /* 20px */;
+  --size: ${({ size }) => size || theme.iconSize.l} /* 20px */;
 
   position: relative;
   appearance: none;
-  background-color: var(--f-color-element--primary);
+  background-color: ${theme.color.element.primary};
   min-width: var(--size);
-  margin-right: var(--f-space--l);
+  margin-right: ${theme.space.l};
   height: var(--size);
-  border: 1px solid var(--f-color-element--tertiary);
+  border: 1px solid ${theme.color.element.tertiary};
   border-radius: 50%;
   transition: all 0.1s ease-out;
 
   &:hover {
-    border-color: var(--f-color-element--secondary);
+    border-color: ${theme.color.element.secondary};
   }
 
   &:disabled {
-    border-color: var(--f-color-element--tertiary) !important;
-    background-color: var(--f-color-element--inactive) !important;
+    border-color: ${theme.color.element.tertiary} !important;
+    background-color: ${theme.color.element.inactive} !important;
     cursor: not-allowed;
   }
 
   &:checked {
     border-width: 6px;
-    border-color: var(--f-color-brandPrimary);
+    border-color: ${theme.color.brand.primary};
   }
 `;
 

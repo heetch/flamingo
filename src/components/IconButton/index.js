@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import Button from '../Button';
 import Icon from '../Icon';
+import { theme } from '../../theme';
 
 const sizes = Object.values(Icon.SIZES);
 
@@ -36,29 +37,27 @@ IconButtonComponent.propTypes = {
 };
 
 const IconButton = styled(IconButtonComponent)`
-  padding: var(--f-space--m);
+  padding: ${theme.space.m};
   line-height: 1;
   border-radius: 50%;
-  color: var(--f-color-icon--dark);
+  color: ${theme.color.icon.dark};
 
   &:hover {
-    background-color: var(--f-color-element--inactive);
-    color: var(--f-color-icon--dark);
+    background-color: ${theme.color.element.inactive};
   }
 
   & + & {
-    margin-left: var(--f-space--m);
+    margin-left: ${theme.space.m};
   }
 
   ${Icon} {
     display: block;
   }
 
-  @media (max-width: 460px) {
-    /* --f-breakpoint--s */
+  ${theme.breakPoint.s} {
     width: auto;
     flex-grow: inherit;
-    padding: var(--f-space--l);
+    padding: ${theme.space.l};
   }
 `;
 

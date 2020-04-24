@@ -7,14 +7,15 @@ import Dropdown from '.';
 import Button from '../Button';
 import Heading from '../Heading';
 import Item from '../Item';
+import { theme } from '../../theme';
 
 const DropdownContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: baseline;
   padding: 1rem;
-  border: 1px dashed var(--f-color-brandSecondary--light);
-  border-radius: var(--f-borderRadius--m);
+  border: 1px dashed ${theme.color.brand.secondaryLight};
+  border-radius: ${theme.borderRadius.m};
 `;
 
 const StoryDropdown = props => (

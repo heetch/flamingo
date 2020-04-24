@@ -2,20 +2,21 @@ import styled from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import UiText from '../UiText';
 import Icon from '../Icon';
+import { theme } from '../../theme';
 
 const styles = {
   textColor({ invalid, valid }) {
-    if (invalid) return 'var(--f-color-element--error)';
-    if (valid) return 'var(--f-color-element--success)';
+    if (invalid) return theme.color.element.error;
+    if (valid) return theme.color.element.success;
 
-    return 'var(--f-color-text--secondary)';
+    return theme.color.text.secondary;
   },
   borderColor({ invalid, valid, hasFile }) {
     if (hasFile) return 'transparent';
-    if (invalid) return 'var(--f-color-element--error)';
-    if (valid) return 'var(--f-color-element--success)';
+    if (invalid) return theme.color.element.error;
+    if (valid) return theme.color.element.success;
 
-    return 'var(--f-color-element--tertiary)';
+    return theme.color.element.tertiary;
   },
 };
 
@@ -23,10 +24,10 @@ export const StyledFileUploader = styled(FormElementWrapper)`
   position: relative;
   width: 100%;
   flex-direction: column;
-  margin: var(--f-space--m) 0;
-  border-radius: var(--f-borderRadius--l);
+  margin: ${theme.space.m} 0;
+  border-radius: ${theme.borderRadius.l};
   color: ${styles.textColor};
-  background-color: var(--f-color-element--primary);
+  background-color: ${theme.color.element.primary};
   transition: all 0.15s ease-out;
   border: 1px dashed ${styles.borderColor};
   height: ${({ hasFile }) =>
@@ -34,12 +35,11 @@ export const StyledFileUploader = styled(FormElementWrapper)`
   text-align: ${({ hasFile }) => hasFile && 'center'};
 
   &:hover {
-    border-color: ${({ hasFile }) => !hasFile && 'var(--f-color-brandPrimary)'};
-    color: ${({ hasFile }) => !hasFile && 'var(--f-color-brandPrimary)'};
+    border-color: ${({ hasFile }) => !hasFile && theme.color.brand.primary};
+    color: ${({ hasFile }) => !hasFile && theme.color.brand.primary};
   }
 
-  @media (max-width: 460px) {
-    /* --f-breakpoint--s */
+  ${theme.breakPoint.s} {
     max-width: inherit;
   }
 
@@ -63,14 +63,14 @@ export const FileUploaderLabel = styled(UiText).attrs(props => ({
   cursor: pointer;
 
   &:hover {
-    color: var(--f-color-brandPrimary);
+    color: ${theme.color.brand.primary};
   }
 
   &.f-FileUploader-state--addFiles {
-    padding: var(--f-space--l);
+    padding: ${theme.space.l};
   }
 
   ${Icon} {
-    margin-bottom: ${({ withIcon }) => withIcon && 'var(--f-space--m)'};
+    margin-bottom: ${({ withIcon }) => withIcon && theme.space.s};
   }
 `;
