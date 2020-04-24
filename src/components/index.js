@@ -3,6 +3,7 @@ export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export { default as Dropdown } from './Dropdown';
+export { default as Datepicker } from './Datepicker';
 export { default as FormField } from './FormField';
 export { default as FileUploader } from './FileUploader';
 export { default as FileUploaderField } from './FileUploaderField';
