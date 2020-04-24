@@ -6,6 +6,7 @@ export const theme = {
     s: 'var(--f-borderRadius--s)',
   },
   breakPoint: {
+    sUp: '@media (min-width: 460px)',
     s: '@media (max-width: 460px)',
     m: '@media (min-width: 460px) and (max-width: 800px)',
     l: '@media (min-width: 1100px)',

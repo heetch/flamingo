@@ -40,7 +40,7 @@ export const StyledDropdown = styled.div`
     border-bottom-right-radius: var(--borderRadius);
   }
 
-  ${theme.breakPoint.s} {
+  ${theme.breakPoint.sUp} {
     & + ${Overlay} {
       display: none;
     }
