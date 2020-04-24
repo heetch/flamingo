@@ -26,7 +26,7 @@ const styles = {
       return 'var(--f-color-element--success)';
     }
 
-    return '--f-color-icon--dark';
+    return 'var(--f-color-icon--dark)';
   },
   backgroundColor({ disabled }) {
     if (disabled) {
@@ -63,7 +63,7 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
   border-radius: 1.25rem;
   outline: none;
   appearance: none;
-  transition: box-shadow 0.1s ease-out;
+  transition: box-shadow 0.2s ease-out;
 
   background-color: ${styles.backgroundColor};
   box-shadow: inset 0 0 0 1px ${styles.stateColor};
@@ -84,12 +84,13 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
     padding-bottom: var(--f-space--l);
   }
 
-  & + ${Icon} {
+  & + ${Icon}, ${Icon} {
     position: absolute;
     top: 50%;
     right: var(--f-space--l);
     transform: translateY(-50%);
     color: ${styles.iconColor};
+    transition: color 0.2s ease-out;
     pointer-events: none;
   }
 `;

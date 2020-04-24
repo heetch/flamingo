@@ -26,8 +26,9 @@ const FormElementWrapper = styled('div').attrs(() => ({
   margin-bottom: var(--f-space--m);
   color: var(--f-color-text--primary);
 
-  & + ${Helper} {
+  & + ${Helper}, ${Helper} {
     color: ${styles.helperColor};
+    transition: color 0.2s ease-out;
   }
 `;
 

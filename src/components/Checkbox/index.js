@@ -7,7 +7,7 @@ import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import { StyledCheckbox } from './styles';
 
 const Checkbox = React.forwardRef(
-  ({ children, checked, helper, id, ...props }, ref) => {
+  ({ children, checked, helper, id, valid, invalid, ...props }, ref) => {
     const checkbox = (
       <StyledCheckbox
         defaultChecked={checked}
@@ -23,7 +23,7 @@ const Checkbox = React.forwardRef(
     }
 
     return (
-      <FormElementWrapper>
+      <FormElementWrapper valid={valid} invalid={invalid}>
         {checkbox}
         <UiText as='label' htmlFor={id} variant={UiText.VARIANTS.content}>
           {children}
@@ -46,6 +46,8 @@ Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string,
   helper: PropTypes.node,
+  valid: PropTypes.bool,
+  invalid: PropTypes.bool,
 };
 
 Checkbox.defaultProps = {

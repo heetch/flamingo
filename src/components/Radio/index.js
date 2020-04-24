@@ -40,13 +40,13 @@ export const StyledRadio = styled('input').attrs(({ defaultChecked }) => ({
 `;
 
 const Radio = React.forwardRef(
-  ({ children, helper, checked, ...props }, ref) => {
+  ({ children, helper, checked, valid, invalid, ...props }, ref) => {
     if (!children) {
       return <StyledRadio ref={ref} defaultChecked={checked} {...props} />;
     }
 
     return (
-      <FormElementWrapper>
+      <FormElementWrapper valid={valid} invalid={invalid}>
         <StyledRadio ref={ref} defaultChecked={checked} {...props} />
         <UiText as='label' htmlFor={props.id} variant={UiText.VARIANTS.content}>
           {children}
@@ -69,6 +69,8 @@ Radio.propTypes = {
   name: PropTypes.string.isRequired,
   helper: PropTypes.string,
   size: PropTypes.string,
+  valid: PropTypes.bool,
+  invalid: PropTypes.bool,
 };
 
 export default Radio;

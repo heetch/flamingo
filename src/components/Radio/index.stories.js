@@ -45,7 +45,14 @@ stories.add('All states', () => (
       </div>
       <div>
         <Heading level={2}>With helper</Heading>
-        <Radio {...defaultProps} id='r6-1' name='r6' helper='With helper'>
+        <Radio
+          {...defaultProps}
+          id='r6-1'
+          name='r6'
+          helper='With helper'
+          invalid={boolean('Invalid', false)}
+          valid={boolean('Valid', false)}
+        >
           Label
         </Radio>
       </div>

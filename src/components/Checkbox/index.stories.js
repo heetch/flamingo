@@ -57,7 +57,13 @@ stories.add('All states', () => (
       </div>
       <div>
         <Heading level={2}>With helper</Heading>
-        <Checkbox {...defaultProps} id='c8' helper='With helper'>
+        <Checkbox
+          {...defaultProps}
+          id='c8'
+          helper='With helper'
+          invalid={boolean('Invalid', false)}
+          valid={boolean('Valid', false)}
+        >
           Label
         </Checkbox>
       </div>
