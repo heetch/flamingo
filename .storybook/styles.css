@@ -85,7 +85,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   line-height: var(--f-lineHeight--m);
 }
 
@@ -99,22 +99,4 @@ a:hover {
 
 img {
   max-width: 100%;
-}
-
-.f-colorError {
-  color: var(--f-color-element--error) !important;
-}
-
-.f-colorSuccess {
-  color: var(--f-color-element--success) !important;
-}
-
-.f-colorWarning {
-  color: var(--f-color-brandSecondary) !important;
-}
-
-.f-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

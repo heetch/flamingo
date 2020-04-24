@@ -100,21 +100,3 @@ a:hover {
 img {
   max-width: 100%;
 }
-
-.f-colorError {
-  color: var(--f-color-element--error) !important;
-}
-
-.f-colorSuccess {
-  color: var(--f-color-element--success) !important;
-}
-
-.f-colorWarning {
-  color: var(--f-color-brandSecondary) !important;
-}
-
-.f-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
