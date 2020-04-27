@@ -2,41 +2,42 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Text from '../Text';
+import { theme } from '../../theme';
 
 const styles = {
   padding({ size }) {
-    if (size === 's') return 'var(--f-space--xl)';
-    if (size === 'm') return 'var(--f-space--xxl)';
+    if (size === 's') return theme.space.xl;
+    if (size === 'm') return theme.space.xxl;
 
     return undefined;
   },
   boxShadow({ isSelected, elevation }) {
     if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
     if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
-    if (isSelected) return 'inset 0 0 0 3px var(--f-color-brandPrimary)';
+    if (isSelected) return `inset 0 0 0 3px ${theme.color.brand.primary}`;
 
-    return '0 0 0 1px var(--f-color-element--inactive)';
+    return `0 0 0 1px ${theme.color.element.inactive}`;
   },
 };
 
 const Card = styled('div').attrs(() => ({
   className: 'f-Card',
 }))`
-  background-color: var(--f-color-element--primary);
+  background-color: ${theme.color.element.primary};
   box-shadow: ${styles.boxShadow};
-  border-radius: var(--f-borderRadius--xl);
+  border-radius: ${theme.borderRadius.xl};
   padding: ${styles.padding};
 
   & & {
-    border-radius: var(--f-borderRadius--l);
+    border-radius: ${theme.borderRadius.l};
   }
 
   & & & {
-    border-radius: var(--f-borderRadius--m);
+    border-radius: ${theme.borderRadius.m};
   }
 
   & & & & {
-    border-radius: var(--f-borderRadius--s);
+    border-radius: ${theme.borderRadius.s};
   }
 
   ${Text} {

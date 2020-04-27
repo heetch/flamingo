@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import * as SVGS from '../../constants/icons';
+import { theme } from '../../theme';
 
 const NAMES = Object.keys(SVGS);
 
@@ -23,7 +24,7 @@ const sizes = Object.values(SIZES);
 
 const styles = {
   iconSize({ size }) {
-    return `var(--f-iconSize--${size})`;
+    return theme.iconSize[size];
   },
 };
 

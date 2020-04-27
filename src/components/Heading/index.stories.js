@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
 import Heading from '.';
+import { theme } from '../../theme';
 
 const { LEVELS } = Heading;
 const stories = storiesOf('Heading', module);
@@ -10,10 +11,10 @@ const stories = storiesOf('Heading', module);
 const Wrapper = props => (
   <div
     style={{
-      backgroundColor: 'var(--f-color-element--primary)',
-      marginBottom: 'var(--f-space--m)',
+      backgroundColor: theme.color.element.primary,
+      marginBottom: theme.space.m,
       overflow: 'hidden',
-      borderRadius: 'var(--f-borderRadius--m)',
+      borderRadius: theme.borderRadius.m,
     }}
     {...props}
   />

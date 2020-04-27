@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import styled from 'styled-components';
 
+import { theme } from '../../theme';
 import UiText from '../UiText';
 
 const PLACEMENTS = {
@@ -16,7 +17,7 @@ const PLACEMENTS = {
 const placements = Object.values(PLACEMENTS);
 
 export const PopoverWrapper = styled.div`
-  padding: var(--f-space--s);
+  padding: ${theme.space.s};
   opacity: 0;
   transition: opacity 0.1s ease-out;
 `;
@@ -30,10 +31,10 @@ export const Trigerrer = styled('div').attrs(() => ({
 `;
 
 export const StyledPopover = styled.div`
-  padding: var(--f-space--s) var(--f-space--m);
-  color: var(--f-color-text--white);
+  padding: ${theme.space.s} ${theme.space.m};
+  color: ${theme.color.text.white};
   background-color: rgba(25, 1, 52, 0.8);
-  border-radius: var(--f-borderRadius--s);
+  border-radius: ${theme.borderRadius.s};
 `;
 
 const Popover = ({ content, children, placement }) => (

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { theme } from '../../theme';
+
 const GridCol = styled('div').attrs(({ s, m, l }) => ({
   className: cx('f-Grid-col', {
     [`f-Grid-col--s${s}`]: s,
@@ -14,15 +16,15 @@ const GridCol = styled('div').attrs(({ s, m, l }) => ({
   margin-left: calc(var(--gutter) / 2);
   margin-right: calc(var(--gutter) / 2);
 
-  @media (max-width: 460px) {
-    --gutter: var(--f-space--xl);
+  ${theme.breakPoint.s} {
+    --gutter: ${theme.space.xl};
     flex-basis: ${({ s }) =>
       s && `calc((100% / var(--colsCount) * ${s}) - var(--gutter))`};
     max-width: ${({ s }) =>
       s && `calc((100% / var(--colsCount) * ${s}) - var(--gutter))`};
   }
 
-  @media (min-width: 460px) and (max-width: 800px) {
+  ${theme.breakPoint.m} {
     flex-basis: ${({ m }) =>
       m && `calc((100% / var(--colsCount) * ${m}) - var(--gutter))`};
     max-width: ${({ m }) =>

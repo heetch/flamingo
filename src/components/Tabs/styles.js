@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { theme } from '../../theme';
+
 export const TabsContainer = styled.div.attrs(() => ({
   className: 'f-TabsContainer',
 }))`
@@ -12,30 +14,30 @@ export const StyledTabs = styled.div`
 
   background-image: linear-gradient(
       to right,
-      var(--f-color-element--primary),
-      var(--f-color-element--primary)
+      ${theme.color.element.primary},
+      ${theme.color.element.primary}
     ),
     linear-gradient(
       to right,
-      var(--f-color-element--primary),
-      var(--f-color-element--primary)
+      ${theme.color.element.primary},
+      ${theme.color.element.primary}
     ),
     linear-gradient(to right, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0)),
     linear-gradient(to left, rgba(25, 1, 52, 0.14), rgba(255, 255, 255, 0));
 
   background-position: left center, right center, left top, right top;
   background-repeat: no-repeat;
-  background-color: var(--f-color-element--primary);
+  background-color: ${theme.color.element.primary};
   background-size: 15px 100%, 15px 100%,
-    var(--f-space--m) calc(100% - var(--f-space--s)),
-    var(--f-space--m) calc(100% - var(--f-space--s));
+    ${theme.space.m} calc(100% - ${theme.space.s}),
+    ${theme.space.m} calc(100% - ${theme.space.s});
   background-attachment: local, local, scroll, scroll;
   padding: 0 2px;
 
   &:before,
   &:after {
     content: '';
-    background-color: var(--f-color-element--primary);
+    background-color: ${theme.color.element.primary};
     width: 2px;
     height: 100%;
     position: absolute;
@@ -52,29 +54,29 @@ export const StyledTabs = styled.div`
 
 export const TabsLabel = styled.span`
   display: block;
-  color: var(--f-color-text--primary);
-  font-size: var(--f-fontSize--s);
-  font-weight: var(--f-fontWeight--bold);
-  line-height: var(--f-lineHeight--m);
-  margin: var(--f-space--m) 0;
-  padding: 0 var(--f-space--xl);
+  color: ${theme.color.text.primary};
+  font-size: ${theme.fontSize.s}
+  font-weight: ${theme.fontWeight.bold};
+  line-height: ${theme.lineHeight.m};
+  margin: ${theme.space.m} 0;
+  padding: 0 ${theme.space.xl};
 `;
 
 export const TabsMarker = styled.span`
   float: left;
   width: 100%;
-  height: var(--f-space--s);
+  height: ${theme.space.s};
   margin: 1px 0;
-  background-color: var(--f-color-element--inactive);
+  background-color: ${theme.color.element.inactive};
   transition: all 0.1s ease-out;
 
   ${({ isActive }) =>
     isActive &&
     css`
-      height: calc(var(--f-space--s) + 2px);
+      height: calc(${theme.space.s} + 2px);
       padding: 1px 0;
       margin: 0;
-      background-color: var(--f-color-brandPrimary);
+      background-color: ${theme.color.brand.primary};
       border-radius: 3px;
     `}
 `;
@@ -86,7 +88,7 @@ export const Tab = styled('button')`
   padding: 0;
 
   &:hover ${TabsMarker} {
-    background-color: var(--f-color-brandPrimary);
+    background-color: ${theme.color.brand.primary};
   }
 
   &:nth-child(1) ${TabsMarker} {

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Icon from '../Icon';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import FormElement from '../FormComponents/FormElement';
+import { theme } from '../../theme';
 
 export const StyledFormElement = styled(FormElement)`
   min-height: 9.375rem; /* 150px */
@@ -14,7 +15,7 @@ export const StyledFormElement = styled(FormElement)`
 export const StyledIcon = styled(Icon)`
   // Increases specificity
   && {
-    top: var(--f-space--l);
+    top: ${theme.space.l};
     transform: none;
   }
 `;

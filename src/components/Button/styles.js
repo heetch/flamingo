@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 export const INTENTS = {
   PRIMARY: 'primary',
@@ -18,24 +19,24 @@ export const variants = Object.values(VARIANTS);
 const styles = {
   color({ disabled, variant, intent }) {
     if (disabled) {
-      return 'var(--f-color-text--tertiary) !important';
+      return `${theme.color.text.tertiary} !important`;
     }
     if (variants.includes(variant) && intent === INTENTS.PRIMARY) {
-      return 'var(--f-color-brandPrimary)';
+      return theme.color.brand.primary;
     }
     if (variants.includes(variant) && intent === INTENTS.SECONDARY) {
-      return 'var(--f-color-brandSecondary)';
+      return theme.color.brand.secondary;
     }
 
-    return 'var(--f-color-text--white)';
+    return theme.color.text.white;
   },
   backgroundColor({ intent, disabled, variant }) {
-    if (disabled) return 'var(--f-color-element--primary) !important';
-    if (intent === INTENTS.ERROR) return 'var(--f-color-element--error)';
-    if (intent === INTENTS.SUCCESS) return 'var(--f-color-element--success)';
-    if (variants.includes(variant)) return 'var(--f-color-text--white)';
-    if (intent === INTENTS.PRIMARY) return 'var(--f-color-brandPrimary)';
-    if (intent === INTENTS.SECONDARY) return 'var(--f-color-brandSecondary)';
+    if (disabled) return `${theme.color.element.primary} !important`;
+    if (intent === INTENTS.ERROR) return theme.color.element.error;
+    if (intent === INTENTS.SUCCESS) return theme.color.element.success;
+    if (variants.includes(variant)) return theme.color.text.white;
+    if (intent === INTENTS.PRIMARY) return theme.color.brand.primary;
+    if (intent === INTENTS.SECONDARY) return theme.color.brand.secondary;
 
     return undefined;
   },
@@ -44,10 +45,10 @@ const styles = {
       return undefined;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
-      return '0 0 0 1px var(--f-color-brandPrimary)';
+      return `0 0 0 1px ${theme.color.brand.primary}`;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.SECONDARY) {
-      return '0 0 0 1px var(--f-color-brandSecondary)';
+      return `0 0 0 1px ${theme.color.brand.secondary}`;
     }
 
     return undefined;
@@ -66,10 +67,10 @@ const styles = {
   hover: {
     backgroundColor({ intent }) {
       if (intent === INTENTS.PRIMARY) {
-        return 'var(--f-color-brandPrimary--light)';
+        return theme.color.brand.primaryLight;
       }
       if (intent === INTENTS.SECONDARY) {
-        return 'var(--f-color-brandSecondary--light)';
+        return theme.color.brand.secondaryLight;
       }
 
       return undefined;
@@ -78,10 +79,10 @@ const styles = {
   active: {
     backgroundColor({ intent }) {
       if (intent === INTENTS.PRIMARY) {
-        return 'var(--f-color-brandPrimary)';
+        return theme.color.brand.primary;
       }
       if (intent === INTENTS.SECONDARY) {
-        return 'var(--f-color-brandSecondary)';
+        return theme.color.brand.secondary;
       }
 
       return undefined;
@@ -110,13 +111,13 @@ export const StyledButton = styled('button').attrs(() => ({
 }))`
   position: relative;
   display: inline-block;
-  margin: ${({ margin }) => margin ?? 'var(--f-space--m) 0'};
-  padding: var(--f-space--m) var(--f-space--xl);
-  font-size: var(--f-fontSize--s);
-  font-weight: var(--f-fontWeight--bold);
-  line-height: var(--f-lineHeight--m);
+  margin: ${({ margin }) => margin ?? `${theme.space.m} 0`};
+  padding: ${theme.space.m} ${theme.space.xl};
+  font-size: ${theme.fontSize.s};
+  font-weight: ${theme.fontWeight.bold};
+  line-height: ${theme.lineHeight.m};
   border: 0;
-  border-radius: var(--f-space--xxl);
+  border-radius: ${theme.space.xxl};
   outline: none;
   transition: background-color 0.2s ease-out;
   cursor: ${styles.cursor};
@@ -125,26 +126,25 @@ export const StyledButton = styled('button').attrs(() => ({
   box-shadow: ${styles.boxShadow};
 
   & + & {
-    margin-left: var(--f-space--m);
+    margin-left: ${({ margin }) => (!margin ? theme.space.m : undefined)};
   }
 
   &:hover {
     background-color: ${styles.hover.backgroundColor};
-    color: var(--f-color-text--white);
+    color: ${theme.color.text.white};
   }
 
   &:active {
     background-color: ${styles.active.backgroundColor};
   }
 
-  @media (max-width: 460px) {
+  ${theme.breakPoint.s} {
     & + & {
-      margin-left: 0;
+      margin-left: ${({ margin }) => (!margin ? 0 : undefined)};
     }
 
-    /* --f-breakpoint--s */
     width: 100%;
-    padding: var(--f-space--l) var(--f-space--xl);
+    padding: ${theme.space.l} ${theme.space.xl};
     text-align: center;
   }
 `;

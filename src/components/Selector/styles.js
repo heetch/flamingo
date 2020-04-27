@@ -1,35 +1,36 @@
 import styled from 'styled-components';
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const styles = {
   color({ isActive, isDisabled }) {
-    if (isDisabled && isActive) return 'var(--f-color-text--white)';
-    if (isDisabled) return 'var(--f-color-text--secondary)';
-    if (isActive) return 'var(--f-color-text--white)';
+    if (isDisabled && isActive) return theme.color.text.white;
+    if (isDisabled) return theme.color.text.secondary;
+    if (isActive) return theme.color.text.white;
 
-    return 'var(--f-color-text--secondary)';
+    return theme.color.text.secondary;
   },
   background({ isActive, isDisabled }) {
-    if (isDisabled && isActive) return 'var(--f-color-brandPrimary--inactive)';
-    if (isDisabled) return 'var(--f-color-element--inactive)';
-    if (isActive) return 'var(--f-color-brandPrimary)';
+    if (isDisabled && isActive) return theme.color.brand.primaryInactive;
+    if (isDisabled) return theme.color.element.inactive;
+    if (isActive) return theme.color.brand.primary;
 
-    return 'var(--f-color-element--primary)';
+    return theme.color.element.primary;
   },
   borderColor({ isValid, isInvalid, isActive, isDisabled }) {
-    if (isInvalid) return 'var(--f-color-element--error)';
-    if (isValid) return 'var(--f-color-element--success)';
-    if (isDisabled && isActive) return 'var(--f-color-brandPrimary--inactive)';
-    if (isDisabled) return 'var(--f-color-element--tertiary)';
-    if (isActive) return 'var(--f-color-brandPrimary)';
+    if (isInvalid) return theme.color.element.error;
+    if (isValid) return theme.color.element.success;
+    if (isDisabled && isActive) return theme.color.brand.primaryInactive;
+    if (isDisabled) return theme.color.element.tertiary;
+    if (isActive) return theme.color.brand.primary;
 
-    return 'var(--f-color-element--tertiary)';
+    return theme.color.element.tertiary;
   },
   hover: {
     borderColor({ isDisabled }) {
-      if (isDisabled) return 'var(--f-color-element--tertiary)';
+      if (isDisabled) return theme.color.element.tertiary;
 
-      return 'var(--f-color-text--secondary)';
+      return theme.color.text.secondary;
     },
   },
 };
@@ -51,27 +52,26 @@ export const SelectorItem = styled('div')`
   border: 1px ${styles.borderColor} solid;
   border-right: none;
   background-color: ${styles.background};
-  font-size: var(--f-fontSize--s);
+  font-size: ${theme.fontSize.s};
   text-overflow: ellipsis;
   word-break: break-all;
   overflow: hidden;
   white-space: nowrap;
-  padding: var(--f-space--m) var(--f-space--xl);
+  padding: ${theme.space.m} ${theme.space.xl};
   cursor: ${({ isDisabled }) =>
     isDisabled ? 'not-allowed !important' : 'pointer'};
 
-  @media (max-width: 460px) {
-    /* --f-breakpoint--s */
-    padding-top: var(--f-space--l);
-    padding-bottom: var(--f-space--l);
+  ${theme.breakPoint.s} {
+    padding-top: ${theme.space.l};
+    padding-bottom: ${theme.space.l};
   }
 
   &:first-child {
-    border-radius: var(--f-borderRadius--xl) 0 0 var(--f-borderRadius--xl);
+    border-radius: ${theme.borderRadius.xl} 0 0 ${theme.borderRadius.xl};
   }
 
   &:last-child {
-    border-radius: 0 var(--f-borderRadius--xl) var(--f-borderRadius--xl) 0;
+    border-radius: 0 ${theme.borderRadius.xl} ${theme.borderRadius.xl} 0;
     border-right: 1px ${styles.borderColor} solid;
     margin: 0;
   }
@@ -80,7 +80,7 @@ export const SelectorItem = styled('div')`
   &:focus {
     border-color: ${styles.hover.borderColor};
     border-right: ${({ isDisabled }) =>
-      !isDisabled && `1px var(--f-color-text--secondary) solid`};
+      !isDisabled && `1px ${theme.color.text.secondary} solid`};
     z-index: 1;
   }
 `;

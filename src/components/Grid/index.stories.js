@@ -6,17 +6,18 @@ import { number } from '@storybook/addon-knobs';
 import Grid from '.';
 import Heading from '../Heading';
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 // eslint-disable-next-line react/prop-types
 const ColInner = ({ children, style }) => (
   <div
     style={{
-      margin: 'var(--f-space--m) 0',
-      padding: 'var(--f-space--m)',
+      margin: `${theme.space.m} 0`,
+      padding: theme.space.m,
       textAlign: 'center',
-      color: 'var(--f-color-text--white)',
-      backgroundColor: 'var(--f-color-brandPrimary)',
-      borderRadius: 'var(--f-borderRadius--m)',
+      color: theme.color.text.white,
+      backgroundColor: theme.color.brand.primary,
+      borderRadius: theme.borderRadius.m,
       ...style,
     }}
   >

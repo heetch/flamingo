@@ -1,34 +1,35 @@
 import styled from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
+import { theme } from '../../theme';
 
 const styles = {
   toggle: {
     background({ isOn, disabled }) {
-      if (disabled) return 'var(--f-color-element--inactive)';
-      if (isOn) return 'var(--f-color-brandPrimary)';
+      if (disabled) return theme.color.element.inactive;
+      if (isOn) return theme.color.brand.primary;
 
-      return 'var(--f-color-element--primary)';
+      return theme.color.element.primary;
     },
     borderColor({ isOn, disabled }) {
-      if (disabled) return 'var(--f-color-element--tertiary)';
-      if (isOn) return 'var(--f-color-brandPrimary)';
+      if (disabled) return theme.color.element.tertiary;
+      if (isOn) return theme.color.brand.primary;
 
-      return 'var(--f-color-element--tertiary)';
+      return theme.color.element.tertiary;
     },
   },
   bullet: {
     background({ isOn, disabled }) {
-      if (disabled) return 'var(--f-color-element--tertiary)';
-      if (isOn) return 'var(--f-color-text--white)';
+      if (disabled) return theme.color.element.tertiary;
+      if (isOn) return theme.color.text.white;
 
-      return 'var(--f-color-element--secondary)';
+      return theme.color.element.secondary;
     },
   },
 };
 
 export const ToggleContainer = styled(FormElementWrapper)`
   display: flex;
-  margin-right: var(--f-space--m);
+  margin-right: ${theme.space.m};
 `;
 
 export const StyledToggle = styled('button')`
@@ -44,7 +45,7 @@ export const StyledToggle = styled('button')`
   --Toggle-bullet-space: 0.25rem /* 4px */;
 
   &:hover {
-    border-color: var(--f-color-element--secondary);
+    border-color: ${theme.color.element.secondary};
   }
 `;
 
@@ -65,22 +66,20 @@ export const ToggleBullet = styled('span')`
 export const ToggleBulletLabel = styled('span')`
   text-transform: uppercase;
   text-align: center;
-  font-size: var(--f-fontSize--xs);
-  line-height: var(--f-lineHeight--s);
+  font-size: ${theme.fontSize.xs};
+  line-height: ${theme.lineHeight.s};
   position: absolute;
   top: 2px;
   bottom: 2px;
   transition: visibility 0.1s linear;
-  color: ${({ disabled }) => disabled && 'var(--f-color-element--tertiary)'};
+  color: ${({ disabled }) => disabled && theme.color.element.tertiary};
 `;
 
 export const ToggleBulletLabelOff = styled(ToggleBulletLabel)`
   left: var(--Toggle-bullet-f-space--for-label);
   right: var(--Toggle-bullet-space);
   color: ${({ disabled }) =>
-    disabled
-      ? 'var(--f-color-element--tertiary)'
-      : 'var(--f-color-text--secondary)'};
+    disabled ? theme.color.element.tertiary : theme.color.text.secondary};
   visibility: ${({ isOn }) => (isOn ? 'hidden' : 'visible')};
   transition-delay: 0.1s;
   transition: visibility ${({ isOn }) => (isOn ? '0.1s' : '0.3s')} linear;
@@ -90,13 +89,11 @@ export const ToggleBulletLabelOn = styled(ToggleBulletLabel)`
   right: var(--Toggle-bullet-f-space--for-label);
   left: var(--Toggle-bullet-space);
   color: ${({ disabled }) =>
-    disabled
-      ? 'var(--f-color-element--tertiary)'
-      : 'var(--f-color-text--white)'};
+    disabled ? theme.color.element.tertiary : theme.color.text.white};
   visibility: ${({ isOn }) => (isOn ? 'visible' : 'hidden')};
 `;
 
 export const ToggleLabels = styled('span')`
-  margin-left: var(--f-space--l);
+  margin-left: ${theme.space.l};
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
 `;

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import IconButton from '../IconButton';
+import { theme } from '../../theme';
 
 const styles = {
   color({ type }) {
-    if (type === 'error') return 'var(--f-color-element--error)';
-    if (type === 'success') return 'var(--f-color-element--success)';
-    if (type === 'information') return 'var(--f-color-brandSecondary)';
+    if (type === 'error') return theme.color.element.error;
+    if (type === 'success') return theme.color.element.success;
+    if (type === 'information') return theme.color.brand.secondary;
 
     return undefined;
   },
@@ -14,16 +15,16 @@ const styles = {
 export const StyledAlert = styled('div').attrs(() => ({
   className: 'f-Alert',
 }))`
-  --iconSize: ${({ iconSize }) => iconSize || 'var(--f-iconSize--m)'};
+  --iconSize: ${({ iconSize }) => iconSize || theme.iconSize.m};
   text-align: left;
   position: relative;
-  margin: var(--f-space--m) 0;
-  padding: var(--f-space--xl)
-    calc(var(--f-space--m) * 2 + var(--iconSize) + var(--f-space--xl));
-  font-size: var(--f-fontSize--m);
-  line-height: var(--f-lineHeight--m);
-  border-radius: var(--f-space--m);
-  background-color: var(--f-color-element--primary);
+  margin: ${theme.space.m} 0;
+  padding: ${theme.space.xl}
+    calc(${theme.space.m} * 2 + var(--iconSize) + ${theme.space.xl});
+  font-size: ${theme.fontSize.m};
+  line-height: ${theme.lineHeight.m};
+  border-radius: ${theme.space.m};
+  background-color: ${theme.color.element.primary};
   border: 2px solid ${styles.color};
 `;
 
@@ -34,16 +35,16 @@ export const AlertIcon = styled('div')`
   left: 0;
   top: 0;
   bottom: 0;
-  padding: 0 var(--f-space--m);
-  color: var(--f-color-icon--white);
+  padding: 0 ${theme.space.m};
+  color: ${theme.color.icon.white};
   background-color: ${styles.color};
 `;
 
 export const CloseButton = styled(IconButton)`
   width: initial;
   position: absolute;
-  top: var(--f-space--s);
-  right: var(--f-space--s);
+  top: ${theme.space.s};
+  right: ${theme.space.s};
   cursor: pointer;
   margin: 0;
 `;

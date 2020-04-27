@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import UiText from '../UiText';
+import { theme } from '../../theme';
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
 const styles = {
   marginTop({ level }) {
     if (level === 1) {
-      return `var(--f-space--xl)`;
+      return theme.space.xl;
     }
     if (level === 2) {
-      return `var(--f-space--l)`;
+      return theme.space.l;
     }
 
-    return 'var(--f-space--m)';
+    return theme.space.m;
   },
 };
 
@@ -23,9 +24,9 @@ const Heading = styled(UiText).attrs(({ as, level }) => ({
   variant: `h${level}`,
   className: 'f-Heading',
 }))`
-  color: var(--f-color-text--primary);
+  color: ${theme.color.text.primary};
   margin-top: ${styles.marginTop};
-  margin-bottom: var(--f-space--m);
+  margin-bottom: ${theme.space.m};
 `;
 
 Heading.propTypes = {

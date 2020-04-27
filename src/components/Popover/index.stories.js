@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Button from '../Button';
 import Heading from '../Heading';
 import Popover from '.';
+import { theme } from '../../theme';
 
 const { PLACEMENTS } = Popover;
 const ITEM_SPACING = '25%';
@@ -18,8 +19,8 @@ stories.add('All states', () => (
       style={{
         position: 'relative',
         height: '15rem',
-        border: '1px dashed var(--f-color-brandSecondary--light)',
-        borderRadius: 'var(--f-borderRadius--m)',
+        border: `1px dashed ${theme.color.brand.secondaryLight}`,
+        borderRadius: theme.borderRadius.m,
       }}
     >
       <div

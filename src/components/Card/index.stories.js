@@ -5,13 +5,15 @@ import { boolean, select } from '@storybook/addon-knobs';
 import Card from '.';
 import Heading from '../Heading';
 import Text from '../Text';
+import { theme } from '../../theme';
 
 const { ELEVATIONS, SIZES } = Card;
 const sizes = Object.values(SIZES);
 
-const Container = (
-  { children }, // eslint-disable-line react/prop-types
-) => <div style={{ margin: 'var(--f-space--xl) 0' }}>{children}</div>;
+// eslint-disable-next-line react/prop-types
+const Container = ({ children }) => (
+  <div style={{ margin: `${theme.space.xl} 0` }}>{children}</div>
+);
 
 const stories = storiesOf('Card', module);
 

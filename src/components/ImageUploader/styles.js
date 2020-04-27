@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import FileUploader from '../FileUploader';
+import { theme } from '../../theme';
 
 export const PreviewHover = styled.div`
   position: absolute;
@@ -9,7 +11,7 @@ export const PreviewHover = styled.div`
   bottom: 0;
   border-radius: 1rem;
   background: rgba(25, 1, 52, 0.8); /* --f-color-text--primary */
-  padding: 0 var(--f-space--m);
+  padding: 0 ${theme.space.m};
   text-align: right;
   opacity: 0;
   z-index: 15;

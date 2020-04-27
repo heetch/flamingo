@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
+import { theme } from '../../theme';
 
 const fadeIn = keyframes`
   0% {
@@ -35,8 +36,8 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--f-color-element--overlay);
-  z-index: var(--f-zIndex--Overlay);
+  background-color: ${theme.color.element.overlay};
+  z-index: ${theme.zIndex.overlay};
   animation: ${styles.animation} 0.2s ease-out;
   opacity: 0.8;
 `;

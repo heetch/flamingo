@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import FormElement from '../FormComponents/FormElement';
+import { theme } from '../../theme';
 
 export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   className: 'f-Datepicker',
@@ -15,11 +16,11 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .DayPicker-Day--today {
-    color: var(--f-color-brandPrimary);
+    color: ${theme.color.brand.primary};
   }
 
   .DayPicker-Weekday {
-    color: var(--f-color-element--tertiary);
+    color: ${theme.color.element.tertiary};
   }
 
   .DayPicker-Month {
@@ -28,20 +29,20 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .DayPicker:not(.DayPicker--interactionDisabled)
     .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-    background-color: var(--f-color-element--tertiary);
+    background-color: ${theme.color.element.tertiary};
   }
 
   .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-    background-color: var(--f-color-brandPrimary);
+    background-color: ${theme.color.brand.primary};
   }
 `;
 
 export const StyledDatepickerNavigation = styled.div`
-  padding-left: var(--f-space--xxl);
-  padding-right: var(--f-space--xl);
-  padding-top: var(--f-space--xl);
-  color: var(--f-color-text--primary);
-  font-weight: var(--f-fontWeight--bold);
+  padding-left: ${theme.space.xxl};
+  padding-right: ${theme.space.xl};
+  padding-top: ${theme.space.xl};
+  color: ${theme.color.text.primary};
+  font-weight: ${theme.fontWeight.bold};
   display: flex;
   justify-content: space-between;
   align-items: center;

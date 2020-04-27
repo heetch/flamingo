@@ -4,6 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import Radio from '.';
 import Heading from '../Heading';
+import { theme } from '../../theme';
 
 const defaultProps = {
   children: 'Label',
@@ -12,15 +13,19 @@ const defaultProps = {
 
 const stories = storiesOf('Form/Radio', module);
 
+// eslint-disable-next-line react/prop-types
+const Wrapper = ({ children }) => (
+  <div style={{ marginRight: theme.space.xl, width: '10rem' }}>{children}</div>
+);
 stories.add('All states', () => (
   <>
     <Heading>Radio</Heading>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>Default</Heading>
         <Radio {...defaultProps} id='r1-1' name='r1' />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>& disabled</Heading>
         <Radio {...defaultProps} id='r2-1' name='r2' disabled />
@@ -28,10 +33,10 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>Checked</Heading>
         <Radio {...defaultProps} id='r3-1' name='r3' checked />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>& disabled</Heading>
         <Radio {...defaultProps} id='r4-1' name='r4' checked disabled />
@@ -39,10 +44,10 @@ stories.add('All states', () => (
     </div>
 
     <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 'var(--f-space--xl)', width: '10rem' }}>
+      <Wrapper>
         <Heading level={2}>No text</Heading>
         <Radio onChange={defaultProps.onChange} id='r5-1' name='r5' />
-      </div>
+      </Wrapper>
       <div>
         <Heading level={2}>With helper</Heading>
         <Radio
