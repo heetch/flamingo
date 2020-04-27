@@ -19,7 +19,7 @@ const placements = Object.values(PLACEMENTS);
 export const PopoverWrapper = styled.div`
   padding: ${theme.space.s};
   opacity: 0;
-  transition: opacity 0.1s ease-out;
+  transition: opacity 0.2s ease-out;
 `;
 
 export const Trigerrer = styled('div').attrs(() => ({
