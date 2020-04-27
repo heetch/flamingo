@@ -11,6 +11,9 @@
   "engines": {
     "node": ">= 12.x"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "precommit": "lerna run --concurrency 1 --stream precommit",
   "scripts": {
     "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
@@ -47,7 +50,7 @@
     "@svgr/rollup": "^4.3.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "1.10.5",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
