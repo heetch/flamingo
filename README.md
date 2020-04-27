@@ -12,6 +12,42 @@
 
 You can see all the components in action [here](https://flamingo.heetch-eng.now.sh).
 
+## How to use
+
+From npm:
+`npm install @heetch/flamingo-react`
+
+From yarn:
+`yarn add @heetch/flamingo-react`
+
+Add the CSS globally (the file is used to add CSS variables):
+
+```javascript
+import '@heetch/flamingo-react/dist/styles.css';
+```
+
+You can then import all components directly:
+
+```
+import { Button, Icon, SidePanel } from '@heetch/flamingo-react';
+```
+
+And extend them using `styled` from Styled Components
+
+> Note that not all components are exported as a StyledComponent due to having logic inside,
+> but the building blocks, like Button, Icon, Grid, are all pure Styled Components.
+
+```jsx
+export const FlamingoSpinner = styled(Spinner).attrs(props => ({
+  size: props.size || 'l',
+}))`
+  margin: ${({ margin }) => margin || '20px auto'};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+```
+
 ## CSS package (deprecated)
 
 The `@heetch/flamingo-css` package is now deprecated as we are now using `styled-components`

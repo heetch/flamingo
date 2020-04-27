@@ -20,7 +20,7 @@ const Table = React.forwardRef(
     },
     ref,
   ) => {
-    const tableOps = useTable(
+    const tableProps = useTable(
       {
         columns,
         data,
@@ -35,7 +35,7 @@ const Table = React.forwardRef(
       rows,
       prepareRow,
       state: { sortBy },
-    } = tableOps;
+    } = tableProps;
 
     React.useMemo(
       () =>
