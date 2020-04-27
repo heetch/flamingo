@@ -10,7 +10,7 @@ import Icon from '../Icon';
 const ICONS = { ...Icon.ICONS, None: null };
 
 const getId = () => `input-${Math.random()}`;
-const stories = storiesOf('Form controls/Input', module);
+const stories = storiesOf('Form/Input', module);
 
 stories.add('All states', () => (
   <>

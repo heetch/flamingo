@@ -5,10 +5,10 @@ import UiText from '../UiText';
 
 const variants = Object.values(UiText.VARIANTS);
 
-const Text = styled(UiText).attrs(() => ({
+const Text = styled(UiText).attrs(({ textColor }) => ({
   className: 'f-Text',
+  textColor: textColor || 'var(--f-color-text--secondary)',
 }))`
-  color: var(--f-color-text--secondary);
   text-align: ${({ isNumber }) => isNumber && 'right'};
 `;
 
@@ -21,7 +21,6 @@ Text.propTypes = {
 
 Text.defaultProps = {
   as: 'p',
-  isNumber: false,
   variant: UiText.VARIANTS.content,
 };
 

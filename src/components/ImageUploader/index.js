@@ -119,7 +119,6 @@ ImageUploader.propTypes = {
 
 ImageUploader.defaultProps = {
   accept: 'image/*',
-  multiple: false,
   value: [],
 };
 

@@ -58,11 +58,4 @@ Textarea.propTypes = {
   valid: PropTypes.bool,
 };
 
-Textarea.defaultProps = {
-  disabled: false,
-  invalid: false,
-  placeholder: '',
-  valid: false,
-};
-
 export default Textarea;

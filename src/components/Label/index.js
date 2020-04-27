@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import UiText from '../UiText';
 
-const Label = styled('label').attrs(() => ({
+const Label = styled(UiText).attrs(() => ({
   className: 'f-Label',
   variant: UiText.VARIANTS.subContentBold,
   as: 'label',
@@ -21,10 +21,6 @@ const Label = styled('label').attrs(() => ({
 Label.propTypes = {
   className: PropTypes.string,
   htmlFor: PropTypes.string.isRequired,
-};
-
-Label.defaultProps = {
-  className: undefined,
 };
 
 export default Label;

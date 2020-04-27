@@ -20,7 +20,7 @@ const fadeOut = keyframes`
 `;
 
 const styles = {
-  // If we don't a isOpen value it won't animate
+  // If we don't pass a `isOpen` value it won't animate
   animation({ isOpen, animateOnMount }) {
     if (isOpen && animateOnMount) return fadeIn;
     if (isOpen === false) return fadeOut;
@@ -42,8 +42,8 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
 `;
 
 Overlay.propTypes = {
-  isOpen: PropTypes.boolean,
-  animateOnMount: PropTypes.boolean,
+  isOpen: PropTypes.bool,
+  animateOnMount: PropTypes.bool,
 };
 
 export default Overlay;

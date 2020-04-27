@@ -106,8 +106,6 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
-  invalid: false,
-  valid: false,
   size: SIZES.NORMAL,
   valueIcon: Icon.ICONS.IconArrowRight,
 };

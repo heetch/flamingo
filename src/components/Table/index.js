@@ -100,7 +100,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       Header: PropTypes.string,
-      accessor: PropTypes.string.isRequired,
+      accessor: PropTypes.string,
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
@@ -120,9 +120,7 @@ Table.propTypes = {
 Table.defaultProps = {
   columns: [],
   data: [],
-  isSortable: false,
   onChangeSort: () => {},
-  manualSorting: false,
 };
 
 Table.HeaderCell = HeaderCell;

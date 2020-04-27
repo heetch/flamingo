@@ -44,10 +44,4 @@ TableHeaderCell.propTypes = {
   isSortable: PropTypes.bool,
 };
 
-TableHeaderCell.defaultProps = {
-  isSorted: false,
-  isSortedDesc: false,
-  isSortable: false,
-};
-
 export default TableHeaderCell;
