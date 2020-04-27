@@ -20,12 +20,7 @@ const Table = React.forwardRef(
     },
     ref,
   ) => {
-    const {
-      headerGroups,
-      rows,
-      prepareRow,
-      state: { sortBy },
-    } = useTable(
+    const tableOps = useTable(
       {
         columns,
         data,
@@ -34,6 +29,13 @@ const Table = React.forwardRef(
       },
       useSortBy,
     );
+
+    const {
+      headerGroups,
+      rows,
+      prepareRow,
+      state: { sortBy },
+    } = tableOps;
 
     React.useMemo(
       () =>
