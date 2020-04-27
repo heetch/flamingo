@@ -23,8 +23,8 @@ const types = Object.values(TYPES);
 
 const Alert = React.forwardRef(
   ({ title, children, type, onClose, ...props }, ref) => (
-    <StyledAlert isClosable={!!onClose} ref={ref} type={type} {...props}>
-      <AlertIcon className='f-Alert-icon' type={type}>
+    <StyledAlert isClosable={!!onClose} ref={ref} alertType={type} {...props}>
+      <AlertIcon className='f-Alert-icon' alertType={type}>
         <Icon icon={icons[type]} />
       </AlertIcon>
 

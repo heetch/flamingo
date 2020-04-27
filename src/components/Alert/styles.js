@@ -3,10 +3,10 @@ import IconButton from '../IconButton';
 import { theme } from '../../theme';
 
 const styles = {
-  color({ type }) {
-    if (type === 'error') return theme.color.element.error;
-    if (type === 'success') return theme.color.element.success;
-    if (type === 'information') return theme.color.brand.secondary;
+  color({ alertType }) {
+    if (alertType === 'error') return theme.color.element.error;
+    if (alertType === 'success') return theme.color.element.success;
+    if (alertType === 'information') return theme.color.brand.secondary;
 
     return undefined;
   },
