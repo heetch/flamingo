@@ -19,7 +19,8 @@ const placements = Object.values(PLACEMENTS);
 export const PopoverWrapper = styled.div`
   padding: ${theme.space.s};
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  visibility: hidden;
 `;
 
 export const Trigerrer = styled('div').attrs(() => ({
@@ -27,6 +28,7 @@ export const Trigerrer = styled('div').attrs(() => ({
 }))`
   &:hover + ${PopoverWrapper} {
     opacity: 1;
+    visibility: visible;
   }
 `;
 
