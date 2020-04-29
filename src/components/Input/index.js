@@ -20,6 +20,7 @@ const Input = React.forwardRef(({ id, icon: defaultIcon, ...props }, ref) => {
       <FormElement
         as='input'
         name={id}
+        id={id}
         ref={ref}
         withIcon={!!icon}
         {...props}

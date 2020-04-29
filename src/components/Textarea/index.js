@@ -32,6 +32,7 @@ const Textarea = React.forwardRef(
           ref={ref}
           as='textarea'
           withIcon={valid || invalid}
+          id={id}
           name={id}
           valid={valid}
           invalid={invalid}
