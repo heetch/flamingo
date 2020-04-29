@@ -132,6 +132,7 @@ export const StyledButton = styled('button').attrs(() => ({
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: ${theme.color.text.white};
+    text-decoration: none;
   }
 
   &:active {
