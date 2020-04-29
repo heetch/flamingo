@@ -5,7 +5,9 @@ import cx from 'classnames';
 import Heading from '../Heading';
 import IconButton from '../IconButton';
 import Overlay from '../Overlay';
+
 import { StyledSidePanel, Content, Header, Footer } from './styles';
+
 /**
  * SidePanel will animate while mounting and un-mounting
  * `isOpen` controls the animation while `shouldRender` state controls the rendering
