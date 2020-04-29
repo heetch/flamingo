@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import { StyledSelector, SelectorItem } from './styles';
 
@@ -40,7 +42,10 @@ const Selector = React.forwardRef(
               onKeyPress={({ which }) =>
                 which === 13 ? handleOptionClick(index, option) : undefined
               }
-              className={'f-Selector-item'}
+              className={cx('f-Selector-item', {
+                'is-active': activeIndex === index,
+                'is-disabled': option.disabled === true,
+              })}
               isActive={activeIndex === index}
               isDisabled={props.disabled || option.disabled === true}
               tabIndex={0}
