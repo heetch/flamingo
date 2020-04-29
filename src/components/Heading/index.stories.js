@@ -30,10 +30,20 @@ stories.add('All states', () => (
       </Wrapper>
     ))}
 
-    <Heading level={2}>Custom tag</Heading>
+    <Heading level={2}>Custom</Heading>
     <Wrapper>
       <Heading level={2} as='h6'>
         h6 with h2 styles
+      </Heading>
+    </Wrapper>
+    <Wrapper>
+      <Heading
+        level={2}
+        textColor={'purple'}
+        marginTop={'40px'}
+        marginBottom={'40px'}
+      >
+        h2 with custom props
       </Heading>
     </Wrapper>
   </>

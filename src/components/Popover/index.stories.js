@@ -9,7 +9,7 @@ import { theme } from '../../theme';
 const { PLACEMENTS } = Popover;
 const ITEM_SPACING = '25%';
 
-const stories = storiesOf('Popover', module);
+const stories = storiesOf('Popover-Tooltip', module);
 
 stories.add('All states', () => (
   <>

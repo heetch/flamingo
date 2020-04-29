@@ -24,6 +24,9 @@ stories.add('All states', () => (
     <UiText as='div' variant={VARIANTS.h1}>
       As a div with `h1` stylings
     </UiText>
+    <UiText fontSize={'30px'} lineHeight={'100px'} fontWeight={'bold'}>
+      Normal component with custom fontSize, fontWeight and lineHeight
+    </UiText>
   </>
 ));
 

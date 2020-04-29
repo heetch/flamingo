@@ -8,7 +8,7 @@ import Icon from '../Icon';
 import Table from '.';
 import Text from '../Text';
 
-const data = [...new Array(50)].map(() => ({
+const data = [...new Array(7)].map(() => ({
   string: Math.random(),
   number: Math.random().toFixed(2),
   custom: 'https://myrealdomain.com/images/avatar-icon-5.png',
