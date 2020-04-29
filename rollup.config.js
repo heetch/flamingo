@@ -25,7 +25,9 @@ export default {
   plugins: [
     external(),
     postcss({
-      globalModulePaths: [/node_modules\/react-day-picker/],
+      modules: {
+        globalModulePaths: [/node_modules\/react-day-picker/],
+      },
     }),
     url(),
     svgr(),
