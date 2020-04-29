@@ -12,10 +12,9 @@ const styles = {
     return undefined;
   },
   boxShadow({ isSelected, elevation }) {
-    if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
-    if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
     if (isSelected) return `inset 0 0 0 3px ${theme.color.brand.primary}`;
-
+    if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
+    if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
     return `0 0 0 1px ${theme.color.element.inactive}`;
   },
 };

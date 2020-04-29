@@ -6,11 +6,14 @@ import { object } from '@storybook/addon-knobs';
 import Heading from '../Heading';
 import Selector from '.';
 
-const defaultProps = () => ({
-  id: `selector-${Math.random()}`,
-  onChange: action('onChange'),
-});
-
+const defaultProps = {
+  onChange: () => {},
+  options: [
+    { label: 'Luke', value: 1 },
+    { label: 'Han', value: 2 },
+    { label: 'Chewy', value: 3 },
+  ],
+};
 const stories = storiesOf('Form/Selector', module);
 
 stories.add('All states', () => (
@@ -19,82 +22,45 @@ stories.add('All states', () => (
     <Heading level={2}>States</Heading>
 
     <Heading level={3}>Not selected</Heading>
-    <Selector
-      {...defaultProps()}
-      options={object('Not Selected options', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-        { label: 'Chewy', value: 3 },
-        { label: 'Leia', value: 4 },
-      ])}
-    />
+    <Selector {...defaultProps} id='not-selected' />
 
     <Heading level={3}>Hover</Heading>
-    <Selector
-      {...defaultProps()}
-      className='is-hover'
-      options={object('Hover', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-      ])}
-    />
+    <Selector {...defaultProps} id='is-hover' className='is-hover' />
 
     <Heading level={3}>Disabled</Heading>
     <Selector
-      {...defaultProps()}
-      options={object('Disabled options', [
-        { label: 'Luke', value: 1, disabled: true },
-        { label: 'Darth', value: 4 },
-        { label: 'Chewy', value: 3 },
-      ])}
+      {...defaultProps}
+      id='disabled-option'
+      options={[
+        ...defaultProps.options,
+        { label: 'Leia', value: 4, disabled: true },
+      ]}
     />
 
     <Heading level={3}>Selected</Heading>
-    <Selector
-      {...defaultProps()}
-      defaultIndex={1}
-      options={object('Selected options', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-      ])}
-    />
+    <Selector {...defaultProps} id='default-index' defaultIndex={1} />
 
     <Heading level={3}>Selected and disabled</Heading>
     <Selector
-      {...defaultProps()}
+      {...defaultProps}
+      id='selected-and-disabled'
       defaultIndex={0}
       disabled
-      options={object('Selected and disabled options', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-        { label: 'Chewy', value: 3 },
-      ])}
     />
 
     <Heading level={3}>Invalid</Heading>
-    <Selector
-      {...defaultProps()}
-      defaultIndex={1}
-      isInvalid
-      options={object('Invalid options', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-        { label: 'Chewy', value: 3 },
-      ])}
-    />
+    <Selector {...defaultProps} id='invalid' defaultIndex={1} isInvalid />
 
     <Heading level={3}>Valid</Heading>
-    <Selector
-      {...defaultProps()}
-      defaultIndex={2}
-      isValid
-      options={object('Valid options', [
-        { label: 'Luke', value: 1 },
-        { label: 'Han', value: 2 },
-        { label: 'Chewy', value: 3 },
-      ])}
-    />
+    <Selector {...defaultProps} id='valid' defaultIndex={2} isValid />
   </>
 ));
 
-stories.add('Playground', () => <Selector {...defaultProps()} />);
+stories.add('Playground', () => (
+  <Selector
+    {...defaultProps}
+    id='playground'
+    onChange={action('onChange')}
+    options={object('Options', defaultProps.options)}
+  />
+));
