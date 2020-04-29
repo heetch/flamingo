@@ -69,9 +69,9 @@ const styles = {
 const UiText = styled('p').attrs(() => ({
   className: `f-UiText`,
 }))`
-  font-weight: ${styles.fontWeight};
-  font-size: ${styles.fontSize};
-  line-height: ${styles.lineHeight};
+  font-weight: ${({ fontWeight }) => fontWeight || styles.fontWeight};
+  font-size: ${({ fontSize }) => fontSize || styles.fontSize};
+  line-height: ${({ lineHeight }) => lineHeight || styles.lineHeight};
   margin: ${({ margin }) => margin};
   color: ${({ textColor }) => textColor};
 `;
@@ -81,6 +81,9 @@ UiText.propTypes = {
   margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   textColor: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
+  lineHeight: PropTypes.string,
 };
 
 UiText.defaultProps = {
