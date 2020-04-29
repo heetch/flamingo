@@ -82,7 +82,7 @@ UiText.propTypes = {
   textColor: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
   fontSize: PropTypes.string,
-  fontWeight: PropTypes.string,
+  fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lineHeight: PropTypes.string,
 };
 
