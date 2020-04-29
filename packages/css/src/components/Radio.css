@@ -1,9 +1,0 @@
-.f-Radio {
-  border-radius: var(--size);
-  transition: all 0.1s ease-out;
-}
-
-.f-Radio:checked {
-  border-width: 6px;
-  border-color: var(--f-color-brandPrimary);
-}

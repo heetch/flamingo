@@ -1,22 +1,95 @@
 {
-  "version": "0.0.1",
-  "devDependencies": {
-    "lerna": "^3.19.0",
-    "npm-run-all": "^4.1.5"
-  },
+  "name": "@heetch/flamingo-react",
+  "version": "1.9.3",
+  "description": "Heetch Web Design System - Styled Components based",
+  "author": "Heetch",
+  "license": "MIT",
+  "repository": "https://github.com/heetch/flamingo",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "engines": {
     "node": ">= 12.x"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "precommit": "lerna run --concurrency 1 --stream precommit",
   "scripts": {
     "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
-    "prettier": "prettier --write 'packages/**/*.{js,jsx,json,css,md}'",
-    "css": "yarn --cwd packages/css start",
-    "css:setup": "yarn --cwd packages/css install",
-    "react": "yarn --cwd packages/react start",
-    "react:setup": "yarn --cwd packages/react install",
-    "react:storybook": "yarn --cwd packages/react start:storybook",
-    "start": "npm-run-all --parallel css react react:storybook",
-    "setup": "yarn css:setup && yarn react:setup"
+    "start-css": "postcss src/styles.css -o dist/styles.css -w",
+    "build-css": "postcss src/styles.css -o dist/styles.css",
+    "build": "rollup -c",
+    "build:storybook": "build-storybook -c .storybook -o ./build/",
+    "start-rollup": "rollup -c -w",
+    "start:storybook": "start-storybook -p 9001 -c .storybook",
+    "start": "npm-run-all --parallel start-css start-rollup start:storybook",
+    "lint": "eslint --config=.eslintrc 'src/**/*.{js,jsx}'",
+    "prepare": "npm run build",
+    "predeploy": "npm run build && npm run build:storybook",
+    "icons": "node scripts/icons",
+    "prettier": "prettier --check 'src/**/*.{js,jsx,json,md,css}'"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.18",
+    "@svgr/rollup": "^4.3.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "1.10.5",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "lerna": "^3.19.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.23",
+    "postcss-cli": "^6.1.3",
+    "postcss-easy-import": "^3.0.0",
+    "prettier": "^1.19.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.4.1",
+    "react-table": "next",
+    "rollup": "^2.7.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.9.0",
+    "rollup-plugin-url": "^3.0.1",
+    "svgo": "^1.3.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "normalize.css": "^8.0.1",
+    "react-day-picker": "^7.4.8",
+    "react-popper": "^1.3.6",
+    "styled-components": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

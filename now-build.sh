@@ -9,7 +9,7 @@ umask 077
 IFS=$'\n\t'
 
 # prerequisites
-yarn setup
+yarn install
 
 # build
-yarn --cwd packages/react run build:storybook
+yarn build:storybook
