@@ -9,23 +9,23 @@ import { theme } from '../../theme';
 
 const sizes = Object.values(Icon.SIZES);
 
-const IconButtonComponent = ({
-  className,
-  icon,
-  size,
-  iconColor,
-  disabled,
-  ...props
-}) => (
-  <Button
-    className={cx('f-Button--icon', className)}
-    intent={Button.INTENTS.SECONDARY}
-    variant={Button.VARIANTS.MINIMAL}
-    disabled={disabled}
-    {...props}
-  >
-    <Icon icon={icon} size={size} iconColor={!disabled && iconColor} />
-  </Button>
+const IconButtonComponent = React.forwardRef(
+  ({ className, icon, size, iconColor, disabled, ...props }, ref) => (
+    <Button
+      className={cx('f-Button--icon', className)}
+      intent={Button.INTENTS.SECONDARY}
+      variant={Button.VARIANTS.MINIMAL}
+      disabled={disabled}
+      ref={ref}
+      {...props}
+    >
+      <Icon
+        icon={icon}
+        size={size}
+        iconColor={disabled ? undefined : iconColor}
+      />
+    </Button>
+  ),
 );
 
 IconButtonComponent.propTypes = {
@@ -44,6 +44,7 @@ const IconButton = styled(IconButtonComponent)`
 
   &:hover {
     background-color: ${theme.color.element.inactive};
+    color: ${theme.color.icon.dark};
   }
 
   & + & {
