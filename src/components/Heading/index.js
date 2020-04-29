@@ -24,14 +24,17 @@ const Heading = styled(UiText).attrs(({ as, level }) => ({
   variant: `h${level}`,
   className: 'f-Heading',
 }))`
-  color: ${theme.color.text.primary};
-  margin-top: ${styles.marginTop};
-  margin-bottom: ${theme.space.m};
+  color: ${({ textColor }) => textColor || theme.color.text.primary};
+  margin-top: ${({ marginTop }) => marginTop || styles.marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom || theme.space.m};
 `;
 
 Heading.propTypes = {
   as: PropTypes.node,
   className: PropTypes.string,
+  textColor: PropTypes.string,
+  marginTop: PropTypes.string,
+  marginBottom: PropTypes.string,
   level: PropTypes.oneOf(HEADING_LEVELS),
 };
 
