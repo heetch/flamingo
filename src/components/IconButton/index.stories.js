@@ -10,18 +10,21 @@ const { ICONS } = Icon;
 
 const stories = storiesOf('Buttons/IconButton', module);
 
-stories.add('Playground', () => (
+stories.add('All states', () => (
   <>
     <Heading>IconButton</Heading>
+    <IconButton icon={ICONS.IconAlertOctagon} />
+
+    <Heading level={2}>With custom color</Heading>
+    <IconButton icon={ICONS.IconAlertOctagon} iconColor='blue' />
+  </>
+));
+
+stories.add('Playground', () => (
+  <>
     <IconButton
       disabled={boolean('Disabled', false)}
       icon={select('Icon', ICONS, ICONS.IconCandy)}
-    />
-
-    <IconButton
-      disabled={boolean('Disabled', false)}
-      icon={ICONS.IconAlertOctagon}
-      iconColor='blue'
     />
   </>
 ));
