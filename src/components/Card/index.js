@@ -12,18 +12,10 @@ const styles = {
     return undefined;
   },
   boxShadow({ isSelected, elevation }) {
-    if (!isSelected && !elevation)
-      return `0 0 0 1px ${theme.color.element.inactive}`;
-
-    const shadows = [];
-
-    if (isSelected)
-      shadows.push(`inset 0 0 0 3px ${theme.color.brand.primary}`);
-
-    if (elevation === 2) shadows.push('0 4px 20px rgba(25, 1, 52, 0.14)');
-    if (elevation === 1) shadows.push('0 2px 10px rgba(25, 1, 52, 0.08)');
-
-    return shadows.join(', ');
+    if (isSelected) return `inset 0 0 0 3px ${theme.color.brand.primary}`;
+    if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
+    if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
+    return `0 0 0 1px ${theme.color.element.inactive}`;
   },
 };
 
