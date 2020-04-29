@@ -62,13 +62,13 @@ stories.add('Playground', () => (
       <StoryDropdown />
     </DropdownContainer>
 
-    <Heading>Using portal</Heading>
+    <Heading level={2}>Using portal</Heading>
 
     <DropdownContainer>
       <StoryDropdown portalNode={document.body} />
     </DropdownContainer>
 
-    <Heading>With modifiers</Heading>
+    <Heading level={2}>With modifiers</Heading>
     <DropdownContainer>
       <StoryDropdown
         modifiers={{
@@ -80,19 +80,19 @@ stories.add('Playground', () => (
       />
     </DropdownContainer>
 
-    <Heading>Different positions</Heading>
+    <Heading level={2}>With different positions</Heading>
 
-    <Heading level={2}>Top End</Heading>
+    <Heading level={3}>Top End</Heading>
     <DropdownContainer>
       <StoryDropdown placement={'top-end'} />
     </DropdownContainer>
 
-    <Heading level={2}>Left </Heading>
+    <Heading level={3}>Left</Heading>
     <DropdownContainer>
       <StoryDropdown placement={'left'} />
     </DropdownContainer>
 
-    <Heading level={2}>Right Start </Heading>
+    <Heading level={3}>Right Start</Heading>
     <DropdownContainer>
       <StoryDropdown placement={'right-start'} />
     </DropdownContainer>
