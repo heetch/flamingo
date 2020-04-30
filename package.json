@@ -17,8 +17,8 @@
   "precommit": "lerna run --concurrency 1 --stream precommit",
   "scripts": {
     "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
-    "start-css": "postcss src/index.css -o dist/styles.css -w",
-    "build-css": "postcss src/index.css -o dist/styles.css",
+    "start-css": "postcss src/styles.css -o dist/styles.css -w",
+    "build-css": "postcss src/styles.css -o dist/styles.css",
     "build": "yarn build-css && rollup -c",
     "build:storybook": "build-storybook -c .storybook -o ./build/",
     "start-rollup": "rollup -c -w",
