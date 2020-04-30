@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Datepicker from '.';
@@ -13,28 +13,30 @@ const dateKnob = (name, defaultValue) => {
   return new Date(date);
 };
 
-stories.add('Playground', () => (
+const noop = () => {};
+
+stories.add('All states', () => (
   <>
     <Heading>Datepicker</Heading>
-    <Datepicker
-      onChange={action('onChange')}
-      value={dateKnob('value', '2020-11-04')}
-    />
 
-    <Heading>Datepicker invalid</Heading>
-    <Datepicker
-      invalid={boolean('invalid', true)}
-      onChange={action('onChange')}
-    />
+    <Heading level={2}>With value</Heading>
+    <Datepicker onChange={noop} value={new Date('2020-11-04')} />
 
-    <Heading>Datepicker valid</Heading>
-    <Datepicker valid={boolean('valid', true)} onChange={action('onChange')} />
+    <Heading level={2}>With custom locale</Heading>
+    <Datepicker locale='fr-FR' placeholder='Choisir une date' onChange={noop} />
 
-    <Heading>Datepicker FR</Heading>
-    <Datepicker
-      locale='fr-FR'
-      placeholder='Choisir une date'
-      onChange={action('onChange')}
-    />
+    <Heading level={2}>Validation</Heading>
+    <Datepicker invalid onChange={noop} />
+    <Datepicker valid onChange={noop} />
   </>
+));
+
+stories.add('Playground', () => (
+  <Datepicker
+    onChange={action('onChange')}
+    invalid={boolean('invalid')}
+    valid={boolean('valid')}
+    locale={select('locale', ['en-US', 'fr-FR'])}
+    value={dateKnob('value', '2020-11-04')}
+  />
 ));

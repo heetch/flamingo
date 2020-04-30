@@ -5,7 +5,7 @@ import { theme } from '../../theme';
 const slideIn = keyframes`
   0% {
     transform: translateX(100%);
-  } 
+  }
   100%{
     transform: translateX(0);
   }
@@ -14,7 +14,7 @@ const slideIn = keyframes`
 const slideOut = keyframes`
   0% {
     transform: translateX(0);
-  } 
+  }
   100%{
     transform: translateX(100%);
   }
@@ -68,4 +68,5 @@ export const Footer = styled('div')`
   justify-content: flex-end;
   border-top: 1px solid ${theme.color.element.inactive};
   padding: 0 var(--content-hSpacing);
+  background-color: #fff;
 `;
