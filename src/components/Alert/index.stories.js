@@ -1,12 +1,21 @@
 import React from 'react';
+import { Box } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Alert from '.';
+import AlertV1 from '.';
+import AlertV2 from './index.new';
 import Heading from '../Heading';
 
-const { TYPES } = Alert;
+const { TYPES } = AlertV1;
+
+const Alert = props => (
+  <Box>
+    <AlertV1 {...props} />
+    <AlertV2 {...props} />
+  </Box>
+);
 
 const stories = storiesOf('Alert', module);
 
@@ -17,11 +26,11 @@ stories.add('All states', () => (
     {Object.values(TYPES).map(type => (
       <Alert
         key={type}
-        title={`Inline alert of type ${type}`}
-        onClose={action(`Alert ${type} closed!`)}
+        title={`Alert of type ${type}`}
         type={type}
+        onClose={() => {}}
       >
-        Alert message
+        Description
       </Alert>
     ))}
   </>

@@ -13,7 +13,7 @@ const Button = ({ intent, ...props }) => {
   return (
     <ChakraButton
       fontSize='s'
-      borderRadius='xl'
+      rounded='xl'
       height='2.375rem'
       variantColor={intent}
       {...props}
