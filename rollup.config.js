@@ -36,8 +36,7 @@ export default {
     resolve(),
     commonjs(),
     visualizer({
-      filename: './dist/stats.json',
-      json: true,
+      filename: 'dist/stats.html',
       gzipSize: true,
     }),
   ],

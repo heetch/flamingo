@@ -28,7 +28,8 @@
     "prepare": "npm run build",
     "predeploy": "npm run build && npm run build:storybook",
     "icons": "node scripts/icons",
-    "prettier": "prettier --check 'src/**/*.{js,jsx,json,md,css}'"
+    "prettier": "prettier --check 'src/**/*.{js,jsx,json,md,css}'",
+    "analyze-bundle": "npm run build && open dist/stats.html"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
