@@ -19,7 +19,7 @@
     "deploy": "lerna bootstrap --npm-client=yarn && lerna publish",
     "start-css": "postcss src/styles.css -o dist/styles.css -w",
     "build-css": "postcss src/styles.css -o dist/styles.css",
-    "build": "rollup -c",
+    "build": "yarn build-css && rollup -c",
     "build:storybook": "build-storybook -c .storybook -o ./build/",
     "start-rollup": "rollup -c -w",
     "start:storybook": "start-storybook -p 9001 -c .storybook",
