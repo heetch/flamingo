@@ -1,18 +1,27 @@
 import React from 'react';
+import { Box } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
-import Button from '.';
+import ButtonV1 from '.';
+import ButtonV2 from './index.new';
 import Heading from '../Heading';
 
 import { capitalize } from '../../utils';
 
-const { INTENTS, VARIANTS } = Button;
+const { INTENTS, VARIANTS } = ButtonV1;
 
 const intents = ['primary', 'secondary'];
 const variants = ['outline', 'minimal'];
 
 const stories = storiesOf('Buttons/Button', module);
+
+const Button = props => (
+  <Box>
+    <ButtonV1 {...props} />
+    <ButtonV2 {...props} ml={2} />
+  </Box>
+);
 
 stories.add('All states', () => (
   <>
