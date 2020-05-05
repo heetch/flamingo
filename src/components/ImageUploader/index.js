@@ -12,8 +12,20 @@ import { StyledImageUploader, UploaderPreview, PreviewHover } from './styles';
 const getDefaultValuePreviews = files =>
   Array.isArray(files) ? files.map(file => file.preview) : [];
 
+const validateFilesType = (files, accept) => {
+  const formats = accept.split(',');
+  return files.reduce((isValid, file) => {
+    // if at least one file is not valid, return false
+    if (!isValid) return isValid;
+    return formats.includes(file.type);
+  }, true);
+};
+
 const ImageUploader = React.forwardRef(
-  ({ accept, className, multiple, onChange, value, ...props }, ref) => {
+  (
+    { accept, className, multiple, onBadFormat, onChange, value, ...props },
+    ref,
+  ) => {
     const [files, setFiles] = React.useState(value);
     const [preview, setPreview] = React.useState(
       getDefaultValuePreviews(value),
@@ -32,6 +44,12 @@ const ImageUploader = React.forwardRef(
     };
 
     const handleFileChange = inputFiles => {
+      if (validateFilesType(inputFiles, accept)) {
+        onBadFormat(inputFiles, accept);
+        setFiles([]);
+        return;
+      }
+
       const nextFiles = multiple ? [...files, ...inputFiles] : inputFiles;
 
       setFiles(nextFiles);
@@ -108,6 +126,7 @@ ImageUploader.propTypes = {
   id: PropTypes.string.isRequired,
   multiple: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
+  onBadFormat: PropTypes.func,
   value: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -118,7 +137,8 @@ ImageUploader.propTypes = {
 };
 
 ImageUploader.defaultProps = {
-  accept: 'image/*',
+  accept: 'image/jpeg,image.png',
+  onBadFormat: () => {},
   value: [],
 };
 

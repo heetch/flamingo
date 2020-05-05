@@ -66,6 +66,7 @@ stories.add('Playground', () => (
   <ImageUploader
     id='input-id'
     onChange={action('onChange')}
+    onBadFormat={action('onBadFormat')}
     multiple={boolean('Has multiple files', true)}
   />
 ));
