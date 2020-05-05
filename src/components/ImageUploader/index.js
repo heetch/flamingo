@@ -44,7 +44,7 @@ const ImageUploader = React.forwardRef(
     };
 
     const handleFileChange = inputFiles => {
-      if (validateFilesType(inputFiles, accept)) {
+      if (!validateFilesType(inputFiles, accept)) {
         onBadFormat(inputFiles, accept);
         setFiles([]);
         return;
