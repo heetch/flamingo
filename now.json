@@ -1,12 +1,5 @@
 {
   "name": "flamingo",
   "version": 2,
-  "builds": [
-    {
-      "src": "now-build.sh",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ],
   "regions": ["cdg1", "dub1", "bru1", "lhr1"]
 }
