@@ -1,5 +1,4 @@
 {
-  "name": "flamingo",
   "version": 2,
   "regions": ["cdg1", "dub1", "bru1", "lhr1"]
 }
