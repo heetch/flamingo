@@ -1,99 +1,52 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { Manager, Reference, Popper } from 'react-popper';
+import { Menu, MenuButton, MenuList } from '@chakra-ui/core';
 
-import Overlay from '../Overlay';
-import { StyledDropdown } from './styles';
+// import Overlay from '../Overlay';
+import Item from '../Item';
+// import { StyledDropdown } from './styles';
 
-const Dropdown = ({
-  children,
-  clickOutsideToHide,
-  onHide,
-  onOpen,
-  portalNode,
-  ...props
-}) => {
-  const [isOpen, setIsOpen] = React.useState(props.isOpen);
-  const [popperNode, setPopperNode] = React.useState();
-  const [refNode, setRefNode] = React.useState();
-
-  const renderFnProps = {
-    isOpen,
-    open: () => setIsOpen(true),
-    hide: () => setIsOpen(false),
-    toggle: () => setIsOpen(!isOpen),
-  };
-
-  const usePortal = !!portalNode;
-
-  const renderChildren = ({ ref, style }) => {
-    if (!isOpen) return null;
-
-    const elements = (
-      <>
-        <StyledDropdown
-          className='f-DropdownList'
-          ref={ref}
-          style={style}
-          data-placement={props.placement}
-        >
-          {children(renderFnProps)}
-        </StyledDropdown>
-
-        <Overlay />
-      </>
-    );
-
-    return usePortal ? ReactDOM.createPortal(elements, portalNode) : elements;
-  };
-
-  React.useEffect(() => {
-    if (isOpen) onOpen();
-    else onHide();
-  }, [isOpen, onHide, onOpen]);
-
-  React.useEffect(() => {
-    const onDocumentClick = ({ target }) => {
-      if (!clickOutsideToHide) {
-        return;
-      }
-
-      if (
-        popperNode &&
-        !popperNode.contains(target) &&
-        refNode &&
-        !refNode.contains(target)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('click', onDocumentClick);
-    return () => document.removeEventListener('click', onDocumentClick);
-  }, [clickOutsideToHide, popperNode, refNode]);
-
+const Dropdown = ({ children, triggerer, ...props }) => {
   return (
-    <Manager>
-      <Reference innerRef={setRefNode}>
-        {({ ref }) => props.triggerer({ ...renderFnProps, ref })}
-      </Reference>
+    <Menu {...props} isOpen>
+      {innerProps => (
+        <>
+          {triggerer(innerProps)}
 
-      <Popper
-        modifiers={{
-          offset: {
-            offset: '0, 4px',
-          },
-          ...props.modifiers,
-        }}
-        innerRef={setPopperNode}
-        placement={props.placement}
-      >
-        {renderChildren}
-      </Popper>
-    </Manager>
+          <MenuList
+            rounded='m'
+            p={0}
+            boxShadow='0 2px 10px rgba(25, 1, 52, 0.12)'
+          >
+            {children(innerProps)}
+          </MenuList>
+        </>
+      )}
+    </Menu>
+
+    // <Manager>
+    //   <Reference innerRef={setRefNode}>
+    //     {({ ref }) => props.triggerer({ ...renderFnProps, ref })}
+    //   </Reference>
+
+    //   <Popper
+    //     modifiers={{
+    //       offset: {
+    //         offset: '0, 4px',
+    //       },
+    //       ...props.modifiers,
+    //     }}
+    //     innerRef={setPopperNode}
+    //     placement={props.placement}
+    //   >
+    //     {renderChildren}
+    //   </Popper>
+    // </Manager>
   );
 };
+
+Dropdown.Item = Item;
+Dropdown.Triggerer = MenuButton;
 
 Dropdown.displayName = 'Dropdown';
 

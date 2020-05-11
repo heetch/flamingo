@@ -34,7 +34,12 @@ export default {
     svgr(),
     babel(),
     resolve(),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        'body-scroll-lock': ['disableBodyScroll', 'enableBodyScroll'],
+        exenv: ['canUseDOM'],
+      },
+    }),
     visualizer({
       filename: 'dist/stats.html',
       gzipSize: true,

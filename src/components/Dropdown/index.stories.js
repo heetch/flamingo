@@ -20,21 +20,19 @@ const DropdownContainer = styled.div`
 
 const StoryDropdown = props => (
   <Dropdown
-    onHide={action('onHide')}
-    onOpen={action('onOpen')}
-    triggerer={({ ref, toggle }) => (
-      <Button ref={ref} onClick={toggle}>
-        Click me
-      </Button>
+    triggerer={() => (
+      <Dropdown.Triggerer as={Button} rightIcon='chevron-down'>
+        Open
+      </Dropdown.Triggerer>
     )}
     {...props}
   >
-    {({ hide }) => (
+    {({ onClose }) => (
       <>
         <Item
           onClick={() => {
             action('onItemClick');
-            hide();
+            onClose();
           }}
         >
           Batman
@@ -42,7 +40,7 @@ const StoryDropdown = props => (
         <Item
           onClick={() => {
             action('onItemClick');
-            hide();
+            onClose();
           }}
         >
           Robin

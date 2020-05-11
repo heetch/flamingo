@@ -92,7 +92,6 @@
     "emotion-theming": "^10.0.27",
     "normalize.css": "^8.0.1",
     "react-day-picker": "^7.4.8",
-    "react-popper": "^1.3.6",
     "styled-components": "^5.1.0"
   },
   "publishConfig": {
