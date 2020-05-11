@@ -34,6 +34,7 @@ const theme = {
     xxl: '2rem',
   },
   radii: {
+    ...chakraDefaultTheme.radii,
     s: '0.25rem',
     m: '0.5rem',
     l: '1rem',

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styled from 'styled-components';
 
-import Button from '../Button';
+import Button from '../Button/Button';
 import Icon from '../Icon';
 import { theme } from '../../theme';
 

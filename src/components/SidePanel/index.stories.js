@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 
 import SidePanel from '.';
-import Button from '../Button';
+import Button from '../Button/Button';
 import Heading from '../Heading';
 import Input from '../Input';
 import Label from '../Label';

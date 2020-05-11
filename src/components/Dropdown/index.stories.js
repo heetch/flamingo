@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
 import Dropdown from '.';
-import Button from '../Button';
+import Button from '../Button/Button';
 import Heading from '../Heading';
 import Item from '../Item';
 import { theme } from '../../theme';

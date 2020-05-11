@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Button from '../Button';
+import Button from '../Button/Button';
 import Heading from '../Heading';
 import Popover from '.';
 import { theme } from '../../theme';
