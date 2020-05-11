@@ -28,7 +28,12 @@ export default {
     babel({
       babelHelpers: 'bundled',
     }),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        'body-scroll-lock': ['disableBodyScroll', 'enableBodyScroll'],
+        exenv: ['canUseDOM'],
+      },
+    }),
     external(),
     postcss({
       modules: {
