@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
-import Card from '../Card';
+import Card from '../Card/Card';
 import Heading from '../Heading';
 import Helper from '../Helper';
 import Input from '../Input';

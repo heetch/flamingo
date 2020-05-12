@@ -2,12 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import Card from '.';
+import Card from './Card';
 import Heading from '../Heading';
 import Text from '../Text';
 import { theme } from '../../theme';
 
 const { ELEVATIONS, SIZES } = Card;
+
 const sizes = Object.values(SIZES);
 
 // eslint-disable-next-line react/prop-types
@@ -32,7 +33,7 @@ stories.add('All states', () => (
     </Container>
 
     <Container>
-      <Card isSelected>
+      <Card isActive>
         <Text>Card selected</Text>
       </Card>
     </Container>
