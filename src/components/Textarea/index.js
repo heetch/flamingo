@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import cx from 'classnames';
 
 import Icon from '../Icon';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
@@ -36,7 +37,7 @@ const Textarea = React.forwardRef(
           name={id}
           valid={valid}
           invalid={invalid}
-          className={'f-Textarea'}
+          className={cx('f-Textarea', className)}
           {...props}
         />
 

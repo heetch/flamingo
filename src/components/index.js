@@ -38,3 +38,5 @@ export { default as UploaderImageItem } from './UploaderImageItem';
 export { default as UploaderItem } from './UploaderItem';
 export { default as Selector } from './Selector';
 export { default as SelectorField } from './SelectorField';
+export { default as FormElement } from './FormComponents/FormElement';
+export { default as FormElementWrapper } from './FormComponents/FormElementWrapper';
