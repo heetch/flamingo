@@ -59,6 +59,7 @@ export const Header = styled('div')`
   justify-content: space-between;
   padding: ${theme.space.m} var(--content-hSpacing);
   border-bottom: 1px solid ${theme.color.element.inactive};
+  background: ${theme.color.element.primary};
 `;
 
 export const Footer = styled('div')`
