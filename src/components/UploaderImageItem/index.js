@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Spinner from '../Spinner';
 import UploaderItem from '../UploaderItem';
 
-import { toBase64 } from '../../utils';
+import { toBase64 } from '../../utils/index.ts';
 
 const UploaderImageItem = React.forwardRef(
   ({ file, overrides, ...props }, ref) => {
