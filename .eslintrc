@@ -1,13 +1,18 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "legacyDecorators": true,
+      "jsx": true
+    }
+  },
   "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
   "env": {
     "browser": true,
     "es6": true
   },
   "plugins": ["prettier"],
-  "parserOptions": {
-    "sourceType": "module"
-  },
   "rules": {
     "no-nested-ternary": 0,
     "prettier/prettier": "error",
@@ -31,6 +36,5 @@
     "react/no-children-prop": 0,
     "react/require-default-props": 0,
     "react/jsx-curly-brace-presence": 0
-  },
-  "parser": "babel-eslint"
+  }
 }
