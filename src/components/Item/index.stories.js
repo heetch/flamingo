@@ -7,7 +7,7 @@ import Heading from '../Heading';
 import Icon from '../Icon';
 import Item from '.';
 
-import { capitalize } from '../../utils';
+import { capitalize } from '../../utils/index.ts';
 import { theme } from '../../theme';
 
 const { SIZES } = Item;

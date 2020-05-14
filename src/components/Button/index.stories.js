@@ -5,7 +5,7 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import Button from '.';
 import Heading from '../Heading';
 
-import { capitalize } from '../../utils';
+import { capitalize } from '../../utils/index.ts';
 
 const { INTENTS, VARIANTS } = Button;
 

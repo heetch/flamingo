@@ -6,7 +6,7 @@ import Icon from '../Icon';
 import IconButton from '../IconButton';
 import UploaderImageItem from '../UploaderImageItem';
 
-import { toBase64 } from '../../utils';
+import { toBase64 } from '../../utils/index.ts';
 import { StyledImageUploader, UploaderPreview, PreviewHover } from './styles';
 
 const getDefaultValuePreviews = files =>
