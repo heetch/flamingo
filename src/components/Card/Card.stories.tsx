@@ -3,11 +3,9 @@ import { Box } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import Card from './Card';
+import Card, { CardElevations, CardSizes } from './Card';
 import Heading from '../Heading';
 import Text from '../Text';
-
-import { CardElevations, CardSizes } from './Card.d';
 
 const Container: React.FC = props => <Box m='xl' {...props} />;
 
