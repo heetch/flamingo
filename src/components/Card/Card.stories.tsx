@@ -7,7 +7,7 @@ import Card from './Card';
 import Heading from '../Heading';
 import Text from '../Text';
 
-import { Elevations, Sizes } from './Card.d';
+import { CardElevations, CardSizes } from './Card.d';
 
 const Container: React.FC = props => <Box m='xl' {...props} />;
 
@@ -31,7 +31,7 @@ stories.add('All states', () => (
 
     <Heading level={2}>Elevations</Heading>
 
-    {Object.entries(Elevations).map(([key, value]) => (
+    {Object.entries(CardElevations).map(([key, value]) => (
       <Container key={key}>
         <Card elevation={value}>
           <Text>Elevation {key}</Text>
@@ -41,7 +41,7 @@ stories.add('All states', () => (
 
     <Heading level={2}>Sizes</Heading>
 
-    {Object.entries(Sizes).map(([key, value]) => (
+    {Object.entries(CardSizes).map(([key, value]) => (
       <Container key={key}>
         <Card size={value}>
           <Text>size {key}</Text>
@@ -64,8 +64,8 @@ stories.add('All states', () => (
 stories.add('Playground', () => (
   <Card
     isActive={boolean('isActive', false)}
-    elevation={select('Elevation', Elevations, Elevations.NONE)}
-    size={select('Size', Sizes, Sizes.M)}
+    elevation={select('Elevation', CardElevations, CardElevations.NONE)}
+    size={select('Size', CardSizes, CardSizes.M)}
   >
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
