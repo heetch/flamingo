@@ -12,7 +12,7 @@
     "browser": true,
     "es6": true
   },
-  "plugins": ["prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "no-nested-ternary": 0,
     "prettier/prettier": "error",
@@ -35,6 +35,21 @@
     "react/destructuring-assignment": 0,
     "react/no-children-prop": 0,
     "react/require-default-props": 0,
-    "react/jsx-curly-brace-presence": 0
+    "react/jsx-curly-brace-presence": 0,
+    // typescript conflicts
+    // https://medium.com/@myylow/how-to-keep-the-airbnb-eslint-config-when-moving-to-typescript-1abb26adb5c6
+    "import/extensions": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-useless-constructor": 0,
+    "@typescript-eslint/no-useless-constructor": "error",
+    "react/prop-types": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
