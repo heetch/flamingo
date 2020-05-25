@@ -53,6 +53,12 @@ const theme = {
     xl: '1.5rem',
     xxl: '2rem',
   },
+  lineHeights: {
+    s: '1rem',
+    m: '1.4rem',
+    l: '1.5rem',
+    xl: '2rem',
+  },
   radii: {
     s: '0.25rem',
     m: '0.5rem',
@@ -77,15 +83,9 @@ const theme = {
   },
 };
 
-const ThemeProvider = storyFn => (
+export default storyFn => (
   <ChakraThemeProvider theme={theme}>
     <CSSReset />
     {storyFn()}
   </ChakraThemeProvider>
 );
-
-ThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default ThemeProvider;
