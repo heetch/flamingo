@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
 import Card from '../Card/Card.tsx';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Helper from '../Helper';
 import Input from '../Input';
 import Label from '../Label';
@@ -24,7 +24,7 @@ const IconsFilterer = () => {
 
   return (
     <div>
-      <Heading>Icons</Heading>
+      <StoryHeading>Icons</StoryHeading>
       <Label htmlFor='icon-search'>Search</Label>
       <Input id='icon-search' onChange={handleInputChange} type='search' />
 

@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
 import Heading, { H1, H2, H3, H4, H5, H6 } from './Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const stories = storiesOf('Heading', module);
 
@@ -13,8 +14,8 @@ const Wrapper: React.FC = props => (
 
 stories.add('All states', () => (
   <>
-    <Heading>Heading</Heading>
-    <Heading level={2}>Levels</Heading>
+    <StoryHeading>Heading</StoryHeading>
+    <StoryHeading level={2}>Levels</StoryHeading>
 
     {[H1, H2, H3, H4, H5, H6].map((HComponent, i) => (
       <Wrapper>
@@ -22,7 +23,7 @@ stories.add('All states', () => (
       </Wrapper>
     ))}
 
-    <Heading level={2}>Custom</Heading>
+    <StoryHeading level={2}>Custom</StoryHeading>
     <Wrapper>
       <Heading level={2} as='h6'>
         h6 with h2 styles

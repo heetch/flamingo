@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import Card, { CardElevations, CardSizes } from './Card';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Text from '../Text';
 
 const Container: React.FC = props => <Box m='xl' {...props} />;
@@ -13,7 +13,7 @@ const stories = storiesOf('Card', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Card</Heading>
+    <StoryHeading>Card</StoryHeading>
 
     <Container>
       <Card>
@@ -27,7 +27,7 @@ stories.add('All states', () => (
       </Card>
     </Container>
 
-    <Heading level={2}>Elevations</Heading>
+    <StoryHeading level={2}>Elevations</StoryHeading>
 
     {Object.entries(CardElevations).map(([key, value]) => (
       <Container key={key}>
@@ -37,7 +37,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading level={2}>Sizes</Heading>
+    <StoryHeading level={2}>Sizes</StoryHeading>
 
     {Object.entries(CardSizes).map(([key, value]) => (
       <Container key={key}>
@@ -47,7 +47,7 @@ stories.add('All states', () => (
       </Container>
     ))}
 
-    <Heading level={2}>Inception</Heading>
+    <StoryHeading level={2}>Inception</StoryHeading>
 
     <Card>
       <Card>

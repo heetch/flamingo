@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import ImageUploader from '.';
 
 const stubFile1 = {
@@ -22,24 +22,24 @@ const stories = storiesOf('Form/ImageUploader', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>ImageUploader</Heading>
+    <StoryHeading>ImageUploader</StoryHeading>
     <ImageUploader id='image-uploader' onChange={action('onChange')} />
 
-    <Heading>With multiple files</Heading>
+    <StoryHeading>With multiple files</StoryHeading>
     <ImageUploader
       id='image-uploader-multiple'
       onChange={action('onChange')}
       multiple
     />
 
-    <Heading level={2}>With default value</Heading>
+    <StoryHeading level={2}>With default value</StoryHeading>
     <ImageUploader
       id='image-uploader-default-value'
       onChange={action('onChange')}
       value={[stubFile1]}
     />
 
-    <Heading level={2}>With default value and multiple files</Heading>
+    <StoryHeading level={2}>With default value and multiple files</StoryHeading>
     <ImageUploader
       id='image-uploader-default-value-multiple'
       onChange={action('onChange')}
@@ -47,7 +47,7 @@ stories.add('All states', () => (
       value={[stubFile1, stubFile2]}
     />
 
-    <Heading level={2}>Validation</Heading>
+    <StoryHeading level={2}>Validation</StoryHeading>
     <ImageUploader
       id='image-uploader-invalid'
       onChange={action('onChange')}

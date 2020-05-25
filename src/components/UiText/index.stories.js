@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
 import UiText from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const { VARIANTS } = UiText;
 
@@ -12,15 +12,15 @@ const stories = storiesOf('UiText', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>UiText</Heading>
-    <Heading level={2}>Variants</Heading>
+    <StoryHeading>UiText</StoryHeading>
+    <StoryHeading level={2}>Variants</StoryHeading>
     {variants.map(variant => (
       <UiText key={variant} variant={variant}>
         {variant}
       </UiText>
     ))}
 
-    <Heading level={2}>Custom component</Heading>
+    <StoryHeading level={2}>Custom component</StoryHeading>
     <UiText as='div' variant={VARIANTS.h1}>
       As a div with `h1` stylings
     </UiText>

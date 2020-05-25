@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Button from '../Button';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Popover from '.';
 import { theme } from '../../theme';
 
@@ -13,7 +13,7 @@ const stories = storiesOf('Popover-Tooltip', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Popover</Heading>
+    <StoryHeading>Popover</StoryHeading>
 
     <div
       style={{

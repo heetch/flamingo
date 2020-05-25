@@ -3,14 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import UploaderItem from '.';
 
 const stories = storiesOf('Form/UploaderItem', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>UploaderItem</Heading>
+    <StoryHeading>UploaderItem</StoryHeading>
     <UploaderItem
       handleDelete={action('handleDelete')}
       file={{

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
 import Button from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 import { capitalize } from '../../utils/index.ts';
 
@@ -16,14 +16,14 @@ const stories = storiesOf('Buttons/Button', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Button</Heading>
+    <StoryHeading>Button</StoryHeading>
 
     {intents.map(intent => (
       <div key={intent}>
-        <Heading level={2}>{capitalize(intent)}</Heading>
+        <StoryHeading level={2}>{capitalize(intent)}</StoryHeading>
 
         <div>
-          <Heading level={3}>States</Heading>
+          <StoryHeading level={3}>States</StoryHeading>
           <Button intent={intent}>{intent}</Button>
           <Button intent={intent} className={`is-${intent}`} isLoading>
             Loading
@@ -31,7 +31,7 @@ stories.add('All states', () => (
         </div>
 
         <div>
-          <Heading level={3}>Variants</Heading>
+          <StoryHeading level={3}>Variants</StoryHeading>
           {variants.map(variant => (
             <Button
               key={variant}
@@ -47,17 +47,19 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading level={2}>States</Heading>
-    <Heading level={3}>Disabled</Heading>
+    <StoryHeading level={2}>States</StoryHeading>
+    <StoryHeading level={3}>Disabled</StoryHeading>
     <Button disabled>Disabled</Button>
 
-    <Heading level={3}>Success</Heading>
+    <StoryHeading level={3}>Success</StoryHeading>
     <Button intent={'success'}>Success</Button>
 
-    <Heading level={3}>Error</Heading>
+    <StoryHeading level={3}>Error</StoryHeading>
     <Button intent={'error'}>Error</Button>
 
-    <Heading level={3}>Is Loading and Error - Intent takes precedence </Heading>
+    <StoryHeading level={3}>
+      Is Loading and Error - Intent takes precedence{' '}
+    </StoryHeading>
     <Button intent={'error'} isLoading>
       Error
     </Button>

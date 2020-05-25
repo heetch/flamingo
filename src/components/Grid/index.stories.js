@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 
 import Grid from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import UiText from '../UiText';
 import { theme } from '../../theme';
 
@@ -31,8 +31,8 @@ const stories = storiesOf('Grid', module);
 
 stories.add('All sizes', () => (
   <>
-    <Heading>Grid</Heading>
-    <Heading level={2}>Fluid by default</Heading>
+    <StoryHeading>Grid</StoryHeading>
+    <StoryHeading level={2}>Fluid by default</StoryHeading>
 
     <Grid>
       <Grid.Col>
@@ -46,7 +46,7 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
-    <Heading level={2}>Sized columns</Heading>
+    <StoryHeading level={2}>Sized columns</StoryHeading>
 
     <Grid>
       <Grid.Col>
@@ -69,7 +69,7 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
-    <Heading level={2}>Responsive columns</Heading>
+    <StoryHeading level={2}>Responsive columns</StoryHeading>
 
     <Grid>
       <Grid.Col m={6} l={10}>

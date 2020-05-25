@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Icon from '../Icon';
 import Item from '.';
 
@@ -22,8 +22,8 @@ export const Wrapper = ({ children }) => (
 
 stories.add('All states', () => (
   <>
-    <Heading>Item</Heading>
-    <Heading level={2}>Sizes</Heading>
+    <StoryHeading>Item</StoryHeading>
+    <StoryHeading level={2}>Sizes</StoryHeading>
 
     {Object.values(SIZES).map(size => (
       <div key={size} style={{ marginBottom: theme.space.l }}>
@@ -63,7 +63,7 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading level={2}>States</Heading>
+    <StoryHeading level={2}>States</StoryHeading>
     <Wrapper>
       <Item invalid value='Nope' valueIcon={Icon.ICONS.IconCross}>
         Invalid

@@ -3,13 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 import Helper from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const stories = storiesOf('Form/Helper', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>Helper</Heading>
+    <StoryHeading>Helper</StoryHeading>
     <Helper>{text('Content', 'Input helper')}</Helper>
   </>
 ));

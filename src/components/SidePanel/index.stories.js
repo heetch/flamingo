@@ -4,7 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import SidePanel from '.';
 import Button from '../Button';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Input from '../Input';
 import Label from '../Label';
 
@@ -27,7 +27,7 @@ stories.add('Playground', () => {
 
   return (
     <>
-      <Heading>SidePanel</Heading>
+      <StoryHeading>SidePanel</StoryHeading>
 
       <SidePanel
         closesOnOverlayClick={closesOnOverlayClick}

@@ -4,7 +4,7 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Datepicker from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const stories = storiesOf('Datepicker', module);
 
@@ -17,15 +17,15 @@ const noop = () => {};
 
 stories.add('All states', () => (
   <>
-    <Heading>Datepicker</Heading>
+    <StoryHeading>Datepicker</StoryHeading>
 
-    <Heading level={2}>With value</Heading>
+    <StoryHeading level={2}>With value</StoryHeading>
     <Datepicker onChange={noop} value={new Date('2020-11-04')} />
 
-    <Heading level={2}>With custom locale</Heading>
+    <StoryHeading level={2}>With custom locale</StoryHeading>
     <Datepicker locale='fr-FR' placeholder='Choisir une date' onChange={noop} />
 
-    <Heading level={2}>Validation</Heading>
+    <StoryHeading level={2}>Validation</StoryHeading>
     <Datepicker invalid onChange={noop} />
     <Datepicker valid onChange={noop} />
   </>

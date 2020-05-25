@@ -4,7 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Checkbox from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import { theme } from '../../theme';
 
 const defaultProps = {
@@ -21,48 +21,48 @@ const Wrapper = ({ children }) => (
 
 stories.add('All states', () => (
   <>
-    <Heading>Checkbox</Heading>
+    <StoryHeading>Checkbox</StoryHeading>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Default</Heading>
+        <StoryHeading level={2}>Default</StoryHeading>
         <Checkbox {...defaultProps} id='c1' />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Checkbox {...defaultProps} id='c2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Checked</Heading>
+        <StoryHeading level={2}>Checked</StoryHeading>
         <Checkbox {...defaultProps} id='c3' checked />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Checkbox {...defaultProps} id='c4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Undefined</Heading>
+        <StoryHeading level={2}>Undefined</StoryHeading>
         <Checkbox {...defaultProps} id='c5' isUndefined />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Checkbox {...defaultProps} id='c6' isUndefined disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>No text</Heading>
+        <StoryHeading level={2}>No text</StoryHeading>
         <Checkbox onChange={defaultProps.onChange} id='c7' />
       </Wrapper>
       <div>
-        <Heading level={2}>With helper</Heading>
+        <StoryHeading level={2}>With helper</StoryHeading>
         <Checkbox
           {...defaultProps}
           id='c8'

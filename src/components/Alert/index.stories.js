@@ -4,7 +4,7 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Alert from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const { TYPES } = Alert;
 
@@ -12,8 +12,9 @@ const stories = storiesOf('Alert', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Alert</Heading>
-    <Heading level={2}>States</Heading>
+    <StoryHeading>Alert</StoryHeading>
+    <StoryHeading level={2}>States</StoryHeading>
+
     {Object.values(TYPES).map(type => (
       <Alert
         key={type}

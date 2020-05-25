@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Heading from '../Heading';
+import Heading from '../Heading/Heading.tsx';
 import IconButton from '../IconButton';
 import Overlay from '../Overlay';
 
