@@ -1,19 +1,13 @@
 import React from 'react';
+import { Box } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import Card from '.';
+import Card, { CardElevations, CardSizes } from './Card';
 import Heading from '../Heading';
 import Text from '../Text';
-import { theme } from '../../theme';
 
-const { ELEVATIONS, SIZES } = Card;
-const sizes = Object.values(SIZES);
-
-// eslint-disable-next-line react/prop-types
-const Container = ({ children }) => (
-  <div style={{ margin: `${theme.space.xl} 0` }}>{children}</div>
-);
+const Container: React.FC = props => <Box m='xl' {...props} />;
 
 const stories = storiesOf('Card', module);
 
@@ -28,31 +22,27 @@ stories.add('All states', () => (
     </Container>
 
     <Container>
-      <Card>Card without {`'<Text />'`} component wrapping the content</Card>
-    </Container>
-
-    <Container>
-      <Card isSelected>
-        <Text>Card selected</Text>
+      <Card isActive>
+        <Text>isActive</Text>
       </Card>
     </Container>
 
     <Heading level={2}>Elevations</Heading>
 
-    {ELEVATIONS.map(elevation => (
-      <Container key={elevation}>
-        <Card elevation={elevation}>
-          <Text>Elevation {elevation}</Text>
+    {Object.entries(CardElevations).map(([key, value]) => (
+      <Container key={key}>
+        <Card elevation={value}>
+          <Text>Elevation {key}</Text>
         </Card>
       </Container>
     ))}
 
     <Heading level={2}>Sizes</Heading>
 
-    {sizes.map(size => (
-      <Container key={size}>
-        <Card size={size}>
-          <Text>size {size}</Text>
+    {Object.entries(CardSizes).map(([key, value]) => (
+      <Container key={key}>
+        <Card size={value}>
+          <Text>size {key}</Text>
         </Card>
       </Container>
     ))}
@@ -71,9 +61,9 @@ stories.add('All states', () => (
 
 stories.add('Playground', () => (
   <Card
-    isSelected={boolean('Is selected', false)}
-    elevation={select('Elevation', ELEVATIONS)}
-    size={select('Size', sizes)}
+    isActive={boolean('isActive', false)}
+    elevation={select('Elevation', CardElevations, CardElevations.NONE)}
+    size={select('Size', CardSizes, CardSizes.M)}
   >
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
