@@ -3,14 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 import Link from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Text from '../Text';
 
 const stories = storiesOf('Link', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>Link</Heading>
+    <StoryHeading>Link</StoryHeading>
     <Text>
       Lorem ipsum{' '}
       <Link href='/?path=/story/link--playground'>

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { object } from '@storybook/addon-knobs';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Selector from '.';
 
 const defaultProps = {
@@ -18,16 +18,16 @@ const stories = storiesOf('Form/Selector', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Selector</Heading>
-    <Heading level={2}>States</Heading>
+    <StoryHeading>Selector</StoryHeading>
+    <StoryHeading level={2}>States</StoryHeading>
 
-    <Heading level={3}>Not selected</Heading>
+    <StoryHeading level={3}>Not selected</StoryHeading>
     <Selector {...defaultProps} id='not-selected' />
 
-    <Heading level={3}>Hover</Heading>
+    <StoryHeading level={3}>Hover</StoryHeading>
     <Selector {...defaultProps} id='is-hover' className='is-hover' />
 
-    <Heading level={3}>Disabled</Heading>
+    <StoryHeading level={3}>Disabled</StoryHeading>
     <Selector
       {...defaultProps}
       id='disabled-option'
@@ -37,10 +37,10 @@ stories.add('All states', () => (
       ]}
     />
 
-    <Heading level={3}>Selected</Heading>
+    <StoryHeading level={3}>Selected</StoryHeading>
     <Selector {...defaultProps} id='default-index' defaultIndex={1} />
 
-    <Heading level={3}>Selected and disabled</Heading>
+    <StoryHeading level={3}>Selected and disabled</StoryHeading>
     <Selector
       {...defaultProps}
       id='selected-and-disabled'
@@ -48,10 +48,10 @@ stories.add('All states', () => (
       disabled
     />
 
-    <Heading level={3}>Invalid</Heading>
+    <StoryHeading level={3}>Invalid</StoryHeading>
     <Selector {...defaultProps} id='invalid' defaultIndex={1} isInvalid />
 
-    <Heading level={3}>Valid</Heading>
+    <StoryHeading level={3}>Valid</StoryHeading>
     <Selector {...defaultProps} id='valid' defaultIndex={2} isValid />
   </>
 ));

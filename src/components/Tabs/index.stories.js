@@ -2,14 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { array } from '@storybook/addon-knobs';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Tabs from '.';
 
 const stories = storiesOf('Tabs', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>Tabs</Heading>
+    <StoryHeading>Tabs</StoryHeading>
     <Tabs
       elements={array('Tabs (separated by comma)', [
         'Cars',

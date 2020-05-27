@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 
 import Radio from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import { theme } from '../../theme';
 
 const defaultProps = {
@@ -19,37 +19,37 @@ const Wrapper = ({ children }) => (
 );
 stories.add('All states', () => (
   <>
-    <Heading>Radio</Heading>
+    <StoryHeading>Radio</StoryHeading>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Default</Heading>
+        <StoryHeading level={2}>Default</StoryHeading>
         <Radio {...defaultProps} id='r1-1' name='r1' />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Radio {...defaultProps} id='r2-1' name='r2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Checked</Heading>
+        <StoryHeading level={2}>Checked</StoryHeading>
         <Radio {...defaultProps} id='r3-1' name='r3' checked />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Radio {...defaultProps} id='r4-1' name='r4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>No text</Heading>
+        <StoryHeading level={2}>No text</StoryHeading>
         <Radio onChange={defaultProps.onChange} id='r5-1' name='r5' />
       </Wrapper>
       <div>
-        <Heading level={2}>With helper</Heading>
+        <StoryHeading level={2}>With helper</StoryHeading>
         <Radio
           {...defaultProps}
           id='r6-1'

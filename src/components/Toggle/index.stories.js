@@ -4,7 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { theme } from '../../theme';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Toggle from '.';
 
 const defaultProps = {
@@ -21,37 +21,37 @@ const Wrapper = ({ children }) => (
 
 stories.add('All states', () => (
   <>
-    <Heading>Toggle</Heading>
+    <StoryHeading>Toggle</StoryHeading>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Default</Heading>
+        <StoryHeading level={2}>Default</StoryHeading>
         <Toggle {...defaultProps} name='r1' />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Toggle {...defaultProps} name='r2' disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>Checked</Heading>
+        <StoryHeading level={2}>Checked</StoryHeading>
         <Toggle {...defaultProps} name='r3' checked />
       </Wrapper>
       <div>
-        <Heading level={2}>& disabled</Heading>
+        <StoryHeading level={2}>& disabled</StoryHeading>
         <Toggle {...defaultProps} name='r4' checked disabled />
       </div>
     </div>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
-        <Heading level={2}>No text</Heading>
+        <StoryHeading level={2}>No text</StoryHeading>
         <Toggle onChange={defaultProps.onChange} name='r5' />
       </Wrapper>
       <div>
-        <Heading level={2}>With helper</Heading>
+        <StoryHeading level={2}>With helper</StoryHeading>
         <Toggle {...defaultProps} name='r6' label='Label' helper='With texts'>
           Label
         </Toggle>

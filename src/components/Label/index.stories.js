@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 import Label from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 
 const inputId = 'input-id';
 
@@ -11,7 +11,7 @@ const stories = storiesOf('Form/Label', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>Label</Heading>
+    <StoryHeading>Label</StoryHeading>
     <Label htmlFor={inputId}>{text('Label content', 'Label')}</Label>
   </>
 ));

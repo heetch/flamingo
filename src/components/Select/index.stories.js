@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Select from '.';
 
 const states = ['default', 'disabled'];
@@ -20,8 +20,8 @@ const stories = storiesOf('Form/Select', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Select</Heading>
-    <Heading level={2}>States</Heading>
+    <StoryHeading>Select</StoryHeading>
+    <StoryHeading level={2}>States</StoryHeading>
 
     {states.map(state => (
       <div key={`input-${state}`}>
@@ -34,7 +34,7 @@ stories.add('All states', () => (
       </div>
     ))}
 
-    <Heading level={2}>Validation</Heading>
+    <StoryHeading level={2}>Validation</StoryHeading>
 
     <Select invalid {...defaultProps()} />
     <Select valid {...defaultProps()} />

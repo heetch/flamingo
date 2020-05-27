@@ -4,7 +4,7 @@ import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Input from '.';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Icon from '../Icon';
 
 const ICONS = { ...Icon.ICONS, None: null };
@@ -14,8 +14,8 @@ const stories = storiesOf('Form/Input', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Input</Heading>
-    <Heading level={2}>States</Heading>
+    <StoryHeading>Input</StoryHeading>
+    <StoryHeading level={2}>States</StoryHeading>
     <Input
       key='input-default'
       id={getId()}
@@ -31,7 +31,7 @@ stories.add('All states', () => (
       onChange={action('onChange')}
     />
 
-    <Heading level={2}>Validation</Heading>
+    <StoryHeading level={2}>Validation</StoryHeading>
 
     <Input
       id={getId()}

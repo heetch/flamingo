@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Icon from '../Icon';
 import Table from '.';
 import Text from '../Text';
@@ -18,16 +18,16 @@ const defaultProps = {
   })),
   columns: [
     {
-      Header: text("Col #1's heading", 'With string'),
+      Header: text("Col #1's StoryHeading", 'With string'),
       accessor: 'string',
     },
     {
-      Header: text("Col #2's heading", 'With number'),
+      Header: text("Col #2's StoryHeading", 'With number'),
       accessor: 'number',
       Cell: item => <Text isNumber>{item.cell.value}</Text>,
     },
     {
-      Header: text("Col #3's heading", 'With custom rendering'),
+      Header: text("Col #3's StoryHeading", 'With custom rendering'),
       accessor: 'custom',
       Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
     },
@@ -36,13 +36,13 @@ const defaultProps = {
 
 stories.add('All states', () => (
   <>
-    <Heading>Table</Heading>
+    <StoryHeading>Table</StoryHeading>
     <Table {...defaultProps} />
 
-    <Heading level={2}>Sortable</Heading>
+    <StoryHeading level={2}>Sortable</StoryHeading>
     <Table {...defaultProps} isSortable />
 
-    <Heading level={2}>With manual sorting</Heading>
+    <StoryHeading level={2}>With manual sorting</StoryHeading>
     <Table
       {...defaultProps}
       manualSorting
@@ -53,7 +53,7 @@ stories.add('All states', () => (
 
 stories.add('Playground', () => (
   <>
-    <Heading>Table</Heading>
+    <StoryHeading>Table</StoryHeading>
     <Table
       {...defaultProps}
       isSortable={boolean('Table 1 sortable', false)}

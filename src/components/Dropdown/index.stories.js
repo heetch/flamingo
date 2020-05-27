@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Dropdown from '.';
 import Button from '../Button';
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Item from '../Item';
 import { theme } from '../../theme';
 
@@ -56,19 +56,19 @@ const stories = storiesOf('Dropdown', module);
 
 stories.add('Playground', () => (
   <>
-    <Heading>Dropdown</Heading>
+    <StoryHeading>Dropdown</StoryHeading>
 
     <DropdownContainer>
       <StoryDropdown />
     </DropdownContainer>
 
-    <Heading level={2}>Using portal</Heading>
+    <StoryHeading level={2}>Using portal</StoryHeading>
 
     <DropdownContainer>
       <StoryDropdown portalNode={document.body} />
     </DropdownContainer>
 
-    <Heading level={2}>With modifiers</Heading>
+    <StoryHeading level={2}>With modifiers</StoryHeading>
     <DropdownContainer>
       <StoryDropdown
         modifiers={{
@@ -80,19 +80,19 @@ stories.add('Playground', () => (
       />
     </DropdownContainer>
 
-    <Heading level={2}>With different positions</Heading>
+    <StoryHeading level={2}>With different positions</StoryHeading>
 
-    <Heading level={3}>Top End</Heading>
+    <StoryHeading level={3}>Top End</StoryHeading>
     <DropdownContainer>
       <StoryDropdown placement={'top-end'} />
     </DropdownContainer>
 
-    <Heading level={3}>Left</Heading>
+    <StoryHeading level={3}>Left</StoryHeading>
     <DropdownContainer>
       <StoryDropdown placement={'left'} />
     </DropdownContainer>
 
-    <Heading level={3}>Right Start</Heading>
+    <StoryHeading level={3}>Right Start</StoryHeading>
     <DropdownContainer>
       <StoryDropdown placement={'right-start'} />
     </DropdownContainer>
