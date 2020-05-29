@@ -9,10 +9,20 @@ import {
 } from './styles';
 
 const Tabs = React.forwardRef(
-  ({ elements, buildTabLabel, buildReturnObject, onClick, ...props }, ref) => {
-    const [activeIndex, setActiveIndex] = useState(null);
+  (
+    {
+      elements,
+      defaultIndex,
+      buildTabLabel,
+      buildReturnObject,
+      onClick,
+      ...props
+    },
+    ref,
+  ) => {
+    const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
-    const handleTabClick = newActiveIndex => {
+    const handleTabClick = (newActiveIndex) => {
       setActiveIndex(newActiveIndex);
 
       if (onClick) {
@@ -57,6 +67,8 @@ Tabs.propTypes = {
   elements: PropTypes.arrayOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   ).isRequired,
+  /** This allows changing the tab that should be open on initial render. */
+  defaultIndex: PropTypes.number,
   /** If objects passed to elements, this should be a method that extracts a label string from the obejct */
   buildTabLabel: PropTypes.func,
   /** If objects passed to elements, this should be a method that extracts a value to be returned to onClick */

@@ -11,6 +11,7 @@ stories.add('Playground', () => (
   <>
     <Heading>Tabs</Heading>
     <Tabs
+      defaultIndex={1}
       elements={array('Tabs (separated by comma)', [
         'Cars',
         'Drivers',
