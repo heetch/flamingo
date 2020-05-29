@@ -22,7 +22,7 @@ const Tabs = React.forwardRef(
   ) => {
     const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
-    const handleTabClick = (newActiveIndex) => {
+    const handleTabClick = newActiveIndex => {
       setActiveIndex(newActiveIndex);
 
       if (onClick) {
