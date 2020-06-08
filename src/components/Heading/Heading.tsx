@@ -26,11 +26,7 @@ export type HeadingProps = ChakraHeadingProps & {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-const Heading: React.FC<HeadingProps> = ({
-  as = 'h1',
-  level = 1,
-  ...props
-}) => (
+const Heading = ({ as = 'h1', level = 1, ...props }: HeadingProps) => (
   <ChakraHeading
     as={as}
     fontSize={fontSizeByLevel[level]}
@@ -40,12 +36,12 @@ const Heading: React.FC<HeadingProps> = ({
   />
 );
 
-const H1: React.FC<HeadingProps> = props => <Heading level={1} {...props} />;
-const H2: React.FC<HeadingProps> = props => <Heading level={2} {...props} />;
-const H3: React.FC<HeadingProps> = props => <Heading level={3} {...props} />;
-const H4: React.FC<HeadingProps> = props => <Heading level={4} {...props} />;
-const H5: React.FC<HeadingProps> = props => <Heading level={5} {...props} />;
-const H6: React.FC<HeadingProps> = props => <Heading level={6} {...props} />;
+const H1 = (props: HeadingProps) => <Heading level={1} {...props} />;
+const H2 = (props: HeadingProps) => <Heading level={2} {...props} />;
+const H3 = (props: HeadingProps) => <Heading level={3} {...props} />;
+const H4 = (props: HeadingProps) => <Heading level={4} {...props} />;
+const H5 = (props: HeadingProps) => <Heading level={5} {...props} />;
+const H6 = (props: HeadingProps) => <Heading level={6} {...props} />;
 
 export default Heading;
 export { H1, H2, H3, H4, H5, H6 };
