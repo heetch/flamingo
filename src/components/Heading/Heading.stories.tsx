@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@chakra-ui/core';
+import { Box, BoxProps } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
@@ -8,7 +8,7 @@ import StoryHeading from '../StoryHeading/StoryHeading';
 
 const stories = storiesOf('Heading', module);
 
-const Wrapper: React.FC = props => (
+const Wrapper = (props: BoxProps) => (
   <Box bg='element.primary' mb={'m'} {...props} />
 );
 

@@ -7,7 +7,7 @@ import Card, { CardElevations, CardSizes } from './Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Text from '../Text';
 
-const Container: React.FC = props => <Box m='xl' {...props} />;
+const Container = props => <Box m='xl' {...props} />;
 
 const stories = storiesOf('Card', module);
 

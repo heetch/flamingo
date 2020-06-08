@@ -15,18 +15,18 @@ export enum CardSizes {
   M = 'M',
 }
 
-export interface CardProps {
+export type CardProps = {
   elevation?: CardElevations;
   isActive?: boolean;
   size?: CardSizes;
-}
+};
 
-const Card: React.FC<CardProps> = ({
+const Card = ({
   elevation = CardElevations.NONE,
   isActive = false,
   size = CardSizes.M,
   ...props
-}) => (
+}: CardProps) => (
   <Box
     bg='element.primary'
     p={size === CardSizes.S ? 'xl' : 'xxl'}

@@ -4,7 +4,7 @@ import { H1, HeadingProps } from '../Heading/Heading';
 
 export type StoryHeadingProps = HeadingProps;
 
-const StoryHeading: React.FC<StoryHeadingProps> = ({ level = 1, ...props }) => (
+const StoryHeading = ({ level = 1, ...props }: StoryHeadingProps) => (
   <H1 my='xl' level={level} {...props} />
 );
 
