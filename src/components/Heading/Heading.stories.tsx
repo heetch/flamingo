@@ -18,7 +18,7 @@ stories.add('All states', () => (
     <StoryHeading level={2}>Levels</StoryHeading>
 
     {[H1, H2, H3, H4, H5, H6].map((HComponent, i) => (
-      <Wrapper>
+      <Wrapper key={i}>
         <HComponent>H{i + 1}</HComponent>
       </Wrapper>
     ))}

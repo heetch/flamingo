@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Button from '../Button';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
-import Text from '../Text';
+import Text from '../Text/Text.tsx';
 import { theme } from '../../theme';
 
 const UploaderItemStyled = styled('div').attrs(() => ({

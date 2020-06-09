@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Icon from '../Icon';
 import Table from '.';
-import Text from '../Text';
+import Text from '../Text/Text';
 
 const stories = storiesOf('Table', module);
 

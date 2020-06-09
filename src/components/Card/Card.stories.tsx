@@ -5,7 +5,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 
 import Card, { CardElevations, CardSizes } from './Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Text from '../Text';
+import Text from '../Text/Text';
 
 const Container = props => <Box m='xl' {...props} />;
 
