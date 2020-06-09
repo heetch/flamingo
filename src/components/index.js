@@ -7,8 +7,6 @@ export { default as Datepicker } from './Datepicker';
 export { default as FormField } from './FormField';
 export { default as FileUploader } from './FileUploader';
 export { default as FileUploaderField } from './FileUploaderField';
-export { default as Grid } from './Grid';
-export { default as GridCol } from './Grid/GridCol';
 export { default as Heading } from './Heading/Heading';
 export * from './Heading/Heading';
 export { default as Helper } from './Helper';
