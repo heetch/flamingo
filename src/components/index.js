@@ -30,7 +30,7 @@ export { default as SidePanel } from './SidePanel';
 export { default as Spinner } from './Spinner';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
-export { default as Text } from './Text';
+export { default as Text } from './Text/Text.tsx';
 export { default as Textarea } from './Textarea';
 export { default as TextareaField } from './TextareaField';
 export { default as Toggle } from './Toggle';

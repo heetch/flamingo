@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 
 import Link from '.';
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Text from '../Text';
+import Text from '../Text/Text.tsx';
 
 const stories = storiesOf('Link', module);
 

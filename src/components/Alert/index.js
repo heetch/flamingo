@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Icon from '../Icon';
 import UiText from '../UiText';
-import Text from '../Text';
+import Text from '../Text/Text.tsx';
 import { StyledAlert, AlertIcon, CloseButton } from './styles';
 
 const TYPES = {
