@@ -35,7 +35,7 @@ import { Button, Icon, SidePanel } from '@heetch/flamingo-react';
 And extend them using `styled` from Styled Components
 
 > Note that not all components are exported as a StyledComponent due to having logic inside,
-> but the building blocks, like Button, Icon, Grid, are all pure Styled Components.
+> but the building blocks, like Button, Icon, are all pure Styled Components.
 
 ```jsx
 export const FlamingoSpinner = styled(Spinner).attrs(props => ({

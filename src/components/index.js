@@ -1,3 +1,5 @@
+export { Grid, SimpleGrid } from '@chakra-ui/core';
+
 export { default as Alert } from './Alert';
 export { default as Button } from './Button';
 export { default as Card } from './Card/Card.tsx';
@@ -7,8 +9,6 @@ export { default as Datepicker } from './Datepicker';
 export { default as FormField } from './FormField';
 export { default as FileUploader } from './FileUploader';
 export { default as FileUploaderField } from './FileUploaderField';
-export { default as Grid } from './Grid';
-export { default as GridCol } from './Grid/GridCol';
 export { default as Heading } from './Heading/Heading';
 export * from './Heading/Heading';
 export { default as Helper } from './Helper';
