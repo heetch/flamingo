@@ -32,7 +32,7 @@ const texts = {
   },
 };
 
-const isImage = file => /\.(jpe?g|png|gif)$/i.test(file.name);
+const isImage = file => /\.(jpe?g|png|gif|webp)$/i.test(file.name);
 
 const Uploader = React.forwardRef(
   (
