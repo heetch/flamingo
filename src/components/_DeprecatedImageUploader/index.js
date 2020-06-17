@@ -35,6 +35,7 @@ const ImageUploader = React.forwardRef(
     const [hasError, setHasError] = React.useState(false);
 
     React.useEffect(() => {
+      // eslint-disable-next-line no-console
       console.warn(
         '[@heetch/flamingo] The ImageUploader component has been deprecated. Please use the Uploader one',
       );

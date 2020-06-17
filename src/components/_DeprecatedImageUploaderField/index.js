@@ -7,6 +7,7 @@ import ImageUploader from '../_DeprecatedImageUploader';
 const ImageUploaderField = React.forwardRef(
   ({ label, helper, inputRef, ...props }, ref) => {
     React.useEffect(() => {
+      // eslint-disable-next-line no-console
       console.warn(
         '[@heetch/flamingo] The ImageUploaderField component has been deprecated. Please use the UploaderField one',
       );

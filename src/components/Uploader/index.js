@@ -8,12 +8,7 @@ import UploaderImageItem from '../UploaderImageItem';
 import UploaderItem from '../UploaderItem';
 
 import State from './State';
-import {
-  Container,
-  InputContainer,
-  Preview,
-  PreviewActions,
-} from './styles';
+import { Container, InputContainer, Preview, PreviewActions } from './styles';
 import { STATES } from './constants';
 
 import { toBase64 } from '../../utils';

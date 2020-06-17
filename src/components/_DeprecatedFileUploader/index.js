@@ -67,6 +67,7 @@ const FileUploader = React.forwardRef(
 
     // keep files in sync with value when changed on image uploader
     React.useEffect(() => {
+      // eslint-disable-next-line no-console
       console.warn(
         '[@heetch/flamingo] The FileUploader component has been deprecated. Please use the Uploader one',
       );
