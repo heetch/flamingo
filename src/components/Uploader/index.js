@@ -91,6 +91,7 @@ const Uploader = React.forwardRef(
 
     const onFilesChange = inputFiles => {
       setState(STATES.LOADING);
+      onChange(inputFiles);
 
       if (inputFiles.length === 1) onSingleFileChange(inputFiles[0]);
       else onMultipleFilesChange(inputFiles);
