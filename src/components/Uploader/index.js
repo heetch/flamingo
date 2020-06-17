@@ -70,16 +70,6 @@ const Uploader = React.forwardRef(
       onChange(remainingFiles);
     };
 
-    const onMultipleFilesChange = inputFiles => {
-      // convert event.target.result
-      // into an iterable array of files
-      const filesArr = [...inputFiles];
-      const nextFiles = [...files, ...filesArr];
-
-      setFiles(nextFiles);
-      setState(STATES.FILES);
-    };
-
     const onFilesChange = async inputFiles => {
       const [file] = inputFiles;
       const isSingleImage = inputFiles.length === 1 && isImage(file);
@@ -93,7 +83,13 @@ const Uploader = React.forwardRef(
         return;
       }
 
-      onMultipleFilesChange(inputFiles);
+      // convert event.target.result
+      // into an iterable array of files
+      const filesArr = [...inputFiles];
+      const nextFiles = [...files, ...filesArr];
+
+      setFiles(nextFiles);
+      setState(STATES.FILES);
     };
 
     React.useEffect(() => {
