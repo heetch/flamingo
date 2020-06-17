@@ -34,6 +34,7 @@ export { default as Textarea } from './Textarea';
 export { default as TextareaField } from './TextareaField';
 export { default as Toggle } from './Toggle';
 export { default as UiText } from './UiText';
+export { default as Uploader } from './Uploader';
 export { default as UploaderImageItem } from './UploaderImageItem';
 export { default as UploaderItem } from './UploaderItem';
 export { default as Selector } from './Selector';
