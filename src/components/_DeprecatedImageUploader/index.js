@@ -34,6 +34,13 @@ const ImageUploader = React.forwardRef(
     const [isLoading, setIsLoading] = React.useState(false);
     const [hasError, setHasError] = React.useState(false);
 
+    React.useEffect(() => {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[@heetch/flamingo] The ImageUploader component has been deprecated. Please use the Uploader one',
+      );
+    }, []);
+
     const handleDeleteFile = fileToDelete => {
       const filteredFiles = files.filter(
         file => file.name !== fileToDelete.name,
