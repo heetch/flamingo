@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import Link from './Link';
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Text from '../Text/Text.tsx';
+import Text from '../Text/Text';
 
 const stories = storiesOf('Link', module);
 
