@@ -74,8 +74,9 @@ const Uploader = React.forwardRef(
       // convert event.target.result
       // into an iterable array of files
       const filesArr = [...inputFiles];
+      const nextFiles = [...files, ...filesArr];
 
-      setFiles(filesArr);
+      setFiles(nextFiles);
       setState(STATES.FILES);
     };
 
