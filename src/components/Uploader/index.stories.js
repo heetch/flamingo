@@ -29,7 +29,7 @@ const fileStub2 = {
 
 const noop = () => {};
 
-const stories = storiesOf('Uploader', module);
+const stories = storiesOf('Form/Uploader', module);
 
 stories.add('All states', () => (
   <>
