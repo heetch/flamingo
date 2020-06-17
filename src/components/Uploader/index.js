@@ -80,22 +80,20 @@ const Uploader = React.forwardRef(
       setState(STATES.FILES);
     };
 
-    const onSingleFileChange = async inputFile => {
-      if (!isImage(inputFile)) {
-        onMultipleFilesChange([inputFile]);
-        return;
-      }
+    const onFilesChange = async inputFiles => {
+      const [file] = inputFiles;
+      const isSingleImage = inputFiles.length === 1 && isImage(file);
 
-      setPreview(await toBase64(inputFile));
-      setState(STATES.SINGLE_IMAGE);
-    };
-
-    const onFilesChange = inputFiles => {
       setState(STATES.LOADING);
       onChange(inputFiles);
 
-      if (inputFiles.length === 1) onSingleFileChange(inputFiles[0]);
-      else onMultipleFilesChange(inputFiles);
+      if (isSingleImage) {
+        setPreview(await toBase64(file));
+        setState(STATES.SINGLE_IMAGE);
+        return;
+      }
+
+      onMultipleFilesChange(inputFiles);
     };
 
     React.useEffect(() => {
