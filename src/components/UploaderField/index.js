@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import FormField from '../FormField';
-import FileUploader from '../FileUploader';
+import Uploader from '../Uploader';
 
-const FileUploaderField = React.forwardRef(
+const ImageUploaderField = React.forwardRef(
   ({ label, helper, inputRef, ...props }, ref) => (
     <FormField label={label} helper={helper} {...props} ref={ref}>
-      <FileUploader ref={inputRef} {...props} />
+      <Uploader ref={inputRef} {...props} />
     </FormField>
   ),
 );
 
-FileUploaderField.propTypes = {
+ImageUploaderField.propTypes = {
   helper: PropTypes.node,
   id: PropTypes.string.isRequired,
   label: PropTypes.node,
@@ -21,6 +21,6 @@ FileUploaderField.propTypes = {
   }),
 };
 
-FileUploaderField.displayName = 'FileUploaderField';
+ImageUploaderField.displayName = 'ImageUploaderField';
 
-export default FileUploaderField;
+export default ImageUploaderField;
