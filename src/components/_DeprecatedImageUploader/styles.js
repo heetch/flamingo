@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import FileUploader from '../FileUploader';
+import FileUploader from '../_DeprecatedFileUploader';
 import { theme } from '../../theme';
 
 export const PreviewHover = styled.div`
