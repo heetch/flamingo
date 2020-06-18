@@ -56,6 +56,7 @@ const Uploader = React.forwardRef(
       setFiles([]);
       setPreview();
       setState(STATES.IDLE);
+      onChange([]);
     };
 
     const onDeleteFiles = file => {
