@@ -71,7 +71,8 @@ const Uploader = React.forwardRef(
       onChange(remainingFiles);
     };
 
-    const onFilesChange = async inputFiles => {
+    const onFilesChange = async e => {
+      const inputFiles = [...e.target.files];
       const [file] = inputFiles;
       const isSingleImage = inputFiles.length === 1 && isImage(file);
 
@@ -175,7 +176,7 @@ const Uploader = React.forwardRef(
             id={id}
             name={id}
             multiple={multiple}
-            onChange={e => onFilesChange(e.target.files)}
+            onChange={onFilesChange}
             value=''
           />
         </InputContainer>
