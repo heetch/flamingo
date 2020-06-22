@@ -38,11 +38,13 @@ const Uploader = React.forwardRef(
   (
     {
       id,
+      invalid,
       onChange,
       translate,
       multiple,
       overrides,
       state: initialState,
+      valid,
       value,
       ...props
     },
@@ -85,12 +87,7 @@ const Uploader = React.forwardRef(
         return;
       }
 
-      // convert event.target.result
-      // into an iterable array of files
-      const filesArr = [...inputFiles];
-      const nextFiles = [...files, ...filesArr];
-
-      setFiles(nextFiles);
+      setFiles([...files, ...inputFiles]);
       setState(STATES.FILES);
     };
 
@@ -114,7 +111,7 @@ const Uploader = React.forwardRef(
     };
 
     return (
-      <Container state={state} ref={ref} {...props}>
+      <Container ref={ref} state={state} invalid={invalid} valid={valid}>
         {state === STATES.IDLE && (
           <State icon={Icon.ICONS.IconFilePlus} {...actionableStateProps}>
             {translate(texts.add_document)}
@@ -178,6 +175,7 @@ const Uploader = React.forwardRef(
             multiple={multiple}
             onChange={onFilesChange}
             value=''
+            {...props}
           />
         </InputContainer>
       </Container>
