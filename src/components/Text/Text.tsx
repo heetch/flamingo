@@ -1,37 +1,31 @@
 import * as React from 'react';
 import { Text as ChakraText, BoxProps } from '@chakra-ui/core';
 
-export enum TextVariants {
-  CONTENT = 'CONTENT',
-  CONTENTBOLD = 'CONTENTBOLD',
-  SUBCONTENT = 'SUBCONTENT',
-  SUBCONTENTBOLD = 'SUBCONTENTBOLD',
+export enum TextWeights {
+  normal = 'normal',
+  bold = 'bold',
+}
+
+export enum TextSizes {
+  normal = 'normal',
+  small = 'small',
 }
 
 export type TextProps = BoxProps & {
-  variant?: TextVariants;
+  size?: TextSizes;
+  weight?: TextWeights;
 };
 
-const fontSizeByVariant = {
-  [TextVariants.CONTENT]: 'm',
-  [TextVariants.CONTENTBOLD]: 'm',
-  [TextVariants.SUBCONTENT]: 's',
-  [TextVariants.SUBCONTENTBOLD]: 's',
-};
-
-const fontWeightByVariant = {
-  [TextVariants.CONTENT]: 'normal',
-  [TextVariants.CONTENTBOLD]: 'bold',
-  [TextVariants.SUBCONTENT]: 'normal',
-  [TextVariants.SUBCONTENTBOLD]: 'bold',
-};
-
-const Text = ({ variant = TextVariants.CONTENT, ...props }: TextProps) => (
+const Text = ({
+  size = TextSizes.normal,
+  weight = TextWeights.normal,
+  ...props
+}: TextProps) => (
   <ChakraText
     as='p'
     color='text.secondary'
-    fontSize={fontSizeByVariant[variant]}
-    fontWeight={fontWeightByVariant[variant]}
+    fontSize={size === TextSizes.small ? 's' : 'm'}
+    fontWeight={weight === TextWeights.bold ? 'bold' : 'normal'}
     lineHeight='m'
     {...props}
   />

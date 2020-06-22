@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Text, { TextVariants } from './Text';
+import Text, { TextSizes, TextWeights } from './Text';
+import { capitalize } from '../../utils';
 
 const textContent =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut porta sapien. Aliquam pellentesque, diam eu lacinia interdum, est ex aliquam neque, ut faucibus magna lectus a nibh.';
@@ -17,21 +18,33 @@ stories.add('All states', () => (
     <StoryHeading level={2}>Default</StoryHeading>
     <Text>{textContent}</Text>
 
-    <StoryHeading level={2}>Variants</StoryHeading>
-
-    {Object.entries(TextVariants).map(([key, value]) => (
+    <StoryHeading level={2}>Sizes</StoryHeading>
+    {Object.entries(TextSizes).map(([key, value]) => (
       <React.Fragment key={key}>
         <StoryHeading level={4} mb='m'>
-          {key}
+          {capitalize(key)}
         </StoryHeading>
-        <Text variant={value}>{textContent}</Text>
+        <Text size={value}>{textContent}</Text>
+      </React.Fragment>
+    ))}
+
+    <StoryHeading level={2}>Weights</StoryHeading>
+    {Object.entries(TextWeights).map(([key, value]) => (
+      <React.Fragment key={key}>
+        <StoryHeading level={4} mb='m'>
+          {capitalize(key)}
+        </StoryHeading>
+        <Text weight={value}>{textContent}</Text>
       </React.Fragment>
     ))}
   </>
 ));
 
 stories.add('Playground', () => (
-  <Text variant={select('Type', TextVariants, TextVariants.CONTENT)}>
+  <Text
+    size={select('Size', TextSizes, TextSizes.normal)}
+    weight={select('Weight', TextWeights, TextWeights.normal)}
+  >
     {textContent}
   </Text>
 ));
