@@ -11,7 +11,7 @@ import State from './State';
 import { Container, InputContainer, Preview, PreviewActions } from './styles';
 import { STATES } from './constants';
 
-import { toBase64 } from '../../utils';
+import { toBase64 } from '../../utils/index.ts';
 
 const texts = {
   add_document: {
@@ -36,16 +36,7 @@ const isImage = file => /\.(jpe?g|png|gif|webp)$/i.test(file.name);
 
 const Uploader = React.forwardRef(
   (
-    {
-      id,
-      onChange,
-      translate,
-      multiple,
-      overrides,
-      state: initialState,
-      value,
-      ...props
-    },
+    { id, onChange, translate, multiple, state: initialState, value, ...props },
     ref,
   ) => {
     const [state, setState] = React.useState(initialState);

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Heading from '../Heading';
+import StoryHeading from '../StoryHeading/StoryHeading';
 import Uploader from '.';
 import { STATES } from './constants';
 
@@ -33,19 +33,19 @@ const stories = storiesOf('Form/Uploader', module);
 
 stories.add('All states', () => (
   <>
-    <Heading>Uploader</Heading>
+    <StoryHeading>Uploader</StoryHeading>
     <Uploader id='uploader' onChange={noop} />
 
-    <Heading level={2}>With default value</Heading>
+    <StoryHeading level={2}>With default value</StoryHeading>
 
-    <Heading level={3}>Single image</Heading>
+    <StoryHeading level={3}>Single image</StoryHeading>
     <Uploader
       id='uploader-default-image'
       onChange={noop}
       value={[imageStub1]}
     />
 
-    <Heading level={3}>Multiple images</Heading>
+    <StoryHeading level={3}>Multiple images</StoryHeading>
     <Uploader
       id='uploader-default-images'
       multiple
@@ -53,10 +53,10 @@ stories.add('All states', () => (
       value={[imageStub1, imageStub2]}
     />
 
-    <Heading level={3}>Single file</Heading>
+    <StoryHeading level={3}>Single file</StoryHeading>
     <Uploader id='uploader-default-file' onChange={noop} value={[fileStub1]} />
 
-    <Heading level={3}>Multiple files</Heading>
+    <StoryHeading level={3}>Multiple files</StoryHeading>
     <Uploader
       id='uploader-default-files'
       multiple
@@ -64,12 +64,12 @@ stories.add('All states', () => (
       value={[fileStub1, fileStub2]}
     />
 
-    <Heading level={2}>States</Heading>
+    <StoryHeading level={2}>States</StoryHeading>
     <Uploader id={`uploader-idle`} state={STATES.IDLE} onChange={noop} />
     <Uploader id={`uploader-loading`} state={STATES.LOADING} onChange={noop} />
     <Uploader id={`uploader-error`} state={STATES.ERROR} onChange={noop} />
 
-    <Heading level={2}>Validation</Heading>
+    <StoryHeading level={2}>Validation</StoryHeading>
     <Uploader id='uploader-invalid' onChange={noop} invalid />
     <Uploader id='uploader-invalid' onChange={noop} valid />
   </>
