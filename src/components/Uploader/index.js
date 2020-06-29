@@ -73,7 +73,7 @@ const Uploader = React.forwardRef(
       onChange(remainingFiles);
     };
 
-    const onFilesChange = async e => {
+    const onFilesChange = e => {
       const inputFiles = [...e.target.files];
       const [file] = inputFiles;
       const isSingleImage = inputFiles.length === 1 && isImage(file);
@@ -82,8 +82,11 @@ const Uploader = React.forwardRef(
       onChange(inputFiles);
 
       if (isSingleImage) {
-        setPreview(await toBase64(file));
-        setState(STATES.SINGLE_IMAGE);
+        toBase64(file).then(base64 => {
+          setPreview(base64);
+          setState(STATES.SINGLE_IMAGE);
+        });
+
         return;
       }
 
