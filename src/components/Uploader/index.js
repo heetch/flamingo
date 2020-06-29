@@ -96,7 +96,7 @@ const Uploader = React.forwardRef(
       const filesCount = value.length;
 
       if (filesCount === 0) return;
-      if (filesCount === 1 && file.preview) {
+      if (filesCount === 1 && isImage(file)) {
         setPreview(file.preview);
         setState(STATES.SINGLE_IMAGE);
         return;
