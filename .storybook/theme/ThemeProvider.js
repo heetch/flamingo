@@ -1,10 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  CSSReset,
-  ThemeProvider as ChakraThemeProvider,
-  theme as chakraDefaultTheme,
-} from '@chakra-ui/core';
+import * as Chakra from '@chakra-ui/core';
+import icons from './icons';
 
 const colors = {
   element: {
@@ -38,10 +34,10 @@ const colors = {
 // @TODO: move this into src/components
 // @TODO: speak with designers about the colors palette
 const theme = {
-  ...chakraDefaultTheme,
+  ...Chakra.theme,
   breakpoints: ['28.75rem', '50rem', '68.75rem'],
   colors: {
-    ...chakraDefaultTheme.colors,
+    ...Chakra.theme.colors,
     ...colors,
   },
   fontSizes: {
@@ -53,6 +49,7 @@ const theme = {
     xl: '1.5rem',
     xxl: '2rem',
   },
+  icons: { ...icons },
   lineHeights: {
     s: '1rem',
     m: '1.4rem',
@@ -66,7 +63,7 @@ const theme = {
     xl: '1.5rem',
   },
   shadows: {
-    ...chakraDefaultTheme.shadows,
+    ...Chakra.theme.shadows,
     Card: {
       isActive: `inset 0 0 0 3px ${colors.primary[500]}`,
       0: `0 0 0 1px ${colors.element.inactive}`,
@@ -84,8 +81,8 @@ const theme = {
 };
 
 export default storyFn => (
-  <ChakraThemeProvider theme={theme}>
-    <CSSReset />
+  <Chakra.ThemeProvider theme={theme}>
+    <Chakra.CSSReset />
     {storyFn()}
-  </ChakraThemeProvider>
+  </Chakra.ThemeProvider>
 );
