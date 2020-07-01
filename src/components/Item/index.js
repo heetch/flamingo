@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import Helper from '../Helper';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import UiText from '../UiText';
 import { StyledItem, ContentContainer, ValueContainer } from './styles';
 

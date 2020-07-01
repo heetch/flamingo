@@ -4,7 +4,7 @@ import { select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import Item from '.';
 
 import { capitalize } from '../../utils/index.ts';

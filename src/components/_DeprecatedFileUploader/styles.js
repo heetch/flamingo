@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import UiText from '../UiText';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import { theme } from '../../theme';
 
 const styles = {

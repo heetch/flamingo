@@ -58,7 +58,7 @@ const IconsFilterer = () => {
   );
 };
 
-const stories = storiesOf('Icons', module);
+const stories = storiesOf('_DeprecatedIcons', module);
 
 stories.add('All', () => <IconsFilterer />);
 

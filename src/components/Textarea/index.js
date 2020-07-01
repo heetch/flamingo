@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import cx from 'classnames';
 
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import FormElement from '../FormComponents/FormElement';
 import { theme } from '../../theme';

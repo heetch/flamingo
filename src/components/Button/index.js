@@ -11,7 +11,7 @@ import {
   intents,
   variants,
 } from './styles';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 
 const Button = React.forwardRef((props, ref) => {
   const isSuccess = props.intent === INTENTS.SUCCESS;

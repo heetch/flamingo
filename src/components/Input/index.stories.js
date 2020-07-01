@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Input from '.';
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 
 const ICONS = { ...Icon.ICONS, None: null };
 

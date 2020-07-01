@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from 'styled-components';
 
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import { theme } from '../../theme';
 
 const sizes = Object.values(Icon.SIZES);
