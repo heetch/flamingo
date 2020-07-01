@@ -21,7 +21,7 @@ const svgo = new SVGO({
     { removeHiddenElems: true },
     { removeEmptyText: true },
     { removeEmptyContainers: true },
-    { removeViewBox: false },
+    { removeViewBox: true },
     { cleanupEnableBackground: true },
     { convertStyleToAttrs: true },
     { convertColors: true },
@@ -47,21 +47,15 @@ const svgo = new SVGO({
 
 const paths = {
   icons: path.resolve(__dirname, '../src/icons/'),
-  dist: path.resolve(__dirname, '../src/constants/icons.js'),
+  dist: path.resolve(__dirname, '../.storybook/theme/icons.js'),
 };
 
 function toCamelCase(str) {
   return str.replace(/-([a-z0-9])/g, group => group[1].toUpperCase());
 }
 
-function toPascalCase(str) {
-  return `${str[0].toUpperCase()}${str.slice(1, str.length)}`;
-}
-
 function formatIconName(str) {
-  const prefix = 'Icon';
-  const iconName = toPascalCase(toCamelCase(str)).replace('.svg', '');
-  return `${prefix}${iconName}`;
+  return toCamelCase(str).replace('.svg', '');
 }
 
 function getIconContent(icon) {
@@ -70,10 +64,10 @@ function getIconContent(icon) {
 
 function toReactComponent(name, content) {
   return `
-export const ${name} = (
-  ${content}
-);
-`;
+${name}: {
+  path: ${content},
+  viewBox: '0 0 24 24',
+},`;
 }
 
 const iconsPath = fs.readdirSync(paths.icons);
@@ -88,10 +82,16 @@ const formatIcons = iconsPath.map(async iconPath => {
 
 Promise.all(formatIcons).then(icons => {
   const reactIcons = icons.join('');
-  const output = `import React from 'react';
+  const output = `import * as React from 'react';
 
-/* This file has been generated via the 'icons' script */
-${reactIcons}`;
+/*
+ * This file has been automatically generated.
+ * Do not update it manually, run 'yarn icons' instead.
+ */
+
+export default {
+  ${reactIcons}
+}`;
 
   const formattedOutput = prettier.format(output, { parser: 'babel' });
   const { results } = eslint.executeOnText(formattedOutput, 'icons.js');
