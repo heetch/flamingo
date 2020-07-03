@@ -17,7 +17,9 @@ SelectorField.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.node,
   selectorRef: PropTypes.shape({
-    current: PropTypes.instanceOf(Element),
+    current: PropTypes.instanceOf(
+      typeof Element !== 'undefined' ? Element : Object,
+    ),
   }),
 };
 

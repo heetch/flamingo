@@ -17,7 +17,9 @@ InputField.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.node,
   inputRef: PropTypes.shape({
-    current: PropTypes.instanceOf(Element),
+    current: PropTypes.instanceOf(
+      typeof Element !== 'undefined' ? Element : Object,
+    ),
   }),
 };
 
