@@ -105,7 +105,9 @@ Dropdown.propTypes = {
   onOpen: PropTypes.func,
   triggerer: PropTypes.func.isRequired,
   placement: PropTypes.string, // https://popper.js.org/docs/v1/#Popper.placements
-  portalNode: PropTypes.instanceOf(HTMLElement),
+  portalNode: PropTypes.instanceOf(
+    typeof HTMLElement !== 'undefined' ? HTMLElement : Object,
+  ),
   modifiers: PropTypes.shape({}), // https://popper.js.org/docs/v1/#modifiers
 };
 
