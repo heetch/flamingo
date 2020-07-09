@@ -6,7 +6,7 @@ import { select } from '@storybook/addon-knobs';
 import Card from '../Card/Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Helper from '../Helper';
-import Icon, { IconSize } from './Icon';
+import Icon from './Icon';
 import Input from '../Input';
 import Label from '../Label';
 
@@ -22,6 +22,9 @@ const IconsLister = ({ children, filter = '' }: IconsFiltererProps) => {
   );
   return <>{children(icons)}</>;
 };
+
+const sizes = ['s', 'm', 'l'];
+const customSize = '2rem';
 
 const stories = storiesOf('Icons', module);
 
@@ -58,7 +61,7 @@ stories.add('Playground', () => (
     {icons => (
       <Icon
         name={select('Icon', icons, icons[0])}
-        size={select('Size', IconSize, IconSize.m)}
+        size={select('Size', [...sizes, customSize], 'm')}
       />
     )}
   </IconsLister>

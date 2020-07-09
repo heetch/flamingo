@@ -1,14 +1,8 @@
 import * as React from 'react';
 import * as Chakra from '@chakra-ui/core';
 
-export enum IconSize {
-  s = 's',
-  m = 'm',
-  l = 'l',
-}
-
 export type IconProps = Chakra.IconProps & {
-  size?: IconSize | string;
+  size?: 's' | 'm' | 'l' | string;
 };
 
 const getSize = (size: string) => {
@@ -18,7 +12,7 @@ const getSize = (size: string) => {
   return size;
 };
 
-const Icon = ({ size = IconSize.m, ...props }: Chakra.IconProps) => (
+const Icon = ({ size = 'm', ...props }: Chakra.IconProps) => (
   <Chakra.Icon as='i' fill='currentColor' size={getSize(size)} {...props} />
 );
 
