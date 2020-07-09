@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import IconButton from '../IconButton';
 import Text from '../Text/Text.tsx';
 import { theme } from '../../theme';

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import UiText from '../UiText';
 import { theme } from '../../theme';
 

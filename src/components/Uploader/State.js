@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import { State as Container } from './styles';
 
 const State = ({ children, icon, ...props }) => (

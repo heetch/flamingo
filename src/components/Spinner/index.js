@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 
 const sizes = Object.values(Icon.SIZES);
 

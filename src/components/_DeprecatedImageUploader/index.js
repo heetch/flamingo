@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import IconButton from '../IconButton';
 import UploaderImageItem from '../UploaderImageItem';
 

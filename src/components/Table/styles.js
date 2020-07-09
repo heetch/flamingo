@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import UiText from '../UiText';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import { theme } from '../../theme';
 
 export const StyledTable = styled('table').attrs(() => ({

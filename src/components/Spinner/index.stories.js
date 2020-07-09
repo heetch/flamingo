@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import Spinner from '.';
 
 const sizes = Object.values(Icon.SIZES);

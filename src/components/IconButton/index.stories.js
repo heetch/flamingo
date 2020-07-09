@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import StoryHeading from '../StoryHeading/StoryHeading';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import IconButton from '.';
 
 const { ICONS } = Icon;

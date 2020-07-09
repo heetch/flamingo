@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon from '../_DeprecatedIcon';
 import UiText from '../UiText';
 import Text from '../Text/Text.tsx';
 import { StyledAlert, AlertIcon, CloseButton } from './styles';

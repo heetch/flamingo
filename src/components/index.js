@@ -10,7 +10,7 @@ export { default as FormField } from './FormField';
 export { default as Heading } from './Heading/Heading';
 export * from './Heading/Heading';
 export { default as Helper } from './Helper';
-export { default as Icon } from './Icon';
+
 export { default as IconButton } from './IconButton';
 export { default as Input } from './Input';
 export { default as InputField } from './InputField';
@@ -45,3 +45,4 @@ export { default as FileUploader } from './_DeprecatedFileUploader';
 export { default as FileUploaderField } from './_DeprecatedFileUploaderField';
 export { default as ImageUploader } from './_DeprecatedImageUploader';
 export { default as ImageUploaderField } from './_DeprecatedImageUploaderField';
+export { default as Icon } from './_DeprecatedIcon';
