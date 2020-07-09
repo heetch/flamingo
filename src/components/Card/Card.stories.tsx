@@ -3,11 +3,14 @@ import { Box } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import Card, { CardElevations, CardSizes } from './Card';
+import Card from './Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Text from '../Text/Text';
 
-const Container = props => <Box m='xl' {...props} />;
+const Container = (props: any) => <Box m='xl' {...props} />;
+
+const elevations = ['none', 's', 'm'] as const;
+const sizes = ['s', 'm'] as const;
 
 const stories = storiesOf('Card', module);
 
@@ -29,20 +32,20 @@ stories.add('All states', () => (
 
     <StoryHeading level={2}>Elevations</StoryHeading>
 
-    {Object.entries(CardElevations).map(([key, value]) => (
-      <Container key={key}>
-        <Card elevation={value}>
-          <Text>Elevation {key}</Text>
+    {elevations.map(elevation => (
+      <Container key={elevation}>
+        <Card elevation={elevation}>
+          <Text>Elevation {elevation}</Text>
         </Card>
       </Container>
     ))}
 
     <StoryHeading level={2}>Sizes</StoryHeading>
 
-    {Object.entries(CardSizes).map(([key, value]) => (
-      <Container key={key}>
-        <Card size={value}>
-          <Text>size {key}</Text>
+    {sizes.map(size => (
+      <Container key={size}>
+        <Card size={size}>
+          <Text>size {size}</Text>
         </Card>
       </Container>
     ))}
@@ -62,8 +65,8 @@ stories.add('All states', () => (
 stories.add('Playground', () => (
   <Card
     isActive={boolean('isActive', false)}
-    elevation={select('Elevation', CardElevations, CardElevations.NONE)}
-    size={select('Size', CardSizes, CardSizes.M)}
+    elevation={select('Elevation', elevations, 'none')}
+    size={select('Size', sizes, 'm')}
   >
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

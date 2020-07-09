@@ -4,32 +4,21 @@ import styled from '@emotion/styled';
 
 import { ITheme } from '../theme.d';
 
-export enum CardElevations {
-  NONE = '0',
-  S = '1',
-  M = '2',
-}
-
-export enum CardSizes {
-  S = 'S',
-  M = 'M',
-}
-
 export type CardProps = {
-  elevation?: CardElevations;
+  elevation?: 'none' | 's' | 'm';
   isActive?: boolean;
-  size?: CardSizes;
+  size?: 's' | 'm';
 };
 
 const Card = ({
-  elevation = CardElevations.NONE,
+  elevation = 'none',
   isActive = false,
-  size = CardSizes.M,
+  size = 'm',
   ...props
 }: CardProps) => (
   <Box
     bg='element.primary'
-    p={size === CardSizes.S ? 'xl' : 'xxl'}
+    p={size === 's' ? 'xl' : 'xxl'}
     shadow={isActive ? 'Card.isActive' : `Card.${elevation}`}
     rounded='xl'
     {...props}

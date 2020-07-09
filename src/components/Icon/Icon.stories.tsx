@@ -3,7 +3,7 @@ import { Box, SimpleGrid, useTheme } from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
-import Card, { CardSizes } from '../Card/Card';
+import Card from '../Card/Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Helper from '../Helper';
 import Icon, { IconSize } from './Icon';
@@ -40,7 +40,7 @@ stories.add('All', () => {
           <SimpleGrid columns={[2, 2, 4]}>
             {icons.map(icon => (
               <Box key={icon} p='s' textAlign='center'>
-                <Card size={CardSizes.S}>
+                <Card size='s'>
                   <Icon key={icon} name={icon} mb='s' />
                   <Helper>{icon}</Helper>
                 </Card>
