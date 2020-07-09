@@ -1,31 +1,17 @@
 import * as React from 'react';
 import { Text as ChakraText, BoxProps } from '@chakra-ui/core';
 
-export enum TextWeights {
-  normal = 'normal',
-  bold = 'bold',
-}
-
-export enum TextSizes {
-  normal = 'normal',
-  small = 'small',
-}
-
 export type TextProps = BoxProps & {
-  size?: TextSizes;
-  weight?: TextWeights;
+  size?: 'normal' | 'small';
+  weight?: 'normal' | 'bold';
 };
 
-const Text = ({
-  size = TextSizes.normal,
-  weight = TextWeights.normal,
-  ...props
-}: TextProps) => (
+const Text = ({ size = 'normal', weight = 'normal', ...props }: TextProps) => (
   <ChakraText
     as='p'
     color='text.secondary'
-    fontSize={size === TextSizes.small ? 's' : 'm'}
-    fontWeight={weight === TextWeights.bold ? 'bold' : 'normal'}
+    fontSize={size === 'small' ? 's' : 'm'}
+    fontWeight={weight}
     lineHeight='m'
     {...props}
   />
