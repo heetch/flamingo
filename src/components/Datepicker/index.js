@@ -61,7 +61,10 @@ Datepicker.propTypes = {
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   placeholder: PropTypes.string,
-  value: PropTypes.instanceOf(Date),
+  value: PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.instanceOf(Date),
+]),
   onChange: PropTypes.func,
   formatDate: PropTypes.func,
   renderNavigation: PropTypes.func,
