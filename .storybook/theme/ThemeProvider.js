@@ -66,9 +66,9 @@ const theme = {
     ...Chakra.theme.shadows,
     Card: {
       isActive: `inset 0 0 0 3px ${colors.primary[500]}`,
-      0: `0 0 0 1px ${colors.element.inactive}`,
-      1: '0 2px 10px rgba(25, 1, 52, 0.08)',
-      2: '0 4px 20px rgba(25, 1, 52, 0.14)',
+      none: `0 0 0 1px ${colors.element.inactive}`,
+      s: '0 2px 10px rgba(25, 1, 52, 0.08)',
+      m: '0 4px 20px rgba(25, 1, 52, 0.14)',
     },
   },
   space: {
