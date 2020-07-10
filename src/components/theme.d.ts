@@ -1,6 +1,6 @@
-import { ITheme as ChakraITheme } from '@chakra-ui/core';
+import * as Chakra from '@chakra-ui/core';
 
-export type ITheme = ChakraITheme & {
+export type ITheme = Chakra.ITheme & {
   radii: {
     l: string;
     m: string;

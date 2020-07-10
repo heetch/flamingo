@@ -1,8 +1,5 @@
 import * as React from 'react';
-import {
-  Heading as ChakraHeading,
-  HeadingProps as ChakraHeadingProps,
-} from '@chakra-ui/core';
+import * as Chakra from '@chakra-ui/core';
 
 const fontSizeByLevel = {
   1: 'xxl',
@@ -22,12 +19,12 @@ const lineHeightByLevel = {
   6: 's',
 };
 
-export type HeadingProps = ChakraHeadingProps & {
+export type HeadingProps = Chakra.HeadingProps & {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
 const Heading = ({ as = 'h1', level = 1, ...props }: HeadingProps) => (
-  <ChakraHeading
+  <Chakra.Heading
     as={as}
     fontSize={fontSizeByLevel[level]}
     lineHeight={lineHeightByLevel[level]}
