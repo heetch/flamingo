@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box } from '@chakra-ui/core';
+import * as React from 'react';
+import * as Chakra from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
 import { ITheme } from '../theme.d';
@@ -16,7 +16,7 @@ const Card = ({
   size = 'm',
   ...props
 }: CardProps) => (
-  <Box
+  <Chakra.Box
     bg='element.primary'
     p={size === 's' ? 'xl' : 'xxl'}
     shadow={isActive ? 'Card.isActive' : `Card.${elevation}`}

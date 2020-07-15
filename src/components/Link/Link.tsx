@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Link as ChakraLink, LinkProps } from '@chakra-ui/core';
+import * as Chakra from '@chakra-ui/core';
 
-const Link = (props: LinkProps) => <ChakraLink color='text.link' {...props} />;
+const Link = (props: Chakra.LinkProps) => (
+  <Chakra.Link color='text.link' {...props} />
+);
 
 export default Link;

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import * as Chakra from '@chakra-ui/core';
 import icons from './icons';
 

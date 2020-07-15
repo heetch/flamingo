@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, BoxProps } from '@chakra-ui/core';
+import * as React from 'react';
+import * as Chakra from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
 
@@ -8,8 +8,8 @@ import StoryHeading from '../StoryHeading/StoryHeading';
 
 const stories = storiesOf('Heading', module);
 
-const Wrapper = (props: BoxProps) => (
-  <Box bg='element.primary' mb={'m'} {...props} />
+const Wrapper = (props: Chakra.BoxProps) => (
+  <Chakra.Box bg='element.primary' mb={'m'} {...props} />
 );
 
 stories.add('All states', () => (

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box } from '@chakra-ui/core';
+import * as React from 'react';
+import * as Chakra from '@chakra-ui/core';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
@@ -7,7 +7,7 @@ import Card from './Card';
 import StoryHeading from '../StoryHeading/StoryHeading';
 import Text from '../Text/Text';
 
-const Container = (props: any) => <Box m='xl' {...props} />;
+const Container = (props: any) => <Chakra.Box m='xl' {...props} />;
 
 const elevations = ['none', 's', 'm'] as const;
 const sizes = ['s', 'm'] as const;
