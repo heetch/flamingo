@@ -44,6 +44,7 @@ const Toggle = React.forwardRef(
           {...labelProps}
           disabled={disabled}
           isOn={isOn}
+          type='button'
         >
           <ToggleBullet
             className='f-Toggle-bullet'
