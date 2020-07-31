@@ -38,6 +38,8 @@ export { default as Selector } from './Selector';
 export { default as SelectorField } from './SelectorField';
 export { default as FormElement } from './FormComponents/FormElement';
 export { default as FormElementWrapper } from './FormComponents/FormElementWrapper';
+export { default as Section } from './Section';
+export { default as Pagination } from './Pagination';
 
 // deprecated
 export { default as FileUploader } from './_DeprecatedFileUploader';

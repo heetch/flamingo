@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
-import { Section } from './index';
+import Section from './index';
 
 const defaultProps = () => ({
   id: `section-${Math.random()}`,

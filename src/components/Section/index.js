@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme } from '../../theme';
-import { UiText } from '../index';
+import UiText from '../UiText';
 
-export const Section = props => (
+const Section = props => (
   <SectionContainer className={props.className}>
     <StyledSectionHeader>
       <div>
@@ -62,3 +62,5 @@ const SectionContainer = styled('div')`
 const SectionContentWrapper = styled('div')`
   padding: 24px;
 `;
+
+export default Section;

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { IconButton } from '../index';
+import IconButton from '../IconButton';
 import { theme } from '../../theme';
 
-export const Pagination = props => {
+const Pagination = props => {
   // Don't show it if both are disabled
   if (props.prevDisabled && props.nextDisabled) {
     return null;
@@ -14,7 +14,7 @@ export const Pagination = props => {
   const { translations } = props;
 
   return (
-    <Container className={props.className}>
+    <Container className={props.className} position={props.position}>
       <ArrowIcon
         data-testid={'pagination-prev'}
         icon={'IconArrowLeft'}
@@ -39,6 +39,8 @@ export const Pagination = props => {
   );
 };
 
+Pagination.displayName = 'Pagination';
+
 Pagination.propTypes = {
   goPrev: PropTypes.func.isRequired,
   prevDisabled: PropTypes.bool,
@@ -50,6 +52,7 @@ Pagination.propTypes = {
     previous: PropTypes.string,
     disabled: PropTypes.string,
   }),
+  position: PropTypes.string,
 };
 
 Pagination.defaultProps = {
@@ -62,7 +65,7 @@ Pagination.defaultProps = {
 
 const Container = styled('div')`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${({ position }) => position || 'flex-end'};
   padding: 20px 0 10px;
 `;
 
@@ -78,3 +81,5 @@ const ArrowIcon = styled(IconButton)`
     }
   }
 `;
+
+export default Pagination;
