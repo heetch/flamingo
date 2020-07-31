@@ -29,7 +29,8 @@
     "predeploy": "npm run build && npm run build:storybook",
     "icons": "node scripts/icons",
     "prettier": "prettier --check 'src/**/*.{js,jsx,json,md,css}'",
-    "analyze-bundle": "npm run build && open dist/stats.html"
+    "analyze-bundle": "npm run build && open dist/stats.html",
+    "test": "jest"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
@@ -40,8 +41,8 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-info": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
@@ -71,6 +72,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.4.1",
     "react-table": "next",
+    "react-test-renderer": "^16.13.1",
     "rollup": "^2.7.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -79,7 +81,12 @@
     "rollup-plugin-postcss": "^2.9.0",
     "rollup-plugin-url": "^3.0.1",
     "rollup-plugin-visualizer": "^4.0.4",
-    "svgo": "^1.3.2"
+    "svgo": "^1.3.2",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/user-event": "^12.0.17",
+    "babel-jest": "^26.2.2",
+    "eslint-plugin-jest": "^23.20.0",
+    "jest": "^26.2.2"
   },
   "files": [
     "dist"
