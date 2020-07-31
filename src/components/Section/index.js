@@ -3,24 +3,25 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme } from '../../theme';
 import UiText from '../UiText';
+import Card from '../Card';
 
-const Section = props => (
-  <SectionContainer className={props.className}>
+const Section = ({ title, subtitle, headerChildren, children, ...rest }) => (
+  <CardContainer {...rest}>
     <StyledSectionHeader>
       <div>
-        <Title variant={UiText.VARIANTS.h4}>{props.title}</Title>
-        {props.subtitle && (
+        <Title variant={UiText.VARIANTS.h4}>{title}</Title>
+        {subtitle && (
           <Subtitle variant={UiText.VARIANTS.subContent} as={'span'}>
-            {props.subtitle}
+            {subtitle}
           </Subtitle>
         )}
       </div>
 
-      {props.headerChildren}
+      {headerChildren}
     </StyledSectionHeader>
 
-    <SectionContentWrapper>{props.children}</SectionContentWrapper>
-  </SectionContainer>
+    <SectionContentWrapper>{children}</SectionContentWrapper>
+  </CardContainer>
 );
 
 Section.propTypes = {
@@ -49,10 +50,8 @@ const StyledSectionHeader = styled('div')`
   align-items: center;
 `;
 
-const SectionContainer = styled('div')`
-  background: white;
-  border-radius: 24px;
-  border: 1px solid ${theme.color.element.inactive};
+const CardContainer = styled(Card)`
+  padding: 0;
 
   & + & {
     margin-top: 3rem;

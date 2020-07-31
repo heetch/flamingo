@@ -5,34 +5,39 @@ import styled from 'styled-components';
 import IconButton from '../IconButton';
 import { theme } from '../../theme';
 
-const Pagination = props => {
+const Pagination = ({
+  className,
+  position,
+  prevDisabled,
+  nextDisabled,
+  translate,
+  goPrev,
+  goNext,
+}) => {
   // Don't show it if both are disabled
-  if (props.prevDisabled && props.nextDisabled) {
+  if (prevDisabled && nextDisabled) {
     return null;
   }
 
-  const { translations } = props;
-
   return (
-    <Container className={props.className} position={props.position}>
+    <Container className={className} position={position}>
       <ArrowIcon
         data-testid={'pagination-prev'}
         icon={'IconArrowLeft'}
-        onClick={props.goPrev}
-        css={{ marginLeft: '24px' }}
-        disabled={props.prevDisabled}
-        title={`${translations.previous} ${
-          props.prevDisabled ? `- ${translations.disabled}` : ''
+        onClick={goPrev}
+        disabled={prevDisabled}
+        title={`${translate.previous} ${
+          prevDisabled ? `- ${translate.disabled}` : ''
         }`}
       />
 
       <ArrowIcon
         data-testid={'pagination-next'}
         icon={'IconArrowRight'}
-        onClick={props.goNext}
-        disabled={props.nextDisabled}
-        title={`${translations.next} ${
-          props.nextDisabled ? `- ${translations.disabled}` : ''
+        onClick={goNext}
+        disabled={nextDisabled}
+        title={`${translate.next} ${
+          nextDisabled ? `- ${translate.disabled}` : ''
         }`}
       />
     </Container>
@@ -47,7 +52,7 @@ Pagination.propTypes = {
   goNext: PropTypes.func.isRequired,
   nextDisabled: PropTypes.bool,
   className: PropTypes.string,
-  translations: PropTypes.shape({
+  translate: PropTypes.shape({
     next: PropTypes.string,
     previous: PropTypes.string,
     disabled: PropTypes.string,
@@ -56,7 +61,7 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
-  translations: {
+  translate: {
     next: 'Next',
     previous: 'Previous',
     disabled: 'Disabled',

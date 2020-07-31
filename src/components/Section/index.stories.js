@@ -39,6 +39,16 @@ stories.add('All states', () => (
     >
       Party parrot!
     </Section>
+
+    <Heading level={2}>Section extends Card</Heading>
+
+    <Section
+      title={"So you can use Card's props"}
+      subtitle={'except `size` which does nothing'}
+      elevation={2}
+    >
+      Potato Potaoes
+    </Section>
   </>
 ));
 

@@ -1,7 +1,5 @@
-/* eslint-disable */
-
-module.exports = function(api) {
-  var isTestEnv = api.env('test');
+module.exports = api => {
+  const isTestEnv = api.env('test');
 
   return {
     exclude: 'node_modules/**',
