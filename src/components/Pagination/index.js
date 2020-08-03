@@ -5,6 +5,21 @@ import styled from 'styled-components';
 import IconButton from '../IconButton';
 import { theme } from '../../theme';
 
+const texts = {
+  next: {
+    id: 'flamingo.pagination.next',
+    defaultText: 'Next',
+  },
+  previous: {
+    id: 'flamingo.pagination.previous',
+    defaultText: 'Previous',
+  },
+  disabled: {
+    id: 'flamingo.pagination.disabled',
+    defaultText: 'Disabled',
+  },
+};
+
 const Pagination = ({
   className,
   position,
@@ -26,8 +41,8 @@ const Pagination = ({
         icon={'IconArrowLeft'}
         onClick={goPrev}
         disabled={prevDisabled}
-        title={`${translate.previous} ${
-          prevDisabled ? `- ${translate.disabled}` : ''
+        title={`${translate(texts.previous)} ${
+          prevDisabled ? `- ${translate(texts.disabled)}` : ''
         }`}
       />
 
@@ -36,8 +51,8 @@ const Pagination = ({
         icon={'IconArrowRight'}
         onClick={goNext}
         disabled={nextDisabled}
-        title={`${translate.next} ${
-          nextDisabled ? `- ${translate.disabled}` : ''
+        title={`${translate(texts.next)} ${
+          nextDisabled ? `- ${translate(texts.disabled)}` : ''
         }`}
       />
     </Container>
@@ -52,20 +67,12 @@ Pagination.propTypes = {
   goNext: PropTypes.func.isRequired,
   nextDisabled: PropTypes.bool,
   className: PropTypes.string,
-  translate: PropTypes.shape({
-    next: PropTypes.string,
-    previous: PropTypes.string,
-    disabled: PropTypes.string,
-  }),
+  translate: PropTypes.func,
   position: PropTypes.string,
 };
 
 Pagination.defaultProps = {
-  translate: {
-    next: 'Next',
-    previous: 'Previous',
-    disabled: 'Disabled',
-  },
+  translate: ({ defaultText }) => defaultText,
 };
 
 const Container = styled('div')`
