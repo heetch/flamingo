@@ -8,7 +8,7 @@ import Icon from '../Icon';
 import Table from '.';
 import Text from '../Text';
 
-const stories = storiesOf('Table', module);
+const stories = storiesOf('Tables/Table', module);
 
 const defaultProps = {
   data: [...new Array(7)].map(() => ({
