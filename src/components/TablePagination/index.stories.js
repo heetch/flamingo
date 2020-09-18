@@ -133,15 +133,34 @@ stories.add('All states', () => (
   </>
 ));
 
-stories.add('Playground', () => (
-  <>
-    <Heading>Table</Heading>
-    <Table
-      {...defaultProps}
-      isSortable={boolean('Table 1 sortable', false)}
-      manualSorting={boolean('manualSorting')}
-      onChangeSort={action('onChangeSort')}
-      initialState={{ sortBy: [{ id: 'number', desc: true }] }}
-    />
-  </>
-));
+stories.add('Playground', () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsCount = defaultProps.data.length;
+  const itemsPerPage = 7;
+  const totalPages = Math.ceil(itemsCount / itemsPerPage);
+  const pageSize = itemsPerPage <= itemsCount ? itemsPerPage : itemsCount;
+  return (
+    <>
+      <Heading>Table Pagination</Heading>
+      <Table
+        {...defaultProps}
+        isSortable={boolean('Table 1 sortable', false)}
+        manualSorting={boolean('manualSorting')}
+        onChangeSort={action('onChangeSort')}
+        initialState={{
+          sortBy: [{ id: 'number', desc: true }],
+          pageIndex: currentPage,
+          pageSize,
+        }}
+      />
+      <div>{`Page: ${currentPage + 1}/${totalPages}`}</div>
+      <Pagination
+        goPrev={() => setCurrentPage(p => p - 1)}
+        goNext={() => setCurrentPage(p => p + 1)}
+        prevDisabled={currentPage === 0}
+        nextDisabled={currentPage === totalPages - 1}
+        position='flex-start'
+      />
+    </>
+  );
+});

@@ -5,7 +5,6 @@ import { useTable, useSortBy, usePagination } from 'react-table';
 
 import HeaderCell from './components/TableHeaderCell';
 import RowCell from './components/TableRowCell';
-
 import { StyledTable } from './styles';
 
 const TablePagination = React.forwardRef(
