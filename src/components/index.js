@@ -24,6 +24,7 @@ export { default as SelectField } from './SelectField';
 export { default as SidePanel } from './SidePanel';
 export { default as Spinner } from './Spinner';
 export { default as Table } from './Table';
+export { default as TablePagination } from './TablePagination';
 export { default as Tabs } from './Tabs';
 export { default as Text } from './Text';
 export { default as Textarea } from './Textarea';
