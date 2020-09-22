@@ -39,7 +39,6 @@ export const theme = {
       tertiary: 'var(--f-color-text--tertiary)',
       link: 'var(--f-color-text--link)',
       white: 'var(--f-color-text--white)',
-      lightGrey: 'var(--f-color-text--lightGrey)',
     },
   },
   fontSize: {
