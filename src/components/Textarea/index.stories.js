@@ -10,6 +10,7 @@ const states = ['default', 'disabled'];
 
 const textareaProps = () => ({
   id: `textarea-${Math.random()}`,
+  // eslint-disable-next-line no-console
   onChange: console.log,
 });
 
