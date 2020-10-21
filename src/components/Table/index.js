@@ -17,6 +17,7 @@ const Table = React.forwardRef(
       manualSorting,
       onChangeSort,
       initialState,
+      onClickRow,
     },
     ref,
   ) => {
@@ -83,7 +84,11 @@ const Table = React.forwardRef(
 
         <tbody>
           {rows.map(row => (
-            <tr className={'f-Table-RowGroup'} {...row.getRowProps()}>
+            <tr
+              className={'f-Table-RowGroup'}
+              {...row.getRowProps()}
+              onClick={() => onClickRow(row.original)}
+            >
               {row.cells.map(({ getCellProps, render }) => (
                 <RowCell {...getCellProps()}>{render('Cell')}</RowCell>
               ))}
@@ -109,6 +114,7 @@ Table.propTypes = {
   isSortable: PropTypes.bool,
   manualSorting: PropTypes.bool,
   onChangeSort: PropTypes.func,
+  onClickRow: PropTypes.func,
   initialState: PropTypes.shape({
     sortBy: PropTypes.arrayOf(
       PropTypes.shape({
@@ -123,6 +129,7 @@ Table.defaultProps = {
   columns: [],
   data: [],
   onChangeSort: () => {},
+  onClickRow: () => {},
 };
 
 Table.HeaderCell = HeaderCell;

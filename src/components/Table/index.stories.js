@@ -5,8 +5,10 @@ import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import Icon from '../Icon';
+import IconButton from '../IconButton';
 import Table from '.';
 import Text from '../Text';
+import Link from '../Link';
 
 const stories = storiesOf('Tables/Table', module);
 
@@ -48,6 +50,31 @@ stories.add('All states', () => (
       manualSorting
       initialState={{ sortBy: [{ id: 'number', desc: true }] }}
     />
+
+    <Heading level={2}>With clickable rows</Heading>
+    <Table
+      {...defaultProps}
+      columns={[
+        ...defaultProps.columns,
+        {
+          Header: text("Col #4's heading", 'With a link and button'),
+          accessor: null,
+          Cell: () => (
+            <>
+              <Link href='#link'>Click me</Link>
+              <IconButton
+                icon={Icon.ICONS.IconOption}
+                onClick={e => {
+                  e.stopPropagation();
+                  action('onClickIconButton')(e);
+                }}
+              />
+            </>
+          ),
+        },
+      ]}
+      onClickRow={action('onClickRow')}
+    />
   </>
 ));
 
@@ -59,6 +86,7 @@ stories.add('Playground', () => (
       isSortable={boolean('Table 1 sortable', false)}
       manualSorting={boolean('manualSorting')}
       onChangeSort={action('onChangeSort')}
+      onClickRow={action('onClickRow')}
       initialState={{ sortBy: [{ id: 'number', desc: true }] }}
     />
   </>
