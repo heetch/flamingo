@@ -8,6 +8,7 @@ import StoryWrapper from './theme/StoryWrapper';
 
 import './styles.css';
 import 'normalize.css';
+import 'react-datepicker/dist/react-datepicker.css';
 
 addons.setConfig({
   theme,

@@ -27,7 +27,7 @@ export default {
     external(),
     postcss({
       modules: {
-        globalModulePaths: [/node_modules\/react-day-picker/],
+        globalModulePaths: [/node_modules\/react-datepicker\/dist/],
       },
     }),
     url(),
