@@ -17,6 +17,9 @@ stories.add('All states', () => (
 
     <Heading level={2}>With custom color</Heading>
     <IconButton icon={ICONS.IconAlertOctagon} iconColor='blue' />
+
+    <Heading level={2}>Loading</Heading>
+    <IconButton icon={ICONS.IconAlertOctagon} isLoading />
   </>
 ));
 
@@ -25,6 +28,7 @@ stories.add('Playground', () => (
     <IconButton
       disabled={boolean('Disabled', false)}
       icon={select('Icon', ICONS, ICONS.IconCandy)}
+      isLoading={boolean('Loading', false)}
     />
   </>
 ));

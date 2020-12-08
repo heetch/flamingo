@@ -10,13 +10,17 @@ import { theme } from '../../theme';
 const sizes = Object.values(Icon.SIZES);
 
 const IconButtonComponent = React.forwardRef(
-  ({ className, icon, size, iconColor, disabled, ...props }, ref) => (
+  (
+    { className, icon, size, iconColor, disabled, isLoading, ...props },
+    ref,
+  ) => (
     <Button
       className={cx('f-Button--icon', className)}
       intent={Button.INTENTS.SECONDARY}
       variant={Button.VARIANTS.MINIMAL}
       disabled={disabled}
       ref={ref}
+      isLoading={isLoading}
       {...props}
     >
       <Icon
@@ -32,6 +36,7 @@ IconButtonComponent.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.oneOf(Icon.NAMES).isRequired,
   size: PropTypes.oneOf(sizes),
+  isLoading: PropTypes.bool,
   iconColor: PropTypes.string,
   disabled: PropTypes.bool,
 };
@@ -51,8 +56,9 @@ const IconButton = styled(IconButtonComponent)`
     margin-left: ${theme.space.m};
   }
 
-  ${Icon} {
+  > ${Icon} {
     display: block;
+    opacity: ${({ isLoading }) => (isLoading ? 0 : 1)};
   }
 
   ${theme.breakPoint.s} {
