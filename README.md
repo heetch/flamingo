@@ -61,6 +61,13 @@ producing a unique URL such as https://flamingo-git-gyndav-featzeit.heetch-eng.n
 
 Each incremental changes will create a new slug.
 
+## How-to add new icons
+
+All you have to do is add the svg file in src/icons with the correct naming.
+Then run
+`yarn icons` || `npm icons`
+it will automatically add your new icon in our `icons.js` with the correct indentation.
+
 ## License
 
 MIT © [Heetch](https://github.com/heetch)
