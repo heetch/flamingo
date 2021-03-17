@@ -705,6 +705,16 @@ export const IconHelpCircle = (
   </svg>
 );
 
+export const IconHourglass = (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 24'>
+    <path
+      fillRule='evenodd'
+      d='M0 1a1 1 0 011-1h14a1 1 0 110 2h-1v5a1 1 0 01-.486.857L9.944 10l3.57 2.143A1 1 0 0114 13v5h1a1 1 0 110 2H1a1 1 0 110-2h1v-5a1 1 0 01.486-.857L6.056 10l-3.57-2.143A1 1 0 012 7V2H1a1 1 0 01-1-1zm8 7.834l4-2.4V2H4v4.434l4 2.4zm0 2.332l-4 2.4V18h8v-4.434l-4-2.4zM6 15a1 1 0 011-1h2a1 1 0 110 2H7a1 1 0 01-1-1z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
 export const IconInfo = (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <path
