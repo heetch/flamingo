@@ -5,21 +5,31 @@ import Icon from '../Icon';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import FormElement from '../FormComponents/FormElement';
 
-const Select = React.forwardRef(({ id, options, ...props }, ref) => {
-  return (
-    <FormElementWrapper invalid={props.invalid} valid={props.valid}>
-      <FormElement as='select' id={id} name={id} ref={ref} withIcon {...props}>
-        {options.map(({ label, value, disabled = false }) => (
-          <option key={value} value={value} disabled={disabled}>
-            {label}
-          </option>
-        ))}
-      </FormElement>
+const Select = React.forwardRef(
+  ({ id, options, placeholder, ...props }, ref) => {
+    return (
+      <FormElementWrapper invalid={props.invalid} valid={props.valid}>
+        <FormElement
+          as='select'
+          id={id}
+          name={id}
+          ref={ref}
+          withIcon
+          {...props}
+        >
+          {placeholder && <option value=''>{placeholder}</option>}
+          {options.map(({ label, value, disabled = false }) => (
+            <option key={value} value={value} disabled={disabled}>
+              {label}
+            </option>
+          ))}
+        </FormElement>
 
-      <Icon icon={Icon.ICONS.IconChevronUpDown} size={Icon.SIZES.L} />
-    </FormElementWrapper>
-  );
-});
+        <Icon icon={Icon.ICONS.IconChevronUpDown} size={Icon.SIZES.L} />
+      </FormElementWrapper>
+    );
+  },
+);
 
 Select.displayName = 'Select';
 
@@ -38,6 +48,7 @@ Select.propTypes = {
       disabled: PropTypes.bool,
     }),
   ),
+  placeholder: PropTypes.string,
   valid: PropTypes.bool,
 };
 
