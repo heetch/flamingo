@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 
 // import Button from '../Button';
@@ -9,26 +9,27 @@ import React from 'react';
 import { StyledAccordion } from './styles';
 
 const Accordion = React.forwardRef((tabs, { ...props }, ref) => {
-  // const [activeTab, setActiveTab] = useState(0);
+  const [active, setActive] = useState();
 
   return (
     <StyledAccordion ref={ref} {...props}>
       <div className='tabs'>
         <div className='tab'>
+          <input type='radio' id='rd1' name='rd' checked={active} />
           <label className='tab-label' htmlFor='rd1'>
             Item 1
           </label>
-          <input type='radio' id='rd1' name='rd' />
           <div className='tab-content'>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
             facilis.
+            <label htmlFor='rd2'>Next</label>
           </div>
         </div>
         <div className='tab'>
+          <input type='radio' id='rd2' name='rd' />
           <label className='tab-label' htmlFor='rd2'>
             Item 2
           </label>
-          <input type='radio' id='rd2' name='rd' />
           <div className='tab-content'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil,
             aut.
@@ -40,6 +41,9 @@ const Accordion = React.forwardRef((tabs, { ...props }, ref) => {
           </label>
           <input type='radio' id='rd3' name='rd' />
         </div>
+        <button onClick={() => setActive(true)} htmlFor='rd1'>
+          Prev
+        </button>
       </div>
     </StyledAccordion>
   );
