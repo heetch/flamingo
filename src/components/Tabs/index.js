@@ -40,16 +40,17 @@ const Tabs = React.forwardRef(
           {elements.map((element, index) => (
             <Tab
               key={element}
+              type='button'
               onClick={() => handleTabClick(index)}
-              onKeyPress={({ which }) =>
-                which === 13 ? handleTabClick(index) : undefined
+              onKeyPress={({ key }) =>
+                key === 13 ? handleTabClick(index) : undefined
               }
             >
               <TabsLabel className='f-Tabs-label'>
                 {buildTabLabel ? buildTabLabel(element) : element}
               </TabsLabel>
               <TabsMarker
-                className={'f-Tabs-marker'}
+                className='f-Tabs-marker'
                 isActive={activeIndex === index}
               />
             </Tab>

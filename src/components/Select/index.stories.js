@@ -38,6 +38,10 @@ stories.add('All states', () => (
 
     <Select invalid {...defaultProps()} />
     <Select valid {...defaultProps()} />
+
+    <Heading level={2}>Placeholder</Heading>
+
+    <Select placeholder='Please select...' {...defaultProps()} />
   </>
 ));
 

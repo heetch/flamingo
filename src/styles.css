@@ -15,9 +15,10 @@
   --f-color-element--secondary: #685879;
   --f-color-element--tertiary: #b3abbc;
   --f-color-element--inactive: #eaeaea;
-  --f-color-element--error: #ee7d52;
-  --f-color-element--success: #5cc689;
+  --f-color-element--error: #e4566f;
+  --f-color-element--success: #33a879;
   --f-color-element--overlay: #2b1e70;
+  --f-color-element--ok: #ffb525;
 
   --f-color-text--primary: #190134;
   --f-color-text--secondary: #685879;
