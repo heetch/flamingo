@@ -27,6 +27,7 @@ const Toast = props => {
 
       return () => clearTimeout(timeOut);
     }
+    return close;
   }, [onClose, close]);
 
   if (visible === null) return null;
@@ -37,7 +38,7 @@ const Toast = props => {
       zIndex={props.zIndex}
       position={props.position}
       isVisible={visible}
-      onClick={handleClose}
+      onClick={() => closeSet(true)}
     >
       <Alert
         onClose={() => closeSet(true)}
