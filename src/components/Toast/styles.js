@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { theme } from '../../theme';
 
 export const fadeDown = keyframes`
   0% {
@@ -22,16 +21,6 @@ export const fadeUp = keyframes`
     margin-right: -100px;
   }
 `;
-
-const styles = {
-  color({ alertType }) {
-    if (alertType === 'error') return theme.color.element.error;
-    if (alertType === 'success') return theme.color.element.success;
-    if (alertType === 'information') return theme.color.brand.secondary;
-
-    return undefined;
-  },
-};
 
 export const StyledToastWrapper = styled.div`
   position: flex;
@@ -63,15 +52,10 @@ export const StyledToastWrapper = styled.div`
   .f-Alert-icon {
     border-top-left-radius: var(--f-borderRadius--m);
     border-bottom-left-radius: var(--f-borderRadius--m);
-    background-color: ${styles.color};
   }
 
   .f-Button {
     top: calc(50% - 20px);
-  }
-
-  .f-Button:hover {
-    background-color: #ffffff;
   }
 
   .f-Alert .f-Button svg {

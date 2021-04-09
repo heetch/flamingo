@@ -7,12 +7,6 @@ import Heading from '../Heading';
 
 import { StyledToastWrapper } from './styles';
 
-const TYPES = {
-  INFORMATION: 'information',
-  SUCCESS: 'success',
-  ERROR: 'error',
-};
-
 const stories = storiesOf('Toast', module);
 
 stories.add('Playground', () => {
@@ -31,7 +25,7 @@ stories.add('Playground', () => {
       >
         <Alert
           onClose={onClose}
-          type={TYPES.INFORMATION}
+          type={Alert.TYPES.INFORMATION}
           title={'Toast of type information.'}
         />
       </StyledToastWrapper>
@@ -42,7 +36,7 @@ stories.add('Playground', () => {
       >
         <Alert
           onClose={onClose}
-          type={TYPES.SUCCESS}
+          type={Alert.TYPES.SUCCESS}
           title={'Toast of type success.'}
         />
       </StyledToastWrapper>
@@ -53,7 +47,7 @@ stories.add('Playground', () => {
       >
         <Alert
           onClose={onClose}
-          type={TYPES.ERROR}
+          type={Alert.TYPES.ERROR}
           title={'Toast of type error.'}
         />
       </StyledToastWrapper>
