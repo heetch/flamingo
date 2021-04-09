@@ -56,6 +56,7 @@ export const StyledToastWrapper = styled.div`
 
   .f-Button {
     top: calc(50% - 20px);
+    margin-right: 10px;
   }
 
   .f-Alert .f-Button svg {
@@ -63,6 +64,7 @@ export const StyledToastWrapper = styled.div`
   }
 
   .f-Button .f-Icon {
-    margin-right: 20px;
+    width: 20px;
+    height: 20px;
   }
 `;
