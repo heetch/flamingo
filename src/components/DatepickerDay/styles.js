@@ -7,7 +7,6 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   className: 'f-Datepicker',
 }))`
   position: relative;
-  cursor: pointer important!;
   text-align: left;
 
   .react-datepicker-wrapper,
@@ -62,7 +61,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__close-icon {
-    right: 40px;
+    right: 3px;
+    line-height: 15px;
   }
 
   .react-datepicker__triangle {
@@ -121,6 +121,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
     &:hover {
       border-radius: 100%;
+      background-color: ${theme.color.brand.primary};
+      color: white;
     }
   }
 

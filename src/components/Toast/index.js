@@ -4,7 +4,7 @@ import Alert from '../Alert';
 import { StyledToastWrapper } from './styles';
 
 const Toast = React.forwardRef(
-  ({ zIndex, position, onClose, timeoutDelay }, ref) => {
+  ({ type, title, zIndex, position, timeoutDelay, onClose }, ref) => {
     const [isVisible, setIsVisible] = useState(true);
     const [close, setClose] = useState(false);
 
@@ -27,7 +27,7 @@ const Toast = React.forwardRef(
 
         return () => clearTimeout(timeOut);
       }
-      return close;
+      return setClose(false);
     }, [onClose, close]);
 
     if (isVisible === null) return null;
@@ -38,9 +38,8 @@ const Toast = React.forwardRef(
         position={position}
         isVisible={isVisible}
         ref={ref}
-        onClick={() => setClose(true)}
       >
-        <Alert onClose={() => setClose(true)} />
+        <Alert onClose={() => setClose(true)} type={type} title={title} />
       </StyledToastWrapper>
     );
   },
@@ -48,9 +47,12 @@ const Toast = React.forwardRef(
 
 Toast.TYPES = Alert.TYPES;
 
+const typesArray = Object.values(Alert.TYPES).map(type => type);
 Toast.propTypes = {
   onClose: PropTypes.func.isRequired,
   position: PropTypes.string,
+  type: PropTypes.oneOf(typesArray),
+  title: PropTypes.string,
   timeoutDelay: PropTypes.number,
   zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
