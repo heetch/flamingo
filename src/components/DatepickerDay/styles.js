@@ -61,8 +61,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__close-icon {
-    right: 3px;
-    line-height: 15px;
+    right: 2.8px;
   }
 
   .react-datepicker__triangle {
@@ -119,7 +118,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     margin: 0;
     transition: background-color 0.2s ease;
 
-    &:hover {
+    &:hover:not(.react-datepicker__day--disabled) {
       border-radius: 100%;
       background-color: ${theme.color.brand.primary};
       color: white;
@@ -154,6 +153,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     background: ${theme.color.brand.primary};
     color: white;
     font-size: ${theme.fontSize.s};
+    line-height: 15px;
   }
 
   .react-datepicker__month-container {

@@ -14,7 +14,6 @@ stories.add('Playground', () => {
   return (
     <>
       <Heading>Toast</Heading>
-
       <Toast
         zIndex={1}
         timeoutDelay={60000}
@@ -25,16 +24,15 @@ stories.add('Playground', () => {
 
       <Toast
         zIndex={1}
-        position={'bottom'}
-        timeoutDelay={1000}
-        type={Toast.TYPES.INFORMATION}
-        title={'Toast of type information.'}
-      />
-
-      <Toast
-        zIndex={2}
+        timeoutDelay={8000}
         type={Toast.TYPES.ERROR}
         title={'Toast of type error.'}
+      />
+      <Toast
+        zIndex={1}
+        timeoutDelay={4000}
+        type={Toast.TYPES.INFORMATION}
+        title={'Toast of type information.'}
       />
     </>
   );
