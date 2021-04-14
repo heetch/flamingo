@@ -7,7 +7,6 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   className: 'f-Datepicker',
 }))`
   position: relative;
-  cursor: pointer;
   text-align: left;
 
   .react-datepicker-wrapper,
@@ -62,7 +61,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__close-icon {
-    right: 40px;
+    right: 2.8px;
   }
 
   .react-datepicker__triangle {
@@ -99,10 +98,6 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     text-indent: 0;
     margin: ${theme.space.m} 0;
     cursor: pointer;
-
-    &:hover {
-      background-color: ${theme.color.element.inactive};
-    }
   }
 
   .react-datepicker__navigation--next {
@@ -117,21 +112,22 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker__day {
     border-radius: 100%;
     font-size: ${theme.fontSize.m};
-    color: ${theme.color.text.primary};
     width: 38px;
     height: 38px;
     line-height: 38px;
     margin: 0;
     transition: background-color 0.2s ease;
 
-    &:hover {
+    &:hover:not(.react-datepicker__day--disabled) {
       border-radius: 100%;
-      background-color: ${theme.color.element.tertiary};
+      background-color: ${theme.color.brand.primary};
+      color: white;
     }
   }
 
   .react-datepicker__day--selected {
-    &, &:hover {
+    &,
+    &:hover {
       background-color: ${theme.color.brand.primary};
       color: white;
     }
@@ -146,12 +142,18 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     background: none;
   }
 
+  .react-datepicker__day--outside-month {
+    visibility: hidden;
+  }
+
+  .react-datepicker__year-dropdown--scrollable {
+    height: auto;
+  }
   .react-datepicker__close-icon:after {
-    background: none;
-    width: initial;
-    content: '${props => props.clearButtonLabel || 'Clear'}';
-    color: ${theme.color.text.link};
+    background: ${theme.color.brand.primary};
+    color: white;
     font-size: ${theme.fontSize.s};
+    line-height: 15px;
   }
 
   .react-datepicker__month-container {

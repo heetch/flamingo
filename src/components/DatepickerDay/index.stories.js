@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { addDays, subDays, subYears } from 'date-fns';
 
 import fr from 'date-fns/locale/fr';
 import DatepickerDay from '.';
@@ -36,7 +37,20 @@ stories.add('All states', () => (
       value={new Date('1989-11-04')}
       onChange={noop}
     />
-
+    <Heading level={2}>With disabled days</Heading>
+    <DatepickerDay
+      onChange={date => new Date(date)}
+      maxDate={addDays(new Date(), 5)}
+      minDate={subDays(new Date(), 2)}
+    />
+    <Heading level={2}>With years dropdown</Heading>
+    <DatepickerDay
+      maxDate={addDays(new Date(), 5)}
+      minDate={subYears(new Date(), 2)}
+      showYearDropdown
+      scrollableYearDropdown
+      isClearable
+    />
     <Heading level={2}>Validation</Heading>
     <DatepickerDay inputProps={{ id: 'invalid' }} invalid onChange={noop} />
     <DatepickerDay inputProps={{ id: 'valid' }} valid onChange={noop} />

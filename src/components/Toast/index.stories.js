@@ -2,10 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Alert from '../Alert';
+import Toast from '.';
 import Heading from '../Heading';
-
-import { StyledToastWrapper } from './styles';
 
 const stories = storiesOf('Toast', module);
 
@@ -16,41 +14,26 @@ stories.add('Playground', () => {
   return (
     <>
       <Heading>Toast</Heading>
-      <StyledToastWrapper
+      <Toast
         zIndex={1}
-        position={'flex'}
+        timeoutDelay={60000}
         onClose={onClose}
-        timeout={6000}
-        style={{ marginTop: '40px' }}
-      >
-        <Alert
-          onClose={onClose}
-          type={Alert.TYPES.INFORMATION}
-          title={'Toast of type information.'}
-        />
-      </StyledToastWrapper>
-      <StyledToastWrapper
+        type={Toast.TYPES.SUCCESS}
+        title={'Toast of type success.'}
+      />
+
+      <Toast
         zIndex={1}
-        position={'flex'}
-        style={{ marginTop: '40px' }}
-      >
-        <Alert
-          onClose={onClose}
-          type={Alert.TYPES.SUCCESS}
-          title={'Toast of type success.'}
-        />
-      </StyledToastWrapper>
-      <StyledToastWrapper
+        timeoutDelay={8000}
+        type={Toast.TYPES.ERROR}
+        title={'Toast of type error.'}
+      />
+      <Toast
         zIndex={1}
-        position={'flex'}
-        style={{ marginTop: '40px' }}
-      >
-        <Alert
-          onClose={onClose}
-          type={Alert.TYPES.ERROR}
-          title={'Toast of type error.'}
-        />
-      </StyledToastWrapper>
+        timeoutDelay={4000}
+        type={Toast.TYPES.INFORMATION}
+        title={'Toast of type information.'}
+      />
     </>
   );
 });

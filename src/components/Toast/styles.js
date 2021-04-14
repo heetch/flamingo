@@ -23,7 +23,7 @@ export const fadeUp = keyframes`
 `;
 
 export const StyledToastWrapper = styled.div`
-  position: flex;
+  position: fixed;
   color: var(--f-color-text--secondary);
   max-width: 280px;
   white-space: normal;

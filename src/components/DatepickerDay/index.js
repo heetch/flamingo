@@ -112,7 +112,6 @@ DatepickerDay.propTypes = {
   inputProps: PropTypes.shape({ id: PropTypes.string.isRequired }),
   focusPlaceholder: PropTypes.string,
   isClearable: PropTypes.bool,
-  clearButtonLabel: PropTypes.string,
   popperPlacement: PropTypes.string,
   dateFormat: PropTypes.string,
   withPortal: PropTypes.bool,
@@ -126,7 +125,6 @@ DatepickerDay.defaultProps = {
   locale: {
     key: 'en',
   },
-  clearButtonLabel: 'Clear',
   popperPlacement: 'bottom-start',
   withPortal: false,
   onChange: () => {},
