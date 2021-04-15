@@ -19,11 +19,11 @@ stories.add('Playground', () => {
         timeoutDelay={60000}
         type={Toast.TYPES.SUCCESS}
         title={'Toast of type success, on the top of the page.'}
-        children={"I'm a subtitle"}
         position={'top'}
         onClose={onClose}
-      />
-
+      >
+        {"I'm a subtitle"}
+      </Toast>
       <Toast
         zIndex={1}
         timeoutDelay={8000}
@@ -35,8 +35,9 @@ stories.add('Playground', () => {
         timeoutDelay={4000}
         type={Toast.TYPES.INFORMATION}
         title={'Toast of type information.'}
-        children={"I'm a subtitle"}
-      />
+      >
+        {"I'm a subtitle"}
+      </Toast>
     </>
   );
 });

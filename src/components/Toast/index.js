@@ -22,6 +22,7 @@ const Toast = React.forwardRef(
 
         const timeOut = setTimeout(() => {
           setIsVisible(null);
+          if (onClose) onClose();
         }, 250);
 
         return () => clearTimeout(timeOut);
