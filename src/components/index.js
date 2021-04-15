@@ -29,6 +29,7 @@ export { default as Tabs } from './Tabs';
 export { default as Text } from './Text';
 export { default as Textarea } from './Textarea';
 export { default as TextareaField } from './TextareaField';
+export { default as Toast } from './Toast';
 export { default as Toggle } from './Toggle';
 export { default as UiText } from './UiText';
 export { default as Uploader } from './Uploader';
