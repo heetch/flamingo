@@ -27,10 +27,11 @@ export const StyledToastWrapper = styled.div`
   color: var(--f-color-text--secondary);
   max-width: 280px;
   white-space: normal;
-  right: 200px;
+  z-index: ${({ zIndex }) => zIndex || '10'};
+  right: 20px;
   box-shadow: 0px 2px 10px rgba(25, 1, 52, 0.12);
-  bottom: ${({ position }) => position !== 'top' && '250px'};
-  top: ${({ position }) => position === 'top' && '250px'};
+  bottom: ${({ position }) => position !== 'top' && '25px'};
+  top: ${({ position }) => position === 'top' && '25px'};
   border: 0;
   border-radius: var(--f-borderRadius--m);
   animation: ${({ isVisible }) => (isVisible ? fadeDown : fadeUp)} 0.3s ease-out;
@@ -42,11 +43,6 @@ export const StyledToastWrapper = styled.div`
   .f-Alert {
     border-radius: var(--f-borderRadius--m);
     border-width: 0;
-  }
-
-  .f-Alert h1 {
-    margin: 10px;
-    font-weight: normal;
   }
 
   .f-Alert-icon {
