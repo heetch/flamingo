@@ -38,7 +38,6 @@ const Toast = React.forwardRef(
         position={position}
         isVisible={isVisible}
         ref={ref}
-        onClose={onClose}
       >
         <Alert onClose={() => setClose(true)} type={type} title={title}>
           {children}
