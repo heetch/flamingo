@@ -54,10 +54,12 @@ stories.add('All states', () => (
     <Heading>Badge</Heading>
     <Heading level={2}>Basic</Heading>
     <Badge>Badge</Badge>
-    <Heading level={2}>Colored</Heading>
+    <Heading level={2}>Background colored</Heading>
     <Badge backgroundColor={theme.color.text.tertiary}>
       Colored in color tertiary
     </Badge>
+    <Heading level={2}>Text colored</Heading>
+    <Badge color={theme.color.text.tertiary}>Colored in color tertiary</Badge>
     <Heading level={2}>Font Weight</Heading>
     <Badge fontWeight={theme.fontWeight.bold}>Font weight bold</Badge>
     <Heading level={2}>Font Size</Heading>

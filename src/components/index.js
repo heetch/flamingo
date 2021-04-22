@@ -42,6 +42,7 @@ export { default as FormElement } from './FormComponents/FormElement';
 export { default as FormElementWrapper } from './FormComponents/FormElementWrapper';
 export { default as Section } from './Section';
 export { default as Pagination } from './Pagination';
+export { default as Badge } from './Badge';
 
 // deprecated
 export { default as FileUploader } from './_DeprecatedFileUploader';
