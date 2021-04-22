@@ -61,6 +61,16 @@ producing a unique URL such as https://flamingo-git-gyndav-featzeit.heetch-eng.n
 
 Each incremental changes will create a new slug.
 
+## How-to create new component
+
+Add a new folder in `src/components`
+Name your new folder with your component name.
+Each folder should contain :
+One `index.js`
+One `index.stories.js`
+One `styles.js` (if you need specific styling)
+Don't forget to export your component in `src/components/index.js`
+
 ## How-to add new icons
 
 All you have to do is add the svg file in src/icons with the correct naming.
