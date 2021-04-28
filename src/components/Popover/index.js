@@ -35,43 +35,58 @@ export const Trigerrer = styled('div').attrs(() => ({
 export const StyledPopover = styled.div`
   padding: ${theme.space.s} ${theme.space.m};
   color: ${theme.color.text.white};
-  background-color: rgba(25, 1, 52, 0.8);
-  border-radius: ${theme.borderRadius.s};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor || 'rgba(25, 1, 52, 0.8)'};
+  border-radius: ${({ borderRadius }) => borderRadius || theme.borderRadius.s};
 `;
 
-const Popover = ({ content, children, placement }) => (
-  <Manager>
-    <Reference>
-      {({ ref }) =>
-        React.cloneElement(<Trigerrer>{children}</Trigerrer>, {
-          ref,
-        })
-      }
-    </Reference>
+const Popover = ({
+  content,
+  children,
+  placement,
+  backgroundColor,
+  borderRadius,
+}) => {
+  return (
+    <Manager>
+      <Reference>
+        {({ ref }) =>
+          React.cloneElement(<Trigerrer>{children}</Trigerrer>, {
+            ref,
+          })
+        }
+      </Reference>
 
-    <Popper placement={placement} hide>
-      {({ ref, style }) => (
-        <PopoverWrapper
-          ref={ref}
-          style={style}
-          data-placement={placement}
-          className={`f-Popover-wrapper`}
-        >
-          <StyledPopover className='f-Popover'>
-            <UiText variant={UiText.VARIANTS.subContent} as='span'>
-              {content}
-            </UiText>
-          </StyledPopover>
-        </PopoverWrapper>
-      )}
-    </Popper>
-  </Manager>
-);
+      <Popper placement={placement} hide>
+        {({ ref, style }) => (
+          <PopoverWrapper
+            ref={ref}
+            style={style}
+            data-placement={placement}
+            className={`f-Popover-wrapper`}
+          >
+            <StyledPopover
+              backgroundColor={backgroundColor}
+              borderRadius={borderRadius}
+              className='f-Popover'
+            >
+              <UiText variant={UiText.VARIANTS.subContent} as='span'>
+                {content}
+              </UiText>
+            </StyledPopover>
+          </PopoverWrapper>
+        )}
+      </Popper>
+    </Manager>
+  );
+};
 
 Popover.propTypes = {
   children: PropTypes.node.isRequired,
   content: PropTypes.string.isRequired,
   placement: PropTypes.oneOf(placements),
+  backgroundColor: PropTypes.string,
+  borderRadius: PropTypes.string,
 };
 
 Popover.defaultProps = {

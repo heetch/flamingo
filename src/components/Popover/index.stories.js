@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { select, text } from '@storybook/addon-knobs';
 import Button from '../Button';
 import Heading from '../Heading';
 import Popover from '.';
@@ -9,6 +10,23 @@ import { Code } from '../../storybook-utils';
 
 const { PLACEMENTS } = Popover;
 const ITEM_SPACING = '25%';
+
+const borderRadius = [
+  theme.borderRadius.s,
+  theme.borderRadius.m,
+  theme.borderRadius.l,
+  theme.borderRadius.xl,
+];
+
+const backgroundColor = [
+  theme.color.element.error,
+  theme.color.element.inactive,
+  theme.color.element.overlay,
+  theme.color.element.primary,
+  theme.color.element.secondary,
+  theme.color.element.success,
+  theme.color.element.tertiary,
+];
 
 const stories = storiesOf('Popover-Tooltip', module);
 
@@ -93,3 +111,23 @@ stories.add('All states', () => (
     `}</Code>
   </>
 ));
+
+stories.add('Playground', () => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        marginLeft: '10px',
+        transform: 'translateX(-50%)',
+      }}
+    >
+      <Popover
+        backgroundColor={select('backgroundColor', backgroundColor)}
+        borderRadius={select('borderRadius', borderRadius)}
+        content={text('Content', 'Badge content')}
+      >
+        <Button>Playground</Button>
+      </Popover>
+    </div>
+  );
+});
