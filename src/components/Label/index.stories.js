@@ -4,14 +4,21 @@ import { text } from '@storybook/addon-knobs';
 
 import Label from '.';
 import Heading from '../Heading';
+import { Code } from '../../storybook-utils';
 
 const inputId = 'input-id';
 
 const stories = storiesOf('Form/Label', module);
 
-stories.add('Playground', () => (
-  <>
-    <Heading>Label</Heading>
-    <Label htmlFor={inputId}>{text('Label content', 'Label')}</Label>
-  </>
-));
+stories.add('Playground', () => {
+  const label = text('Label content', 'Label');
+  return (
+    <>
+      <Heading>Label</Heading>
+      <Label htmlFor={inputId}>{label}</Label>
+      <Code>{`
+      <Label htmlFor='${inputId}'>${label}</Label>
+      `}</Code>
+    </>
+  );
+});

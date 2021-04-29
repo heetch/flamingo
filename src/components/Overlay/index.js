@@ -38,6 +38,8 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   left: 0;
   background-color: ${theme.color.element.overlay};
   z-index: ${theme.zIndex.overlay};
+  visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
+  transition: visibility 0.2s ease-out;
   animation: ${styles.animation} 0.2s ease-out;
   opacity: 0.8;
 `;

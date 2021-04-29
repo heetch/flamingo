@@ -7,6 +7,7 @@ import { addDays, subDays, subYears } from 'date-fns';
 import fr from 'date-fns/locale/fr';
 import DatepickerDay from '.';
 import Heading from '../Heading';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('DatepickerDay', module);
 
@@ -15,54 +16,91 @@ const dateKnob = (name, defaultValue) => {
   return new Date(date);
 };
 
-const noop = () => {};
-
 stories.add('All states', () => (
   <>
     <Heading>DatepickerDay</Heading>
 
     <Heading level={2}>With value</Heading>
-    <DatepickerDay
-      inputProps={{ id: 'default' }}
-      onChange={noop}
-      value={new Date('2020-08-04')}
-      isClearable
-    />
+    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable />
+    <Code>{`
+    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable />
+    `}</Code>
 
     <Heading level={2}>With custom locale</Heading>
     <DatepickerDay
-      inputProps={{ id: 'custom-locale' }}
+      id='custom-locale'
       locale={{ key: 'fr', dateFnsLocale: fr }}
       placeholder='Choisir une date'
       value={new Date('1989-11-04')}
-      onChange={noop}
     />
+    <Code>{`
+    import fr from 'date-fns/locale/fr';
+
+    <DatepickerDay
+      id='custom-locale'
+      locale={{ key: 'fr', dateFnsLocale: fr }}
+      placeholder='Choisir une date'
+      value={new Date('1989-11-04')}
+    />
+    `}</Code>
+
     <Heading level={2}>With disabled days</Heading>
     <DatepickerDay
-      onChange={date => new Date(date)}
+      id='disabled-days'
       maxDate={addDays(new Date(), 5)}
       minDate={subDays(new Date(), 2)}
     />
+    <Code>{`
+    <DatepickerDay
+      id='disabled-days'
+      maxDate={addDays(new Date(), 5)}
+      minDate={subDays(new Date(), 2)}
+    />
+    `}</Code>
+
     <Heading level={2}>With years dropdown</Heading>
     <DatepickerDay
+      id='years-dropdown'
       maxDate={addDays(new Date(), 5)}
       minDate={subYears(new Date(), 2)}
       showYearDropdown
       scrollableYearDropdown
       isClearable
     />
+    <Code>{`
+    <DatepickerDay
+      id='years-dropdown'
+      maxDate={addDays(new Date(), 5)}
+      minDate={subYears(new Date(), 2)}
+      showYearDropdown
+      scrollableYearDropdown
+      isClearable
+    />
+    `}</Code>
+
     <Heading level={2}>Validation</Heading>
-    <DatepickerDay inputProps={{ id: 'invalid' }} invalid onChange={noop} />
-    <DatepickerDay inputProps={{ id: 'valid' }} valid onChange={noop} />
+    <DatepickerDay id='invalid' invalid />
+    <DatepickerDay id='valid' valid />
+    <Code>{`
+    <DatepickerDay id='invalid' invalid />
+    <DatepickerDay id='valid' valid />
+    `}</Code>
 
     <Heading level={2}>With a portal overlay</Heading>
-    <DatepickerDay withPortal onChange={noop} />
+    <DatepickerDay id='portal' withPortal />
+    <Code>{`
+    <DatepickerDay id='portal' withPortal />
+    `}</Code>
+
+    <Heading level={2}>Events</Heading>
+    <Code>{`
+    <DatepickerDay id='events' onChange={noop} onFocus={noop} onBlur={noop} />
+    `}</Code>
   </>
 ));
 
 stories.add('Playground', () => (
   <DatepickerDay
-    id='datepicker-playground'
     onChange={action('onChange')}
     onFocus={action('onFocus')}
     onBlur={action('onBlur')}

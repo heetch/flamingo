@@ -9,6 +9,7 @@ import Item from '.';
 
 import { capitalize } from '../../utils';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 const { SIZES } = Item;
 const ICONS = { ...Icon.ICONS, None: null };
@@ -28,12 +29,12 @@ stories.add('All states', () => (
     {Object.values(SIZES).map(size => (
       <div key={size} style={{ marginBottom: theme.space.l }}>
         <Wrapper>
-          <Item size={size}>{`${capitalize(size)} size`}</Item>
+          <Item size={size}>{capitalize(size)} size</Item>
         </Wrapper>
 
         <Wrapper>
-          <Item size={size} helper='with onClick' onClick={() => {}}>
-            {`${capitalize(size)} size`}
+          <Item size={size} helper='with onClick' onClick={action('Click')}>
+            {capitalize(size)} size
           </Item>
         </Wrapper>
 
@@ -41,10 +42,10 @@ stories.add('All states', () => (
           <Item
             size={size}
             helper='with onClick and value'
-            onClick={() => {}}
+            onClick={action('Click')}
             value='Click'
           >
-            {`${capitalize(size)} size`}
+            {capitalize(size)} size
           </Item>
         </Wrapper>
 
@@ -57,11 +58,30 @@ stories.add('All states', () => (
             value='Click'
             valueIcon={Icon.ICONS.IconWallet}
           >
-            {`${capitalize(size)} size`}
+            {capitalize(size)} size
           </Item>
         </Wrapper>
       </div>
     ))}
+
+    <Code>{`
+    // size is normal, sub or mini
+    <Item size={size}>{capitalize(size)} size</Item>
+    <Item size={size} helper='with onClick' onClick={noop}>{capitalize(size)} size</Item>
+    <Item size={size} helper='with onClick and value' onClick={noop} value='Click'>
+      {capitalize(size)} size
+    </Item>
+    <Item
+      size={size}
+      contentIcon='IconMoon'
+      helper='with custom icons'
+      onClick={noop}
+      value='Click'
+      valueIcon='IconWallet'
+    >
+      {capitalize(size)} size
+    </Item>
+    `}</Code>
 
     <Heading level={2}>States</Heading>
     <Wrapper>
@@ -74,6 +94,11 @@ stories.add('All states', () => (
         Valid
       </Item>
     </Wrapper>
+
+    <Code>{`
+    <Item invalid value='Nope' valueIcon='IconCross'>Invalid</Item>
+    <Item valid value='All good' valueIcon='IconCheck'>Valid</Item>
+    `}</Code>
   </>
 ));
 

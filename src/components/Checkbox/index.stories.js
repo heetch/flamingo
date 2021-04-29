@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import Checkbox from '.';
 import Heading from '../Heading';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 const defaultProps = {
   children: 'Label',
@@ -33,6 +34,9 @@ stories.add('All states', () => (
         <Checkbox {...defaultProps} id='c2' disabled />
       </div>
     </div>
+    <Code>{`
+    <Checkbox onChange={noop} disabled={isDisabled}>Label</Checkbox>
+    `}</Code>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
@@ -44,6 +48,9 @@ stories.add('All states', () => (
         <Checkbox {...defaultProps} id='c4' checked disabled />
       </div>
     </div>
+    <Code>{`
+    <Checkbox onChange={noop} disabled={isDisabled} checked={isChecked}>Label</Checkbox>
+    `}</Code>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
@@ -55,25 +62,35 @@ stories.add('All states', () => (
         <Checkbox {...defaultProps} id='c6' isUndefined disabled />
       </div>
     </div>
+    <Code>{`
+    <Checkbox onChange={noop} disabled={isDisabled} isUndefined={isUndefined}>Label</Checkbox>
+    `}</Code>
 
-    <div style={{ display: 'flex' }}>
-      <Wrapper>
-        <Heading level={2}>No text</Heading>
-        <Checkbox onChange={defaultProps.onChange} id='c7' />
-      </Wrapper>
-      <div>
-        <Heading level={2}>With helper</Heading>
-        <Checkbox
-          {...defaultProps}
-          id='c8'
-          helper='With helper'
-          invalid={boolean('Invalid', false)}
-          valid={boolean('Valid', false)}
-        >
-          Label
-        </Checkbox>
-      </div>
+    <div>
+      <Heading level={2}>No text</Heading>
+      <Checkbox onChange={defaultProps.onChange} id='c7' />
     </div>
+    <Code>{`
+    <Checkbox onChange={noop} />
+    `}</Code>
+
+    <div>
+      <Heading level={2}>With helper</Heading>
+      <Checkbox
+        {...defaultProps}
+        id='c8'
+        helper='With helper'
+        invalid={boolean('Invalid', false)}
+        valid={boolean('Valid', false)}
+      >
+        Label
+      </Checkbox>
+    </div>
+    <Code>{`
+    <Checkbox onChange={noop} helper='With helper' valid={isValid} invalid={isInvalid}>
+      Label
+    </Checkbox>
+    `}</Code>
   </>
 ));
 

@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { theme } from '../../theme';
 import Heading from '../Heading';
 import Toggle from '.';
+import { Code } from '../../storybook-utils';
 
 const defaultProps = {
   children: 'Label',
@@ -33,6 +34,9 @@ stories.add('All states', () => (
         <Toggle {...defaultProps} name='r2' disabled />
       </div>
     </div>
+    <Code>{`
+    <Toggle name='my-toggle' onChange={noop} disabled={disabled}>Label</Toggle>
+    `}</Code>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
@@ -44,6 +48,9 @@ stories.add('All states', () => (
         <Toggle {...defaultProps} name='r4' checked disabled />
       </div>
     </div>
+    <Code>{`
+    <Toggle name='my-toggle' onChange={noop} checked disabled={disabled}>Label</Toggle>
+    `}</Code>
 
     <div style={{ display: 'flex' }}>
       <Wrapper>
@@ -52,11 +59,15 @@ stories.add('All states', () => (
       </Wrapper>
       <div>
         <Heading level={2}>With helper</Heading>
-        <Toggle {...defaultProps} name='r6' label='Label' helper='With texts'>
+        <Toggle {...defaultProps} name='r6' helper='With texts'>
           Label
         </Toggle>
       </div>
     </div>
+    <Code>{`
+    <Toggle name='no-text' onChange={noop} />
+    <Toggle name='with-helper' helper='With texts'>Label</Toggle>
+    `}</Code>
   </>
 ));
 

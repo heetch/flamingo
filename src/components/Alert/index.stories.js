@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { Code } from '../../storybook-utils';
 
 import Alert from '.';
 import Heading from '../Heading';
@@ -15,14 +16,25 @@ stories.add('All states', () => (
     <Heading>Alert</Heading>
     <Heading level={2}>States</Heading>
     {Object.values(TYPES).map(type => (
-      <Alert
-        key={type}
-        title={`Inline alert of type ${type}`}
-        onClose={action(`Alert ${type} closed!`)}
-        type={type}
-      >
-        Alert message
-      </Alert>
+      <div key={type}>
+        <Alert
+          title={`Inline alert of type ${type}`}
+          onClose={action(`Alert ${type} closed!`)}
+          type={type}
+        >
+          Alert message
+        </Alert>
+
+        <Code>{`
+        <Alert
+          title='Inline alert of type ${type}'
+          onClose={onCloseAction}
+          type='${type}'
+        >
+          Alert message
+        </Alert>
+      `}</Code>
+      </div>
     ))}
   </>
 ));

@@ -42,11 +42,13 @@ const UploaderImageItem = React.forwardRef(
 UploaderImageItem.displayName = 'UploaderImageItem';
 
 UploaderImageItem.propTypes = {
+  className: PropTypes.string,
   file: PropTypes.shape({
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     preview: PropTypes.string,
   }).isRequired,
+  handleDelete: PropTypes.func.isRequired,
   overrides: PropTypes.shape({}),
 };
 

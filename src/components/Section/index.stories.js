@@ -4,6 +4,7 @@ import { text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
 import Section from './index';
+import { Code } from '../../storybook-utils';
 
 const defaultProps = () => ({
   id: `section-${Math.random()}`,
@@ -19,13 +20,15 @@ stories.add('All states', () => (
     <Heading>Section</Heading>
 
     <Section title={'With a single title and children'}>
-      <div>Hello</div>
-      <div>There</div>
+      <Code>{`
+      <Section title='With a single title and children'>...</Section>
+      `}</Code>
     </Section>
 
     <Section title={'With title'} subtitle={'And subtitle'}>
-      <div>General</div>
-      <div>Kenobi</div>
+      <Code>{`
+      <Section title='With title' subtitle='And subtitle'>...</Section>
+      `}</Code>
     </Section>
 
     <Section
@@ -37,7 +40,19 @@ stories.add('All states', () => (
         </span>
       }
     >
-      Party parrot!
+      <Code>{`
+      <Section
+        title='With title'
+        subtitle='And subtitle'
+        headerChildren={
+          <span>
+            And <i>header</i> <b>children</b>
+          </span>
+        }
+      >
+        ...
+      </Section>
+      `}</Code>
     </Section>
 
     <Heading level={2}>Section extends Card</Heading>
@@ -47,7 +62,15 @@ stories.add('All states', () => (
       subtitle={'except `size` which does nothing'}
       elevation={2}
     >
-      Potato Potaoes
+      <Code>{`
+      <Section
+        title={"So you can use Card's props"}
+        subtitle='except \`size\` which does nothing'
+        elevation={2}
+      >
+        ...
+      </Section>
+      `}</Code>
     </Section>
   </>
 ));

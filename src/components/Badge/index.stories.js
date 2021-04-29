@@ -4,68 +4,90 @@ import { storiesOf } from '@storybook/react';
 import { theme } from '../../theme';
 import Badge from '.';
 import Heading from '../Heading';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('Badge', module);
 
-const textColor = [
-  theme.color.text.lightGrey,
-  theme.color.text.link,
-  theme.color.text.primary,
-  theme.color.text.secondary,
-  theme.color.text.tertiary,
-  theme.color.text.white,
-];
+const textColor = {
+  '- default -': undefined,
+  lightGrey: theme.color.text.lightGrey,
+  link: theme.color.text.link,
+  primary: theme.color.text.primary,
+  secondary: theme.color.text.secondary,
+  tertiary: theme.color.text.tertiary,
+  white: theme.color.text.white,
+};
 
-const backgroundColor = [
-  theme.color.element.error,
-  theme.color.element.inactive,
-  theme.color.element.overlay,
-  theme.color.element.primary,
-  theme.color.element.secondary,
-  theme.color.element.success,
-  theme.color.element.tertiary,
-];
+const backgroundColor = {
+  '- default -': undefined,
+  error: theme.color.element.error,
+  inactive: theme.color.element.inactive,
+  overlay: theme.color.element.overlay,
+  primary: theme.color.element.primary,
+  secondary: theme.color.element.secondary,
+  success: theme.color.element.success,
+  tertiary: theme.color.element.tertiary,
+};
 
-const fontSize = [
-  theme.fontSize.xxs,
-  theme.fontSize.xs,
-  theme.fontSize.s,
-  theme.fontSize.m,
-  theme.fontSize.l,
-  theme.fontSize.xl,
-  theme.fontSize.xxl,
-];
+const fontSize = {
+  '- default -': undefined,
+  xxs: theme.fontSize.xxs,
+  xs: theme.fontSize.xs,
+  s: theme.fontSize.s,
+  m: theme.fontSize.m,
+  l: theme.fontSize.l,
+  xl: theme.fontSize.xl,
+  xxl: theme.fontSize.xxl,
+};
 
-const fontWeight = [
-  theme.fontWeight.black,
-  theme.fontWeight.bold,
-  theme.fontWeight.normal,
-];
+const fontWeight = {
+  '- default -': undefined,
+  black: theme.fontWeight.black,
+  bold: theme.fontWeight.bold,
+  normal: theme.fontWeight.normal,
+};
 
-const borderRadius = [
-  theme.borderRadius.s,
-  theme.borderRadius.m,
-  theme.borderRadius.l,
-  theme.borderRadius.xl,
-];
+const borderRadius = {
+  '- default -': undefined,
+  s: theme.borderRadius.s,
+  m: theme.borderRadius.m,
+  l: theme.borderRadius.l,
+  xl: theme.borderRadius.xl,
+};
 
 stories.add('All states', () => (
   <>
     <Heading>Badge</Heading>
+
     <Heading level={2}>Basic</Heading>
     <Badge>Badge</Badge>
+    <Code>{`<Badge>Badge</Badge>`}</Code>
+
     <Heading level={2}>Background colored</Heading>
     <Badge backgroundColor={theme.color.text.tertiary}>
       Colored in color tertiary
     </Badge>
+    <Code>{`
+    <Badge backgroundColor={theme.color.text.tertiary}>
+      Colored in color tertiary
+    </Badge>
+    `}</Code>
+
     <Heading level={2}>Text colored</Heading>
     <Badge color={theme.color.text.tertiary}>Colored in color tertiary</Badge>
+    <Code>{`<Badge color={theme.color.text.tertiary}>Colored in color tertiary</Badge>`}</Code>
+
     <Heading level={2}>Font Weight</Heading>
     <Badge fontWeight={theme.fontWeight.bold}>Font weight bold</Badge>
+    <Code>{`<Badge fontWeight={theme.fontWeight.bold}>Font weight bold</Badge>`}</Code>
+
     <Heading level={2}>Font Size</Heading>
     <Badge fontSize={theme.fontSize.xl}>Font size XL</Badge>
+    <Code>{`<Badge fontSize={theme.fontSize.xl}>Font size XL</Badge>`}</Code>
+
     <Heading level={2}>Border Radius</Heading>
     <Badge borderRadius={theme.borderRadius.s}>Border radius S</Badge>
+    <Code>{`<Badge borderRadius={theme.borderRadius.s}>Border radius S</Badge>`}</Code>
   </>
 ));
 

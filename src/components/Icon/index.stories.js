@@ -9,6 +9,7 @@ import Input from '../Input';
 import Label from '../Label';
 import Icon from '.';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 const icons = Object.keys(Icon.ICONS);
 const sizes = Object.values(Icon.SIZES);
@@ -25,6 +26,11 @@ const IconsFilterer = () => {
   return (
     <div>
       <Heading>Icons</Heading>
+
+      <Code>{`
+      <Icon icon='IconStar' size='m' iconColor={theme.color.element.error} />
+      `}</Code>
+
       <Label htmlFor='icon-search'>Search</Label>
       <Input id='icon-search' onChange={handleInputChange} type='search' />
 
@@ -66,5 +72,18 @@ stories.add('Playground', () => (
   <Icon
     icon={select('Icon', icons, Icon.ICONS.IconAlertOctagon)}
     size={select('Size', sizes, Icon.SIZES.M)}
+    iconColor={select('Icon Color', {
+      '-default-': undefined,
+      'icon.white': theme.color.icon.white,
+      'icon.disabled': theme.color.icon.disabled,
+      'icon.dark': theme.color.icon.dark,
+      'element.primary': theme.color.element.primary,
+      'element.secondary': theme.color.element.secondary,
+      'element.tertiary': theme.color.element.tertiary,
+      'element.inactive': theme.color.element.inactive,
+      'element.error': theme.color.element.error,
+      'element.success': theme.color.element.success,
+      'element.overlay': theme.color.element.overlay,
+    })}
   />
 ));
