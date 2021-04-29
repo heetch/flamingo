@@ -8,10 +8,11 @@ import Icon from '../Icon';
 import Pagination from '../Pagination';
 import Table from '.';
 import Text from '../Text';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('Tables/Pagination', module);
 
-const defaultProps = {
+const defaultProps = () => ({
   data: [...new Array(74)].map(() => ({
     string: Math.random(),
     number: Math.random().toFixed(2),
@@ -33,11 +34,11 @@ const defaultProps = {
       Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
     },
   ],
-};
+});
 
 const TablePagination = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsCount = defaultProps.data.length;
+  const itemsCount = defaultProps().data.length;
   const itemsPerPage = 7;
   const totalPages = Math.ceil(itemsCount / itemsPerPage);
   const pageSize = itemsPerPage <= itemsCount ? itemsPerPage : itemsCount;
@@ -46,13 +47,15 @@ const TablePagination = () => {
     <>
       <Heading>Table</Heading>
       <Table
-        {...defaultProps}
+        {...defaultProps()}
         initialState={{
           pageIndex: currentPage,
           pageSize,
         }}
       />
-      <div>{`Page: ${currentPage + 1}/${totalPages}`}</div>
+      <div>
+        Page {currentPage + 1}/{totalPages}
+      </div>
       <Pagination
         goPrev={() => setCurrentPage(p => p - 1)}
         goNext={() => setCurrentPage(p => p + 1)}
@@ -66,7 +69,7 @@ const TablePagination = () => {
 
 const TableSorted = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsCount = defaultProps.data.length;
+  const itemsCount = defaultProps().data.length;
   const itemsPerPage = 7;
   const totalPages = Math.ceil(itemsCount / itemsPerPage);
   const pageSize = itemsPerPage <= itemsCount ? itemsPerPage : itemsCount;
@@ -75,7 +78,7 @@ const TableSorted = () => {
     <>
       <Heading level={2}>Sortable</Heading>
       <Table
-        {...defaultProps}
+        {...defaultProps()}
         isSortable
         initialState={{
           pageIndex: currentPage,
@@ -96,7 +99,7 @@ const TableSorted = () => {
 
 const TableManual = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsCount = defaultProps.data.length;
+  const itemsCount = defaultProps().data.length;
   const itemsPerPage = 7;
   const totalPages = Math.ceil(itemsCount / itemsPerPage);
   const pageSize = itemsPerPage <= itemsCount ? itemsPerPage : itemsCount;
@@ -105,7 +108,7 @@ const TableManual = () => {
     <>
       <Heading level={2}>With manual sorting</Heading>
       <Table
-        {...defaultProps}
+        {...defaultProps()}
         manualSorting
         initialState={{
           sortBy: [{ id: 'number', desc: true }],
@@ -130,6 +133,23 @@ stories.add('All states', () => (
     <TablePagination />
     <TableSorted />
     <TableManual />
+
+    <Code>{`
+    <Table
+      {...otherProps}
+      initialState={{ pageIndex: currentPage, pageSize }}
+    />
+    <div>
+      Page {currentPage + 1}/{totalPages}
+    </div>
+    <Pagination
+      goPrev={() => setCurrentPage(p => p - 1)}
+      goNext={() => setCurrentPage(p => p + 1)}
+      prevDisabled={currentPage === 0}
+      nextDisabled={currentPage === totalPages - 1}
+      position='flex-start'
+    />
+    `}</Code>
   </>
 ));
 

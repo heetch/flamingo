@@ -5,6 +5,7 @@ import Button from '../Button';
 import Heading from '../Heading';
 import Popover from '.';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 const { PLACEMENTS } = Popover;
 const ITEM_SPACING = '25%';
@@ -75,5 +76,20 @@ stories.add('All states', () => (
         </Popover>
       </div>
     </div>
+
+    <Code>{`
+    <Popover content='Popover content' placement='${PLACEMENTS.TOP}'>
+      <Button>Top</Button>
+    </Popover>
+    <Popover content='Popover content' placement='${PLACEMENTS.RIGHT}'>
+      <Button>Right</Button>
+    </Popover>
+    <Popover content='Popover content' placement='${PLACEMENTS.BOTTOM}'>
+      <Button>Bottom</Button>
+    </Popover>
+    <Popover content='Popover content' placement='${PLACEMENTS.LEFT}'>
+      <Button>Left</Button>
+    </Popover>
+    `}</Code>
   </>
 ));

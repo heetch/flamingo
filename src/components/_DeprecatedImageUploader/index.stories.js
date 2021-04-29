@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import ImageUploader from '.';
+import Alert from '../Alert';
 
 const stubFile1 = {
   name: 'image-stub-1',
@@ -18,10 +19,12 @@ const stubFile2 = {
   preview: 'https://api.adorable.io/avatars/285/abott@adorable.png',
 };
 
-const stories = storiesOf('Form/ImageUploader', module);
+const stories = storiesOf('Form/⚠️ ImageUploader', module);
 
 stories.add('All states', () => (
   <>
+    <Alert type='error'>Deprecated</Alert>
+
     <Heading>ImageUploader</Heading>
     <ImageUploader id='image-uploader' onChange={action('onChange')} />
 
@@ -63,10 +66,14 @@ stories.add('All states', () => (
 ));
 
 stories.add('Playground', () => (
-  <ImageUploader
-    id='input-id'
-    onChange={action('onChange')}
-    onBadFormat={action('onBadFormat')}
-    multiple={boolean('Has multiple files', true)}
-  />
+  <>
+    <Alert type='error'>Deprecated</Alert>
+
+    <ImageUploader
+      id='input-id'
+      onChange={action('onChange')}
+      onBadFormat={action('onBadFormat')}
+      multiple={boolean('Has multiple files', true)}
+    />
+  </>
 ));

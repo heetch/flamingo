@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import Input from '.';
 import Heading from '../Heading';
 import Icon from '../Icon';
+import { Code } from '../../storybook-utils';
 
 const ICONS = { ...Icon.ICONS, None: null };
 
@@ -21,15 +22,19 @@ stories.add('All states', () => (
       id={getId()}
       defaultValue='State: default'
       onChange={action('onChange')}
-      placeholder={`¯\\_(ツ)_/¯ `}
+      placeholder='¯\_(ツ)_/¯'
     />
     <Input
       key='input-disabled'
       id={getId()}
       defaultValue='State: disabled'
       disabled
-      onChange={action('onChange')}
     />
+
+    <Code>{`
+    <Input id='input1' defaultValue='State: default' onChange={noop} placeholder='¯\\_(ツ)_/¯' />
+    <Input id='input2' defaultValue='State: disabled' disabled />
+    `}</Code>
 
     <Heading level={2}>Validation</Heading>
 
@@ -44,6 +49,20 @@ stories.add('All states', () => (
       id={getId()}
       defaultValue='Props: valid'
       valid
+      onChange={action('onChange')}
+    />
+
+    <Code>{`
+    <Input id='input2' defaultValue='Props: invalid' invalid />
+    <Input id='input2' defaultValue='Props: valid' valid />
+    `}</Code>
+
+    <Heading level={2}>Icon</Heading>
+
+    <Input
+      id={getId()}
+      defaultValue='Props: icon'
+      icon='IconEmojiSmile'
       onChange={action('onChange')}
     />
   </>

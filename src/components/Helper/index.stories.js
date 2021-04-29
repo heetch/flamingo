@@ -4,12 +4,19 @@ import { text } from '@storybook/addon-knobs';
 
 import Helper from '.';
 import Heading from '../Heading';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('Form/Helper', module);
 
-stories.add('Playground', () => (
-  <>
-    <Heading>Helper</Heading>
-    <Helper>{text('Content', 'Input helper')}</Helper>
-  </>
-));
+stories.add('Playground', () => {
+  const content = text('Content', 'Input helper');
+  return (
+    <>
+      <Heading>Helper</Heading>
+      <Helper>{content}</Helper>
+      <Code>{`
+      <Helper>${content}</Helper>
+    `}</Code>
+    </>
+  );
+});

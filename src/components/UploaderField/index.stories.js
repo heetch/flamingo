@@ -4,16 +4,35 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import UploaderField from '.';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('Form/UploaderField', module);
 
-stories.add('Playground', () => (
-  <UploaderField
-    id='uploader-field'
-    label={text('Label (empty to hide)', 'Default label')}
-    helper={text('Helper (empty to hide)', 'Default helper')}
-    onChange={action('onChange')}
-    valid={boolean('Valid', false)}
-    invalid={boolean('Invalid', false)}
-  />
-));
+stories.add('Playground', () => {
+  const label = text('Label (empty to hide)', 'Default label');
+  const helper = text('Helper (empty to hide)', 'Default helper');
+  const valid = boolean('Valid', false);
+  const invalid = boolean('Invalid', false);
+  return (
+    <>
+      <UploaderField
+        id='uploader-field'
+        label={label}
+        helper={helper}
+        onChange={action('onChange')}
+        valid={valid}
+        invalid={invalid}
+      />
+      <Code>{`
+      <UploaderField
+        id='uploader-field'
+        label='${label}'
+        helper='${helper}'
+        onChange={noop}
+        valid={${valid}}
+        invalid={${invalid}}
+      />
+      `}</Code>
+    </>
+  );
+});

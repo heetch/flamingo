@@ -7,6 +7,7 @@ import Grid from '.';
 import Heading from '../Heading';
 import UiText from '../UiText';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 // eslint-disable-next-line react/prop-types
 const ColInner = ({ children, style }) => (
@@ -46,6 +47,14 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
+    <Code>{`
+    <Grid>
+      <Grid.Col>...</Grid.Col>
+      <Grid.Col>...</Grid.Col>
+      <Grid.Col>...</Grid.Col>
+    </Grid>
+    `}</Code>
+
     <Heading level={2}>Sized columns</Heading>
 
     <Grid>
@@ -60,6 +69,14 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
+    <Code>{`
+    <Grid>
+      <Grid.Col>...</Grid.Col>
+      <Grid.Col s={6}>...</Grid.Col>
+      <Grid.Col>...</Grid.Col>
+    </Grid>
+    `}</Code>
+
     <Grid>
       <Grid.Col s={2}>
         <ColInner>{`s={${2}}`}</ColInner>
@@ -68,6 +85,13 @@ stories.add('All sizes', () => (
         <ColInner>{`s={${10}}`}</ColInner>
       </Grid.Col>
     </Grid>
+
+    <Code>{`
+    <Grid>
+      <Grid.Col s={2}>...</Grid.Col>
+      <Grid.Col s={10}>...</Grid.Col>
+    </Grid>
+    `}</Code>
 
     <Heading level={2}>Responsive columns</Heading>
 
@@ -80,6 +104,13 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
+    <Code>{`
+    <Grid>
+      <Grid.Col m={6} l={10}>...</Grid.Col>
+      <Grid.Col m={6} l={2}>...</Grid.Col>
+    </Grid>
+    `}</Code>
+
     <Grid>
       <Grid.Col m={3} l={10}>
         <ColInner>{`m={${3}} l={${10}}`}</ColInner>
@@ -89,6 +120,13 @@ stories.add('All sizes', () => (
       </Grid.Col>
     </Grid>
 
+    <Code>{`
+    <Grid>
+      <Grid.Col m={3} l={10}>...</Grid.Col>
+      <Grid.Col>...</Grid.Col>
+    </Grid>
+    `}</Code>
+
     <Grid>
       <Grid.Col m={12} l={6}>
         <ColInner>{`m={${12}} l={${6}}`}</ColInner>
@@ -97,6 +135,13 @@ stories.add('All sizes', () => (
         <ColInner>{`m={${12}} l={${6}}`}</ColInner>
       </Grid.Col>
     </Grid>
+
+    <Code>{`
+    <Grid>
+      <Grid.Col m={12} l={6}>...</Grid.Col>
+      <Grid.Col m={12} l={6}>...</Grid.Col>
+    </Grid>
+    `}</Code>
   </>
 ));
 

@@ -73,6 +73,8 @@ IconButton.propTypes = {
   icon: PropTypes.oneOf(Icon.NAMES).isRequired,
   size: PropTypes.oneOf(sizes),
   iconColor: PropTypes.string,
+  isLoading: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 IconButton.defaultProps = {

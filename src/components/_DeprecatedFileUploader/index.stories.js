@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import FileUploader from '.';
+import Alert from '../Alert';
 
 const stubFile1 = {
   name: 'stub-file-1.txt',
@@ -16,10 +17,12 @@ const stubFile2 = {
   type: 'text',
 };
 
-const stories = storiesOf('Form/FileUploader', module);
+const stories = storiesOf('Form/⚠️ FileUploader', module);
 
 stories.add('All states', () => (
   <>
+    <Alert type='error'>Deprecated</Alert>
+
     <Heading>FileUploader</Heading>
     <FileUploader id='file-uploader' onChange={action('onChange')} />
 
@@ -61,9 +64,13 @@ stories.add('All states', () => (
 ));
 
 stories.add('Playground', () => (
-  <FileUploader
-    id='input-id'
-    onChange={action('onChange')}
-    multiple={boolean('Has multiple files', true)}
-  />
+  <>
+    <Alert type='error'>Deprecated</Alert>
+
+    <FileUploader
+      id='input-id'
+      onChange={action('onChange')}
+      multiple={boolean('Has multiple files', true)}
+    />
+  </>
 ));

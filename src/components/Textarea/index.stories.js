@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import Textarea from '.';
+import { Code } from '../../storybook-utils';
 
 const states = ['default', 'disabled'];
 
@@ -26,8 +27,14 @@ stories.add('All states', () => (
           {...textareaProps()}
           className={`is-${state}`}
           defaultValue={`State: ${state}`}
+          placeholder='Type something...'
           disabled={state === 'disabled'}
         />
+        <Code>{`
+        <Textarea defaultValue='State: ${state}'${
+          state === 'disabled' ? ' disabled' : ''
+        } placeholder='Type something...' />
+        `}</Code>
       </div>
     ))}
 
@@ -35,10 +42,16 @@ stories.add('All states', () => (
 
     <div>
       <Textarea {...textareaProps()} defaultValue='Props: invalid' invalid />
+      <Code>{`
+      <Textarea {...otherProps} invalid />
+      `}</Code>
     </div>
 
     <div>
       <Textarea {...textareaProps()} defaultValue='Props: valid' valid />
+      <Code>{`
+      <Textarea {...otherProps} valid />
+      `}</Code>
     </div>
   </>
 ));

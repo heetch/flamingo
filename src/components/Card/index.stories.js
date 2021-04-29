@@ -6,6 +6,7 @@ import Card from '.';
 import Heading from '../Heading';
 import Text from '../Text';
 import { theme } from '../../theme';
+import { Code } from '../../storybook-utils';
 
 const { ELEVATIONS, SIZES } = Card;
 const sizes = Object.values(SIZES);
@@ -26,35 +27,56 @@ stories.add('All states', () => (
         <Text>Card</Text>
       </Card>
     </Container>
+    <Code>{`
+    <Card>
+      <Text>Card</Text>
+    </Card>
+    `}</Code>
 
     <Container>
       <Card>Card without {`'<Text />'`} component wrapping the content</Card>
     </Container>
+    <Code>{`<Card>Card without {\`'<Text />'\`} component wrapping the content</Card>`}</Code>
 
     <Container>
       <Card isSelected>
         <Text>Card selected</Text>
       </Card>
     </Container>
+    <Code>{`
+    <Card isSelected>
+      <Text>Card selected</Text>
+    </Card>
+    `}</Code>
 
     <Heading level={2}>Elevations</Heading>
 
     {ELEVATIONS.map(elevation => (
-      <Container key={elevation}>
-        <Card elevation={elevation}>
-          <Text>Elevation {elevation}</Text>
+      <div key={elevation}>
+        <Container>
+          <Card elevation={elevation}>
+            <Text>Elevation {elevation}</Text>
+          </Card>
+        </Container>
+        <Code>{`
+        <Card elevation={${elevation}}>
+          <Text>Elevation ${elevation}</Text>
         </Card>
-      </Container>
+        `}</Code>
+      </div>
     ))}
 
     <Heading level={2}>Sizes</Heading>
 
     {sizes.map(size => (
-      <Container key={size}>
-        <Card size={size}>
-          <Text>size {size}</Text>
-        </Card>
-      </Container>
+      <div key={size}>
+        <Container>
+          <Card size={size}>
+            <Text>size {size}</Text>
+          </Card>
+        </Container>
+        <Code>{`<Card size='${size}'><Text>size ${size}</Text></Card>`}</Code>
+      </div>
     ))}
 
     <Heading level={2}>Inception</Heading>
@@ -66,6 +88,16 @@ stories.add('All states', () => (
         </Card>
       </Card>
     </Card>
+
+    <Code>{`
+    <Card>
+      <Card>
+        <Card>
+          <Card />
+        </Card>
+      </Card>
+    </Card>
+    `}</Code>
   </>
 ));
 

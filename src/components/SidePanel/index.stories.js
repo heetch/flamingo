@@ -7,6 +7,7 @@ import Button from '../Button';
 import Heading from '../Heading';
 import Input from '../Input';
 import Label from '../Label';
+import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('SidePanel', module);
 
@@ -66,6 +67,18 @@ stories.add('Playground', () => {
           <div key={i}>{content}</div>
         ))}
       </SidePanel>
+
+      <Code>{`
+      <SidePanel
+        isOpen={${isOpen}}
+        closesOnOverlayClick={${closesOnOverlayClick}}
+        animateOnMount${withTitle ? `\n        title='${withTitle}'` : ''}${
+        withHeader ? `\n        header={HeaderComponent}` : ''
+      }${withFooter ? `\n        footer={FooterComponent}` : ''}
+      >
+        ...
+      </SidePanel>  
+      `}</Code>
     </>
   );
 });
