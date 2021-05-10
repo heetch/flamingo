@@ -101,6 +101,9 @@
     "styled-components": "^5.1.0",
     "yarn": "^1.22.4"
   },
+  "resolutions": {
+    "handlebars": "^4.7.7"
+  },
   "publishConfig": {
     "access": "public"
   }
