@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
 import Section from './index';
@@ -11,6 +11,8 @@ const defaultProps = () => ({
   title: text('Title', 'Title'),
   subtitle: text('Subtitle', 'Subtitle'),
   children: text('Children', 'How you doin'),
+  expandable: boolean('Expandable', false),
+  headerSeparator: boolean('Header Separator', true),
 });
 
 const stories = storiesOf('Section', module);
@@ -49,6 +51,36 @@ stories.add('All states', () => (
             And <i>header</i> <b>children</b>
           </span>
         }
+      >
+        ...
+      </Section>
+      `}</Code>
+    </Section>
+
+    <Section title={'Expandable'} subtitle={'Expanded by default'} expandable>
+      <Code>{`
+      <Section
+        title='Expandable'
+        subtitle={'Expanded by default'}
+        expandable
+      >
+        ...
+      </Section>
+      `}</Code>
+    </Section>
+
+    <Section
+      title={'Expandable'}
+      subtitle={'Collapsed by default'}
+      expandable
+      expanded={false}
+    >
+      <Code>{`
+      <Section
+        title='Expandable'
+        subtitle={'Collapsed by default'}
+        expandable
+        expanded={false}
       >
         ...
       </Section>
