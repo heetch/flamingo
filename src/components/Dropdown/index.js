@@ -75,14 +75,19 @@ const Dropdown = ({
 
   return (
     <Manager>
-      <Reference innerRef={setRefNode}>
+      <Reference
+        innerRef={ref => {
+          if (ref) setRefNode(ref);
+        }}
+      >
         {({ ref }) => props.triggerer({ ...renderFnProps, ref })}
       </Reference>
 
       <Popper
         modifiers={{
-          offset: {
-            offset: '0, 4px',
+          name: 'offset',
+          options: {
+            offset: [0, 4],
           },
           ...props.modifiers,
         }}
