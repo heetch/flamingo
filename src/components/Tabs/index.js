@@ -15,6 +15,7 @@ const Tabs = React.forwardRef(
       defaultIndex,
       buildTabLabel,
       buildReturnObject,
+      buildKey,
       onClick,
       ...props
     },
@@ -39,7 +40,7 @@ const Tabs = React.forwardRef(
         <StyledTabs className='f-Tabs'>
           {elements.map((element, index) => (
             <Tab
-              key={element}
+              key={buildKey ? buildKey(element) : element}
               type='button'
               onClick={() => handleTabClick(index)}
               onKeyPress={({ key }) =>
@@ -70,10 +71,12 @@ Tabs.propTypes = {
   ).isRequired,
   /** This allows changing the tab that should be open on initial render. */
   defaultIndex: PropTypes.number,
-  /** If objects passed to elements, this should be a method that extracts a label string from the obejct */
+  /** If objects passed to elements, this should be a method that extracts a label string from the object */
   buildTabLabel: PropTypes.func,
   /** If objects passed to elements, this should be a method that extracts a value to be returned to onClick */
   buildReturnObject: PropTypes.func,
+  /** If objects passed to elements, this should be a method that extracts a key to identify the object */
+  buildKey: PropTypes.func,
   onClick: PropTypes.func,
 };
 

@@ -42,6 +42,7 @@ stories.add('All states', () => (
       ]}
       buildTabLabel={e => e.label}
       buildReturnObject={e => e.value}
+      buildKey={e => e.value}
       onClick={action('Click')}
     />
     <Code>{`
@@ -52,6 +53,7 @@ stories.add('All states', () => (
       ]}
       buildTabLabel={e => e.label}
       buildReturnObject={e => e.value}
+      buildKey={e => e.value}
       onClick={noop}
     />
     `}</Code>
