@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -22,7 +22,7 @@ const UploaderItemStyled = styled('div').attrs(() => ({
   padding: ${theme.space.s};
   color: ${theme.color.text.secondary};
   background-color: ${theme.color.element.primary};
-  border-radius: ${theme.borderRadius.l};
+  border-radius: ${theme.borderRadius.s};
 
   & + & {
     margin-top: ${theme.space.s};
@@ -33,7 +33,7 @@ const UploaderItemStyled = styled('div').attrs(() => ({
   }
 
   & .f-Button--icon {
-    margin: 0;
+    margin-right: ${theme.space.l};
   }
 `;
 
@@ -46,7 +46,7 @@ const IconContainer = styled.div`
   height: var(--iconContainerSize);
   margin-right: ${theme.space.m};
   border: 1px solid ${theme.color.element.secondary};
-  border-radius: 0.75rem; /* 12px */
+  border-radius: ${theme.borderRadius.s};
   overflow: hidden;
 
   img {

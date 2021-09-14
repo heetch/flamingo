@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
@@ -51,7 +51,7 @@ export const StyledItem = styled.div`
   align-items: center;
   padding: ${styles.yPadding} ${theme.space.l};
   background-color: ${theme.color.element.primary};
-  border-radius: ${theme.borderRadius.m};
+  border-radius: ${theme.borderRadius.s};
   color: ${styles.color};
   transition: background-color 0.1s ease-out;
   cursor: ${({ hasAction }) => hasAction && 'pointer'};

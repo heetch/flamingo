@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import FileUploader from '../_DeprecatedFileUploader';
 import { theme } from '../../theme';

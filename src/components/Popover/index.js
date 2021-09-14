@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { theme } from '../../theme';
 import UiText from '../UiText';
@@ -36,7 +36,7 @@ export const StyledPopover = styled.div`
   padding: ${theme.space.s} ${theme.space.m};
   color: ${theme.color.text.white};
   background-color: ${({ backgroundColor }) =>
-    backgroundColor || 'rgba(25, 1, 52, 0.8)'};
+    backgroundColor || 'rgba(49, 116, 210, 0.8)'};
   border-radius: ${({ borderRadius }) => borderRadius || theme.borderRadius.s};
 `;
 

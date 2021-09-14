@@ -18,7 +18,7 @@ const ColInner = ({ children, style }) => (
       textAlign: 'center',
       color: theme.color.text.white,
       backgroundColor: theme.color.brand.primary,
-      borderRadius: theme.borderRadius.m,
+      borderRadius: theme.borderRadius.s,
       ...style,
     }}
   >

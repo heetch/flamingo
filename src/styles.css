@@ -1,29 +1,34 @@
-@import 'react-datepicker/dist/react-datepicker.css';
+@font-face {
+  font-family: 'MarkOT-Ultra';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MarkOT-Ultra'), url(./fonts/MarkOT-Ultra.otf) format('opentype');
+}
 
 :root {
   --f-color-brandPrimary: #ff2773;
-  --f-color-brandPrimary--light: #ff4d95;
-  --f-color-brandPrimary--inactive: #fc99bc;
-  --f-color-brandSecondary: #2b1e70;
-  --f-color-brandSecondary--light: #252d9b;
+  --f-color-brandPrimary--light: #fe679c;
+  --f-color-brandPrimary--inactive: #dde3ee;
+  --f-color-brandSecondary: #3174d2;
+  --f-color-brandSecondary--light: #6e9ddf;
 
   --f-color-icon--white: #fff;
-  --f-color-icon--disabled: #dedede;
-  --f-color-icon--dark: #190134;
+  --f-color-icon--disabled: #dde3ee;
+  --f-color-icon--dark: #000;
 
   --f-color-element--primary: #fff;
-  --f-color-element--secondary: #685879;
-  --f-color-element--tertiary: #b3abbc;
-  --f-color-element--inactive: #eaeaea;
-  --f-color-element--error: #e4566f;
+  --f-color-element--secondary: #616669;
+  --f-color-element--tertiary: #ebeff7;
+  --f-color-element--inactive: #dde3ee;
+  --f-color-element--error: #cd2703;
   --f-color-element--success: #33a879;
-  --f-color-element--overlay: #2b1e70;
+  --f-color-element--overlay: #000;
   --f-color-element--ok: #ffb525;
 
-  --f-color-text--primary: #190134;
-  --f-color-text--secondary: #685879;
-  --f-color-text--tertiary: #b3abbc;
-  --f-color-text--link: #252d9b;
+  --f-color-text--primary: #000;
+  --f-color-text--secondary: #616669;
+  --f-color-text--tertiary: #8b99a2;
+  --f-color-text--link: #3174d2;
   --f-color-text--white: #fff;
   --f-color-text--lightGrey: #f2f2f2;
 }
@@ -35,36 +40,40 @@
   --f-fontSize--m: 1rem; /* 16px */
   --f-fontSize--l: 1.25rem; /* 20px */
   --f-fontSize--xl: 1.5rem; /* 24px */
-  --f-fontSize--xxl: 2rem; /* 32px */
+  --f-fontSize--xxl: 1.875rem; /* 30px */
 }
 
 :root {
   --f-fontWeight--normal: 400;
-  --f-fontWeight--bold: 700;
-  --f-fontWeight--black: 800;
+  --f-fontWeight--bold: 500;
+  --f-fontWeight--black: 900;
 }
 
 :root {
-  --f-lineHeight--s: 1rem;
-  --f-lineHeight--m: 1.4rem;
-  --f-lineHeight--l: 1.5rem;
-  --f-lineHeight--xl: 2rem;
+  --f-lineHeight--s: 1rem; /* 16px */
+  --f-lineHeight--m: 1.125rem; /* 18px */
+  --f-lineHeight--l: 1.25rem; /* 20px */
+  --f-lineHeight--xl: 1.5rem; /* 24px */
+  --f-lineHeight--xxl: 2.25rem; /* 36px */
 }
 
 :root {
-  --f-iconSize--s: 0.75rem; /* 12px */
-  --f-iconSize--m: 1rem; /* 16px */
+  --f-iconSize--xs: 0.75rem; /* 12px */
+  --f-iconSize--s: 1rem; /* 16px */
+  --f-iconSize--m: 1.125rem; /* 18px */
   --f-iconSize--l: 1.25rem; /* 20px */
+  --f-iconSize--xl: 1.5rem; /* 24px */
 }
 
 :root {
   --f-borderRadius--xl: 1.5rem; /* 24px */
   --f-borderRadius--l: 1rem; /* 16px */
   --f-borderRadius--m: 0.5rem; /* 8px */
-  --f-borderRadius--s: 0.25rem; /* 4px */
+  --f-borderRadius--s: 0.3125rem; /* 5px */
 }
 
 :root {
+  --f-space--xs: 0.125rem; /* 2px */
   --f-space--s: 0.25rem; /* 4px */
   --f-space--m: 0.5rem; /* 8px */
   --f-space--l: 0.75rem; /* 12px */
@@ -94,7 +103,8 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: var(--f-color-brandSecondary);
 }
 
 a:hover {

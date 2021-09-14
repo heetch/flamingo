@@ -101,6 +101,7 @@ stories.add('All states', () => (
 
 stories.add('Playground', () => (
   <DatepickerDay
+    id='datepicker-playground'
     onChange={action('onChange')}
     onFocus={action('onFocus')}
     onBlur={action('onBlur')}

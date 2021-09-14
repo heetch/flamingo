@@ -4,7 +4,6 @@ import cx from 'classnames';
 
 import UiText from '../../../UiText';
 import { HeaderCell, HeaderCellIcon } from '../../styles';
-import { theme } from '../../../../theme';
 
 const TableHeaderCell = React.forwardRef(
   (
@@ -23,14 +22,10 @@ const TableHeaderCell = React.forwardRef(
     <HeaderCell
       as={as || 'th'}
       className={cx('f-Table-HeaderCell', className)}
-      variant={UiText.VARIANTS.subContentBold}
-      textColor={
-        isSortable && isSorted && !disableColSort
-          ? theme.color.brand.primary
-          : theme.color.text.primary
-      }
+      variant={UiText.VARIANTS.subContentBlack}
       ref={ref}
       width={colWidth}
+      isSorted={isSorted}
       disableColSort={disableColSort}
       {...props}
     >
@@ -47,6 +42,9 @@ const TableHeaderCell = React.forwardRef(
               ? 'IconArrowUp'
               : 'IconArrowDown'
           }
+          isSortable={isSortable}
+          isSorted={isSorted}
+          size='xl'
         />
       )}
     </HeaderCell>

@@ -18,6 +18,7 @@ const Table = React.forwardRef(
       onChangeSort,
       initialState,
       onClickRow,
+      ...props
     },
     ref,
   ) => {
@@ -56,6 +57,7 @@ const Table = React.forwardRef(
         cellPadding={0}
         cellSpacing={0}
         ref={ref}
+        {...props}
       >
         <thead>
           {headerGroups.map(({ getHeaderGroupProps, headers }) => (
