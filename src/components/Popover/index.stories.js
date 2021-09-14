@@ -39,7 +39,7 @@ stories.add('All states', () => (
         position: 'relative',
         height: '15rem',
         border: `1px dashed ${theme.color.brand.secondaryLight}`,
-        borderRadius: theme.borderRadius.m,
+        borderRadius: theme.borderRadius.s,
       }}
     >
       <div

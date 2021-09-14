@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { theme } from '../../theme';
 
 export const RoundedBadge = styled.div`
   display: inline-block;
-  border-radius: ${({ borderRadius }) => borderRadius || theme.borderRadius.xl};
+  border-radius: ${({ borderRadius }) => borderRadius || theme.borderRadius.s};
   padding: 2px 10px;
   color: ${({ color }) => color || theme.color.text.primary};
   background-color: ${({ backgroundColor }) =>

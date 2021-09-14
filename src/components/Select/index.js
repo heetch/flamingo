@@ -24,8 +24,13 @@ const Select = React.forwardRef(
             </option>
           ))}
         </FormElement>
-
-        <Icon icon={Icon.ICONS.IconChevronUpDown} size={Icon.SIZES.L} />
+        {props.valid ? (
+          <Icon icon={Icon.ICONS.IconCheck} size={Icon.SIZES.L} />
+        ) : props.invalid ? (
+          <Icon icon={Icon.ICONS.IconAlertTriangle} size={Icon.SIZES.L} />
+        ) : (
+          <Icon icon={Icon.ICONS.IconChevronDown} size={Icon.SIZES.L} />
+        )}
       </FormElementWrapper>
     );
   },

@@ -1,4 +1,4 @@
-module.exports = api => {
+module.exports = (api) => {
   const isTestEnv = api.env('test');
 
   return {
@@ -11,6 +11,7 @@ module.exports = api => {
           pure: true,
         },
       ],
+      ['babel-plugin-macros'],
     ],
     presets: [
       isTestEnv

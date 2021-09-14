@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Heading from '../Heading';
 import IconButton from '../IconButton';
+import UiText from '../UiText';
 import Overlay from '../Overlay';
 
-import { StyledSidePanel, Content, Header, Footer } from './styles';
+import {
+  StyledSidePanel,
+  Content,
+  Header,
+  HeaderTitles,
+  Footer,
+} from './styles';
 
 /**
  * SidePanel will animate while mounting and un-mounting
@@ -23,15 +29,33 @@ const SidePanel = props => {
     if (!props.isOpen || !isOpen) setShouldRender(false);
   };
 
-  const handleClose = () => {
+  const handleClose = React.useCallback(() => {
+    document.body.style.overflow = 'initial';
     setIsOpen(false);
     props.onClose();
-  };
+  }, [props]);
+
+  const handleEscape = React.useCallback(
+    event => {
+      if (event.keyCode === 27) handleClose();
+    },
+    [handleClose],
+  );
 
   React.useEffect(() => {
-    if (props.isOpen) setShouldRender(props.isOpen);
+    document.addEventListener('keydown', handleEscape, false);
 
-    setIsOpen(props.isOpen);
+    return () => {
+      document.removeEventListener('keydown', handleEscape, false);
+    };
+  }, [handleEscape]);
+
+  React.useEffect(() => {
+    if (props.isOpen) {
+      setShouldRender(props.isOpen);
+      document.body.style.overflow = 'hidden';
+      setIsOpen(props.isOpen);
+    }
   }, [props.isOpen]);
 
   if (!shouldRender) {
@@ -44,6 +68,7 @@ const SidePanel = props => {
         onClick={props.closesOnOverlayClick && handleClose}
         isOpen={isOpen}
         animateOnMount={props.animateOnMount}
+        data-testid='flamingo-side-panel-overlay'
       />
 
       <StyledSidePanel
@@ -51,18 +76,37 @@ const SidePanel = props => {
         onAnimationEnd={onAnimationEnd}
         maxWidth={props.maxWidth}
         isOpen={isOpen}
+        data-testid='flamingo-side-panel'
         animateOnMount={props.animateOnMount}
       >
         <Header className='f-SidePanel-header'>
           {header ? (
             <div className='f-SidePanel-headerContent'>{header}</div>
           ) : (
-            <Heading level={4} as='h1'>
-              {props.title}
-            </Heading>
+            <>
+              <HeaderTitles>
+                <UiText
+                  as='div'
+                  variant={UiText.VARIANTS.contentBlack}
+                  margin={0}
+                >
+                  {props.title}
+                </UiText>
+                <UiText
+                  as='div'
+                  variant={UiText.VARIANTS.subContentBold}
+                  margin={0}
+                >
+                  {props.subtitle}
+                </UiText>
+              </HeaderTitles>
+              <IconButton
+                icon={IconButton.ICONS.IconCross}
+                onClick={handleClose}
+                size='m'
+              />
+            </>
           )}
-
-          <IconButton icon={IconButton.ICONS.IconCross} onClick={handleClose} />
         </Header>
 
         <div>
@@ -82,6 +126,7 @@ SidePanel.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.node,
+  subtitle: PropTypes.node,
   header: PropTypes.node,
   maxWidth: PropTypes.string,
   animateOnMount: PropTypes.bool,

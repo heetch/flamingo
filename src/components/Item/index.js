@@ -58,7 +58,7 @@ const Item = React.forwardRef(
             as='div'
             className='f-Item-content'
             variant={
-              isMini ? UiText.VARIANTS.subContent : UiText.VARIANTS.content
+              isMini ? UiText.VARIANTS.content : UiText.VARIANTS.contentBold
             }
             margin={0}
           >
@@ -83,7 +83,7 @@ const Item = React.forwardRef(
             </UiText>
           )}
 
-          {valueIcon && <Icon icon={valueIcon} />}
+          {valueIcon && <Icon icon={valueIcon} size={Icon.SIZES.L} />}
         </ValueContainer>
       </StyledItem>
     );
@@ -107,7 +107,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   size: SIZES.NORMAL,
-  valueIcon: Icon.ICONS.IconArrowRight,
+  valueIcon: Icon.ICONS.IconChevronRight,
 };
 
 Item.SIZES = SIZES;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -16,12 +16,11 @@ const IconButtonComponent = React.forwardRef(
   ) => (
     <Button
       className={cx('f-Button--icon', className)}
-      intent={Button.INTENTS.SECONDARY}
-      variant={Button.VARIANTS.MINIMAL}
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
       {...props}
+      style={{ padding: 0 }}
     >
       <Icon
         icon={icon}
@@ -42,23 +41,17 @@ IconButtonComponent.propTypes = {
 };
 
 const IconButton = styled(IconButtonComponent)`
-  padding: ${theme.space.m};
   line-height: 1;
   border-radius: 50%;
   color: ${theme.color.icon.dark};
-
-  &:hover {
-    background-color: ${theme.color.element.inactive};
-    color: ${theme.color.icon.dark};
-  }
+  background-color: unset !important;
 
   & + & {
     margin-left: ${theme.space.m};
   }
 
-  > ${Icon} {
-    display: block;
-    opacity: ${({ isLoading }) => (isLoading ? 0 : 1)};
+  :hover {
+    color: unset;
   }
 
   ${theme.breakPoint.s} {

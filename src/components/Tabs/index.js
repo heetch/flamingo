@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyledTabs,
-  TabsContainer,
-  TabsLabel,
-  TabsMarker,
-  Tab,
-} from './styles';
+import { TabsContainer, TabsLabel, TabsMarker, Tab } from './styles';
 
 const Tabs = React.forwardRef(
   (
@@ -17,6 +11,7 @@ const Tabs = React.forwardRef(
       buildReturnObject,
       buildKey,
       onClick,
+      width,
       ...props
     },
     ref,
@@ -36,27 +31,29 @@ const Tabs = React.forwardRef(
     };
 
     return (
-      <TabsContainer ref={ref} {...props}>
-        <StyledTabs className='f-Tabs'>
-          {elements.map((element, index) => (
-            <Tab
-              key={buildKey ? buildKey(element) : element}
-              type='button'
-              onClick={() => handleTabClick(index)}
-              onKeyPress={({ key }) =>
-                key === 13 ? handleTabClick(index) : undefined
-              }
+      <TabsContainer ref={ref} {...props} width={width} className='f-Tabs'>
+        {elements.map((element, index) => (
+          <Tab
+            key={buildKey ? buildKey(element) : element}
+            type='button'
+            onClick={() => handleTabClick(index)}
+            onKeyPress={({ key }) =>
+              key === 13 ? handleTabClick(index) : undefined
+            }
+            isActive={activeIndex === index}
+          >
+            <TabsLabel
+              className='f-Tabs-label'
+              isActive={activeIndex === index}
             >
-              <TabsLabel className='f-Tabs-label'>
-                {buildTabLabel ? buildTabLabel(element) : element}
-              </TabsLabel>
-              <TabsMarker
-                className='f-Tabs-marker'
-                isActive={activeIndex === index}
-              />
-            </Tab>
-          ))}
-        </StyledTabs>
+              {buildTabLabel ? buildTabLabel(element) : element}
+            </TabsLabel>
+            <TabsMarker
+              className='f-Tabs-marker'
+              isActive={activeIndex === index}
+            />
+          </Tab>
+        ))}
       </TabsContainer>
     );
   },
@@ -78,6 +75,7 @@ Tabs.propTypes = {
   /** If objects passed to elements, this should be a method that extracts a key to identify the object */
   buildKey: PropTypes.func,
   onClick: PropTypes.func,
+  width: PropTypes.string,
 };
 
 export default Tabs;

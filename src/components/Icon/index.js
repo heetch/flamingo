@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import * as SVGS from '../../constants/icons';
 import { theme } from '../../theme';
@@ -18,6 +18,7 @@ const SIZES = {
   S: 's',
   M: 'm',
   L: 'l',
+  XL: 'xl',
 };
 
 const sizes = Object.values(SIZES);

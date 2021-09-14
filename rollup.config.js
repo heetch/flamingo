@@ -30,7 +30,7 @@ export default {
         globalModulePaths: [/node_modules\/react-datepicker\/dist/],
       },
     }),
-    url(),
+    url({ include: '**/*.otf', fileName: '[dirname][name][extname]' }),
     svgr(),
     babel(),
     resolve(),
