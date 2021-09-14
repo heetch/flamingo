@@ -18,6 +18,7 @@ const SIZES = {
   S: 's',
   M: 'm',
   L: 'l',
+  XL: 'xl',
 };
 
 const sizes = Object.values(SIZES);

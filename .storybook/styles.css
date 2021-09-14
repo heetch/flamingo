@@ -1,27 +1,29 @@
 :root {
-  --f-color-brandPrimary: #ff2773;
-  --f-color-brandPrimary--light: #ff4d95;
-  --f-color-brandPrimary--inactive: #fc99bc;
-  --f-color-brandSecondary: #2b1e70;
-  --f-color-brandSecondary--light: #252d9b;
+  --f-color-brandPrimary: #FF2773;
+  --f-color-brandPrimary--light: #FE679C;
+  --f-color-brandPrimary--inactive: #DDE3EE;
+  --f-color-brandSecondary: #3174D2;
+  --f-color-brandSecondary--light: #6E9DDF;
 
-  --f-color-icon--white: #fff;
-  --f-color-icon--disabled: #dedede;
-  --f-color-icon--dark: #190134;
+  --f-color-icon--white: #FFF;
+  --f-color-icon--disabled: #DDE3EE;
+  --f-color-icon--dark: #000;
 
-  --f-color-element--primary: #fff;
-  --f-color-element--secondary: #685879;
-  --f-color-element--tertiary: #b3abbc;
-  --f-color-element--inactive: #eaeaea;
-  --f-color-element--error: #ee7d52;
-  --f-color-element--success: #5cc689;
-  --f-color-element--overlay: #2b1e70;
+  --f-color-element--primary: #FFF;
+  --f-color-element--secondary: #616669;
+  --f-color-element--tertiary: #EBEFF7;
+  --f-color-element--inactive: #DDE3EE;
+  --f-color-element--error: #CD2703;
+  --f-color-element--success: #33A879;
+  --f-color-element--overlay: #000;
+  --f-color-element--ok: #FFB525;
 
-  --f-color-text--primary: #190134;
-  --f-color-text--secondary: #685879;
-  --f-color-text--tertiary: #b3abbc;
-  --f-color-text--link: #252d9b;
-  --f-color-text--white: #fff;
+  --f-color-text--primary: #000;
+  --f-color-text--secondary: #616669;
+  --f-color-text--tertiary: #8B99A2;
+  --f-color-text--link: #3174D2;
+  --f-color-text--white: #FFF;
+  --f-color-text--lightGrey: #F2F2F2;
 }
 
 :root {
@@ -31,26 +33,28 @@
   --f-fontSize--m: 1rem; /* 16px */
   --f-fontSize--l: 1.25rem; /* 20px */
   --f-fontSize--xl: 1.5rem; /* 24px */
-  --f-fontSize--xxl: 2rem; /* 32px */
+  --f-fontSize--xxl: 1.875rem; /* 30px */
 }
 
 :root {
   --f-fontWeight--normal: 400;
-  --f-fontWeight--bold: 700;
-  --f-fontWeight--black: 800;
+  --f-fontWeight--bold: 500;
+  --f-fontWeight--black: 900;
 }
 
 :root {
-  --f-lineHeight--s: 1rem;
-  --f-lineHeight--m: 1.4rem;
-  --f-lineHeight--l: 1.5rem;
-  --f-lineHeight--xl: 2rem;
+  --f-lineHeight--s: 1rem; /* 16px */
+  --f-lineHeight--m: 1.125rem; /* 18px */
+  --f-lineHeight--l: 1.25rem; /* 20px */
+  --f-lineHeight--xl: 1.5rem; /* 24px */
+  --f-lineHeight--xxl: 1.875rem; /* 30px */
 }
 
 :root {
   --f-iconSize--s: 0.75rem; /* 12px */
   --f-iconSize--m: 1rem; /* 16px */
   --f-iconSize--l: 1.25rem; /* 20px */
+  --f-iconSize--xl: 1.5rem; /* 24px */
 }
 
 :root {
@@ -81,6 +85,20 @@
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'MarkOT-Black';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MarkOT-Black'), url(../src/fonts/MarkOT-Black.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'MarkOT-Ultra';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MarkOT-Ultra'), url(../src/fonts/MarkOT-Ultra.otf) format('opentype');
 }
 
 body {

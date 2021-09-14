@@ -23,11 +23,13 @@ stories.add('Playground', () => {
         position={'top'}
         onClose={onClose}
       >
-        {"I'm a subtitle"}
+        {"I'm a subtitle with a "}
+        <a href='https://example.com'>link</a>
       </Toast>
       <Toast
         zIndex={1}
         timeoutDelay={8000}
+        position={900}
         type={Toast.TYPES.ERROR}
         title={'Toast of type error.'}
       />

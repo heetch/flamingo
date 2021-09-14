@@ -34,16 +34,16 @@ const styles = {
   },
   lineHeight({ variant }) {
     const variants = {
-      [VARIANTS.h1]: theme.lineHeight.xl,
-      [VARIANTS.h2]: theme.lineHeight.l,
-      [VARIANTS.h3]: theme.lineHeight.m,
-      [VARIANTS.h4]: theme.lineHeight.s,
-      [VARIANTS.h5]: theme.lineHeight.s,
-      [VARIANTS.h6]: theme.lineHeight.s,
-      [VARIANTS.content]: theme.lineHeight.m,
-      [VARIANTS.contentBold]: theme.lineHeight.m,
-      [VARIANTS.subContent]: theme.lineHeight.m,
-      [VARIANTS.subContentBold]: theme.lineHeight.m,
+      [VARIANTS.h1]: theme.lineHeight.xxl,
+      [VARIANTS.h2]: theme.lineHeight.xl,
+      [VARIANTS.h3]: theme.lineHeight.s,
+      [VARIANTS.h4]: theme.lineHeight.m,
+      [VARIANTS.h5]: theme.lineHeight.m,
+      [VARIANTS.h6]: theme.lineHeight.m,
+      [VARIANTS.content]: theme.lineHeight.xl,
+      [VARIANTS.contentBold]: theme.lineHeight.xl,
+      [VARIANTS.subContent]: theme.lineHeight.l,
+      [VARIANTS.subContentBold]: theme.lineHeight.l,
     };
 
     return variants[variant] || undefined;
@@ -64,6 +64,30 @@ const styles = {
 
     return variants[variant] || undefined;
   },
+  textTransform({ variant }) {
+    const variants = {
+      [VARIANTS.h1]: 'uppercase',
+      [VARIANTS.h2]: 'uppercase',
+    };
+
+    return variants[variant] || undefined;
+  },
+  fontFamily({ variant }) {
+    const variants = {
+      [VARIANTS.h1]: 'MarkOT-Ultra',
+      [VARIANTS.h2]: 'MarkOT-Ultra',
+      [VARIANTS.h3]: 'MarkOT-Ultra',
+      [VARIANTS.h4]: 'Avenir',
+      [VARIANTS.h5]: 'Avenir',
+      [VARIANTS.h6]: 'Avenir',
+      [VARIANTS.content]: 'Avenir',
+      [VARIANTS.subContent]: 'Avenir',
+      [VARIANTS.contentBold]: 'Avenir',
+      [VARIANTS.subContentBold]: 'Avenir',
+    };
+
+    return variants[variant] || undefined;
+  },
 };
 
 const UiText = styled('p').attrs(() => ({
@@ -74,6 +98,9 @@ const UiText = styled('p').attrs(() => ({
   line-height: ${({ lineHeight }) => lineHeight || styles.lineHeight};
   margin: ${({ margin }) => margin};
   color: ${({ textColor }) => textColor};
+  text-transform: ${({ textTransform }) =>
+    textTransform || styles.textTransform};
+  font-family: ${({ fontFamily }) => fontFamily || styles.fontFamily};
 `;
 
 UiText.propTypes = {

@@ -60,12 +60,14 @@ export const theme = {
     s: 'var(--f-iconSize--s)',
     m: 'var(--f-iconSize--m)',
     l: 'var(--f-iconSize--l)',
+    xl: 'var(--f-iconSize--xl)',
   },
   lineHeight: {
     s: 'var(--f-lineHeight--s)',
     m: 'var(--f-lineHeight--m)',
     l: 'var(--f-lineHeight--l)',
     xl: 'var(--f-lineHeight--xl)',
+    xxl: 'var(--f-lineHeight--xxl)',
   },
   space: {
     s: 'var(--f-space--s)',

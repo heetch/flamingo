@@ -7,7 +7,7 @@ import Heading from '../Heading';
 import Icon from '../Icon';
 import IconButton from '../IconButton';
 import Table from '.';
-import Text from '../Text';
+import UiText from '../UiText';
 import Link from '../Link';
 import { Code } from '../../storybook-utils';
 
@@ -27,12 +27,12 @@ const getDefaultProps = () => ({
     {
       Header: text("Col #2's heading", 'With number'),
       accessor: 'number',
-      Cell: item => <Text isNumber>{item.cell.value}</Text>,
+      Cell: item => <UiText isNumber>{item.cell.value}</UiText>,
     },
     {
       Header: text("Col #3's heading", 'With custom rendering'),
       accessor: 'custom',
-      Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
+      Cell: () => <UiText icon={Icon.ICONS.IconMoon} />,
     },
   ],
 });
@@ -59,7 +59,7 @@ stories.add('All states', () => {
         {
           Header: '${defaultProps.columns[1].Header}',
           accessor: 'number',
-          Cell: item => <Text isNumber>{item.cell.value}</Text>,
+          Cell: item => <UiText isNumber>{item.cell.value}</UiText>,
         },
         {
           Header: '${defaultProps.columns[2].Header}',
@@ -83,10 +83,10 @@ stories.add('All states', () => {
         initialState={{ sortBy: [{ id: 'number', desc: true }] }}
       />
       <Code>{`
-      <Table 
-        {...otherProps} 
+      <Table
+        {...otherProps}
         manualSorting
-        initialState={{ sortBy: [{ id: 'number', desc: true }] }} 
+        initialState={{ sortBy: [{ id: 'number', desc: true }] }}
       />
       `}</Code>
 
@@ -115,8 +115,8 @@ stories.add('All states', () => {
         onClickRow={action('onClickRow')}
       />
       <Code>{`
-      <Table 
-        {...otherProps} 
+      <Table
+        {...otherProps}
         columns={[
           ...
           {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import UiText from '../UiText';
 import Icon from '../Icon';
@@ -14,6 +14,15 @@ export const StyledTable = styled('table').attrs(() => ({
   margin: ${theme.space.m} 0;
 `;
 
+const styles = {
+  color({ isSortable, isSorted }) {
+    if (isSortable && !isSorted) return theme.color.brand.secondary;
+    if (isSorted) return theme.color.brand.primary;
+
+    return undefined;
+  },
+};
+
 export const HeaderCell = styled(UiText)`
   min-width: 8.4375rem; /* 135px */
   text-align: left;
@@ -23,6 +32,7 @@ export const HeaderCell = styled(UiText)`
   padding-right: calc(${theme.iconSize.m} + ${theme.space.m} * 2);
   position: sticky;
   top: 0;
+  color: ${styles.color};
 
   ${UiText} {
     margin: 0;
@@ -34,4 +44,5 @@ export const HeaderCellIcon = styled(Icon)`
   right: ${theme.space.m};
   top: 50%;
   transform: translateY(-50%);
+  color: ${styles.color};
 `;

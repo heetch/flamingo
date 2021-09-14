@@ -13,10 +13,10 @@ const TableRowCell = styled(UiText).attrs(({ as }) => ({
   padding: ${theme.space.l} ${theme.space.xl};
   box-shadow: inset 0px -1px 0px var(--borderColor);
   background-color: ${theme.color.element.primary};
-  color: ${theme.color.text.secondary};
 
   ${UiText} {
     margin: 0;
+    color: ${theme.color.text.primary};
   }
 `;
 
