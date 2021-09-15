@@ -31,7 +31,7 @@ const styles = {
     return theme.color.text.white;
   },
   backgroundColor({ intent, disabled, variant }) {
-    if (disabled) return `${theme.color.element.primary} !important`;
+    if (disabled) return `${theme.color.element.inactive} !important`;
     if (intent === INTENTS.ERROR) return theme.color.element.error;
     if (intent === INTENTS.SUCCESS) return theme.color.element.success;
     if (variants.includes(variant)) return theme.color.text.white;
@@ -45,24 +45,29 @@ const styles = {
       return undefined;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
-      return `0 0 0 1px ${theme.color.brand.primary}`;
+      return `0 0 0 2px ${theme.color.brand.primary}`;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.SECONDARY) {
-      return `0 0 0 1px ${theme.color.brand.secondary}`;
+      return `0 0 0 2px ${theme.color.brand.secondary}`;
     }
 
     return undefined;
   },
-  cursor({ disabled, isLoading }) {
-    if (disabled) {
-      return 'not-allowed !important';
-    }
+  cursor({ isLoading }) {
     if (isLoading) {
       // Don't add cursor value, use default.
       return undefined;
     }
 
     return 'pointer';
+  },
+  opacity({ disabled }) {
+    if (disabled) {
+      // Don't add cursor value, use default.
+      return '30%';
+    }
+
+    return '100%';
   },
   hover: {
     backgroundColor({ intent }) {
@@ -92,7 +97,10 @@ const styles = {
 
 export const Content = styled.span`
   opacity: ${({ withIcon }) => withIcon && 0};
+  font-family: Avenir;
   pointer-events: ${({ withIcon }) => withIcon && 'none'};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.m};
 `;
 
 export const IconContainer = styled('div')`
@@ -113,22 +121,24 @@ export const StyledButton = styled('button').attrs(() => ({
   display: inline-block;
   margin: ${({ margin }) => margin ?? `${theme.space.m} 0`};
   padding: ${theme.space.m} ${theme.space.xl};
+  width: 340px;
+  height: 60px;
   font-size: ${theme.fontSize.s};
   font-weight: ${theme.fontWeight.bold};
   line-height: ${theme.lineHeight.m};
   border: 0;
-  border-radius: ${theme.space.xxl};
+  border-radius: 5px;
   outline: none;
   transition: background-color 0.2s ease-out;
   cursor: ${styles.cursor};
   color: ${styles.color};
   background-color: ${styles.backgroundColor};
   box-shadow: ${styles.boxShadow};
+  opacity: ${styles.opacity};
 
   & + & {
     margin-left: ${({ margin }) => (!margin ? theme.space.m : undefined)};
   }
-
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: ${theme.color.text.white};

@@ -70,6 +70,7 @@ export const theme = {
     xxl: 'var(--f-lineHeight--xxl)',
   },
   space: {
+    xs: 'var(--f-space--xs)',
     s: 'var(--f-space--s)',
     m: 'var(--f-space--m)',
     l: 'var(--f-space--l)',

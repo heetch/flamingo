@@ -16,8 +16,6 @@ const IconButtonComponent = React.forwardRef(
   ) => (
     <Button
       className={cx('f-Button--icon', className)}
-      intent={Button.INTENTS.SECONDARY}
-      variant={Button.VARIANTS.MINIMAL}
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
@@ -46,9 +44,9 @@ const IconButton = styled(IconButtonComponent)`
   line-height: 1;
   border-radius: 50%;
   color: ${theme.color.icon.dark};
+  background-color: unset !important;
 
   &:hover {
-    background-color: ${theme.color.element.inactive};
     color: ${theme.color.icon.dark};
   }
 

@@ -5,12 +5,12 @@ import Icon from '../Icon';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import FormElement from '../FormComponents/FormElement';
 
-const { IconCheck, IconAlertOctagon } = Icon.ICONS;
+const { IconCheck, IconAlertTriangle } = Icon.ICONS;
 const icons = Object.values(Icon.ICONS);
 
 const Input = React.forwardRef(({ id, icon: defaultIcon, ...props }, ref) => {
   const icon = props.invalid
-    ? IconAlertOctagon
+    ? IconAlertTriangle
     : props.valid
     ? IconCheck
     : defaultIcon;
@@ -26,7 +26,7 @@ const Input = React.forwardRef(({ id, icon: defaultIcon, ...props }, ref) => {
         {...props}
       />
 
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon icon={icon} size={'l'} />}
     </FormElementWrapper>
   );
 });
