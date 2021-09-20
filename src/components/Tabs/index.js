@@ -39,6 +39,7 @@ const Tabs = React.forwardRef(
             onKeyPress={({ key }) =>
               key === 13 ? handleTabClick(index) : undefined
             }
+            isActive={activeIndex === index}
           >
             <TabsLabel
               className='f-Tabs-label'

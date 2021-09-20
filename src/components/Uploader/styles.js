@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import Icon from '../Icon';
 import UiText from '../UiText';

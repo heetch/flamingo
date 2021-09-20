@@ -1,6 +1,6 @@
 @import 'react-datepicker/dist/react-datepicker.css';
-@import '../fonts/MarkOT-Black.otf';
-@import '../fonts/MarkOT-Ultra.otf';
+@import './fonts/MarkOT-Black.otf';
+@import './fonts/MarkOT-Ultra.otf';
 
 :root {
   --f-color-brandPrimary: #ff2773;
@@ -37,7 +37,7 @@
   --f-fontSize--m: 1rem; /* 16px */
   --f-fontSize--l: 1.25rem; /* 20px */
   --f-fontSize--xl: 1.5rem; /* 24px */
-  --f-fontSize--xxl: 1.875rem; /* 30px */
+  --f-fontSize--xxl: 2.25rem; /* 36px */
 }
 
 :root {
@@ -51,12 +51,13 @@
   --f-lineHeight--m: 1.125rem; /* 18px */
   --f-lineHeight--l: 1.25rem; /* 20px */
   --f-lineHeight--xl: 1.5rem; /* 24px */
-  --f-lineHeight--xxl: 1.875rem; /* 30px */
+  --f-lineHeight--xxl: 2.25rem; /* 36px */
 }
 
 :root {
-  --f-iconSize--s: 0.75rem; /* 12px */
-  --f-iconSize--m: 1rem; /* 16px */
+  --f-iconSize--xs: 0.75rem; /* 12px */
+  --f-iconSize--s: 1rem; /* 16px */
+  --f-iconSize--m: 1.125rem; /* 18px */
   --f-iconSize--l: 1.25rem; /* 20px */
   --f-iconSize--xl: 1.5rem; /* 24px */
 }
@@ -65,7 +66,7 @@
   --f-borderRadius--xl: 1.5rem; /* 24px */
   --f-borderRadius--l: 1rem; /* 16px */
   --f-borderRadius--m: 0.5rem; /* 8px */
-  --f-borderRadius--s: 0.25rem; /* 4px */
+  --f-borderRadius--s: 0.313rem; /* 4px */
 }
 
 :root {
@@ -96,14 +97,14 @@
   font-family: 'MarkOT-Black';
   font-style: normal;
   font-weight: 400;
-  src: local('MarkOT-Black'), url(../fonts/MarkOT-Black.otf) format('opentype');
+  src: local('MarkOT-Black'), url(./fonts/MarkOT-Black.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'MarkOT-Ultra';
   font-style: normal;
   font-weight: 400;
-  src: local('MarkOT-Ultra'), url(../fonts/MarkOT-Ultra.otf) format('opentype');
+  src: local('MarkOT-Ultra'), url(./fonts/MarkOT-Ultra.otf) format('opentype');
 }
 
 body {

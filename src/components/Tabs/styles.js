@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 import { theme } from '../../theme';
 
@@ -11,15 +11,10 @@ export const TabsContainer = styled.div.attrs(() => ({
 
 export const TabsLabel = styled.span`
   display: block;
-  color: ${({ isActive }) =>
-    isActive ? theme.color.brand.primary : theme.color.text.primary};
   font-size: ${theme.fontSize.s};
   font-weight: ${theme.fontWeight.black};
   line-height: ${theme.lineHeight.s};
   margin: ${theme.space.m} 0;
-  &:hover {
-    color: ${theme.color.brand.primary};
-  }
 `;
 
 export const TabsMarker = styled.span`
@@ -46,7 +41,12 @@ export const Tab = styled('button')`
   &:hover ${TabsMarker} {
     background-color: ${theme.color.brand.primary};
   }
-
+  color: ${({ isActive }) =>
+    isActive ? theme.color.brand.primary : theme.color.text.primary};
+  &:hover,
+  &:active {
+    color: ${theme.color.brand.primary};
+  }
   &:nth-child(1) ${TabsMarker} {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { theme } from '../../theme';
 
 const VARIANTS = {
@@ -11,8 +11,10 @@ const VARIANTS = {
   h6: 'h6',
   content: 'content',
   contentBold: 'contentBold',
+  contentBlack: 'contentBlack',
   subContent: 'subContent',
   subContentBold: 'subContentBold',
+  subContentBlack: 'subContentBlack',
 };
 
 const styles = {
@@ -26,8 +28,10 @@ const styles = {
       [VARIANTS.h6]: theme.fontSize.xs,
       [VARIANTS.content]: theme.fontSize.m,
       [VARIANTS.contentBold]: theme.fontSize.m,
+      [VARIANTS.contentBlack]: theme.fontSize.m,
       [VARIANTS.subContent]: theme.fontSize.s,
       [VARIANTS.subContentBold]: theme.fontSize.s,
+      [VARIANTS.subContentBlack]: theme.fontSize.s,
     };
 
     return variants[variant] || undefined;
@@ -42,8 +46,10 @@ const styles = {
       [VARIANTS.h6]: theme.lineHeight.m,
       [VARIANTS.content]: theme.lineHeight.xl,
       [VARIANTS.contentBold]: theme.lineHeight.xl,
+      [VARIANTS.contentBlack]: theme.lineHeight.xl,
       [VARIANTS.subContent]: theme.lineHeight.l,
       [VARIANTS.subContentBold]: theme.lineHeight.l,
+      [VARIANTS.subContentBlack]: theme.lineHeight.l,
     };
 
     return variants[variant] || undefined;
@@ -57,9 +63,11 @@ const styles = {
       [VARIANTS.h5]: theme.fontWeight.black,
       [VARIANTS.h6]: theme.fontWeight.black,
       [VARIANTS.content]: theme.fontWeight.normal,
-      [VARIANTS.subContent]: theme.fontWeight.normal,
+      [VARIANTS.contentBlack]: theme.fontWeight.black,
       [VARIANTS.contentBold]: theme.fontWeight.bold,
+      [VARIANTS.subContent]: theme.fontWeight.normal,
       [VARIANTS.subContentBold]: theme.fontWeight.bold,
+      [VARIANTS.subContentBlack]: theme.fontWeight.black,
     };
 
     return variants[variant] || undefined;
@@ -68,6 +76,7 @@ const styles = {
     const variants = {
       [VARIANTS.h1]: 'uppercase',
       [VARIANTS.h2]: 'uppercase',
+      [VARIANTS.h3]: 'uppercase',
     };
 
     return variants[variant] || undefined;
@@ -81,9 +90,11 @@ const styles = {
       [VARIANTS.h5]: 'Avenir',
       [VARIANTS.h6]: 'Avenir',
       [VARIANTS.content]: 'Avenir',
-      [VARIANTS.subContent]: 'Avenir',
       [VARIANTS.contentBold]: 'Avenir',
+      [VARIANTS.contentBlack]: 'Avenir',
+      [VARIANTS.subContent]: 'Avenir',
       [VARIANTS.subContentBold]: 'Avenir',
+      [VARIANTS.subContentBlack]: 'Avenir',
     };
 
     return variants[variant] || undefined;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ReactDatePicker, { registerLocale } from 'react-datepicker';
 import Icon from '../Icon';
 import { StyledDatepickerInput, StyledDatepicker } from './styles';
+import { theme } from '../../theme';
 
 const DatepickerDay = ({
   invalid,
@@ -75,10 +76,18 @@ const DatepickerDay = ({
         placeholder={placeholder}
         customInput={<DatepickerDayInput />}
         previousMonthButtonLabel={
-          <Icon size='l' icon={Icon.ICONS.IconChevronLeft} />
+          <Icon
+            size='l'
+            icon={Icon.ICONS.IconChevronLeft}
+            iconColor={theme.color.brand.secondary}
+          />
         }
         nextMonthButtonLabel={
-          <Icon size='l' icon={Icon.ICONS.IconChevronRight} />
+          <Icon
+            size='l'
+            icon={Icon.ICONS.IconChevronRight}
+            iconColor={theme.color.brand.secondary}
+          />
         }
         showPopperArrow={false}
         withPortal={withPortal}

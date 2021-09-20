@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
 import Helper from '../Helper';
@@ -13,7 +13,7 @@ const styles = {
       return theme.color.element.success;
     }
 
-    return undefined;
+    return theme.color.text.tertiary;
   },
 };
 
@@ -23,13 +23,16 @@ const FormElementWrapper = styled('div').attrs(() => ({
   display: flex;
   position: relative;
   min-width: 12.5rem;
-  margin-top: ${theme.space.m};
-  margin-bottom: ${theme.space.m};
+  margin-top: ${theme.space.s};
+  margin-bottom: ${theme.space.s};
   color: ${theme.color.text.primary};
 
   & + ${Helper}, ${Helper} {
     color: ${styles.helperColor};
+    font-size: ${theme.fontSize.xs};
     transition: color 0.2s ease-out;
+    font-weight: ${theme.fontWeight.bold};
+    line-height: ${theme.lineHeight.s};
   }
 `;
 

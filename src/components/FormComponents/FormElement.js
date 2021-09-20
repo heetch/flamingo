@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
@@ -45,11 +45,10 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
 }))`
   display: block;
   width: 100%;
-  padding: ${theme.space.m} ${theme.space.xl};
+  padding: ${theme.space.m} 0 ${theme.space.m};
   border-radius: 0;
   outline: none;
   appearance: none;
-  transition: box-shadow 0.2s ease-out;
   border: unset;
   color: ${styles.stateColor};
   background-color: ${theme.color.element.primary};
@@ -59,6 +58,7 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
 
   &:focus {
     border-bottom: 1px solid ${styles.focus.stateColor} !important;
+    transition: border 0.2s ease-out;
   }
 
   ${theme.breakPoint.s} {

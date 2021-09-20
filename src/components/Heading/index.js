@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import UiText from '../UiText';
 import { theme } from '../../theme';
@@ -27,6 +27,7 @@ const Heading = styled(UiText).attrs(({ as, level }) => ({
   color: ${({ textColor }) => textColor || theme.color.text.primary};
   margin-top: ${({ marginTop }) => marginTop || styles.marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom || theme.space.m};
+  line-height: ${theme.lineHeight.xl};
 `;
 
 Heading.propTypes = {

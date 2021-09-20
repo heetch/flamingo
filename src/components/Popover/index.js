@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { theme } from '../../theme';
 import UiText from '../UiText';

@@ -22,7 +22,7 @@ stories.add('All states', () => (
           onClose={action(`Alert ${type} closed!`)}
           type={type}
         >
-          {`Alert message `}
+          {'Alert message '}
           <a href='https://example.com'>link</a>
         </Alert>
 
@@ -32,7 +32,8 @@ stories.add('All states', () => (
           onClose={onCloseAction}
           type='${type}'
         >
-          Alert message
+          {'Alert message '}
+          <a href='https://example.com'>link</a>
         </Alert>
       `}</Code>
       </div>

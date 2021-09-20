@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { theme } from '../../theme';
 
@@ -57,7 +57,7 @@ export const Header = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${theme.space.m} var(--content-hSpacing);
+  padding: ${theme.space.l} ${theme.space.xxl};
   border-bottom: 1px solid ${theme.color.element.inactive};
   background: ${theme.color.element.primary};
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Overlay from '../Overlay';
 import { StyledItem } from '../Item/styles';
 import { theme } from '../../theme';

@@ -4,6 +4,8 @@ import cx from 'classnames';
 
 import Heading from '../Heading';
 import IconButton from '../IconButton';
+import UiText from '../UiText';
+
 import Overlay from '../Overlay';
 
 import { StyledSidePanel, Content, Header, Footer } from './styles';
@@ -59,10 +61,14 @@ const SidePanel = props => {
           ) : (
             <Heading level={4} as='h1'>
               {props.title}
+              <UiText margin={0}>{props.subtitle}</UiText>
             </Heading>
           )}
-
-          <IconButton icon={IconButton.ICONS.IconCross} onClick={handleClose} />
+          <IconButton
+            icon={IconButton.ICONS.IconCross}
+            onClick={handleClose}
+            size='m'
+          />
         </Header>
 
         <div>
@@ -82,6 +88,7 @@ SidePanel.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.node,
+  subtitle: PropTypes.node,
   header: PropTypes.node,
   maxWidth: PropTypes.string,
   animateOnMount: PropTypes.bool,

@@ -51,7 +51,8 @@ stories.add('Playground', () => {
         position='top'
         onClose={onClose}
       >
-        {"I'm a subtitle"}
+        {"I'm a subtitle with a "}
+        <a href='https://example.com'>link</a>
       </Toast>
       <Toast
         zIndex={1}

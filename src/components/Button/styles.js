@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { theme } from '../../theme';
 
 export const INTENTS = {
@@ -45,16 +45,16 @@ const styles = {
       return undefined;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
-      return `0 0 0 2px ${theme.color.brand.primary}`;
+      return `inset 0 0 0 2px ${theme.color.brand.primary}`;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.SECONDARY) {
-      return `0 0 0 2px ${theme.color.brand.secondary}`;
+      return `inset 0 0 0 2px ${theme.color.brand.secondary}`;
     }
 
     return undefined;
   },
-  cursor({ isLoading }) {
-    if (isLoading) {
+  cursor({ isLoading, disabled }) {
+    if (isLoading || disabled) {
       // Don't add cursor value, use default.
       return undefined;
     }

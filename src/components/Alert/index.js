@@ -18,8 +18,7 @@ const Alert = React.forwardRef(
   ({ title, children, type, onClose, ...props }, ref) => (
     <StyledAlert isClosable={!!onClose} ref={ref} alertType={type} {...props}>
       <UiText
-        variant={UiText.VARIANTS.contentBold}
-        as='h1'
+        variant={UiText.VARIANTS.contentBlack}
         className='f-Alert-title'
         margin={0}
         style={{ marginRight: theme.space.xxl }}
@@ -27,7 +26,11 @@ const Alert = React.forwardRef(
         {title}
       </UiText>
 
-      <StyledText className='f-Alert-content' alertType={type}>
+      <StyledText
+        className='f-Alert-content'
+        alertType={type}
+        variant={UiText.VARIANTS.contentBold}
+      >
         {children}
       </StyledText>
 

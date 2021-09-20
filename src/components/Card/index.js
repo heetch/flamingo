@@ -1,21 +1,24 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Text from '../Text';
 import { theme } from '../../theme';
 
 const styles = {
   padding({ size }) {
-    if (size === 's') return theme.space.xl;
-    if (size === 'm') return theme.space.xxl;
+    if (size === 's') return theme.space.l;
+    if (size === 'm') return theme.space.xl;
 
     return undefined;
   },
-  boxShadow({ isSelected, elevation }) {
-    if (isSelected) return `inset 0 0 0 3px ${theme.color.brand.primary}`;
+  boxShadow({ elevation }) {
     if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
     if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
-    return `0 0 0 1px ${theme.color.element.inactive}`;
+    return undefined;
+  },
+  border({ isSelected }) {
+    if (isSelected) return `1px solid ${theme.color.brand.secondary}`;
+    return `1px solid ${theme.color.element.inactive}`;
   },
 };
 
@@ -24,19 +27,20 @@ const Card = styled('div').attrs(() => ({
 }))`
   background-color: ${theme.color.element.primary};
   box-shadow: ${styles.boxShadow};
-  border-radius: ${theme.borderRadius.xl};
+  border-radius: 5px;
   padding: ${styles.padding};
+  border: ${styles.border};
 
   & & {
-    border-radius: ${theme.borderRadius.l};
+    border-radius: 5px;
   }
 
   & & & {
-    border-radius: ${theme.borderRadius.m};
+    border-radius: 5px;
   }
 
   & & & & {
-    border-radius: ${theme.borderRadius.s};
+    border-radius: 5px;
   }
 
   ${Text} {

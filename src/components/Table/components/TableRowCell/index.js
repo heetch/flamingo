@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import UiText from '../../../UiText';
 import { theme } from '../../../../theme';
 
 const TableRowCell = styled(UiText).attrs(({ as }) => ({
   className: 'f-Table-RowCell',
-  variant: UiText.VARIANTS.subContent,
+  variant: UiText.VARIANTS.subContentBold,
   as: as || 'td',
 }))`
   min-width: 8.4375rem; /* 135px */

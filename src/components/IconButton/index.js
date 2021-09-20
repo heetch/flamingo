@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -20,6 +20,7 @@ const IconButtonComponent = React.forwardRef(
       ref={ref}
       isLoading={isLoading}
       {...props}
+      style={{ padding: 0 }}
     >
       <Icon
         icon={icon}
@@ -40,15 +41,11 @@ IconButtonComponent.propTypes = {
 };
 
 const IconButton = styled(IconButtonComponent)`
-  padding: ${theme.space.m};
   line-height: 1;
   border-radius: 50%;
   color: ${theme.color.icon.dark};
   background-color: unset !important;
-
-  &:hover {
-    color: ${theme.color.icon.dark};
-  }
+  width: 14px;
 
   & + & {
     margin-left: ${theme.space.m};

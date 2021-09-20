@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { theme } from '../../theme';
 

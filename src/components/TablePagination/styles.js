@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import UiText from '../UiText';
 import Icon from '../Icon';

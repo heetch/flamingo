@@ -10,7 +10,7 @@ const TableHeaderCell = React.forwardRef(
     <HeaderCell
       as={as || 'th'}
       className={cx('f-Table-HeaderCell', className)}
-      variant={UiText.VARIANTS.subContentBold}
+      variant={UiText.VARIANTS.subContentBlack}
       margin={'20px'}
       ref={ref}
       isSorted={isSorted}

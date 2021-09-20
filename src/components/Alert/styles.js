@@ -1,14 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import IconButton from '../IconButton';
-import Text from '../Text';
+import UiText from '../UiText';
 import { theme } from '../../theme';
 
 const styles = {
   backgroundColor({ alertType }) {
     if (alertType === 'error') return theme.color.element.error;
     if (alertType === 'success') return theme.color.element.success;
-    if (alertType === 'information') return theme.color.brand.tertiary;
-
+    if (alertType === 'information') return theme.color.element.tertiary;
     return undefined;
   },
   color({ alertType }) {
@@ -42,9 +41,9 @@ export const StyledAlert = styled('div').attrs(() => ({
   color: ${styles.color};
 `;
 
-export const StyledText = styled(Text)`
+export const StyledText = styled(UiText)`
   color: ${styles.color};
-  margin: ${theme.space.m} 0 ${theme.space.m} 0;
+  margin: ${theme.space.m} 0 0 0;
   > a {
     color: ${styles.linkColor};
     text-decoration: underline;
@@ -54,9 +53,12 @@ export const StyledText = styled(Text)`
 export const CloseButton = styled(IconButton)`
   width: initial;
   position: absolute;
-  top: ${theme.space.s};
-  right: ${theme.space.s};
+  top: -8px;
+  right: ${theme.space.l};
   cursor: pointer;
   margin: 0;
   color: ${styles.color};
+  &:hover {
+    color: ${styles.color};
+  }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import Input from '../Input';
 import { theme } from '../../theme';
@@ -8,7 +8,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 }))`
   position: relative;
   text-align: left;
-
+  font-family: Avenir;
   .react-datepicker-wrapper,
   > div {
     width: 100%;
@@ -61,7 +61,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__close-icon {
-    right: 2.8px;
+    right: 4px;
   }
 
   .react-datepicker__triangle {
@@ -70,10 +70,10 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .react-datepicker-popper {
     border: 0;
-    border-radius: ${theme.borderRadius.m};
+    border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(25, 1, 52, 0.12);
     z-index: calc(${theme.zIndex.overlay} + 1);
+    border: 1px solid ${theme.color.brand.primaryInactive};
 
     ${theme.breakPoint.s} {
       position: fixed !important;
@@ -120,7 +120,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
     &:hover:not(.react-datepicker__day--disabled) {
       border-radius: 100%;
-      background-color: ${theme.color.brand.primary};
+      background-color: ${theme.color.brand.secondary};
       color: white;
     }
   }
@@ -128,7 +128,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker__day--selected {
     &,
     &:hover {
-      background-color: ${theme.color.brand.primary};
+      background-color: ${theme.color.brand.secondary};
       color: white;
     }
   }
@@ -138,7 +138,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day--today {
-    color: ${theme.color.brand.primary};
+    color: ${theme.color.brand.secondary};
     background: none;
   }
 
@@ -146,14 +146,32 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     visibility: hidden;
   }
 
+  .react-datepicker__header__dropdown {
+    text-align: left;
+    padding: ${theme.space.s} ${theme.space.s} ${theme.space.s}
+      ${theme.space.xxl};
+    font-size: ${theme.fontSize.m};
+  }
+
   .react-datepicker__year-dropdown--scrollable {
     height: auto;
   }
   .react-datepicker__close-icon:after {
-    background: ${theme.color.brand.primary};
+    background: ${theme.color.brand.secondary};
     color: white;
-    font-size: ${theme.fontSize.s};
+    font-size: ${theme.fontSize.m};
     line-height: 15px;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .react-datepicker__year-read-view--down-arrow {
+    margin-left: ${theme.space.s};
+    border-width: 0.6rem;
+    top: 6px;
+  }
+
+  .react-datepicker__year-dropdown-container--scroll {
+    margin: 0px;
   }
 
   .react-datepicker__month-container {
