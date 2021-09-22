@@ -33,7 +33,7 @@ const UploaderItemStyled = styled('div').attrs(() => ({
   }
 
   & .f-Button--icon {
-    margin: 0;
+    margin-right: ${theme.space.l};
   }
 `;
 

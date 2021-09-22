@@ -121,8 +121,8 @@ export const StyledButton = styled('button').attrs(() => ({
   display: inline-block;
   margin: ${({ margin }) => margin ?? `${theme.space.m} 0`};
   padding: ${theme.space.m} ${theme.space.xl};
-  width: 340px;
-  height: 60px;
+  max-width: 340px;
+  max-height: 60px;
   font-size: ${theme.fontSize.s};
   font-weight: ${theme.fontWeight.bold};
   line-height: ${theme.lineHeight.m};

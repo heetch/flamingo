@@ -81,6 +81,15 @@ const styles = {
 
     return variants[variant] || undefined;
   },
+  letterSpacing({ variant }) {
+    const variants = {
+      [VARIANTS.h1]: '1.5px',
+      [VARIANTS.h2]: '1px',
+      [VARIANTS.h3]: '0.5px',
+    };
+
+    return variants[variant] || undefined;
+  },
   fontFamily({ variant }) {
     const variants = {
       [VARIANTS.h1]: 'MarkOT-Ultra',
@@ -112,6 +121,8 @@ const UiText = styled('p').attrs(() => ({
   text-transform: ${({ textTransform }) =>
     textTransform || styles.textTransform};
   font-family: ${({ fontFamily }) => fontFamily || styles.fontFamily};
+  letter-spacing: ${({ letterSpacing }) =>
+    letterSpacing || styles.letterSpacing};
 `;
 
 UiText.propTypes = {

@@ -18,7 +18,7 @@ const styles = {
     return theme.color.text.secondary;
   },
   hoverTextColor({ state }) {
-    if (state !== STATES.LOADING) return theme.color.brand.primary;
+    if (state !== STATES.LOADING) return theme.color.brand.secondary;
     return theme.color.text.secondary;
   },
 
@@ -31,7 +31,7 @@ const styles = {
   hoverBorderColor({ state }) {
     if (state === STATES.FILES) return 'transparent';
     if (state === STATES.LOADING) return theme.color.brand.tertiary;
-    return theme.color.brand.primary;
+    return theme.color.brand.secondary;
   },
 };
 
@@ -64,7 +64,7 @@ export const Preview = styled.div`
   right: -1px;
   left: -1px;
   bottom: -1px;
-  border-radius: 1rem;
+  border-radius: 5px;
   background-size: cover;
   background-position: center center;
   z-index: 10;
@@ -77,8 +77,8 @@ export const PreviewActions = styled.div`
   right: -1px;
   left: -1px;
   bottom: -1px;
-  border-radius: 1rem;
-  background: rgba(25, 1, 52, 0.8); /* --f-color-text--primary */
+  border-radius: 5px;
+  background: ${theme.color.element.overlay};
   padding: 0 ${theme.space.m};
   text-align: right;
   opacity: 0;
@@ -93,7 +93,7 @@ export const Container = styled(FormElementWrapper)`
   min-height: ${styles.height};
   flex-direction: column;
   margin: ${theme.space.m} 0;
-  border-radius: ${theme.borderRadius.l};
+  border-radius: 5px;
   color: ${styles.textColor};
   background-color: ${theme.color.element.primary};
   transition: all 0.15s ease-out;
@@ -105,7 +105,7 @@ export const Container = styled(FormElementWrapper)`
   }
 
   &:hover ${PreviewActions} {
-    opacity: 1;
     pointer-events: initial;
+    opacity: 0.6;
   }
 `;

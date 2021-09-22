@@ -53,7 +53,7 @@ export const StyledText = styled(UiText)`
 export const CloseButton = styled(IconButton)`
   width: initial;
   position: absolute;
-  top: -8px;
+  top: ${theme.space.l};
   right: ${theme.space.l};
   cursor: pointer;
   margin: 0;
