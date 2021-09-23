@@ -46,7 +46,7 @@ const IconContainer = styled.div`
   height: var(--iconContainerSize);
   margin-right: ${theme.space.m};
   border: 1px solid ${theme.color.element.secondary};
-  border-radius: 0.75rem; /* 12px */
+  border-radius: 5px;
   overflow: hidden;
 
   img {

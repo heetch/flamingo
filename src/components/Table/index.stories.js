@@ -32,7 +32,7 @@ const getDefaultProps = () => ({
     {
       Header: text("Col #3's heading", 'With custom rendering'),
       accessor: 'custom',
-      Cell: () => <UiText icon={Icon.ICONS.IconMoon} />,
+      Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
     },
   ],
 });

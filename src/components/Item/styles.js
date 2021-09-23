@@ -51,7 +51,7 @@ export const StyledItem = styled.div`
   align-items: center;
   padding: ${styles.yPadding} ${theme.space.l};
   background-color: ${theme.color.element.primary};
-  border-radius: ${theme.borderRadius.m};
+  border-radius: 5px;
   color: ${styles.color};
   transition: background-color 0.1s ease-out;
   cursor: ${({ hasAction }) => hasAction && 'pointer'};

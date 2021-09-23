@@ -85,7 +85,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__portal {
-    background-color: rgba(43, 30, 112, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .react-datepicker__navigation {
@@ -160,7 +160,6 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     background: ${theme.color.brand.secondary};
     color: white;
     font-size: ${theme.fontSize.m};
-    line-height: 15px;
     width: 1.25rem;
     height: 1.25rem;
   }
