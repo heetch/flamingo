@@ -110,11 +110,11 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day {
-    border-radius: 100%;
+    border-radius: 2px;
     font-size: ${theme.fontSize.m};
     width: 38px;
     height: 38px;
-    line-height: 38px;
+    line-height: 40px;
     margin: 0;
     transition: background-color 0.2s ease;
 

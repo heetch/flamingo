@@ -8,7 +8,7 @@ const variants = Object.values(UiText.VARIANTS);
 
 const Text = styled(UiText).attrs(({ textColor }) => ({
   className: 'f-Text',
-  textColor: textColor || theme.color.text.secondary,
+  textColor: textColor || theme.color.text.primary,
 }))`
   text-align: ${({ isNumber }) => isNumber && 'right'};
 `;

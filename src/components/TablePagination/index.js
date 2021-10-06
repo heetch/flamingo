@@ -5,6 +5,7 @@ import { useTable, useSortBy, usePagination } from 'react-table';
 
 import HeaderCell from './components/TableHeaderCell';
 import RowCell from './components/TableRowCell';
+import UiText from '../UiText';
 import { StyledTable } from './styles';
 
 const TablePagination = React.forwardRef(
@@ -83,6 +84,7 @@ const TablePagination = React.forwardRef(
                     isSortable={isSortable}
                     colWidth={colWidth}
                     disableColSort={disableColSort}
+                    variant={UiText.VARIANTS.subContentBlack}
                   >
                     {render('Header')}
                   </HeaderCell>

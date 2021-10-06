@@ -7,6 +7,8 @@ export const TabsContainer = styled.div.attrs(() => ({
 }))`
   position: relative;
   font-family: Avenir;
+  display: flex;
+  align-items: flex-end;
 `;
 
 export const TabsLabel = styled.span`
@@ -15,6 +17,8 @@ export const TabsLabel = styled.span`
   font-weight: ${theme.fontWeight.black};
   line-height: ${theme.lineHeight.s};
   margin: ${theme.space.m} 0;
+  min-width: 80px;
+  max-width: 100%;
 `;
 
 export const TabsMarker = styled.span`
@@ -36,8 +40,7 @@ export const Tab = styled('button')`
   background: none;
   border: none;
   padding: 0;
-  max-width: 250px;
-  width: 100%;
+  overflow-wrap: break-word;
   &:hover ${TabsMarker} {
     background-color: ${theme.color.brand.primary};
   }

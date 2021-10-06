@@ -51,6 +51,10 @@ const IconButton = styled(IconButtonComponent)`
     margin-left: ${theme.space.m};
   }
 
+  :hover {
+    color: unset;
+  }
+
   > ${Icon} {
     position: absolute;
     top: 0;

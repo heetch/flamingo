@@ -30,9 +30,16 @@ const SidePanel = props => {
     props.onClose();
   };
 
+  const handleEscape = event => {
+    if (event.keyCode === 27) {
+      handleClose();
+    }
+  };
+  window.addEventListener('keydown', handleEscape);
+
   React.useEffect(() => {
     if (props.isOpen) setShouldRender(props.isOpen);
-
+    document.body.style.overflow = 'hidden';
     setIsOpen(props.isOpen);
   }, [props.isOpen]);
 
@@ -46,6 +53,7 @@ const SidePanel = props => {
         onClick={props.closesOnOverlayClick && handleClose}
         isOpen={isOpen}
         animateOnMount={props.animateOnMount}
+        data-testid='flamingo-side-panel-overlay'
       />
 
       <StyledSidePanel
@@ -53,6 +61,8 @@ const SidePanel = props => {
         onAnimationEnd={onAnimationEnd}
         maxWidth={props.maxWidth}
         isOpen={isOpen}
+        data-testid='flamingo-side-panel'
+        onEscape={handleEscape}
         animateOnMount={props.animateOnMount}
       >
         <Header className='f-SidePanel-header'>

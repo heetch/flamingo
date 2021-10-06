@@ -18,6 +18,26 @@ addDecorator(StoryWrapper);
 addDecorator(withKnobs);
 addDecorator(withInfo);
 
+export const parameters = {
+  backgrounds: {
+    default: 'grey',
+    values: [
+      {
+        name: 'grey',
+        value: '#ECEFF8'
+      },
+      {
+        name: 'pink',
+        value: '#fe679c',
+      },
+      {
+        name: 'blue',
+        value: '#6e9ddf',
+      },
+    ],
+  },
+};
+
 addParameters({
   viewport: {
     viewports: {

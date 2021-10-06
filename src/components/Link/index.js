@@ -8,6 +8,7 @@ const Link = styled('a').attrs(({ className }) => ({
   className: cx('f-Link', className),
 }))`
   color: ${theme.color.text.link};
+  text-decoration: underline;
 `;
 
 Link.propTypes = {

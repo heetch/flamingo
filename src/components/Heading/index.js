@@ -27,7 +27,7 @@ const Heading = styled(UiText).attrs(({ as, level }) => ({
   color: ${({ textColor }) => textColor || theme.color.text.primary};
   margin-top: ${({ marginTop }) => marginTop || styles.marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom || theme.space.m};
-  line-height: ${theme.lineHeight.xl};
+  line-height: ${theme.lineHeight.xxl};
 `;
 
 Heading.propTypes = {

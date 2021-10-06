@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MarkOT-Ultra';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MarkOT-Ultra'), url(../src/fonts/MarkOT-Ultra.otf) format('opentype');
+}
+
 :root {
   --f-color-brandPrimary: #FF2773;
   --f-color-brandPrimary--light: #FE679C;
@@ -33,7 +40,7 @@
   --f-fontSize--m: 1rem; /* 16px */
   --f-fontSize--l: 1.25rem; /* 20px */
   --f-fontSize--xl: 1.5rem; /* 24px */
-  --f-fontSize--xxl: 2.25rem; /* 36px */
+  --f-fontSize--xxl: 1.875rem; /* 30px */
 }
 
 :root {
@@ -89,20 +96,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'MarkOT-Black';
-  font-style: normal;
-  font-weight: 400;
-  src: local('MarkOT-Black'), url(../src/fonts/MarkOT-Black.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'MarkOT-Ultra';
-  font-style: normal;
-  font-weight: 400;
-  src: local('MarkOT-Ultra'), url(../src/fonts/MarkOT-Ultra.otf) format('opentype');
-}
-
 body {
   font-family: -apple-system, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     'Helvetica Neue', sans-serif;
@@ -110,7 +103,8 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: var(--f-color-brandSecondary);
 }
 
 a:hover {
