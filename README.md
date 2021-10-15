@@ -78,6 +78,26 @@ Then run
 `yarn icons` || `npm icons`
 it will automatically add your new icon in our `icons.js` with the correct indentation.
 
-## License
+## How-to version and publish to npm
+### Versioning format: `Major.Minor.Patch`
+*Example `v1.7.4` (1 = Major, 7 = Minor, 4 = Patch)*
 
+- Major - to be increased if the majority of Flamingo has been changed or updated
+- Minor - to be incremented when adding a whole new component or feature
+- Patch - to be incremented for bug fixes or small updates
+
+### To publish `latest` package to npm:
+
+ - Ensure you are logged in to npm using `npm login`
+ - `yarn deploy` - follow prompts to choose versioning: `Major`, `Minor` or `Patch`
+
+### To publish `non-latest` or `prerelease` package to npm:
+
+ - Ensure you are logged in to npm using `npm login`
+ - `yarn deploy` - follow prompts to choose versioning: `Prepatch`, `Preminor`, `Premajor`
+ *If you would like to bump an existing `prerelease` package (i.e `5.0.1-alpha.0` => `5.0.1-alpha.1`)
+ choose the option: `Custom Prerelease` then enter the prerelase tag name (`"alpha"` in this example)*
+
+
+## License
 MIT © [Heetch](https://github.com/heetch)

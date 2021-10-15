@@ -55,7 +55,7 @@ export const StyledTabs = styled.div`
 export const TabsLabel = styled.span`
   display: block;
   color: ${theme.color.text.primary};
-  font-size: ${theme.fontSize.s}
+  font-size: ${theme.fontSize.s};
   font-weight: ${theme.fontWeight.bold};
   line-height: ${theme.lineHeight.m};
   margin: ${theme.space.m} 0;
