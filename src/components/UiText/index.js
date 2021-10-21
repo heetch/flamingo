@@ -56,12 +56,12 @@ const styles = {
   },
   fontWeight({ variant }) {
     const variants = {
-      [VARIANTS.h1]: theme.fontWeight.black,
-      [VARIANTS.h2]: theme.fontWeight.black,
-      [VARIANTS.h3]: theme.fontWeight.black,
-      [VARIANTS.h4]: theme.fontWeight.black,
-      [VARIANTS.h5]: theme.fontWeight.black,
-      [VARIANTS.h6]: theme.fontWeight.black,
+      [VARIANTS.h1]: theme.fontWeight.normal,
+      [VARIANTS.h2]: theme.fontWeight.normal,
+      [VARIANTS.h3]: theme.fontWeight.normal,
+      [VARIANTS.h4]: theme.fontWeight.normal,
+      [VARIANTS.h5]: theme.fontWeight.normal,
+      [VARIANTS.h6]: theme.fontWeight.normal,
       [VARIANTS.content]: theme.fontWeight.normal,
       [VARIANTS.contentBlack]: theme.fontWeight.black,
       [VARIANTS.contentBold]: theme.fontWeight.bold,

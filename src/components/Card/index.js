@@ -14,7 +14,7 @@ const styles = {
   boxShadow({ elevation }) {
     if (elevation === 1) return '0 2px 10px rgba(25, 1, 52, 0.08)';
     if (elevation === 2) return '0 4px 20px rgba(25, 1, 52, 0.14)';
-    return '0 1px 5px rgba(25, 1, 52, 0.04)';
+    return undefined;
   },
   border({ isSelected }) {
     if (isSelected) return `1px solid ${theme.color.brand.secondary}`;

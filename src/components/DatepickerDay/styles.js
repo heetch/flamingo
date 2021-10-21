@@ -3,6 +3,19 @@ import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import Input from '../Input';
 import { theme } from '../../theme';
 
+const styles = {
+  iconColor(props) {
+    if (props.children.props.id === 'invalid') {
+      return theme.color.element.error;
+    }
+    if (props.children.props.id === 'valid') {
+      return theme.color.element.success;
+    }
+
+    return theme.color.brand.secondary;
+  },
+};
+
 export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   className: 'f-Datepicker',
 }))`
@@ -12,6 +25,9 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker-wrapper,
   > div {
     width: 100%;
+  }
+  .f-Icon {
+    color: ${styles.iconColor};
   }
 
   .react-datepicker__tab-loop {
