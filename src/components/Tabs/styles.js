@@ -8,7 +8,10 @@ export const TabsContainer = styled.div.attrs(() => ({
   position: relative;
   font-family: Avenir;
   display: flex;
-  align-items: flex-end;
+  justify-content: space-evenly;
+  overflow-x: scroll;
+  width: ${({ width }) => width || '100%'};
+  max-width: 100%;
 `;
 
 export const TabsLabel = styled.span`
@@ -41,6 +44,7 @@ export const Tab = styled('button')`
   border: none;
   padding: 0;
   overflow-wrap: break-word;
+  width: 100%;
   &:hover ${TabsMarker} {
     background-color: ${theme.color.brand.primary};
   }

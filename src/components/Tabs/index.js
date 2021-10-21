@@ -11,6 +11,7 @@ const Tabs = React.forwardRef(
       buildReturnObject,
       buildKey,
       onClick,
+      width,
       ...props
     },
     ref,
@@ -30,7 +31,7 @@ const Tabs = React.forwardRef(
     };
 
     return (
-      <TabsContainer ref={ref} {...props} className='f-Tabs'>
+      <TabsContainer ref={ref} {...props} width={width} className='f-Tabs'>
         {elements.map((element, index) => (
           <Tab
             key={buildKey ? buildKey(element) : element}
@@ -74,6 +75,7 @@ Tabs.propTypes = {
   /** If objects passed to elements, this should be a method that extracts a key to identify the object */
   buildKey: PropTypes.func,
   onClick: PropTypes.func,
+  width: PropTypes.string,
 };
 
 export default Tabs;
