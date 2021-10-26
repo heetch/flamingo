@@ -21,6 +21,7 @@ const styles = {
     return theme.color.element.inactive;
   },
   iconColor(props) {
+    if (props.iconColor) return props.iconColor;
     if (props.invalid) return theme.color.element.error;
     if (props.valid) return theme.color.element.success;
     if (props.disabled) return theme.color.element.inactive;
@@ -84,6 +85,7 @@ FormElement.propTypes = {
   valid: PropTypes.bool,
   withIcon: PropTypes.bool,
   icon: PropTypes.string,
+  iconColor: PropTypes.string,
 };
 
 export default FormElement;

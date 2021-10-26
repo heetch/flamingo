@@ -43,7 +43,7 @@ export const StyledAlert = styled('div').attrs(() => ({
 
 export const StyledText = styled(UiText)`
   color: ${styles.color};
-  margin: ${theme.space.m} 0 0 0;
+  margin: 0;
   > a {
     color: ${styles.linkColor};
     text-decoration: underline;

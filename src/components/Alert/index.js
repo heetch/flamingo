@@ -21,7 +21,6 @@ const Alert = React.forwardRef(
         variant={UiText.VARIANTS.contentBlack}
         className='f-Alert-title'
         margin={0}
-        style={{ marginRight: theme.space.xxl }}
       >
         {title}
       </UiText>
