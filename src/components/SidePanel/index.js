@@ -25,18 +25,26 @@ const SidePanel = props => {
     if (!props.isOpen || !isOpen) setShouldRender(false);
   };
 
-  const handleClose = () => {
+  const handleClose = React.useCallback(() => {
     document.body.style.overflow = 'initial';
     setIsOpen(false);
     props.onClose();
-  };
+  }, [props]);
 
-  const handleEscape = event => {
-    if (event.keyCode === 27) {
-      handleClose();
-    }
-  };
-  window.addEventListener('keydown', handleEscape);
+  const handleEscape = React.useCallback(
+    event => {
+      if (event.keyCode === 27) handleClose();
+    },
+    [handleClose],
+  );
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', handleEscape, false);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape, false);
+    };
+  }, [handleEscape]);
 
   React.useEffect(() => {
     if (props.isOpen) {
@@ -65,7 +73,6 @@ const SidePanel = props => {
         maxWidth={props.maxWidth}
         isOpen={isOpen}
         data-testid='flamingo-side-panel'
-        onEscape={handleEscape}
         animateOnMount={props.animateOnMount}
       >
         <Header className='f-SidePanel-header'>
