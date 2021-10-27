@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import UiText from '../UiText';
-import { theme } from '../../theme';
 import { StyledAlert, CloseButton, StyledText } from './styles';
 
 const TYPES = {

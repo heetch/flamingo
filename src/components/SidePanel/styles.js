@@ -21,19 +21,20 @@ const slideOut = keyframes`
 `;
 
 export const StyledSidePanel = styled('div')`
-  --content-hSpacing:  ${theme.space.xxl};
+  --content-hSpacing: ${theme.space.xxl};
 
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth || '33.75rem;'} /* 540px */
+  max-width: ${({ maxWidth }) => maxWidth || '33.75rem;'}; /* 540px */
   overflow: auto;
   z-index: calc(${theme.zIndex.overlay} + 1);
   background-color: ${theme.color.element.primary};
   animation: ${({ isOpen, animateOnMount }) =>
-    isOpen ? animateOnMount && slideIn : slideOut} 0.2s ease-out;
+      isOpen ? animateOnMount && slideIn : slideOut}
+    0.2s ease-out;
 
   ${theme.breakPoint.s} {
     --content-hSpacing: ${theme.space.xl};

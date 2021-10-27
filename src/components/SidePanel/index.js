@@ -26,6 +26,7 @@ const SidePanel = props => {
   };
 
   const handleClose = () => {
+    document.body.style.overflow = 'initial';
     setIsOpen(false);
     props.onClose();
   };
@@ -38,9 +39,11 @@ const SidePanel = props => {
   window.addEventListener('keydown', handleEscape);
 
   React.useEffect(() => {
-    if (props.isOpen) setShouldRender(props.isOpen);
-    document.body.style.overflow = 'hidden';
-    setIsOpen(props.isOpen);
+    if (props.isOpen) {
+      setShouldRender(props.isOpen);
+      document.body.style.overflow = 'hidden';
+      setIsOpen(props.isOpen);
+    }
   }, [props.isOpen]);
 
   if (!shouldRender) {
