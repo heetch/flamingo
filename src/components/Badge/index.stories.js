@@ -86,8 +86,8 @@ stories.add('All states', () => (
     <Code>{`<Badge fontSize={theme.fontSize.xl}>Font size XL</Badge>`}</Code>
 
     <Heading level={2}>Border Radius</Heading>
-    <Badge borderRadius={theme.borderRadius.s}>Border radius S</Badge>
-    <Code>{`<Badge borderRadius={theme.borderRadius.s}>Border radius S</Badge>`}</Code>
+    <Badge borderRadius={theme.borderRadius.xl}>Border radius XL</Badge>
+    <Code>{`<Badge borderRadius={theme.borderRadius.xl}>Border radius S</Badge>`}</Code>
   </>
 ));
 
