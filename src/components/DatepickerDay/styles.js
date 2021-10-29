@@ -37,7 +37,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker {
     border-width: 0;
     font-family: inherit;
-    border-radius: ${theme.borderRadius.m};
+    border-radius: ${theme.borderRadius.s};
 
     ${theme.breakPoint.s} {
       display: flex;
@@ -86,7 +86,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .react-datepicker-popper {
     border: 0;
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius.s};
     background-color: #fff;
     z-index: calc(${theme.zIndex.overlay} + 1);
     border: 1px solid ${theme.color.brand.primaryInactive};

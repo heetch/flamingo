@@ -64,7 +64,7 @@ export const Preview = styled.div`
   right: -1px;
   left: -1px;
   bottom: -1px;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   background-size: cover;
   background-position: center center;
   z-index: 10;
@@ -77,7 +77,7 @@ export const PreviewActions = styled.div`
   right: -1px;
   left: -1px;
   bottom: -1px;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   background: ${theme.color.element.overlay};
   padding: 0 ${theme.space.m};
   text-align: right;
@@ -93,7 +93,7 @@ export const Container = styled(FormElementWrapper)`
   min-height: ${styles.height};
   flex-direction: column;
   margin: ${theme.space.m} 0;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   color: ${styles.textColor};
   background-color: ${theme.color.element.primary};
   transition: all 0.15s ease-out;

@@ -17,7 +17,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   padding: 1rem;
   border: 1px dashed ${theme.color.brand.secondaryLight};
-  border-radius: ${theme.borderRadius.m};
+  border-radius: ${theme.borderRadius.s};
 `;
 
 const StoryDropdown = props => (

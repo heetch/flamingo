@@ -126,7 +126,7 @@ export const StyledButton = styled('button').attrs(() => ({
   font-weight: ${theme.fontWeight.bold};
   line-height: ${theme.lineHeight.m};
   border: 0;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   outline: none;
   transition: background-color 0.2s ease-out;
   cursor: ${styles.cursor};

@@ -22,7 +22,7 @@ const UploaderItemStyled = styled('div').attrs(() => ({
   padding: ${theme.space.s};
   color: ${theme.color.text.secondary};
   background-color: ${theme.color.element.primary};
-  border-radius: ${theme.borderRadius.l};
+  border-radius: ${theme.borderRadius.s};
 
   & + & {
     margin-top: ${theme.space.s};
@@ -46,7 +46,7 @@ const IconContainer = styled.div`
   height: var(--iconContainerSize);
   margin-right: ${theme.space.m};
   border: 1px solid ${theme.color.element.secondary};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   overflow: hidden;
 
   img {

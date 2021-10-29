@@ -71,7 +71,7 @@
   --f-borderRadius--xl: 1.5rem; /* 24px */
   --f-borderRadius--l: 1rem; /* 16px */
   --f-borderRadius--m: 0.5rem; /* 8px */
-  --f-borderRadius--s: 0.313rem; /* 4px */
+  --f-borderRadius--s: 0.3125rem; /* 5px */
 }
 
 :root {

@@ -27,20 +27,20 @@ const Card = styled('div').attrs(() => ({
 }))`
   background-color: ${theme.color.element.primary};
   box-shadow: ${styles.boxShadow};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   padding: ${styles.padding};
   border: ${styles.border};
 
   & & {
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius.s};
   }
 
   & & & {
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius.s};
   }
 
   & & & & {
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius.s};
   }
 
   ${Text} {

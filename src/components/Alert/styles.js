@@ -36,7 +36,7 @@ export const StyledAlert = styled('div').attrs(() => ({
   padding: ${theme.space.l} 2rem ${theme.space.l} ${theme.space.l};
   font-size: ${theme.fontSize.m};
   line-height: ${theme.lineHeight.m};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.s};
   background-color: ${styles.backgroundColor};
   color: ${styles.color};
 `;

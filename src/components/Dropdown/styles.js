@@ -4,7 +4,7 @@ import { StyledItem } from '../Item/styles';
 import { theme } from '../../theme';
 
 export const StyledDropdown = styled.div`
-  --borderRadius: ${theme.borderRadius.m};
+  --borderRadius: ${theme.borderRadius.s};
   border-radius: var(--borderRadius);
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(25, 1, 52, 0.12);
