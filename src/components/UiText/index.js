@@ -36,24 +36,6 @@ const styles = {
 
     return variants[variant] || undefined;
   },
-  lineHeight({ variant }) {
-    const variants = {
-      [VARIANTS.h1]: theme.lineHeight.xxl,
-      [VARIANTS.h2]: theme.lineHeight.xl,
-      [VARIANTS.h3]: theme.lineHeight.s,
-      [VARIANTS.h4]: theme.lineHeight.m,
-      [VARIANTS.h5]: theme.lineHeight.m,
-      [VARIANTS.h6]: theme.lineHeight.m,
-      [VARIANTS.content]: theme.lineHeight.xl,
-      [VARIANTS.contentBold]: theme.lineHeight.xl,
-      [VARIANTS.contentBlack]: theme.lineHeight.xl,
-      [VARIANTS.subContent]: theme.lineHeight.l,
-      [VARIANTS.subContentBold]: theme.lineHeight.l,
-      [VARIANTS.subContentBlack]: theme.lineHeight.l,
-    };
-
-    return variants[variant] || undefined;
-  },
   fontWeight({ variant }) {
     const variants = {
       [VARIANTS.h1]: theme.fontWeight.normal,
@@ -115,7 +97,7 @@ const UiText = styled('p').attrs(() => ({
 }))`
   font-weight: ${({ fontWeight }) => fontWeight || styles.fontWeight};
   font-size: ${({ fontSize }) => fontSize || styles.fontSize};
-  line-height: ${({ lineHeight }) => lineHeight || styles.lineHeight};
+  line-height: ${({ lineHeight }) => lineHeight || 'normal'};
   margin: ${({ margin }) => margin};
   color: ${({ textColor }) => textColor};
   text-transform: ${({ textTransform }) =>

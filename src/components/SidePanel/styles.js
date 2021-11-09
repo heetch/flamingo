@@ -56,9 +56,12 @@ export const Header = styled('div')`
   top: 0;
   z-index: 10;
   display: flex;
-  padding: ${theme.space.l} ${theme.space.xxl};
+  padding: ${theme.space.l} ${theme.space.xl};
   border-bottom: 1px solid ${theme.color.element.inactive};
   background: ${theme.color.element.primary};
+  ${theme.breakPoint.sUp} {
+    padding: ${theme.space.l} ${theme.space.xxl};
+  }
 `;
 
 export const HeaderTitles = styled('div')`
