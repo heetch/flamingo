@@ -56,7 +56,10 @@ const SidePanel = props => {
       document.body.style.overflow = 'hidden';
       setIsOpen(props.isOpen);
     }
-  }, [props.isOpen]);
+    if (props.isOpen === false) {
+      handleClose();
+    }
+  }, [props.isOpen, handleClose]);
 
   if (!shouldRender) {
     return null;
