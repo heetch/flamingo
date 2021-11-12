@@ -6,7 +6,7 @@ export const TabsContainer = styled.div.attrs(() => ({
   className: 'f-TabsContainer',
 }))`
   position: relative;
-  font-family: Avenir;
+  font-family: Avenir, Arial, sans-serif;
   display: flex;
   justify-content: space-evenly;
   overflow-x: scroll;
