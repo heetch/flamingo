@@ -97,7 +97,7 @@ const styles = {
 
 export const Content = styled.span`
   opacity: ${({ withIcon }) => withIcon && 0};
-  font-family: Avenir;
+  font-family: Avenir, Arial, sans-serif;
   pointer-events: ${({ withIcon }) => withIcon && 'none'};
   font-weight: ${theme.fontWeight.black};
   font-size: ${theme.fontSize.m};

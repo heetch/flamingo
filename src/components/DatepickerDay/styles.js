@@ -21,7 +21,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 }))`
   position: relative;
   text-align: left;
-  font-family: Avenir;
+  font-family: Avenir, Arial, sans-serif;
   .react-datepicker-wrapper,
   > div {
     width: 100%;
