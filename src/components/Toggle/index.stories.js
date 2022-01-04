@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
@@ -64,19 +64,35 @@ stories.add('All states', () => (
         </Toggle>
       </div>
     </div>
-    <Code>{`
+    <Code>{` 
     <Toggle name='no-text' onChange={noop} />
     <Toggle name='with-helper' helper='With texts'>Label</Toggle>
     `}</Code>
   </>
 ));
 
-stories.add('Playground', () => (
-  <Toggle
-    disabled={boolean('Is disabled?', false)}
-    helper={text('Label helper', 'Label helper')}
-    onChange={action('onChange')}
-  >
-    {text('Label', 'Toggle label')}
-  </Toggle>
-));
+stories.add('Playground', () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const onChangeAction = action('onChange');
+
+  const onChange = state => {
+    onChangeAction(state);
+    setIsChecked(state);
+  };
+
+  return (
+    <>
+      <Toggle
+        disabled={boolean('Is disabled?', false)}
+        helper={text('Label helper', 'Label helper')}
+        onChange={onChange}
+        checked={isChecked}
+      >
+        {text('Label', 'Toggle label')}
+      </Toggle>
+
+      <button onClick={() => setIsChecked(true)}>Force ON</button>
+      <button onClick={() => setIsChecked(false)}>Force OFF</button>
+    </>
+  );
+});
