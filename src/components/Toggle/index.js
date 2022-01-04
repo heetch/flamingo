@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -17,12 +17,19 @@ const Toggle = React.forwardRef(
     { children, className, checked, disabled, helper, onChange, ...props },
     ref,
   ) => {
+    const [isOn, setIsOn] = useState(checked);
+
+    useEffect(() => {
+      setIsOn(checked);
+    }, [checked]);
+
     const handleToggle = () => {
       if (disabled) {
         return;
       }
 
-      onChange(!checked);
+      setIsOn(!isOn);
+      onChange(!isOn);
     };
 
     const labelProps = {
@@ -40,25 +47,25 @@ const Toggle = React.forwardRef(
           className='f-Toggle'
           {...labelProps}
           disabled={disabled}
-          isOn={checked}
+          isOn={isOn}
           type='button'
         >
           <ToggleBullet
             className='f-Toggle-bullet'
             disabled={disabled}
-            isOn={checked}
+            isOn={isOn}
           />
           <ToggleBulletLabelOn
             className='f-Toggle-bullet-label f-Toggle-bullet-label--on'
             disabled={disabled}
-            isOn={checked}
+            isOn={isOn}
           >
             ON
           </ToggleBulletLabelOn>
           <ToggleBulletLabelOff
             className='f-Toggle-bullet-label f-Toggle-bullet-label--off'
             disabled={disabled}
-            isOn={checked}
+            isOn={isOn}
           >
             OFF
           </ToggleBulletLabelOff>
