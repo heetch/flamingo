@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { theme } from '../../theme';
@@ -64,7 +64,7 @@ stories.add('All states', () => (
         </Toggle>
       </div>
     </div>
-    <Code>{` 
+    <Code>{`
     <Toggle name='no-text' onChange={noop} />
     <Toggle name='with-helper' helper='With texts'>Label</Toggle>
     `}</Code>
@@ -74,10 +74,13 @@ stories.add('All states', () => (
 stories.add('Playground', () => {
   const [isChecked, setIsChecked] = useState(false);
   const onChangeAction = action('onChange');
+  const delay = number('Update delay (ms)', 500);
 
   const onChange = state => {
-    onChangeAction(state);
-    setIsChecked(state);
+    setTimeout(() => {
+      onChangeAction(state);
+      setIsChecked(state);
+    }, delay);
   };
 
   return (
