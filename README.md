@@ -56,8 +56,8 @@ However, you can still use it and browse the files on [its latest stable version
 
 ## How-to review new components
 
-Each pull request will be automatically deploy on [Zeit](https://zeit.co) via `now`,
-producing a unique URL such as https://flamingo-git-gyndav-featzeit.heetch-eng.now.sh
+Each pull request will be automatically deploy on [Cloudflare](https://pages.cloudflare.com/),
+producing a unique URL such as [https://8f508124.flamingo.pages.dev](https://8f508124.flamingo.pages.dev/).
 
 Each incremental changes will create a new slug.
 
