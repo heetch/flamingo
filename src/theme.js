@@ -42,6 +42,155 @@ export const theme = {
       lightGrey: 'var(--f-color-text--lightGrey)',
     },
   },
+  color_v3: {
+    palette: {
+      yellow: {
+        shade1: 'var(--f-color-brand-yellow-1)',
+        shade2: 'var(--f-color-brand-yellow-2)',
+        shade3: 'var(--f-color-brand-yellow-3)',
+        shade4: 'var(--f-color-brand-yellow-4)',
+      },
+      orange: {
+        shade1: 'var(--f-color-brand-orange-1)',
+        shade2: 'var(--f-color-brand-orange-2)',
+        shade3: 'var(--f-color-brand-orange-3)',
+        shade4: 'var(--f-color-brand-orange-4)',
+      },
+      red: {
+        shade1: 'var(--f-color-brand-red-1)',
+        shade2: 'var(--f-color-brand-red-2)',
+        shade3: 'var(--f-color-brand-red-3)',
+        shade4: 'var(--f-color-brand-red-4)',
+      },
+      purple: {
+        shade1: 'var(--f-color-brand-purple-1)',
+        shade2: 'var(--f-color-brand-purple-2)',
+        shade3: 'var(--f-color-brand-purple-3)',
+        shade4: 'var(--f-color-brand-purple-4)',
+      },
+      blue: {
+        shade1: 'var(--f-color-brand-blue-1)',
+        shade2: 'var(--f-color-brand-blue-2)',
+        shade3: 'var(--f-color-brand-blue-3)',
+        shade4: 'var(--f-color-brand-blue-4)',
+      },
+      green: {
+        shade1: 'var(--f-color-brand-green-1)',
+        shade2: 'var(--f-color-brand-green-2)',
+        shade3: 'var(--f-color-brand-green-3)',
+        shade4: 'var(--f-color-brand-green-4)',
+      },
+      cyan: {
+        shade1: 'var(--f-color-brand-cyan-1)',
+        shade2: 'var(--f-color-brand-cyan-2)',
+        shade3: 'var(--f-color-brand-cyan-3)',
+        shade4: 'var(--f-color-brand-cyan-4)',
+      },
+      grey: {
+        shade1: 'var(--f-color-brand-grey-1)',
+        shade2: 'var(--f-color-brand-grey-2)',
+        shade3: 'var(--f-color-brand-grey-3)',
+        shade4: 'var(--f-color-brand-grey-4)',
+      },
+    },
+    brand: {
+      pink: {
+        shade1: 'var(--f-color-brand-pink-shade1)',
+        shade2: 'var(--f-color-brand-pink-shade2)',
+        shade3: 'var(--f-color-brand-pink-shade3)',
+      },
+      navy: {
+        shade1: 'var(--f-color-brand-navy-shade1)',
+        shade2: 'var(--f-color-brand-navy-shade2)',
+        shade3: 'var(--f-color-brand-navy-shade3)',
+      },
+    },
+    thirdparty: {
+      apple: 'var(--f-color-thirdparty-apple)',
+      facebook: 'var(--f-color-thirdparty-facebook)',
+    },
+    feedback: {
+      success: 'var(--f-color-feedback-success)',
+      ok: 'var(--f-color-feedback-ok)',
+      error: 'var(--f-color-feedback-error)',
+    },
+    ride: {
+      approach: 'var(--f-color-ride-approach)',
+      departure: 'var(--f-color-ride-departure)',
+      arrival: 'var(--f-color-ride-arrival)',
+      trip: 'var(--f-color-ride-trip)',
+      stopover: 'var(--f-color-ride-stopover)',
+      gms: 'var(--f-color-ride-gms)',
+    },
+    type: {
+      default: 'var(--f-color-type-default)',
+      dark: 'var(--f-color-type-dark)',
+      light: 'var(--f-color-type-light)',
+      inactive: 'var(--f-color-type-inactive)',
+      reverse: 'var(--f-color-type-reverse)',
+      reverseLight: 'var(--f-color-type-reverse-light)',
+      // Persona specifics by type
+      passenger: {
+        title: 'var(--f-color-type-title-passenger)',
+        highlight: 'var(--f-color-type-highlight-passenger)',
+      },
+      driver: {
+        title: 'var(--f-color-type-title-driver)',
+        highlight: 'var(--f-color-type-highlight-driver)',
+      },
+    },
+    ui: {
+      default: 'var(--f-color-ui-default)',
+      reverse: 'var(--f-color-ui-reverse)',
+      tertiary: 'var(--f-color-ui-tertiary)',
+      // Persona specifics by type
+      passenger: {
+        primary: 'var(--f-color-ui-primary-passenger)',
+        secondary: 'var(--f-color-ui-secondary1-passenger)',
+      },
+      driver: {
+        primary: 'var(--f-color-ui-primary-driver)',
+        secondary: 'var(--f-color-ui-secondary-driver)',
+      },
+    },
+    bg: {
+      primary: 'var(--f-color-ui-default)',
+      secondary: 'var(--f-color-ui-secondary)',
+      // Persona specifics by type
+      passenger: 'var(--f-color-bg-passenger)',
+      driver: 'var(--f-color-bg-driver)',
+    },
+    // Persona specifics by persona
+    passenger: {
+      bg: 'var(--f-color-bg-passenger)',
+      type: {
+        title: 'var(--f-color-type-title-passenger)',
+        section: 'var(--f-color-type-section-passenger)',
+        highlight: 'var(--f-color-type-highlight-passenger)',
+      },
+      ui: {
+        primary: 'var(--f-color-ui-primary-passenger)',
+        secondary: 'var(--f-color-ui-secondary1-passenger)',
+        secondary2: 'var(--f-color-ui-secondary2-passenger)',
+      },
+    },
+    driver: {
+      bg: 'var(--f-color-bg-driver)',
+      type: {
+        title: 'var(--f-color-type-title-driver)',
+        highlight: 'var(--f-color-type-highlight-driver)',
+      },
+      ui: {
+        primary: 'var(--f-color-ui-primary-driver)',
+        secondary: 'var(--f-color-ui-secondary-driver)',
+        reward: {
+          gold: 'var(--f-color-ui-driver-rewards-gold)',
+          silver: 'var(--f-color-ui-driver-rewards-silver)',
+          bronze: 'var(--f-color-ui-driver-rewards-bronze)',
+        },
+      },
+    },
+  },
   fontSize: {
     xxs: 'var(--f-fontSize--xxs)',
     xs: 'var(--f-fontSize--xs)',
