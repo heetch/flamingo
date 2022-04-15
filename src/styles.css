@@ -5,6 +5,107 @@
   src: local('MarkOT-Ultra'), url(./fonts/MarkOT-Ultra.otf) format('opentype');
 }
 
+/******************************
+ * Flamingo 3 branding colors *
+ ******************************/
+
+:root {
+  --f-color-bg-passenger: #ff4d95;
+  --f-color-type-title-passenger: #ff2773;
+  --f-color-type-section-passenger: #ff4d95;
+  --f-color-type-highlight-passenger: #ffe927;
+  --f-color-ui-primary-passenger: #ff2773;
+  --f-color-ui-secondary1-passenger: #ff4d95;
+  --f-color-ui-secondary2-passenger: #ffd3e9;
+
+  --f-color-bg-driver: #4d94ff;
+  --f-color-type-title-driver: #3174d2;
+  --f-color-type-highlight-driver: #ffbfd9;
+  --f-color-ui-primary-driver: #10066c;
+  --f-color-ui-secondary-driver: #3174d2;
+  --f-color-ui-driver-rewards-gold: #ffc700;
+  --f-color-ui-driver-rewards-silver: #d8dde1;
+  --f-color-ui-driver-rewards-bronze: #ff9472;
+
+  --f-color-bg-primary: #ffffff;
+  --f-color-bg-secondary: #ebeff7;
+
+  --f-color-ui-default: #000000;
+  --f-color-ui-reverse: #ffffff;
+  --f-color-ui-tertiary: #dde3ee;
+
+  --f-color-type-default: #000000;
+  --f-color-type-dark: #616669;
+  --f-color-type-light: #8b99a2;
+  --f-color-type-inactive: #dde3ee;
+  --f-color-type-reverse: #ffffff;
+  --f-color-type-reverse-light: #ffffff80;
+
+  --f-color-ride-approach: #3174d2;
+  --f-color-ride-departure: #200fc7;
+  --f-color-ride-arrival: #ff2773;
+  --f-color-ride-trip: #ff9dc5;
+  --f-color-ride-stopover: #ff4d95;
+  --f-color-ride-gms: #ffd3e9;
+
+  --f-color-feedback-success: #33a879;
+  --f-color-feedback-ok: #ffb525;
+  --f-color-feedback-error: #cd2703;
+
+  --f-color-thirdparty-apple: #000000;
+  --f-color-thirdparty-facebook: #1778f2;
+
+  --f-color-brand-pink-shade1: #ff4d95;
+  --f-color-brand-pink-shade2: #ff9dc5;
+  --f-color-brand-pink-shade3: #ffd3e9;
+
+  --f-color-brand-navy-shade1: #4d94ff;
+  --f-color-brand-navy-shade2: #83b7f5;
+  --f-color-brand-navy-shade3: #d3e5f9;
+
+  --f-color-brand-yellow-1: #fff4b7;
+  --f-color-brand-yellow-2: #fdee6e;
+  --f-color-brand-yellow-3: #ffe927;
+  --f-color-brand-yellow-4: #ffc700;
+
+  --f-color-brand-orange-1: #ffc64e;
+  --f-color-brand-orange-2: #ff9472;
+  --f-color-brand-orange-3: #f95b45;
+  --f-color-brand-orange-4: #b23321;
+
+  --f-color-brand-red-1: #fcabb4;
+  --f-color-brand-red-2: #fa7383;
+  --f-color-brand-red-3: #e3394d;
+  --f-color-brand-red-4: #9c0214;
+
+  --f-color-brand-purple-1: #dabef3;
+  --f-color-brand-purple-2: #b180db;
+  --f-color-brand-purple-3: #804aaf;
+  --f-color-brand-purple-4: #562284;
+
+  --f-color-brand-blue-1: #c9cbf8;
+  --f-color-brand-blue-2: #8f91ff;
+  --f-color-brand-blue-3: #745feb;
+  --f-color-brand-blue-4: #5045bb;
+
+  --f-color-brand-green-1: #e7f6c6;
+  --f-color-brand-green-2: #72d1a4;
+  --f-color-brand-green-3: #33a879;
+  --f-color-brand-green-4: #007043;
+
+  --f-color-brand-cyan-1: #d5e2f3;
+  --f-color-brand-cyan-2: #92e5ff;
+  --f-color-brand-cyan-3: #1fb7e8;
+  --f-color-brand-cyan-4: #0087c0;
+
+  --f-color-brand-grey-1: #e7ecf0;
+  --f-color-brand-grey-2: #dde3ee;
+  --f-color-brand-grey-3: #d8dde1;
+  --f-color-brand-grey-4: #8b99a2;
+}
+
+/*******************/
+
 :root {
   --f-color-brandPrimary: #ff2773;
   --f-color-brandPrimary--light: #fe679c;
