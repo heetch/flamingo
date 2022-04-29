@@ -133,11 +133,15 @@ export const StyledButton = styled('button').attrs(() => ({
     margin-left: ${({ margin }) => (!margin ? theme.space.m : undefined)};
   }
 
+  ${({ variant }) =>
+    variant !== 'text' &&
+    `
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: ${theme.color.text.white};
     text-decoration: none;
   }
+ `}
 
   &:active {
     background-color: ${styles.active.backgroundColor};
