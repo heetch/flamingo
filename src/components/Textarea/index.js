@@ -11,6 +11,8 @@ import { theme } from '../../theme';
 export const StyledFormElement = styled(FormElement)`
   min-height: 9.375rem; /* 150px */
   resize: vertical;
+  border-radius: 5px !important;
+  border: solid 0.5px !important;
 `;
 
 export const StyledIcon = styled(Icon)`
