@@ -11,6 +11,7 @@ export const INTENTS = {
 export const VARIANTS = {
   OUTLINE: 'outline',
   MINIMAL: 'minimal',
+  TEXT: 'text',
 };
 
 export const intents = Object.values(INTENTS);
@@ -34,6 +35,7 @@ const styles = {
     if (disabled) return `${theme.color.element.inactive} !important`;
     if (intent === INTENTS.ERROR) return theme.color.element.error;
     if (intent === INTENTS.SUCCESS) return theme.color.element.success;
+    if (variant === 'text') return `transparent !important`;
     if (variants.includes(variant)) return theme.color.text.white;
     if (intent === INTENTS.PRIMARY) return theme.color.brand.primary;
     if (intent === INTENTS.SECONDARY) return theme.color.brand.secondary;
@@ -41,7 +43,7 @@ const styles = {
     return undefined;
   },
   boxShadow({ intent, variant, disabled }) {
-    if (disabled) {
+    if (disabled || variant === VARIANTS.TEXT) {
       return undefined;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
@@ -89,7 +91,6 @@ const styles = {
       if (intent === INTENTS.SECONDARY) {
         return theme.color.brand.secondary;
       }
-
       return undefined;
     },
   },
@@ -138,11 +139,15 @@ export const StyledButton = styled('button').attrs(() => ({
   & + & {
     margin-left: ${({ margin }) => (!margin ? theme.space.m : undefined)};
   }
+  ${({ variant }) =>
+    variant !== 'text' &&
+    `
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: ${theme.color.text.white};
     text-decoration: none;
   }
+  `}
 
   &:active {
     background-color: ${styles.active.backgroundColor};
