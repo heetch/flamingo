@@ -12,7 +12,7 @@ import { theme } from '../../theme';
 const { INTENTS, VARIANTS } = Button;
 
 const intents = ['primary', 'secondary'];
-const variants = ['outline', 'minimal'];
+const variants = ['outline', 'minimal', 'text'];
 
 const stories = storiesOf('Buttons/Button', module);
 
