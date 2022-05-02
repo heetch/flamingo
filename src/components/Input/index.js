@@ -9,7 +9,7 @@ const { IconCheck, IconAlertTriangle } = Icon.ICONS;
 const icons = Object.values(Icon.ICONS);
 
 const Input = React.forwardRef(
-  ({ id, icon: defaultIcon, iconColor, ...props }, ref) => {
+  ({ id, icon: defaultIcon, iconColor, iconLeft, ...props }, ref) => {
     const icon = props.invalid
       ? IconAlertTriangle
       : props.valid
@@ -18,6 +18,7 @@ const Input = React.forwardRef(
 
     return (
       <FormElementWrapper invalid={props.invalid} valid={props.valid}>
+        {icon && iconLeft && <Icon icon={icon} size={'l'} />}
         <FormElement
           as='input'
           iconColor={iconColor}
@@ -25,10 +26,11 @@ const Input = React.forwardRef(
           id={id}
           ref={ref}
           withIcon={!!icon}
+          iconLeft={iconLeft}
           {...props}
         />
 
-        {icon && <Icon icon={icon} size={'l'} />}
+        {icon && !iconLeft && <Icon icon={icon} size={'l'} />}
       </FormElementWrapper>
     );
   },
@@ -40,6 +42,7 @@ Input.propTypes = {
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   iconColor: PropTypes.string,
+  iconLeft: PropTypes.bool,
 };
 
 export default Input;

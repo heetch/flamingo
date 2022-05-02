@@ -4,7 +4,7 @@ import Input from '../Input';
 import { theme } from '../../theme';
 
 const styles = {
-  iconColor(props) {
+  iconColorGenerator(props) {
     if (props.children.props.id === 'invalid') {
       return theme.color.element.error;
     }
@@ -27,7 +27,9 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     width: 100%;
   }
   .f-Icon {
-    color: ${styles.iconColor};
+    color: ${({ iconColor }) => iconColor || styles.iconColorGenerator};
+    z-index: ${({ iconLeft }) => iconLeft && '2'};
+    cursor: pointer;
   }
 
   .react-datepicker__tab-loop {
@@ -194,8 +196,9 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 `;
 
-export const StyledDatepickerInput = styled(Input)`
+export const StyledDatepickerInput = styled(Input).attrs(() => ({}))`
   position: relative;
   cursor: pointer;
-  text-align: left;
+  text-align: ${({ iconLeft }) => (iconLeft ? 'right' : 'left')};
+  margin-left: ${({ iconLeft }) => iconLeft && '-20px'};
 `;

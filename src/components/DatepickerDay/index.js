@@ -7,6 +7,8 @@ import { StyledDatepickerInput, StyledDatepicker } from './styles';
 import { theme } from '../../theme';
 
 const DatepickerDay = ({
+  iconLeft,
+  iconColor,
   invalid,
   valid,
   placeholder,
@@ -38,6 +40,7 @@ const DatepickerDay = ({
         ref={ref}
         placeholder={placeholder}
         icon={Icon.ICONS.IconCalendar}
+        iconLeft={iconLeft}
         invalid={invalid}
         valid={valid}
         autoFocus={stateHasFocus}
@@ -51,7 +54,7 @@ const DatepickerDay = ({
   };
 
   return (
-    <StyledDatepicker>
+    <StyledDatepicker iconLeft={iconLeft} iconColor={iconColor}>
       <ReactDatePicker
         popperProps={{
           strategy: 'fixed',
@@ -125,6 +128,8 @@ DatepickerDay.propTypes = {
   popperPlacement: PropTypes.string,
   dateFormat: PropTypes.string,
   withPortal: PropTypes.bool,
+  iconLeft: PropTypes.bool,
+  iconColor: PropTypes.string,
 };
 
 DatepickerDay.defaultProps = {
