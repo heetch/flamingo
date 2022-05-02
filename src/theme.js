@@ -154,8 +154,8 @@ export const theme = {
       },
     },
     bg: {
-      primary: 'var(--f-color-ui-default)',
-      secondary: 'var(--f-color-ui-secondary)',
+      primary: 'var(--f-color-ui-secondary)',
+      secondary: 'var(--f-color-bg-secondary)',
       // Persona specifics by type
       passenger: 'var(--f-color-bg-passenger)',
       driver: 'var(--f-color-bg-driver)',
