@@ -145,11 +145,11 @@ stories.add('Interface colors', () => (
         Shared
       </Heading>
 
-      <Block color={theme.color_v3.bg.primary} cols={3}>
+      <Block color={theme.color_v3.bg.primary} cols={3} isLight>
         <BlockTitle>BG/Primary</BlockTitle>
         <p>theme.color_v3.bg.primary</p>
       </Block>
-      <Block color={theme.color_v3.bg.secondary} cols={3} isLight hasBorder>
+      <Block color={theme.color_v3.bg.secondary} cols={3} isLight>
         <BlockTitle>BG/Secondary</BlockTitle>
         <p>theme.color_v3.bg.secondary</p>
       </Block>
