@@ -22,6 +22,7 @@ const FormElementWrapper = styled('div').attrs(() => ({
 }))`
   display: flex;
   position: relative;
+  align-items: center;
   min-width: 12.5rem;
   margin-top: ${theme.space.s};
   margin-bottom: ${theme.space.s};

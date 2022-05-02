@@ -54,8 +54,13 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
   color: ${styles.stateColor};
   background-color: ${theme.color.element.primary};
   border-bottom: 1px solid ${styles.borderColor} !important;
-  padding-right: ${({ withIcon }) =>
-    withIcon && `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
+  padding-right: ${({ withIcon, iconLeft }) =>
+    withIcon &&
+    !iconLeft &&
+    `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
+
+  padding-left: ${({ withIcon, iconLeft }) =>
+    withIcon && iconLeft && `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
 
   &:focus {
     border-bottom: 1px solid ${styles.focus.stateColor} !important;
