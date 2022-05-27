@@ -32,10 +32,10 @@ const styles = {
     return theme.color.text.white;
   },
   backgroundColor({ intent, disabled, variant }) {
+    if (variant === 'text') return `transparent !important`;
     if (disabled) return `${theme.color.element.inactive} !important`;
     if (intent === INTENTS.ERROR) return theme.color.element.error;
     if (intent === INTENTS.SUCCESS) return theme.color.element.success;
-    if (variant === 'text') return `transparent !important`;
     if (variants.includes(variant)) return theme.color.text.white;
     if (intent === INTENTS.PRIMARY) return theme.color.brand.primary;
     if (intent === INTENTS.SECONDARY) return theme.color.brand.secondary;
@@ -43,7 +43,14 @@ const styles = {
     return undefined;
   },
   boxShadow({ intent, variant, disabled }) {
-    if (disabled || variant === VARIANTS.TEXT) {
+    if (variant === VARIANTS.TEXT) {
+      return undefined;
+    }
+
+    if (disabled) {
+      if (variant === VARIANTS.OUTLINE) {
+        return `inset 0 0 0 2px ${theme.color.text.tertiary}`;
+      }
       return undefined;
     }
     if (variant === VARIANTS.OUTLINE && intent === INTENTS.PRIMARY) {
@@ -143,7 +150,7 @@ export const StyledButton = styled('button').attrs(() => ({
   &:hover {
     background-color: ${styles.hover.backgroundColor};
     color: ${({ variant }) =>
-      variant === 'text' ? styles.hover.color : theme.color.text.white};
+      variant === 'text' ? undefined : theme.color.text.white};
     text-decoration: none;
   }
 
