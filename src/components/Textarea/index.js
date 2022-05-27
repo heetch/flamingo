@@ -12,7 +12,18 @@ export const StyledFormElement = styled(FormElement)`
   min-height: 9.375rem; /* 150px */
   resize: vertical;
   border-radius: 5px !important;
-  border: solid 0.5px !important;
+  border: solid 1px !important;
+  border-color: ${theme.color_v3.type.inactive} !important;
+  padding: 1.5rem;
+  color: ${theme.color_v3.type.light};
+
+  &:disabled {
+    color: ${theme.color_v3.type.inactive};
+  }
+
+  &:focus {
+    border-bottom-color: ${theme.color_v3.type.inactive} !important;
+  }
 `;
 
 export const StyledIcon = styled(Icon)`
