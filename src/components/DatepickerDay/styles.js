@@ -1,17 +1,35 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import Input from '../Input';
 import { theme } from '../../theme';
+
+const styles = {
+  iconColorGenerator(props) {
+    if (props.children.props.id === 'invalid') {
+      return theme.color.element.error;
+    }
+    if (props.children.props.id === 'valid') {
+      return theme.color.element.success;
+    }
+
+    return theme.color.brand.secondary;
+  },
+};
 
 export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   className: 'f-Datepicker',
 }))`
   position: relative;
   text-align: left;
-
+  font-family: Avenir, Arial, sans-serif;
   .react-datepicker-wrapper,
   > div {
     width: 100%;
+  }
+  .f-Icon {
+    color: ${({ iconColor }) => iconColor || styles.iconColorGenerator};
+    z-index: ${({ iconLeft }) => iconLeft && '2'};
+    cursor: pointer;
   }
 
   .react-datepicker__tab-loop {
@@ -21,7 +39,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker {
     border-width: 0;
     font-family: inherit;
-    border-radius: ${theme.borderRadius.m};
+    border-radius: ${theme.borderRadius.s};
 
     ${theme.breakPoint.s} {
       display: flex;
@@ -61,7 +79,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__close-icon {
-    right: 2.8px;
+    right: 4px;
   }
 
   .react-datepicker__triangle {
@@ -70,10 +88,10 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .react-datepicker-popper {
     border: 0;
-    border-radius: ${theme.borderRadius.m};
+    border-radius: ${theme.borderRadius.s};
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(25, 1, 52, 0.12);
     z-index: calc(${theme.zIndex.overlay} + 1);
+    border: 1px solid ${theme.color.brand.primaryInactive};
 
     ${theme.breakPoint.s} {
       position: fixed !important;
@@ -85,7 +103,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__portal {
-    background-color: rgba(43, 30, 112, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .react-datepicker__navigation {
@@ -110,17 +128,17 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day {
-    border-radius: 100%;
+    border-radius: 2px;
     font-size: ${theme.fontSize.m};
     width: 38px;
     height: 38px;
-    line-height: 38px;
+    line-height: 40px;
     margin: 0;
     transition: background-color 0.2s ease;
 
     &:hover:not(.react-datepicker__day--disabled) {
       border-radius: 100%;
-      background-color: ${theme.color.brand.primary};
+      background-color: ${theme.color.brand.secondary};
       color: white;
     }
   }
@@ -128,7 +146,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker__day--selected {
     &,
     &:hover {
-      background-color: ${theme.color.brand.primary};
+      background-color: ${theme.color.brand.secondary};
       color: white;
     }
   }
@@ -138,7 +156,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day--today {
-    color: ${theme.color.brand.primary};
+    color: ${theme.color.brand.secondary};
     background: none;
   }
 
@@ -146,14 +164,31 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     visibility: hidden;
   }
 
+  .react-datepicker__header__dropdown {
+    text-align: left;
+    padding: ${theme.space.s} ${theme.space.s} ${theme.space.s}
+      ${theme.space.xxl};
+    font-size: ${theme.fontSize.m};
+  }
+
   .react-datepicker__year-dropdown--scrollable {
     height: auto;
   }
   .react-datepicker__close-icon:after {
-    background: ${theme.color.brand.primary};
+    background: ${theme.color.brand.secondary};
     color: white;
-    font-size: ${theme.fontSize.s};
-    line-height: 15px;
+    font-size: ${theme.fontSize.m};
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .react-datepicker__year-read-view--down-arrow {
+    margin-left: ${theme.space.s};
+    border-width: 0.6rem;
+    top: 6px;
+  }
+
+  .react-datepicker__year-dropdown-container--scroll {
+    margin: 0px;
   }
 
   .react-datepicker__month-container {
@@ -161,8 +196,9 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 `;
 
-export const StyledDatepickerInput = styled(Input)`
+export const StyledDatepickerInput = styled(Input).attrs(() => ({}))`
   position: relative;
   cursor: pointer;
-  text-align: left;
+  text-align: ${({ iconLeft }) => (iconLeft ? 'right' : 'left')};
+  margin-left: ${({ iconLeft }) => iconLeft && '-20px'};
 `;

@@ -1,7 +1,4 @@
 import { create } from '@storybook/theming';
-import logo from './heetch-logo.png';
-
-// https://github.com/storybookjs/storybook/blob/next/lib/theming/src/themes/light.ts
 
 const vars = {
   colors: {
@@ -47,5 +44,5 @@ export default create({
 
   brandTitle: 'Heetch Flamingo',
   brandUrl: 'https://www.heetch.com/',
-  brandImage: logo,
+  brandImage: './heetch-logo.png',
 });

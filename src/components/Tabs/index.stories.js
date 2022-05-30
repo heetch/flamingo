@@ -22,8 +22,8 @@ stories.add('All states', () => (
   <>
     <Heading>Tabs</Heading>
 
-    <Heading level={2}>Default</Heading>
-    <Tabs elements={TAB_VALUES} />
+    <Heading level={2}>Default - with container width set</Heading>
+    <Tabs elements={TAB_VALUES} width='800px' />
     <Code>{`
     <Tabs elements={${JSON.stringify(TAB_VALUES)}} />
     `}</Code>

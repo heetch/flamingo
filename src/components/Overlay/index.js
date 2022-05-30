@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 import { theme } from '../../theme';
 
 const fadeIn = keyframes`
   0% {
     opacity: 0;
-  } 
+  }
   100%{
     opacity: 0.8;
   }
@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 const fadeOut = keyframes`
   0% {
     opacity: 0.8;
-  } 
+  }
   100%{
     opacity: 0;
   }
@@ -41,7 +41,7 @@ const Overlay = styled('div').attrs(() => ({ className: 'f-Overlay' }))`
   visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
   transition: visibility 0.2s ease-out;
   animation: ${styles.animation} 0.2s ease-out;
-  opacity: 0.8;
+  opacity: 0.6;
 `;
 
 Overlay.propTypes = {

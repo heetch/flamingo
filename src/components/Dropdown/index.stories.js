@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import Dropdown from '.';
 import Button from '../Button';
@@ -17,7 +17,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   padding: 1rem;
   border: 1px dashed ${theme.color.brand.secondaryLight};
-  border-radius: ${theme.borderRadius.m};
+  border-radius: ${theme.borderRadius.s};
 `;
 
 const StoryDropdown = props => (
@@ -68,7 +68,7 @@ stories.add('All states', () => (
         onOpen={noop}
         triggerer={({ ref, toggle }) => (
           <Button ref={ref} onClick={toggle}>Click me</Button>
-        )}      
+        )}
       >
         {({ hide }) => (
           <>
@@ -100,8 +100,8 @@ stories.add('All states', () => (
         portalNode={document.body}
       />
       <Code>{`
-      <Dropdown 
-        {...otherProps} 
+      <Dropdown
+        {...otherProps}
         modifiers={{ preventOverflow: { enabled: false } }}
         portalNode={document.body}
       >

@@ -15,7 +15,7 @@ const Wrapper = props => (
       backgroundColor: theme.color.element.primary,
       marginBottom: theme.space.m,
       overflow: 'hidden',
-      borderRadius: theme.borderRadius.m,
+      borderRadius: theme.borderRadius.s,
     }}
     {...props}
   />

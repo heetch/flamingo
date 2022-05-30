@@ -17,9 +17,8 @@ stories.add('All states', () => (
     <Heading>UiText</Heading>
     <Heading level={2}>Variants</Heading>
     {variants.map(variant => (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div key={variant} style={{ display: 'flex', alignItems: 'center' }}>
         <UiText
-          key={variant}
           variant={variant}
           style={{ display: 'inline-block', marginRight: '20px' }}
         >

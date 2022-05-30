@@ -12,7 +12,7 @@ import { theme } from '../../theme';
 const { INTENTS, VARIANTS } = Button;
 
 const intents = ['primary', 'secondary'];
-const variants = ['outline', 'minimal'];
+const variants = ['outline', 'minimal', 'text'];
 
 const stories = storiesOf('Buttons/Button', module);
 
@@ -67,7 +67,21 @@ stories.add('All states', () => (
     <Heading level={2}>States</Heading>
     <Heading level={3}>Disabled</Heading>
     <Button disabled>Disabled</Button>
-    <Code>{`<Button disabled>Disabled</Button>`}</Code>
+    <Button variant='outline' disabled>
+      Disabled
+    </Button>
+    <Button variant='minimal' disabled>
+      Disabled
+    </Button>
+    <Button variant='text' disabled>
+      Disabled
+    </Button>
+    <Code>{`
+      <Button disabled>Disabled</Button>
+      <Button variant='outline' disabled>Disabled</Button>
+      <Button variant='minimal' disabled>Disabled</Button>
+      <Button variant='text' disabled>Disabled</Button>
+    `}</Code>
 
     <Heading level={3}>Success</Heading>
     <Button intent={'success'}>Success</Button>

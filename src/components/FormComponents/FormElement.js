@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
@@ -7,30 +7,35 @@ import { theme } from '../../theme';
 
 const styles = {
   stateColor(props) {
-    if (props.disabled) return theme.color.element.tertiary;
+    if (props.disabled) return theme.color.element.inactive;
     if (props.invalid) return theme.color.element.error;
     if (props.valid) return theme.color.element.success;
 
-    return theme.color.element.tertiary;
+    return theme.color.element.overlay;
   },
-  iconColor(props) {
+  borderColor(props) {
+    if (props.disabled) return theme.color.element.inactive;
     if (props.invalid) return theme.color.element.error;
     if (props.valid) return theme.color.element.success;
+
+    return theme.color.element.inactive;
+  },
+  iconColor(props) {
+    if (props.iconColor) return props.iconColor;
+    if (props.invalid) return theme.color.element.error;
+    if (props.valid) return theme.color.element.success;
+    if (props.disabled) return theme.color.element.inactive;
+    if (props.as === 'select') return theme.color.brand.secondary;
 
     return theme.color.icon.dark;
   },
-  backgroundColor({ disabled }) {
-    if (disabled) return theme.color.element.inactive;
-
-    return theme.color.element.primary;
-  },
-  hover: {
+  focus: {
     stateColor(props) {
-      if (props.disabled) return theme.color.element.tertiary;
+      if (props.disabled) return theme.color.element.inactive;
       if (props.invalid) return theme.color.element.error;
       if (props.valid) return theme.color.element.success;
 
-      return theme.color.element.secondary;
+      return theme.color.brand.secondary;
     },
   },
 };
@@ -41,25 +46,25 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
 }))`
   display: block;
   width: 100%;
-  padding: ${theme.space.m} ${theme.space.xl};
-  border: 0;
-  border-radius: 1.25rem;
+  padding: ${theme.space.m} 0 ${theme.space.m};
+  border-radius: 0;
   outline: none;
   appearance: none;
-  transition: box-shadow 0.2s ease-out;
+  border: unset;
+  color: ${styles.stateColor};
+  background-color: ${theme.color.element.primary};
+  border-bottom: 1px solid ${styles.borderColor} !important;
+  padding-right: ${({ withIcon, iconLeft }) =>
+    withIcon &&
+    !iconLeft &&
+    `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
 
-  background-color: ${styles.backgroundColor};
-  box-shadow: inset 0 0 0 1px ${styles.stateColor};
-  padding-right: ${({ withIcon }) =>
-    withIcon && `calc(${theme.iconSize.m} + ${theme.space.m} * 2)`};
-  cursor: ${({ disabled }) => disabled && 'not-allowed;'};
-
-  &:hover {
-    box-shadow: inset 0 0 0 1px ${styles.hover.stateColor};
-  }
+  padding-left: ${({ withIcon, iconLeft }) =>
+    withIcon && iconLeft && `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
 
   &:focus {
-    box-shadow: inset 0 0 0 2px ${styles.hover.stateColor};
+    border-bottom: 1px solid ${styles.focus.stateColor} !important;
+    transition: border 0.2s ease-out;
   }
 
   ${theme.breakPoint.s} {
@@ -84,6 +89,8 @@ FormElement.propTypes = {
   invalid: PropTypes.bool,
   valid: PropTypes.bool,
   withIcon: PropTypes.bool,
+  icon: PropTypes.string,
+  iconColor: PropTypes.string,
 };
 
 export default FormElement;

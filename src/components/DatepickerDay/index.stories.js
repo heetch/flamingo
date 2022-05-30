@@ -43,7 +43,25 @@ stories.add('All states', () => (
       value={new Date('1989-11-04')}
     />
     `}</Code>
-
+    <Heading level={2}>With colored icon on the left</Heading>
+    <DatepickerDay
+      iconLeft
+      iconColor={'red'}
+      id='icon-left'
+      locale={{ key: 'fr', dateFnsLocale: fr }}
+      placeholder='Choisir une date'
+      value={new Date('1989-11-04')}
+    />
+    <Code>{`
+    <DatepickerDay
+      iconLeft
+      iconColor={'red'}
+      id='icon-left'
+      locale={{ key: 'fr', dateFnsLocale: fr }}
+      placeholder='Choisir une date'
+      value={new Date('1989-11-04')}
+    />
+    `}</Code>
     <Heading level={2}>With disabled days</Heading>
     <DatepickerDay
       id='disabled-days'
@@ -101,6 +119,7 @@ stories.add('All states', () => (
 
 stories.add('Playground', () => (
   <DatepickerDay
+    id='datepicker-playground'
     onChange={action('onChange')}
     onFocus={action('onFocus')}
     onBlur={action('onBlur')}

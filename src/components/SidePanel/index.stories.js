@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
+import { Code } from '../../storybook-utils';
 
 import SidePanel from '.';
 import Button from '../Button';
 import Heading from '../Heading';
 import Input from '../Input';
 import Label from '../Label';
-import { Code } from '../../storybook-utils';
 
 const stories = storiesOf('SidePanel', module);
 
@@ -18,6 +18,7 @@ stories.add('Playground', () => {
   const withFooter = boolean('With footer?', true);
   const withHeader = boolean('With header?', false);
   const withTitle = !withHeader && text('Title', 'Side Panel Title');
+  const withSubtitle = !withHeader && text('SubTitle', 'Subtitle');
 
   const content = (
     <>
@@ -33,6 +34,7 @@ stories.add('Playground', () => {
       <SidePanel
         closesOnOverlayClick={closesOnOverlayClick}
         title={withTitle}
+        subtitle={withSubtitle}
         animateOnMount
         header={
           withHeader && (
@@ -73,11 +75,13 @@ stories.add('Playground', () => {
         isOpen={${isOpen}}
         closesOnOverlayClick={${closesOnOverlayClick}}
         animateOnMount${withTitle ? `\n        title='${withTitle}'` : ''}${
-        withHeader ? `\n        header={HeaderComponent}` : ''
-      }${withFooter ? `\n        footer={FooterComponent}` : ''}
+        withSubtitle ? `\n        subtitle='${withSubtitle}'` : ''
+      }${withHeader ? `\n        header={HeaderComponent}` : ''}${
+        withFooter ? `\n        footer={FooterComponent}` : ''
+      }
       >
         ...
-      </SidePanel>  
+      </SidePanel>
       `}</Code>
     </>
   );

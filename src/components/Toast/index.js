@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Alert from '../Alert';
-import { StyledToastWrapper } from './styles';
+import { StyledToastWrapper, StyledAlert } from './styles';
 
 const Toast = React.forwardRef(
   ({ type, title, zIndex, position, timeoutDelay, onClose, children }, ref) => {
@@ -39,9 +39,9 @@ const Toast = React.forwardRef(
         isVisible={isVisible}
         ref={ref}
       >
-        <Alert onClose={() => setClose(true)} type={type} title={title}>
+        <StyledAlert onClose={() => setClose(true)} type={type} title={title}>
           {children}
-        </Alert>
+        </StyledAlert>
       </StyledToastWrapper>
     );
   },

@@ -6,17 +6,35 @@ import { withInfo } from '@storybook/addon-info';
 import theme from './theme/';
 import StoryWrapper from './theme/StoryWrapper';
 
-import './styles.css';
+import '../src/styles.css';
 import 'normalize.css';
-import 'react-datepicker/dist/react-datepicker.css';
+
+addDecorator(StoryWrapper);
+addDecorator(withInfo);
 
 addons.setConfig({
   theme,
 });
 
-addDecorator(StoryWrapper);
-addDecorator(withKnobs);
-addDecorator(withInfo);
+export const parameters = {
+  backgrounds: {
+    default: 'grey',
+    values: [
+      {
+        name: 'grey',
+        value: '#ECEFF8'
+      },
+      {
+        name: 'white',
+        value: '#fff',
+      },
+      {
+        name: 'blue',
+        value: '#6e9ddf',
+      },
+    ],
+  },
+};
 
 addParameters({
   viewport: {

@@ -63,6 +63,7 @@ stories.add('All states', () => (
       id={getId()}
       defaultValue='Props: icon'
       icon='IconEmojiSmile'
+      iconColor='orange'
       onChange={action('onChange')}
     />
   </>
