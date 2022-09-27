@@ -35,9 +35,9 @@ const stories = storiesOf('Form/Uploader', module);
 stories.add('All states', () => (
   <>
     <Heading>Uploader</Heading>
-    <Uploader id='uploader' onChange={noop} />
+    <Uploader id='uploader' onChange={noop} iconColor='orange' />
     <Code>{`
-    <Uploader onChange={noop} />
+    <Uploader onChange={noop}  iconColor='orange' />
     `}</Code>
 
     <Heading level={2}>With default value</Heading>
