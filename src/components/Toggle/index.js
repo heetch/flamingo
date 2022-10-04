@@ -74,6 +74,7 @@ const Toggle = React.forwardRef(
         {(children || helper) && (
           <ToggleLabels
             className='f-Toggle-labels'
+            as='label'
             {...labelProps}
             disabled={disabled}
           >
