@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import { theme } from '../../theme';
+import UiText from '../UiText';
 
 const styles = {
   toggle: {
@@ -93,7 +94,10 @@ export const ToggleBulletLabelOn = styled(ToggleBulletLabel)`
   visibility: ${({ isOn }) => (isOn ? 'visible' : 'hidden')};
 `;
 
-export const ToggleLabels = styled('span')`
+export const ToggleLabels = styled(UiText).attrs({
+  variant: UiText.VARIANTS.content,
+})`
+  margin: 0;
   margin-left: ${theme.space.l};
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
 `;

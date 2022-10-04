@@ -215,3 +215,7 @@ a:hover {
 img {
   max-width: 100%;
 }
+
+::placeholder {
+  color: var(--f-color-type-light);
+}
