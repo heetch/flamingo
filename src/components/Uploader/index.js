@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
-import IconButton from '../IconButton';
 import Spinner from '../Spinner';
 import UploaderImageItem from '../UploaderImageItem';
 import UploaderItem from '../UploaderItem';
@@ -144,11 +143,7 @@ const Uploader = React.forwardRef(
         {state === STATES.SINGLE_IMAGE && (
           <>
             <Preview preview={preview} />
-            <TrashButton
-              onClick={onClear}
-              icon={IconButton.ICONS.IconTrash}
-              iconColor={iconColor}
-            />
+            <TrashButton onClick={onClear} iconColor={iconColor} />
             <PreviewActions />
           </>
         )}

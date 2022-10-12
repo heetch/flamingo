@@ -85,7 +85,9 @@ export const PreviewActions = styled.div`
   z-index: 15;
 `;
 
-export const TrashButton = styled(IconButton)`
+export const TrashButton = styled(IconButton).attrs({
+  icon: IconButton.ICONS.IconTrash,
+})`
   z-index: 20;
   margin: ${theme.space.m};
   align-self: end;
