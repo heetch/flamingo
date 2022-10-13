@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import FormElementWrapper from '../FormComponents/FormElementWrapper';
 import Icon from '../Icon';
 import UiText from '../UiText';
+import IconButton from '../IconButton';
 
 import { theme } from '../../theme';
 import { STATES } from './constants';
@@ -79,12 +80,22 @@ export const PreviewActions = styled.div`
   bottom: -1px;
   border-radius: ${theme.borderRadius.s};
   background: ${theme.color.element.overlay};
-  padding: 0 ${theme.space.m};
-  text-align: right;
-  opacity: 0;
   pointer-events: none;
+  opacity: 0;
   z-index: 15;
-  transition: opacity 0.1s ease-out;
+`;
+
+export const TrashButton = styled(IconButton).attrs({
+  icon: IconButton.ICONS.IconTrash,
+})`
+  z-index: 20;
+  margin: ${theme.space.m};
+  align-self: end;
+  padding: ${theme.space.s} !important;
+  background-color: #ffffff !important;
+  * {
+    color: ${({ iconColor }) => iconColor || theme.color_v3.feedback.error};
+  }
 `;
 
 export const Container = styled(FormElementWrapper)`
@@ -96,7 +107,6 @@ export const Container = styled(FormElementWrapper)`
   border-radius: ${theme.borderRadius.s};
   color: ${styles.textColor};
   background-color: ${theme.color.element.primary};
-  transition: all 0.15s ease-out;
   border: 1px dashed ${styles.borderColor};
 
   &:hover {

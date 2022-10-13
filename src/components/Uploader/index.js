@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
-import IconButton from '../IconButton';
 import Spinner from '../Spinner';
 import UploaderImageItem from '../UploaderImageItem';
 import UploaderItem from '../UploaderItem';
 
 import State from './State';
-import { Container, InputContainer, Preview, PreviewActions } from './styles';
+import {
+  Container,
+  InputContainer,
+  Preview,
+  PreviewActions,
+  TrashButton,
+} from './styles';
 import { STATES } from './constants';
 
 import { toBase64 } from '../../utils';
@@ -38,6 +43,7 @@ const Uploader = React.forwardRef(
   (
     {
       id,
+      iconColor,
       invalid,
       onChange,
       translate,
@@ -137,9 +143,8 @@ const Uploader = React.forwardRef(
         {state === STATES.SINGLE_IMAGE && (
           <>
             <Preview preview={preview} />
-            <PreviewActions>
-              <IconButton onClick={onClear} icon={IconButton.ICONS.IconTrash} />
-            </PreviewActions>
+            <TrashButton onClick={onClear} iconColor={iconColor} />
+            <PreviewActions />
           </>
         )}
 
@@ -190,6 +195,7 @@ Uploader.displayName = 'Uploader';
 
 Uploader.propTypes = {
   id: PropTypes.string.isRequired,
+  iconColor: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   translate: PropTypes.func,
   invalid: PropTypes.bool,
