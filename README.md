@@ -6,11 +6,11 @@
 
 </div>
 
-[Flamingo storybook](https://flamingo.heetch-eng.now.sh)
+[Flamingo storybook](https://flamingo.pages.dev)
 
 - [![npm](https://img.shields.io/npm/v/@heetch/flamingo-react.svg?label=@heetch/flamingo-react)](https://www.npmjs.com/package/@heetch/flamingo-react)
 
-You can see all the components in action [here](https://flamingo.heetch-eng.now.sh).
+You can see all the components in action [here](https://flamingo.pages.dev).
 
 ## How to use
 
