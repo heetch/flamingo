@@ -30,10 +30,9 @@ const SidePanel = props => {
   };
 
   const handleClose = React.useCallback(() => {
-    if (!props.isOpen) return;
     document.body.style.overflow = 'initial';
     setIsOpen(false);
-    props.onClose();
+    if (props.isOpen) props.onClose();
   }, [props]);
 
   const handleEscape = React.useCallback(
