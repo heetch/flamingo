@@ -30,6 +30,7 @@ const SidePanel = props => {
   };
 
   const handleClose = React.useCallback(() => {
+    if (!props.isOpen) return;
     document.body.style.overflow = 'initial';
     setIsOpen(false);
     props.onClose();
