@@ -44,6 +44,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-backgrounds": "^6.3.9",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-knobs": "^6.2.8",
     "@storybook/addon-viewport": "^6.2.8",
@@ -95,13 +96,11 @@
   ],
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "@storybook/addon-backgrounds": "^6.3.9",
     "classnames": "^2.2.6",
     "normalize.css": "^8.0.1",
     "react-datepicker": "^3.3.0",
     "react-popper": "^2.2.5",
-    "styled-components": "^5.1.0",
-    "yarn": "^1.22.4"
+    "styled-components": "^5.1.0"
   },
   "resolutions": {
     "handlebars": "^4.7.7"
