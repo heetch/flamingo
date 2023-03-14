@@ -1,7 +1,5 @@
 import { addParameters, addDecorator } from '@storybook/react';
 import { addons } from '@storybook/addons';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import theme from './theme/';
 import StoryWrapper from './theme/StoryWrapper';
@@ -10,7 +8,6 @@ import '../src/styles.css';
 import 'normalize.css';
 
 addDecorator(StoryWrapper);
-addDecorator(withInfo);
 
 addons.setConfig({
   theme,
