@@ -31,6 +31,7 @@ const styles = {
   },
   focus: {
     stateColor(props) {
+      if (props.borderColor) return props.borderColor;
       if (props.disabled) return theme.color.element.inactive;
       if (props.invalid) return theme.color.element.error;
       if (props.valid) return theme.color.element.success;

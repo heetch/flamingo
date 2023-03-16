@@ -11,6 +11,9 @@ const styles = {
     if (props.children.props.id === 'valid') {
       return theme.color.element.success;
     }
+    if (props.isPink) {
+      return theme.color.brand.primary;
+    }
 
     return theme.color.brand.secondary;
   },
@@ -34,6 +37,11 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .react-datepicker__tab-loop {
     width: auto;
+  }
+
+  .react-datepicker__navigation-icon--previous::before,
+  .react-datepicker__navigation-icon::before {
+    display: none;
   }
 
   .react-datepicker {
@@ -128,7 +136,7 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day {
-    border-radius: 2px;
+    border-radius: 50%;
     font-size: ${theme.fontSize.m};
     width: 38px;
     height: 38px;
@@ -136,9 +144,10 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     margin: 0;
     transition: background-color 0.2s ease;
 
-    &:hover:not(.react-datepicker__day--disabled) {
+    &:hover:not(.react-datepicker__day--in-selecting-range) {
       border-radius: 100%;
-      background-color: ${theme.color.brand.secondary};
+      background-color: ${({ isPink }) =>
+        isPink ? theme.color.brand.primary : theme.color.brand.secondary};
       color: white;
     }
   }
@@ -146,8 +155,10 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker__day--selected {
     &,
     &:hover {
-      background-color: ${theme.color.brand.secondary};
+      background-color: ${({ isPink }) =>
+        isPink ? theme.color.brand.primary : theme.color.brand.secondary};
       color: white;
+      border-radius: 50%;
     }
   }
 
@@ -156,7 +167,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day--today {
-    color: ${theme.color.brand.secondary};
+    color: ${({ isPink }) =>
+      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
     background: none;
   }
 
@@ -175,7 +187,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
     height: auto;
   }
   .react-datepicker__close-icon:after {
-    background: ${theme.color.brand.secondary};
+    background: ${({ isPink }) =>
+      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
     color: white;
     font-size: ${theme.fontSize.m};
     width: 1.25rem;

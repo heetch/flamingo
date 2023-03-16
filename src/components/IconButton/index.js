@@ -19,8 +19,8 @@ const IconButtonComponent = React.forwardRef(
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
-      {...props}
       style={{ padding: 0 }}
+      {...props}
     >
       <Icon
         icon={icon}

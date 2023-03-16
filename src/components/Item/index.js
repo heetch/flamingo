@@ -101,7 +101,7 @@ Item.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   helper: PropTypes.node,
   value: PropTypes.string,
-  valueIcon: PropTypes.oneOf(icons),
+  valueIcon: PropTypes.oneOf(icons) || null,
   onClick: PropTypes.func,
 };
 

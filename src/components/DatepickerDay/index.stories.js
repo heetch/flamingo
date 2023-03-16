@@ -62,6 +62,16 @@ stories.add('All states', () => (
       value={new Date('1989-11-04')}
     />
     `}</Code>
+    <Heading level={2}>Is pink</Heading>
+    <DatepickerDay
+      id='default'
+      value={new Date('2020-08-04')}
+      isClearable
+      isPink
+    />
+    <Code>{`
+    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable isPink/>
+    `}</Code>
     <Heading level={2}>With disabled days</Heading>
     <DatepickerDay
       id='disabled-days'

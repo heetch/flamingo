@@ -12,6 +12,7 @@ const Tabs = React.forwardRef(
       buildKey,
       onClick,
       width,
+      fontSize,
       ...props
     },
     ref,
@@ -45,6 +46,7 @@ const Tabs = React.forwardRef(
             <TabsLabel
               className='f-Tabs-label'
               isActive={activeIndex === index}
+              fontSize={fontSize}
             >
               {buildTabLabel ? buildTabLabel(element) : element}
             </TabsLabel>
@@ -76,6 +78,7 @@ Tabs.propTypes = {
   buildKey: PropTypes.func,
   onClick: PropTypes.func,
   width: PropTypes.string,
+  fontSize: PropTypes.string,
 };
 
 export default Tabs;

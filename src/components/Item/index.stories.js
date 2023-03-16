@@ -83,6 +83,29 @@ stories.add('All states', () => (
     </Item>
     `}</Code>
 
+    <Heading level={2}>With no icon</Heading>
+    <Wrapper>
+      <Item
+        helper='with icon null'
+        onClick={() => {}}
+        value='Click'
+        valueIcon={null}
+      >
+        No Icon
+      </Item>
+    </Wrapper>
+
+    <Code>{`
+    <Item
+      helper='with icon null'
+      onClick={noop}
+      value='Click'
+      valueIcon='null'
+    >
+      No Icon
+    </Item>
+    `}</Code>
+
     <Heading level={2}>States</Heading>
     <Wrapper>
       <Item invalid value='Nope' valueIcon={Icon.ICONS.IconCross}>

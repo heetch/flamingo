@@ -16,7 +16,7 @@ export const TabsContainer = styled.div.attrs(() => ({
 
 export const TabsLabel = styled.span`
   display: block;
-  font-size: ${theme.fontSize.s};
+  font-size: ${({ fontSize }) => fontSize || theme.fontSize.s};
   font-weight: ${theme.fontWeight.black};
   line-height: ${theme.lineHeight.s};
   margin: ${theme.space.m} 0;
