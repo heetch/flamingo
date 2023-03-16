@@ -155,7 +155,7 @@ stories.add('All states', () => (
 
 stories.add('Playground', () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsCount = defaultProps.data.length;
+  const itemsCount = defaultProps().data.length;
   const itemsPerPage = 7;
   const totalPages = Math.ceil(itemsCount / itemsPerPage);
   const pageSize = itemsPerPage <= itemsCount ? itemsPerPage : itemsCount;
@@ -163,7 +163,7 @@ stories.add('Playground', () => {
     <>
       <Heading>Table Pagination</Heading>
       <Table
-        {...defaultProps}
+        {...defaultProps()}
         isSortable={boolean('Table 1 sortable', false)}
         manualSorting={boolean('manualSorting')}
         onChangeSort={action('onChangeSort')}

@@ -11,9 +11,9 @@ import { theme } from '../../theme';
 export const StyledFormElement = styled(FormElement)`
   min-height: 9.375rem; /* 150px */
   resize: vertical;
-  border-radius: 5px !important;
-  border: solid 1px !important;
-  border-color: ${theme.color_v3.type.inactive} !important;
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: ${theme.color_v3.type.inactive};
   padding: 1.5rem;
   color: ${theme.color_v3.type.light};
 
@@ -22,7 +22,7 @@ export const StyledFormElement = styled(FormElement)`
   }
 
   &:focus {
-    border-bottom-color: ${theme.color_v3.type.inactive} !important;
+    border-bottom-color: ${theme.color_v3.type.inactive};
   }
 `;
 

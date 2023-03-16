@@ -28,15 +28,15 @@ export const StyledRadio = styled('input').attrs(({ defaultChecked }) => ({
     border-color: ${theme.color.element.secondary};
   }
 
-  &:disabled {
-    border-color: ${theme.color.element.tertiary} !important;
-    background-color: ${theme.color.element.inactive} !important;
-    cursor: not-allowed;
-  }
-
   &:checked {
     border-width: 6px;
     border-color: ${theme.color.brand.primary};
+  }
+
+  &:disabled {
+    border-color: ${theme.color.element.tertiary};
+    background-color: ${theme.color.element.inactive};
+    cursor: not-allowed;
   }
 `;
 

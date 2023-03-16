@@ -20,7 +20,7 @@ export const variants = Object.values(VARIANTS);
 const styles = {
   color({ disabled, variant, intent }) {
     if (disabled) {
-      return `${theme.color.text.tertiary} !important`;
+      return theme.color.text.tertiary;
     }
     if (variants.includes(variant) && intent === INTENTS.PRIMARY) {
       return theme.color.brand.primary;
@@ -32,8 +32,8 @@ const styles = {
     return theme.color.text.white;
   },
   backgroundColor({ intent, disabled, variant }) {
-    if (variant === 'text') return `transparent !important`;
-    if (disabled) return `${theme.color.element.inactive} !important`;
+    if (variant === 'text') return `transparent`;
+    if (disabled) return theme.color.element.inactive;
     if (intent === INTENTS.ERROR) return theme.color.element.error;
     if (intent === INTENTS.SUCCESS) return theme.color.element.success;
     if (variants.includes(variant)) return theme.color.text.white;
@@ -79,7 +79,10 @@ const styles = {
     return '100%';
   },
   hover: {
-    backgroundColor({ intent }) {
+    backgroundColor({ intent, disabled }) {
+      if (disabled) {
+        return theme.color.element.inactive;
+      }
       if (intent === INTENTS.PRIMARY) {
         return theme.color.brand.primaryLight;
       }
@@ -91,7 +94,10 @@ const styles = {
     },
   },
   active: {
-    backgroundColor({ intent }) {
+    backgroundColor({ intent, disabled }) {
+      if (disabled) {
+        return theme.color.element.inactive;
+      }
       if (intent === INTENTS.PRIMARY) {
         return theme.color.brand.primary;
       }
@@ -128,7 +134,10 @@ export const StyledButton = styled('button').attrs(() => ({
   position: relative;
   display: inline-block;
   margin: ${({ margin }) => margin ?? `${theme.space.m} 0`};
-  padding: ${theme.space.m} ${theme.space.xl};
+  padding: 0;
+  :not(.f-Button--icon) {
+    padding: ${theme.space.m} ${theme.space.xl};
+  }
   max-height: 60px;
   font-size: ${theme.fontSize.s};
   font-weight: ${theme.fontWeight.bold};
@@ -149,8 +158,8 @@ export const StyledButton = styled('button').attrs(() => ({
 
   &:hover {
     background-color: ${styles.hover.backgroundColor};
-    color: ${({ variant }) =>
-      variant === 'text' ? undefined : theme.color.text.white};
+    color: ${({ variant, disabled }) =>
+      variant === 'text' || disabled ? undefined : theme.color.text.white};
     text-decoration: none;
   }
 
@@ -164,7 +173,9 @@ export const StyledButton = styled('button').attrs(() => ({
     }
 
     width: 100%;
-    padding: ${theme.space.l} ${theme.space.xl};
+    :not(.f-Button--icon) {
+      padding: ${theme.space.l} ${theme.space.xl};
+    }
     text-align: center;
   }
 `;

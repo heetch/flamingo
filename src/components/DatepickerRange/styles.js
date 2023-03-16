@@ -9,11 +9,6 @@ export const StyledRangeDatepicker = styled.div`
     color: white;
     border-radius: 0%;
   }
-
-  .react-datepicker__day--in-selecting-range .react-datepicker__day--today {
-    background-color: red !important ;
-  }
-
   .react-datepicker__day--selecting-range-start,
   .react-datepicker__day--selecting-range-start:hover {
     border-top-left-radius: 50%;

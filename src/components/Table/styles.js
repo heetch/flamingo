@@ -12,6 +12,13 @@ export const StyledTable = styled('table').attrs(() => ({
   width: 100%;
   border-spacing: 0;
   margin: ${theme.space.m} 0;
+  .f-Table-RowGroup {
+    &:hover {
+      .f-Table-RowCell {
+        background-color: ${theme.color.brand.primaryInactive};
+      }
+    }
+  }
 `;
 
 const styles = {
@@ -33,7 +40,8 @@ export const HeaderCell = styled(UiText)`
   position: sticky;
   top: 0;
   color: ${styles.color};
-
+  width: ${props =>
+    typeof props.width === 'number' ? `${props.width}px` : props.width};
   ${UiText} {
     margin: 0;
   }

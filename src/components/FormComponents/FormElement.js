@@ -54,7 +54,7 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
   border: unset;
   color: ${styles.stateColor};
   background-color: ${theme.color.element.primary};
-  border-bottom: 1px solid ${styles.borderColor} !important;
+  border-bottom: 1px solid ${styles.borderColor};
   padding-right: ${({ withIcon, iconLeft }) =>
     withIcon &&
     !iconLeft &&
@@ -64,7 +64,7 @@ const FormElement = styled(UiText).attrs(({ textColor }) => ({
     withIcon && iconLeft && `calc(${theme.iconSize.l} + ${theme.space.l} * 2)`};
 
   &:focus {
-    border-bottom: 1px solid ${styles.focus.stateColor} !important;
+    border-bottom: 1px solid ${styles.focus.stateColor};
     transition: border 0.2s ease-out;
   }
 

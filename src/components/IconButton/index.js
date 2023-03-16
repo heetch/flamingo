@@ -19,7 +19,6 @@ const IconButtonComponent = React.forwardRef(
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
-      style={{ padding: 0 }}
       {...props}
     >
       <Icon
@@ -44,7 +43,7 @@ const IconButton = styled(IconButtonComponent)`
   line-height: 1;
   border-radius: 50%;
   color: ${theme.color.icon.dark};
-  background-color: unset !important;
+  background-color: unset;
 
   & + & {
     margin-left: ${theme.space.m};
@@ -52,6 +51,7 @@ const IconButton = styled(IconButtonComponent)`
 
   :hover {
     color: unset;
+    background-color: unset;
   }
 
   ${theme.breakPoint.s} {

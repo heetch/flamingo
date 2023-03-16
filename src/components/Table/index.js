@@ -68,6 +68,7 @@ const Table = React.forwardRef(
                   getSortByToggleProps,
                   isSorted,
                   isSortedDesc,
+                  colWidth,
                   render,
                 }) => (
                   <HeaderCell
@@ -75,6 +76,7 @@ const Table = React.forwardRef(
                     isSorted={isSorted}
                     isSortedDesc={isSortedDesc}
                     isSortable={isSortable}
+                    colWidth={colWidth}
                   >
                     {render('Header')}
                   </HeaderCell>
@@ -110,6 +112,7 @@ Table.propTypes = {
     PropTypes.shape({
       Header: PropTypes.string,
       accessor: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+      colWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),
