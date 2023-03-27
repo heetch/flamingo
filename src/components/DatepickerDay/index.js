@@ -21,7 +21,7 @@ const DatepickerDay = ({
   dateFormat,
   locale,
   withPortal,
-  isPink,
+  datepickerColor,
   ...props
 }) => {
   const [selectedDate, setSelectedDate] = useState(value);
@@ -45,7 +45,7 @@ const DatepickerDay = ({
         invalid={invalid}
         valid={valid}
         autoFocus={stateHasFocus}
-        borderColor={isPink && theme.color.brand.primary}
+        borderColor={datepickerColor && datepickerColor}
         {...inputProps}
       />
     );
@@ -56,7 +56,11 @@ const DatepickerDay = ({
   };
 
   return (
-    <StyledDatepicker iconLeft={iconLeft} iconColor={iconColor} isPink={isPink}>
+    <StyledDatepicker
+      iconLeft={iconLeft}
+      iconColor={iconColor}
+      datepickerColor={datepickerColor}
+    >
       <ReactDatePicker
         popperProps={{
           strategy: 'fixed',
@@ -85,18 +89,14 @@ const DatepickerDay = ({
           <Icon
             size='l'
             icon={Icon.ICONS.IconChevronLeft}
-            iconColor={
-              isPink ? theme.color.brand.primary : theme.color.brand.secondary
-            }
+            iconColor={datepickerColor || theme.color.brand.secondary}
           />
         }
         nextMonthButtonLabel={
           <Icon
             size='l'
             icon={Icon.ICONS.IconChevronRight}
-            iconColor={
-              isPink ? theme.color.brand.primary : theme.color.brand.secondary
-            }
+            iconColor={datepickerColor || theme.color.brand.secondary}
           />
         }
         showPopperArrow={false}
@@ -136,7 +136,7 @@ DatepickerDay.propTypes = {
   withPortal: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconColor: PropTypes.string,
-  isPink: PropTypes.bool,
+  datepickerColor: PropTypes.string,
 };
 
 DatepickerDay.defaultProps = {
@@ -149,7 +149,6 @@ DatepickerDay.defaultProps = {
   },
   popperPlacement: 'bottom-start',
   withPortal: false,
-  isPink: false,
   onChange: () => {},
   onFocus: () => {},
   onBlur: () => {},

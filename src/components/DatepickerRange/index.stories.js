@@ -7,6 +7,7 @@ import fr from 'date-fns/locale/fr';
 import DatepickerRange from '.';
 import Heading from '../Heading';
 import { Code } from '../../storybook-utils';
+import { theme } from '../../theme';
 
 const stories = storiesOf('DatepickerRange', module);
 
@@ -31,17 +32,18 @@ stories.add('All states', () => (
     <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable startPlaceholder='Start date range' endPlaceholder='End date range'/>
     `}</Code>
 
-    <Heading level={2}>Pink version</Heading>
+    <Heading level={2}>Primary version</Heading>
     <DatepickerRange
       id='default'
       value={new Date('2020-08-04')}
       isClearable
       startPlaceholder='Start date range'
       endPlaceholder='End date range'
-      isPink
+      datepickerColor={theme.color.brand.primary}
     />
     <Code>{`
-    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable startPlaceholder='Start date range' endPlaceholder='End date range' isBlue/>
+    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable startPlaceholder='Start date range' endPlaceholder='End date range' datepickerColor={theme.color.brand.primary}
+    />
     `}</Code>
 
     <Heading level={2}>With custom locale</Heading>
@@ -96,6 +98,5 @@ stories.add('Playground', () => (
     isClearable={boolean('isClearable', true)}
     startPlaceholder='Start date range'
     endPlaceholder='End date range'
-    isPink={false}
   />
 ));

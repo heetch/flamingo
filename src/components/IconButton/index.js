@@ -19,6 +19,7 @@ const IconButtonComponent = React.forwardRef(
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
+      disableAutoMarginLeft
       {...props}
     >
       <Icon

@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { addDays, subDays, subYears } from 'date-fns';
 
 import fr from 'date-fns/locale/fr';
+import { theme } from '../../theme';
 import DatepickerDay from '.';
 import Heading from '../Heading';
 import { Code } from '../../storybook-utils';
@@ -62,15 +63,15 @@ stories.add('All states', () => (
       value={new Date('1989-11-04')}
     />
     `}</Code>
-    <Heading level={2}>Is pink</Heading>
+    <Heading level={2}>Primary version</Heading>
     <DatepickerDay
       id='default'
       value={new Date('2020-08-04')}
       isClearable
-      isPink
+      datepickerColor={theme.color.brand.primary}
     />
     <Code>{`
-    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable isPink/>
+    <DatepickerDay id='default' value={new Date('2020-08-04')} isClearable datepickerColor={theme.color.brand.primary}/>
     `}</Code>
     <Heading level={2}>With disabled days</Heading>
     <DatepickerDay
@@ -95,6 +96,14 @@ stories.add('All states', () => (
       scrollableYearDropdown
       isClearable
     />
+    <DatepickerDay
+      id='years-dropdown-2'
+      value={new Date('2023-03-14')}
+      yearDropdownItemNumber={15}
+      scrollableYearDropdown
+      showYearDropdown
+      datepickerColor={theme.color.brand.primary}
+    />
     <Code>{`
     <DatepickerDay
       id='years-dropdown'
@@ -103,6 +112,14 @@ stories.add('All states', () => (
       showYearDropdown
       scrollableYearDropdown
       isClearable
+    />
+    <DatepickerDay
+      id='years-dropdown-2'
+      value={new Date('2023-03-14')}
+      yearDropdownItemNumber={15}
+      scrollableYearDropdown
+      showYearDropdown
+      datepickerColor={theme.color.brand.primary}
     />
     `}</Code>
 

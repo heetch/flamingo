@@ -11,8 +11,8 @@ const styles = {
     if (props.children.props.id === 'valid') {
       return theme.color.element.success;
     }
-    if (props.isPink) {
-      return theme.color.brand.primary;
+    if (props.datepickerColor) {
+      return props.datepickerColor;
     }
 
     return theme.color.brand.secondary;
@@ -146,8 +146,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
     &:hover:not(.react-datepicker__day--in-selecting-range) {
       border-radius: 100%;
-      background-color: ${({ isPink }) =>
-        isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+      background-color: ${({ datepickerColor }) =>
+        datepickerColor || theme.color.brand.secondary};
       color: white;
     }
   }
@@ -155,8 +155,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   .react-datepicker__day--selected {
     &,
     &:hover {
-      background-color: ${({ isPink }) =>
-        isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+      background-color: ${({ datepickerColor }) =>
+        datepickerColor || theme.color.brand.secondary};
       color: white;
       border-radius: 50%;
     }
@@ -167,8 +167,8 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
   }
 
   .react-datepicker__day--today {
-    color: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
     background: none;
   }
 
@@ -185,19 +185,61 @@ export const StyledDatepicker = styled(FormElementWrapper).attrs(() => ({
 
   .react-datepicker__year-dropdown--scrollable {
     height: auto;
+    margin-top: 24px;
+    border: unset;
   }
   .react-datepicker__close-icon:after {
-    background: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    background: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
     color: white;
     font-size: ${theme.fontSize.m};
     width: 1.25rem;
     height: 1.25rem;
   }
-  .react-datepicker__year-read-view--down-arrow {
-    margin-left: ${theme.space.s};
-    border-width: 0.6rem;
-    top: 6px;
+
+  .react-datepicker__navigation--years-upcoming,
+  .react-datepicker__navigation--years-previous {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0;
+    top: 3px;
+    display: inline-block;
+  }
+
+  .react-datepicker__navigation--years-upcoming {
+    transform: rotate(225deg);
+  }
+  .react-datepicker__navigation--years-previous {
+    transform: rotate(45deg);
+  }
+
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__year-read-view:hover
+    .react-datepicker__year-read-view--down-arrow {
+    top: 4px;
+    border-width: 2px 2px 0 0;
+    border-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
+  }
+  .react-datepicker__year-option:not(:first-child):not(:last-child):hover {
+    background-color: white;
+    color: black;
+  }
+  .react-datepicker__year-option:hover
+    .react-datepicker__navigation--years-upcoming {
+    border-bottom-color: white;
+  }
+
+  .react-datepicker__year-dropdown--scrollable,
+  .react-datepicker__year-option:first-child,
+  .react-datepicker__year-option:last-child:hover {
+    background-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
+    color: white;
+    max-height: 250px;
   }
 
   .react-datepicker__year-dropdown-container--scroll {

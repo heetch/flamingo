@@ -4,8 +4,8 @@ import { theme } from '../../theme';
 
 export const StyledRangeDatepicker = styled.div`
   .react-datepicker__day--in-selecting-range {
-    background-color: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    background-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
     color: white;
     border-radius: 0%;
   }
@@ -15,8 +15,8 @@ export const StyledRangeDatepicker = styled.div`
     border-bottom-left-radius: 50%;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
-    background-color: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    background-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
   }
 
   .react-datepicker__day--selecting-range-end:not(.react-datepicker__day--selecting-range-start),
@@ -25,8 +25,8 @@ export const StyledRangeDatepicker = styled.div`
     border-bottom-right-radius: 50%;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
-    background-color: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    background-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
     color: white;
   }
 
@@ -35,8 +35,8 @@ export const StyledRangeDatepicker = styled.div`
     color: black;
   }
   .react-datepicker__day--in-range .react-datepicker__day--in-selecting-range {
-    background-color: ${({ isPink }) =>
-      isPink ? theme.color.brand.primary : theme.color.brand.secondary};
+    background-color: ${({ datepickerColor }) =>
+      datepickerColor || theme.color.brand.secondary};
   }
 `;
 

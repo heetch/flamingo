@@ -24,7 +24,7 @@ const DatepickerRange = ({
   withPortal,
   startPlaceholder,
   endPlaceholder,
-  isPink,
+  datepickerColor,
   margin,
   ...props
 }) => {
@@ -45,7 +45,7 @@ const DatepickerRange = ({
         iconLeft={iconLeft}
         invalid={invalid}
         valid={valid}
-        borderColor={isPink && theme.color.brand.primary}
+        borderColor={datepickerColor && theme.color.brand.primary}
         {...inputProps}
       />
     );
@@ -56,8 +56,12 @@ const DatepickerRange = ({
   };
 
   return (
-    <StyledDatepicker iconLeft={iconLeft} iconColor={iconColor} isPink={isPink}>
-      <StyledRangeDatepicker isPink={isPink}>
+    <StyledDatepicker
+      iconLeft={iconLeft}
+      iconColor={iconColor}
+      datepickerColor={datepickerColor}
+    >
+      <StyledRangeDatepicker datepickerColor={datepickerColor}>
         {/* StartDate */}
         <StyledUiText variant='contentBlack' margin={margin}>
           {startPlaceholder}
@@ -81,18 +85,14 @@ const DatepickerRange = ({
             <Icon
               size='l'
               icon={Icon.ICONS.IconChevronLeft}
-              iconColor={
-                isPink ? theme.color.brand.primary : theme.color.brand.secondary
-              }
+              iconColor={datepickerColor || theme.color.brand.secondary}
             />
           }
           nextMonthButtonLabel={
             <Icon
               size='l'
               icon={Icon.ICONS.IconChevronRight}
-              iconColor={
-                isPink ? theme.color.brand.primary : theme.color.brand.secondary
-              }
+              iconColor={datepickerColor || theme.color.brand.secondary}
             />
           }
           showPopperArrow={false}
@@ -124,18 +124,14 @@ const DatepickerRange = ({
             <Icon
               size='l'
               icon={Icon.ICONS.IconChevronLeft}
-              iconColor={
-                isPink ? theme.color.brand.primary : theme.color.brand.secondary
-              }
+              iconColor={datepickerColor || theme.color.brand.secondary}
             />
           }
           nextMonthButtonLabel={
             <Icon
               size='l'
               icon={Icon.ICONS.IconChevronRight}
-              iconColor={
-                isPink ? theme.color.brand.primary : theme.color.brand.secondary
-              }
+              iconColor={datepickerColor || theme.color.brand.secondary}
             />
           }
           showPopperArrow={false}
@@ -164,7 +160,7 @@ DatepickerRange.propTypes = {
   iconColor: PropTypes.string,
   startPlaceholder: PropTypes.string,
   endPlaceholder: PropTypes.string,
-  isPink: PropTypes.bool,
+  datepickerColor: PropTypes.string,
   margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 

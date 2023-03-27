@@ -7,7 +7,16 @@ import { HeaderCell, HeaderCellIcon } from '../../styles';
 
 const TableHeaderCell = React.forwardRef(
   (
-    { as, className, isSorted, isSortedDesc, isSortable, colWidth, ...props },
+    {
+      as,
+      className,
+      isSorted,
+      isSortedDesc,
+      isSortable,
+      colWidth,
+      disableSortBy,
+      ...props
+    },
     ref,
   ) => (
     <HeaderCell
@@ -18,11 +27,12 @@ const TableHeaderCell = React.forwardRef(
       ref={ref}
       width={colWidth}
       isSorted={isSorted}
+      disableSortBy={disableSortBy}
       {...props}
     >
       {props.children}
 
-      {isSortable && (
+      {isSortable && !disableSortBy && (
         <HeaderCellIcon
           className='f-Table-HeaderCellIcon'
           icon={
@@ -51,6 +61,7 @@ TableHeaderCell.propTypes = {
   isSortedDesc: PropTypes.bool,
   isSortable: PropTypes.bool,
   colWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disableSortBy: PropTypes.bool,
 };
 
 export default TableHeaderCell;

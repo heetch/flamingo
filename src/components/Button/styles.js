@@ -78,6 +78,15 @@ const styles = {
 
     return '100%';
   },
+  marginLeft({ margin, disableAutoMarginLeft }) {
+    if (disableAutoMarginLeft) {
+      return 0;
+    }
+    if (!margin) {
+      return theme.space.m;
+    }
+    return undefined;
+  },
   hover: {
     backgroundColor({ intent, disabled }) {
       if (disabled) {
@@ -152,8 +161,8 @@ export const StyledButton = styled('button').attrs(() => ({
   box-shadow: ${styles.boxShadow};
   opacity: ${styles.opacity};
 
-  & + & {
-    margin-left: ${({ margin }) => (!margin ? theme.space.m : undefined)};
+  & {
+    margin-left: ${styles.marginLeft};
   }
 
   &:hover {
