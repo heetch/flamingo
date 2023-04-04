@@ -161,7 +161,7 @@ export const StyledButton = styled('button').attrs(() => ({
   box-shadow: ${styles.boxShadow};
   opacity: ${styles.opacity};
 
-  & {
+  & + & {
     margin-left: ${styles.marginLeft};
   }
 

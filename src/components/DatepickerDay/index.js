@@ -45,7 +45,7 @@ const DatepickerDay = ({
         invalid={invalid}
         valid={valid}
         autoFocus={stateHasFocus}
-        borderColor={datepickerColor && datepickerColor}
+        borderColor={datepickerColor && theme.color.brand.primary}
         {...inputProps}
       />
     );

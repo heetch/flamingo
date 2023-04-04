@@ -35,7 +35,7 @@ const DatepickerRange = ({
     if (locale) registerLocale(locale.key, locale.dateFnsLocale);
   }, [locale]);
 
-  const DatepickerRangeInput = React.forwardRef((dateInputProps, ref) => {
+  const DatepickerRangeStartInput = React.forwardRef((dateInputProps, ref) => {
     return (
       <StyledDatepickerInput
         {...dateInputProps}
@@ -51,7 +51,28 @@ const DatepickerRange = ({
     );
   });
 
-  DatepickerRangeInput.defaultProps = {
+  const DatepickerRangeEndInput = React.forwardRef((dateInputProps, ref) => {
+    return (
+      <StyledDatepickerInput
+        {...dateInputProps}
+        id={`${dateInputProps.id}-end`}
+        ref={ref}
+        placeholder={placeholder}
+        icon={Icon.ICONS.IconCalendar}
+        iconLeft={iconLeft}
+        invalid={invalid}
+        valid={valid}
+        borderColor={datepickerColor && theme.color.brand.primary}
+        {...inputProps}
+      />
+    );
+  });
+
+  DatepickerRangeStartInput.defaultProps = {
+    placeholder: 'Select a date',
+  };
+
+  DatepickerRangeEndInput.defaultProps = {
     placeholder: 'Select a date',
   };
 
@@ -80,7 +101,7 @@ const DatepickerRange = ({
           // The fallback will be EN if undefined
           locale={locale ? locale.key : undefined}
           placeholder={placeholder}
-          customInput={<DatepickerRangeInput />}
+          customInput={<DatepickerRangeStartInput />}
           previousMonthButtonLabel={
             <Icon
               size='l'
@@ -119,7 +140,7 @@ const DatepickerRange = ({
           // The fallback will be EN if undefined
           locale={locale ? locale.key : undefined}
           placeholder={placeholder}
-          customInput={<DatepickerRangeInput />}
+          customInput={<DatepickerRangeEndInput />}
           previousMonthButtonLabel={
             <Icon
               size='l'
