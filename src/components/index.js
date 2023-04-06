@@ -4,7 +4,6 @@ export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export { default as Dropdown } from './Dropdown';
 export { default as DatepickerDay } from './DatepickerDay';
-export { default as DatepickerRange } from './DatepickerRange';
 export { default as FormField } from './FormField';
 export { default as Grid } from './Grid';
 export { default as GridCol } from './Grid/GridCol';
