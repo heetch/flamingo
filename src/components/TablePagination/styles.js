@@ -38,7 +38,7 @@ export const HeaderCell = styled(UiText)`
   padding-right: calc(${theme.iconSize.m} + ${theme.space.m} * 2);
   position: sticky;
   top: 0;
-  cursor: ${props => props.disableColSort && 'default !important'};
+  cursor: ${props => props.disableSortBy && 'default'};
   width: ${props =>
     typeof props.width === 'number' ? `${props.width}px` : props.width};
 

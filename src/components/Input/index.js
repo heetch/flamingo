@@ -9,7 +9,10 @@ const { IconCheck, IconAlertTriangle } = Icon.ICONS;
 const icons = Object.values(Icon.ICONS);
 
 const Input = React.forwardRef(
-  ({ id, icon: defaultIcon, iconColor, iconLeft, ...props }, ref) => {
+  (
+    { id, icon: defaultIcon, iconColor, iconLeft, borderColor, ...props },
+    ref,
+  ) => {
     const icon = props.invalid
       ? IconAlertTriangle
       : props.valid
@@ -27,6 +30,7 @@ const Input = React.forwardRef(
           ref={ref}
           withIcon={!!icon}
           iconLeft={iconLeft}
+          borderColor={borderColor}
           {...props}
         />
 
@@ -43,6 +47,7 @@ Input.propTypes = {
   valid: PropTypes.bool,
   iconColor: PropTypes.string,
   iconLeft: PropTypes.bool,
+  borderColor: PropTypes.string,
 };
 
 export default Input;

@@ -19,8 +19,8 @@ const IconButtonComponent = React.forwardRef(
       disabled={disabled}
       ref={ref}
       isLoading={isLoading}
+      disableAutoMarginLeft
       {...props}
-      style={{ padding: 0 }}
     >
       <Icon
         icon={icon}
@@ -44,7 +44,7 @@ const IconButton = styled(IconButtonComponent)`
   line-height: 1;
   border-radius: 50%;
   color: ${theme.color.icon.dark};
-  background-color: unset !important;
+  background-color: unset;
 
   & + & {
     margin-left: ${theme.space.m};
@@ -52,6 +52,7 @@ const IconButton = styled(IconButtonComponent)`
 
   :hover {
     color: unset;
+    background-color: unset;
   }
 
   ${theme.breakPoint.s} {

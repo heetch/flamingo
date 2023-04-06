@@ -23,19 +23,19 @@ export const StyledCheckbox = styled('input').attrs(({ defaultChecked }) => ({
     border-color: ${theme.color.element.secondary};
   }
 
-  &:disabled {
-    border-color: ${theme.color.element.tertiary} !important;
-    background-color: ${theme.color.element.inactive} !important;
-    cursor: not-allowed;
-  }
-
   &:checked {
     background-color: ${theme.color.brand.primary};
     border-color: ${theme.color.brand.primary};
   }
 
+  &:disabled {
+    border-color: ${theme.color.element.tertiary};
+    background-color: ${theme.color.element.inactive};
+    cursor: not-allowed;
+  }
+
   &:disabled:after {
-    border-color: var(--f-color-icon--disabled) !important;
+    border-color: var(--f-color-icon--disabled);
   }
 
   /* Icons */

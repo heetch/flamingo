@@ -32,6 +32,8 @@ const getDefaultProps = () => ({
     {
       Header: text("Col #3's heading", 'With custom rendering'),
       accessor: 'custom',
+      disableSortBy: true,
+      colWidth: 140,
       Cell: () => <Icon icon={Icon.ICONS.IconMoon} />,
     },
   ],

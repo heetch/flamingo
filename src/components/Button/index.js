@@ -42,6 +42,7 @@ Button.propTypes = {
   type: PropTypes.string,
   variant: PropTypes.oneOf(variants),
   margin: PropTypes.string,
+  disableAutoMarginLeft: PropTypes.bool,
 };
 
 Button.defaultProps = {

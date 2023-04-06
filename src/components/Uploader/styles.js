@@ -92,8 +92,12 @@ export const TrashButton = styled(IconButton).attrs({
   z-index: 20;
   margin: ${theme.space.m};
   align-self: end;
-  padding: ${theme.space.s} !important;
-  background-color: #ffffff !important;
+  padding: ${theme.space.s};
+  background-color: #ffffff;
+  :hover {
+    padding: ${theme.space.s};
+    background-color: #ffffff;
+  }
   * {
     color: ${({ iconColor }) => iconColor || theme.color_v3.feedback.error};
   }

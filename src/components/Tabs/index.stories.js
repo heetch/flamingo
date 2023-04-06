@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Heading from '../Heading';
 import Tabs from '.';
+import { theme } from '../../theme';
 import { Code } from '../../storybook-utils';
 
 const TAB_VALUES = [
@@ -34,7 +35,7 @@ stories.add('All states', () => (
     <Tabs defaultIndex={1} elements={${JSON.stringify(TAB_VALUES)}} />
     `}</Code>
 
-    <Heading level={2}>With objects</Heading>
+    <Heading level={2}>With objects and font size</Heading>
     <Tabs
       elements={[
         { label: 'Foo', value: 'tab-foo' },
@@ -44,6 +45,7 @@ stories.add('All states', () => (
       buildReturnObject={e => e.value}
       buildKey={e => e.value}
       onClick={action('Click')}
+      fontSize={theme.fontSize.xl}
     />
     <Code>{`
     <Tabs
@@ -55,6 +57,7 @@ stories.add('All states', () => (
       buildReturnObject={e => e.value}
       buildKey={e => e.value}
       onClick={noop}
+      fontSize={theme.fontSize.xl}
     />
     `}</Code>
   </>

@@ -75,7 +75,7 @@ const TablePagination = React.forwardRef(
                   isSortedDesc,
                   render,
                   colWidth,
-                  disableColSort,
+                  disableSortBy,
                 }) => (
                   <HeaderCell
                     {...getHeaderProps(isSortable && getSortByToggleProps())}
@@ -83,7 +83,7 @@ const TablePagination = React.forwardRef(
                     isSortedDesc={isSortedDesc}
                     isSortable={isSortable}
                     colWidth={colWidth}
-                    disableColSort={disableColSort}
+                    disableSortBy={disableSortBy}
                     variant={UiText.VARIANTS.subContentBlack}
                   >
                     {render('Header')}
@@ -121,7 +121,7 @@ TablePagination.propTypes = {
       Header: PropTypes.string,
       accessor: PropTypes.string,
       colWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      disableColSort: PropTypes.bool,
+      disableSortBy: PropTypes.bool,
     }),
   ),
   data: PropTypes.arrayOf(PropTypes.shape({})),

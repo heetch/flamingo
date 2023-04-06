@@ -14,7 +14,7 @@ const TableHeaderCell = React.forwardRef(
       isSortedDesc,
       isSortable,
       colWidth,
-      disableColSort,
+      disableSortBy,
       ...props
     },
     ref,
@@ -26,12 +26,12 @@ const TableHeaderCell = React.forwardRef(
       ref={ref}
       width={colWidth}
       isSorted={isSorted}
-      disableColSort={disableColSort}
+      disableSortBy={disableSortBy}
       {...props}
     >
       {props.children}
 
-      {isSortable && !disableColSort && (
+      {isSortable && !disableSortBy && (
         <HeaderCellIcon
           className='f-Table-HeaderCellIcon'
           icon={
@@ -61,7 +61,7 @@ TableHeaderCell.propTypes = {
   isSortedDesc: PropTypes.bool,
   isSortable: PropTypes.bool,
   colWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  disableColSort: PropTypes.bool,
+  disableSortBy: PropTypes.bool,
 };
 
 export default TableHeaderCell;

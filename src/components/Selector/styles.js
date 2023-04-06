@@ -58,8 +58,7 @@ export const SelectorItem = styled('div')`
   overflow: hidden;
   white-space: nowrap;
   padding: ${theme.space.m} ${theme.space.xl};
-  cursor: ${({ isDisabled }) =>
-    isDisabled ? 'not-allowed !important' : 'pointer'};
+  cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
 
   ${theme.breakPoint.s} {
     padding-top: ${theme.space.l};

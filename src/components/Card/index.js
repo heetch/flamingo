@@ -30,19 +30,7 @@ const Card = styled('div').attrs(() => ({
   border-radius: ${theme.borderRadius.s};
   padding: ${styles.padding};
   border: ${styles.border};
-
-  & & {
-    border-radius: ${theme.borderRadius.s};
-  }
-
-  & & & {
-    border-radius: ${theme.borderRadius.s};
-  }
-
-  & & & & {
-    border-radius: ${theme.borderRadius.s};
-  }
-
+  font-family: Avenir, Arial, sans-serif;
   ${Text} {
     margin: 0;
   }

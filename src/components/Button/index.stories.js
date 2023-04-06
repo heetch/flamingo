@@ -64,6 +64,14 @@ stories.add('All states', () => (
       </div>
     ))}
 
+    <Heading level={2}>Disable margin</Heading>
+    <Button>primary</Button>
+    <Button disableAutoMarginLeft>button without margin</Button>
+    <Code>{`
+        <Button>primary</Button>
+        <Button disableAutoMarginLeft>button without margin</Button>
+    `}</Code>
+
     <Heading level={2}>States</Heading>
     <Heading level={3}>Disabled</Heading>
     <Button disabled>Disabled</Button>

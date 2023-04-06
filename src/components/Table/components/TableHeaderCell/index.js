@@ -6,19 +6,33 @@ import UiText from '../../../UiText';
 import { HeaderCell, HeaderCellIcon } from '../../styles';
 
 const TableHeaderCell = React.forwardRef(
-  ({ as, className, isSorted, isSortedDesc, isSortable, ...props }, ref) => (
+  (
+    {
+      as,
+      className,
+      isSorted,
+      isSortedDesc,
+      isSortable,
+      colWidth,
+      disableSortBy,
+      ...props
+    },
+    ref,
+  ) => (
     <HeaderCell
       as={as || 'th'}
       className={cx('f-Table-HeaderCell', className)}
       variant={UiText.VARIANTS.subContentBlack}
       margin={'20px'}
       ref={ref}
+      width={colWidth}
       isSorted={isSorted}
+      disableSortBy={disableSortBy}
       {...props}
     >
       {props.children}
 
-      {isSortable && (
+      {isSortable && !disableSortBy && (
         <HeaderCellIcon
           className='f-Table-HeaderCellIcon'
           icon={
@@ -46,6 +60,8 @@ TableHeaderCell.propTypes = {
   isSorted: PropTypes.bool,
   isSortedDesc: PropTypes.bool,
   isSortable: PropTypes.bool,
+  colWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disableSortBy: PropTypes.bool,
 };
 
 export default TableHeaderCell;

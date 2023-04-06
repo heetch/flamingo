@@ -66,6 +66,18 @@ stories.add('All states', () => (
       iconColor='orange'
       onChange={action('onChange')}
     />
+    <Heading level={2}>Border with Color</Heading>
+    <Input
+      id={getId()}
+      defaultValue='Props: icon'
+      icon='IconEmojiSmile'
+      iconColor='orange'
+      onChange={action('onChange')}
+      borderColor='orange'
+    />
+    <Code>{`
+    <Input id='input3' defaultValue='Props: icon'icon='IconEmojiSmile' iconColor='orange' onChange={action('onChange')} borderColor='orange />
+    `}</Code>
   </>
 ));
 
