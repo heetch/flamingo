@@ -61,7 +61,7 @@ producing a unique URL such as [https://8f508124.flamingo.pages.dev](https://8f5
 
 Each incremental changes will create a new slug.
 
-## How-to create new component
+## How-to create a new component
 
 Add a new folder in `src/components`
 Name your new folder with your component name.
