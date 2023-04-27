@@ -1,49 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const SVGO = require('svgo'); // eslint-disable-line import/no-extraneous-dependencies
+const { optimize } = require('svgo'); // eslint-disable-line import/no-extraneous-dependencies
 const prettier = require('prettier'); // eslint-disable-line import/no-extraneous-dependencies
 const { CLIEngine } = require('eslint'); // eslint-disable-line import/no-extraneous-dependencies
 
 const eslint = new CLIEngine({ fix: true });
-
-const svgo = new SVGO({
-  plugins: [
-    { cleanupAttrs: true },
-    { removeDoctype: true },
-    { removeXMLProcInst: true },
-    { removeComments: true },
-    { removeMetadata: true },
-    { removeTitle: true },
-    { removeDesc: true },
-    { removeUselessDefs: true },
-    { removeEditorsNSData: true },
-    { removeEmptyAttrs: true },
-    { removeHiddenElems: true },
-    { removeEmptyText: true },
-    { removeEmptyContainers: true },
-    { removeViewBox: false },
-    { cleanupEnableBackground: true },
-    { convertStyleToAttrs: true },
-    { convertColors: true },
-    { convertPathData: true },
-    { convertTransform: true },
-    { removeUnknownsAndDefaults: true },
-    { removeNonInheritableGroupAttrs: true },
-    { removeUselessStrokeAndFill: true },
-    { removeUnusedNS: true },
-    { cleanupIDs: true },
-    { cleanupNumericValues: true },
-    { moveElemsAttrsToGroup: true },
-    { moveGroupAttrsToElems: true },
-    { collapseGroups: true },
-    { removeRasterImages: false },
-    { mergePaths: true },
-    { convertShapeToPath: true },
-    { sortAttrs: true },
-    { removeDimensions: true },
-    { removeAttrs: { attrs: '(stroke|fill)' } },
-  ],
-});
 
 const paths = {
   icons: path.resolve(__dirname, '../src/icons/'),
@@ -65,7 +26,7 @@ function formatIconName(str) {
 }
 
 function getIconContent(icon) {
-  return fs.readFileSync(`${paths.icons}/${icon}`);
+  return fs.readFileSync(`${paths.icons}/${icon}`, { encoding: 'utf8' });
 }
 
 function toReactComponent(name, content) {
@@ -81,7 +42,15 @@ const iconsPath = fs.readdirSync(paths.icons);
 const formatIcons = iconsPath.map(async iconPath => {
   const name = formatIconName(iconPath);
   const content = getIconContent(iconPath);
-  const { data: optimizedContent } = await svgo.optimize(content);
+  const { data: optimizedContent } = optimize(content, {
+    path: iconPath,
+    plugins: [
+      { name: 'removeViewBox', active: false },
+      { name: 'convertStyleToAttrs', active: true },
+      { name: 'removeDimensions', active: true },
+      { name: 'removeAttrs', params: { attrs: '(stroke|fill)' } },
+    ],
+  });
 
   return toReactComponent(name, optimizedContent);
 });
